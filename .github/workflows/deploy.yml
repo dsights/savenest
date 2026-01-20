@@ -1,0 +1,40 @@
+name: Deploy to FastComet
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v4
+        with:
+          channel: 'stable'
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build Web App
+        # Building for web in release mode
+        run: flutter build web --release
+
+      - name: Deploy to FastComet via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # The local directory containing the build artifacts
+          local-dir: ./build/web/
+          # The remote directory on FastComet where files should go. 
+          # Default is usually public_html/ for the main domain.
+          # Change this if you are deploying to a subdomain (e.g., public_html/savenest/)
+          server-dir: ./public_html/
+          protocol: ftp

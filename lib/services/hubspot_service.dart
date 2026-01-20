@@ -11,7 +11,10 @@ class HubSpotService {
   
   // static const String _filesUrl = 'https://api.hubapi.com/files/v3/files';
   // Use local proxy to bypass CORS on Web
-  static const String _filesUrl = 'http://localhost:8888';
+  static const String _filesUrl = String.fromEnvironment(
+    'PROXY_URL',
+    defaultValue: 'http://localhost:8888',
+  );
   static const String _submitUrl = 'https://api.hsforms.com/submissions/v3/integration/submit';
 
   /// 1. Upload a single file to HubSpot and get the URL

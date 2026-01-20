@@ -25,6 +25,15 @@ jobs:
         # Building for web in release mode
         run: flutter build web --release
 
+      - name: Inject HubSpot Token
+        run: |
+          if [ -f "build/web/proxy_upload.php" ]; then
+            sed -i 's/REPLACE_WITH_HUBSPOT_ACCESS_TOKEN/${{ secrets.HUBSPOT_ACCESS_TOKEN }}/g' build/web/proxy_upload.php
+            echo "Token injected into proxy_upload.php"
+          else
+            echo "Warning: proxy_upload.php not found in build output."
+          fi
+
       - name: Deploy to FastComet via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:

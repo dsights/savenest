@@ -93,7 +93,16 @@ class HubSpotService {
         if (uploadedUrl != null) {
           final String fieldName = _getFieldNameForType(entry.key);
           if (fieldName.isNotEmpty) {
-            fields.add({'name': fieldName, 'value': uploadedUrl});
+            // Check if this field already exists (e.g. for Home & Car insurance sharing a field)
+            final existingIndex = fields.indexWhere((f) => f['name'] == fieldName);
+            
+            if (existingIndex != -1) {
+              // Append to existing value
+              fields[existingIndex]['value'] = '${fields[existingIndex]['value']} ; $uploadedUrl';
+            } else {
+              // Add new field
+              fields.add({'name': fieldName, 'value': uploadedUrl});
+            }
           }
         } else {
           // Soft fail: Log error but don't stop submission
@@ -145,7 +154,9 @@ class HubSpotService {
       case UtilityType.gas: return 'gas_bill_url';
       case UtilityType.mobile: return 'mobile_bill_url';
       case UtilityType.homeInsurance: return 'home_insurance_bill_url';
-      case UtilityType.carInsurance: return 'home_insurance_bill_url'; // Mapped to same field per request
+      // Fallback: Map Car Insurance to Home Insurance field due to HubSpot property limits (max 10).
+      // The submission logic now handles appending multiple URLs to the same field.
+      case UtilityType.carInsurance: return 'home_insurance_bill_url'; 
       default: return '';
     }
   }

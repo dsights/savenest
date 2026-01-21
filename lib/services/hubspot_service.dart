@@ -14,7 +14,8 @@ class HubSpotService {
   static const String _submitUrl = 'https://api.hsforms.com/submissions/v3/integration/submit';
 
   /// 1. Upload a single file to HubSpot and get the URL
-  Future<String?> _uploadFile(XFile file, String folder) async {
+  /// Returns a record with either the URL or an error message.
+  Future<({String? url, String? error})> _uploadFile(XFile file, String folder) async {
     try {
       Uri uri;
       if (kIsWeb) {
@@ -56,14 +57,19 @@ class HubSpotService {
 
       if (response.statusCode == 201 || response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        return data['url']; // The public URL of the uploaded file
+        if (data is Map && data.containsKey('url')) {
+          return (url: data['url'] as String?, error: null);
+        } else {
+          return (url: null, error: 'Invalid JSON response: ${response.body}');
+        }
       } else {
-        print('File Upload Failed: ${response.body}');
-        return null;
+        final errorMsg = 'Status ${response.statusCode}: ${response.body}';
+        print('File Upload Failed: $errorMsg');
+        return (url: null, error: errorMsg);
       }
     } catch (e) {
       print('File Upload Error: $e');
-      return null;
+      return (url: null, error: e.toString());
     }
   }
 
@@ -93,9 +99,9 @@ class HubSpotService {
     for (var entry in billImages.entries) {
       if (entry.value != null) {
         // Attempt upload
-        final String? uploadedUrl = await _uploadFile(entry.value!, 'savenest_bills');
+        final result = await _uploadFile(entry.value!, 'savenest_bills');
         
-        if (uploadedUrl != null) {
+        if (result.url != null) {
           final String fieldName = _getFieldNameForType(entry.key);
           if (fieldName.isNotEmpty) {
             // Check if this field already exists (e.g. for Home & Car insurance sharing a field)
@@ -103,15 +109,17 @@ class HubSpotService {
             
             if (existingIndex != -1) {
               // Append to existing value
-              fields[existingIndex]['value'] = '${fields[existingIndex]['value']} ; $uploadedUrl';
+              fields[existingIndex]['value'] = '${fields[existingIndex]['value']} ; ${result.url}';
             } else {
               // Add new field
-              fields.add({'name': fieldName, 'value': uploadedUrl});
+              fields.add({'name': fieldName, 'value': result.url});
             }
           }
         } else {
           // Soft fail: Log error but don't stop submission
-          uploadErrors.add('Failed to upload ${entry.key.name} image');
+          final cleanError = result.error?.replaceAll(RegExp(r'[\r\n]'), ' ') ?? 'Unknown error';
+          final shortError = cleanError.length > 100 ? '${cleanError.substring(0, 100)}...' : cleanError;
+          uploadErrors.add('${entry.key.name} failed: $shortError');
         }
       }
     }
@@ -136,7 +144,7 @@ class HubSpotService {
           'success': true,
           'message': uploadErrors.isEmpty 
               ? 'Registration Successful!' 
-              : 'Contact saved, but some images failed to upload.',
+              : 'Contact saved, but images failed: ${uploadErrors.join(", ")}',
         };
       } else {
         return {

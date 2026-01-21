@@ -87,9 +87,17 @@ if (curl_errno($ch)) {
     http_response_code(500);
     echo json_encode(["error" => "Curl error: " . $error_msg]);
 } else {
-    http_response_code($httpCode);
-    header('Content-Type: application/json');
-    echo $response;
+    // Check if HubSpot returned an error (e.g. 401)
+    if ($httpCode >= 400) {
+        http_response_code($httpCode); // Propagate the error code
+        // Ensure we send JSON
+        header('Content-Type: application/json');
+        echo $response; // HubSpot returns JSON error
+    } else {
+        http_response_code($httpCode);
+        header('Content-Type: application/json');
+        echo $response;
+    }
 }
 
 curl_close($ch);

@@ -29,7 +29,16 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build/web/
           server-dir: ./public_html/
-          
+
+      - name: Copy deployment script to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 198.38.93.19
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: "deploy_backend.sh"
+          target: "~/"
+
       - name: Deploy Backend via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -37,6 +46,5 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd ~
-            # Run the deployment script with the token stored in server env or secrets
-            bash savenest/deploy_backend.sh "${{ secrets.HUBSPOT_TOKEN }}"
+            chmod +x ~/deploy_backend.sh
+            ~/deploy_backend.sh "${{ secrets.HUBSPOT_TOKEN }}"

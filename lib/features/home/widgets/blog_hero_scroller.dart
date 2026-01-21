@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../theme/app_theme.dart';
-import '../blog/blog_model.dart';
-import '../blog/blog_provider.dart';
-import '../blog/blog_post_screen.dart';
+import '../../../theme/app_theme.dart';
+import '../../blog/blog_model.dart';
+import '../../blog/blog_provider.dart';
+import '../../blog/blog_post_screen.dart';
 
 class BlogHeroScroller extends ConsumerStatefulWidget {
   const BlogHeroScroller({super.key});

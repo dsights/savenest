@@ -87,7 +87,12 @@ async def proxy_upload(file: UploadFile = File(...)):
                 'options': json.dumps({"access": "PUBLIC_INDEXABLE"})
             }
         )
-        return hubspot_response.json()
+        # Propagate the status code and response
+        from fastapi.responses import JSONResponse
+        return JSONResponse(
+            status_code=hubspot_response.status_code,
+            content=hubspot_response.json()
+        )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 EOF

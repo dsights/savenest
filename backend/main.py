@@ -35,10 +35,8 @@ async def proxy_upload(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail="Server misconfigured: Missing HubSpot Token")
 
     try:
-        # Read file content
         file_content = await file.read()
         
-        # Forward to HubSpot
         hubspot_response = requests.post(
             HUBSPOT_UPLOAD_URL,
             headers={'Authorization': f'Bearer {HUBSPOT_ACCESS_TOKEN}'},
@@ -49,8 +47,11 @@ async def proxy_upload(file: UploadFile = File(...)):
             }
         )
 
-        # Return HubSpot response directly
-        return hubspot_response.json()
+        # Propagate the exact status code and response from HubSpot
+        return JSONResponse(
+            status_code=hubspot_response.status_code,
+            content=hubspot_response.json()
+        )
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

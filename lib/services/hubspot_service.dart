@@ -21,10 +21,10 @@ class HubSpotService {
       Uri uri;
       
       if (kIsWeb) {
-        // Use local proxy to bypass CORS on Web
+        // Use the Python backend at /api/upload for Web
         const String proxyUrl = String.fromEnvironment(
           'PROXY_URL',
-          defaultValue: 'proxy_upload.php',
+          defaultValue: '/api/upload',
         );
         uri = Uri.parse(proxyUrl);
         if (!uri.hasScheme) {
@@ -32,10 +32,10 @@ class HubSpotService {
         }
       } else if (kReleaseMode) {
         // PRODUCTION: Use the configured backend URL
-        const String prodUrl = String.fromEnvironment('BACKEND_UPLOAD_URL');
-        if (prodUrl.isEmpty) {
-          return (url: null, error: 'Config Error: BACKEND_UPLOAD_URL not set in build.');
-        }
+        const String prodUrl = String.fromEnvironment(
+          'BACKEND_UPLOAD_URL',
+          defaultValue: 'https://savenest.au/api/upload',
+        );
         uri = Uri.parse(prodUrl);
       } else {
         // SECURITY: Delegate to a secure backend/proxy.

@@ -66,6 +66,7 @@ class _RegistrationScreenState extends ConsumerState<RegistrationScreen> {
         });
       }
     } catch (e) {
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Error picking image: $e')),
       );

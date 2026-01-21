@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'blog_model.dart';
@@ -14,7 +15,7 @@ class BlogRepository {
       
       return rawList.map((j) => BlogPost.fromJson(j)).toList();
     } catch (e) {
-      print('Error loading blog posts: $e. Using fallback data.');
+      debugPrint('Error loading blog posts: $e. Using fallback data.');
       // Fallback data so the UI doesn't break
       return [
         BlogPost(

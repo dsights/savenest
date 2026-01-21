@@ -48,5 +48,55 @@
     "imageUrl": "assets/images/car_ins.png",
     "summary": "Car insurance is perhaps the most volatile expense in the household budget. Unlike registration, your premium is calculated by an algorithm testing your willingness to pay.",
     "content": "Car insurance is perhaps the most volatile expense in the household budget. Unlike your car registration which is a fixed fee, your insurance premium is calculated by an algorithm that tries to guess how much you are willing to pay.\n\nThe 'New Customer' Bonus:\nInsurers spend millions on advertising to acquire new customers. To get you in the door, they often offer an artificially low premium for the first year. They might even make a loss on you initially.\n\nThe 'Renewal' Hike:\nOnce you are a customer, the algorithm changes. It knows you are already signed up. Next year, your renewal notice arrives, and the price has jumped by $200. Have you become a worse driver? No. The insurer is simply testing your price elasticity. They are betting you are too busy to switch.\n\nHow to Win:\nYou must treat car insurance as a 12-month product. Never auto-renew without checking the market.\n1. Set a calendar reminder for 25 days before your policy expires.\n2. Run a comparison. You will almost certainly find a 'new customer' offer from a competitor that beats your renewal price.\n3. Switch.\n\nBy switching every year, you effectively surf the 'new customer' bonuses of different insurers, ensuring you never pay the loyalty tax. It is the single highest 'hourly wage' task you can do—saving $500 for 15 minutes of work."
+  },
+  {
+    "id": "b6",
+    "title": "The Solar Battery Boom: Is It Finally Worth It?",
+    "category": "Energy",
+    "author": "Dr. Alan Grant",
+    "date": "Feb 10, 2026",
+    "imageUrl": "assets/images/energy.png",
+    "summary": "With energy prices soaring, the dream of going 'off-grid' is more appealing than ever. But does the math for solar batteries finally stack up in 2026?",
+    "content": "For the last decade, the advice on solar batteries has been consistent: 'Great for the environment, bad for your wallet.' The payback period was simply too long—often exceeding the 10-year warranty of the battery itself. But in 2026, the landscape has shifted dramatically.\n\nEnergy prices have continued their relentless climb, and feed-in tariffs (what retailers pay you for your excess solar) have plummeted to near zero. This creates a perfect storm where self-consumption is king. Every kilowatt-hour of solar energy you store and use yourself is worth 30-40 cents, compared to the measly 4 cents you'd get for exporting it.\n\nThe 'Virtual Power Plant' (VPP) Revolution:\nThe game-changer isn't just hardware costs coming down; it's the rise of VPPs. By joining a VPP, you allow your energy retailer to tap into your battery during grid spikes (like a heatwave). In exchange, they offer aggressive credits or even free hardware.\n\nIs it worth it for you?\nIf you have a large solar system (6.6kW+) and your evening usage is high (families cooking, heating/cooling), a battery can now pay for itself in 6-7 years. With a warranty of 10-15 years, that leaves you with potentially a decade of 'free' storage.\n\nHowever, if you are a small household or work from home (using most of your solar power directly during the day), the math is still tight. The best approach? Don't guess. Use SaveNest to analyze your usage profile against the latest VPP offers."
+  },
+  {
+    "id": "b7",
+    "title": "NBN vs 5G Home Internet: The Battle for Bandwidth",
+    "category": "Internet",
+    "author": "Sarah Jenkins",
+    "date": "Feb 08, 2026",
+    "imageUrl": "assets/images/internet.png",
+    "summary": "The NBN monopoly is over. 5G Home Internet is promising fibre-like speeds without the cables, but is it reliable enough for the modern home?",
+    "content": "For years, the NBN was the only game in town. If your copper connection was bad, you were stuck. Enter 5G Home Internet: a wireless solution that uses the same mobile network as your phone to deliver high-speed broadband to your home modem.\n\nThe Pros of 5G:\n1. Speed: In good coverage areas, 5G can easily hit download speeds of 200-500 Mbps, rivaling the fastest NBN plans.\n2. Setup: No technician required. You receive a modem, plug it into a power socket, and you're online in 30 seconds.\n3. Price: It is often $10-$20 cheaper per month than an equivalent NBN plan.\n\nThe Cons:\n1. Consistency: This is the Achilles' heel. Wireless signals fluctuate. Rain, congestion, and even placing the modem behind a TV can impact speed. NBN (especially FTTP) is rock solid.\n2. Latency: Gamers beware. The 'ping' on 5G is higher than fixed-line internet, which can lead to lag in competitive gaming.\n\nThe Verdict:\nIf you are a renter, a student, or live in a solid 5G coverage area and mostly stream video/browse the web, 5G Home Internet is a no-brainer. It's cheaper, faster to set up, and portable. But for serious gamers or work-from-home professionals who need unwavering stability for Zoom calls, a wired NBN connection remains the gold standard."
+  },
+  {
+    "id": "b8",
+    "title": "Mortgage Refinancing: The 1% Rule That Saves Thousands",
+    "category": "Home Loans",
+    "author": "David Ross",
+    "date": "Feb 05, 2026",
+    "imageUrl": "assets/images/home_ins.png",
+    "summary": "Interest rates have stabilized, but the gap between 'front book' and 'back book' rates is widening. Here is why the 1% rule matters.",
+    "content": "In the world of home loans, there are two types of customers: the new ones ('front book') and the loyal ones ('back book'). Banks fight tooth and nail for new customers, offering cashback incentives and razor-thin interest rates. Meanwhile, existing customers often see their rates creep up unnoticed.\n\nThe '1% Rule' is a simple benchmark: If your current variable interest rate is more than 1% higher than the lowest rate on the market for a similar loan, you are torching money.\n\nLet's do the math on a \$600,000 mortgage:\nA difference of 1% in interest is roughly \$6,000 a year in pure interest payments. That is $500 a month after tax—enough to cover your car insurance, internet, and electricity bills combined.\n\nRefinancing Myth-busting:\n'It's too much paperwork.'\nIn 2026, Open Banking technology means you can often share your financial data securely with a new lender in clicks. The days of scanning payslips and bank statements are fading.\n\n'The fees aren't worth it.'\nExit fees on variable loans were banned years ago. While there might be a $300 settlement fee with the new bank, many lenders offer $2,000+ cashback to switch, which covers the cost and puts cash in your pocket.\n\nCheck your rate today. If it doesn't start with a number competitive with the market leaders, it's time to walk."
+  },
+  {
+    "id": "b9",
+    "title": "The Art of the Bundle: Mixing Energy and Internet",
+    "category": "Bundles",
+    "author": "Emma Wilson",
+    "date": "Feb 02, 2026",
+    "imageUrl": "assets/images/mobile.png",
+    "summary": "Convergence is the buzzword of 2026. Utility providers are no longer staying in their lanes, and that is great news for bargain hunters.",
+    "content": "Why buy your electricity from a power company and your internet from a telco when you can buy both from the same place—and save? 'Convergence' has seen major energy retailers launch NBN plans, and major telcos start selling electricity.\n\nThe logic for them is simple: 'Stickiness.' If you have three services with one provider, you are far less likely to leave. To buy that loyalty, they are willing to offer significant discounts.\n\nThe 'Bundle Bonus':\nIt is not uncommon to see offers like 'Get $10 off your broadband bill every month if you switch your gas and electricity to us.' That is a $120 annual saving, tax-free.\n\nThe Trap to Watch:\nConvenience can be costly. Sometimes, a provider offers a great bundle, but the underlying rates for each service are mediocre. A $10 discount isn't worth it if their electricity usage rates are 20% higher than the market average.\n\nHow to Bundle Smart:\n1. Don't look at the discount first. Look at the base rates.\n2. Compare the services individually. Is the internet plan fast enough? Is the solar feed-in tariff competitive?\n3. Only bundle if the individual plans stand up on their own merits. The discount should be the cherry on top, not the whole cake."
+  },
+  {
+    "id": "b10",
+    "title": "Health Insurance: The 'Silver Plus' Sweet Spot",
+    "category": "Insurance",
+    "author": "Dr. Alan Grant",
+    "date": "Jan 30, 2026",
+    "imageUrl": "assets/images/home_ins.png",
+    "summary": "Gold tier policies are comprehensive but expensive. Bronze is cheap but risky. Why 'Silver Plus' is becoming the default choice for Australian families.",
+    "content": "Navigating the tiered system of private health insurance (Gold, Silver, Bronze, Basic) can feel like decoding a cryptic language. For years, families felt pressured to buy Gold cover 'just in case' they needed pregnancy, joint replacements, or cataracts cover.\n\nBut as cost-of-living pressures bite, the 'Silver Plus' tier has emerged as the hero of the category. It offers a strategic middle ground that covers the vast majority of 'life events'—heart, lungs, cancer, dental surgery, and bone/joint investigations—without the premium price tag of Gold.\n\nWho needs Gold?\nUnless you specifically need coverage for pregnancy/birth, assisted reproductive services (IVF), or major joint replacements (hips/knees), you are likely paying for features you will not use in a Gold policy.\n\nThe Savings:\nSwitching a family policy from Gold to a high-quality Silver Plus can save upwards of $800-$1,200 a year. That is a significant chunk of household budget reclaimed without sacrificing peace of mind for the big medical risks.\n\nWarning: Not all 'Plus' policies are equal. Insurers can add whatever extra clinical categories they want to a Silver policy to make it a 'Plus'. Always read the Product Disclosure Statement (PDS) to ensure the specific items you care about (e.g., dental surgery or sleep studies) are included."
   }
 ]

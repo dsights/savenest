@@ -2,8 +2,9 @@
 // proxy_upload.php
 // Handles file uploads to HubSpot via server-side proxy to avoid CORS issues.
 
-// Allow CORS from any origin (or restrict to your domain)
-header("Access-Control-Allow-Origin: *");
+// Allow CORS from specific origin
+$allowed_origin = getenv('ALLOWED_ORIGIN') ?: '*';
+header("Access-Control-Allow-Origin: $allowed_origin");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 

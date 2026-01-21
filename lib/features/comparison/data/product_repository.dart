@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/services.dart'; // For rootBundle
-import 'package:flutter/material.dart';
 import '../comparison_model.dart';
 
 abstract class ProductRepository {

@@ -61,5 +61,5 @@ class ProxyHandler(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(bytes(f"Proxy Error: {e}", "utf-8"))
 
 print(f"Starting Proxy Server on port {PORT}...")
-with socketserver.TCPServer(("", PORT), ProxyHandler) as httpd:
+with socketserver.TCPServer(("127.0.0.1", PORT), ProxyHandler) as httpd:
     httpd.serve_forever()

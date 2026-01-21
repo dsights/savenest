@@ -8,16 +8,18 @@ class HubSpotService {
   // Credentials
   static const String _portalId = '442678262';
   static const String _formGuid = 'aed1b8bc-1b82-4f66-bcfd-7405bf0f6844';
-  static const String _accessToken = String.fromEnvironment('HUBSPOT_ACCESS_TOKEN');
   
-  static const String _hubspotFilesUrl = 'https://api.hubapi.com/files/v3/files';
+  // SECURITY: Access Token is REMOVED from client code. 
+  // It is injected securely by the backend/proxy.
+  
   static const String _submitUrl = 'https://api.hsforms.com/submissions/v3/integration/submit';
 
-  /// 1. Upload a single file to HubSpot and get the URL
+  /// 1. Upload a single file to HubSpot via a secure Proxy/Backend
   /// Returns a record with either the URL or an error message.
   Future<({String? url, String? error})> _uploadFile(XFile file, String folder) async {
     try {
       Uri uri;
+      
       if (kIsWeb) {
         // Use local proxy to bypass CORS on Web
         const String proxyUrl = String.fromEnvironment(
@@ -28,15 +30,31 @@ class HubSpotService {
         if (!uri.hasScheme) {
            uri = Uri.base.resolve(proxyUrl);
         }
+      } else if (kReleaseMode) {
+        // PRODUCTION: Use the configured backend URL
+        const String prodUrl = String.fromEnvironment('BACKEND_UPLOAD_URL');
+        if (prodUrl.isEmpty) {
+          return (url: null, error: 'Config Error: BACKEND_UPLOAD_URL not set in build.');
+        }
+        uri = Uri.parse(prodUrl);
       } else {
-        // Direct API call for Mobile/Desktop
-        uri = Uri.parse(_hubspotFilesUrl);
+        // SECURITY: Delegate to a secure backend/proxy.
+        // For development (Android Emulator), use 10.0.2.2 to access host's localhost.
+        // For iOS Simulator or Desktop, use 127.0.0.1.
+        
+        String host = '127.0.0.1';
+        if (defaultTargetPlatform == TargetPlatform.android) {
+          host = '10.0.2.2';
+        }
+        
+        // Ensure your local proxy_server.py is running on this port
+        uri = Uri.parse('http://$host:8888');
       }
 
       final request = http.MultipartRequest('POST', uri);
       
-      // Auth Header
-      request.headers['Authorization'] = 'Bearer $_accessToken';
+      // NOTE: No Authorization header is added here. 
+      // The proxy/backend is responsible for adding the secret token.
 
       // File Data
       final bytes = await file.readAsBytes();
@@ -46,11 +64,8 @@ class HubSpotService {
         filename: file.name,
       ));
 
-      // File Options (specify folder and visibility)
-      request.fields['folderPath'] = folder; // e.g. "savenest_bills"
-      request.fields['options'] = jsonEncode({
-        "access": "PUBLIC_INDEXABLE" // So the form can see it easily
-      });
+      // Note: The simple Python proxy currently hardcodes folderPath/options.
+      // If using a more advanced backend, you would send them here.
 
       final streamedResponse = await request.send();
       final response = await http.Response.fromStream(streamedResponse);
@@ -64,11 +79,11 @@ class HubSpotService {
         }
       } else {
         final errorMsg = 'Status ${response.statusCode}: ${response.body}';
-        print('File Upload Failed: $errorMsg');
+        debugPrint('File Upload Failed: $errorMsg');
         return (url: null, error: errorMsg);
       }
     } catch (e) {
-      print('File Upload Error: $e');
+      debugPrint('File Upload Error: $e');
       return (url: null, error: e.toString());
     }
   }

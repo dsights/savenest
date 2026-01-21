@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import '../features/savings/savings_provider.dart';
@@ -9,22 +10,26 @@ class HubSpotService {
   static const String _formGuid = 'aed1b8bc-1b82-4f66-bcfd-7405bf0f6844';
   static const String _accessToken = String.fromEnvironment('HUBSPOT_ACCESS_TOKEN');
   
-  // static const String _filesUrl = 'https://api.hubapi.com/files/v3/files';
-  // Use local proxy to bypass CORS on Web
-  // Defaults to the PHP proxy script in the same directory for production
-  static const String _filesUrl = String.fromEnvironment(
-    'PROXY_URL',
-    defaultValue: 'proxy_upload.php',
-  );
+  static const String _hubspotFilesUrl = 'https://api.hubapi.com/files/v3/files';
   static const String _submitUrl = 'https://api.hsforms.com/submissions/v3/integration/submit';
 
   /// 1. Upload a single file to HubSpot and get the URL
   Future<String?> _uploadFile(XFile file, String folder) async {
     try {
-      Uri uri = Uri.parse(_filesUrl);
-      if (!uri.hasScheme) {
-        // If relative (e.g. 'proxy_upload.php'), resolve against the current page base URL
-        uri = Uri.base.resolve(_filesUrl);
+      Uri uri;
+      if (kIsWeb) {
+        // Use local proxy to bypass CORS on Web
+        const String proxyUrl = String.fromEnvironment(
+          'PROXY_URL',
+          defaultValue: 'proxy_upload.php',
+        );
+        uri = Uri.parse(proxyUrl);
+        if (!uri.hasScheme) {
+           uri = Uri.base.resolve(proxyUrl);
+        }
+      } else {
+        // Direct API call for Mobile/Desktop
+        uri = Uri.parse(_hubspotFilesUrl);
       }
 
       final request = http.MultipartRequest('POST', uri);

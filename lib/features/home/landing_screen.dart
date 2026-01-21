@@ -11,7 +11,7 @@ import '../blog/blog_provider.dart'; // Import Blog Provider
 import '../blog/widgets/blog_card.dart'; // Import Blog Card
 import '../blog/blog_post_screen.dart'; // Import Blog Screen
 
-import 'widgets/blog_hero_scroller.dart'; // Import New Scroller
+import 'widgets/blog_multi_carousel.dart'; // Import New Multi Carousel
 
 class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
   const LandingScreen({super.key});
@@ -135,7 +135,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Featured Insights',
+                'Latest Insights',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -143,41 +143,9 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                 ),
               ),
               const SizedBox(height: 32),
-              const BlogHeroScroller(), // Add the new Hero Scroller here
-              const SizedBox(height: 60),
-              const Text(
-                'Latest Insights',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 32),
               
               postsAsync.when(
-// ...
-                data: (posts) => SizedBox(
-                  height: 380, // Fixed height for cards
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: posts.length,
-                    separatorBuilder: (c, i) => const SizedBox(width: 20),
-                    itemBuilder: (context, index) {
-                      return SizedBox(
-                        width: 300, // Fixed width card
-                        child: BlogCard(
-                          post: posts[index],
-                          onTap: () {
-                             Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => BlogPostScreen(post: posts[index])),
-                            );
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                ),
+                data: (posts) => BlogMultiCarousel(posts: posts), // Use the new auto-scrolling carousel
                 loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
                 error: (err, stack) => const Text('Failed to load insights', style: TextStyle(color: Colors.white54)),
               ),

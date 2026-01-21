@@ -11,6 +11,8 @@ import '../blog/blog_provider.dart'; // Import Blog Provider
 import '../blog/widgets/blog_card.dart'; // Import Blog Card
 import '../blog/blog_post_screen.dart'; // Import Blog Screen
 
+import 'widgets/blog_hero_scroller.dart'; // Import New Scroller
+
 class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
   const LandingScreen({super.key});
 
@@ -34,92 +36,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
       ),
     );
   }
-
-  Widget _buildDownloadAppSection(BuildContext context) {
-    return Container(
-      color: AppTheme.deepNavy,
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 800),
-          child: Column(
-            children: [
-              const Text(
-                'Get the Full Experience on Mobile',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 24),
-              Wrap(
-                spacing: 20,
-                runSpacing: 20,
-                alignment: WrapAlignment.center,
-                children: [
-                  _storeButton(
-                    context,
-                    'Get it on',
-                    'Google Play',
-                    Icons.android,
-                    'https://play.google.com/store/apps/details?id=com.example.savenest', // Update with real ID
-                  ),
-                  _storeButton(
-                    context,
-                    'Download on the',
-                    'App Store',
-                    Icons.apple,
-                    'https://apps.apple.com/app/id123456789', // Update with real ID
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _storeButton(BuildContext context, String sub, String title, IconData icon, String url) {
-    return InkWell(
-      onTap: () async {
-        final uri = Uri.parse(url);
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri);
-        }
-      },
-      child: Container(
-        width: 180,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.white24),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.white, size: 32),
-            const SizedBox(width: 12),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  sub,
-                  style: const TextStyle(color: Colors.white70, fontSize: 10),
-                ),
-                Text(
-                  title,
-                  style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
+// ...
   Widget _buildBlogSection(BuildContext context, WidgetRef ref) {
     final postsAsync = ref.watch(blogPostsProvider);
 
@@ -133,7 +50,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Latest Insights',
+                'Featured Insights',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -141,8 +58,20 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                 ),
               ),
               const SizedBox(height: 32),
+              const BlogHeroScroller(), // Add the new Hero Scroller here
+              const SizedBox(height: 60),
+              const Text(
+                'Latest Insights',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 32),
               
               postsAsync.when(
+// ...
                 data: (posts) => SizedBox(
                   height: 380, // Fixed height for cards
                   child: ListView.separated(

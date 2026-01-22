@@ -8,16 +8,18 @@ enum UtilityType {
   mobile,
   homeInsurance,
   carInsurance,
+  healthInsurance,
 }
 
 // 2. Market Average Constants (Monthly)
 class MarketAverages {
-  static const double nbn = 90.0;
-  static const double electricity = 150.0; // Estimated
-  static const double gas = 120.0;
-  static const double mobile = 40.0; // Estimated
-  static const double homeInsurance = 100.0; // Estimated
+  static const double nbn = 35.0;
+  static const double electricity = 90.0;
+  static const double gas = 60.0;
+  static const double mobile = 30.0;
+  static const double homeInsurance = 130.0;
   static const double carInsurance = 80.0; // Estimated
+  static const double healthInsurance = 250.0;
 }
 
 // 3. State Model
@@ -28,6 +30,7 @@ class UtilityCosts {
   final double mobile;
   final double homeInsurance;
   final double carInsurance;
+  final double healthInsurance;
 
   const UtilityCosts({
     this.nbn = 0.0,
@@ -36,6 +39,7 @@ class UtilityCosts {
     this.mobile = 0.0,
     this.homeInsurance = 0.0,
     this.carInsurance = 0.0,
+    this.healthInsurance = 0.0,
   });
 
   UtilityCosts copyWith({
@@ -45,6 +49,7 @@ class UtilityCosts {
     double? mobile,
     double? homeInsurance,
     double? carInsurance,
+    double? healthInsurance,
   }) {
     return UtilityCosts(
       nbn: nbn ?? this.nbn,
@@ -53,6 +58,7 @@ class UtilityCosts {
       mobile: mobile ?? this.mobile,
       homeInsurance: homeInsurance ?? this.homeInsurance,
       carInsurance: carInsurance ?? this.carInsurance,
+      healthInsurance: healthInsurance ?? this.healthInsurance,
     );
   }
   
@@ -64,6 +70,7 @@ class UtilityCosts {
       case UtilityType.mobile: return mobile;
       case UtilityType.homeInsurance: return homeInsurance;
       case UtilityType.carInsurance: return carInsurance;
+      case UtilityType.healthInsurance: return healthInsurance;
     }
   }
 }
@@ -91,6 +98,9 @@ class SavingsController extends StateNotifier<UtilityCosts> {
         break;
       case UtilityType.carInsurance:
         state = state.copyWith(carInsurance: amount);
+        break;
+      case UtilityType.healthInsurance:
+        state = state.copyWith(healthInsurance: amount);
         break;
     }
   }
@@ -125,6 +135,7 @@ final totalAnnualSavingsProvider = Provider<double>((ref) {
   total += calculateSavings(costs.mobile, MarketAverages.mobile);
   total += calculateSavings(costs.homeInsurance, MarketAverages.homeInsurance);
   total += calculateSavings(costs.carInsurance, MarketAverages.carInsurance);
+  total += calculateSavings(costs.healthInsurance, MarketAverages.healthInsurance);
 
   return total;
 });

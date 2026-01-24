@@ -5,6 +5,7 @@ import 'comparison_model.dart';
 import 'comparison_provider.dart';
 import 'widgets/deal_card.dart';
 import 'widgets/search_bar_widget.dart';
+import 'widgets/partner_webview.dart'; // Import Partner View
 
 class ComparisonScreen extends ConsumerStatefulWidget {
   final ProductCategory initialCategory;
@@ -41,6 +42,24 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
         elevation: 0,
         title: const Text('Compare & Save'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.public, color: AppTheme.vibrantEmerald),
+            tooltip: 'Partner Self-Service',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const PartnerWebView(
+                    title: 'Partner Comparison Tool',
+                    // DEVELOPER NOTE: Update the 'url' below with your CIMET/AccuRate affiliate link.
+                    // This is part of the white-label Comparison-as-a-Service integration.
+                    url: 'https://flutter.dev', 
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -94,6 +113,42 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                     const SizedBox(height: 16),
                     SearchBarWidget(
                       onChanged: (value) => controller.search(value),
+                    ),
+                    const SizedBox(height: 12),
+                    InkWell(
+                      onTap: () {
+                         Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const PartnerWebView(
+                              title: 'Partner Comparison Tool',
+                              // DEVELOPER NOTE: Update the 'url' below with your CIMET/AccuRate affiliate link.
+                              url: 'https://flutter.dev', 
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                        decoration: BoxDecoration(
+                          color: AppTheme.vibrantEmerald.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: AppTheme.vibrantEmerald.withOpacity(0.3)),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Icon(Icons.open_in_new, color: AppTheme.vibrantEmerald, size: 20),
+                            SizedBox(width: 8),
+                            Text(
+                              'Launch Self-Service Comparison Tool',
+                              style: TextStyle(
+                                color: AppTheme.vibrantEmerald,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../blog/blog_model.dart';
-import '../../blog/blog_post_screen.dart';
 import '../../blog/widgets/blog_card.dart';
 
 class BlogMultiCarousel extends StatefulWidget {
@@ -74,9 +74,7 @@ class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
               child: BlogCard(
                 post: post,
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => BlogPostScreen(post: post)),
-                  );
+                  context.go('/blog/${post.id}');
                 },
               ),
             );

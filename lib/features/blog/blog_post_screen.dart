@@ -47,6 +47,7 @@ class BlogPostScreen extends ConsumerWidget {
               author: 'System',
               date: '',
               imageUrl: 'assets/images/energy.png',
+              thumbnailUrl: 'assets/images/energy.png',
               summary: 'The requested post could not be found.',
               content: 'Please check the URL or go back to the home page.',
             ),

@@ -24,15 +24,15 @@ class BlogCard extends StatelessWidget {
               flex: 3,
               child: ClipRRect(
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-                child: post.imageUrl.startsWith('assets/')
+                child: post.thumbnailUrl.startsWith('assets/')
                     ? Image.asset(
-                        post.imageUrl,
+                        post.thumbnailUrl,
                         width: double.infinity,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) => _buildErrorImage(),
                       )
                     : Image.network(
-                        post.imageUrl,
+                        post.thumbnailUrl,
                         width: double.infinity,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) => _buildErrorImage(),

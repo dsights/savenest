@@ -5,6 +5,7 @@ class BlogPost {
   final String author;
   final String date;
   final String imageUrl;
+  final String thumbnailUrl;
   final String summary;
   final String content;
 
@@ -15,6 +16,7 @@ class BlogPost {
     required this.author,
     required this.date,
     required this.imageUrl,
+    required this.thumbnailUrl,
     required this.summary,
     required this.content,
   });
@@ -27,6 +29,7 @@ class BlogPost {
       author: json['author'],
       date: json['date'],
       imageUrl: json['imageUrl'],
+      thumbnailUrl: json['thumbnailUrl'] ?? json['imageUrl'], // Fallback to imageUrl if not present
       summary: json['summary'],
       content: json['content'],
     );

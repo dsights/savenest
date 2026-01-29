@@ -25,8 +25,8 @@ class BlogRepository {
           category: 'Energy',
           author: 'Sarah Jenkins',
           date: 'Jan 15, 2026',
-          imageUrl: 'assets/images/energy.png',
-          thumbnailUrl: 'assets/images/energy.png',
+          imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
+          thumbnailUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400&q=80',
           summary: "Are you paying for electricity you aren't even using? It sounds like a conspiracy theory, but for most Australian households, 'Vampire Power' is a real financial drain.",
           content: r'''Are you paying for electricity you aren't even using? It sounds like a conspiracy theory, but for most Australian households, 'Vampire Power' (also known as standby power) is a very real drain on your finances.
 
@@ -51,8 +51,8 @@ By attacking vampire power, you are essentially giving yourself a 10% discount o
           category: 'Internet',
           author: 'Mike Chen',
           date: 'Jan 12, 2026',
-          imageUrl: 'assets/images/internet.png',
-          thumbnailUrl: 'assets/images/internet.png',
+          imageUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80',
+          thumbnailUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=400&q=80',
           summary: "We all want the fastest internet possible, but are you paying a premium for speed you literally cannot use?",
           content: r'''We all want the fastest internet possible, but are you paying a premium for speed you literally cannot use? Many Australians are subscribed to NBN 100 (Fast) or NBN 250 (Superfast) plans, assuming they need it for streaming and working from home. The reality is often quite different.
 
@@ -75,8 +75,8 @@ Try downgrading. Switch to a high-quality NBN 50 plan for a month. If you don't 
           category: 'Mobile',
           author: 'Emma Wilson',
           date: 'Jan 10, 2026',
-          imageUrl: 'assets/images/mobile.png',
-          thumbnailUrl: 'assets/images/mobile.png',
+          imageUrl: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80',
+          thumbnailUrl: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80',
           summary: "For years, the standard way to own a mobile phone was the 24-month contract. But as hardware improvements plateau, the contract model has become a financial trap.",
           content: r'''For years, the standard way to own a mobile phone in Australia was the 24-month contract. You got a 'free' phone, a set amount of data, and a hefty monthly bill. But as phone hardware improvements plateau and SIM-only plans become aggressive, the contract model has become a financial trap.
 
@@ -102,8 +102,8 @@ Stop renting your usage. Own your plan and pocket the difference.''',
           category: 'Insurance',
           author: 'David Ross',
           date: 'Jan 05, 2026',
-          imageUrl: 'assets/images/home_ins.png',
-          thumbnailUrl: 'assets/images/home_ins.png',
+          imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
+          thumbnailUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80',
           summary: "Home and Contents insurance is the classic 'grudge purchase.' We buy it because we have to, but this 'set and forget' mentality is leaving thousands underinsured.",
           content: r'''Home and Contents insurance is the classic 'grudge purchase.' We buy it because we have to, and we rarely look at it again until something goes wrong or the renewal notice arrives. But this 'set and forget' mentality is leaving thousands of Australians underinsured and overcharged.
 
@@ -126,8 +126,8 @@ The Strategy:
           category: 'Car Insurance',
           author: 'Sarah Jenkins',
           date: 'Jan 02, 2026',
-          imageUrl: 'assets/images/car_ins.png',
-          thumbnailUrl: 'assets/images/car_ins.png',
+          imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80',
+          thumbnailUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=400&q=80',
           summary: "Car insurance is perhaps the most volatile expense in the household budget. Unlike registration, your premium is calculated by an algorithm testing your willingness to pay.",
           content: r'''Car insurance is perhaps the most volatile expense in the household budget. Unlike your car registration which is a fixed fee, your insurance premium is calculated by an algorithm that tries to guess how much you are willing to pay.
 

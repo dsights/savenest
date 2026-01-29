@@ -25,10 +25,10 @@ final goRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: '/blog/:id',
+      path: '/blog/:slug',
       builder: (context, state) {
-        final id = state.pathParameters['id'];
-        return BlogPostScreen(postId: id!);
+        final slug = state.pathParameters['slug'];
+        return BlogPostScreen(slug: slug!);
       },
     ),
   ],

@@ -20,6 +20,7 @@ class BlogRepository {
       return [
         BlogPost(
           id: 'b1',
+          slug: 'slash-your-electricity-bill-the-vampire-power-myth',
           title: 'Slash Your Electricity Bill: The Vampire Power Myth',
           category: 'Energy',
           author: 'Sarah Jenkins',
@@ -45,6 +46,7 @@ By attacking vampire power, you are essentially giving yourself a 10% discount o
         ),
         BlogPost(
           id: 'b2',
+          slug: 'is-your-nbn-plan-too-fast-the-speed-trap',
           title: 'Is Your NBN Plan Too Fast? The Speed Trap',
           category: 'Internet',
           author: 'Mike Chen',
@@ -68,6 +70,7 @@ Try downgrading. Switch to a high-quality NBN 50 plan for a month. If you don't 
         ),
         BlogPost(
           id: 'b3',
+          slug: 'prepaid-vs-postpaid-the-mobile-data-trap',
           title: 'Prepaid vs Postpaid: The Mobile Data Trap',
           category: 'Mobile',
           author: 'Emma Wilson',
@@ -94,6 +97,7 @@ Stop renting your usage. Own your plan and pocket the difference.''',
         ),
         BlogPost(
           id: 'b4',
+          slug: 'home-insurance-the-set-and-forget-mistake',
           title: 'Home Insurance: The \'Set and Forget\' Mistake',
           category: 'Insurance',
           author: 'David Ross',
@@ -117,6 +121,7 @@ The Strategy:
         ),
         BlogPost(
           id: 'b5',
+          slug: 'car-insurance-loyalty-tax-switch-every-year',
           title: 'Car Insurance Loyalty Tax: Switch Every Year',
           category: 'Car Insurance',
           author: 'Sarah Jenkins',

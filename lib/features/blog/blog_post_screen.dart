@@ -9,9 +9,9 @@ import 'blog_model.dart';
 import 'package:go_router/go_router.dart';
 
 class BlogPostScreen extends ConsumerWidget {
-  final String postId;
+  final String slug;
 
-  const BlogPostScreen({super.key, required this.postId});
+  const BlogPostScreen({super.key, required this.slug});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -39,9 +39,10 @@ class BlogPostScreen extends ConsumerWidget {
         error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: Colors.white))),
         data: (posts) {
           final post = posts.firstWhere(
-            (p) => p.id == postId,
+            (p) => p.slug == slug,
             orElse: () => BlogPost(
               id: '404',
+              slug: 'not-found',
               title: 'Post Not Found',
               category: 'Error',
               author: 'System',

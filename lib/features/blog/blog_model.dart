@@ -1,5 +1,6 @@
 class BlogPost {
   final String id;
+  final String slug;
   final String title;
   final String category;
   final String author;
@@ -11,6 +12,7 @@ class BlogPost {
 
   BlogPost({
     required this.id,
+    required this.slug,
     required this.title,
     required this.category,
     required this.author,
@@ -24,12 +26,13 @@ class BlogPost {
   factory BlogPost.fromJson(Map<String, dynamic> json) {
     return BlogPost(
       id: json['id'],
+      slug: json['slug'] ?? json['id'], // Fallback to ID if slug missing temporarily
       title: json['title'],
       category: json['category'],
       author: json['author'],
       date: json['date'],
       imageUrl: json['imageUrl'],
-      thumbnailUrl: json['thumbnailUrl'] ?? json['imageUrl'], // Fallback to imageUrl if not present
+      thumbnailUrl: json['thumbnailUrl'] ?? json['imageUrl'],
       summary: json['summary'],
       content: json['content'],
     );

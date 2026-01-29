@@ -74,7 +74,7 @@ class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
               child: BlogCard(
                 post: post,
                 onTap: () {
-                  context.go('/blog/${post.id}');
+                  context.go('/blog/${post.slug}');
                 },
               ),
             );

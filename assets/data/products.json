@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "1.2",
+    "version": "1.3",
     "lastUpdated": "2026-02-09",
     "currency": "AUD",
     "market": "Australia",
@@ -22,13 +22,14 @@
       "planName": "Telstra Mobile Plan",
       "description": "$80/mo \u2192 180GB; unlimited calls/SMS; limited intl calls/SMS; throttled to 1.5Mbps excess",
       "keyFeatures": [
+        "Data: 180GB",
         "Network: Telstra (full)",
         "Best rural/regional; 99.7% pop",
         "Data sharing option; higher premium plans"
       ],
       "price": 80.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "180GB",
       "network": "Telstra (full)",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -42,13 +43,14 @@
       "planName": "Boost Mobile Mobile Plan",
       "description": "$30\u2013$50/mo range (prepaid often); e.g., 50GB+ with intl roaming options",
       "keyFeatures": [
+        "Data: 50GB",
         "Network: Telstra (full)",
         "Same as full Telstra",
         "Prepaid focus; strong for travel"
       ],
       "price": 30.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "50GB",
       "network": "Telstra (full)",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -62,13 +64,14 @@
       "planName": "ALDI Mobile Mobile Plan",
       "description": "~$15\u2013$35/mo; e.g., 30\u201380GB rollover plans; unlimited calls/SMS",
       "keyFeatures": [
+        "Data: 30\u201380GB",
         "Network: Telstra wholesale",
         "98.8% pop",
         "Data rollover; grocery tie-ins"
       ],
       "price": 15.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "30\u201380GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -82,13 +85,14 @@
       "planName": "Belong Mobile Plan",
       "description": "$35/mo \u2192 40GB; unlimited calls/SMS; data banking",
       "keyFeatures": [
+        "Data: 40GB",
         "Network: Telstra wholesale",
         "98.8% pop",
         "Telstra-owned; simple plans"
       ],
       "price": 35.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "40GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -102,13 +106,14 @@
       "planName": "Everyday Mobile (Woolworths) Mobile Plan",
       "description": "$25\u2013$45/mo; e.g., 30\u201360GB; rewards with Woolworths shopping",
       "keyFeatures": [
+        "Data: 30\u201360GB",
         "Network: Telstra wholesale",
         "98.8% pop",
         "Prepaid options"
       ],
       "price": 25.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "30\u201360GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -122,13 +127,14 @@
       "planName": "Exetel Mobile Plan",
       "description": "$20\u2013$40/mo; competitive data (e.g., 50GB+)",
       "keyFeatures": [
+        "Data: 50GB",
         "Network: Telstra wholesale",
         "98.8% pop",
         "Broadband bundle options"
       ],
       "price": 20.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "50GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -142,13 +148,14 @@
       "planName": "More Mobile Plan",
       "description": "$20\u2013$50/mo; e.g., 40\u2013100GB; data banking",
       "keyFeatures": [
+        "Data: 40\u2013100GB",
         "Network: Telstra wholesale",
         "98.8% pop",
         "eSIM companion features"
       ],
       "price": 20.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "40\u2013100GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -162,6 +169,7 @@
       "planName": "Superloop Mobile Plan",
       "description": "$25\u2013$45/mo; good data allowances",
       "keyFeatures": [
+        "Data: See Details",
         "Network: Telstra wholesale",
         "98.8% pop",
         "NBN ties"
@@ -182,13 +190,14 @@
       "planName": "Tangerine Telecom Mobile Plan",
       "description": "$15/4mo then $30 \u2192 30GB; $24/4mo then $48 \u2192 100GB; data banking up to 1000GB",
       "keyFeatures": [
+        "Data: 30GB",
         "Network: Telstra wholesale",
         "98.8% pop",
         "Frequent promos"
       ],
       "price": 15.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "30GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -202,13 +211,14 @@
       "planName": "Optus Mobile Plan",
       "description": "$65/mo \u2192 200GB; unlimited intl to 35 dest.; throttled 1.5Mbps",
       "keyFeatures": [
+        "Data: 200GB",
         "Network: Optus (full)",
         "Strong urban; 98.5% pop",
         "Premium features"
       ],
       "price": 65.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "200GB",
       "network": "Optus (full)",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -222,13 +232,14 @@
       "planName": "amaysim Mobile Plan",
       "description": "$12\u2013$30/28d (prepaid); e.g., 32GB+ with bonuses; data rollover/pause",
       "keyFeatures": [
+        "Data: 32GB",
         "Network: Optus",
         "Same as Optus",
         "Flexible prepaid"
       ],
       "price": 12.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "32GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -242,6 +253,7 @@
       "planName": "Coles Mobile Mobile Plan",
       "description": "$20\u2013$40/mo; rewards with Coles shopping",
       "keyFeatures": [
+        "Data: See Details",
         "Network: Optus",
         "Same as Optus",
         "5G limited on some"
@@ -262,13 +274,14 @@
       "planName": "Dodo Mobile Plan",
       "description": "$15/4mo then $30 \u2192 40GB; $20/4mo then $40 \u2192 80GB; unlimited data banking",
       "keyFeatures": [
+        "Data: 40GB",
         "Network: Optus",
         "Same as Optus",
         "Common heavy promos"
       ],
       "price": 15.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "40GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -282,13 +295,14 @@
       "planName": "Moose Mobile Mobile Plan",
       "description": "$12.4/6mo then $24.8 \u2192 30GB; data banking 200GB",
       "keyFeatures": [
+        "Data: 30GB",
         "Network: Optus",
         "Same as Optus",
         "Budget-focused"
       ],
       "price": 12.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "30GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -302,13 +316,14 @@
       "planName": "Southern Phone Mobile Plan",
       "description": "$24\u2013$29/mo \u2192 20\u201340GB; regional focus",
       "keyFeatures": [
+        "Data: 20\u201340GB",
         "Network: Optus",
         "Same as Optus",
         "Community-oriented"
       ],
       "price": 24.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "20\u201340GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -322,13 +337,14 @@
       "planName": "SpinTel Mobile Plan",
       "description": "$14/6mo then $22 \u2192 25GB; $29 \u2192 50GB",
       "keyFeatures": [
+        "Data: 25GB",
         "Network: Optus",
         "Same as Optus",
         "NBN bundles"
       ],
       "price": 14.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "25GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -342,13 +358,14 @@
       "planName": "Vodafone Mobile Plan",
       "description": "$39/mo (promo) \u2192 60GB; intl roaming $5/day; throttled 2Mbps",
       "keyFeatures": [
+        "Data: 60GB",
         "Network: Vodafone (full)",
         "Smaller rural; ~98.4% pop",
         "Urban strong"
       ],
       "price": 39.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "60GB",
       "network": "Vodafone (full)",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -362,6 +379,7 @@
       "planName": "Felix Mobile Mobile Plan",
       "description": "$20\u2013$40/mo; unlimited data options on some",
       "keyFeatures": [
+        "Data: See Details",
         "Network: Vodafone",
         "Same as Vodafone",
         "Modern plans"
@@ -382,13 +400,14 @@
       "planName": "Kogan Mobile Mobile Plan",
       "description": "$20\u2013$45/mo; e.g., 50GB+",
       "keyFeatures": [
+        "Data: 50GB",
         "Network: Vodafone",
         "Same as Vodafone",
         "Tech retailer ties"
       ],
       "price": 20.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "50GB",
       "network": "Vodafone",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -402,6 +421,7 @@
       "planName": "Lebara Mobile Plan",
       "description": "$15\u2013$40/mo; strong intl calls",
       "keyFeatures": [
+        "Data: See Details",
         "Network: Vodafone",
         "Same as Vodafone",
         "Ethnic/international focus"
@@ -422,13 +442,14 @@
       "planName": "TPG Mobile Plan",
       "description": "$17.5/6mo then $35 \u2192 50GB; unlimited intl to 31 dest.",
       "keyFeatures": [
+        "Data: 50GB",
         "Network: Vodafone",
         "Same as Vodafone",
         "Broadband bundles"
       ],
       "price": 17.0,
       "priceUnit": "/mo",
-      "data": "See Details",
+      "data": "50GB",
       "network": "Vodafone",
       "affiliateUrl": "https://www.savenest.com.au",
       "rating": 4.5,
@@ -442,6 +463,7 @@
       "planName": "iiNet Mobile Plan",
       "description": "$25\u2013$45/mo; similar to TPG (sibling)",
       "keyFeatures": [
+        "Data: See Details",
         "Network: Vodafone",
         "Same as Vodafone",
         "ISP ties"
@@ -2250,8 +2272,10 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/AGL-Energy-Logo.svg",
       "providerColor": "0xFF000000",
       "planName": "AGL Gas Plan",
-      "description": "Est. Annual: ~$1,026 | Daily: ~75.61\u00a2 | Usage: 3.11 \u2013 4.83 c/MJ",
+      "description": "Est. Annual: ~$1,026",
       "keyFeatures": [
+        "Daily Charge: ~75.61\u00a2",
+        "Usage Rate: 3.11 \u2013 4.83 c/MJ",
         "Available: NSW, VIC, SA, QLD, WA, ACT (most networks)",
         "Dual-fuel discounts, bill credits, carbon offset options"
       ],
@@ -2267,8 +2291,10 @@
       "logoUrl": "https://www.originenergy.com.au/content/dam/origin/logo/origin-logo.svg",
       "providerColor": "0xFFF25C05",
       "planName": "Origin Energy Gas Plan",
-      "description": "Est. Annual: ~$980\u20131,100 | Daily: ~80\u201395\u00a2 | Usage: 3.00 \u2013 5.00 c/MJ",
+      "description": "Est. Annual: ~$980\u20131,100",
       "keyFeatures": [
+        "Daily Charge: ~80\u201395\u00a2",
+        "Usage Rate: 3.00 \u2013 5.00 c/MJ",
         "Available: NSW, VIC, SA, QLD, WA, ACT (most networks)",
         "Everyday Rewards points, strong in WA/QLD"
       ],
@@ -2284,8 +2310,10 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Energy_australia.jpg/400px-Energy_australia.jpg",
       "providerColor": "0xFF000000",
       "planName": "EnergyAustralia Gas Plan",
-      "description": "Est. Annual: ~$941 | Daily: 95.92\u00a2 | Usage: 3.85 \u2013 5.79 c/MJ",
+      "description": "Est. Annual: ~$941",
       "keyFeatures": [
+        "Daily Charge: 95.92\u00a2",
+        "Usage Rate: 3.85 \u2013 5.79 c/MJ",
         "Available: NSW, VIC, SA, ACT (most networks)",
         "Flexi Plan, dual-fuel bundle discounts"
       ],
@@ -2301,8 +2329,10 @@
       "logoUrl": "https://www.alintaenergy.com.au/assets/images/logo.png",
       "providerColor": "0xFF0093D0",
       "planName": "Alinta Energy Gas Plan",
-      "description": "Est. Annual: ~$869 (often cheapest) | Daily: 56.92\u00a2 | Usage: 2.22 \u2013 4.57 c/MJ",
+      "description": "Est. Annual: ~$869 (often cheapest)",
       "keyFeatures": [
+        "Daily Charge: 56.92\u00a2",
+        "Usage Rate: 2.22 \u2013 4.57 c/MJ",
         "Available: NSW, VIC, QLD, SA, WA (strong in WA)",
         "HomeDeal Select, frequent intro credits"
       ],
@@ -2318,8 +2348,10 @@
       "logoUrl": "https://www.lumoenergy.com.au/assets/images/logo.png",
       "providerColor": "0xFF00AEEF",
       "planName": "Lumo Energy Gas Plan",
-      "description": "Est. Annual: ~$900\u20131,050 | Daily: ~70\u201390\u00a2 | Usage: 2.80 \u2013 4.50 c/MJ",
+      "description": "Est. Annual: ~$900\u20131,050",
       "keyFeatures": [
+        "Daily Charge: ~70\u201390\u00a2",
+        "Usage Rate: 2.80 \u2013 4.50 c/MJ",
         "Available: NSW, VIC, SA, SE QLD",
         "2025 Most Satisfied dual-fuel winner"
       ],
@@ -2335,8 +2367,10 @@
       "logoUrl": "https://www.sumo.com.au/assets/images/logo.png",
       "providerColor": "0xFFF37021",
       "planName": "Sumo Gas Plan",
-      "description": "Est. Annual: ~$920\u20131,080 | Daily: ~65\u201385\u00a2 | Usage: 2.90 \u2013 4.80 c/MJ",
+      "description": "Est. Annual: ~$920\u20131,080",
       "keyFeatures": [
+        "Daily Charge: ~65\u201385\u00a2",
+        "Usage Rate: 2.90 \u2013 4.80 c/MJ",
         "Available: NSW, VIC",
         "Simple plans, good value"
       ],
@@ -2352,8 +2386,10 @@
       "logoUrl": "https://seeklogo.com/images/R/red-energy-pty-logo-668B88C152-seeklogo.com.png",
       "providerColor": "0xFFE30613",
       "planName": "Red Energy Gas Plan",
-      "description": "Est. Annual: ~$961 | Daily: 82.5\u00a2 | Usage: 2.66 \u2013 3.94 c/MJ",
+      "description": "Est. Annual: ~$961",
       "keyFeatures": [
+        "Daily Charge: 82.5\u00a2",
+        "Usage Rate: 2.66 \u2013 3.94 c/MJ",
         "Available: NSW, VIC, QLD, SA, ACT",
         "Living Energy Saver, top-rated in VIC/NSW"
       ],
@@ -2369,8 +2405,10 @@
       "logoUrl": "https://www.dodo.com/images/logo.svg",
       "providerColor": "0xFF662483",
       "planName": "Dodo Gas Plan",
-      "description": "Est. Annual: ~$1,000\u20131,150 | Daily: ~80\u2013100\u00a2 | Usage: 3.50 \u2013 5.50 c/MJ",
+      "description": "Est. Annual: ~$1,000\u20131,150",
       "keyFeatures": [
+        "Daily Charge: ~80\u2013100\u00a2",
+        "Usage Rate: 3.50 \u2013 5.50 c/MJ",
         "Available: NSW, VIC, SA, SE QLD",
         "Budget-focused, easy switching"
       ],
@@ -2386,8 +2424,10 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Logo-engie.svg",
       "providerColor": "0xFF00AAFF",
       "planName": "ENGIE (ex-Simply) Gas Plan",
-      "description": "Est. Annual: ~$1,173 | Daily: 69.87\u00a2 | Usage: 4.41 \u2013 7.21 c/MJ",
+      "description": "Est. Annual: ~$1,173",
       "keyFeatures": [
+        "Daily Charge: 69.87\u00a2",
+        "Usage Rate: 4.41 \u2013 7.21 c/MJ",
         "Available: NSW, VIC, SA, QLD",
         "NRMA partnership discounts"
       ],
@@ -2403,8 +2443,10 @@
       "logoUrl": "https://www.applianceretailer.com.au/wp-content/uploads/2020/03/powershop-logo.jpg",
       "providerColor": "0xFFE6007E",
       "planName": "Powershop Gas Plan",
-      "description": "Est. Annual: ~$1,062 | Daily: 85.31\u00a2 | Usage: 4.12 (flat) c/MJ",
+      "description": "Est. Annual: ~$1,062",
       "keyFeatures": [
+        "Daily Charge: 85.31\u00a2",
+        "Usage Rate: 4.12 (flat) c/MJ",
         "Available: NSW, VIC, SA, SE QLD",
         "Power Offset (carbon), app-based"
       ],
@@ -2420,8 +2462,10 @@
       "logoUrl": "https://www.momentumenergy.com.au/assets/images/logo.png",
       "providerColor": "0xFF0066CC",
       "planName": "Momentum Energy Gas Plan",
-      "description": "Est. Annual: ~$950\u20131,100 | Daily: ~75\u201395\u00a2 | Usage: 3.20 \u2013 5.00 c/MJ",
+      "description": "Est. Annual: ~$950\u20131,100",
       "keyFeatures": [
+        "Daily Charge: ~75\u201395\u00a2",
+        "Usage Rate: 3.20 \u2013 5.00 c/MJ",
         "Available: VIC, NSW, SA, ACT",
         "Competitive in VIC"
       ],
@@ -2437,8 +2481,10 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/ActweAGL.png/1343px-ActweAGL.png",
       "providerColor": "0xFF008000",
       "planName": "ActewAGL Gas Plan",
-      "description": "Est. Annual: ~$1,000+ | Daily: ~70\u201390\u00a2 (ACT higher) | Usage: 3.00 \u2013 4.80 c/MJ",
+      "description": "Est. Annual: ~$1,000+",
       "keyFeatures": [
+        "Daily Charge: ~70\u201390\u00a2 (ACT higher)",
+        "Usage Rate: 3.00 \u2013 4.80 c/MJ",
         "Available: ACT (Evoenergy network), some NSW",
         "ACT-focused, reliable"
       ],
@@ -2454,8 +2500,10 @@
       "logoUrl": "https://www.kleenheat.com.au/assets/images/logo.png",
       "providerColor": "0xFFFFCC00",
       "planName": "Kleenheat Gas Plan",
-      "description": "Est. Annual: ~$700\u2013900 (WA) | Daily: ~60\u201380\u00a2 (WA) | Usage: 2.50 \u2013 4.00 (WA) c/MJ",
+      "description": "Est. Annual: ~$700\u2013900 (WA)",
       "keyFeatures": [
+        "Daily Charge: ~60\u201380\u00a2 (WA)",
+        "Usage Rate: 2.50 \u2013 4.00 (WA) c/MJ",
         "Available: WA (ATCO network), some others",
         "Strong in WA, trusted brand"
       ],
@@ -2471,8 +2519,10 @@
       "logoUrl": "https://www.1stenergy.com.au/assets/images/logo.png",
       "providerColor": "0xFFFF0000",
       "planName": "1st Energy Gas Plan",
-      "description": "Est. Annual: ~$1,050\u20131,200 | Daily: ~80\u2013100\u00a2 | Usage: 3.40 \u2013 5.20 c/MJ",
+      "description": "Est. Annual: ~$1,050\u20131,200",
       "keyFeatures": [
+        "Daily Charge: ~80\u2013100\u00a2",
+        "Usage Rate: 3.40 \u2013 5.20 c/MJ",
         "Available: VIC, NSW, SA",
         "Budget options"
       ],
@@ -2485,11 +2535,13 @@
     {
       "id": "gas_covauenergy",
       "providerName": "CovaU Energy",
-      "logoUrl": "https://www.covau.com.au/assets/images/logo.png",
+      "logoUrl": "https://brandfetch.com/covau-energy/logo",
       "providerColor": "0xFF000000",
       "planName": "CovaU Energy Gas Plan",
-      "description": "Est. Annual: ~$950\u20131,100 | Daily: ~70\u201390\u00a2 | Usage: 3.10 \u2013 4.90 c/MJ",
+      "description": "Est. Annual: ~$950\u20131,100",
       "keyFeatures": [
+        "Daily Charge: ~70\u201390\u00a2",
+        "Usage Rate: 3.10 \u2013 4.90 c/MJ",
         "Available: NSW, VIC, SA",
         "Competitive rates"
       ],
@@ -2505,8 +2557,10 @@
       "logoUrl": "https://www.tangoenergy.com/assets/images/logo.png",
       "providerColor": "0xFF0099CC",
       "planName": "Tango Energy Gas Plan",
-      "description": "Est. Annual: ~$980\u20131,150 | Daily: ~75\u201395\u00a2 | Usage: 3.00 \u2013 5.00 c/MJ",
+      "description": "Est. Annual: ~$980\u20131,150",
       "keyFeatures": [
+        "Daily Charge: ~75\u201395\u00a2",
+        "Usage Rate: 3.00 \u2013 5.00 c/MJ",
         "Available: VIC, NSW, SA",
         "Good intro offers"
       ],
@@ -2522,8 +2576,10 @@
       "logoUrl": "https://www.globirdenergy.com.au/assets/images/logo.png",
       "providerColor": "0xFF66CC33",
       "planName": "GloBird Energy Gas Plan",
-      "description": "Est. Annual: ~$1,050\u20131,200 | Daily: ~80\u2013100\u00a2 | Usage: 3.50 \u2013 5.50 c/MJ",
+      "description": "Est. Annual: ~$1,050\u20131,200",
       "keyFeatures": [
+        "Daily Charge: ~80\u2013100\u00a2",
+        "Usage Rate: 3.50 \u2013 5.50 c/MJ",
         "Available: VIC, NSW, SA",
         "Green energy focus"
       ],
@@ -2539,8 +2595,10 @@
       "logoUrl": "https://energylocals.com.au/assets/images/logo.png",
       "providerColor": "0xFF000000",
       "planName": "Energy Locals Gas Plan",
-      "description": "Est. Annual: ~$950\u20131,100 | Daily: ~70\u201390\u00a2 | Usage: 3.20 \u2013 4.80 c/MJ",
+      "description": "Est. Annual: ~$950\u20131,100",
       "keyFeatures": [
+        "Daily Charge: ~70\u201390\u00a2",
+        "Usage Rate: 3.20 \u2013 4.80 c/MJ",
         "Available: NSW, VIC, SA, QLD",
         "Community/local feel"
       ],
@@ -2556,8 +2614,10 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ovo_Energy_logo.svg",
       "providerColor": "0xFF008000",
       "planName": "OVO Energy Gas Plan",
-      "description": "Est. Annual: ~$1,000\u20131,150 | Daily: ~75\u201395\u00a2 | Usage: 3.30 \u2013 5.10 c/MJ",
+      "description": "Est. Annual: ~$1,000\u20131,150",
       "keyFeatures": [
+        "Daily Charge: ~75\u201395\u00a2",
+        "Usage Rate: 3.30 \u2013 5.10 c/MJ",
         "Available: NSW, VIC, SA",
         "Tech/app-focused"
       ],
@@ -2573,8 +2633,10 @@
       "logoUrl": "https://www.auroraenergy.com.au/siteassets/logos.jpg",
       "providerColor": "0xFF6600CC",
       "planName": "Aurora Energy Gas Plan",
-      "description": "Est. Annual: ~$1,100+ | Daily: ~80\u2013110\u00a2 (TAS) | Usage: 3.50 \u2013 6.00 (TAS) c/MJ",
+      "description": "Est. Annual: ~$1,100+",
       "keyFeatures": [
+        "Daily Charge: ~80\u2013110\u00a2 (TAS)",
+        "Usage Rate: 3.50 \u2013 6.00 (TAS) c/MJ",
         "Available: TAS (limited gas zones), some others",
         "Main TAS provider"
       ],
@@ -2592,9 +2654,11 @@
       "logoUrl": "https://www.originenergy.com.au/content/dam/origin/logo/origin-logo.svg",
       "providerColor": "0xFFF25C05",
       "planName": "Origin Energy Electricity",
-      "description": "Sydney: 108c / 32c | Melb: 102c / 26c | Bris: 124c / 33c",
+      "description": "$200 Bill Credit (Online sign-up); 5,000 Everyday Rewards pts.",
       "keyFeatures": [
-        "$200 Bill Credit (Online sign-up); 5,000 Everyday Rewards pts.",
+        "Sydney: 108c / 32c",
+        "Melb: 102c / 26c",
+        "Bris: 124c / 33c",
         "Adelaide: 112c / 42c",
         "Perth: N/A"
       ],
@@ -2610,9 +2674,11 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/AGL-Energy-Logo.svg",
       "providerColor": "0xFF000000",
       "planName": "AGL Energy Electricity",
-      "description": "Sydney: 92c / 34c | Melb: 89c / 25c | Bris: 121c / 29c",
+      "description": "Netflix Standard included; $100 sign-up bonus.",
       "keyFeatures": [
-        "Netflix Standard included; $100 sign-up bonus.",
+        "Sydney: 92c / 34c",
+        "Melb: 89c / 25c",
+        "Bris: 121c / 29c",
         "Adelaide: 100c / 52c",
         "Perth: N/A"
       ],
@@ -2628,9 +2694,11 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ovo_Energy_logo.svg",
       "providerColor": "0xFF008000",
       "planName": "OVO Energy Electricity",
-      "description": "Sydney: 105c / 29c | Melb: 92c / 24c | Bris: 115c / 31c",
+      "description": "\"The Free 3\": $0 usage from 11am\u20132pm daily; 3% interest on credit.",
       "keyFeatures": [
-        "\"The Free 3\": $0 usage from 11am\u20132pm daily; 3% interest on credit.",
+        "Sydney: 105c / 29c",
+        "Melb: 92c / 24c",
+        "Bris: 115c / 31c",
         "Adelaide: 108c / 38c",
         "Perth: N/A"
       ],
@@ -2646,9 +2714,11 @@
       "logoUrl": "https://www.globirdenergy.com.au/assets/images/logo.png",
       "providerColor": "0xFF66CC33",
       "planName": "GloBird Electricity",
-      "description": "Sydney: 109c / 29c | Melb: 95c / 23c | Bris: 118c / 28c",
+      "description": "Lowest Usage (VIC); 3% Pay-on-time discount; Carbon Neutral.",
       "keyFeatures": [
-        "Lowest Usage (VIC); 3% Pay-on-time discount; Carbon Neutral.",
+        "Sydney: 109c / 29c",
+        "Melb: 95c / 23c",
+        "Bris: 118c / 28c",
         "Adelaide: 115c / 36c",
         "Perth: N/A"
       ],
@@ -2664,9 +2734,11 @@
       "logoUrl": "https://www.pngaaa.com/download/1161459",
       "providerColor": "0xFFFFD700",
       "planName": "Amber Electric Electricity",
-      "description": "Sydney: 82c / 27c* | Melb: 85c / 22c* | Bris: 90c / 26c*",
+      "description": "Wholesale Pass-through: Best for EV/Batteries; $15\u2013$20 sub fee.",
       "keyFeatures": [
-        "Wholesale Pass-through: Best for EV/Batteries; $15\u2013$20 sub fee.",
+        "Sydney: 82c / 27c*",
+        "Melb: 85c / 22c*",
+        "Bris: 90c / 26c*",
         "Adelaide: 95c / 35c*",
         "Perth: N/A"
       ],
@@ -2682,9 +2754,11 @@
       "logoUrl": "https://seeklogo.com/images/R/red-energy-pty-logo-668B88C152-seeklogo.com.png",
       "providerColor": "0xFFE30613",
       "planName": "Red Energy Electricity",
-      "description": "Sydney: 88c / 34c | Melb: 121c / 35c | Bris: 128c / 32c",
+      "description": "Qantas Points: Earn 2 pts per $1 spent; Owned by Snowy Hydro.",
       "keyFeatures": [
-        "Qantas Points: Earn 2 pts per $1 spent; Owned by Snowy Hydro.",
+        "Sydney: 88c / 34c",
+        "Melb: 121c / 35c",
+        "Bris: 128c / 32c",
         "Adelaide: 118c / 43c",
         "Perth: N/A"
       ],
@@ -2700,9 +2774,11 @@
       "logoUrl": "https://www.alintaenergy.com.au/assets/images/logo.png",
       "providerColor": "0xFF0093D0",
       "planName": "Alinta Energy Electricity",
-      "description": "Sydney: 110c / 31c | Melb: 104c / 27c | Bris: 120c / 28c",
+      "description": "Dual-fuel discounts; Market leader in WA contestability.",
       "keyFeatures": [
-        "Dual-fuel discounts; Market leader in WA contestability.",
+        "Sydney: 110c / 31c",
+        "Melb: 104c / 27c",
+        "Bris: 120c / 28c",
         "Adelaide: 110c / 44c",
         "Perth: 108c / 31c"
       ],
@@ -2718,9 +2794,11 @@
       "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Energy_australia.jpg/400px-Energy_australia.jpg",
       "providerColor": "0xFF000000",
       "planName": "EnergyAust. Electricity",
-      "description": "Sydney: 101c / 37c | Melb: 108c / 31c | Bris: 114c / 34c",
+      "description": "Flexi Plan: $100 bonus credit; High stability for renters.",
       "keyFeatures": [
-        "Flexi Plan: $100 bonus credit; High stability for renters.",
+        "Sydney: 101c / 37c",
+        "Melb: 108c / 31c",
+        "Bris: 114c / 34c",
         "Adelaide: 121c / 46c",
         "Perth: N/A"
       ],
@@ -2736,9 +2814,11 @@
       "logoUrl": "https://www.dodo.com/images/logo.svg",
       "providerColor": "0xFF662483",
       "planName": "Dodo Power Electricity",
-      "description": "Sydney: 131c / 26c | Melb: 131c / 26c | Bris: 131c / 26c",
+      "description": "Flat SC/UR: Consistent rates across states; Bundling deals.",
       "keyFeatures": [
-        "Flat SC/UR: Consistent rates across states; Bundling deals.",
+        "Sydney: 131c / 26c",
+        "Melb: 131c / 26c",
+        "Bris: 131c / 26c",
         "Adelaide: 131c / 26c",
         "Perth: N/A"
       ],
@@ -2754,9 +2834,11 @@
       "logoUrl": "https://diamondenergy.com.au/wp-content/themes/diamondenergy/images/logo.png",
       "providerColor": "0xFF006699",
       "planName": "Diamond Energy Electricity",
-      "description": "Sydney: 77c / 33c | Melb: 85c / 28c | Bris: 105c / 31c",
+      "description": "Lowest Supply (NSW); High-ranked for sustainability/renewables.",
       "keyFeatures": [
-        "Lowest Supply (NSW); High-ranked for sustainability/renewables.",
+        "Sydney: 77c / 33c",
+        "Melb: 85c / 28c",
+        "Bris: 105c / 31c",
         "Adelaide: 110c / 41c",
         "Perth: N/A"
       ],
@@ -2772,9 +2854,11 @@
       "logoUrl": "https://www.applianceretailer.com.au/wp-content/uploads/2020/03/powershop-logo.jpg",
       "providerColor": "0xFFE6007E",
       "planName": "Powershop Electricity",
-      "description": "Sydney: 88c / 34c | Melb: 95c / 26c | Bris: 122c / 30c",
+      "description": "Powerpacks: Buy energy in advance to secure lower rates.",
       "keyFeatures": [
-        "Powerpacks: Buy energy in advance to secure lower rates.",
+        "Sydney: 88c / 34c",
+        "Melb: 95c / 26c",
+        "Bris: 122c / 30c",
         "Adelaide: 114c / 41c",
         "Perth: N/A"
       ],
@@ -2790,9 +2874,11 @@
       "logoUrl": "https://nectr.energy/Logo-white.png",
       "providerColor": "0xFFFF6600",
       "planName": "Nectr Electricity",
-      "description": "Sydney: 112c / 35c | Melb: 105c / 28c | Bris: 118c / 33c",
+      "description": "Fixed rates for 12 months; No move-in fees.",
       "keyFeatures": [
-        "Fixed rates for 12 months; No move-in fees.",
+        "Sydney: 112c / 35c",
+        "Melb: 105c / 28c",
+        "Bris: 118c / 33c",
         "Adelaide: 120c / 42c",
         "Perth: N/A"
       ],
@@ -2808,9 +2894,11 @@
       "logoUrl": "https://www.tangoenergy.com/assets/images/logo.png",
       "providerColor": "0xFF0099CC",
       "planName": "Tango Energy Electricity",
-      "description": "Sydney: 109c / 33c | Melb: 101c / 25c | Bris: 116c / 30c",
+      "description": "Simple low-rate structure; owned by Pacific Blue.",
       "keyFeatures": [
-        "Simple low-rate structure; owned by Pacific Blue.",
+        "Sydney: 109c / 33c",
+        "Melb: 101c / 25c",
+        "Bris: 116c / 30c",
         "Adelaide: 112c / 40c",
         "Perth: N/A"
       ],
@@ -2826,9 +2914,11 @@
       "logoUrl": "https://synergy.net.au/assets/images/logo.png",
       "providerColor": "0xFF000000",
       "planName": "Synergy Electricity",
-      "description": "Sydney: N/A | Melb: N/A | Bris: N/A",
+      "description": "Regulated (WA): Standard Home Plan; No retail competition.",
       "keyFeatures": [
-        "Regulated (WA): Standard Home Plan; No retail competition.",
+        "Sydney: N/A",
+        "Melb: N/A",
+        "Bris: N/A",
         "Adelaide: N/A",
         "Perth: 102c / 29c"
       ],

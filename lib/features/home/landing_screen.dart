@@ -15,11 +15,133 @@ import '../blog/blog_post_screen.dart'; // Import Blog Screen
 
 import 'widgets/blog_multi_carousel.dart'; // Import New Multi Carousel
 
-class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
+class LandingScreen extends ConsumerStatefulWidget {
   const LandingScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) { // Add ref
+  ConsumerState<LandingScreen> createState() => _LandingScreenState();
+}
+
+class _LandingScreenState extends ConsumerState<LandingScreen> {
+class _LandingScreenState extends ConsumerState<LandingScreen> {
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController.addListener(() {
+      setState(() {
+        _currentPage = _pageController.page?.round() ?? 0;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  // Enum for main product categories
+  enum _MainCategory {
+    utilities,
+    insurance,
+    financialProducts,
+  }
+
+  _MainCategory _selectedMainCategory = _MainCategory.utilities;
+
+  Widget _buildHeroCarousel(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 400, // Adjust height as needed
+          child: PageView(
+            controller: _pageController,
+            children: [
+              _buildHeroSection(context),
+              _buildSavingsCalculatorHeroCard(context),
+            ],
+          ),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(2, (index) { // Hardcoded 2 for now, adjust based on number of slides
+            return Container(
+              width: 8.0,
+              height: 8.0,
+              margin: const EdgeInsets.symmetric(horizontal: 4.0),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _currentPage == index
+                    ? AppTheme.vibrantEmerald
+                    : Colors.white30,
+              ),
+            );
+          }),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSavingsCalculatorHeroCard(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        gradient: AppTheme.mainBackgroundGradient,
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 800),
+          child: Column(
+            children: [
+              const Text(
+                'Unlock Your Potential Savings!',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              const Text(
+                'Use our smart calculator to quickly estimate how much you could save on your household bills.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 18,
+                  height: 1.5,
+                ),
+              ),
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/savings');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppTheme.vibrantEmerald,
+                  foregroundColor: AppTheme.deepNavy,
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                  textStyle: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                child: const Text('TRY THE CALCULATOR NOW'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
@@ -38,10 +160,10 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
           child: Column(
             children: [
               _buildNavBar(context),
-              _buildHeroSection(context),
+              _buildHeroCarousel(context),
               if (kIsWeb) _buildDownloadAppSection(context), // New Section
               _buildCategorySection(context),
-              _buildBlogSection(context, ref), // Add Blog Section
+              _buildBlogSection(context), // ref is directly available as this.ref
               _buildHowItWorksSection(context),
               _buildTestimonialsSection(context),
               _buildFooter(context),
@@ -136,7 +258,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
     );
   }
 
-  Widget _buildBlogSection(BuildContext context, WidgetRef ref) {
+  Widget _buildBlogSection(BuildContext context) { // ref is directly available as this.ref
     final postsAsync = ref.watch(blogPostsProvider);
 
     return Container(
@@ -372,23 +494,44 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                 ),
               ),
               const SizedBox(height: 32),
+              // Main category tabs/buttons
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _MainCategory.values.map((category) {
+                    final isSelected = _selectedMainCategory == category;
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: ChoiceChip(
+                        label: Text(_getMainCategoryName(category)),
+                        selected: isSelected,
+                        onSelected: (selected) {
+                          if (selected) {
+                            setState(() {
+                              _selectedMainCategory = category;
+                            });
+                          }
+                        },
+                        selectedColor: AppTheme.vibrantEmerald,
+                        backgroundColor: Colors.white10,
+                        labelStyle: TextStyle(
+                          color: isSelected ? AppTheme.deepNavy : Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        side: BorderSide.none,
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+              const SizedBox(height: 32),
               LayoutBuilder(
                 builder: (context, constraints) {
                   return Wrap(
                     spacing: 20,
                     runSpacing: 20,
-                    children: [
-                      _categoryCard(context, 'Electricity', Icons.bolt, Colors.orange, '/deals/electricity'),
-                      _categoryCard(context, 'Gas', Icons.local_fire_department, Colors.red, '/deals/gas'),
-                      _categoryCard(context, 'Internet', Icons.wifi, Colors.blue, '/deals/internet'),
-                      _categoryCard(context, 'Mobile', Icons.phone_iphone, Colors.green, '/deals/mobile'),
-                      _categoryCard(context, 'General Insurance', Icons.shield, Colors.purple, '/deals/insurance'), // Renamed existing Insurance
-                      _categoryCard(context, 'Health Insurance', Icons.medical_services, Colors.pink, '/deals/insurance/health'),
-                      _categoryCard(context, 'Car Insurance', Icons.directions_car, Colors.indigo, '/deals/insurance/car'),
-                      _categoryCard(context, 'Credit Cards', Icons.credit_card, Colors.orangeAccent, '/deals/credit-cards'),
-                      _categoryCard(context, 'Home Loans', Icons.home_work, Colors.brown, '/loans/home'),
-                      _categoryCard(context, 'Savings Calculator', Icons.calculate, Colors.cyan, '/savings'),
-                    ],
+                    children: _buildSubCategoryCards(context, _selectedMainCategory),
                   );
                 },
               ),
@@ -397,6 +540,43 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
         ),
       ),
     );
+  }
+
+  String _getMainCategoryName(_MainCategory category) {
+    switch (category) {
+      case _MainCategory.utilities:
+        return 'Utilities';
+      case _MainCategory.insurance:
+        return 'Insurance';
+      case _MainCategory.financialProducts:
+        return 'Financial Products';
+    }
+  }
+
+  List<Widget> _buildSubCategoryCards(BuildContext context, _MainCategory mainCategory) {
+    switch (mainCategory) {
+      case _MainCategory.utilities:
+        return [
+          _categoryCard(context, 'Electricity', Icons.bolt, Colors.orange, '/deals/electricity'),
+          _categoryCard(context, 'Gas', Icons.local_fire_department, Colors.red, '/deals/gas'),
+          _categoryCard(context, 'Internet', Icons.wifi, Colors.blue, '/deals/internet'),
+          _categoryCard(context, 'Mobile', Icons.phone_iphone, Colors.green, '/deals/mobile'),
+          _categoryCard(context, 'Savings Calculator', Icons.calculate, Colors.cyan, '/savings'), // Keep calculator prominent
+        ];
+      case _MainCategory.insurance:
+        return [
+          _categoryCard(context, 'General Insurance', Icons.shield, Colors.purple, '/deals/insurance'),
+          _categoryCard(context, 'Health Insurance', Icons.medical_services, Colors.pink, '/deals/insurance/health'),
+          _categoryCard(context, 'Car Insurance', Icons.directions_car, Colors.indigo, '/deals/insurance/car'),
+          // Add other insurance types as needed, e.g., Home Insurance, Life Insurance
+        ];
+      case _MainCategory.financialProducts:
+        return [
+          _categoryCard(context, 'Credit Cards', Icons.credit_card, Colors.orangeAccent, '/deals/credit-cards'),
+          _categoryCard(context, 'Home Loans', Icons.home_work, Colors.brown, '/loans/home'),
+          // Add other financial products as needed
+        ];
+    }
   }
 
   Widget _categoryCard(BuildContext context, String title, IconData icon, Color color, String route) {
@@ -578,7 +758,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
 
   Widget _buildTestimonialsSection(BuildContext context) {
     return Container(
-      color: Colors.white, // A contrasting background for testimonials
+      color: AppTheme.deepNavy, // Changed to deepNavy
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
       child: Center(
         child: ConstrainedBox(
@@ -588,15 +768,13 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
               const Text(
                 'What Our Customers Say',
                 style: TextStyle(
-                  color: AppTheme.deepNavy,
+                  color: Colors.white, // Changed text color for contrast
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 40),
-              // Using a ListView.builder with a fixed height to simulate a horizontal carousel.
-              // In a real app, you might use a dedicated carousel package.
               SizedBox(
                 height: 200, // Adjust height as needed
                 child: ListView.builder(
@@ -609,7 +787,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                       child: SizedBox(
                         width: 300, // Fixed width for each testimonial card
                         child: Card(
-                          color: AppTheme.deepNavy,
+                          color: Colors.white10, // Changed card color for contrast
                           elevation: 8,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                           child: Padding(
@@ -622,7 +800,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                                 Text(
                                   testimonial.quote,
                                   style: const TextStyle(
-                                    color: Colors.white70,
+                                    color: Colors.white, // Changed text color for contrast
                                     fontSize: 16,
                                     fontStyle: FontStyle.italic,
                                   ),

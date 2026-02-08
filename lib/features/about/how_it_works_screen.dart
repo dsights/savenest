@@ -35,6 +35,14 @@ class HowItWorksScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: Image.asset(
+                  'assets/images/car_ins.png', // Placeholder image
+                  height: 200,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              const SizedBox(height: 32),
               _buildSectionTitle('Our Mission: Your Savings'),
               const SizedBox(height: 16),
               _buildBodyText(

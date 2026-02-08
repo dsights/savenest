@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../blog/blog_model.dart';
@@ -14,73 +13,77 @@ class BlogMultiCarousel extends StatefulWidget {
 }
 
 class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
-  late final ScrollController _scrollController;
-  Timer? _timer;
-  double _scrollPosition = 0;
+  late final PageController _pageController;
+  int _currentPage = 0;
 
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
-    // Use a post-frame callback to ensure the list is rendered before starting the timer
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _startAutoScroll();
-    });
-  }
-
-  void _startAutoScroll() {
-    _timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
-      if (_scrollController.hasClients) {
-        _scrollPosition += 1.0; // Adjust speed here
-        
-        // Loop back to start if we reach the end
-        if (_scrollPosition >= _scrollController.position.maxScrollExtent) {
-          _scrollPosition = 0;
-          _scrollController.jumpTo(0);
-        } else {
-          _scrollController.jumpTo(_scrollPosition);
-        }
-      }
+    _pageController = PageController(viewportFraction: 0.8); // Adjust viewportFraction for visible partial next/prev cards
+    _pageController.addListener(() {
+      setState(() {
+        _currentPage = _pageController.page?.round() ?? 0;
+      });
     });
   }
 
   @override
   void dispose() {
-    _timer?.cancel();
-    _scrollController.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // We duplicate the list to make it feel "infinite" for a better looping experience
-    final displayPosts = [...widget.posts, ...widget.posts];
-
-    return MouseRegion(
-      onEnter: (_) => _timer?.cancel(),
-      onExit: (_) => _startAutoScroll(),
-      child: SizedBox(
-        height: 380,
-        child: ListView.separated(
-          controller: _scrollController,
-          scrollDirection: Axis.horizontal,
-          physics: const NeverScrollableScrollPhysics(), // Disable user scroll to prevent fight with timer
-          itemCount: displayPosts.length,
-          separatorBuilder: (context, index) => const SizedBox(width: 20),
-          itemBuilder: (context, index) {
-            final post = displayPosts[index];
-            return SizedBox(
-              width: 300,
-              child: BlogCard(
-                post: post,
-                onTap: () {
-                  context.go('/blog/${post.slug}');
-                },
+    return Column(
+      children: [
+        SizedBox(
+          height: 380, // Height of the carousel
+          child: PageView.builder(
+            controller: _pageController,
+            itemCount: widget.posts.length,
+            itemBuilder: (context, index) {
+              final post = widget.posts[index];
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0), // Spacing between cards
+                child: BlogCard(
+                  post: post,
+                  onTap: () {
+                    context.go('/blog/${post.slug}');
+                  },
+                ),
+              );
+            },
+          ),
+        ),
+        const SizedBox(height: 20),
+        // Dots indicator
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(widget.posts.length, (index) {
+            return GestureDetector(
+              onTap: () {
+                _pageController.animateToPage(
+                  index,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeIn,
+                );
+              },
+              child: Container(
+                width: 8.0,
+                height: 8.0,
+                margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _currentPage == index
+                      ? AppTheme.vibrantEmerald // Active dot color
+                      : Colors.grey, // Inactive dot color
+                ),
               ),
             );
-          },
+          }),
         ),
-      ),
+      ],
     );
   }
 }

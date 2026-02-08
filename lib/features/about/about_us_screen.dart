@@ -38,10 +38,22 @@ class AboutUsScreen extends StatelessWidget {
             children: [
               _buildSectionTitle('Our Story'),
               const SizedBox(height: 16),
+              Image.asset(
+                'assets/images/home_ins.png', // Placeholder image
+                height: 150,
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(height: 16),
               _buildBodyText(
                   'SaveNest was founded with a simple mission: to help Australians navigate the confusing and often expensive world of household utilities and financial products. Our founders, with their background in utilities, real estate, and finance, saw firsthand how much money people were losing simply by not being on the right plan.'),
               const SizedBox(height: 32),
               _buildSectionTitle('Our Mission'),
+              const SizedBox(height: 16),
+              Image.asset(
+                'assets/images/energy.png', // Placeholder image
+                height: 150,
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 16),
               _buildBodyText(
                   'We believe that everyone deserves to get the best value for their money. We are committed to providing a free, independent, and easy-to-use platform that helps you compare with confidence and save with ease.'),

@@ -4,7 +4,9 @@ import 'package:savenest/features/about/about_us_screen.dart';
 import 'package:savenest/features/about/how_it_works_screen.dart';
 import 'package:savenest/features/legal/privacy_policy_screen.dart';
 import 'package:savenest/features/legal/terms_of_service_screen.dart';
+import 'package:savenest/features/legal/disclaimer_screen.dart'; // New import
 import 'package:savenest/features/partners/advertise_with_us_screen.dart';
+import 'package:savenest/features/misc/sitemap_screen.dart'; // New import
 import 'features/home/landing_screen.dart';
 import 'features/blog/blog_post_screen.dart';
 import 'features/savings/savings_screen.dart';
@@ -103,11 +105,11 @@ final goRouter = GoRouter(
     ),
     GoRoute(
       path: '/legal/disclaimer', // Placeholder for Disclaimer page
-      builder: (context, state) => const AboutUsScreen(), // Using AboutUsScreen as a temporary placeholder
+      builder: (context, state) => const DisclaimerScreen(), // Use new DisclaimerScreen
     ),
     GoRoute(
       path: '/sitemap', // Placeholder for Sitemap page
-      builder: (context, state) => const AboutUsScreen(), // Using AboutUsScreen as a temporary placeholder
+      builder: (context, state) => const SitemapScreen(), // Use new SitemapScreen
     ),
   ],
 );

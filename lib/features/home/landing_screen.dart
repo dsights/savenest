@@ -15,6 +15,8 @@ import '../blog/blog_post_screen.dart'; // Import Blog Screen
 
 import 'widgets/blog_multi_carousel.dart'; // Import New Multi Carousel
 
+import 'dart:async'; // Import for Timer
+
 // Enum for main product categories
 enum _MainCategory {
   utilities,
@@ -32,6 +34,7 @@ class LandingScreen extends ConsumerStatefulWidget {
 class _LandingScreenState extends ConsumerState<LandingScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
+  late Timer _timer; // Declare the timer
 
   @override
   void initState() {
@@ -41,11 +44,26 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         _currentPage = _pageController.page?.round() ?? 0;
       });
     });
+
+    // Initialize auto-sliding
+    _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
+      if (_currentPage < 4) { // Assuming 5 slides (0-4 index)
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+      _pageController.animateToPage(
+        _currentPage,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+      );
+    });
   }
 
   @override
   void dispose() {
     _pageController.dispose();
+    _timer.cancel(); // Cancel the timer
     super.dispose();
   }
 
@@ -781,7 +799,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                   Icon(Icons.shield_moon, color: Colors.white30, size: 24),
                   SizedBox(width: 8),
                   Text(
-                    'SaveNest © 2026',
+                    'SaveNest © 2026 | ABN 89691841059 | Pratham Technologies Pty Ltd',
                     style: TextStyle(color: Colors.white30),
                   ),
                 ],

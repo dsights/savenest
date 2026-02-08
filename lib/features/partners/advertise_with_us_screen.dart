@@ -36,14 +36,7 @@ class AdvertiseWithUsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Image.asset(
-                'assets/images/mobile.png', // Placeholder image
-                height: 150,
-                fit: BoxFit.contain,
-              ),
-            ),
-            const SizedBox(height: 32),
+
             _buildSectionTitle('For Partners'),
             const SizedBox(height: 16),
             _buildBodyText(

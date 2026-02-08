@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
+import 'package:meta_seo/src/meta_tag.dart';
 import 'package:savenest/theme/app_theme.dart';
 
 class TermsOfServiceScreen extends StatelessWidget {
@@ -9,11 +10,10 @@ class TermsOfServiceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Update meta tags for SEO
     MetaSEO().updateMetaData(
-      MetaData(
-        title: 'Terms of Service | SaveNest',
-        description:
-            'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.',
-      ),
+      metaTags: [
+        MetaTag(name: 'title', content: 'Terms of Service | SaveNest'),
+        MetaTag(name: 'description', content: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.'),
+      ],
     );
 
     return Scaffold(
@@ -84,3 +84,4 @@ class TermsOfServiceScreen extends StatelessWidget {
       ),
     );
   }
+}}

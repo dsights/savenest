@@ -199,6 +199,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                   _navLink(context, 'Gas', '/deals/gas'),
                   _navLink(context, 'Internet', '/deals/internet'),
                   _navLink(context, 'Mobile', '/deals/mobile'),
+                  ],
                 )
               else
                 // Mobile Menu Button

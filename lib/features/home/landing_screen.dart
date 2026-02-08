@@ -21,12 +21,11 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref) { // Add ref
     // Update meta tags for SEO
-    MetaSEO.instance.updateMetaData(
-      metaTags: [
-        MetaTag(name: 'title', content: 'SaveNest | Compare & Save on Australian Utilities'),
-        MetaTag(name: 'description', content: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.'),
-      ],
-    );
+    if (kIsWeb) {
+      MetaSEO meta = MetaSEO();
+      meta.title(title: 'SaveNest | Compare & Save on Australian Utilities');
+      meta.description(description: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
+    }
 
     return Scaffold(
         backgroundColor: AppTheme.deepNavy,
@@ -314,8 +313,8 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                 ),
               ),
               const SizedBox(height: 24),
-              Seo.text(
-                text: "Stop paying the 'lazy tax'.\nCompare utilities in seconds.",
+              Text(
+                "Stop paying the 'lazy tax'.\nCompare utilities in seconds.",
                 style: Theme.of(context).textTheme.displayMedium!.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,

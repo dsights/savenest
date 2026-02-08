@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
+import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
 class HowItWorksScreen extends StatelessWidget {
   const HowItWorksScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    MetaSEO.instance.updateMetaData(
-      metaTags: [
-        MetaTag(name: 'title', content: 'How SaveNest Works | Our Business Model Explained'),
-        MetaTag(name: 'description', content: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.'),
-      ],
-    );
+    if (kIsWeb) {
+      MetaSEO meta = MetaSEO();
+      meta.title(title: 'How SaveNest Works | Our Business Model Explained');
+      meta.description(description: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.');
+    }
 
     return Scaffold(
         backgroundColor: AppTheme.deepNavy,
@@ -61,7 +61,6 @@ class HowItWorksScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 

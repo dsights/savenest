@@ -6,6 +6,7 @@ import 'comparison_model.dart';
 import 'comparison_provider.dart';
 import 'widgets/deal_card.dart';
 import 'widgets/search_bar_widget.dart';
+import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
 class ComparisonScreen extends ConsumerStatefulWidget {
   final ProductCategory initialCategory;
@@ -54,12 +55,11 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final categoryTitle = _getCategoryTitle(widget.initialCategory);
 
     // Update meta tags for SEO
-    MetaSEO.instance.updateMetaData(
-      metaTags: [
-        MetaTag(name: 'title', content: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest'),
-        MetaTag(name: 'description', content: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.'),
-      ],
-    );
+    if (kIsWeb) {
+      MetaSEO meta = MetaSEO();
+      meta.title(title: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest');
+      meta.description(description: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
+    }
 
     return Scaffold(
         extendBodyBehindAppBar: true,

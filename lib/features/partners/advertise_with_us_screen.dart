@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
+import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
 class AdvertiseWithUsScreen extends StatelessWidget {
   const AdvertiseWithUsScreen({super.key});
@@ -8,12 +9,11 @@ class AdvertiseWithUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Update meta tags for SEO
-    MetaSEO.instance.updateMetaData(
-      metaTags: [
-        MetaTag(name: 'title', content: 'Partner with SaveNest | Advertise Your Services'),
-        MetaTag(name: 'description', content: 'Connect with a growing audience of savvy Australian households. Learn about our promotional opportunities and how to partner with SaveNest.'),
-      ],
-    );
+    if (kIsWeb) {
+      MetaSEO meta = MetaSEO();
+      meta.title(title: 'Partner with SaveNest | Advertise Your Services');
+      meta.description(description: 'Connect with a growing audience of savvy Australian households. Learn about our promotional opportunities and how to partner with SaveNest.');
+    }
 
     return Scaffold(
       backgroundColor: AppTheme.deepNavy,

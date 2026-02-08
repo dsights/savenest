@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
+import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
 class TermsOfServiceScreen extends StatelessWidget {
   const TermsOfServiceScreen({super.key});
@@ -8,12 +9,11 @@ class TermsOfServiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Update meta tags for SEO
-    MetaSEO.instance.updateMetaData(
-      metaTags: [
-        MetaTag(name: 'title', content: 'Terms of Service | SaveNest'),
-        MetaTag(name: 'description', content: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.'),
-      ],
-    );
+    if (kIsWeb) {
+      MetaSEO meta = MetaSEO();
+      meta.title(title: 'Terms of Service | SaveNest');
+      meta.description(description: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
+    }
 
     return Scaffold(
       backgroundColor: AppTheme.deepNavy,

@@ -10,8 +10,12 @@ class HowItWorksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.title(title: 'How SaveNest Works | Our Business Model Explained');
-      meta.description(description: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.');
+      meta.nameContent(name: 'title', content: 'How SaveNest Works | Our Business Model Explained');
+      meta.nameContent(name: 'description', content: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.');
+      meta.ogTitle(ogTitle: 'How SaveNest Works | Our Business Model Explained');
+      meta.ogDescription(ogDescription: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.');
+      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/how-it-works');
+      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 
     return Scaffold(

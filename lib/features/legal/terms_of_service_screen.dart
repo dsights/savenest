@@ -11,8 +11,12 @@ class TermsOfServiceScreen extends StatelessWidget {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.title(title: 'Terms of Service | SaveNest');
-      meta.description(description: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
+      meta.nameContent(name: 'title', content: 'Terms of Service | SaveNest');
+      meta.nameContent(name: 'description', content: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
+      meta.ogTitle(ogTitle: 'Terms of Service | SaveNest');
+      meta.ogDescription(ogDescription: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
+      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/terms');
+      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 
     return Scaffold(

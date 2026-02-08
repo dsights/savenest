@@ -55,11 +55,15 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final categoryTitle = _getCategoryTitle(widget.initialCategory);
 
     // Update meta tags for SEO
-    if (kIsWeb) {
-      MetaSEO meta = MetaSEO();
-      meta.title(title: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest');
-      meta.description(description: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
-    }
+      if (kIsWeb) {
+        MetaSEO meta = MetaSEO();
+        meta.nameContent(name: 'title', content: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest');
+        meta.nameContent(name: 'description', content: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
+        meta.ogTitle(ogTitle: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest');
+        meta.ogDescription(ogDescription: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
+        meta.ogUrl(ogUrl: 'https://www.savenest.com.au/deals/${categoryTitle.toLowerCase()}');
+        meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png'); // Placeholder
+      }
 
     return Scaffold(
         extendBodyBehindAppBar: true,

@@ -11,8 +11,12 @@ class PrivacyPolicyScreen extends StatelessWidget {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.title(title: 'Privacy Policy | SaveNest');
-      meta.description(description: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.');
+      meta.nameContent(name: 'title', content: 'Privacy Policy | SaveNest');
+      meta.nameContent(name: 'description', content: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.');
+      meta.ogTitle(ogTitle: 'Privacy Policy | SaveNest');
+      meta.ogDescription(ogDescription: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.');
+      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/privacy');
+      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 
     return Scaffold(

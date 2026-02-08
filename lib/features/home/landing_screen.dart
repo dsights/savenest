@@ -23,8 +23,12 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.title(title: 'SaveNest | Compare & Save on Australian Utilities');
-      meta.description(description: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
+      meta.nameContent(name: 'title', content: 'SaveNest | Compare & Save on Australian Utilities');
+      meta.nameContent(name: 'description', content: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
+      meta.ogTitle(ogTitle: 'SaveNest | Compare & Save on Australian Utilities');
+      meta.ogDescription(ogDescription: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
+      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/');
+      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 
     return Scaffold(

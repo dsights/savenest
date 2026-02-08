@@ -11,8 +11,12 @@ class AboutUsScreen extends StatelessWidget {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.title(title: 'About SaveNest | Australia\'s Smart Utility Comparison Site');
-      meta.description(description: 'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.');
+      meta.nameContent(name: 'title', content: 'About SaveNest | Australia\'s Smart Utility Comparison Site');
+      meta.nameContent(name: 'description', content: 'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.');
+      meta.ogTitle(ogTitle: 'About SaveNest | Australia\'s Smart Utility Comparison Site');
+      meta.ogDescription(ogDescription: 'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.');
+      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/about');
+      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 
     return Scaffold(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
-import 'package:meta_seo/src/meta_tag.dart';
 import 'package:savenest/theme/app_theme.dart';
 
 class AboutUsScreen extends StatelessWidget {
@@ -9,7 +8,7 @@ class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Update meta tags for SEO
-    MetaSEO().updateMetaData(
+    MetaSEO.instance.updateMetaData(
       metaTags: [
         MetaTag(name: 'title', content: 'About SaveNest | Australia\'s Smart Utility Comparison Site'),
         MetaTag(name: 'description', content: 'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.'),

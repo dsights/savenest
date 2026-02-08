@@ -8,12 +8,11 @@ class AdvertiseWithUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Update meta tags for SEO
-    MetaSEO().updateMetaData(
-      MetaData(
-        title: 'Partner with SaveNest | Advertise Your Services',
-        description:
-            'Connect with a growing audience of savvy Australian households. Learn about our promotional opportunities and how to partner with SaveNest.',
-      ),
+    MetaSEO.instance.updateMetaData(
+      metaTags: [
+        MetaTag(name: 'title', content: 'Partner with SaveNest | Advertise Your Services'),
+        MetaTag(name: 'description', content: 'Connect with a growing audience of savvy Australian households. Learn about our promotional opportunities and how to partner with SaveNest.'),
+      ],
     );
 
     return Scaffold(

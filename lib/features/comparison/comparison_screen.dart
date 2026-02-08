@@ -54,12 +54,11 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final categoryTitle = _getCategoryTitle(widget.initialCategory);
 
     // Update meta tags for SEO
-    MetaSEO().updateMetaData(
-      MetaData(
-        title: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest',
-        description:
-            'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.',
-      ),
+    MetaSEO.instance.updateMetaData(
+      metaTags: [
+        MetaTag(name: 'title', content: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest'),
+        MetaTag(name: 'description', content: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.'),
+      ],
     );
 
     return Scaffold(
@@ -192,7 +191,6 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
             ),
           ),
         ),
-      ),
     );
   }
 

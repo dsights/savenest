@@ -21,12 +21,11 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
   @override
   Widget build(BuildContext context, WidgetRef ref) { // Add ref
     // Update meta tags for SEO
-    MetaSEO().updateMetaData(
-      MetaData(
-        title: 'SaveNest | Compare & Save on Australian Utilities',
-        description:
-            'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.',
-      ),
+    MetaSEO.instance.updateMetaData(
+      metaTags: [
+        MetaTag(name: 'title', content: 'SaveNest | Compare & Save on Australian Utilities'),
+        MetaTag(name: 'description', content: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.'),
+      ],
     );
 
     return Scaffold(
@@ -45,7 +44,6 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
             ],
           ),
         ),
-      ),
     );
   }
 // ...

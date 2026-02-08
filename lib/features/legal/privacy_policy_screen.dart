@@ -8,12 +8,11 @@ class PrivacyPolicyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Update meta tags for SEO
-    MetaSEO().updateMetaData(
-      MetaData(
-        title: 'Privacy Policy | SaveNest',
-        description:
-            'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.',
-      ),
+    MetaSEO.instance.updateMetaData(
+      metaTags: [
+        MetaTag(name: 'title', content: 'Privacy Policy | SaveNest'),
+        MetaTag(name: 'description', content: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.'),
+      ],
     );
 
     return Scaffold(

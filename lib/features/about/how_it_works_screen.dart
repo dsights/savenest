@@ -7,17 +7,18 @@ class HowItWorksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MetaSeo(
-      metaData: const MetaData(
-        title: 'How SaveNest Works | Our Business Model Explained',
-        description:
-            'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.',
-      ),
-      child: Scaffold(
+    MetaSEO.instance.updateMetaData(
+      metaTags: [
+        MetaTag(name: 'title', content: 'How SaveNest Works | Our Business Model Explained'),
+        MetaTag(name: 'description', content: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.'),
+      ],
+    );
+
+    return Scaffold(
         backgroundColor: AppTheme.deepNavy,
         appBar: AppBar(
-          title: Seo.text(
-            text: 'How We Work',
+          title: Text(
+            'How We Work',
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

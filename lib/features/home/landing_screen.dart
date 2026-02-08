@@ -200,6 +200,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                   _navLink(context, 'Gas', '/deals/gas'),
                   _navLink(context, 'Internet', '/deals/internet'),
                   _navLink(context, 'Mobile', '/deals/mobile'),
+                  _navLink(context, 'Savings Calculator', '/savings'),
                   ],
                 )
               else
@@ -263,6 +264,13 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
             onTap: () {
               Navigator.pop(context);
               GoRouter.of(context).go('/deals/mobile');
+            },
+          ),
+          ListTile(
+            title: const Text('Savings Calculator', style: TextStyle(color: Colors.white, fontSize: 18)),
+            onTap: () {
+              Navigator.pop(context);
+              GoRouter.of(context).go('/savings');
             },
           ),
         ],
@@ -374,6 +382,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                       _categoryCard(context, 'Internet', Icons.wifi, Colors.blue, '/deals/internet'),
                       _categoryCard(context, 'Mobile', Icons.phone_iphone, Colors.green, '/deals/mobile'),
                       _categoryCard(context, 'Insurance', Icons.shield, Colors.purple, '/compare/insurance'),
+                      _categoryCard(context, 'Savings Calculator', Icons.calculate, Colors.cyan, '/savings'),
                     ],
                   );
                 },

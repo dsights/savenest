@@ -223,7 +223,7 @@ class BlogPostScreen extends ConsumerWidget {
                             child: Column(
                               children: [
                                 const Text(
-                                  "Stop overpaying today.",
+                                  "Calculate your potential savings today.",
                                   style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(height: 24),
@@ -236,7 +236,7 @@ class BlogPostScreen extends ConsumerWidget {
                                     foregroundColor: AppTheme.deepNavy,
                                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
                                   ),
-                                  child: const Text("COMPARE NOW"),
+                                  child: const Text("USE SAVINGS CALCULATOR"),
                                 ),
                               ],
                             ),

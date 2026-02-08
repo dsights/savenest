@@ -15,6 +15,13 @@ import '../blog/blog_post_screen.dart'; // Import Blog Screen
 
 import 'widgets/blog_multi_carousel.dart'; // Import New Multi Carousel
 
+// Enum for main product categories
+enum _MainCategory {
+  utilities,
+  insurance,
+  financialProducts,
+}
+
 class LandingScreen extends ConsumerStatefulWidget {
   const LandingScreen({super.key});
 
@@ -22,7 +29,6 @@ class LandingScreen extends ConsumerStatefulWidget {
   ConsumerState<LandingScreen> createState() => _LandingScreenState();
 }
 
-class _LandingScreenState extends ConsumerState<LandingScreen> {
 class _LandingScreenState extends ConsumerState<LandingScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
@@ -43,12 +49,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     super.dispose();
   }
 
-  // Enum for main product categories
-  enum _MainCategory {
-    utilities,
-    insurance,
-    financialProducts,
-  }
+
 
   _MainCategory _selectedMainCategory = _MainCategory.utilities;
 
@@ -832,7 +833,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
       ),
     );
   }
-}
+} // Closing brace for _LandingScreenState
 
 class _Testimonial {
   final String quote;

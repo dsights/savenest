@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../blog/blog_model.dart';
 import '../../blog/widgets/blog_card.dart';
+import 'package:savenest/theme/app_theme.dart';
 
 class BlogMultiCarousel extends StatefulWidget {
   final List<BlogPost> posts;

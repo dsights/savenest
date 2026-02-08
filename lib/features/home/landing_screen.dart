@@ -75,22 +75,52 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     return Column(
       children: [
         SizedBox(
-          height: 400, // Adjust height as needed
+          height: 450, // Increased height for better impact
           child: PageView(
             controller: _pageController,
             children: [
-              _buildHeroSection(context),
-              _buildSavingsCalculatorHeroCard(context),
-              _buildQuoteSlide(context, 'Finding the best deals for my home has never been easier. SaveNest is a game-changer!', 'A grateful customer', 'assets/images/home_ins.png'), // Placeholder image
-              _buildQuoteSlide(context, 'I saved hundreds on my electricity bill within minutes. Highly recommended!', 'A savvy saver', 'assets/images/energy.png'), // Placeholder image
-              _buildQuoteSlide(context, 'Transparent, simple, and effective. SaveNest truly helps you beat the lazy tax.', 'A happy user', 'assets/images/car_ins.png'), // Placeholder image
+              _buildHeroSlide(
+                context, 
+                quote: "Power Up Your Savings.\nCompare Top Energy Plans Today.", 
+                imagePath: 'assets/images/hero_energy.jpg', 
+                buttonText: 'COMPARE ENERGY', 
+                route: '/deals/electricity'
+              ),
+              _buildHeroSlide(
+                context, 
+                quote: "Connect for Less.\nHigh-Speed Internet Deals.", 
+                imagePath: 'assets/images/hero_internet.jpg', 
+                buttonText: 'COMPARE INTERNET', 
+                route: '/deals/internet'
+              ),
+              _buildHeroSlide(
+                context, 
+                quote: "Talk More, Pay Less.\nBest Mobile Plans.", 
+                imagePath: 'assets/images/hero_mobile.jpg', 
+                buttonText: 'COMPARE MOBILE', 
+                route: '/deals/mobile'
+              ),
+              _buildHeroSlide(
+                context, 
+                quote: "Protect What Matters.\nComprehensive Insurance Options.", 
+                imagePath: 'assets/images/hero_insurance.jpg', 
+                buttonText: 'COMPARE INSURANCE', 
+                route: '/deals/insurance'
+              ),
+              _buildHeroSlide(
+                context, 
+                quote: "Smart Financial Moves.\nBetter Loans & Credit.", 
+                imagePath: 'assets/images/hero_finance.jpg', 
+                buttonText: 'COMPARE FINANCE', 
+                route: '/loans/home'
+              ),
             ],
           ),
         ),
         const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(5, (index) { // Updated to 5 slides
+          children: List.generate(5, (index) {
             return Container(
               width: 8.0,
               height: 8.0,
@@ -108,69 +138,20 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     );
   }
 
-  Widget _buildSavingsCalculatorHeroCard(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        gradient: AppTheme.mainBackgroundGradient,
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 800),
-          child: Column(
-            children: [
-              const Text(
-                'Unlock Your Potential Savings!',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 24),
-              const Text(
-                'Use our smart calculator to quickly estimate how much you could save on your household bills.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 18,
-                  height: 1.5,
-                ),
-              ),
-              const SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: () {
-                  GoRouter.of(context).go('/savings');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.vibrantEmerald,
-                  foregroundColor: AppTheme.deepNavy,
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-                  textStyle: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                child: const Text('TRY THE CALCULATOR NOW'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildQuoteSlide(BuildContext context, String quote, String author, String imagePath) {
+  Widget _buildHeroSlide(BuildContext context, {
+    required String quote,
+    required String imagePath,
+    required String buttonText,
+    required String route,
+  }) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        gradient: AppTheme.mainBackgroundGradient,
+        color: AppTheme.deepNavy,
         image: DecorationImage(
-          image: AssetImage(imagePath), // Placeholder for Unsplash image
+          image: AssetImage(imagePath),
           fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
+          colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
         ),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
@@ -178,30 +159,28 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 800),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 quote,
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 28,
-                  fontStyle: FontStyle.italic,
+                  fontSize: 32,
                   fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                '- $author',
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 18,
+                  shadows: [
+                     Shadow(
+                      offset: Offset(0, 2),
+                      blurRadius: 4.0,
+                      color: Colors.black54,
+                    ),
+                  ],
                 ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
-                  GoRouter.of(context).go('/savings');
+                  GoRouter.of(context).go(route);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppTheme.vibrantEmerald,
@@ -212,7 +191,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                child: const Text('TRY THE CALCULATOR NOW'),
+                child: Text(buttonText),
               ),
             ],
           ),
@@ -499,62 +478,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     );
   }
 
-  Widget _buildHeroSection(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        gradient: AppTheme.mainBackgroundGradient,
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 800),
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(
-                  color: AppTheme.vibrantEmerald.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppTheme.vibrantEmerald.withOpacity(0.3)),
-                ),
-                child: const Text(
-                  'TRUSTED BY 50,000+ AUSTRALIANS',
-                  style: TextStyle(
-                    color: AppTheme.vibrantEmerald,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 24),
-              Text(
-                "Stop paying the 'lazy tax'.\nCompare utilities in seconds.",
-                style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      height: 1.1,
-                    ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 24),
-              const Text(
-                'We analyse your bills against thousands of market offers to find you the absolute best value for Energy, Internet, and Insurance.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 18,
-                  height: 1.5,
-                ),
-              ),
-              const SizedBox(height: 40),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+
 
   Widget _buildCategorySection(BuildContext context) {
     return Container(

@@ -1,0 +1,81 @@
+Category,Provider,Logo Link,Availability / Tech Note,Setup Fee,NBN 25 (promo/ongoing),NBN 50 (promo/ongoing),NBN 100 (promo/ongoing),NBN 500 (promo/ongoing),NBN 1000 (promo/ongoing),Other Charges / Notes
+NBN,Telsim,View Logo,All tech; new low-cost entrant,$0,$39.90 (1st month) → $62.90,~$70+ ongoing,~$90+ ongoing,N/A,N/A,Extremely cheap first month; good for budget starters
+NBN,Flip,View Logo,All tech,$0,$44/6m → $59.90,~$55/6m → $70,N/A,N/A,N/A,Often the outright cheapest NBN 25; reliable low-tier
+NBN,Arctel,View Logo,All tech,$0,$43.90/6m → $63.99,~$60/6m → $80,N/A,N/A,N/A,Top budget NBN 25; code CLFINDER for extra
+NBN,Tangerine Telecom,View Logo,All tech,$0,$44.90/6m → $69.90,$60/6m → $80,$65/6m → $88.90,$63.90/6m → $88.90,~$95/6m → $115,Deep intro discounts across tiers
+NBN,Dodo,View Logo,All tech; strongest on FTTP/HFC,$0,$51.99/12m → $71.99,$65.99/12m → $85.99,$72.99/12m → $92.99,$72.99/12m → $92.99,$89.99/12m → $109.99,Longest promos; frequently cheapest overall
+NBN,MATE,View Logo,All tech; Aussie support,$0,~$51/6m → $76,~$65/6m → $85,~$71/6m → $96,~$85/6m → $110,~$141/6m → $166 (NBN 2000),Competitive on high-speed tiers; often cheapest NBN 2000
+NBN,More Telecom,View Logo,All tech; CommBank Yello discounts,$0,~$63/36m (Yello) → $68,~$78/36m → ongoing,~$85/36m → ongoing,~$100/36m → ongoing,~$129/36m → ongoing,Longest discounts with CommBank; excellent ongoing value
+NBN,TPG,View Logo,All tech,$0,~$44.99/6m → $59.99,$64.99/6m → $84.99,~$64.99/6m → $94.99,$64.99/6m → $94.99,$89.99/6m → $109.99,Price-beat guarantee; great value
+NBN,Optus,View Logo,All tech,$0,$59/12m → $79,$75/12m → $95,~$79/12m → $99,$79/12m → $99,~$99/12m → $129,Good mobile bundles
+NBN,iiNet,View Logo,All tech,$0,~$60/6m → $80,~$65/6m → $85,~$64.99/6m → $94.99,$64.99/6m → $94.99,~$89.99/6m → $109.99,Wi-Fi 7 modem on long stays
+NBN,Kogan Internet,View Logo,All tech,$0,~$45/6m → $65,~$60/6m → $80,~$65/6m → $85,~$70/6m → $90,~$95/6m → $115,Strong first-year deals
+NBN,Origin Energy,View Logo,All tech,$0,~$44.50/6m → $89 (bundle better),$51.50/6m → $103,$53.50/6m → $107,$53.50/6m → $107,N/A,Huge bundle savings with energy
+NBN,SpinTel,View Logo,All tech,$0,~$50/6m → $70,~$65/6m → $85,~$70/6m → $90,~$70/6m → $90,~$100/6m → $120,Frequent bundles
+NBN,Exetel,View Logo,All tech,$0,N/A,~$70–$80 ongoing,~$75–$85 ongoing,$80 ongoing,~$110–$120 ongoing,Very stable ongoing pricing
+NBN,Southern Phone,View Logo,All tech; regional focus,$0,N/A,~$70/6m → $85,~$75/6m → $90,$79/6m → $89,N/A,Top customer satisfaction
+NBN,Buddy Telco,View Logo,All tech,$0,N/A,N/A,~$70 ongoing,$85 ongoing,N/A,Budget high-speed
+NBN,Swoop,View Logo,All tech,$0,N/A,N/A,~$70/6m → $90,~$85/6m → $105,$85/6m → $109,Strong gigabit plans
+NBN,Aussie Broadband,View Logo,All tech; premium support,$0,~$69/6m → $79,$83/6m → $93,$80/6m → $95,~$95–$105 ongoing,~$120–$129 ongoing,Best speeds in peak hours
+NBN,Belong,View Logo,All tech,$0,N/A,~$60/6m → $85,$65/6m → $95,~$85–$95 ongoing,N/A,Simple Telstra-owned plans
+NBN,Superloop,View Logo,All tech,$0,~$59/6m → $79,~$69/6m → $89,$69/6m → $95,$69/6m → $95,~$145/6m → $165,Free eero on high plans
+NBN,Telstra,View Logo,All tech,$0–$200,~$80+ limited promo,~$85–$95 ongoing,~$95–$105 ongoing,~$105–$115 ongoing,~$120–$140 ongoing,Smart Modem; highest reliability
+NBN,Activ8me,View Logo,Strong on Fixed Wireless/regional,$0,~$70+ ongoing,~$80+ ongoing,~$90+ ongoing,Limited,Limited,Good rural coverage
+NBN,Launtel,View Logo,All tech,$0,~$50/6m → $70,~$65/6m → $85,~$70/6m → $90,~$75/6m → $95,~$110/6m → $130,Transparent pricing
+Mobile,Telstra,View Logo,Telstra (full),Best rural/regional; 99.7% pop,$0 online,$80/mo → 180GB; unlimited calls/SMS; limited intl calls/SMS; throttled to 1.5Mbps excess,Data sharing option; higher premium plans,,,
+Mobile,Boost Mobile,View Logo,Telstra (full),Same as full Telstra,$0,"$30–$50/mo range (prepaid often); e.g., 50GB+ with intl roaming options",Prepaid focus; strong for travel,,,
+Mobile,ALDI Mobile,View Logo,Telstra wholesale,98.8% pop,$0,"~$15–$35/mo; e.g., 30–80GB rollover plans; unlimited calls/SMS",Data rollover; grocery tie-ins,,,
+Mobile,Belong,View Logo,Telstra wholesale,98.8% pop,$0,$35/mo → 40GB; unlimited calls/SMS; data banking,Telstra-owned; simple plans,,,
+Mobile,Everyday Mobile (Woolworths),View Logo,Telstra wholesale,98.8% pop,$0,"$25–$45/mo; e.g., 30–60GB; rewards with Woolworths shopping",Prepaid options,,,
+Mobile,Exetel,View Logo,Telstra wholesale,98.8% pop,$0,"$20–$40/mo; competitive data (e.g., 50GB+)",Broadband bundle options,,,
+Mobile,More,View Logo,Telstra wholesale,98.8% pop,$0,"$20–$50/mo; e.g., 40–100GB; data banking",eSIM companion features,,,
+Mobile,Superloop,View Logo,Telstra wholesale,98.8% pop,$0,$25–$45/mo; good data allowances,NBN ties,,,
+Mobile,Tangerine Telecom,View Logo,Telstra wholesale,98.8% pop,$0,$15/4mo then $30 → 30GB; $24/4mo then $48 → 100GB; data banking up to 1000GB,Frequent promos,,,
+Mobile,Optus,View Logo,Optus (full),Strong urban; 98.5% pop,$0,$65/mo → 200GB; unlimited intl to 35 dest.; throttled 1.5Mbps,Premium features,,,
+Mobile,amaysim,View Logo,Optus,Same as Optus,$0,"$12–$30/28d (prepaid); e.g., 32GB+ with bonuses; data rollover/pause",Flexible prepaid,,,
+Mobile,Coles Mobile,View Logo,Optus,Same as Optus,$0,$20–$40/mo; rewards with Coles shopping,5G limited on some,,,
+Mobile,Dodo,View Logo,Optus,Same as Optus,$0,$15/4mo then $30 → 40GB; $20/4mo then $40 → 80GB; unlimited data banking,Common heavy promos,,,
+Mobile,Moose Mobile,View Logo,Optus,Same as Optus,$0,$12.4/6mo then $24.8 → 30GB; data banking 200GB,Budget-focused,,,
+Mobile,Southern Phone,View Logo,Optus,Same as Optus,$0,$24–$29/mo → 20–40GB; regional focus,Community-oriented,,,
+Mobile,SpinTel,View Logo,Optus,Same as Optus,$0,$14/6mo then $22 → 25GB; $29 → 50GB,NBN bundles,,,
+Mobile,Vodafone,View Logo,Vodafone (full),Smaller rural; ~98.4% pop,$0,$39/mo (promo) → 60GB; intl roaming $5/day; throttled 2Mbps,Urban strong,,,
+Mobile,Felix Mobile,View Logo,Vodafone,Same as Vodafone,$0,$20–$40/mo; unlimited data options on some,Modern plans,,,
+Mobile,Kogan Mobile,View Logo,Vodafone,Same as Vodafone,$0,"$20–$45/mo; e.g., 50GB+",Tech retailer ties,,,
+Mobile,Lebara,View Logo,Vodafone,Same as Vodafone,$0,$15–$40/mo; strong intl calls,Ethnic/international focus,,,
+Mobile,TPG,View Logo,Vodafone,Same as Vodafone,$0,$17.5/6mo then $35 → 50GB; unlimited intl to 31 dest.,Broadband bundles,,,
+Mobile,iiNet,View Logo,Vodafone,Same as Vodafone,$0,$25–$45/mo; similar to TPG (sibling),ISP ties,,,
+Gas,AGL,View Logo,"NSW, VIC, SA, QLD, WA, ACT (most networks)",~75.61¢,3.11 – 4.83,"~$1,026","Dual-fuel discounts, bill credits, carbon offset options",,,
+Gas,Origin Energy,View Logo,"NSW, VIC, SA, QLD, WA, ACT (most networks)",~80–95¢,3.00 – 5.00,"~$980–1,100","Everyday Rewards points, strong in WA/QLD",,,
+Gas,EnergyAustralia,View Logo,"NSW, VIC, SA, ACT (most networks)",95.92¢,3.85 – 5.79,~$941,"Flexi Plan, dual-fuel bundle discounts",,,
+Gas,Alinta Energy,View Logo,"NSW, VIC, QLD, SA, WA (strong in WA)",56.92¢,2.22 – 4.57,~$869 (often cheapest),"HomeDeal Select, frequent intro credits",,,
+Gas,Lumo Energy,View Logo,"NSW, VIC, SA, SE QLD",~70–90¢,2.80 – 4.50,"~$900–1,050",2025 Most Satisfied dual-fuel winner,,,
+Gas,Sumo,View Logo,"NSW, VIC",~65–85¢,2.90 – 4.80,"~$920–1,080","Simple plans, good value",,,
+Gas,Red Energy,View Logo,"NSW, VIC, QLD, SA, ACT",82.5¢,2.66 – 3.94,~$961,"Living Energy Saver, top-rated in VIC/NSW",,,
+Gas,Dodo,View Logo,"NSW, VIC, SA, SE QLD",~80–100¢,3.50 – 5.50,"~$1,000–1,150","Budget-focused, easy switching",,,
+Gas,ENGIE (ex-Simply),View Logo,"NSW, VIC, SA, QLD",69.87¢,4.41 – 7.21,"~$1,173",NRMA partnership discounts,,,
+Gas,Powershop,View Logo,"NSW, VIC, SA, SE QLD",85.31¢,4.12 (flat),"~$1,062","Power Offset (carbon), app-based",,,
+Gas,Momentum Energy,View Logo,"VIC, NSW, SA, ACT",~75–95¢,3.20 – 5.00,"~$950–1,100",Competitive in VIC,,,
+Gas,ActewAGL,View Logo,"ACT (Evoenergy network), some NSW",~70–90¢ (ACT higher),3.00 – 4.80,"~$1,000+","ACT-focused, reliable",,,
+Gas,Kleenheat,View Logo,"WA (ATCO network), some others",~60–80¢ (WA),2.50 – 4.00 (WA),~$700–900 (WA),"Strong in WA, trusted brand",,,
+Gas,1st Energy,View Logo,"VIC, NSW, SA",~80–100¢,3.40 – 5.20,"~$1,050–1,200",Budget options,,,
+Gas,CovaU Energy,View Logo,"NSW, VIC, SA",~70–90¢,3.10 – 4.90,"~$950–1,100",Competitive rates,,,
+Gas,Tango Energy,View Logo,"VIC, NSW, SA",~75–95¢,3.00 – 5.00,"~$980–1,150",Good intro offers,,,
+Gas,GloBird Energy,View Logo,"VIC, NSW, SA",~80–100¢,3.50 – 5.50,"~$1,050–1,200",Green energy focus,,,
+Gas,Energy Locals,View Logo,"NSW, VIC, SA, QLD",~70–90¢,3.20 – 4.80,"~$950–1,100",Community/local feel,,,
+Gas,OVO Energy,View Logo,"NSW, VIC, SA",~75–95¢,3.30 – 5.10,"~$1,000–1,150",Tech/app-focused,,,
+Gas,Aurora Energy,View Logo,"TAS (limited gas zones), some others",~80–110¢ (TAS),3.50 – 6.00 (TAS),"~$1,100+",Main TAS provider,,,
+Electricity,Provider,Sydney (2000) SC / UR,Melb (3000) SC / UR,Bris (4000) SC / UR,Adelaide (5000) SC / UR,Perth (6000) SC / UR,2026 Features & Current Offers,,,
+Electricity,Origin Energy,108c / 32c,102c / 26c,124c / 33c,112c / 42c,N/A,"$200 Bill Credit (Online sign-up); 5,000 Everyday Rewards pts.",,,
+Electricity,AGL Energy,92c / 34c,89c / 25c,121c / 29c,100c / 52c,N/A,Netflix Standard included; $100 sign-up bonus.,,,
+Electricity,OVO Energy,105c / 29c,92c / 24c,115c / 31c,108c / 38c,N/A,"""The Free 3"": $0 usage from 11am–2pm daily; 3% interest on credit.",,,
+Electricity,GloBird,109c / 29c,95c / 23c,118c / 28c,115c / 36c,N/A,Lowest Usage (VIC); 3% Pay-on-time discount; Carbon Neutral.,,,
+Electricity,Amber Electric,82c / 27c*,85c / 22c*,90c / 26c*,95c / 35c*,N/A,Wholesale Pass-through: Best for EV/Batteries; $15–$20 sub fee.,,,
+Electricity,Red Energy,88c / 34c,121c / 35c,128c / 32c,118c / 43c,N/A,Qantas Points: Earn 2 pts per $1 spent; Owned by Snowy Hydro.,,,
+Electricity,Alinta Energy,110c / 31c,104c / 27c,120c / 28c,110c / 44c,108c / 31c,Dual-fuel discounts; Market leader in WA contestability.,,,
+Electricity,EnergyAust.,101c / 37c,108c / 31c,114c / 34c,121c / 46c,N/A,Flexi Plan: $100 bonus credit; High stability for renters.,,,
+Electricity,Dodo Power,131c / 26c,131c / 26c,131c / 26c,131c / 26c,N/A,Flat SC/UR: Consistent rates across states; Bundling deals.,,,
+Electricity,Diamond Energy,77c / 33c,85c / 28c,105c / 31c,110c / 41c,N/A,Lowest Supply (NSW); High-ranked for sustainability/renewables.,,,
+Electricity,Powershop,88c / 34c,95c / 26c,122c / 30c,114c / 41c,N/A,Powerpacks: Buy energy in advance to secure lower rates.,,,
+Electricity,Nectr,112c / 35c,105c / 28c,118c / 33c,120c / 42c,N/A,Fixed rates for 12 months; No move-in fees.,,,
+Electricity,Tango Energy,109c / 33c,101c / 25c,116c / 30c,112c / 40c,N/A,Simple low-rate structure; owned by Pacific Blue.,,,
+Electricity,Synergy,N/A,N/A,N/A,N/A,102c / 29c,Regulated (WA): Standard Home Plan; No retail competition.,,,

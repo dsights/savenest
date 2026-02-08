@@ -63,13 +63,16 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
             children: [
               _buildHeroSection(context),
               _buildSavingsCalculatorHeroCard(context),
+              _buildQuoteSlide(context, 'Finding the best deals for my home has never been easier. SaveNest is a game-changer!', 'A grateful customer', 'assets/images/home_ins.png'), // Placeholder image
+              _buildQuoteSlide(context, 'I saved hundreds on my electricity bill within minutes. Highly recommended!', 'A savvy saver', 'assets/images/energy.png'), // Placeholder image
+              _buildQuoteSlide(context, 'Transparent, simple, and effective. SaveNest truly helps you beat the lazy tax.', 'A happy user', 'assets/images/car_ins.png'), // Placeholder image
             ],
           ),
         ),
         const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(2, (index) { // Hardcoded 2 for now, adjust based on number of slides
+          children: List.generate(5, (index) { // Updated to 5 slides
             return Container(
               width: 8.0,
               height: 8.0,
@@ -117,6 +120,65 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                   fontSize: 18,
                   height: 1.5,
                 ),
+              ),
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/savings');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppTheme.vibrantEmerald,
+                  foregroundColor: AppTheme.deepNavy,
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                  textStyle: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                child: const Text('TRY THE CALCULATOR NOW'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildQuoteSlide(BuildContext context, String quote, String author, String imagePath) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: AppTheme.mainBackgroundGradient,
+        image: DecorationImage(
+          image: AssetImage(imagePath), // Placeholder for Unsplash image
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
+        ),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 800),
+          child: Column(
+            children: [
+              Text(
+                quote,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 16),
+              Text(
+                '- $author',
+                style: const TextStyle(
+                  color: Colors.white70,
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 40),
               ElevatedButton(
@@ -484,7 +546,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1000),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
                 'What would you like to compare?',

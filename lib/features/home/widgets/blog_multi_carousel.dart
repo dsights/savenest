@@ -16,11 +16,12 @@ class BlogMultiCarousel extends StatefulWidget {
 class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
   late final PageController _pageController;
   int _currentPage = 0;
+  final int _postsPerPage = 4; // Define how many posts per page
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 0.8); // Adjust viewportFraction for visible partial next/prev cards
+    _pageController = PageController(viewportFraction: 1.0); // Each page takes full width
     _pageController.addListener(() {
       setState(() {
         _currentPage = _pageController.page?.round() ?? 0;
@@ -36,23 +37,36 @@ class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    // Calculate total number of pages
+    final int numPages = (widget.posts.length / _postsPerPage).ceil();
+
     return Column(
       children: [
         SizedBox(
           height: 380, // Height of the carousel
           child: PageView.builder(
             controller: _pageController,
-            itemCount: widget.posts.length,
-            itemBuilder: (context, index) {
-              final post = widget.posts[index];
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0), // Spacing between cards
-                child: BlogCard(
-                  post: post,
-                  onTap: () {
-                    context.go('/blog/${post.slug}');
-                  },
-                ),
+            itemCount: numPages, // Number of pages
+            itemBuilder: (context, pageIndex) {
+              final int startIdx = pageIndex * _postsPerPage;
+              final int endIdx = (startIdx + _postsPerPage).clamp(0, widget.posts.length);
+              final List<BlogPost> postsForPage = widget.posts.sublist(startIdx, endIdx);
+
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Distribute cards evenly
+                children: postsForPage.map((post) {
+                  return Expanded( // Each card takes equal space
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: BlogCard(
+                        post: post,
+                        onTap: () {
+                          context.go('/blog/${post.slug}');
+                        },
+                      ),
+                    ),
+                  );
+                }).toList(),
               );
             },
           ),
@@ -61,7 +75,7 @@ class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
         // Dots indicator
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(widget.posts.length, (index) {
+          children: List.generate(numPages, (index) { // Dots for each page
             return GestureDetector(
               onTap: () {
                 _pageController.animateToPage(

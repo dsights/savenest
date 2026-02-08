@@ -47,6 +47,34 @@ final goRouter = GoRouter(
       },
     ),
     GoRoute(
+      path: '/deals/insurance', // General Insurance
+      builder: (context, state) {
+         return const ComparisonScreen(initialCategory: ProductCategory.insurance);
+      },
+    ),
+    GoRoute(
+      path: '/deals/insurance/health', // Health Insurance
+      builder: (context, state) {
+         return const ComparisonScreen(initialCategory: ProductCategory.insurance); // Route to generic insurance for now
+      },
+    ),
+    GoRoute(
+      path: '/deals/insurance/car', // Car Insurance
+      builder: (context, state) {
+         return const ComparisonScreen(initialCategory: ProductCategory.insurance); // Route to generic insurance for now
+      },
+    ),
+    GoRoute(
+      path: '/deals/credit-cards', // Credit Cards
+      builder: (context, state) {
+         return const ComparisonScreen(initialCategory: ProductCategory.creditCards);
+      },
+    ),
+    GoRoute(
+      path: '/loans/home', // Home Loans (placeholder)
+      builder: (context, state) => const SavingsScreen(), // Temporary route to SavingsScreen
+    ),
+    GoRoute(
       path: '/blog/:slug',
       builder: (context, state) {
         final slug = state.pathParameters['slug'];
@@ -72,6 +100,14 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/about',
       builder: (context, state) => const AboutUsScreen(),
+    ),
+    GoRoute(
+      path: '/legal/disclaimer', // Placeholder for Disclaimer page
+      builder: (context, state) => const AboutUsScreen(), // Using AboutUsScreen as a temporary placeholder
+    ),
+    GoRoute(
+      path: '/sitemap', // Placeholder for Sitemap page
+      builder: (context, state) => const AboutUsScreen(), // Using AboutUsScreen as a temporary placeholder
     ),
   ],
 );

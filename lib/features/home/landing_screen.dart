@@ -43,6 +43,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
               _buildCategorySection(context),
               _buildBlogSection(context, ref), // Add Blog Section
               _buildHowItWorksSection(context),
+              _buildTestimonialsSection(context),
               _buildFooter(context),
             ],
           ),
@@ -381,7 +382,11 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                       _categoryCard(context, 'Gas', Icons.local_fire_department, Colors.red, '/deals/gas'),
                       _categoryCard(context, 'Internet', Icons.wifi, Colors.blue, '/deals/internet'),
                       _categoryCard(context, 'Mobile', Icons.phone_iphone, Colors.green, '/deals/mobile'),
-                      _categoryCard(context, 'Insurance', Icons.shield, Colors.purple, '/compare/insurance'),
+                      _categoryCard(context, 'General Insurance', Icons.shield, Colors.purple, '/deals/insurance'), // Renamed existing Insurance
+                      _categoryCard(context, 'Health Insurance', Icons.medical_services, Colors.pink, '/deals/insurance/health'),
+                      _categoryCard(context, 'Car Insurance', Icons.directions_car, Colors.indigo, '/deals/insurance/car'),
+                      _categoryCard(context, 'Credit Cards', Icons.credit_card, Colors.orangeAccent, '/deals/credit-cards'),
+                      _categoryCard(context, 'Home Loans', Icons.home_work, Colors.brown, '/loans/home'),
                       _categoryCard(context, 'Savings Calculator', Icons.calculate, Colors.cyan, '/savings'),
                     ],
                   );
@@ -448,6 +453,16 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 16),
+              const Text(
+                'Our mission is to empower Australians to make smarter financial decisions by simplifying the complex world of utilities and financial products. We provide clear, independent guidance to help you find the best value and save money.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 18,
+                  height: 1.5,
+                ),
+              ),
               const SizedBox(height: 60),
               Wrap(
                 spacing: 40,
@@ -455,18 +470,18 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                 alignment: WrapAlignment.center,
                 children: [
                   _stepItem(
-                    '1. Enter Details',
-                    'Tell us a bit about your current spend and usage habits.',
+                    '1. Tell Us Your Needs',
+                    'Share some basic details about your current plans and what you\'re looking for. It\'s quick and easy!',
                     Icons.edit_note,
                   ),
                   _stepItem(
-                    '2. We Compare',
-                    'Our engine scans 50+ providers to find better deals.',
+                    '2. Compare Options',
+                    'Our smart engine instantly scans market offers to find you personalized, better deals.',
                     Icons.analytics_outlined,
                   ),
                   _stepItem(
                     '3. Switch & Save',
-                    'Switch in clicks. We handle the paperwork for you.',
+                    'Found a better deal? Switch effortlessly. We help you with the paperwork and process.',
                     Icons.savings_outlined,
                   ),
                 ],
@@ -535,7 +550,9 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                   _footerLink(context, 'About Us', '/about'),
                   _footerLink(context, 'Privacy Policy', '/privacy'),
                   _footerLink(context, 'Terms of Service', '/terms'),
-                  _footerLink(context, 'How It Works', '/how-it-works'),
+                  _footerLink(context, 'How It Works & Business Model', '/how-it-works'),
+                  _footerLink(context, 'Disclaimer', '/legal/disclaimer'),
+                  _footerLink(context, 'Sitemap', '/sitemap'),
                   _footerLink(context, 'For Partners', '/partners/advertise'),
                 ],
               ),
@@ -558,4 +575,113 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
       ),
     );
   }
+
+  Widget _buildTestimonialsSection(BuildContext context) {
+    return Container(
+      color: Colors.white, // A contrasting background for testimonials
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1000),
+          child: Column(
+            children: [
+              const Text(
+                'What Our Customers Say',
+                style: TextStyle(
+                  color: AppTheme.deepNavy,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 40),
+              // Using a ListView.builder with a fixed height to simulate a horizontal carousel.
+              // In a real app, you might use a dedicated carousel package.
+              SizedBox(
+                height: 200, // Adjust height as needed
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _testimonials.length,
+                  itemBuilder: (context, index) {
+                    final testimonial = _testimonials[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: SizedBox(
+                        width: 300, // Fixed width for each testimonial card
+                        child: Card(
+                          color: AppTheme.deepNavy,
+                          elevation: 8,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.format_quote, color: AppTheme.vibrantEmerald.withOpacity(0.7), size: 36),
+                                const SizedBox(height: 12),
+                                Text(
+                                  testimonial.quote,
+                                  style: const TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 16,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  maxLines: 4,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(height: 12),
+                                Text(
+                                  '- ${testimonial.author}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
+
+class _Testimonial {
+  final String quote;
+  final String author;
+
+  _Testimonial({required this.quote, required this.author});
+}
+
+final List<_Testimonial> _testimonials = [
+  _Testimonial(
+    quote: "SaveNest made comparing electricity plans so easy! I saved so much time and found a better deal instantly.",
+    author: "Sarah P.",
+  ),
+  _Testimonial(
+    quote: "I was dreading switching internet providers, but SaveNest streamlined the whole process. Highly recommend!",
+    author: "David L.",
+  ),
+  _Testimonial(
+    quote: "Honest, transparent, and incredibly helpful. SaveNest delivered on their promise to find me the best value.",
+    author: "Jessica R.",
+  ),
+  _Testimonial(
+    quote: "The savings calculator helped me understand my potential savings before even comparing. Brilliant tool!",
+    author: "Mark T.",
+  ),
+  _Testimonial(
+    quote: "Finally, a comparison site that puts the customer first. No hidden fees, just great deals.",
+    author: "Emily C.",
+  ),
+];

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb; // For web check
+import 'package:go_router/go_router.dart';
+import 'package:meta_seo/meta_seo.dart';
 import 'package:url_launcher/url_launcher.dart'; // For launching app store links
 import '../../theme/app_theme.dart';
 import '../../widgets/glass_container.dart';
@@ -18,20 +20,27 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
 
   @override
   Widget build(BuildContext context, WidgetRef ref) { // Add ref
-    return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
-      endDrawer: _buildMobileDrawer(context),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _buildNavBar(context),
-            _buildHeroSection(context),
-            if (kIsWeb) _buildDownloadAppSection(context), // New Section
-            _buildCategorySection(context),
-            _buildBlogSection(context, ref), // Add Blog Section
-            _buildHowItWorksSection(context),
-            _buildFooter(context),
-          ],
+    return MetaSeo(
+      metaData: const MetaData(
+        title: 'SaveNest | Compare & Save on Australian Utilities',
+        description:
+            'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.',
+      ),
+      child: Scaffold(
+        backgroundColor: AppTheme.deepNavy,
+        endDrawer: _buildMobileDrawer(context),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              _buildNavBar(context),
+              _buildHeroSection(context),
+              if (kIsWeb) _buildDownloadAppSection(context), // New Section
+              _buildCategorySection(context),
+              _buildBlogSection(context, ref), // Add Blog Section
+              _buildHowItWorksSection(context),
+              _buildFooter(context),
+            ],
+          ),
         ),
       ),
     );
@@ -183,12 +192,10 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
               if (MediaQuery.of(context).size.width > 600)
                 Row(
                   children: [
-                    _navLink('Energy'),
-                    _navLink('Broadband'),
-                    _navLink('Insurance'),
-                    const SizedBox(width: 24),
-                    _loginButton(context),
-                  ],
+                  _navLink(context, 'Electricity', '/deals/electricity'),
+                  _navLink(context, 'Gas', '/deals/gas'),
+                  _navLink(context, 'Internet', '/deals/internet'),
+                  _navLink(context, 'Mobile', '/deals/mobile'),
                 )
               else
                 // Mobile Menu Button
@@ -226,61 +233,50 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
           ),
           const SizedBox(height: 40),
           ListTile(
-            title: const Text('Energy', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {},
-          ),
-          ListTile(
-            title: const Text('Broadband', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {},
-          ),
-          ListTile(
-            title: const Text('Insurance', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {},
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context); // Close drawer
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const SavingsScreen()),
-              );
+            title: const Text('Electricity', style: TextStyle(color: Colors.white, fontSize: 18)),
+            onTap: () {
+              Navigator.pop(context);
+              GoRouter.of(context).go('/deals/electricity');
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppTheme.vibrantEmerald,
-              foregroundColor: AppTheme.deepNavy,
-              padding: const EdgeInsets.symmetric(vertical: 16),
-            ),
-            child: const Text('CALCULATE SAVINGS'),
+          ),
+          ListTile(
+            title: const Text('Gas', style: TextStyle(color: Colors.white, fontSize: 18)),
+            onTap: () {
+              Navigator.pop(context);
+              GoRouter.of(context).go('/deals/gas');
+            },
+          ),
+          ListTile(
+            title: const Text('Internet', style: TextStyle(color: Colors.white, fontSize: 18)),
+            onTap: () {
+              Navigator.pop(context);
+              GoRouter.of(context).go('/deals/internet');
+            },
+          ),
+          ListTile(
+            title: const Text('Mobile', style: TextStyle(color: Colors.white, fontSize: 18)),
+            onTap: () {
+              Navigator.pop(context);
+              GoRouter.of(context).go('/deals/mobile');
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget _loginButton(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const SavingsScreen()),
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white10,
-        foregroundColor: Colors.white,
-      ),
-      child: const Text('Log In'),
-    );
-  }
-
-  Widget _navLink(String title) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: Colors.white70,
-          fontWeight: FontWeight.w500,
-          fontSize: 14,
+  Widget _navLink(BuildContext context, String title, String route) {
+    return InkWell(
+      onTap: () => GoRouter.of(context).go(route),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white70,
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+          ),
         ),
       ),
     );
@@ -316,14 +312,14 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                 ),
               ),
               const SizedBox(height: 24),
-              Text(
-                "Stop paying the 'lazy tax'.\nCompare utilities in seconds.",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.displayMedium?.copyWith(
+              Seo.text(
+                text: "Stop paying the 'lazy tax'.\nCompare utilities in seconds.",
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       height: 1.1,
                     ),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
               const Text(
@@ -336,23 +332,6 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                 ),
               ),
               const SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const SavingsScreen()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.vibrantEmerald,
-                  foregroundColor: AppTheme.deepNavy,
-                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
-                  textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                ),
-                child: const Text('CALCULATE MY SAVINGS'),
-              ),
             ],
           ),
         ),
@@ -385,12 +364,11 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
                     spacing: 20,
                     runSpacing: 20,
                     children: [
-                      _categoryCard(context, 'Electricity & Gas', Icons.bolt, Colors.orange, ProductCategory.energy),
-                      _categoryCard(context, 'Internet & Mobile', Icons.wifi, Colors.blue, ProductCategory.internet),
-                      _categoryCard(context, 'Home Loans', Icons.home, Colors.purple, ProductCategory.creditCards), // Placeholder
-                      _categoryCard(context, 'Health Insurance', Icons.favorite, Colors.red, ProductCategory.homeInsurance), // Placeholder
-                      _categoryCard(context, 'Car Insurance', Icons.directions_car, Colors.green, ProductCategory.carInsurance),
-                      _categoryCard(context, 'Credit Cards', Icons.credit_card, Colors.amber, ProductCategory.creditCards),
+                      _categoryCard(context, 'Electricity', Icons.bolt, Colors.orange, '/deals/electricity'),
+                      _categoryCard(context, 'Gas', Icons.local_fire_department, Colors.red, '/deals/gas'),
+                      _categoryCard(context, 'Internet', Icons.wifi, Colors.blue, '/deals/internet'),
+                      _categoryCard(context, 'Mobile', Icons.phone_iphone, Colors.green, '/deals/mobile'),
+                      _categoryCard(context, 'Insurance', Icons.shield, Colors.purple, '/compare/insurance'),
                     ],
                   );
                 },
@@ -402,12 +380,10 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
     );
   }
 
-  Widget _categoryCard(BuildContext context, String title, IconData icon, Color color, ProductCategory category) {
+  Widget _categoryCard(BuildContext context, String title, IconData icon, Color color, String route) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ComparisonScreen(initialCategory: category)),
-        );
+        GoRouter.of(context).go(route);
       },
       child: GlassContainer(
         width: 150,
@@ -542,9 +518,11 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _footerLink('Privacy Policy'),
-                  _footerLink('Terms of Service'),
-                  _footerLink('Contact Us'),
+                  _footerLink(context, 'About Us', '/about'),
+                  _footerLink(context, 'Privacy Policy', '/privacy'),
+                  _footerLink(context, 'Terms of Service', '/terms'),
+                  _footerLink(context, 'How It Works', '/how-it-works'),
+                  _footerLink(context, 'For Partners', '/partners/advertise'),
                 ],
               ),
             ],
@@ -554,12 +532,15 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
     );
   }
 
-  Widget _footerLink(String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Text(
-        text,
-        style: const TextStyle(color: Colors.white30, fontSize: 12),
+  Widget _footerLink(BuildContext context, String text, String route) {
+    return InkWell(
+      onTap: () => GoRouter.of(context).go(route),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        child: Text(
+          text,
+          style: const TextStyle(color: Colors.white30, fontSize: 12),
+        ),
       ),
     );
   }

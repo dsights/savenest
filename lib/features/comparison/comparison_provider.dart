@@ -49,7 +49,7 @@ class ComparisonController extends StateNotifier<ComparisonState> {
   ComparisonController(this._repository)
       : super(ComparisonState(deals: [], isLoading: true)) {
         // Load default category (Energy) on init
-        loadCategory(ProductCategory.energy);
+        loadCategory(ProductCategory.electricity);
       }
 
   Future<void> loadCategory(ProductCategory category) async {
@@ -57,6 +57,19 @@ class ComparisonController extends StateNotifier<ComparisonState> {
     
     try {
       final deals = await _repository.getDeals(category);
+      
+      // Sort deals: sponsored first, then by price
+      deals.sort((a, b) {
+        if (a.isSponsored && !b.isSponsored) {
+          return -1; // a comes first
+        } else if (!a.isSponsored && b.isSponsored) {
+          return 1; // b comes first
+        } else {
+          // If both are sponsored or not sponsored, sort by price
+          return a.price.compareTo(b.price);
+        }
+      });
+
       _allDeals = deals;
       
       state = state.copyWith(

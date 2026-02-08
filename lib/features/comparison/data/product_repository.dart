@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // For rootBundle
 import '../comparison_model.dart';
 
@@ -31,11 +32,25 @@ class JsonProductRepository implements ProductRepository {
 
   String _getCategoryKey(ProductCategory category) {
     switch (category) {
-      case ProductCategory.energy: return 'energy';
-      case ProductCategory.internet: return 'internet';
+      case ProductCategory.electricity: return 'electricity';
+      case ProductCategory.gas: return 'gas';
       case ProductCategory.mobile: return 'mobile';
-      case ProductCategory.homeInsurance: return 'homeInsurance';
+      case ProductCategory.internet: return 'internet';
+      case ProductCategory.insurance: return 'insurance';
       default: return 'other';
+    }
+  }
+
+  double _parseCommission(String commission) {
+    if (commission.toLowerCase().contains('pending')) return 0.0;
+    if (commission.toLowerCase().contains('varies')) return 0.0;
+    
+    try {
+      // Extract numbers from string like "$8.50 per sale"
+      final numericPart = commission.replaceAll(RegExp(r'[^0-9.]'), '');
+      return double.parse(numericPart);
+    } catch (e) {
+      return 0.0;
     }
   }
 
@@ -44,6 +59,7 @@ class JsonProductRepository implements ProductRepository {
       id: json['id'],
       category: category,
       providerName: json['providerName'],
+      providerLogoUrl: json['logoUrl'] ?? '',
       providerColor: Color(int.parse(json['providerColor'])), // Parse hex string
       planName: json['planName'],
       description: json['description'],
@@ -51,6 +67,7 @@ class JsonProductRepository implements ProductRepository {
       price: (json['price'] as num).toDouble(),
       priceUnit: json['priceUnit'] ?? '/mo',
       affiliateUrl: json['affiliateUrl'],
+      commission: _parseCommission(json['commission']),
       rating: (json['rating'] as num).toDouble(),
       isSponsored: json['isSponsored'] ?? false,
       isGreen: json['isGreen'] ?? false,

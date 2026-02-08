@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 enum ProductCategory {
-  energy,
+  electricity,
+  gas,
   internet,
   mobile,
-  homeInsurance,
-  carInsurance,
+  insurance,
   creditCards
 }
 

@@ -12,7 +12,29 @@ SaveNest is a full-stack application consisting of:
 
 ---
 
-## 2. GitHub Migration & Source Control
+## 2. Recent Updates (February 2026)
+The SaveNest platform has undergone a significant transformation to function as a full-fledged affiliate comparison and publisher website.
+
+### Key Changes:
+*   **Affiliate Comparison Functionality:**
+    *   Introduced dedicated comparison pages for Electricity, Gas, Internet, and Mobile services.
+    *   Implemented data models and logic to display partner offers, including "Sponsored" and "Best Value" placements.
+    *   URL structure for comparison pages updated from `/compare/:category` to `/deals/:category` for a more professional and SEO-friendly presentation.
+*   **Enhanced Information Architecture:**
+    *   Added essential static content pages: "About Us", "How We Work" (explaining the affiliate model), "Advertise With Us" (for potential partners), "Privacy Policy", and "Terms of Service".
+    *   The website now explicitly explains its affiliate model and how it operates.
+*   **Navigation & User Experience:**
+    *   Updated the main navigation bar, mobile drawer, and home page category cards to link seamlessly to the new comparison and informational pages.
+    *   Improved overall site legitimacy and transparency to align with affiliate marketing best practices.
+
+### Implications for Operation:
+*   **Content Management:** Ensure `assets/data/products.json` is kept up-to-date with current offers, commissions, and partner details.
+*   **Affiliate Tracking:** Verify that all `affiliateUrl` links in `products.json` are correct and properly tracked through your chosen affiliate networks (e.g., Commission Factory, Impact).
+*   **Partner Outreach:** Leverage the "Advertise With Us" page as a resource for onboarding new affiliate partners.
+
+---
+
+## 3. GitHub Migration & Source Control
 To move the code to your GitHub and enable automation:
 
 ### GitHub Link
@@ -37,7 +59,7 @@ Go to **Settings > Secrets and variables > Actions** and add these:
 
 ---
 
-## 3. Production Setup (cPanel UI)
+## 4. Production Setup (cPanel UI)
 
 ### Backend Setup (Setup Python App)
 1.  **Create Application**:
@@ -56,7 +78,7 @@ The GitHub Action automatically handles this by placing files into `public_html/
 
 ---
 
-## 4. Operational Commands (SSH)
+## 5. Operational Commands (SSH)
 If you need to manually debug or setup the backend via terminal:
 
 *   **Access the App Folder:** `cd ~/savenest_backend`
@@ -67,7 +89,7 @@ If you need to manually debug or setup the backend via terminal:
 
 ---
 
-## 5. Daily Operational Monitoring
+## 6. Daily Operational Monitoring
 To ensure SaveNest is running smoothly, perform these checks:
 
 1.  **Health Check:** Visit `https://savenest.au/api/` daily. If it doesn't return `{"status": "ok"}`, the backend is down.
@@ -79,7 +101,7 @@ To ensure SaveNest is running smoothly, perform these checks:
 
 ---
 
-## 6. Production Deployment Checklist (Step-by-Step)
+## 7. Production Deployment Checklist (Step-by-Step)
 1.  **Code Change:** Update code locally.
 2.  **Push:** `git push origin main`.
 3.  **GitHub Action:** Watch the **Actions** tab in GitHub to ensure the build succeeds.

@@ -7,18 +7,21 @@ class AboutUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MetaSeo(
-      metaData: const MetaData(
+    // Update meta tags for SEO
+    MetaSEO().updateMetaData(
+      MetaData(
         title: 'About SaveNest | Australia\'s Smart Utility Comparison Site',
         description:
             'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.',
       ),
-      child: Scaffold(
+    );
+
+    return Scaffold(
         backgroundColor: AppTheme.deepNavy,
         appBar: AppBar(
-          title: Seo.text(
-            text: 'About Us',
-            style: const TextStyle(
+          title: const Text(
+            'About Us',
+            style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),

@@ -53,19 +53,22 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final controller = ref.read(comparisonProvider.notifier);
     final categoryTitle = _getCategoryTitle(widget.initialCategory);
 
-    return MetaSeo(
-      metaData: MetaData(
+    // Update meta tags for SEO
+    MetaSEO().updateMetaData(
+      MetaData(
         title: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest',
         description:
             'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.',
       ),
-      child: Scaffold(
+    );
+
+    return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: Seo.text(
-            text: 'Compare & Save on $categoryTitle',
+          title: Text(
+            'Compare & Save on $categoryTitle',
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

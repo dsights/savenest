@@ -7,84 +7,85 @@ class AdvertiseWithUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MetaSeo(
-      metaData: const MetaData(
+    // Update meta tags for SEO
+    MetaSEO().updateMetaData(
+      MetaData(
         title: 'Partner with SaveNest | Advertise Your Services',
         description:
             'Connect with a growing audience of savvy Australian households. Learn about our promotional opportunities and how to partner with SaveNest.',
       ),
-      child: Scaffold(
-        backgroundColor: AppTheme.deepNavy,
-        appBar: AppBar(
-          title: Seo.text(
-            text: 'Advertise With Us',
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+    );
+
+    return Scaffold(
+      backgroundColor: AppTheme.deepNavy,
+      appBar: AppBar(
+        title: const Text(
+          'Advertise With Us',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
-          backgroundColor: AppTheme.deepNavy,
         ),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildSectionTitle('For Partners'),
-              const SizedBox(height: 16),
-              _buildBodyText(
-                  'SaveNest is a rapidly growing Australian comparison platform helping households make smarter decisions and save money on their essential services. We connect with high-intent customers at the exact moment they are looking to switch providers.'),
-              const SizedBox(height: 32),
-              _buildSectionTitle('Our Audience'),
-              const SizedBox(height: 16),
-              _buildAudienceItem('Demographic',
-                  'Primarily Australian households, aged 25-55, who are budget-conscious and actively looking for better deals on utilities and services.'),
-              _buildAudienceItem('Location Focus',
-                  'Capital cities and major regional centers in NSW, VIC, and QLD, with planned expansion nationwide.'),
-              _buildAudienceItem('Key Pain Points',
-                  'Rising cost of living, confusing utility plans, loyalty tax from existing providers, and a lack of time to research alternatives effectively.'),
-              const SizedBox(height: 32),
-              _buildSectionTitle('Promotional Channels'),
-              const SizedBox(height: 16),
-              _buildChannelItem('Website Comparison Pages',
-                  'Directly compare providers for electricity, gas, internet, and mobile.'),
-              _buildChannelItem('Educational Blog Posts',
-                  'In-depth guides, reviews, and money-saving tips that attract organic search traffic.'),
-              _buildChannelItem('Email Newsletter',
-                  'A growing list of subscribers receiving curated deals and market updates.'),
-              _buildChannelItem(
-                  'Social Media', 'Engaging content on platforms like Facebook and Instagram.'),
-              const SizedBox(height: 32),
-              _buildSectionTitle('Example Placements'),
-              const SizedBox(height: 16),
-              _buildPlacementItem('Featured Partner on Category Page',
-                  'Top-of-page placement with enhanced branding in our comparison tables.'),
-              _buildPlacementItem('Inclusion in "Best Deals This Month" Article',
-                  'Showcase your offer in our popular monthly roundup blog post.'),
-              _buildPlacementItem('Inclusion in "New Customer Offers" Email',
-                  'Directly reach our engaged email subscribers with your latest promotions.'),
-              const SizedBox(height: 32),
-              _buildSectionTitle('Contact Us'),
-              const SizedBox(height: 16),
-              _buildBodyText(
-                  'We partner with brands primarily through affiliate networks like Commission Factory, Impact, and others. For all partnership inquiries, please contact our team.'),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  const Icon(Icons.email, color: AppTheme.vibrantEmerald),
-                  const SizedBox(width: 8),
-                  Text(
-                    'partnerships@savenest.au',
-                    style: const TextStyle(
-                      color: AppTheme.vibrantEmerald,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+        backgroundColor: AppTheme.deepNavy,
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildSectionTitle('For Partners'),
+            const SizedBox(height: 16),
+            _buildBodyText(
+                'SaveNest is a rapidly growing Australian comparison platform helping households make smarter decisions and save money on their essential services. We connect with high-intent customers at the exact moment they are looking to switch providers.'),
+            const SizedBox(height: 32),
+            _buildSectionTitle('Our Audience'),
+            const SizedBox(height: 16),
+            _buildAudienceItem('Demographic',
+                'Primarily Australian households, aged 25-55, who are budget-conscious and actively looking for better deals on utilities and services.'),
+            _buildAudienceItem('Location Focus',
+                'Capital cities and major regional centers in NSW, VIC, and QLD, with planned expansion nationwide.'),
+            _buildAudienceItem('Key Pain Points',
+                'Rising cost of living, confusing utility plans, loyalty tax from existing providers, and a lack of time to research alternatives effectively.'),
+            const SizedBox(height: 32),
+            _buildSectionTitle('Promotional Channels'),
+            const SizedBox(height: 16),
+            _buildChannelItem('Website Comparison Pages',
+                'Directly compare providers for electricity, gas, internet, and mobile.'),
+            _buildChannelItem('Educational Blog Posts',
+                'In-depth guides, reviews, and money-saving tips that attract organic search traffic.'),
+            _buildChannelItem('Email Newsletter',
+                'A growing list of subscribers receiving curated deals and market updates.'),
+            _buildChannelItem(
+                'Social Media', 'Engaging content on platforms like Facebook and Instagram.'),
+            const SizedBox(height: 32),
+            _buildSectionTitle('Example Placements'),
+            const SizedBox(height: 16),
+            _buildPlacementItem('Featured Partner on Category Page',
+                'Top-of-page placement with enhanced branding in our comparison tables.'),
+            _buildPlacementItem('Inclusion in "Best Deals This Month" Article',
+                'Showcase your offer in our popular monthly roundup blog post.'),
+            _buildPlacementItem('Inclusion in "New Customer Offers" Email',
+                'Directly reach our engaged email subscribers with your latest promotions.'),
+            const SizedBox(height: 32),
+            _buildSectionTitle('Contact Us'),
+            const SizedBox(height: 16),
+            _buildBodyText(
+                'We partner with brands primarily through affiliate networks like Commission Factory, Impact, and others. For all partnership inquiries, please contact our team.'),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                const Icon(Icons.email, color: AppTheme.vibrantEmerald),
+                const SizedBox(width: 8),
+                Text(
+                  'partnerships@savenest.au',
+                  style: const TextStyle(
+                    color: AppTheme.vibrantEmerald,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

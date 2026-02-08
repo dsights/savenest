@@ -20,13 +20,16 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
 
   @override
   Widget build(BuildContext context, WidgetRef ref) { // Add ref
-    return MetaSeo(
-      metaData: const MetaData(
+    // Update meta tags for SEO
+    MetaSEO().updateMetaData(
+      MetaData(
         title: 'SaveNest | Compare & Save on Australian Utilities',
         description:
             'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.',
       ),
-      child: Scaffold(
+    );
+
+    return Scaffold(
         backgroundColor: AppTheme.deepNavy,
         endDrawer: _buildMobileDrawer(context),
         body: SingleChildScrollView(

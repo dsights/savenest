@@ -61,7 +61,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
         meta.nameContent(name: 'description', content: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
         meta.ogTitle(ogTitle: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest');
         meta.ogDescription(ogDescription: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
-        meta.ogUrl(ogUrl: 'https://www.savenest.com.au/deals/${categoryTitle.toLowerCase()}');
+        meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/deals/${categoryTitle.toLowerCase()}');
         meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png'); // Placeholder
       }
 

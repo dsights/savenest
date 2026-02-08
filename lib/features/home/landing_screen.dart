@@ -27,7 +27,7 @@ class LandingScreen extends ConsumerWidget { // Change to ConsumerWidget
       meta.nameContent(name: 'description', content: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
       meta.ogTitle(ogTitle: 'SaveNest | Compare & Save on Australian Utilities');
       meta.ogDescription(ogDescription: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
-      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/');
+      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/');
       meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 

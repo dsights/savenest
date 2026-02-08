@@ -14,7 +14,7 @@ class HowItWorksScreen extends StatelessWidget {
       meta.nameContent(name: 'description', content: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.');
       meta.ogTitle(ogTitle: 'How SaveNest Works | Our Business Model Explained');
       meta.ogDescription(ogDescription: 'Learn how SaveNest helps you save money. We explain our affiliate partnerships, how we make money, and our commitment to providing transparent and independent comparisons.');
-      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/how-it-works');
+      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/how-it-works');
       meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 

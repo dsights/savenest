@@ -15,7 +15,7 @@ class AdvertiseWithUsScreen extends StatelessWidget {
       meta.nameContent(name: 'description', content: 'Connect with a growing audience of savvy Australian households. Learn about our promotional opportunities and how to partner with SaveNest.');
       meta.ogTitle(ogTitle: 'Partner with SaveNest | Advertise Your Services');
       meta.ogDescription(ogDescription: 'Connect with a growing audience of savvy Australian households. Learn about our promotional opportunities and how to partner with SaveNest.');
-      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/partners/advertise');
+      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/partners/advertise');
       meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 

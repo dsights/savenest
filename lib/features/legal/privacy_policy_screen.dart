@@ -15,7 +15,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
       meta.nameContent(name: 'description', content: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.');
       meta.ogTitle(ogTitle: 'Privacy Policy | SaveNest');
       meta.ogDescription(ogDescription: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.');
-      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/privacy');
+      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/privacy');
       meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 

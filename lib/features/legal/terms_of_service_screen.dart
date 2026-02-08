@@ -15,7 +15,7 @@ class TermsOfServiceScreen extends StatelessWidget {
       meta.nameContent(name: 'description', content: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
       meta.ogTitle(ogTitle: 'Terms of Service | SaveNest');
       meta.ogDescription(ogDescription: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
-      meta.ogUrl(ogUrl: 'https://www.savenest.com.au/terms');
+      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/terms');
       meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
     }
 

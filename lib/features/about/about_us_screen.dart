@@ -3,6 +3,9 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
+import 'package:savenest/widgets/main_navigation_bar.dart';
+import 'package:savenest/widgets/main_mobile_drawer.dart';
+
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
 
@@ -21,22 +24,18 @@ class AboutUsScreen extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: AppTheme.deepNavy,
-        appBar: AppBar(
-          title: const Text(
-            'About Us',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          backgroundColor: AppTheme.deepNavy,
-        ),
+        endDrawer: const MainMobileDrawer(),
         body: SingleChildScrollView(
-          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildSectionTitle('Our Story'),
+              const MainNavigationBar(),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildSectionTitle('Our Story'),
               const SizedBox(height: 16),
               Image.asset(
                 'assets/images/home_ins.png', // Placeholder image
@@ -65,6 +64,9 @@ class AboutUsScreen extends StatelessWidget {
             ],
           ),
         ),
+          ],
+        ),
+      ),
     );
   }
 

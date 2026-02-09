@@ -14,6 +14,8 @@ import '../blog/widgets/blog_card.dart'; // Import Blog Card
 import '../blog/blog_post_screen.dart'; // Import Blog Screen
 
 import 'widgets/blog_multi_carousel.dart'; // Import New Multi Carousel
+import '../../widgets/main_navigation_bar.dart';
+import '../../widgets/main_mobile_drawer.dart';
 
 import 'dart:async'; // Import for Timer
 
@@ -237,11 +239,11 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
 
     return Scaffold(
         backgroundColor: AppTheme.deepNavy,
-        endDrawer: _buildMobileDrawer(context),
+        endDrawer: const MainMobileDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              _buildNavBar(context),
+              const MainNavigationBar(),
               _buildHeroCarousel(context),
               if (kIsWeb) _buildDownloadAppSection(context), // New Section
               _buildCategorySection(context),
@@ -373,134 +375,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
       ),
     );
   }
-
-  Widget _buildNavBar(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-      color: AppTheme.deepNavy,
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1200),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  const Icon(Icons.shield_moon, color: AppTheme.vibrantEmerald, size: 28),
-                  const SizedBox(width: 8),
-                  Text(
-                    'SaveNest',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          letterSpacing: 1.0,
-                        ),
-                  ),
-                ],
-              ),
-              if (MediaQuery.of(context).size.width > 600)
-                Row(
-                  children: [
-                  _navLink(context, 'Electricity', '/deals/electricity'),
-                  _navLink(context, 'Gas', '/deals/gas'),
-                  _navLink(context, 'Internet', '/deals/internet'),
-                  _navLink(context, 'Mobile', '/deals/mobile'),
-                  _navLink(context, 'Savings Calculator', '/savings'),
-                  ],
-                )
-              else
-                // Mobile Menu Button
-                Builder(
-                  builder: (context) => IconButton(
-                    icon: const Icon(Icons.menu, color: Colors.white),
-                    onPressed: () => Scaffold.of(context).openEndDrawer(),
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-  
-  Widget _buildMobileDrawer(BuildContext context) {
-    return Drawer(
-      backgroundColor: AppTheme.deepNavy,
-      child: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-        children: [
-          Row(
-            children: [
-              const Icon(Icons.shield_moon, color: AppTheme.vibrantEmerald, size: 28),
-              const SizedBox(width: 8),
-              Text(
-                'SaveNest',
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 40),
-          ListTile(
-            title: const Text('Electricity', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {
-              Navigator.pop(context);
-              GoRouter.of(context).go('/deals/electricity');
-            },
-          ),
-          ListTile(
-            title: const Text('Gas', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {
-              Navigator.pop(context);
-              GoRouter.of(context).go('/deals/gas');
-            },
-          ),
-          ListTile(
-            title: const Text('Internet', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {
-              Navigator.pop(context);
-              GoRouter.of(context).go('/deals/internet');
-            },
-          ),
-          ListTile(
-            title: const Text('Mobile', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {
-              Navigator.pop(context);
-              GoRouter.of(context).go('/deals/mobile');
-            },
-          ),
-          ListTile(
-            title: const Text('Savings Calculator', style: TextStyle(color: Colors.white, fontSize: 18)),
-            onTap: () {
-              Navigator.pop(context);
-              GoRouter.of(context).go('/savings');
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _navLink(BuildContext context, String title, String route) {
-    return InkWell(
-      onTap: () => GoRouter.of(context).go(route),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white70,
-            fontWeight: FontWeight.w500,
-            fontSize: 14,
-          ),
-        ),
-      ),
-    );
-  }
-
-
 
   Widget _buildCategorySection(BuildContext context) {
     return Container(

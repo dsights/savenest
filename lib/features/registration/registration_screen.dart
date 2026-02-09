@@ -7,6 +7,9 @@ import '../savings/savings_provider.dart';
 import '../../services/hubspot_service.dart';
 import '../comparison/comparison_screen.dart';
 
+import '../../widgets/main_navigation_bar.dart';
+import '../../widgets/main_mobile_drawer.dart';
+
 class RegistrationScreen extends ConsumerStatefulWidget {
   const RegistrationScreen({super.key});
 
@@ -135,113 +138,114 @@ class _RegistrationScreenState extends ConsumerState<RegistrationScreen> {
     if (costs.carInsurance > 0) validUtilities.add(UtilityType.carInsurance);
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text('Complete Registration'),
-      ),
+      backgroundColor: AppTheme.deepNavy,
+      endDrawer: const MainMobileDrawer(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: AppTheme.mainBackgroundGradient,
         ),
-        child: SafeArea(
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 800),
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(24.0),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Your Details',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: AppTheme.vibrantEmerald,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  _buildGlassTextField(
-                    controller: _nameController,
-                    label: 'Full Name',
-                    icon: Icons.person,
-                  ),
-                  const SizedBox(height: 12),
-                  _buildGlassTextField(
-                    controller: _emailController,
-                    label: 'Email Address',
-                    icon: Icons.email,
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                  const SizedBox(height: 12),
-                  _buildGlassTextField(
-                    controller: _phoneController,
-                    label: 'Phone Number',
-                    icon: Icons.phone,
-                    keyboardType: TextInputType.phone,
-                  ),
-                  
-                  const SizedBox(height: 32),
-                  const Text(
-                    'Selected Services',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: AppTheme.vibrantEmerald,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    'Upload a bill photo to expedite the switch.',
-                    style: TextStyle(color: Colors.white70),
-                  ),
-                  const SizedBox(height: 16),
-
-                  if (validUtilities.isEmpty)
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Text('No services selected. Go back to calculate savings.'),
-                    )
-                  else
-                    ...validUtilities.map((type) => _buildServiceItem(type)),
-
-                  const SizedBox(height: 40),
-                  
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: _isSubmitting ? null : _submitForm,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppTheme.vibrantEmerald,
-                        foregroundColor: AppTheme.deepNavy,
-                        padding: const EdgeInsets.symmetric(vertical: 18),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+        child: Column(
+          children: [
+            const MainNavigationBar(),
+            Expanded(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 800),
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Your Details',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.vibrantEmerald,
                         ),
                       ),
-                      child: _isSubmitting
-                          ? const SizedBox(
-                              height: 20,
-                              width: 20,
-                              child: CircularProgressIndicator(color: AppTheme.deepNavy),
-                            )
-                          : const Text(
-                              'CONFIRM SWITCH',
-                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      const SizedBox(height: 16),
+                      _buildGlassTextField(
+                        controller: _nameController,
+                        label: 'Full Name',
+                        icon: Icons.person,
+                      ),
+                      const SizedBox(height: 12),
+                      _buildGlassTextField(
+                        controller: _emailController,
+                        label: 'Email Address',
+                        icon: Icons.email,
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      const SizedBox(height: 12),
+                      _buildGlassTextField(
+                        controller: _phoneController,
+                        label: 'Phone Number',
+                        icon: Icons.phone,
+                        keyboardType: TextInputType.phone,
+                      ),
+                      
+                      const SizedBox(height: 32),
+                      const Text(
+                        'Selected Services',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.vibrantEmerald,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'Upload a bill photo to expedite the switch.',
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                      const SizedBox(height: 16),
+    
+                      if (validUtilities.isEmpty)
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 20),
+                          child: Text('No services selected. Go back to calculate savings.'),
+                        )
+                      else
+                        ...validUtilities.map((type) => _buildServiceItem(type)),
+    
+                      const SizedBox(height: 40),
+                      
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: _isSubmitting ? null : _submitForm,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppTheme.vibrantEmerald,
+                            foregroundColor: AppTheme.deepNavy,
+                            padding: const EdgeInsets.symmetric(vertical: 18),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                    ),
+                          ),
+                          child: _isSubmitting
+                              ? const SizedBox(
+                                  height: 20,
+                                  width: 20,
+                                  child: CircularProgressIndicator(color: AppTheme.deepNavy),
+                                )
+                              : const Text(
+                                  'CONFIRM SWITCH',
+                                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
+        ],
       ),
-    )));
+    ));
   }
 
   Widget _buildGlassTextField({

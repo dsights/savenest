@@ -3,6 +3,9 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
+import 'package:savenest/widgets/main_navigation_bar.dart';
+import 'package:savenest/widgets/main_mobile_drawer.dart';
+
 class TermsOfServiceScreen extends StatelessWidget {
   const TermsOfServiceScreen({super.key});
 
@@ -21,30 +24,19 @@ class TermsOfServiceScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppTheme.deepNavy,
-      appBar: AppBar(
-        title: const Text(
-          'Terms of Service',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: AppTheme.deepNavy,
-      ),
+      endDrawer: const MainMobileDrawer(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Image.asset(
-                'assets/images/mobile.png', // Placeholder image for terms of service
-                height: 150,
-                fit: BoxFit.contain,
-              ),
-            ),
-            const SizedBox(height: 32),
-            _buildSectionTitle('Using Our Service'),
+            const MainNavigationBar(),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 32),
+                  _buildSectionTitle('Using Our Service'),
             const SizedBox(height: 16),
             _buildBodyText(
                 'By using the SaveNest website, you agree to these terms of service. Our service is provided free of charge to help you compare and save on various household utilities and financial products.'),
@@ -68,6 +60,9 @@ class TermsOfServiceScreen extends StatelessWidget {
             const SizedBox(height: 16),
             _buildBodyText(
                 'We may update our terms of service from time to time. We will notify you of any changes by posting the new terms of service on this page. You are advised to review this page periodically for any changes.'),
+          ],
+        ),
+      ),
           ],
         ),
       ),

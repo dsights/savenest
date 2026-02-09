@@ -8,6 +8,9 @@ import 'blog_provider.dart';
 import 'blog_model.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../widgets/main_navigation_bar.dart';
+import '../../widgets/main_mobile_drawer.dart';
+
 class BlogPostScreen extends ConsumerWidget {
   final String slug;
 
@@ -19,21 +22,7 @@ class BlogPostScreen extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: AppTheme.deepNavy,
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: BackButton(
-          color: Colors.white,
-          onPressed: () {
-            if (context.canPop()) {
-              context.pop();
-            } else {
-              context.go('/');
-            }
-          },
-        ),
-      ),
+      endDrawer: const MainMobileDrawer(),
       body: postsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
         error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: Colors.white))),
@@ -68,6 +57,27 @@ class BlogPostScreen extends ConsumerWidget {
           return SingleChildScrollView(
             child: Column(
               children: [
+                const MainNavigationBar(),
+                // Back Button Row
+                Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 1200),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                      child: TextButton.icon(
+                        onPressed: () {
+                          if (context.canPop()) {
+                            context.pop();
+                          } else {
+                            context.go('/blog');
+                          }
+                        },
+                        icon: const Icon(Icons.arrow_back, color: AppTheme.vibrantEmerald),
+                        label: const Text('Back to Blog', style: TextStyle(color: Colors.white70)),
+                      ),
+                    ),
+                  ),
+                ),
                 // Header Image
                 SizedBox(
                   height: 400, // Taller header for blog

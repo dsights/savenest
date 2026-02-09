@@ -7,6 +7,9 @@ import 'widgets/animated_counter.dart';
 import 'widgets/pulsing_button.dart';
 import '../registration/registration_screen.dart';
 
+import '../../widgets/main_navigation_bar.dart';
+import '../../widgets/main_mobile_drawer.dart';
+
 class SavingsScreen extends ConsumerWidget {
   const SavingsScreen({super.key});
 
@@ -17,24 +20,22 @@ class SavingsScreen extends ConsumerWidget {
     final controller = ref.read(savingsControllerProvider.notifier);
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text('Savings Calculator'),
-        centerTitle: true,
-      ),
+      backgroundColor: AppTheme.deepNavy,
+      endDrawer: const MainMobileDrawer(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: AppTheme.mainBackgroundGradient,
         ),
-        child: SafeArea(
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 800),
-              child: Column(
-                children: [
-                  // 1. Floating Savings Bubble
+        child: Column(
+          children: [
+            const MainNavigationBar(),
+            Expanded(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 800),
+                  child: Column(
+                    children: [
+                      // 1. Floating Savings Bubble
                   Expanded(
                     flex: 1, // Reduced flex to take less vertical space
                     child: Center(

@@ -3,6 +3,9 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
+import 'package:savenest/widgets/main_navigation_bar.dart';
+import 'package:savenest/widgets/main_mobile_drawer.dart';
+
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
 
@@ -21,30 +24,19 @@ class PrivacyPolicyScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppTheme.deepNavy,
-      appBar: AppBar(
-        title: const Text(
-          'Privacy Policy',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: AppTheme.deepNavy,
-      ),
+      endDrawer: const MainMobileDrawer(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Image.asset(
-                'assets/images/internet.png', // Placeholder image for privacy
-                height: 150,
-                fit: BoxFit.contain,
-              ),
-            ),
-            const SizedBox(height: 32),
-            _buildSectionTitle('Your Privacy Matters'),
+            const MainNavigationBar(),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 32),
+                  _buildSectionTitle('Your Privacy Matters'),
             const SizedBox(height: 16),
             _buildBodyText(
                 'This policy outlines how SaveNest collects, uses, and protects your personal information. We are committed to protecting your privacy and ensuring that your data is handled securely and transparently.'),
@@ -70,6 +62,9 @@ class PrivacyPolicyScreen extends StatelessWidget {
             const SizedBox(height: 16),
             _buildBodyText(
                 'If you have any questions about this privacy policy, please contact us at privacy@savenest.au.'),
+          ],
+        ),
+      ),
           ],
         ),
       ),

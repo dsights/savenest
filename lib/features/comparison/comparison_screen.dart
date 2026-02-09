@@ -9,7 +9,8 @@ import 'widgets/search_bar_widget.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
 import 'credit_card_model.dart';
 import 'data/credit_card_repository.dart';
-import 'widgets/credit_card_table.dart';
+import '../../widgets/main_navigation_bar.dart';
+import '../../widgets/main_mobile_drawer.dart';
 
 class ComparisonScreen extends ConsumerStatefulWidget {
   final ProductCategory initialCategory;
@@ -87,27 +88,16 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       }
 
     return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: Text(
-            'Compare & Save on $categoryTitle',
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          centerTitle: true,
-        ),
+        backgroundColor: AppTheme.deepNavy,
+        endDrawer: const MainMobileDrawer(),
         body: Container(
           decoration: const BoxDecoration(
             gradient: AppTheme.mainBackgroundGradient,
           ),
-          child: SafeArea(
-            child: Column(
-              children: [
-                // Category Tabs
+          child: Column(
+            children: [
+              const MainNavigationBar(),
+              // Category Tabs
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),

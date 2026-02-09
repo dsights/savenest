@@ -9,6 +9,7 @@ import 'package:savenest/features/partners/advertise_with_us_screen.dart';
 import 'package:savenest/features/misc/sitemap_screen.dart'; // New import
 import 'features/home/landing_screen.dart';
 import 'features/blog/blog_post_screen.dart';
+import 'features/blog/blog_list_screen.dart';
 import 'features/savings/savings_screen.dart';
 import 'features/comparison/comparison_screen.dart';
 import 'features/comparison/comparison_model.dart';
@@ -75,6 +76,10 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/loans/home', // Home Loans (placeholder)
       builder: (context, state) => const SavingsScreen(), // Temporary route to SavingsScreen
+    ),
+    GoRoute(
+      path: '/blog',
+      builder: (context, state) => const BlogListScreen(),
     ),
     GoRoute(
       path: '/blog/:slug',

@@ -3,6 +3,9 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
 
+import 'package:savenest/widgets/main_navigation_bar.dart';
+import 'package:savenest/widgets/main_mobile_drawer.dart';
+
 class HowItWorksScreen extends StatelessWidget {
   const HowItWorksScreen({super.key});
 
@@ -20,30 +23,19 @@ class HowItWorksScreen extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: AppTheme.deepNavy,
-        appBar: AppBar(
-          title: Text(
-            'How We Work',
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          backgroundColor: AppTheme.deepNavy,
-        ),
+        endDrawer: const MainMobileDrawer(),
         body: SingleChildScrollView(
-          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Image.asset(
-                  'assets/images/car_ins.png', // Placeholder image
-                  height: 200,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              const SizedBox(height: 32),
-              _buildSectionTitle('Our Mission: Your Savings'),
+              const MainNavigationBar(),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 32),
+                    _buildSectionTitle('Our Mission: Your Savings'),
               const SizedBox(height: 16),
               _buildBodyText(
                   'SaveNest’s goal is to empower Australians to make smarter financial decisions. We simplify the complex world of utilities and financial products, providing clear, independent guidance to help you find the best value and save money.'),
@@ -73,6 +65,9 @@ class HowItWorksScreen extends StatelessWidget {
             ],
           ),
         ),
+          ],
+        ),
+      ),
     );
   }
 

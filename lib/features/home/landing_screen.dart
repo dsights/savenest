@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb; // For web check
 import 'package:go_router/go_router.dart';
 import 'package:meta_seo/meta_seo.dart';
-import 'package:url_launcher/url_launcher.dart'; // For launching app store links
 import '../../theme/app_theme.dart';
 import '../../widgets/glass_container.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // Add Riverpod
@@ -240,7 +239,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
             children: [
               const MainNavigationBar(),
               _buildHeroCarousel(context),
-              if (kIsWeb) _buildDownloadAppSection(context), // New Section
               _buildCategorySection(context),
               _buildBlogSection(context), // ref is directly available as this.ref
               _buildHowItWorksSection(context),
@@ -249,91 +247,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
             ],
           ),
         ),
-    );
-  }
-// ...
-  Widget _buildDownloadAppSection(BuildContext context) {
-    return Container(
-      color: AppTheme.deepNavy,
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 800),
-          child: Column(
-            children: [
-              const Text(
-                'Get the Full Experience on Mobile',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 24),
-              Wrap(
-                spacing: 20,
-                runSpacing: 20,
-                alignment: WrapAlignment.center,
-                children: [
-                  _storeButton(
-                    context,
-                    'Get it on',
-                    'Google Play',
-                    Icons.android,
-                    'https://play.google.com/store/apps/details?id=com.example.savenest', // Update with real ID
-                  ),
-                  _storeButton(
-                    context,
-                    'Download on the',
-                    'App Store',
-                    Icons.apple,
-                    'https://apps.apple.com/app/id123456789', // Update with real ID
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _storeButton(BuildContext context, String sub, String title, IconData icon, String url) {
-    return InkWell(
-      onTap: () async {
-        final uri = Uri.parse(url);
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri);
-        }
-      },
-      child: Container(
-        width: 180,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.white24),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.white, size: 32),
-            const SizedBox(width: 12),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  sub,
-                  style: const TextStyle(color: Colors.white70, fontSize: 10),
-                ),
-                Text(
-                  title,
-                  style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
     );
   }
 
@@ -457,7 +370,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
           _categoryCard(context, 'Gas', Icons.local_fire_department, Colors.red, '/deals/gas'),
           _categoryCard(context, 'Internet', Icons.wifi, Colors.blue, '/deals/internet'),
           _categoryCard(context, 'Mobile', Icons.phone_iphone, Colors.green, '/deals/mobile'),
-          _categoryCard(context, 'Savings Calculator', Icons.calculate, Colors.cyan, '/savings'), // Keep calculator prominent
         ];
       case _MainCategory.insurance:
         return [

@@ -160,92 +160,94 @@ class _RegistrationScreenState extends ConsumerState<RegistrationScreen> {
                         children: [
                           const Text(
                             'Your Details',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: AppTheme.vibrantEmerald,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      _buildGlassTextField(
-                        controller: _nameController,
-                        label: 'Full Name',
-                        icon: Icons.person,
-                      ),
-                      const SizedBox(height: 12),
-                      _buildGlassTextField(
-                        controller: _emailController,
-                        label: 'Email Address',
-                        icon: Icons.email,
-                        keyboardType: TextInputType.emailAddress,
-                      ),
-                      const SizedBox(height: 12),
-                      _buildGlassTextField(
-                        controller: _phoneController,
-                        label: 'Phone Number',
-                        icon: Icons.phone,
-                        keyboardType: TextInputType.phone,
-                      ),
-                      
-                      const SizedBox(height: 32),
-                      const Text(
-                        'Selected Services',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: AppTheme.vibrantEmerald,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'Upload a bill photo to expedite the switch.',
-                        style: TextStyle(color: Colors.white70),
-                      ),
-                      const SizedBox(height: 16),
-    
-                      if (validUtilities.isEmpty)
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          child: Text('No services selected. Go back to calculate savings.'),
-                        )
-                      else
-                        ...validUtilities.map((type) => _buildServiceItem(type)),
-    
-                      const SizedBox(height: 40),
-                      
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: _isSubmitting ? null : _submitForm,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppTheme.vibrantEmerald,
-                            foregroundColor: AppTheme.deepNavy,
-                            padding: const EdgeInsets.symmetric(vertical: 18),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: AppTheme.vibrantEmerald,
                             ),
                           ),
-                          child: _isSubmitting
-                              ? const SizedBox(
-                                  height: 20,
-                                  width: 20,
-                                  child: CircularProgressIndicator(color: AppTheme.deepNavy),
-                                )
-                              : const Text(
-                                  'CONFIRM SWITCH',
-                                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          const SizedBox(height: 16),
+                          _buildGlassTextField(
+                            controller: _nameController,
+                            label: 'Full Name',
+                            icon: Icons.person,
+                          ),
+                          const SizedBox(height: 12),
+                          _buildGlassTextField(
+                            controller: _emailController,
+                            label: 'Email Address',
+                            icon: Icons.email,
+                            keyboardType: TextInputType.emailAddress,
+                          ),
+                          const SizedBox(height: 12),
+                          _buildGlassTextField(
+                            controller: _phoneController,
+                            label: 'Phone Number',
+                            icon: Icons.phone,
+                            keyboardType: TextInputType.phone,
+                          ),
+                          
+                          const SizedBox(height: 32),
+                          const Text(
+                            'Selected Services',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: AppTheme.vibrantEmerald,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          const Text(
+                            'Upload a bill photo to expedite the switch.',
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                          const SizedBox(height: 16),
+        
+                          if (validUtilities.isEmpty)
+                            const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 20),
+                              child: Text('No services selected. Go back to calculate savings.'),
+                            )
+                          else
+                            ...validUtilities.map((type) => _buildServiceItem(type)),
+        
+                          const SizedBox(height: 40),
+                          
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: _isSubmitting ? null : _submitForm,
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppTheme.vibrantEmerald,
+                                foregroundColor: AppTheme.deepNavy,
+                                padding: const EdgeInsets.symmetric(vertical: 18),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                        ),
+                              ),
+                              child: _isSubmitting
+                                  ? const SizedBox(
+                                      height: 20,
+                                      width: 20,
+                                      child: CircularProgressIndicator(color: AppTheme.deepNavy),
+                                    )
+                                  : const Text(
+                                      'CONFIRM SWITCH',
+                                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                    ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ));
+    );
   }
 
   Widget _buildGlassTextField({

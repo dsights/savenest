@@ -5,13 +5,8 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:url_launcher/url_launcher.dart'; // For launching app store links
 import '../../theme/app_theme.dart';
 import '../../widgets/glass_container.dart';
-import '../savings/savings_screen.dart';
-import '../comparison/comparison_screen.dart';
-import '../comparison/comparison_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // Add Riverpod
 import '../blog/blog_provider.dart'; // Import Blog Provider
-import '../blog/widgets/blog_card.dart'; // Import Blog Card
-import '../blog/blog_post_screen.dart'; // Import Blog Screen
 
 import 'widgets/blog_multi_carousel.dart'; // Import New Multi Carousel
 import '../../widgets/main_navigation_bar.dart';

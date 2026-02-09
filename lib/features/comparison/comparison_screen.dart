@@ -9,6 +9,7 @@ import 'widgets/search_bar_widget.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
 import 'credit_card_model.dart';
 import 'data/credit_card_repository.dart';
+import 'widgets/credit_card_table.dart';
 import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
 
@@ -209,8 +210,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                           },
                         ),
                 ),
-              ],
-            ),
+            ],
           ),
         ),
     );
@@ -259,10 +259,14 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       // Text Match
       String tempQuery = lowerQuery;
       final intents = ['no fee', 'free', 'cheapest', 'business', 'personal', 'rewards', 'points', 'low rate', 'interest', 'frequent flyer', 'qantas', 'velocity'];
-      for (var intent in intents) tempQuery = tempQuery.replaceAll(intent, '');
+      for (var intent in intents) {
+        tempQuery = tempQuery.replaceAll(intent, '');
+      }
       
       final stopWords = ['i', 'want', 'need', 'show', 'me', 'find', 'get', 'the', 'a', 'an', 'for', 'with', 'in', 'of', 'card', 'cards'];
-      for (var word in stopWords) tempQuery = tempQuery.replaceAll(RegExp(r'\b' + RegExp.escape(word) + r'\b'), '');
+      for (var word in stopWords) {
+        tempQuery = tempQuery.replaceAll(RegExp(r'\b' + RegExp.escape(word) + r'\b'), '');
+      }
       
       String cleanQuery = tempQuery.replaceAll(RegExp(r'\s+'), ' ').trim();
 

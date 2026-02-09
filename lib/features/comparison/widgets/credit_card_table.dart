@@ -40,7 +40,6 @@ class _CreditCardTableState extends State<CreditCardTable> {
   @override
   Widget build(BuildContext context) {
     const contentTextStyle = TextStyle(color: Colors.black87, fontSize: 13);
-    const headerTextStyle = TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
 
     return Scrollbar(
       controller: _horizontalController,
@@ -58,8 +57,8 @@ class _CreditCardTableState extends State<CreditCardTable> {
               Container(
                 height: 56,
                 color: AppTheme.deepNavy,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     _HeaderCell(text: 'Issuer', width: colIssuer),
                     _HeaderCell(text: 'Action', width: colAction),
                     _HeaderCell(text: 'Card Name', width: colCardName),

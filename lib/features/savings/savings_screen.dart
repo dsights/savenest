@@ -36,120 +36,122 @@ class SavingsScreen extends ConsumerWidget {
                   child: Column(
                     children: [
                       // 1. Floating Savings Bubble
-                  Expanded(
-                    flex: 1, // Reduced flex to take less vertical space
-                    child: Center(
-                      child: GlassContainer(
-                        width: 260, // Wider for big numbers
-                        height: 150, // Oval shape
-                        borderRadius: 100, // Pill shape
-                        padding: const EdgeInsets.all(16),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'Annual Savings', // Shorter text
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: 13, // Smaller font
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            AnimatedCounter(
-                              value: totalSavings,
-                              prefix: '\$',
-                              style: const TextStyle(
-                                color: AppTheme.vibrantEmerald,
-                                fontSize: 32, // Smaller font
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            if (totalSavings > 0) ...[
-                              const SizedBox(height: 4),
-                              const Text(
-                                'Great start!',
-                                style: TextStyle(
-                                  color: Colors.white54,
-                                  fontSize: 12,
+                      Expanded(
+                        flex: 1, // Reduced flex to take less vertical space
+                        child: Center(
+                          child: GlassContainer(
+                            width: 260, // Wider for big numbers
+                            height: 150, // Oval shape
+                            borderRadius: 100, // Pill shape
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'Annual Savings', // Shorter text
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 13, // Smaller font
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  // 2. Sliders List
-                  Expanded(
-                    flex: 3, // Increased relative space for the list
-                    child: ListView(
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-                      children: [
-                        const Center(
-                          child: Padding(
-                            padding: EdgeInsets.only(bottom: 16.0),
-                            child: Text(
-                              "What's your monthly spend?",
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
+                                const SizedBox(height: 4),
+                                AnimatedCounter(
+                                  value: totalSavings,
+                                  prefix: '\$',
+                                  style: const TextStyle(
+                                    color: AppTheme.vibrantEmerald,
+                                    fontSize: 32, // Smaller font
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                if (totalSavings > 0) ...[
+                                  const SizedBox(height: 4),
+                                  const Text(
+                                    'Great start!',
+                                    style: TextStyle(
+                                      color: Colors.white54,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ],
                             ),
                           ),
                         ),
-                        _buildUtilitySlider(
-                          context,
-                          label: 'NBN (Internet)',
-                          value: utilityCosts.nbn,
-                          max: 200,
-                          onChanged: (val) => controller.updateCost(UtilityType.nbn, val),
+                      ),
+
+                      // 2. Sliders List
+                      Expanded(
+                        flex: 3, // Increased relative space for the list
+                        child: ListView(
+                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                          children: [
+                            const Center(
+                              child: Padding(
+                                padding: EdgeInsets.only(bottom: 16.0),
+                                child: Text(
+                                  "What's your monthly spend?",
+                                  style: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'NBN (Internet)',
+                              value: utilityCosts.nbn,
+                              max: 200,
+                              onChanged: (val) => controller.updateCost(UtilityType.nbn, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Electricity',
+                              value: utilityCosts.electricity,
+                              max: 600,
+                              onChanged: (val) => controller.updateCost(UtilityType.electricity, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Gas',
+                              value: utilityCosts.gas,
+                              max: 400,
+                              onChanged: (val) => controller.updateCost(UtilityType.gas, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Mobile SIM',
+                              value: utilityCosts.mobile,
+                              max: 150,
+                              onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Home Insurance',
+                              value: utilityCosts.homeInsurance,
+                              max: 500,
+                              onChanged: (val) => controller.updateCost(UtilityType.homeInsurance, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Car Insurance',
+                              value: utilityCosts.carInsurance,
+                              max: 400,
+                              onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
+                            ),
+                            const SizedBox(height: 80), // Space for FAB
+                          ],
                         ),
-                        _buildUtilitySlider(
-                          context,
-                          label: 'Electricity',
-                          value: utilityCosts.electricity,
-                          max: 600,
-                          onChanged: (val) => controller.updateCost(UtilityType.electricity, val),
-                        ),
-                        _buildUtilitySlider(
-                          context,
-                          label: 'Gas',
-                          value: utilityCosts.gas,
-                          max: 400,
-                          onChanged: (val) => controller.updateCost(UtilityType.gas, val),
-                        ),
-                        _buildUtilitySlider(
-                          context,
-                          label: 'Mobile SIM',
-                          value: utilityCosts.mobile,
-                          max: 150,
-                          onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
-                        ),
-                        _buildUtilitySlider(
-                          context,
-                          label: 'Home Insurance',
-                          value: utilityCosts.homeInsurance,
-                          max: 500,
-                          onChanged: (val) => controller.updateCost(UtilityType.homeInsurance, val),
-                        ),
-                        _buildUtilitySlider(
-                          context,
-                          label: 'Car Insurance',
-                          value: utilityCosts.carInsurance,
-                          max: 400,
-                          onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
-                        ),
-                        const SizedBox(height: 80), // Space for FAB
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
-          ),
+          ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

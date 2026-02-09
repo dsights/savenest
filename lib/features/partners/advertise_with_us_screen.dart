@@ -75,13 +75,13 @@ class AdvertiseWithUsScreen extends StatelessWidget {
             _buildBodyText(
                 'We partner with brands primarily through affiliate networks like Commission Factory, Impact, and others. For all partnership inquiries, please contact our team.'),
             const SizedBox(height: 16),
-            Row(
+            const Row(
               children: [
-                const Icon(Icons.email, color: AppTheme.vibrantEmerald),
-                const SizedBox(width: 8),
+                Icon(Icons.email, color: AppTheme.vibrantEmerald),
+                SizedBox(width: 8),
                 Text(
                   'contact@savenest.au',
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: AppTheme.vibrantEmerald,
                     fontWeight: FontWeight.bold,
                   ),

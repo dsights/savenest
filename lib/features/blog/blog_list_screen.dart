@@ -69,7 +69,11 @@ class BlogListScreen extends ConsumerWidget {
                             ),
                             itemCount: posts.length,
                             itemBuilder: (context, index) {
-                              return BlogCard(post: posts[index]);
+                              final post = posts[index];
+                              return BlogCard(
+                                post: post,
+                                onTap: () => context.go('/blog/${post.slug}'),
+                              );
                             },
                           );
                         },

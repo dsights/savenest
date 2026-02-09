@@ -58,6 +58,23 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final controller = ref.read(comparisonProvider.notifier);
     final categoryTitle = _getCategoryTitle(widget.initialCategory);
 
+    String searchHint;
+    switch (state.selectedCategory) {
+      case ProductCategory.electricity:
+      case ProductCategory.gas:
+        searchHint = 'Try "cheapest", "green energy", "Origin"...';
+        break;
+      case ProductCategory.internet:
+      case ProductCategory.mobile:
+        searchHint = 'Try "unlimited data", "cheapest", "Telstra"...';
+        break;
+      case ProductCategory.creditCards:
+        searchHint = 'Try "no fee", "Qantas", "business cards"...';
+        break;
+      default:
+        searchHint = 'Search providers, features...';
+    }
+
     // Update meta tags for SEO
       if (kIsWeb) {
         MetaSEO meta = MetaSEO();
@@ -135,6 +152,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                       const SizedBox(height: 16),
                       SearchBarWidget(
                         onChanged: (value) => controller.search(value),
+                        hintText: searchHint,
                       ),
                       const SizedBox(height: 12),
                     ],
@@ -231,7 +249,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final lowerQuery = query.toLowerCase();
     
     // Intents
-    bool noFee = lowerQuery.contains('no fee') || lowerQuery.contains('free');
+    bool noFee = lowerQuery.contains('no fee') || lowerQuery.contains('free') || lowerQuery.contains('cheapest');
     bool business = lowerQuery.contains('business');
     bool personal = lowerQuery.contains('personal');
     bool rewards = lowerQuery.contains('rewards') || lowerQuery.contains('points');
@@ -240,8 +258,6 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
 
     return deals.where((deal) {
       if (noFee) {
-        // Simple check for $0 or free. 
-        // Note: "$0" parsing might fail if it contains text, so checking text "0" or "free" is safer for this dataset.
         if (!deal.annualFee.contains('0') && !deal.annualFee.toLowerCase().contains('free')) return false;
       }
       if (business && !deal.customerSegment.toLowerCase().contains('business')) return false;
@@ -251,19 +267,14 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       if (frequentFlyer && !deal.cardType.toLowerCase().contains('frequent flyer')) return false;
 
       // Text Match
-      String cleanQuery = lowerQuery
-          .replaceAll('no fee', '')
-          .replaceAll('free', '')
-          .replaceAll('business', '')
-          .replaceAll('personal', '')
-          .replaceAll('rewards', '')
-          .replaceAll('points', '')
-          .replaceAll('low rate', '')
-          .replaceAll('interest', '')
-          .replaceAll('frequent flyer', '')
-          .replaceAll('qantas', '')
-          .replaceAll('velocity', '')
-          .trim();
+      String tempQuery = lowerQuery;
+      final intents = ['no fee', 'free', 'cheapest', 'business', 'personal', 'rewards', 'points', 'low rate', 'interest', 'frequent flyer', 'qantas', 'velocity'];
+      for (var intent in intents) tempQuery = tempQuery.replaceAll(intent, '');
+      
+      final stopWords = ['i', 'want', 'need', 'show', 'me', 'find', 'get', 'the', 'a', 'an', 'for', 'with', 'in', 'of', 'card', 'cards'];
+      for (var word in stopWords) tempQuery = tempQuery.replaceAll(RegExp(r'\b' + RegExp.escape(word) + r'\b'), '');
+      
+      String cleanQuery = tempQuery.replaceAll(RegExp(r'\s+'), ' ').trim();
 
       if (cleanQuery.isEmpty) return true;
 

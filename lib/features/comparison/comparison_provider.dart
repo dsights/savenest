@@ -122,20 +122,33 @@ class ComparisonController extends StateNotifier<ComparisonState> {
       if (filterGreen && !deal.isGreen) return false;
       
       // Clean query for text matching
-      String cleanQuery = lowerQuery
-          .replaceAll('cheap', '')
-          .replaceAll('lowest', '')
-          .replaceAll('budget', '')
-          .replaceAll('price', '')
-          .replaceAll('best', '')
-          .replaceAll('top', '')
-          .replaceAll('rating', '')
-          .replaceAll('service', '')
-          .replaceAll('green', '')
-          .replaceAll('solar', '')
-          .replaceAll('eco', '')
-          .replaceAll('renewable', '')
-          .trim();
+      String tempQuery = lowerQuery;
+      
+      // Remove explicit intent keywords
+      final intents = [
+        'cheapest', 'cheap', 'lowest', 'budget', 'price', 
+        'best', 'top', 'rating', 'service', 
+        'green', 'solar', 'eco', 'renewable'
+      ];
+      for (var intent in intents) {
+        tempQuery = tempQuery.replaceAll(intent, '');
+      }
+
+      // Remove natural language stop words
+      final stopWords = [
+        'i', 'want', 'need', 'show', 'me', 'find', 'get', 
+        'the', 'a', 'an', 'for', 'with', 'in', 'of', 
+        'plan', 'plans', 'deal', 'deals', 'offer', 'offers', 
+        'card', 'cards', 'provider', 'providers'
+      ];
+      
+      for (var word in stopWords) {
+        // Use word boundary to avoid replacing parts of provider names
+        tempQuery = tempQuery.replaceAll(RegExp(r'\b' + RegExp.escape(word) + r'\b'), '');
+      }
+      
+      // Clean up multiple spaces
+      String cleanQuery = tempQuery.replaceAll(RegExp(r'\s+'), ' ').trim();
 
       if (cleanQuery.isEmpty) return true; // Only intents provided
 

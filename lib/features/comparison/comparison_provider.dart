@@ -86,26 +86,86 @@ class ComparisonController extends StateNotifier<ComparisonState> {
 
   void search(String query) {
     if (query.isEmpty) {
+      // Restore default sort when clearing search
+      final defaultSorted = List<Deal>.from(_allDeals);
+      _defaultSort(defaultSorted);
+      
       state = state.copyWith(
-        deals: _allDeals,
+        deals: defaultSorted,
         searchQuery: '',
-        bestValueDeal: _calculateBestValue(_allDeals),
+        bestValueDeal: _calculateBestValue(defaultSorted),
       );
       return;
     }
 
-    final filtered = _allDeals.where((deal) {
-      final q = query.toLowerCase();
-      return deal.providerName.toLowerCase().contains(q) ||
-             deal.planName.toLowerCase().contains(q) ||
-             deal.keyFeatures.any((f) => f.toLowerCase().contains(q));
+    final lowerQuery = query.toLowerCase();
+    
+    // 1. Detect Intents
+    bool sortPriceAsc = lowerQuery.contains('cheap') || 
+                        lowerQuery.contains('lowest') || 
+                        lowerQuery.contains('budget') ||
+                        lowerQuery.contains('price');
+                        
+    bool sortRatingDesc = lowerQuery.contains('best') || 
+                          lowerQuery.contains('top') || 
+                          lowerQuery.contains('rating') || 
+                          lowerQuery.contains('service');
+
+    bool filterGreen = lowerQuery.contains('green') || 
+                       lowerQuery.contains('solar') || 
+                       lowerQuery.contains('eco') ||
+                       lowerQuery.contains('renewable');
+
+    // 2. Filter
+    List<Deal> filtered = _allDeals.where((deal) {
+      // Intent Filters
+      if (filterGreen && !deal.isGreen) return false;
+      
+      // Clean query for text matching
+      String cleanQuery = lowerQuery
+          .replaceAll('cheap', '')
+          .replaceAll('lowest', '')
+          .replaceAll('budget', '')
+          .replaceAll('price', '')
+          .replaceAll('best', '')
+          .replaceAll('top', '')
+          .replaceAll('rating', '')
+          .replaceAll('service', '')
+          .replaceAll('green', '')
+          .replaceAll('solar', '')
+          .replaceAll('eco', '')
+          .replaceAll('renewable', '')
+          .trim();
+
+      if (cleanQuery.isEmpty) return true; // Only intents provided
+
+      return deal.providerName.toLowerCase().contains(cleanQuery) ||
+             deal.planName.toLowerCase().contains(cleanQuery) ||
+             deal.keyFeatures.any((f) => f.toLowerCase().contains(cleanQuery));
     }).toList();
+
+    // 3. Sort
+    if (sortPriceAsc) {
+      filtered.sort((a, b) => a.price.compareTo(b.price));
+    } else if (sortRatingDesc) {
+      filtered.sort((a, b) => b.rating.compareTo(a.rating));
+    } else {
+      _defaultSort(filtered);
+    }
 
     state = state.copyWith(
       deals: filtered,
       searchQuery: query,
       bestValueDeal: _calculateBestValue(filtered),
     );
+  }
+
+  void _defaultSort(List<Deal> deals) {
+    deals.sort((a, b) {
+      if (a.isSponsored && !b.isSponsored) return -1;
+      if (!a.isSponsored && b.isSponsored) return 1;
+      return a.price.compareTo(b.price);
+    });
   }
 
   static Deal? _calculateBestValue(List<Deal> deals) {

@@ -7,6 +7,7 @@ import 'comparison_provider.dart';
 import 'widgets/deal_card.dart';
 import 'widgets/search_bar_widget.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
+import 'credit_card_model.dart';
 import 'data/credit_card_repository.dart';
 import 'widgets/credit_card_table.dart';
 
@@ -144,7 +145,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                 Expanded(
                   child: state.selectedCategory == ProductCategory.creditCards
                       ? creditCardsAsync.when(
-                          data: (deals) => CreditCardTable(deals: deals),
+                          data: (deals) => CreditCardTable(deals: _filterCreditCards(deals, state.searchQuery)),
                           loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
                           error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: Colors.white))),
                         )
@@ -222,5 +223,52 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       case ProductCategory.creditCards:
         return 'Credit Cards';
     }
+  }
+
+  List<CreditCardDeal> _filterCreditCards(List<CreditCardDeal> deals, String query) {
+    if (query.isEmpty) return deals;
+
+    final lowerQuery = query.toLowerCase();
+    
+    // Intents
+    bool noFee = lowerQuery.contains('no fee') || lowerQuery.contains('free');
+    bool business = lowerQuery.contains('business');
+    bool personal = lowerQuery.contains('personal');
+    bool rewards = lowerQuery.contains('rewards') || lowerQuery.contains('points');
+    bool lowRate = lowerQuery.contains('low rate') || lowerQuery.contains('interest');
+    bool frequentFlyer = lowerQuery.contains('frequent flyer') || lowerQuery.contains('qantas') || lowerQuery.contains('velocity');
+
+    return deals.where((deal) {
+      if (noFee) {
+        // Simple check for $0 or free. 
+        // Note: "$0" parsing might fail if it contains text, so checking text "0" or "free" is safer for this dataset.
+        if (!deal.annualFee.contains('0') && !deal.annualFee.toLowerCase().contains('free')) return false;
+      }
+      if (business && !deal.customerSegment.toLowerCase().contains('business')) return false;
+      if (personal && !deal.customerSegment.toLowerCase().contains('personal')) return false;
+      if (rewards && !deal.cardType.toLowerCase().contains('rewards') && (!deal.rewardsProgram.isNotEmpty || deal.rewardsProgram == '—')) return false;
+      if (lowRate && !deal.cardType.toLowerCase().contains('low rate')) return false;
+      if (frequentFlyer && !deal.cardType.toLowerCase().contains('frequent flyer')) return false;
+
+      // Text Match
+      String cleanQuery = lowerQuery
+          .replaceAll('no fee', '')
+          .replaceAll('free', '')
+          .replaceAll('business', '')
+          .replaceAll('personal', '')
+          .replaceAll('rewards', '')
+          .replaceAll('points', '')
+          .replaceAll('low rate', '')
+          .replaceAll('interest', '')
+          .replaceAll('frequent flyer', '')
+          .replaceAll('qantas', '')
+          .replaceAll('velocity', '')
+          .trim();
+
+      if (cleanQuery.isEmpty) return true;
+
+      return deal.issuer.toLowerCase().contains(cleanQuery) ||
+             deal.cardName.toLowerCase().contains(cleanQuery);
+    }).toList();
   }
 }

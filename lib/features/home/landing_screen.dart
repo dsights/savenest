@@ -178,20 +178,42 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: () {
-                  GoRouter.of(context).go(route);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.vibrantEmerald,
-                  foregroundColor: AppTheme.deepNavy,
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-                  textStyle: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+              Wrap(
+                spacing: 16,
+                runSpacing: 16,
+                alignment: WrapAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      GoRouter.of(context).go(route);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.vibrantEmerald,
+                      foregroundColor: AppTheme.deepNavy,
+                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    child: Text(buttonText),
                   ),
-                ),
-                child: Text(buttonText),
+                  ElevatedButton(
+                    onPressed: () {
+                      GoRouter.of(context).go('/savings');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: AppTheme.deepNavy,
+                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    child: const Text('Savings Calculator'),
+                  ),
+                ],
               ),
             ],
           ),
@@ -729,8 +751,10 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                 ],
               ),
               const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 12,
+                runSpacing: 8,
                 children: [
                   _footerLink(context, 'About Us', '/about'),
                   _footerLink(context, 'Privacy Policy', '/privacy'),
@@ -781,7 +805,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
               ),
               const SizedBox(height: 40),
               SizedBox(
-                height: 200, // Adjust height as needed
+                height: 300, // Adjust height as needed
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: _testimonials.length,

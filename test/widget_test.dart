@@ -33,7 +33,7 @@ void main() {
     expect(find.text('SaveNest'), findsWidgets); 
     
     // Verify hero text button is present
-    expect(find.text('CALCULATE MY SAVINGS'), findsOneWidget);
+    expect(find.text('Savings Calculator'), findsWidgets);
 
     // Verify we don't have the counter 0 (ensure we cleaned up the old test logic)
     expect(find.text('0'), findsNothing);

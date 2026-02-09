@@ -81,7 +81,7 @@ class AdvertiseWithUsScreen extends StatelessWidget {
                 const Icon(Icons.email, color: AppTheme.vibrantEmerald),
                 const SizedBox(width: 8),
                 Text(
-                  'partnerships@savenest.au',
+                  'contact@savenest.au',
                   style: const TextStyle(
                     color: AppTheme.vibrantEmerald,
                     fontWeight: FontWeight.bold,

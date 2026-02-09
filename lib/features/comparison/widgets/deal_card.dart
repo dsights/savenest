@@ -164,12 +164,15 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                     textAlign: TextAlign.center,
                     text: TextSpan(
                       children: [
-                        const TextSpan(
-                          text: '\$',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald),
-                        ),
+                        if (widget.deal.category != ProductCategory.electricity && widget.deal.category != ProductCategory.gas)
+                          const TextSpan(
+                            text: '\$',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald),
+                          ),
                         TextSpan(
-                          text: widget.deal.price > 0 ? widget.deal.price.toStringAsFixed(0) : 'Check',
+                          text: widget.deal.price > 0 
+                              ? (widget.deal.price % 1 == 0 ? widget.deal.price.toStringAsFixed(0) : widget.deal.price.toStringAsFixed(2))
+                              : 'Check',
                           style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald),
                         ),
                         TextSpan(

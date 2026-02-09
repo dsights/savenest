@@ -7,6 +7,8 @@ import 'comparison_provider.dart';
 import 'widgets/deal_card.dart';
 import 'widgets/search_bar_widget.dart';
 import 'package:flutter/foundation.dart'; // Import for kIsWeb
+import 'data/credit_card_repository.dart';
+import 'widgets/credit_card_table.dart';
 
 class ComparisonScreen extends ConsumerStatefulWidget {
   final ProductCategory initialCategory;
@@ -51,6 +53,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(comparisonProvider);
+    final creditCardsAsync = ref.watch(creditCardsProvider);
     final controller = ref.read(comparisonProvider.notifier);
     final categoryTitle = _getCategoryTitle(widget.initialCategory);
 
@@ -120,7 +123,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
                   child: Column(
                     children: [
-                      if (!state.isLoading)
+                      if (!state.isLoading && state.selectedCategory != ProductCategory.creditCards)
                       Text(
                         'We found ${state.deals.length} deals for you',
                         style: const TextStyle(
@@ -139,9 +142,15 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
 
                 // Content Area
                 Expanded(
-                  child: state.isLoading
-                      ? const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald))
-                      : LayoutBuilder(
+                  child: state.selectedCategory == ProductCategory.creditCards
+                      ? creditCardsAsync.when(
+                          data: (deals) => CreditCardTable(deals: deals),
+                          loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
+                          error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: Colors.white))),
+                        )
+                      : state.isLoading
+                          ? const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald))
+                          : LayoutBuilder(
                           builder: (context, constraints) {
                             if (state.deals.isEmpty) {
                               return const Center(

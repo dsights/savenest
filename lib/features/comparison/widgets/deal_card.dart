@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart'; // Add SVG support
 import 'package:url_launcher/url_launcher.dart';
 import '../../../theme/app_theme.dart';
 import '../../../widgets/glass_container.dart';
@@ -52,17 +53,15 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
   }
 
   Future<void> _launchURL() async {
-    // Monetization: Append a unique tracking ID
-    // In production, this would be a real user ID or session ID
     final String trackingId = 'user_${DateTime.now().millisecondsSinceEpoch}';
-    
-    // Check if URL already has query params
     final String separator = widget.deal.affiliateUrl.contains('?') ? '&' : '?';
     final String monetizedUrl = '${widget.deal.affiliateUrl}${separator}clickRef=$trackingId';
 
     final Uri url = Uri.parse(monetizedUrl);
-    if (!await launchUrl(url)) {
-      throw Exception('Could not launch $url');
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      debugPrint('Could not launch $url');
     }
   }
 
@@ -99,85 +98,106 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
       children: [
         GlassContainer(
           borderRadius: 16,
-          padding: const EdgeInsets.all(10), // Reduced from 16
-          borderColor: widget.isBestValue ? AppTheme.vibrantEmerald.withOpacity(0.5) : null,
+          padding: const EdgeInsets.all(16),
+          borderColor: widget.isBestValue ? AppTheme.vibrantEmerald.withOpacity(0.8) : Colors.white10,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Header: Logo & Rating
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: 32, // Reduced from 40
-                    height: 32,
-                    decoration: BoxDecoration(
-                      color: widget.deal.providerColor,
-                      shape: BoxShape.circle,
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      widget.deal.providerName[0],
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16, // Reduced from 20
-                        color: Colors.white,
+                  _buildLogo(),
+                  if (widget.deal.rating > 0)
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.black26,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.star, color: Colors.amber, size: 12),
+                          const SizedBox(width: 4),
+                          Text(
+                            widget.deal.rating.toString(),
+                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: Colors.white),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.star, color: Colors.amber, size: 12),
-                      const SizedBox(width: 2),
-                      Text(
-                        widget.deal.rating.toString(),
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
-                      ),
-                    ],
-                  ),
                 ],
               ),
               
+              const SizedBox(height: 12),
+
               // Middle: Info
               Column(
                 children: [
                   Text(
                     widget.deal.providerName,
-                    style: const TextStyle(fontSize: 10, color: Colors.white70),
+                    style: TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.7), fontWeight: FontWeight.w500),
                   ),
-                  const SizedBox(height: 2),
+                  const SizedBox(height: 4),
                   Text(
                     widget.deal.planName,
                     textAlign: TextAlign.center,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 12, // Reduced from 16
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      height: 1.2,
                     ),
                   ),
                 ],
               ),
 
+              const Spacer(),
+
               // Bottom: Price
               Column(
                 children: [
-                  Text(
-                    '\$${widget.deal.price.toStringAsFixed(0)}',
-                    style: const TextStyle(
-                      fontSize: 20, // Reduced from 28
-                      fontWeight: FontWeight.bold,
-                      color: AppTheme.vibrantEmerald,
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      children: [
+                        const TextSpan(
+                          text: '\$',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald),
+                        ),
+                        TextSpan(
+                          text: widget.deal.price > 0 ? widget.deal.price.toStringAsFixed(0) : 'Check',
+                          style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald),
+                        ),
+                        TextSpan(
+                          text: ' ${widget.deal.priceUnit}',
+                          style: const TextStyle(fontSize: 12, color: Colors.white54),
+                        ),
+                      ],
                     ),
                   ),
-                  Text(
-                    widget.deal.priceUnit,
-                    style: const TextStyle(fontSize: 10, color: Colors.white54),
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
-                    'Tap to flip',
-                    style: TextStyle(fontSize: 8, color: Colors.white30),
+                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.white10),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Tap for details',
+                          style: TextStyle(fontSize: 10, color: Colors.white70),
+                        ),
+                        SizedBox(width: 4),
+                        Icon(Icons.touch_app, size: 12, color: Colors.white70),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -190,44 +210,95 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     );
   }
 
+  Widget _buildLogo() {
+    final logoUrl = widget.deal.providerLogoUrl;
+    final isSvg = logoUrl.toLowerCase().endsWith('.svg');
+
+    return Container(
+      width: 56, 
+      height: 56, 
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: ClipOval(
+        child: isSvg
+            ? SvgPicture.network(
+                logoUrl,
+                fit: BoxFit.contain,
+                placeholderBuilder: (context) => _buildFallbackLogo(),
+              )
+            : Image.network(
+                logoUrl,
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) => _buildFallbackLogo(),
+              ),
+      ),
+    );
+  }
+
+  Widget _buildFallbackLogo() {
+    return Container(
+      color: widget.deal.providerColor,
+      alignment: Alignment.center,
+      child: Text(
+        widget.deal.providerName.isNotEmpty ? widget.deal.providerName[0] : '?',
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
   Widget _buildBack() {
     return GlassContainer(
       borderRadius: 16,
-      padding: const EdgeInsets.all(10), // Reduced from 16
-      color: AppTheme.deepNavy.withOpacity(0.9),
-      borderColor: AppTheme.vibrantEmerald.withOpacity(0.3),
+      padding: const EdgeInsets.all(16),
+      color: AppTheme.deepNavy.withOpacity(0.95),
+      borderColor: AppTheme.vibrantEmerald.withOpacity(0.5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Features',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: AppTheme.vibrantEmerald),
+              Text(
+                'Key Features',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: AppTheme.vibrantEmerald.withOpacity(0.9)),
               ),
-              const Icon(Icons.close, size: 14, color: Colors.white54),
+              const Icon(Icons.info_outline, size: 16, color: Colors.white54),
             ],
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
           Expanded(
             child: ListView(
               padding: EdgeInsets.zero,
+              physics: const BouncingScrollPhysics(),
               children: [
                 ...widget.deal.keyFeatures.map((feature) => Padding(
-                  padding: const EdgeInsets.only(bottom: 4.0),
+                  padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.only(top: 2.0),
-                        child: Icon(Icons.check, color: AppTheme.vibrantEmerald, size: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 2.0),
+                        child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald.withOpacity(0.8), size: 14),
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           feature,
-                          style: const TextStyle(fontSize: 10, color: Colors.white),
+                          style: const TextStyle(fontSize: 12, color: Colors.white, height: 1.3),
                         ),
                       ),
                     ],
@@ -236,18 +307,21 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
               ],
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
+            height: 40,
             child: ElevatedButton(
               onPressed: _launchURL,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
+                backgroundColor: AppTheme.vibrantEmerald,
                 foregroundColor: AppTheme.deepNavy,
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                minimumSize: const Size(0, 30),
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
-              child: const Text('Go to Site', style: TextStyle(fontSize: 10)),
+              child: const Text('Go to Site', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
             ),
           ),
         ],
@@ -258,20 +332,27 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
   Widget _buildBadge(String text, Color bg, Color fg) {
     return Positioned(
       top: 0,
-      right: 20,
+      right: 16,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
           color: bg,
           borderRadius: const BorderRadius.vertical(bottom: Radius.circular(8)),
+          boxShadow: [
+            BoxShadow(
+              color: bg.withOpacity(0.4),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
         ),
         child: Text(
           text,
           style: TextStyle(
             color: fg,
             fontWeight: FontWeight.bold,
-            fontSize: 9,
-            letterSpacing: 0.5,
+            fontSize: 10,
+            letterSpacing: 0.8,
           ),
         ),
       ),

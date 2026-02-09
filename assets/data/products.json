@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "1.3",
+    "version": "1.4",
     "lastUpdated": "2026-02-09",
     "currency": "AUD",
     "market": "Australia",
@@ -10,7 +10,9 @@
       "gas",
       "insurance",
       "internet",
-      "financial"
+      "financial",
+      "solar",
+      "home_security"
     ]
   },
   "mobile": [
@@ -32,6 +34,9 @@
       "data": "180GB",
       "network": "Telstra (full)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -53,6 +58,9 @@
       "data": "50GB",
       "network": "Telstra (full)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -74,6 +82,9 @@
       "data": "30\u201380GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -95,6 +106,9 @@
       "data": "40GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -116,6 +130,9 @@
       "data": "30\u201360GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -137,6 +154,9 @@
       "data": "50GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -158,6 +178,9 @@
       "data": "40\u2013100GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -179,6 +202,9 @@
       "data": "See Details",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -200,6 +226,9 @@
       "data": "30GB",
       "network": "Telstra wholesale",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -221,6 +250,9 @@
       "data": "200GB",
       "network": "Optus (full)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -242,6 +274,9 @@
       "data": "32GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -263,6 +298,9 @@
       "data": "See Details",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -284,6 +322,9 @@
       "data": "40GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -305,6 +346,9 @@
       "data": "30GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -326,6 +370,9 @@
       "data": "20\u201340GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -347,6 +394,9 @@
       "data": "25GB",
       "network": "Optus",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -368,6 +418,9 @@
       "data": "60GB",
       "network": "Vodafone (full)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -389,6 +442,9 @@
       "data": "See Details",
       "network": "Vodafone",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -410,6 +466,9 @@
       "data": "50GB",
       "network": "Vodafone",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -431,6 +490,9 @@
       "data": "See Details",
       "network": "Vodafone",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -452,6 +514,9 @@
       "data": "50GB",
       "network": "Vodafone",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -473,6 +538,9 @@
       "data": "See Details",
       "network": "Vodafone",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     }
@@ -494,6 +562,9 @@
       "price": 39.9,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -513,6 +584,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -532,6 +606,9 @@
       "price": 90.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -551,6 +628,9 @@
       "price": 44.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -570,6 +650,9 @@
       "price": 55.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -589,6 +672,9 @@
       "price": 43.9,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -608,6 +694,9 @@
       "price": 60.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -627,6 +716,9 @@
       "price": 44.9,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -646,6 +738,9 @@
       "price": 60.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -665,6 +760,9 @@
       "price": 65.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -684,6 +782,9 @@
       "price": 63.9,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -703,6 +804,9 @@
       "price": 95.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -722,6 +826,9 @@
       "price": 51.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -741,6 +848,9 @@
       "price": 65.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -760,6 +870,9 @@
       "price": 72.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -779,6 +892,9 @@
       "price": 72.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -798,6 +914,9 @@
       "price": 89.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -817,6 +936,9 @@
       "price": 51.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -836,6 +958,9 @@
       "price": 65.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -855,6 +980,9 @@
       "price": 71.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -874,6 +1002,9 @@
       "price": 85.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -893,6 +1024,9 @@
       "price": 141.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -912,6 +1046,9 @@
       "price": 63.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -931,6 +1068,9 @@
       "price": 78.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -950,6 +1090,9 @@
       "price": 85.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -969,6 +1112,9 @@
       "price": 100.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -988,6 +1134,9 @@
       "price": 129.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1007,6 +1156,9 @@
       "price": 44.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1026,6 +1178,9 @@
       "price": 64.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1045,6 +1200,9 @@
       "price": 64.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1064,6 +1222,9 @@
       "price": 64.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1083,6 +1244,9 @@
       "price": 89.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1102,6 +1266,9 @@
       "price": 59.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1121,6 +1288,9 @@
       "price": 75.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1140,6 +1310,9 @@
       "price": 79.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1159,6 +1332,9 @@
       "price": 79.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1178,6 +1354,9 @@
       "price": 99.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1197,6 +1376,9 @@
       "price": 60.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1216,6 +1398,9 @@
       "price": 65.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1235,6 +1420,9 @@
       "price": 64.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1254,6 +1442,9 @@
       "price": 64.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1273,6 +1464,9 @@
       "price": 89.99,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1292,6 +1486,9 @@
       "price": 45.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1311,6 +1508,9 @@
       "price": 60.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1330,6 +1530,9 @@
       "price": 65.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1349,6 +1552,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1368,6 +1574,9 @@
       "price": 95.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1387,6 +1596,9 @@
       "price": 44.5,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1406,6 +1618,9 @@
       "price": 51.5,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1425,6 +1640,9 @@
       "price": 53.5,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1444,6 +1662,9 @@
       "price": 53.5,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1463,6 +1684,9 @@
       "price": 50.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1482,6 +1706,9 @@
       "price": 65.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1501,6 +1728,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1520,6 +1750,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1539,6 +1772,9 @@
       "price": 100.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1558,6 +1794,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1577,6 +1816,9 @@
       "price": 75.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1596,6 +1838,9 @@
       "price": 80.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1615,6 +1860,9 @@
       "price": 110.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1634,6 +1882,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1653,6 +1904,9 @@
       "price": 75.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1672,6 +1926,9 @@
       "price": 79.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1691,6 +1948,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1710,6 +1970,9 @@
       "price": 85.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1729,6 +1992,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1748,6 +2014,9 @@
       "price": 85.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1767,6 +2036,9 @@
       "price": 85.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1786,6 +2058,9 @@
       "price": 69.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1805,6 +2080,9 @@
       "price": 83.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1824,6 +2102,9 @@
       "price": 80.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1843,6 +2124,9 @@
       "price": 95.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1862,6 +2146,9 @@
       "price": 120.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1881,6 +2168,9 @@
       "price": 60.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1900,6 +2190,9 @@
       "price": 65.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1919,6 +2212,9 @@
       "price": 85.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1938,6 +2234,9 @@
       "price": 59.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1957,6 +2256,9 @@
       "price": 69.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -1976,6 +2278,9 @@
       "price": 69.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -1995,6 +2300,9 @@
       "price": 69.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2014,6 +2322,9 @@
       "price": 145.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2033,6 +2344,9 @@
       "price": 80.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2052,6 +2366,9 @@
       "price": 85.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -2071,6 +2388,9 @@
       "price": 95.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2090,6 +2410,9 @@
       "price": 105.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2109,6 +2432,9 @@
       "price": 120.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2128,6 +2454,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2147,6 +2476,9 @@
       "price": 80.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -2166,6 +2498,9 @@
       "price": 90.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2185,6 +2520,9 @@
       "price": 50.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2204,6 +2542,9 @@
       "price": 65.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.5,
       "isSponsored": false
     },
@@ -2223,6 +2564,9 @@
       "price": 70.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2242,6 +2586,9 @@
       "price": 75.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2261,6 +2608,9 @@
       "price": 110.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     }
@@ -2282,6 +2632,9 @@
       "price": 1026.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2301,6 +2654,9 @@
       "price": 980.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2320,6 +2676,9 @@
       "price": 941.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2339,6 +2698,9 @@
       "price": 869.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2358,6 +2720,9 @@
       "price": 900.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2377,6 +2742,9 @@
       "price": 920.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2396,6 +2764,9 @@
       "price": 961.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2415,6 +2786,9 @@
       "price": 1000.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2434,6 +2808,9 @@
       "price": 1173.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2453,6 +2830,9 @@
       "price": 1062.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2472,6 +2852,9 @@
       "price": 950.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2491,6 +2874,9 @@
       "price": 1000.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2510,6 +2896,9 @@
       "price": 700.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2529,6 +2918,9 @@
       "price": 1050.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2548,6 +2940,9 @@
       "price": 950.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2567,6 +2962,9 @@
       "price": 980.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2586,6 +2984,9 @@
       "price": 1050.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2605,6 +3006,9 @@
       "price": 950.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2624,6 +3028,9 @@
       "price": 1000.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2643,6 +3050,9 @@
       "price": 1100.0,
       "priceUnit": "/yr (est)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     }
@@ -2665,6 +3075,9 @@
       "price": 1.08,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2685,6 +3098,9 @@
       "price": 0.92,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2705,6 +3121,9 @@
       "price": 1.05,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2725,6 +3144,9 @@
       "price": 1.09,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2745,6 +3167,9 @@
       "price": 0.82,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2765,6 +3190,9 @@
       "price": 0.88,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2785,6 +3213,9 @@
       "price": 1.1,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2805,6 +3236,9 @@
       "price": 1.01,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2825,6 +3259,9 @@
       "price": 1.31,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2845,6 +3282,9 @@
       "price": 0.77,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2865,6 +3305,9 @@
       "price": 0.88,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2885,6 +3328,9 @@
       "price": 1.12,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2905,6 +3351,9 @@
       "price": 1.09,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
       "isSponsored": false
     },
@@ -2925,7 +3374,307 @@
       "price": 0.0,
       "priceUnit": "/day (supply)",
       "affiliateUrl": "https://www.savenest.com.au",
+      "directUrl": "https://www.savenest.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Direct",
       "rating": 4.0,
+      "isSponsored": false
+    }
+  ],
+  "insurance": [
+    {
+      "id": "ins_iselect_01",
+      "providerName": "iSelect",
+      "logoUrl": "https://www.iselect.com.au/content/dam/iselect/logo/iselect-logo.svg",
+      "planName": "Car Insurance Comparison",
+      "description": "Compare multiple car insurance providers",
+      "keyFeatures": [
+        "Compare multiple brands",
+        "Free comparison"
+      ],
+      "price": "Free comparison",
+      "priceUnit": "",
+      "affiliateUrl": "https://www.commissionfactory.com",
+      "directUrl": "https://www.iselect.com.au",
+      "commission": "Up to 50% of premium",
+      "affiliateNetwork": "Commission Factory",
+      "rating": 4.4,
+      "providerColor": "0xFF00AEEF",
+      "isSponsored": false
+    },
+    {
+      "id": "ins_iselect_02",
+      "providerName": "iSelect",
+      "logoUrl": "https://www.iselect.com.au/content/dam/iselect/logo/iselect-logo.svg",
+      "planName": "Health Insurance Comparison",
+      "description": "Compare major health funds",
+      "keyFeatures": [
+        "Compare all major health funds",
+        "Free comparison"
+      ],
+      "price": "Free comparison",
+      "priceUnit": "",
+      "affiliateUrl": "https://www.commissionfactory.com",
+      "directUrl": "https://www.iselect.com.au",
+      "commission": "Up to 50% + trailing",
+      "affiliateNetwork": "Commission Factory",
+      "rating": 4.4,
+      "providerColor": "0xFF00AEEF",
+      "isSponsored": false
+    },
+    {
+      "id": "ins_ctm_01",
+      "providerName": "Compare the Market",
+      "logoUrl": "https://www.comparethemarket.com.au/content/dam/ctm/logo/ctm-logo.svg",
+      "planName": "Car Insurance",
+      "description": "Wide car insurance comparison",
+      "keyFeatures": [
+        "Compare 100+ brands",
+        "Free comparison",
+        "Transparent pricing"
+      ],
+      "price": "Free comparison",
+      "priceUnit": "",
+      "affiliateUrl": "https://optimisemedia.com/advertiser-directory/compare-the-market-affiliate-program-2078530/",
+      "directUrl": "https://www.comparethemarket.com.au",
+      "commission": "Varies (upfront %)",
+      "affiliateNetwork": "Optimise Media",
+      "rating": 4.5,
+      "providerColor": "0xFFFF0000",
+      "isSponsored": false
+    },
+    {
+      "id": "ins_ctm_02",
+      "providerName": "Compare the Market",
+      "logoUrl": "https://www.comparethemarket.com.au/content/dam/ctm/logo/ctm-logo.svg",
+      "planName": "Health Insurance",
+      "description": "Health fund comparison",
+      "keyFeatures": [
+        "Compare all health funds",
+        "No markup on premiums"
+      ],
+      "price": "Free comparison",
+      "priceUnit": "",
+      "affiliateUrl": "https://optimisemedia.com/advertiser-directory/compare-the-market-affiliate-program-2078530/",
+      "directUrl": "https://www.comparethemarket.com.au",
+      "commission": "Varies (upfront %)",
+      "affiliateNetwork": "Optimise Media",
+      "rating": 4.5,
+      "providerColor": "0xFFFF0000",
+      "isSponsored": false
+    },
+    {
+      "id": "ins_ctm_03",
+      "providerName": "Compare the Market",
+      "logoUrl": "https://www.comparethemarket.com.au/content/dam/ctm/logo/ctm-logo.svg",
+      "planName": "Home & Contents Insurance",
+      "description": "Home insurance comparison",
+      "keyFeatures": [
+        "Compare landlord, contents, home insurance",
+        "Multiple providers"
+      ],
+      "price": "Free comparison",
+      "priceUnit": "",
+      "affiliateUrl": "https://optimisemedia.com/advertiser-directory/compare-the-market-affiliate-program-2078530/",
+      "directUrl": "https://www.comparethemarket.com.au",
+      "commission": "Varies (upfront %)",
+      "affiliateNetwork": "Optimise Media",
+      "rating": 4.5,
+      "providerColor": "0xFFFF0000",
+      "isSponsored": false
+    },
+    {
+      "id": "ins_budget_01",
+      "providerName": "Budget Direct",
+      "logoUrl": "https://www.budgetdirect.com.au/content/dam/budgetdirect/logo/bd-logo.svg",
+      "planName": "Car Insurance",
+      "description": "Direct car insurance",
+      "keyFeatures": [
+        "Award-winning insurer",
+        "Competitive rates",
+        "Direct sales"
+      ],
+      "price": "Varies",
+      "priceUnit": "",
+      "affiliateUrl": "https://www.commissionfactory.com",
+      "directUrl": "https://www.budgetdirect.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Commission Factory",
+      "rating": 4.6,
+      "providerColor": "0xFF003366",
+      "isSponsored": false
+    },
+    {
+      "id": "ins_budget_02",
+      "providerName": "Budget Direct",
+      "logoUrl": "https://www.budgetdirect.com.au/content/dam/budgetdirect/logo/bd-logo.svg",
+      "planName": "Home Insurance",
+      "description": "Direct home insurance",
+      "keyFeatures": [
+        "Award-winning",
+        "Competitive pricing",
+        "Comprehensive cover"
+      ],
+      "price": "Varies",
+      "priceUnit": "",
+      "affiliateUrl": "https://www.commissionfactory.com",
+      "directUrl": "https://www.budgetdirect.com.au",
+      "commission": "Varies",
+      "affiliateNetwork": "Commission Factory",
+      "rating": 4.6,
+      "providerColor": "0xFF003366",
+      "isSponsored": false
+    }
+  ],
+  "solar": [
+    {
+      "id": "sol_solarchoice_01",
+      "providerName": "Solar Choice",
+      "logoUrl": "",
+      "planName": "Solar Comparison Service",
+      "description": "Trusted solar panel comparison",
+      "keyFeatures": [
+        "Free for homeowners",
+        "Australia's trusted solar comparison",
+        "Earn per qualified lead"
+      ],
+      "price": "Free (commission per lead)",
+      "priceUnit": "",
+      "affiliateUrl": "solarchoice.net.au",
+      "directUrl": "solarchoice.net.au",
+      "commission": "Per qualified lead",
+      "affiliateNetwork": "Direct",
+      "rating": 4.4,
+      "providerColor": "0xFFFFCC00",
+      "isSponsored": false
+    },
+    {
+      "id": "sol_energymatters_01",
+      "providerName": "Energy Matters",
+      "logoUrl": "",
+      "planName": "Solar Quote Service",
+      "description": "Solar & battery quotes",
+      "keyFeatures": [
+        "Solar power & battery storage quotes",
+        "20+ leads/month required"
+      ],
+      "price": "$5 per lead",
+      "priceUnit": "",
+      "affiliateUrl": "energymatters.com.au",
+      "directUrl": "energymatters.com.au",
+      "commission": "$5 per quote lead",
+      "affiliateNetwork": "Direct",
+      "rating": 4.3,
+      "providerColor": "0xFF339900",
+      "isSponsored": false
+    }
+  ],
+  "home_security": [
+    {
+      "id": "sec_ring_01",
+      "providerName": "Ring",
+      "logoUrl": "",
+      "planName": "Video Doorbells & Security",
+      "description": "Smart home security devices",
+      "keyFeatures": [
+        "Video doorbells",
+        "Security cameras",
+        "Smart home devices",
+        "Home safety solutions"
+      ],
+      "price": "",
+      "priceUnit": "",
+      "affiliateUrl": "ring.com",
+      "directUrl": "ring.com",
+      "commission": "Up to 6%",
+      "affiliateNetwork": "37X / Amazon",
+      "rating": 4.5,
+      "providerColor": "0xFF000000",
+      "isSponsored": false
+    },
+    {
+      "id": "sec_wuuk_01",
+      "providerName": "WUUK Labs",
+      "logoUrl": "",
+      "planName": "AI Security Cameras",
+      "description": "AI-powered security products",
+      "keyFeatures": [
+        "AI-powered video doorbell",
+        "Smart home security products",
+        "Affordable prices"
+      ],
+      "price": "",
+      "priceUnit": "",
+      "affiliateUrl": "wuuklabs.com",
+      "directUrl": "wuuklabs.com",
+      "commission": "Up to 10%",
+      "affiliateNetwork": "ShareASale/Kickbooster",
+      "rating": 4.4,
+      "providerColor": "0xFF3366FF",
+      "isSponsored": false
+    },
+    {
+      "id": "sec_adt_01",
+      "providerName": "ADT Security",
+      "logoUrl": "",
+      "planName": "Home Security Systems",
+      "description": "Monitored security systems",
+      "keyFeatures": [
+        "24/7 monitoring",
+        "Authorised dealer program",
+        "Upfront fees + monthly revenue",
+        "Training provided"
+      ],
+      "price": "Varies",
+      "priceUnit": "",
+      "affiliateUrl": "adtsecurity.com.au",
+      "directUrl": "adtsecurity.com.au",
+      "commission": "Dealer revenue",
+      "affiliateNetwork": "Direct - Partner Program",
+      "rating": 4.6,
+      "providerColor": "0xFF0033CC",
+      "isSponsored": false
+    }
+  ],
+  "financial": [
+    {
+      "id": "fin_compareclub_01",
+      "providerName": "Compare Club",
+      "logoUrl": "",
+      "planName": "Credit Card Comparison",
+      "description": "Compare credit cards and more",
+      "keyFeatures": [
+        "Health insurance, credit cards, loans comparison",
+        "Trusted by Australians"
+      ],
+      "price": "AUD$50+ per sale",
+      "priceUnit": "",
+      "affiliateUrl": "compareclub.com.au",
+      "directUrl": "compareclub.com.au",
+      "commission": "$10-17 per lead, $50+ per sale",
+      "affiliateNetwork": "Impact Network",
+      "rating": 4.4,
+      "providerColor": "0xFF6600CC",
+      "isSponsored": false
+    },
+    {
+      "id": "fin_finder_01",
+      "providerName": "Finder.com.au",
+      "logoUrl": "",
+      "planName": "Financial Comparison",
+      "description": "Australia's largest comparison site",
+      "keyFeatures": [
+        "Credit cards, loans, insurance",
+        "Finder Rewards"
+      ],
+      "price": "Varies (lead referral)",
+      "priceUnit": "",
+      "affiliateUrl": "finder.com.au",
+      "directUrl": "finder.com.au",
+      "commission": "Lead referral fees",
+      "affiliateNetwork": "Direct - Partner Program",
+      "rating": 4.5,
+      "providerColor": "0xFF0066FF",
       "isSponsored": false
     }
   ]

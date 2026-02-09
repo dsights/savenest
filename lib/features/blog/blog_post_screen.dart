@@ -45,13 +45,26 @@ class BlogPostScreen extends ConsumerWidget {
 
           // SEO Meta Tags
           if (kIsWeb) {
+            final absoluteImageUrl = post.imageUrl.startsWith('http') 
+                ? post.imageUrl 
+                : 'https://savenest.au/assets/${post.imageUrl}';
+            
             MetaSEO().author(author: post.author);
             MetaSEO().description(description: post.summary);
             MetaSEO().keywords(keywords: '${post.category}, comparison, Australia, savings, ${post.title}');
+            
+            // Open Graph / Facebook
             MetaSEO().ogTitle(ogTitle: post.title);
             MetaSEO().ogDescription(ogDescription: post.summary);
-            // In a real app, this should be a full URL
-             MetaSEO().ogImage(ogImage: 'https://savenest.au/${post.imageUrl}');
+            MetaSEO().ogImage(ogImage: absoluteImageUrl);
+            MetaSEO().propertyContent(property: 'og:type', content: 'article');
+            MetaSEO().propertyContent(property: 'og:url', content: 'https://savenest.au/blog/${post.slug}');
+            
+            // Twitter
+            MetaSEO().nameContent(name: 'twitter:card', content: 'summary_large_image');
+            MetaSEO().nameContent(name: 'twitter:title', content: post.title);
+            MetaSEO().nameContent(name: 'twitter:description', content: post.summary);
+            MetaSEO().nameContent(name: 'twitter:image', content: absoluteImageUrl);
           }
 
           return SingleChildScrollView(

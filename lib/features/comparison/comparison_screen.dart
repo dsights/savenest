@@ -80,12 +80,24 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     // Update meta tags for SEO
       if (kIsWeb) {
         MetaSEO meta = MetaSEO();
-        meta.nameContent(name: 'title', content: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest');
-        meta.nameContent(name: 'description', content: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
-        meta.ogTitle(ogTitle: 'Compare $categoryTitle Plans & Prices in Australia | SaveNest');
-        meta.ogDescription(ogDescription: 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.');
-        meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/deals/${categoryTitle.toLowerCase()}');
-        meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png'); // Placeholder
+        final String title = 'Compare $categoryTitle Plans & Prices in Australia | SaveNest';
+        final String description = 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.';
+        const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+
+        meta.nameContent(name: 'title', content: title);
+        meta.nameContent(name: 'description', content: description);
+        
+        // Open Graph
+        meta.ogTitle(ogTitle: title);
+        meta.ogDescription(ogDescription: description);
+        meta.propertyContent(property: 'og:url', content: 'https://savenest.au/deals/${widget.initialCategory.name}');
+        meta.ogImage(ogImage: imageUrl);
+
+        // Twitter
+        meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
+        meta.nameContent(name: 'twitter:title', content: title);
+        meta.nameContent(name: 'twitter:description', content: description);
+        meta.nameContent(name: 'twitter:image', content: imageUrl);
       }
 
     return Scaffold(

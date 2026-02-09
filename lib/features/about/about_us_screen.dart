@@ -14,12 +14,24 @@ class AboutUsScreen extends StatelessWidget {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.nameContent(name: 'title', content: 'About SaveNest | Australia\'s Smart Utility Comparison Site');
-      meta.nameContent(name: 'description', content: 'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.');
-      meta.ogTitle(ogTitle: 'About SaveNest | Australia\'s Smart Utility Comparison Site');
-      meta.ogDescription(ogDescription: 'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.');
-      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/about');
-      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
+      const String title = 'About SaveNest | Australia\'s Smart Utility Comparison Site';
+      const String description = 'Learn about SaveNest\'s mission to help Australians save money on utilities. Discover our story, our commitment to independent comparisons, and our business details.';
+      const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+
+      meta.nameContent(name: 'title', content: title);
+      meta.nameContent(name: 'description', content: description);
+      
+      // Open Graph
+      meta.ogTitle(ogTitle: title);
+      meta.ogDescription(ogDescription: description);
+      meta.propertyContent(property: 'og:url', content: 'https://savenest.au/about');
+      meta.ogImage(ogImage: imageUrl);
+
+      // Twitter
+      meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
+      meta.nameContent(name: 'twitter:title', content: title);
+      meta.nameContent(name: 'twitter:description', content: description);
+      meta.nameContent(name: 'twitter:image', content: imageUrl);
     }
 
     return Scaffold(

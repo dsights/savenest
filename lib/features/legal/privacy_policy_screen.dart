@@ -14,12 +14,24 @@ class PrivacyPolicyScreen extends StatelessWidget {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.nameContent(name: 'title', content: 'Privacy Policy | SaveNest');
-      meta.nameContent(name: 'description', content: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.');
-      meta.ogTitle(ogTitle: 'Privacy Policy | SaveNest');
-      meta.ogDescription(ogDescription: 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.');
-      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/privacy');
-      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
+      const String title = 'Privacy Policy | SaveNest';
+      const String description = 'Understand how SaveNest collects, uses, and protects your personal information. Learn about our data handling, affiliate tracking, and your privacy rights.';
+      const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+
+      meta.nameContent(name: 'title', content: title);
+      meta.nameContent(name: 'description', content: description);
+      
+      // Open Graph
+      meta.ogTitle(ogTitle: title);
+      meta.ogDescription(ogDescription: description);
+      meta.propertyContent(property: 'og:url', content: 'https://savenest.au/privacy');
+      meta.ogImage(ogImage: imageUrl);
+
+      // Twitter
+      meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
+      meta.nameContent(name: 'twitter:title', content: title);
+      meta.nameContent(name: 'twitter:description', content: description);
+      meta.nameContent(name: 'twitter:image', content: imageUrl);
     }
 
     return Scaffold(

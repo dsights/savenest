@@ -223,12 +223,25 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.nameContent(name: 'title', content: 'SaveNest | Compare & Save on Australian Utilities');
-      meta.nameContent(name: 'description', content: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
-      meta.ogTitle(ogTitle: 'SaveNest | Compare & Save on Australian Utilities');
-      meta.ogDescription(ogDescription: 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.');
-      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/');
-      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
+      const String title = 'SaveNest | Compare & Save on Australian Utilities';
+      const String description = 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.';
+      const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+
+      meta.nameContent(name: 'title', content: title);
+      meta.nameContent(name: 'description', content: description);
+      
+      // Open Graph / Facebook
+      meta.ogTitle(ogTitle: title);
+      meta.ogDescription(ogDescription: description);
+      meta.propertyContent(property: 'og:url', content: 'https://savenest.au/');
+      meta.ogImage(ogImage: imageUrl);
+      meta.propertyContent(property: 'og:type', content: 'website');
+
+      // Twitter
+      meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
+      meta.nameContent(name: 'twitter:title', content: title);
+      meta.nameContent(name: 'twitter:description', content: description);
+      meta.nameContent(name: 'twitter:image', content: imageUrl);
     }
 
     return Scaffold(

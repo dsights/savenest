@@ -14,12 +14,24 @@ class TermsOfServiceScreen extends StatelessWidget {
     // Update meta tags for SEO
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.nameContent(name: 'title', content: 'Terms of Service | SaveNest');
-      meta.nameContent(name: 'description', content: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
-      meta.ogTitle(ogTitle: 'Terms of Service | SaveNest');
-      meta.ogDescription(ogDescription: 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.');
-      meta.propertyContent(property: 'og:url', content: 'https://www.savenest.com.au/terms');
-      meta.ogImage(ogImage: 'https://www.savenest.com.au/assets/images/logo.png');
+      const String title = 'Terms of Service | SaveNest';
+      const String description = 'Review the terms of service for using SaveNest, including details on content usage, affiliate links, disclaimers, and changes to these terms.';
+      const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+
+      meta.nameContent(name: 'title', content: title);
+      meta.nameContent(name: 'description', content: description);
+      
+      // Open Graph
+      meta.ogTitle(ogTitle: title);
+      meta.ogDescription(ogDescription: description);
+      meta.propertyContent(property: 'og:url', content: 'https://savenest.au/terms');
+      meta.ogImage(ogImage: imageUrl);
+
+      // Twitter
+      meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
+      meta.nameContent(name: 'twitter:title', content: title);
+      meta.nameContent(name: 'twitter:description', content: description);
+      meta.nameContent(name: 'twitter:image', content: imageUrl);
     }
 
     return Scaffold(

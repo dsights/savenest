@@ -18,9 +18,24 @@ class BlogListScreen extends ConsumerWidget {
 
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      meta.nameContent(name: 'title', content: 'SaveNest Blog | Money Saving Tips & Insights');
-      meta.nameContent(name: 'description', content: 'Read the latest insights on how to save on electricity, internet, mobile plans, and insurance in Australia.');
-      meta.ogTitle(ogTitle: 'SaveNest Blog | Money Saving Tips & Insights');
+      const String title = 'SaveNest Blog | Money Saving Tips & Insights';
+      const String description = 'Read the latest insights on how to save on electricity, internet, mobile plans, and insurance in Australia.';
+      const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+
+      meta.nameContent(name: 'title', content: title);
+      meta.nameContent(name: 'description', content: description);
+      
+      // Open Graph
+      meta.ogTitle(ogTitle: title);
+      meta.ogDescription(ogDescription: description);
+      meta.propertyContent(property: 'og:url', content: 'https://savenest.au/blog');
+      meta.ogImage(ogImage: imageUrl);
+
+      // Twitter
+      meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
+      meta.nameContent(name: 'twitter:title', content: title);
+      meta.nameContent(name: 'twitter:description', content: description);
+      meta.nameContent(name: 'twitter:image', content: imageUrl);
     }
 
     return Scaffold(

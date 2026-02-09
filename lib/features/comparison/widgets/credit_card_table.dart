@@ -10,6 +10,9 @@ class CreditCardTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const contentTextStyle = TextStyle(color: Colors.black87, fontSize: 13);
+    const headerTextStyle = TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
+
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: SingleChildScrollView(
@@ -19,22 +22,19 @@ class CreditCardTable extends StatelessWidget {
             dividerColor: Colors.grey[300],
             dataTableTheme: DataTableThemeData(
               headingRowColor: MaterialStateProperty.all(AppTheme.deepNavy),
-              headingTextStyle: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+              headingTextStyle: headerTextStyle,
               dataRowColor: MaterialStateProperty.resolveWith<Color?>(
                 (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.selected)) {
-                    return AppTheme.vibrantEmerald.withOpacity(0.1);
-                  }
-                  return Colors.white; // Default color
+                  return Colors.white; // White background for rows
                 },
               ),
             ),
           ),
           child: DataTable(
             columnSpacing: 24,
+            headingRowHeight: 56,
+            dataRowMinHeight: 60,
+            dataRowMaxHeight: 80, // Allow more height for wrapping text
             columns: const [
               DataColumn(label: Text('Issuer')),
               DataColumn(label: Text('Card Name')),
@@ -51,39 +51,52 @@ class CreditCardTable extends StatelessWidget {
               return DataRow(
                 cells: [
                   DataCell(
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // Placeholder for logo if we had a proper image loader for these URLs
-                        // Since URLs are placeholders in CSV, we assume text or basic icon
-                         const Icon(Icons.credit_card, size: 20, color: AppTheme.deepNavy),
-                        const SizedBox(width: 8),
-                        Text(deal.issuer, style: const TextStyle(fontWeight: FontWeight.bold)),
-                      ],
+                    Text(
+                      deal.issuer,
+                      style: contentTextStyle.copyWith(fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
                     ),
                   ),
-                  DataCell(Text(deal.cardName)),
-                  DataCell(Text(deal.cardType)),
-                  DataCell(Text(deal.annualFee)),
-                  DataCell(Text(deal.purchaseApr)),
-                  DataCell(Text(deal.signUpBonus)),
+                  DataCell(
+                    SizedBox(
+                      width: 140,
+                      child: Text(
+                        deal.cardName,
+                        style: contentTextStyle,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                  DataCell(Text(deal.cardType, style: contentTextStyle)),
+                  DataCell(Text(deal.annualFee, style: contentTextStyle.copyWith(fontWeight: FontWeight.bold))),
+                  DataCell(Text(deal.purchaseApr, style: contentTextStyle)),
+                  DataCell(
+                     SizedBox(
+                      width: 100,
+                      child: Text(
+                        deal.signUpBonus,
+                        style: contentTextStyle.copyWith(color: AppTheme.vibrantEmerald, fontWeight: FontWeight.bold),
+                         maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
                   DataCell(
                     SizedBox(
                       width: 150,
                       child: Text(
                         deal.rewardsProgram,
-                        maxLines: 2,
+                        maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(fontSize: 12),
+                        style: contentTextStyle.copyWith(fontSize: 12),
                       ),
                     ),
                   ),
-                   DataCell(Text(deal.interestFreeDays)),
-                  DataCell(Text(deal.foreignTxFee)),
+                   DataCell(Text(deal.interestFreeDays, style: contentTextStyle)),
+                  DataCell(Text(deal.foreignTxFee, style: contentTextStyle)),
                   DataCell(
                     ElevatedButton(
                       onPressed: () {
-                         // Use PDS link or generic apply
                          final url = deal.directPdsLink;
                          if (url.isNotEmpty) {
                            launchUrl(Uri.parse(url));
@@ -92,9 +105,10 @@ class CreditCardTable extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppTheme.vibrantEmerald,
                         foregroundColor: AppTheme.deepNavy,
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        minimumSize: const Size(0, 32), // Compact button
                       ),
-                      child: const Text('Details'),
+                      child: const Text('Details', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],

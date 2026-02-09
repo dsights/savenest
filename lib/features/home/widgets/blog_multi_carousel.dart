@@ -16,7 +16,6 @@ class BlogMultiCarousel extends StatefulWidget {
 class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
   late final PageController _pageController;
   int _currentPage = 0;
-  final int _postsPerPage = 4; // Define how many posts per page
 
   @override
   void initState() {
@@ -37,8 +36,19 @@ class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    // specific breakpoints for blog posts
+    double screenWidth = MediaQuery.of(context).size.width;
+    int postsPerPage;
+    if (screenWidth < 768) {
+      postsPerPage = 1;
+    } else if (screenWidth < 1200) {
+      postsPerPage = 2;
+    } else {
+      postsPerPage = 4;
+    }
+
     // Calculate total number of pages
-    final int numPages = (widget.posts.length / _postsPerPage).ceil();
+    final int numPages = (widget.posts.length / postsPerPage).ceil();
 
     return Column(
       children: [
@@ -48,8 +58,8 @@ class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
             controller: _pageController,
             itemCount: numPages, // Number of pages
             itemBuilder: (context, pageIndex) {
-              final int startIdx = pageIndex * _postsPerPage;
-              final int endIdx = (startIdx + _postsPerPage).clamp(0, widget.posts.length);
+              final int startIdx = pageIndex * postsPerPage;
+              final int endIdx = (startIdx + postsPerPage).clamp(0, widget.posts.length);
               final List<BlogPost> postsForPage = widget.posts.sublist(startIdx, endIdx);
 
               return Row(
@@ -73,31 +83,32 @@ class _BlogMultiCarouselState extends State<BlogMultiCarousel> {
         ),
         const SizedBox(height: 20),
         // Dots indicator
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(numPages, (index) { // Dots for each page
-            return GestureDetector(
-              onTap: () {
-                _pageController.animateToPage(
-                  index,
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeIn,
-                );
-              },
-              child: Container(
-                width: 8.0,
-                height: 8.0,
-                margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: _currentPage == index
-                      ? AppTheme.vibrantEmerald // Active dot color
-                      : Colors.grey, // Inactive dot color
+        if (numPages > 1)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(numPages, (index) { // Dots for each page
+              return GestureDetector(
+                onTap: () {
+                  _pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeIn,
+                  );
+                },
+                child: Container(
+                  width: 8.0,
+                  height: 8.0,
+                  margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _currentPage == index
+                        ? AppTheme.vibrantEmerald // Active dot color
+                        : Colors.grey, // Inactive dot color
+                  ),
                 ),
-              ),
-            );
-          }),
-        ),
+              );
+            }),
+          ),
       ],
     );
   }

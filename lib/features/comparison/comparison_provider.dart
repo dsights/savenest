@@ -193,3 +193,8 @@ final comparisonProvider = StateNotifierProvider<ComparisonController, Compariso
   final repo = ref.watch(productRepositoryProvider);
   return ComparisonController(repo);
 });
+
+final dealDetailsProvider = FutureProvider.family<Deal?, String>((ref, id) async {
+  final repo = ref.watch(productRepositoryProvider);
+  return repo.getDealById(id);
+});

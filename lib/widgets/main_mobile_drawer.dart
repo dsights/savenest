@@ -31,6 +31,7 @@ class MainMobileDrawer extends StatelessWidget {
           _drawerItem(context, 'Internet', '/deals/internet'),
           _drawerItem(context, 'Mobile', '/deals/mobile'),
           _drawerItem(context, 'Blog', '/blog'),
+          _drawerItem(context, 'Contact Us', '/contact'),
           _drawerItem(context, 'Savings Calculator', '/savings'),
         ],
       ),

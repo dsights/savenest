@@ -41,6 +41,7 @@ class MainNavigationBar extends StatelessWidget {
                     _navLink(context, 'Internet', '/deals/internet'),
                     _navLink(context, 'Mobile', '/deals/mobile'),
                     _navLink(context, 'Blog', '/blog'), // Added Blog link
+                    _navLink(context, 'Contact', '/contact'),
                     _navLink(context, 'Savings Calculator', '/savings'),
                   ],
                 )

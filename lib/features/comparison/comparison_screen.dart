@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:meta_seo/meta_seo.dart';
 import '../../theme/app_theme.dart';
 import 'comparison_model.dart';
@@ -221,6 +222,37 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                             }
                           },
                         ),
+                ),
+                
+                // CTA Section
+                Container(
+                  width: double.infinity,
+                  color: AppTheme.vibrantEmerald,
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      const Text(
+                        "Can't find what you're looking for?",
+                        style: TextStyle(
+                          color: AppTheme.deepNavy,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      ElevatedButton(
+                        onPressed: () {
+                          context.push('/contact');
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppTheme.deepNavy,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        ),
+                        child: const Text("Get a Personalised Quote"),
+                      ),
+                    ],
+                  ),
                 ),
             ],
           ),

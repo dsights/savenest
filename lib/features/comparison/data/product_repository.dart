@@ -4,6 +4,7 @@ import '../comparison_model.dart';
 
 abstract class ProductRepository {
   Future<List<Deal>> getDeals(ProductCategory category);
+  Future<Deal?> getDealById(String id);
 }
 
 class JsonProductRepository implements ProductRepository {
@@ -27,6 +28,26 @@ class JsonProductRepository implements ProductRepository {
     final List<dynamic> rawList = _cachedData?[categoryKey] ?? [];
 
     return rawList.map((json) => _fromJson(json, category)).toList();
+  }
+
+  @override
+  Future<Deal?> getDealById(String id) async {
+    await _loadData();
+    if (_cachedData == null) return null;
+
+    for (var category in ProductCategory.values) {
+      if (category == ProductCategory.creditCards) continue; // Skip credit cards for now as they use a different model
+      final key = _getCategoryKey(category);
+      if (_cachedData!.containsKey(key)) {
+        final List<dynamic> list = _cachedData![key];
+        for (var json in list) {
+          if (json['id'] == id) {
+            return _fromJson(json, category);
+          }
+        }
+      }
+    }
+    return null;
   }
 
   String _getCategoryKey(ProductCategory category) {

@@ -551,6 +551,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                 runSpacing: 8,
                 children: [
                   _footerLink(context, 'About Us', '/about'),
+                  _footerLink(context, 'Contact Us', '/contact'),
                   _footerLink(context, 'Privacy Policy', '/privacy'),
                   _footerLink(context, 'Terms of Service', '/terms'),
                   _footerLink(context, 'How It Works & Business Model', '/how-it-works'),

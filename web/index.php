@@ -6,92 +6,81 @@ $metaImage = "https://savenest.au/assets/assets/images/hero_energy.jpg";
 $metaUrl = "https://savenest.au/";
 $metaType = "website";
 
+// Debug info
+$debugLog = [];
+
 // Get current path
 $requestUri = $_SERVER['REQUEST_URI'];
 $path = parse_url($requestUri, PHP_URL_PATH);
 $path = trim($path, '/'); // Remove leading/trailing slashes
 
-// Caching Mechanism
-$cacheFile = 'meta_cache.php';
+$debugLog[] = "Request Path: " . $path;
+
+// Data Files
 $blogFile = 'assets/data/blog_posts.json';
 $productFile = 'assets/data/products.json';
 
-function buildCache($cacheFile, $blogFile, $productFile) {
-    $data = [];
+// Helper to resolve image URL
+function resolveImageUrl($img) {
+    if (empty($img)) return "https://savenest.au/assets/assets/images/hero_energy.jpg";
+    if (strpos($img, 'http') === 0) return $img;
+    return "https://savenest.au/assets/" . ltrim($img, '/');
+}
 
-    // Process Blog Posts
+// 1. Try to find in Blog Posts
+if (strpos($path, 'blog/') === 0) {
+    $slug = substr($path, 5); // Remove 'blog/'
+    $debugLog[] = "Searching Blog Slug: " . $slug;
+    
     if (file_exists($blogFile)) {
-        $blogs = json_decode(file_get_contents($blogFile), true);
+        $json = file_get_contents($blogFile);
+        $blogs = json_decode($json, true);
         if ($blogs) {
             foreach ($blogs as $post) {
-                $slug = 'blog/' . $post['slug'];
-                $img = $post['imageUrl'];
-                if (strpos($img, 'http') !== 0) {
-                    $img = "https://savenest.au/assets/" . ltrim($img, '/');
+                if ($post['slug'] === $slug) {
+                    $metaTitle = $post['title'] . " | SaveNest Blog";
+                    $metaDescription = $post['summary'];
+                    $metaImage = resolveImageUrl($post['imageUrl']);
+                    $metaUrl = "https://savenest.au/blog/" . $slug;
+                    $metaType = "article";
+                    $debugLog[] = "Match Found in Blog: " . $post['title'];
+                    break;
                 }
-                $data[$slug] = [
-                    'title' => $post['title'] . " | SaveNest Blog",
-                    'description' => $post['summary'],
-                    'image' => $img,
-                    'type' => 'article'
-                ];
             }
         }
+    } else {
+        $debugLog[] = "Blog file not found at: " . $blogFile;
     }
+}
 
-    // Process Products
+// 2. Try to find in Deals
+elseif (strpos($path, 'deal/') === 0) {
+    $dealId = substr($path, 5); // Remove 'deal/'
+    $debugLog[] = "Searching Deal ID: " . $dealId;
+
     if (file_exists($productFile)) {
-        $products = json_decode(file_get_contents($productFile), true);
+        $json = file_get_contents($productFile);
+        $products = json_decode($json, true);
         if ($products) {
             foreach ($products as $category => $deals) {
                 if (is_array($deals)) {
                     foreach ($deals as $deal) {
-                        if (isset($deal['id'])) {
-                            $slug = 'deal/' . $deal['id'];
-                            $img = $deal['logoUrl'];
-                            if (strpos($img, 'http') !== 0) {
-                                $img = "https://savenest.au/assets/" . ltrim($img, '/');
-                            }
-                            $data[$slug] = [
-                                'title' => $deal['providerName'] . " - " . $deal['planName'] . " Review | SaveNest",
-                                'description' => $deal['description'],
-                                'image' => $img,
-                                'type' => 'product'
-                            ];
+                        if (isset($deal['id']) && $deal['id'] === $dealId) {
+                            $metaTitle = $deal['providerName'] . " - " . $deal['planName'] . " Review | SaveNest";
+                            $metaDescription = $deal['description'];
+                            $metaImage = resolveImageUrl($deal['logoUrl']);
+                            $metaUrl = "https://savenest.au/deal/" . $dealId;
+                            $metaType = "product";
+                            $debugLog[] = "Match Found in Product: " . $dealId;
+                            break 2;
                         }
                     }
                 }
             }
         }
+    } else {
+        $debugLog[] = "Product file not found at: " . $productFile;
     }
-
-    // Save Cache
-    file_put_contents($cacheFile, "<?php\nreturn " . var_export($data, true) . ";\n");
-    return $data;
-}
-
-// Check if cache needs rebuilding
-$cacheNeedsRebuild = !file_exists($cacheFile);
-if (!$cacheNeedsRebuild) {
-    $cacheTime = filemtime($cacheFile);
-    if (file_exists($blogFile) && filemtime($blogFile) > $cacheTime) $cacheNeedsRebuild = true;
-    if (file_exists($productFile) && filemtime($productFile) > $cacheTime) $cacheNeedsRebuild = true;
-}
-
-if ($cacheNeedsRebuild) {
-    $metaDataMap = buildCache($cacheFile, $blogFile, $productFile);
-} else {
-    $metaDataMap = include $cacheFile;
-}
-
-// Lookup Metadata
-if (isset($metaDataMap[$path])) {
-    $data = $metaDataMap[$path];
-    $metaTitle = $data['title'];
-    $metaDescription = $data['description'];
-    $metaImage = $data['image'];
-    $metaType = $data['type'];
-    $metaUrl = "https://savenest.au/" . $path;
 }
 
 // Escape for HTML
@@ -110,6 +99,11 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Server-Side Debug (View Source) -->
+  <!-- 
+  <?php echo implode("\n  ", $debugLog); ?>
+  -->
+
   <!-- Primary Meta Tags -->
   <title><?php echo $metaTitle; ?></title>
   <meta name="description" content="<?php echo $metaDescription; ?>">
@@ -122,6 +116,7 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <meta property="og:title" content="<?php echo $metaTitle; ?>">
   <meta property="og:description" content="<?php echo $metaDescription; ?>">
   <meta property="og:image" content="<?php echo $metaImage; ?>">
+  <meta property="og:image:secure_url" content="<?php echo $metaImage; ?>">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">

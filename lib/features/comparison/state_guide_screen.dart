@@ -20,7 +20,7 @@ class StateGuideScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final stateName = _getStateName(stateCode);
     final title = 'Compare $stateName ${utility.capitalize()} Plans | 2026 Guide';
-    final description = 'Find the cheapest and best ${utility} providers in $stateName. Read our 2026 guide to tariffs, rebates, and potential savings.';
+    final description = 'Find the cheapest and best $utility providers in $stateName. Read our 2026 guide to tariffs, rebates, and potential savings.';
 
     // SEO Tags
     if (kIsWeb) {

@@ -9,75 +9,89 @@ $metaType = "website";
 // Get current path
 $requestUri = $_SERVER['REQUEST_URI'];
 $path = parse_url($requestUri, PHP_URL_PATH);
+$path = trim($path, '/'); // Remove leading/trailing slashes
 
-// Helper to load JSON safely
-function loadJsonData($filePath) {
-    if (file_exists($filePath)) {
-        $json = file_get_contents($filePath);
-        return json_decode($json, true);
-    }
-    return null;
-}
+// Caching Mechanism
+$cacheFile = 'meta_cache.php';
+$blogFile = 'assets/data/blog_posts.json';
+$productFile = 'assets/data/products.json';
 
-// 1. Handle Blog Posts
-if (strpos($path, '/blog/') === 0) {
-    $slug = str_replace('/blog/', '', $path);
-    // Remove trailing slash if present
-    $slug = rtrim($slug, '/'); 
-    
-    $blogData = loadJsonData('assets/data/blog_posts.json');
-    
-    if ($blogData) {
-        foreach ($blogData as $post) {
-            if ($post['slug'] === $slug) {
-                $metaTitle = $post['title'] . " | SaveNest Blog";
-                $metaDescription = $post['summary'];
-                // Ensure absolute URL for image
+function buildCache($cacheFile, $blogFile, $productFile) {
+    $data = [];
+
+    // Process Blog Posts
+    if (file_exists($blogFile)) {
+        $blogs = json_decode(file_get_contents($blogFile), true);
+        if ($blogs) {
+            foreach ($blogs as $post) {
+                $slug = 'blog/' . $post['slug'];
                 $img = $post['imageUrl'];
                 if (strpos($img, 'http') !== 0) {
-                    $metaImage = "https://savenest.au/assets/" . ltrim($img, '/');
-                } else {
-                    $metaImage = $img;
+                    $img = "https://savenest.au/assets/" . ltrim($img, '/');
                 }
-                $metaUrl = "https://savenest.au/blog/" . $slug;
-                $metaType = "article";
-                break;
+                $data[$slug] = [
+                    'title' => $post['title'] . " | SaveNest Blog",
+                    'description' => $post['summary'],
+                    'image' => $img,
+                    'type' => 'article'
+                ];
             }
         }
     }
-}
 
-// 2. Handle Deal Details
-if (strpos($path, '/deal/') === 0) {
-    $dealId = str_replace('/deal/', '', $path);
-    $dealId = rtrim($dealId, '/');
-
-    $productData = loadJsonData('assets/data/products.json');
-    
-    if ($productData) {
-        // Search through all categories
-        foreach ($productData as $category => $deals) {
-            if (is_array($deals)) {
-                foreach ($deals as $deal) {
-                    if (isset($deal['id']) && $deal['id'] === $dealId) {
-                        $metaTitle = $deal['providerName'] . " - " . $deal['planName'] . " Review | SaveNest";
-                        $metaDescription = $deal['description'];
-                        
-                        $img = $deal['logoUrl'];
-                        if (strpos($img, 'http') !== 0) {
-                             $metaImage = "https://savenest.au/assets/" . ltrim($img, '/');
-                        } else {
-                             $metaImage = $img;
+    // Process Products
+    if (file_exists($productFile)) {
+        $products = json_decode(file_get_contents($productFile), true);
+        if ($products) {
+            foreach ($products as $category => $deals) {
+                if (is_array($deals)) {
+                    foreach ($deals as $deal) {
+                        if (isset($deal['id'])) {
+                            $slug = 'deal/' . $deal['id'];
+                            $img = $deal['logoUrl'];
+                            if (strpos($img, 'http') !== 0) {
+                                $img = "https://savenest.au/assets/" . ltrim($img, '/');
+                            }
+                            $data[$slug] = [
+                                'title' => $deal['providerName'] . " - " . $deal['planName'] . " Review | SaveNest",
+                                'description' => $deal['description'],
+                                'image' => $img,
+                                'type' => 'product'
+                            ];
                         }
-                        
-                        $metaUrl = "https://savenest.au/deal/" . $dealId;
-                        $metaType = "product";
-                        break 2; // Break both loops
                     }
                 }
             }
         }
     }
+
+    // Save Cache
+    file_put_contents($cacheFile, "<?php\nreturn " . var_export($data, true) . ";\n");
+    return $data;
+}
+
+// Check if cache needs rebuilding
+$cacheNeedsRebuild = !file_exists($cacheFile);
+if (!$cacheNeedsRebuild) {
+    $cacheTime = filemtime($cacheFile);
+    if (file_exists($blogFile) && filemtime($blogFile) > $cacheTime) $cacheNeedsRebuild = true;
+    if (file_exists($productFile) && filemtime($productFile) > $cacheTime) $cacheNeedsRebuild = true;
+}
+
+if ($cacheNeedsRebuild) {
+    $metaDataMap = buildCache($cacheFile, $blogFile, $productFile);
+} else {
+    $metaDataMap = include $cacheFile;
+}
+
+// Lookup Metadata
+if (isset($metaDataMap[$path])) {
+    $data = $metaDataMap[$path];
+    $metaTitle = $data['title'];
+    $metaDescription = $data['description'];
+    $metaImage = $data['image'];
+    $metaType = $data['type'];
+    $metaUrl = "https://savenest.au/" . $path;
 }
 
 // Escape for HTML

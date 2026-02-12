@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -27,7 +28,8 @@ class ComparisonScreen extends ConsumerStatefulWidget {
 }
 
 class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
-  
+  Timer? _popupTimer;
+
   @override
   void initState() {
     super.initState();
@@ -35,6 +37,92 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(comparisonProvider.notifier).loadCategory(widget.initialCategory);
     });
+
+    // Start 10-second timer for popup
+    _popupTimer = Timer(const Duration(seconds: 10), () {
+      if (mounted) {
+        _showSavingsPopup();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _popupTimer?.cancel();
+    super.dispose();
+  }
+
+  void _showSavingsPopup() {
+    showDialog(
+      context: context,
+      barrierDismissible: true, // Allow clicking outside to close
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        child: Container(
+          width: 400,
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: AppTheme.deepNavy,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: AppTheme.vibrantEmerald, width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.savings_outlined, color: AppTheme.vibrantEmerald, size: 48),
+              const SizedBox(height: 16),
+              const Text(
+                "Want to calculate your exact savings?",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                "Our smart calculator can analyze your usage and find hidden savings in seconds.",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white70, fontSize: 16),
+              ),
+              const SizedBox(height: 24),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    context.pop(); // Close dialog
+                    context.go('/savings');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppTheme.vibrantEmerald,
+                    foregroundColor: AppTheme.deepNavy,
+                    textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  child: const Text("Open Savings Calculator"),
+                ),
+              ),
+              const SizedBox(height: 12),
+              TextButton(
+                onPressed: () {
+                  context.pop();
+                  context.push('/contact');
+                },
+                child: const Text("Or get a Personalised Quote", style: TextStyle(color: Colors.white54)),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   String _getCategoryTitle(ProductCategory category) {
@@ -222,37 +310,6 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                             }
                           },
                         ),
-                ),
-                
-                // CTA Section
-                Container(
-                  width: double.infinity,
-                  color: AppTheme.vibrantEmerald,
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      const Text(
-                        "Can't find what you're looking for?",
-                        style: TextStyle(
-                          color: AppTheme.deepNavy,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      ElevatedButton(
-                        onPressed: () {
-                          context.push('/contact');
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppTheme.deepNavy,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                        ),
-                        child: const Text("Get a Personalised Quote"),
-                      ),
-                    ],
-                  ),
                 ),
             ],
           ),

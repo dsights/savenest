@@ -6,19 +6,14 @@ $metaImage = "https://savenest.au/assets/assets/images/hero_energy.jpg";
 $metaUrl = "https://savenest.au/";
 $metaType = "website";
 
-// Debug info
-$debugLog = [];
-
 // Get current path
 $requestUri = $_SERVER['REQUEST_URI'];
 $path = parse_url($requestUri, PHP_URL_PATH);
 $path = trim($path, '/'); // Remove leading/trailing slashes
 
-$debugLog[] = "Request Path: " . $path;
-
 // Data Files
-$blogFile = 'assets/data/blog_posts.json';
-$productFile = 'assets/data/products.json';
+$blogFile = __DIR__ . '/assets/data/blog_posts.json';
+$productFile = __DIR__ . '/assets/data/products.json';
 
 // Helper to resolve image URL
 function resolveImageUrl($img) {
@@ -30,7 +25,6 @@ function resolveImageUrl($img) {
 // 1. Try to find in Blog Posts
 if (strpos($path, 'blog/') === 0) {
     $slug = substr($path, 5); // Remove 'blog/'
-    $debugLog[] = "Searching Blog Slug: " . $slug;
     
     if (file_exists($blogFile)) {
         $json = file_get_contents($blogFile);
@@ -43,20 +37,16 @@ if (strpos($path, 'blog/') === 0) {
                     $metaImage = resolveImageUrl($post['imageUrl']);
                     $metaUrl = "https://savenest.au/blog/" . $slug;
                     $metaType = "article";
-                    $debugLog[] = "Match Found in Blog: " . $post['title'];
                     break;
                 }
             }
         }
-    } else {
-        $debugLog[] = "Blog file not found at: " . $blogFile;
     }
 }
 
 // 2. Try to find in Deals
 elseif (strpos($path, 'deal/') === 0) {
     $dealId = substr($path, 5); // Remove 'deal/'
-    $debugLog[] = "Searching Deal ID: " . $dealId;
 
     if (file_exists($productFile)) {
         $json = file_get_contents($productFile);
@@ -71,15 +61,12 @@ elseif (strpos($path, 'deal/') === 0) {
                             $metaImage = resolveImageUrl($deal['logoUrl']);
                             $metaUrl = "https://savenest.au/deal/" . $dealId;
                             $metaType = "product";
-                            $debugLog[] = "Match Found in Product: " . $dealId;
                             break 2;
                         }
                     }
                 }
             }
         }
-    } else {
-        $debugLog[] = "Product file not found at: " . $productFile;
     }
 }
 
@@ -99,11 +86,6 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Server-Side Debug (View Source) -->
-  <!-- 
-  <?php echo implode("\n  ", $debugLog); ?>
-  -->
-
   <!-- Primary Meta Tags -->
   <title><?php echo $metaTitle; ?></title>
   <meta name="description" content="<?php echo $metaDescription; ?>">

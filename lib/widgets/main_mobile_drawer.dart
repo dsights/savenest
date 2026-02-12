@@ -26,15 +26,64 @@ class MainMobileDrawer extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 40),
-          _drawerItem(context, 'Electricity', '/deals/electricity'),
-          _drawerItem(context, 'Gas', '/deals/gas'),
-          _drawerItem(context, 'Internet', '/deals/internet'),
-          _drawerItem(context, 'Mobile', '/deals/mobile'),
+          
+          ExpansionTile(
+            title: const Text('Services', style: TextStyle(color: Colors.white, fontSize: 18)),
+            iconColor: AppTheme.vibrantEmerald,
+            collapsedIconColor: Colors.white70,
+            children: [
+              _drawerSubItem(context, 'Electricity', Icons.bolt, '/deals/electricity'),
+              _drawerSubItem(context, 'Gas', Icons.local_fire_department, '/deals/gas'),
+              _drawerSubItem(context, 'Internet', Icons.wifi, '/deals/internet'),
+              _drawerSubItem(context, 'Mobile', Icons.phone_iphone, '/deals/mobile'),
+              _drawerSubItem(context, 'Health Insurance', Icons.medical_services, '/deals/insurance/health'),
+              _drawerSubItem(context, 'Car Insurance', Icons.directions_car, '/deals/insurance/car'),
+              _drawerSubItem(context, 'Credit Cards', Icons.credit_card, '/deals/credit-cards'),
+              _drawerSubItem(context, 'Home Loans', Icons.home_work, '/loans/home'),
+            ],
+          ),
+
+          _drawerItem(context, 'Deals', '/deals/electricity'),
           _drawerItem(context, 'Blog', '/blog'),
           _drawerItem(context, 'Contact Us', '/contact'),
-          _drawerItem(context, 'Savings Calculator', '/savings'),
+          
+          const SizedBox(height: 24),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                GoRouter.of(context).go('/savings');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppTheme.vibrantEmerald,
+                foregroundColor: AppTheme.deepNavy,
+                padding: const EdgeInsets.symmetric(vertical: 16),
+              ),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.calculate_outlined),
+                  SizedBox(width: 8),
+                  Text('Savings Calculator', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
+    );
+  }
+
+  Widget _drawerSubItem(BuildContext context, String title, IconData icon, String route) {
+    return ListTile(
+      leading: Icon(icon, color: Colors.white70, size: 20),
+      title: Text(title, style: const TextStyle(color: Colors.white70, fontSize: 16)),
+      contentPadding: const EdgeInsets.only(left: 32, right: 16),
+      onTap: () {
+        Navigator.pop(context);
+        GoRouter.of(context).go(route);
+      },
     );
   }
 

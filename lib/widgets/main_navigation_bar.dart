@@ -36,13 +36,85 @@ class MainNavigationBar extends StatelessWidget {
               if (MediaQuery.of(context).size.width > 900) // Adjusted breakpoint for better fit
                 Row(
                   children: [
-                    _navLink(context, 'Electricity', '/deals/electricity'),
-                    _navLink(context, 'Gas', '/deals/gas'),
-                    _navLink(context, 'Internet', '/deals/internet'),
-                    _navLink(context, 'Mobile', '/deals/mobile'),
-                    _navLink(context, 'Blog', '/blog'), // Added Blog link
+                    // Services Mega Menu (Dropdown)
+                    Theme(
+                      data: Theme.of(context).copyWith(
+                        popupMenuTheme: PopupMenuThemeData(
+                          color: AppTheme.deepNavy,
+                          surfaceTintColor: AppTheme.deepNavy,
+                          textStyle: const TextStyle(color: Colors.white),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: Colors.white10),
+                          ),
+                        ),
+                      ),
+                      child: PopupMenuButton<String>(
+                        offset: const Offset(0, 40),
+                        tooltip: 'Show Services',
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Services',
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              SizedBox(width: 4),
+                              Icon(Icons.keyboard_arrow_down, color: Colors.white70, size: 16),
+                            ],
+                          ),
+                        ),
+                        onSelected: (route) => context.go(route),
+                        itemBuilder: (context) => [
+                          _serviceMenuItem('Electricity', Icons.bolt, '/deals/electricity'),
+                          _serviceMenuItem('Gas', Icons.local_fire_department, '/deals/gas'),
+                          _serviceMenuItem('Internet', Icons.wifi, '/deals/internet'),
+                          _serviceMenuItem('Mobile', Icons.phone_iphone, '/deals/mobile'),
+                          const PopupMenuDivider(),
+                          _serviceMenuItem('Health Insurance', Icons.medical_services, '/deals/insurance/health'),
+                          _serviceMenuItem('Car Insurance', Icons.directions_car, '/deals/insurance/car'),
+                          const PopupMenuDivider(),
+                          _serviceMenuItem('Credit Cards', Icons.credit_card, '/deals/credit-cards'),
+                          _serviceMenuItem('Home Loans', Icons.home_work, '/loans/home'),
+                        ],
+                      ),
+                    ),
+
+                    // Deals Link
+                    _navLink(context, 'Deals', '/deals/electricity'), // Defaulting to electricity for now as main deals hub
+
+                    _navLink(context, 'Blog', '/blog'),
                     _navLink(context, 'Contact', '/contact'),
-                    _navLink(context, 'Savings Calculator', '/savings'),
+                    
+                    const SizedBox(width: 16),
+                    
+                    // Savings Calculator Button
+                    ElevatedButton(
+                      onPressed: () => context.go('/savings'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppTheme.vibrantEmerald,
+                        foregroundColor: AppTheme.deepNavy,
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                        elevation: 4,
+                        shadowColor: AppTheme.vibrantEmerald.withOpacity(0.4),
+                      ),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.calculate_outlined, size: 18),
+                          SizedBox(width: 8),
+                          Text(
+                            'Savings Calculator',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 )
               else
@@ -56,6 +128,22 @@ class MainNavigationBar extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  PopupMenuItem<String> _serviceMenuItem(String title, IconData icon, String route) {
+    return PopupMenuItem<String>(
+      value: route,
+      child: Row(
+        children: [
+          Icon(icon, color: AppTheme.vibrantEmerald, size: 20),
+          const SizedBox(width: 12),
+          Text(
+            title,
+            style: const TextStyle(color: Colors.white, fontSize: 14),
+          ),
+        ],
       ),
     );
   }

@@ -48,35 +48,81 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 32),
-                  _buildSectionTitle('Your Privacy Matters'),
-            const SizedBox(height: 16),
-            _buildBodyText(
-                'This policy outlines how SaveNest collects, uses, and protects your personal information. We are committed to protecting your privacy and ensuring that your data is handled securely and transparently.'),
-            const SizedBox(height: 32),
-            _buildSectionTitle('Information We Collect'),
-            const SizedBox(height: 16),
-            _buildListItem('Usage Data',
-                'We collect anonymous data about how you interact with our website, such as the pages you visit and the links you click. This helps us understand how our site is used and how we can improve it.'),
-            _buildListItem('Affiliate Tracking',
-                'When you click on an affiliate link to a partner\'s site, a cookie may be placed on your device. This is a standard practice for affiliate marketing and allows the partner to recognize that you came from SaveNest. This cookie does not contain any personally identifiable information.'),
-            const SizedBox(height: 32),
-            _buildSectionTitle('How We Use Your Information'),
-            const SizedBox(height: 16),
-            _buildBodyText(
-                'The information we collect is used to improve your experience on our site, to understand our audience, and to maintain our relationships with our partners. We do not sell your personal information to third parties.'),
-            const SizedBox(height: 32),
-            _buildSectionTitle('Your Rights'),
-            const SizedBox(height: 16),
-            _buildBodyText(
-                'You have the right to understand how your data is used and to opt-out of tracking where possible. You can typically clear cookies from your browser settings if you do not wish to be tracked.'),
-            const SizedBox(height: 32),
-            _buildSectionTitle('Contact Us'),
-            const SizedBox(height: 16),
-            _buildBodyText(
-                'If you have any questions about this privacy policy, please contact us at privacy@savenest.au.'),
-          ],
-        ),
-      ),
+                  const Text(
+                    'Privacy Policy',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Last Updated: February 2026',
+                    style: TextStyle(color: Colors.white54, fontSize: 14),
+                  ),
+                  const SizedBox(height: 32),
+
+                  _buildSectionTitle('1. Introduction'),
+                  _buildBodyText(
+                      'SaveNest ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website savenest.au. We adhere to the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth).'),
+
+                  const SizedBox(height: 24),
+                  _buildSectionTitle('2. Information We Collect'),
+                  _buildBodyText('We may collect personal information about you in various ways, including:'),
+                  const SizedBox(height: 12),
+                  _buildListItem('Personal Data',
+                      'Personally identifiable information, such as your name, email address, and telephone number, that you voluntarily give to us when you subscribe to our newsletter or contact us.'),
+                  _buildListItem('Derivative Data',
+                      'Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.'),
+                  _buildListItem('Cookies and Tracking',
+                      'We use cookies and similar tracking technologies to track the activity on our Service and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.'),
+
+                  const SizedBox(height: 24),
+                  _buildSectionTitle('3. How We Use Your Information'),
+                  _buildBodyText('We use the information we collect to:'),
+                  const SizedBox(height: 12),
+                  _buildBulletPoint('Provide, operate, and maintain our website.'),
+                  _buildBulletPoint('Improve, personalize, and expand our website.'),
+                  _buildBulletPoint('Understand and analyze how you use our website.'),
+                  _buildBulletPoint('Communicate with you, either directly or through one of our partners, for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes.'),
+                  _buildBulletPoint('Process your affiliate referrals accurately.'),
+
+                  const SizedBox(height: 24),
+                  _buildSectionTitle('4. Disclosure of Your Information'),
+                  _buildBodyText('We may share information we have collected about you in certain situations. Your information may be disclosed as follows:'),
+                  const SizedBox(height: 12),
+                  _buildListItem('Business Partners',
+                      'We may share your information with our business partners to offer you certain products, services, or promotions. Specifically, when you click an affiliate link, we pass non-personally identifiable referral data to the provider.'),
+                  _buildListItem('Service Providers',
+                      'We may share your information with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf and require access to such information to do that work.'),
+                  _buildListItem('Legal Requirements',
+                      'We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process.'),
+
+                  const SizedBox(height: 24),
+                  _buildSectionTitle('5. Security of Your Information'),
+                  _buildBodyText(
+                      'We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.'),
+
+                  const SizedBox(height: 24),
+                  _buildSectionTitle('6. Access and Correction'),
+                  _buildBodyText(
+                      'Under the Privacy Act, you have the right to access and correct the personal information we hold about you. If you wish to access or correct your personal information, please contact us at privacy@savenest.au.'),
+
+                  const SizedBox(height: 24),
+                  _buildSectionTitle('7. Complaints'),
+                  _buildBodyText(
+                      'If you have a complaint about how we handle your personal information, please contact us at privacy@savenest.au. We will respond to your complaint within a reasonable time. If you are not satisfied with our response, you may lodge a complaint with the Office of the Australian Information Commissioner (OAIC).'),
+                  
+                  const SizedBox(height: 24),
+                  _buildSectionTitle('8. Contact Us'),
+                  _buildBodyText(
+                      'If you have questions or comments about this Privacy Policy, please contact us at:\n\nEmail: privacy@savenest.au'),
+                  
+                  const SizedBox(height: 64),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -101,6 +147,28 @@ class PrivacyPolicyScreen extends StatelessWidget {
         color: Colors.white70,
         fontSize: 16,
         height: 1.5,
+      ),
+    );
+  }
+
+  Widget _buildBulletPoint(String text) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0, left: 16.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('• ', style: TextStyle(color: Colors.white, fontSize: 16)),
+          Expanded(
+            child: Text(
+              text,
+              style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 16,
+                height: 1.5,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -153,5 +153,32 @@ By switching every year, you effectively surf the 'new customer' bonuses of diff
 final blogRepositoryProvider = Provider<BlogRepository>((ref) => BlogRepository());
 
 final blogPostsProvider = FutureProvider<List<BlogPost>>((ref) async {
-  return ref.read(blogRepositoryProvider).getPosts();
+  final posts = await ref.read(blogRepositoryProvider).getPosts();
+  // Sort descending (latest first)
+  posts.sort((a, b) => _parseDate(b.date).compareTo(_parseDate(a.date)));
+  return posts;
 });
+
+DateTime _parseDate(String dateStr) {
+  try {
+    // Expected format: "Jan 15, 2026"
+    // Remove comma if present
+    final cleanStr = dateStr.replaceAll(',', '');
+    final parts = cleanStr.split(' ');
+    
+    if (parts.length < 3) return DateTime(2000); // Fallback
+
+    final months = {
+      'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
+      'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12
+    };
+
+    final month = months[parts[0]] ?? 1;
+    final day = int.tryParse(parts[1]) ?? 1;
+    final year = int.tryParse(parts[2]) ?? 2000;
+
+    return DateTime(year, month, day);
+  } catch (e) {
+    return DateTime(2000);
+  }
+}

@@ -133,64 +133,73 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
               constraints: const BoxConstraints(maxWidth: 1200),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Flex(
-                  direction: isDesktop ? Axis.horizontal : Axis.vertical,
-                  mainAxisAlignment: isDesktop ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
                   children: [
                     // Text Content
-                    Expanded(
-                      flex: isDesktop ? 6 : 0,
-                      child: FadeTransition(
-                        opacity: _fadeAnimation,
-                        child: SlideTransition(
-                          position: _slideAnimation,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                _slides[_currentPage]['title']!,
-                                textAlign: isDesktop ? TextAlign.start : TextAlign.center,
-                                style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                                      fontSize: isDesktop ? 56 : 36,
-                                      color: Colors.white,
-                                      height: 1.1,
-                                    ),
+                    FadeTransition(
+                      opacity: _fadeAnimation,
+                      child: SlideTransition(
+                        position: _slideAnimation,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              _slides[_currentPage]['title']!,
+                              textAlign: isDesktop ? TextAlign.start : TextAlign.center,
+                              style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                                    fontSize: isDesktop ? 56 : 32,
+                                    color: Colors.white,
+                                    shadows: [
+                                      Shadow(color: Colors.black.withOpacity(0.5), blurRadius: 10),
+                                    ],
+                                    height: 1.1,
+                                  ),
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              _slides[_currentPage]['subtitle']!,
+                              textAlign: isDesktop ? TextAlign.start : TextAlign.center,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    fontSize: 18,
+                                    color: Colors.white.withOpacity(0.9),
+                                    shadows: [
+                                      Shadow(color: Colors.black.withOpacity(0.5), blurRadius: 10),
+                                    ],
+                                  ),
+                            ),
+                            const SizedBox(height: 32),
+                            if (isDesktop)
+                              Row(
+                                children: [
+                                  _buildTrustBadge(Icons.check_circle, "Free Service"),
+                                  const SizedBox(width: 24),
+                                  _buildTrustBadge(Icons.check_circle, "No Markups"),
+                                ],
                               ),
-                              const SizedBox(height: 24),
-                              Text(
-                                _slides[_currentPage]['subtitle']!,
-                                textAlign: isDesktop ? TextAlign.start : TextAlign.center,
-                                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                      fontSize: 20,
-                                      color: Colors.white.withOpacity(0.9),
-                                    ),
-                              ),
-                              const SizedBox(height: 40),
-                              if (isDesktop)
-                                Row(
-                                  children: [
-                                    _buildTrustBadge(Icons.check_circle, "Free Service"),
-                                    const SizedBox(width: 24),
-                                    _buildTrustBadge(Icons.check_circle, "No Markups"),
-                                  ],
-                                ),
-                            ],
-                          ),
+                          ],
                         ),
                       ),
                     ),
-
-                    if (isDesktop) const SizedBox(width: 60),
-                    if (!isDesktop) const SizedBox(height: 40),
-
-                    // Comparison Widget (Fixed/Attractive)
-                    Expanded(
-                      flex: isDesktop ? 5 : 0,
-                      child: _buildComparisonCard(context, isDesktop),
-                    ),
                   ],
+                ),
+              ),
+            ),
+          ),
+
+          // Slim Bottom Comparison Bar
+          Positioned(
+            bottom: 60,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1200),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: _buildSlimComparisonBar(context, isDesktop),
                 ),
               ),
             ),
@@ -222,114 +231,102 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
     );
   }
 
-  Widget _buildComparisonCard(BuildContext context, bool isDesktop) {
+  Widget _buildSlimComparisonBar(BuildContext context, bool isDesktop) {
     return Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(100),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            blurRadius: 40,
-            offset: const Offset(0, 20),
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 30,
+            offset: const Offset(0, 10),
           ),
         ],
-        border: Border.all(color: AppTheme.accentOrange.withOpacity(0.3), width: 2),
+        border: Border.all(color: AppTheme.accentOrange.withOpacity(0.5), width: 1.5),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: const BoxDecoration(
-                  color: AppTheme.accentOrange,
-                  shape: BoxShape.circle,
+      child: isDesktop
+          ? Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 24),
+                  child: Text(
+                    "Compare:",
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w900,
+                          color: AppTheme.deepNavy,
+                        ),
+                  ),
                 ),
-                child: const Icon(Icons.search, color: Colors.white, size: 20),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Text(
-                  "What would you like to compare?",
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: AppTheme.deepNavy,
-                        fontSize: 22,
-                      ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        _buildSlimItem(context, Icons.bolt, "Electricity", '/deals/electricity'),
+                        _buildSlimItem(context, Icons.local_fire_department, "Gas", '/deals/gas'),
+                        _buildSlimItem(context, Icons.wifi, "Internet", '/deals/internet'),
+                        _buildSlimItem(context, Icons.phone_iphone, "Mobile", '/deals/mobile'),
+                        _buildSlimItem(context, Icons.medical_services, "Health", '/deals/insurance/health'),
+                        _buildSlimItem(context, Icons.directions_car, "Car Ins.", '/deals/insurance/car'),
+                        _buildSlimItem(context, Icons.home, "Home Loan", '/loans/home'),
+                        _buildSlimItem(context, Icons.credit_card, "Credit Card", '/deals/credit-cards'),
+                      ],
+                    ),
+                  ),
                 ),
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: () => context.go('/deals/electricity'),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                    backgroundColor: AppTheme.primaryBlue,
+                  ),
+                  child: const Text("Search All"),
+                ),
+              ],
+            )
+          : SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  _buildSlimItem(context, Icons.bolt, "Electricity", '/deals/electricity'),
+                  _buildSlimItem(context, Icons.local_fire_department, "Gas", '/deals/gas'),
+                  _buildSlimItem(context, Icons.wifi, "Internet", '/deals/internet'),
+                  _buildSlimItem(context, Icons.phone_iphone, "Mobile", '/deals/mobile'),
+                  _buildSlimItem(context, Icons.medical_services, "Health", '/deals/insurance/health'),
+                  _buildSlimItem(context, Icons.directions_car, "Car Ins.", '/deals/insurance/car'),
+                  _buildSlimItem(context, Icons.home, "Home Loan", '/loans/home'),
+                  _buildSlimItem(context, Icons.credit_card, "Credit Card", '/deals/credit-cards'),
+                ],
               ),
-            ],
-          ),
-          const SizedBox(height: 32),
-          // Grid of Categories
-          GridView.count(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: isDesktop ? 3 : 3,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 10,
-            childAspectRatio: 0.9,
-            children: [
-              _buildHeroCategoryItem(context, Icons.bolt, "Electricity", '/deals/electricity'),
-              _buildHeroCategoryItem(context, Icons.local_fire_department, "Gas", '/deals/gas'),
-              _buildHeroCategoryItem(context, Icons.wifi, "Internet", '/deals/internet'),
-              _buildHeroCategoryItem(context, Icons.phone_iphone, "Mobile", '/deals/mobile'),
-              _buildHeroCategoryItem(context, Icons.medical_services, "Health", '/deals/insurance/health'),
-              _buildHeroCategoryItem(context, Icons.directions_car, "Car Ins.", '/deals/insurance/car'),
-              _buildHeroCategoryItem(context, Icons.home, "Home Loan", '/loans/home'),
-              _buildHeroCategoryItem(context, Icons.credit_card, "Credit Card", '/deals/credit-cards'),
-              _buildHeroCategoryItem(context, Icons.monetization_on, "Pers. Loan", '/loans/personal'),
-            ],
-          ),
-          const SizedBox(height: 20),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () => context.go('/deals/electricity'),
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 18),
-                backgroundColor: AppTheme.primaryBlue,
-              ),
-              child: const Text("Get Started Now"),
             ),
-          ),
-        ],
-      ),
     );
   }
 
-  Widget _buildHeroCategoryItem(BuildContext context, IconData icon, String label, String route) {
+  Widget _buildSlimItem(BuildContext context, IconData icon, String label, String route) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () => GoRouter.of(context).go(route),
-        child: Column(
-          children: [
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AppTheme.offWhite,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.transparent),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, color: AppTheme.primaryBlue, size: 20),
+              const SizedBox(width: 8),
+              Text(
+                label,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                  color: AppTheme.deepNavy,
+                ),
               ),
-              child: Icon(icon, color: AppTheme.primaryBlue, size: 28),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              label,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-                color: AppTheme.deepNavy,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

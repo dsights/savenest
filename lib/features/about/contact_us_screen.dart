@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:meta_seo/meta_seo.dart';
 import 'package:savenest/theme/app_theme.dart';
-import 'package:flutter/foundation.dart'; // Import for kIsWeb
+import 'package:flutter/foundation.dart';
 import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
+import '../../widgets/page_hero.dart';
+import '../home/widgets/modern_footer.dart';
 
 class ContactUsScreen extends StatefulWidget {
   const ContactUsScreen({super.key});
@@ -34,7 +36,6 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         _isSubmitting = true;
       });
 
-      // Simulate API call
       await Future.delayed(const Duration(seconds: 1));
 
       if (mounted) {
@@ -72,153 +73,196 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         child: Column(
           children: [
             const MainNavigationBar(),
-            Container(
-              constraints: const BoxConstraints(maxWidth: 800),
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 32),
-                  const Text(
-                    'Contact Us',
-                    style: TextStyle(
-                      color: AppTheme.deepNavy,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Have a question or feedback? We\'d love to hear from you. Fill out the form below or email us directly at support@savenest.au',
-                    style: TextStyle(
-                      color: AppTheme.deepNavy.withOpacity(0.7),
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 48),
-                  
-                  if (_isSuccess)
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.green.withOpacity(0.1),
-                        border: Border.all(color: Colors.green),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.check_circle, color: Colors.green),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: Text(
-                              'Thank you for contacting us! We will get back to you shortly.',
-                              style: const TextStyle(color: AppTheme.deepNavy),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  else
-                  Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          controller: _nameController,
-                          style: const TextStyle(color: AppTheme.deepNavy),
-                          decoration: _inputDecoration('Name'),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your name';
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(height: 16),
-                        TextFormField(
-                          controller: _emailController,
-                          style: const TextStyle(color: AppTheme.deepNavy),
-                          decoration: _inputDecoration('Email'),
-                          validator: (value) {
-                            if (value == null || value.isEmpty || !value.contains('@')) {
-                              return 'Please enter a valid email';
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(height: 16),
-                        TextFormField(
-                          controller: _messageController,
-                          style: const TextStyle(color: AppTheme.deepNavy),
-                          decoration: _inputDecoration('Message'),
-                          maxLines: 5,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your message';
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(height: 24),
-                        SizedBox(
-                          width: double.infinity,
-                          height: 50,
-                          child: ElevatedButton(
-                            onPressed: _isSubmitting ? null : _submitForm,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppTheme.deepNavy,
-                              foregroundColor: Colors.white,
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
+            const PageHero(
+              badge: 'Get in Touch',
+              title: 'We\'re here to help',
+              subtitle: 'Have a question about a deal or want to partner with us? Reach out and our team will get back to you as soon as possible.',
+            ),
+            const SizedBox(height: 80),
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1200),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Contact Form
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                          padding: const EdgeInsets.all(40),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(24),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.05),
+                                blurRadius: 20,
+                                offset: const Offset(0, 10),
                               ),
-                            ),
-                            child: _isSubmitting
-                                ? const SizedBox(
-                                    width: 20,
-                                    height: 20,
-                                    child: CircularProgressIndicator(
-                                      strokeWidth: 2,
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                : const Text('Send Message'),
+                            ],
                           ),
+                          child: _isSuccess
+                              ? _buildSuccessMessage()
+                              : _buildContactForm(),
                         ),
-                      ],
-                    ),
+                      ),
+                      
+                      const SizedBox(width: 60),
+                      
+                      // Contact Info
+                      if (MediaQuery.of(context).size.width > 900)
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _buildContactInfoItem(
+                              Icons.email_outlined,
+                              'Email Us',
+                              'support@savenest.au',
+                              'Our team typically responds within 24 hours.',
+                            ),
+                            const SizedBox(height: 40),
+                            _buildContactInfoItem(
+                              Icons.location_on_outlined,
+                              'Our Location',
+                              'Melbourne, VIC',
+                              'Serving Australians nationwide.',
+                            ),
+                            const SizedBox(height: 40),
+                            _buildContactInfoItem(
+                              Icons.business_outlined,
+                              'Business Inquiries',
+                              'partners@savenest.au',
+                              'For partnership and advertising opportunities.',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 64),
-                ],
+                ),
               ),
             ),
+            const SizedBox(height: 100),
+            const ModernFooter(),
           ],
         ),
       ),
     );
   }
 
-  InputDecoration _inputDecoration(String label) {
-    return InputDecoration(
-      labelText: label,
-      labelStyle: TextStyle(color: AppTheme.deepNavy.withOpacity(0.6)),
-      enabledBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.black26),
-        borderRadius: BorderRadius.circular(8),
+  Widget _buildContactForm() {
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Send us a message',
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  color: AppTheme.deepNavy,
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+          const SizedBox(height: 32),
+          TextFormField(
+            controller: _nameController,
+            decoration: const InputDecoration(
+              labelText: 'Full Name',
+              hintText: 'John Doe',
+            ),
+            validator: (value) => (value == null || value.isEmpty) ? 'Please enter your name' : null,
+          ),
+          const SizedBox(height: 24),
+          TextFormField(
+            controller: _emailController,
+            decoration: const InputDecoration(
+              labelText: 'Email Address',
+              hintText: 'john@example.com',
+            ),
+            validator: (value) => (value == null || !value.contains('@')) ? 'Please enter a valid email' : null,
+          ),
+          const SizedBox(height: 24),
+          TextFormField(
+            controller: _messageController,
+            maxLines: 6,
+            decoration: const InputDecoration(
+              labelText: 'Message',
+              hintText: 'How can we help you?',
+              alignLabelWithHint: true,
+            ),
+            validator: (value) => (value == null || value.isEmpty) ? 'Please enter your message' : null,
+          ),
+          const SizedBox(height: 40),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: _isSubmitting ? null : _submitForm,
+              child: _isSubmitting
+                  ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                  : const Text('Submit Message'),
+            ),
+          ),
+        ],
       ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: AppTheme.vibrantEmerald),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      errorBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.redAccent),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.redAccent),
-        borderRadius: BorderRadius.circular(8),
-      ),
+    );
+  }
+
+  Widget _buildSuccessMessage() {
+    return Column(
+      children: [
+        const Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 80),
+        const SizedBox(height: 24),
+        Text(
+          'Message Sent!',
+          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                color: AppTheme.deepNavy,
+                fontWeight: FontWeight.bold,
+              ),
+        ),
+        const SizedBox(height: 16),
+        const Text(
+          'Thank you for reaching out. We have received your message and will get back to you shortly.',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: AppTheme.slate600, fontSize: 16),
+        ),
+        const SizedBox(height: 32),
+        TextButton(
+          onPressed: () => setState(() => _isSuccess = false),
+          child: const Text('Send another message'),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildContactInfoItem(IconData icon, String title, String value, String sub) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: AppTheme.primaryBlue.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(icon, color: AppTheme.primaryBlue, size: 24),
+        ),
+        const SizedBox(width: 20),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: AppTheme.deepNavy)),
+              const SizedBox(height: 4),
+              Text(value, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: AppTheme.accentOrange)),
+              const SizedBox(height: 4),
+              Text(sub, style: const TextStyle(color: AppTheme.slate600, fontSize: 14)),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

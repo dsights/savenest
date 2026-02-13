@@ -8,6 +8,7 @@ import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
 import 'blog_provider.dart';
 import 'widgets/blog_card.dart';
+import '../home/widgets/modern_footer.dart';
 
 class BlogListScreen extends ConsumerWidget {
   const BlogListScreen({super.key});
@@ -45,7 +46,47 @@ class BlogListScreen extends ConsumerWidget {
         child: Column(
           children: [
             const MainNavigationBar(),
-            const SizedBox(height: 40),
+            // Modern Page Header
+            Container(
+              width: double.infinity,
+              color: AppTheme.primaryBlue,
+              padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1200),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Expert Insights & Savings Tips',
+                        style: TextStyle(
+                          color: AppTheme.accentOrange,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 2.0,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        'SaveNest Blog',
+                        style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                          color: Colors.white,
+                          fontSize: 48,
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+                      Text(
+                        'Latest insights and tips to help you save on your household bills. Join thousands of Australians making smarter financial decisions.',
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Colors.white.withOpacity(0.9),
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 60),
             Center(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 1200),
@@ -54,23 +95,6 @@ class BlogListScreen extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'SaveNest Blog',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      const Text(
-                        'Latest insights and tips to help you save on your household bills.',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 18,
-                        ),
-                      ),
-                      const SizedBox(height: 48),
                       postsAsync.when(
                         data: (posts) {
                           return GridView.builder(
@@ -78,9 +102,9 @@ class BlogListScreen extends ConsumerWidget {
                             physics: const NeverScrollableScrollPhysics(),
                             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                               maxCrossAxisExtent: 400,
-                              childAspectRatio: 0.85,
-                              crossAxisSpacing: 24,
-                              mainAxisSpacing: 24,
+                              childAspectRatio: 0.8,
+                              crossAxisSpacing: 32,
+                              mainAxisSpacing: 32,
                             ),
                             itemCount: posts.length,
                             itemBuilder: (context, index) {
@@ -93,21 +117,22 @@ class BlogListScreen extends ConsumerWidget {
                           );
                         },
                         loading: () => const Center(
-                          child: CircularProgressIndicator(color: AppTheme.vibrantEmerald),
+                          child: CircularProgressIndicator(color: AppTheme.accentOrange),
                         ),
                         error: (err, stack) => Center(
                           child: Text(
                             'Failed to load blog posts: $err',
-                            style: const TextStyle(color: Colors.white54),
+                            style: const TextStyle(color: AppTheme.deepNavy),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 80),
+                      const SizedBox(height: 100),
                     ],
                   ),
                 ),
               ),
             ),
+            const ModernFooter(),
           ],
         ),
       ),

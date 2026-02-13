@@ -23,6 +23,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
   late AnimationController _controller;
   late Animation<double> _animation;
   bool _isFront = true;
+  bool _isHovered = false;
 
   @override
   void initState() {
@@ -66,28 +67,36 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _flipCard,
-      child: AnimatedBuilder(
-        animation: _animation,
-        builder: (context, child) {
-          final angle = _animation.value * pi;
-          final isBack = angle >= pi / 2;
-          
-          return Transform(
-            transform: Matrix4.identity()
-              ..setEntry(3, 2, 0.001) // Perspective
-              ..rotateY(angle),
-            alignment: Alignment.center,
-            child: isBack
-                ? Transform(
-                    alignment: Alignment.center,
-                    transform: Matrix4.identity()..rotateY(pi), // Mirror back text
-                    child: _buildBack(),
-                  )
-                : _buildFront(),
-          );
-        },
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: GestureDetector(
+        onTap: _flipCard,
+        child: AnimatedScale(
+          scale: _isHovered ? 1.03 : 1.0,
+          duration: const Duration(milliseconds: 200),
+          child: AnimatedBuilder(
+            animation: _animation,
+            builder: (context, child) {
+              final angle = _animation.value * pi;
+              final isBack = angle >= pi / 2;
+              
+              return Transform(
+                transform: Matrix4.identity()
+                  ..setEntry(3, 2, 0.001) // Perspective
+                  ..rotateY(angle),
+                alignment: Alignment.center,
+                child: isBack
+                    ? Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.identity()..rotateY(pi), // Mirror back text
+                        child: _buildBack(),
+                      )
+                    : _buildFront(),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
@@ -96,19 +105,19 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     return Stack(
       children: [
         Container(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(24),
             border: Border.all(
-              color: widget.isBestValue ? AppTheme.vibrantEmerald : const Color(0xFFEAECF0),
-              width: widget.isBestValue ? 2 : 1,
+              color: widget.isBestValue ? AppTheme.vibrantEmerald : (_isHovered ? AppTheme.accentOrange.withOpacity(0.5) : const Color(0xFFEAECF0)),
+              width: widget.isBestValue || _isHovered ? 2 : 1,
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
-                blurRadius: 12,
-                offset: const Offset(0, 6),
+                color: _isHovered ? Colors.black.withOpacity(0.15) : Colors.black.withOpacity(0.08),
+                blurRadius: _isHovered ? 24 : 16,
+                offset: _isHovered ? const Offset(0, 12) : const Offset(0, 8),
               ),
             ],
           ),
@@ -123,19 +132,19 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                   _buildLogo(),
                   if (widget.deal.rating > 0)
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF9FAFB),
+                        color: Colors.amber.shade50,
                         borderRadius: BorderRadius.circular(100),
-                        border: Border.all(color: const Color(0xFFEAECF0)),
+                        border: Border.all(color: Colors.amber.shade200),
                       ),
                       child: Row(
                         children: [
-                          const Icon(Icons.star, color: Colors.amber, size: 14),
+                          const Icon(Icons.star, color: Colors.amber, size: 16),
                           const SizedBox(width: 4),
                           Text(
                             widget.deal.rating.toString(),
-                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: AppTheme.deepNavy),
+                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: AppTheme.deepNavy),
                           ),
                         ],
                       ),
@@ -143,24 +152,29 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                 ],
               ),
               
-              const SizedBox(height: 16),
+              const SizedBox(height: 24),
 
               // Middle: Info
               Column(
                 children: [
                   Text(
-                    widget.deal.providerName,
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF667085), fontWeight: FontWeight.w600),
+                    widget.deal.providerName.toUpperCase(),
+                    style: const TextStyle(
+                      fontSize: 11, 
+                      color: AppTheme.primaryBlue, 
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.5,
+                    ),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 8),
                   Text(
                     widget.deal.planName,
                     textAlign: TextAlign.center,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
                       color: AppTheme.deepNavy,
                       height: 1.2,
                     ),
@@ -173,44 +187,61 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
               // Bottom: Price
               Column(
                 children: [
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      children: [
-                        if (widget.deal.category != ProductCategory.electricity && widget.deal.category != ProductCategory.gas)
-                          const TextSpan(
-                            text: '\$',
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
-                          ),
-                        TextSpan(
-                          text: widget.deal.price > 0 
-                              ? (widget.deal.price % 1 == 0 ? widget.deal.price.toStringAsFixed(0) : widget.deal.price.toStringAsFixed(2))
-                              : 'Check',
-                          style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: AppTheme.deepNavy, letterSpacing: -1.0),
-                        ),
-                        TextSpan(
-                          text: '/${widget.deal.priceUnit}',
-                          style: const TextStyle(fontSize: 12, color: Color(0xFF667085), fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 16),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
-                      color: AppTheme.primaryBlue.withOpacity(0.05),
+                      color: AppTheme.offWhite,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        children: [
+                          if (widget.deal.category != ProductCategory.electricity && widget.deal.category != ProductCategory.gas)
+                            const TextSpan(
+                              text: '\$',
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
+                            ),
+                          TextSpan(
+                            text: widget.deal.price > 0 
+                                ? (widget.deal.price % 1 == 0 ? widget.deal.price.toStringAsFixed(0) : widget.deal.price.toStringAsFixed(2))
+                                : 'Check',
+                            style: const TextStyle(fontSize: 42, fontWeight: FontWeight.w900, color: AppTheme.deepNavy, letterSpacing: -1.5),
+                          ),
+                          TextSpan(
+                            text: ' / ${widget.deal.priceUnit}',
+                            style: const TextStyle(fontSize: 13, color: AppTheme.slate600, fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: _isHovered ? AppTheme.accentOrange : AppTheme.primaryBlue.withOpacity(0.08),
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: const Row(
+                    child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'View Details',
-                          style: TextStyle(fontSize: 12, color: AppTheme.primaryBlue, fontWeight: FontWeight.bold),
+                          'VIEW DETAILS',
+                          style: TextStyle(
+                            fontSize: 13, 
+                            color: _isHovered ? Colors.white : AppTheme.primaryBlue, 
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 1.0,
+                          ),
                         ),
-                        SizedBox(width: 4),
-                        Icon(Icons.arrow_forward, size: 14, color: AppTheme.primaryBlue),
+                        const SizedBox(width: 8),
+                        Icon(
+                          Icons.arrow_forward_ios, 
+                          size: 12, 
+                          color: _isHovered ? Colors.white : AppTheme.primaryBlue,
+                        ),
                       ],
                     ),
                   ),
@@ -220,7 +251,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
           ),
         ),
         if (widget.isBestValue) _buildBadge('BEST VALUE', AppTheme.vibrantEmerald, Colors.white),
-        if (widget.deal.isSponsored && !widget.isBestValue) _buildBadge('SPONSORED', const Color(0xFFF2F4F7), const Color(0xFF667085)),
+        if (widget.deal.isSponsored && !widget.isBestValue) _buildBadge('SPONSORED', AppTheme.deepNavy, Colors.white),
       ],
     );
   }
@@ -230,19 +261,20 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     final isSvg = logoUrl.toLowerCase().endsWith('.svg');
 
     return Container(
-      width: 56, 
-      height: 56, 
-      padding: const EdgeInsets.all(8),
+      width: 64, 
+      height: 64, 
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
+            blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
+        border: Border.all(color: AppTheme.offWhite, width: 2),
       ),
       child: ClipOval(
         child: isSvg
@@ -268,7 +300,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
         widget.deal.providerName.isNotEmpty ? widget.deal.providerName[0] : '?',
         style: const TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 24,
+          fontSize: 28,
           color: Colors.white,
         ),
       ),
@@ -277,15 +309,15 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
 
   Widget _buildBack() {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: AppTheme.deepNavy,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 30,
+            offset: const Offset(0, 15),
           ),
         ],
       ),
@@ -297,31 +329,31 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
             children: [
               const Text(
                 'Key Features',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white),
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16, color: Colors.white, letterSpacing: 1.0),
               ),
-              Icon(Icons.info_outline, size: 16, color: Colors.white.withOpacity(0.5)),
+              const Icon(Icons.info_outline, size: 20, color: AppTheme.accentOrange),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 24),
           Expanded(
             child: ListView(
               padding: EdgeInsets.zero,
               physics: const BouncingScrollPhysics(),
               children: [
                 ...widget.deal.keyFeatures.map((feature) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12.0),
+                  padding: const EdgeInsets.only(bottom: 16.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Padding(
                         padding: EdgeInsets.only(top: 2.0),
-                        child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 16),
+                        child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 18),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
                           feature,
-                          style: const TextStyle(fontSize: 13, color: Colors.white, height: 1.4),
+                          style: TextStyle(fontSize: 14, color: Colors.white.withOpacity(0.9), height: 1.5, fontWeight: FontWeight.w500),
                         ),
                       ),
                     ],
@@ -330,21 +362,28 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
               ],
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 24),
           SizedBox(
             width: double.infinity,
-            height: 48,
+            height: 56,
             child: ElevatedButton(
               onPressed: _launchURL,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppTheme.vibrantEmerald,
+                backgroundColor: AppTheme.accentOrange,
                 foregroundColor: Colors.white,
                 elevation: 0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(100),
+                  borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child: const Text('Go to Site', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('GO TO SITE', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14, letterSpacing: 1.0)),
+                  SizedBox(width: 8),
+                  Icon(Icons.open_in_new, size: 16),
+                ],
+              ),
             ),
           ),
         ],
@@ -355,17 +394,17 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
   Widget _buildBadge(String text, Color bg, Color fg) {
     return Positioned(
       top: 0,
-      right: 16,
+      right: 24,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
           color: bg,
-          borderRadius: const BorderRadius.vertical(bottom: Radius.circular(8)),
+          borderRadius: const BorderRadius.vertical(bottom: Radius.circular(12)),
           boxShadow: [
             BoxShadow(
               color: bg.withOpacity(0.4),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -373,9 +412,9 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
           text,
           style: TextStyle(
             color: fg,
-            fontWeight: FontWeight.bold,
-            fontSize: 10,
-            letterSpacing: 0.8,
+            fontWeight: FontWeight.w900,
+            fontSize: 11,
+            letterSpacing: 1.2,
           ),
         ),
       ),

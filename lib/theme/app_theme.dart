@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Brand Colors - Premium Fintech Palette
-  static const Color deepNavy = Color(0xFF101828); // Rich dark text
-  static const Color primaryBlue = Color(0xFF2A0F5B); // Trust/Link color (Deep Purple/Navy)
-  static const Color vibrantEmerald = Color(0xFF039855); // Success/Savings (Slightly deeper/richer than neon)
-  static const Color accentOrange = Color(0xFFFF6A00); // High-impact CTA (Vibrant Orange)
-  static const Color offWhite = Color(0xFFF4F6F8); // Cool grey background
-  
-  // Glass/Card Colors
-  static const Color glassWhite = Color(0xFFFFFFFF); // Solid white for cards (Cleaner look)
-  static const Color glassBorder = Color(0xFFEAECF0); // Subtle border
+  // Brand Colors - iSelect inspired but unique
+  static const Color deepNavy = Color(0xFF002A54); // Very dark blue for primary contrast
+  static const Color primaryBlue = Color(0xFF005696); // iSelect-ish Blue
+  static const Color vibrantEmerald = Color(0xFF00A3AD); // Teal/Emerald accent
+  static const Color accentOrange = Color(0xFFFF7900); // iSelect Vibrant Orange
+  static const Color offWhite = Color(0xFFF8F9FA); // Very light grey background
+  static const Color slate600 = Color(0xFF475467);
+  static const Color slate300 = Color(0xFFD0D5DD);
 
-  // Gradient for background - Subtle top-down fade
+  // Glass/Card Colors
+  static const Color glassWhite = Colors.white;
+  static const Color glassBorder = Color(0xFFEAECF0);
+
+  // Gradient for background
   static const LinearGradient mainBackgroundGradient = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
@@ -24,6 +26,8 @@ class AppTheme {
   );
 
   static ThemeData get lightTheme {
+    final textTheme = GoogleFonts.montserratTextTheme(ThemeData.light().textTheme);
+    
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
@@ -31,43 +35,47 @@ class AppTheme {
       primaryColor: primaryBlue,
       colorScheme: const ColorScheme.light(
         primary: primaryBlue,
-        secondary: vibrantEmerald,
-        tertiary: accentOrange,
+        secondary: accentOrange,
+        tertiary: vibrantEmerald,
         surface: Colors.white,
-        background: offWhite,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: deepNavy,
       ),
-      textTheme: GoogleFonts.latoTextTheme(ThemeData.light().textTheme).copyWith(
-        displayLarge: GoogleFonts.lato(
-          color: deepNavy, fontWeight: FontWeight.w900, letterSpacing: -0.5,
-        ),
-        displayMedium: GoogleFonts.lato(
+      textTheme: textTheme.copyWith(
+        displayLarge: GoogleFonts.montserrat(
           color: deepNavy, fontWeight: FontWeight.w800, letterSpacing: -0.5,
         ),
-        bodyLarge: GoogleFonts.lato(
-          color: deepNavy, fontSize: 16, height: 1.5,
+        displayMedium: GoogleFonts.montserrat(
+          color: deepNavy, fontWeight: FontWeight.w700, letterSpacing: -0.5,
         ),
-        bodyMedium: GoogleFonts.lato(
-          color: Color(0xFF475467), // Slate 600 for secondary text
-          fontSize: 14, 
-          height: 1.5,
+        displaySmall: GoogleFonts.montserrat(
+          color: deepNavy, fontWeight: FontWeight.w700,
         ),
-      ).apply(
-        bodyColor: deepNavy,
-        displayColor: deepNavy,
+        headlineMedium: GoogleFonts.montserrat(
+          color: deepNavy, fontWeight: FontWeight.w600,
+        ),
+        bodyLarge: GoogleFonts.montserrat(
+          color: deepNavy, fontSize: 16, height: 1.6, fontWeight: FontWeight.w500,
+        ),
+        bodyMedium: GoogleFonts.montserrat(
+          color: slate600, fontSize: 14, height: 1.6,
+        ),
+        labelLarge: GoogleFonts.montserrat(
+          color: deepNavy, fontWeight: FontWeight.w600, fontSize: 14,
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: accentOrange, // Primary Action is Orange
+          backgroundColor: accentOrange,
           foregroundColor: Colors.white,
-          elevation: 0,
+          elevation: 2,
+          shadowColor: accentOrange.withOpacity(0.3),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100), // Pill shape
+            borderRadius: BorderRadius.circular(8), // Less rounded, more modern
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-          textStyle: const TextStyle(
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+          textStyle: GoogleFonts.montserrat(
             fontWeight: FontWeight.w700,
             fontSize: 16,
           ),
@@ -79,17 +87,17 @@ class AppTheme {
         contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFFD0D5DD)),
+          borderSide: const BorderSide(color: slate300),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFFD0D5DD)), // Slate 300
+          borderSide: const BorderSide(color: slate300),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: accentOrange, width: 2),
         ),
-        labelStyle: const TextStyle(color: Color(0xFF667085)), // Slate 500
+        labelStyle: const TextStyle(color: slate600),
       ),
     );
   }

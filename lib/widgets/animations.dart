@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
-/// A utility class for standardized animations across the app.
-/// This avoids external dependencies while providing engaging transitions.
 class SlideFadeTransition extends StatefulWidget {
+
   final Widget child;
   final int delay; // milliseconds
   final Duration duration;

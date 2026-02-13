@@ -78,6 +78,7 @@ class ModernFooter extends StatelessWidget {
                       _footerLink(context, 'Gas', '/deals/gas'),
                       _footerLink(context, 'Internet', '/deals/internet'),
                       _footerLink(context, 'Mobile', '/deals/mobile'),
+                      _footerLink(context, 'Moving House', '/energy/moving-house'),
                     ]),
                   ),
                   

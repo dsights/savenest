@@ -15,6 +15,7 @@ import 'package:savenest/features/legal/disclaimer_screen.dart';
 import 'package:savenest/features/legal/privacy_policy_screen.dart';
 import 'package:savenest/features/legal/terms_of_service_screen.dart';
 import 'package:savenest/features/misc/sitemap_screen.dart';
+import 'package:savenest/features/misc/moving_house_screen.dart';
 import 'package:savenest/features/partners/advertise_with_us_screen.dart';
 import 'package:savenest/features/savings/savings_screen.dart';
 import 'package:savenest/features/registration/registration_screen.dart';
@@ -226,6 +227,14 @@ final goRouter = GoRouter(
         context,
         state,
         const SitemapScreen(),
+      ),
+    ),
+    GoRoute(
+      path: '/energy/moving-house',
+      pageBuilder: (context, state) => _fadeTransition(
+        context,
+        state,
+        const MovingHouseScreen(),
       ),
     ),
   ],

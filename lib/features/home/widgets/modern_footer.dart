@@ -31,16 +31,6 @@ class ModernFooter extends StatelessWidget {
                         Row(
                           mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
                           children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(6),
-                              child: Image.asset(
-                                'assets/images/logo.jpg',
-                                height: 32,
-                                width: 32,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
                             Text(
                               'SaveNest',
                               style: Theme.of(context).textTheme.headlineSmall?.copyWith(

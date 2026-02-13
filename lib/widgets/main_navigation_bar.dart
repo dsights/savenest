@@ -38,16 +38,6 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
                 onTap: () => context.go('/'),
                 child: Row(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        'assets/images/logo.jpg',
-                        height: 40,
-                        width: 40,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(width: 12),
                     Text(
                       'SaveNest',
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(

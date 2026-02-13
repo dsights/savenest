@@ -16,8 +16,8 @@ class MiniSavingsCalculator extends ConsumerWidget {
     final controller = ref.read(savingsControllerProvider.notifier);
 
     return GlassContainer(
-      borderRadius: 16,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      borderRadius: 12,
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -26,11 +26,11 @@ class MiniSavingsCalculator extends ConsumerWidget {
             'Savings Estimate',
             style: TextStyle(
               color: AppTheme.deepNavy,
-              fontSize: 18,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 10),
           
           _miniSlider(
             context,
@@ -65,16 +65,16 @@ class MiniSavingsCalculator extends ConsumerWidget {
             onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
           ),
 
-          const Divider(height: 24),
+          const Divider(height: 16),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Estimated Savings:',
+                'Est. Savings:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: 12,
                   color: AppTheme.deepNavy,
                 ),
               ),
@@ -83,24 +83,24 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 prefix: '\$',
                 style: const TextStyle(
                   color: AppTheme.vibrantEmerald,
-                  fontSize: 24,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 10),
           SizedBox(
             width: double.infinity,
-            height: 44,
+            height: 36,
             child: ElevatedButton(
               onPressed: () => context.push('/register'),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 backgroundColor: AppTheme.accentOrange,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
               ),
-              child: const Text('START SAVING TODAY', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              child: const Text('START SAVING', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
             ),
           ),
         ],
@@ -124,19 +124,19 @@ class MiniSavingsCalculator extends ConsumerWidget {
           children: [
             Row(
               children: [
-                Icon(icon, size: 14, color: AppTheme.primaryBlue),
-                const SizedBox(width: 6),
-                Text(label, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                Icon(icon, size: 11, color: AppTheme.primaryBlue),
+                const SizedBox(width: 4),
+                Text(label, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600)),
               ],
             ),
-            Text('\$${value.toInt()}', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
+            Text('\$${value.toInt()}', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
           ],
         ),
         SliderTheme(
           data: SliderTheme.of(context).copyWith(
-            trackHeight: 4.0,
-            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6),
-            overlayShape: const RoundSliderOverlayShape(overlayRadius: 12),
+            trackHeight: 2.0,
+            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 4),
+            overlayShape: const RoundSliderOverlayShape(overlayRadius: 8),
             activeTrackColor: AppTheme.vibrantEmerald,
             inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
             thumbColor: AppTheme.accentOrange,
@@ -147,7 +147,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
             onChanged: onChanged,
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 4),
       ],
     );
   }

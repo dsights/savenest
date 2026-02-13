@@ -76,6 +76,7 @@ class AppTheme {
           color: deepNavy, fontWeight: FontWeight.w600, fontSize: 14,
         ),
       ),
+      platform: TargetPlatform.iOS, // Force iOS platform behavior for smooth momentum scrolling on web
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: accentOrange,

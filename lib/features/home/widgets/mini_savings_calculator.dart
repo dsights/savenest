@@ -66,8 +66,11 @@ class MiniSavingsCalculator extends ConsumerWidget {
 
           const Divider(height: 32),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 16,
+            runSpacing: 8,
             children: [
               const Text(
                 'Estimated Savings:',

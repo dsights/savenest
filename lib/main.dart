@@ -14,6 +14,8 @@ void main() {
   runApp(const ProviderScope(child: SaveNestApp()));
 }
 
+final rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
 class SaveNestApp extends StatelessWidget {
   const SaveNestApp({super.key});
 
@@ -21,6 +23,7 @@ class SaveNestApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'SaveNest',
+      scaffoldMessengerKey: rootScaffoldMessengerKey,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       scrollBehavior: AppScrollBehavior(),

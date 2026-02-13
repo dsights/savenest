@@ -217,8 +217,10 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
           ),
 
           Expanded(
-            child: CustomScrollView(
-              slivers: [
+            child: Focus(
+              autofocus: true,
+              child: CustomScrollView(
+                slivers: [
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),

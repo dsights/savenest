@@ -23,6 +23,7 @@ class SaveNestApp extends StatelessWidget {
       title: 'SaveNest',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
+      scrollBehavior: AppScrollBehavior(),
       routerConfig: goRouter,
     );
   }

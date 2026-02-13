@@ -84,66 +84,69 @@ class SavingsScreen extends ConsumerWidget {
                       // 2. Sliders List
                       Expanded(
                         flex: 3, // Increased relative space for the list
-                        child: ListView(
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-                          children: [
-                            Center(
-                              child: Padding(
-                                padding: const EdgeInsets.only(bottom: 16.0),
-                                child: Text(
-                                  "What's your monthly spend?",
-                                  style: TextStyle(
-                                    color: AppTheme.deepNavy.withOpacity(0.7),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
+                        child: Focus(
+                          autofocus: true,
+                          child: ListView(
+                            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                            children: [
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 16.0),
+                                  child: Text(
+                                    "What's your monthly spend?",
+                                    style: TextStyle(
+                                      color: AppTheme.deepNavy.withOpacity(0.7),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            _buildUtilitySlider(
-                              context,
-                              label: 'NBN (Internet)',
-                              value: utilityCosts.nbn,
-                              max: 200,
-                              onChanged: (val) => controller.updateCost(UtilityType.nbn, val),
-                            ),
-                            _buildUtilitySlider(
-                              context,
-                              label: 'Electricity',
-                              value: utilityCosts.electricity,
-                              max: 600,
-                              onChanged: (val) => controller.updateCost(UtilityType.electricity, val),
-                            ),
-                            _buildUtilitySlider(
-                              context,
-                              label: 'Gas',
-                              value: utilityCosts.gas,
-                              max: 400,
-                              onChanged: (val) => controller.updateCost(UtilityType.gas, val),
-                            ),
-                            _buildUtilitySlider(
-                              context,
-                              label: 'Mobile SIM',
-                              value: utilityCosts.mobile,
-                              max: 150,
-                              onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
-                            ),
-                            _buildUtilitySlider(
-                              context,
-                              label: 'Home Insurance',
-                              value: utilityCosts.homeInsurance,
-                              max: 500,
-                              onChanged: (val) => controller.updateCost(UtilityType.homeInsurance, val),
-                            ),
-                            _buildUtilitySlider(
-                              context,
-                              label: 'Car Insurance',
-                              value: utilityCosts.carInsurance,
-                              max: 400,
-                              onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
-                            ),
-                            const SizedBox(height: 80), // Space for FAB
-                          ],
+                              _buildUtilitySlider(
+                                context,
+                                label: 'NBN (Internet)',
+                                value: utilityCosts.nbn,
+                                max: 200,
+                                onChanged: (val) => controller.updateCost(UtilityType.nbn, val),
+                              ),
+                              _buildUtilitySlider(
+                                context,
+                                label: 'Electricity',
+                                value: utilityCosts.electricity,
+                                max: 600,
+                                onChanged: (val) => controller.updateCost(UtilityType.electricity, val),
+                              ),
+                              _buildUtilitySlider(
+                                context,
+                                label: 'Gas',
+                                value: utilityCosts.gas,
+                                max: 400,
+                                onChanged: (val) => controller.updateCost(UtilityType.gas, val),
+                              ),
+                              _buildUtilitySlider(
+                                context,
+                                label: 'Mobile SIM',
+                                value: utilityCosts.mobile,
+                                max: 150,
+                                onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
+                              ),
+                              _buildUtilitySlider(
+                                context,
+                                label: 'Home Insurance',
+                                value: utilityCosts.homeInsurance,
+                                max: 500,
+                                onChanged: (val) => controller.updateCost(UtilityType.homeInsurance, val),
+                              ),
+                              _buildUtilitySlider(
+                                context,
+                                label: 'Car Insurance',
+                                value: utilityCosts.carInsurance,
+                                max: 400,
+                                onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
+                              ),
+                              const SizedBox(height: 80), // Space for FAB
+                            ],
+                          ),
                         ),
                       ),
                     ],

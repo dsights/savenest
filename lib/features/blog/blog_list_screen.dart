@@ -42,10 +42,12 @@ class BlogListScreen extends ConsumerWidget {
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const MainNavigationBar(),
+      body: Focus(
+        autofocus: true,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const MainNavigationBar(),
             // Modern Page Header
             Container(
               width: double.infinity,

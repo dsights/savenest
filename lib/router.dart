@@ -27,12 +27,32 @@ Widget _deferredWidget(Future<void> loadLibrary, Widget Function() builder) {
     future: loadLibrary,
     builder: (context, snapshot) {
       if (snapshot.connectionState == ConnectionState.done) {
+        if (snapshot.hasError) {
+          return Scaffold(
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.error_outline, color: Colors.red, size: 48),
+                  const SizedBox(height: 16),
+                  const Text('Failed to load page. Please try refreshing.', 
+                    style: TextStyle(color: AppTheme.deepNavy, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 24),
+                  ElevatedButton(
+                    onPressed: () => context.go('/'),
+                    child: const Text('Back to Home'),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }
         return builder();
       }
       return const Scaffold(
         backgroundColor: AppTheme.offWhite,
         body: Center(
-          child: CircularProgressIndicator(color: AppTheme.vibrantEmerald),
+          child: CircularProgressIndicator(color: AppTheme.accentOrange),
         ),
       );
     },

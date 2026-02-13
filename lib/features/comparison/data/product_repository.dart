@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../comparison_model.dart';
 
@@ -57,6 +58,7 @@ class JsonProductRepository implements ProductRepository {
       case ProductCategory.mobile: return 'mobile';
       case ProductCategory.internet: return 'internet';
       case ProductCategory.insurance: return 'insurance';
+      case ProductCategory.creditCards: return 'financial';
       default: return 'other';
     }
   }
@@ -66,11 +68,22 @@ class JsonProductRepository implements ProductRepository {
     if (commission.toLowerCase().contains('varies')) return 0.0;
     
     try {
-      // Extract numbers from string like "$8.50 per sale"
       final numericPart = commission.replaceAll(RegExp(r'[^0-9.]'), '');
       return double.parse(numericPart);
     } catch (e) {
       return 0.0;
+    }
+  }
+
+  Color _parseColor(String colorString) {
+    try {
+      String hexColor = colorString.replaceAll('#', '').replaceAll('0x', '');
+      if (hexColor.length == 6) {
+        hexColor = 'FF$hexColor';
+      }
+      return Color(int.parse(hexColor, radix: 16));
+    } catch (e) {
+      return Colors.black;
     }
   }
 
@@ -80,15 +93,15 @@ class JsonProductRepository implements ProductRepository {
       category: category,
       providerName: json['providerName'],
       providerLogoUrl: json['logoUrl'] ?? '',
-      providerColor: Color(int.parse(json['providerColor'])), // Parse hex string
+      providerColor: _parseColor(json['providerColor'] ?? '0xFF000000'),
       planName: json['planName'],
-      description: json['description'],
-      keyFeatures: List<String>.from(json['keyFeatures']),
+      description: json['description'] ?? '',
+      keyFeatures: List<String>.from(json['keyFeatures'] ?? []),
       price: (json['price'] as num).toDouble(),
       priceUnit: json['priceUnit'] ?? '/mo',
-      affiliateUrl: json['affiliateUrl'],
-      commission: _parseCommission(json['commission']),
-      rating: (json['rating'] as num).toDouble(),
+      affiliateUrl: json['affiliateUrl'] ?? '',
+      commission: _parseCommission(json['commission'] ?? '0'),
+      rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
       isSponsored: json['isSponsored'] ?? false,
       isGreen: json['isGreen'] ?? false,
     );

@@ -148,10 +148,11 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final state = ref.watch(comparisonProvider);
     final creditCardsAsync = ref.watch(creditCardsProvider);
     final controller = ref.read(comparisonProvider.notifier);
-    final categoryTitle = _getCategoryTitle(widget.initialCategory);
+    final selectedCat = state.selectedCategory ?? widget.initialCategory;
+    final categoryTitle = _getCategoryTitle(selectedCat);
 
     String searchHint;
-    switch (state.selectedCategory) {
+    switch (selectedCat) {
       case ProductCategory.electricity:
       case ProductCategory.gas:
         searchHint = 'Try "cheapest", "green energy", "Origin"...';
@@ -167,109 +168,85 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
         searchHint = 'Search providers, features...';
     }
 
-    // Update meta tags for SEO
-      if (kIsWeb) {
-        MetaSEO meta = MetaSEO();
-        final String title = 'Compare $categoryTitle Plans & Prices in Australia | SaveNest';
-        final String description = 'Find the best $categoryTitle deals from top Australian providers. Compare plans, prices, and features to save money on your bills.';
-        const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
-
-        meta.nameContent(name: 'title', content: title);
-        meta.nameContent(name: 'description', content: description);
-        
-        // Open Graph
-        meta.ogTitle(ogTitle: title);
-        meta.ogDescription(ogDescription: description);
-        meta.propertyContent(property: 'og:url', content: 'https://savenest.au/deals/${widget.initialCategory.name}');
-        meta.ogImage(ogImage: imageUrl);
-
-        // Twitter
-        meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
-        meta.nameContent(name: 'twitter:title', content: title);
-        meta.nameContent(name: 'twitter:description', content: description);
-        meta.nameContent(name: 'twitter:image', content: imageUrl);
-      }
-
     return Scaffold(
-        backgroundColor: AppTheme.offWhite,
-        endDrawer: const MainMobileDrawer(),
-        body: Column(
-          children: [
-            const MainNavigationBar(),
-            // Category Tabs
-            Container(
-              color: Colors.white,
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Center(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1200),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: ProductCategory.values.map((cat) {
-                        final isSelected = cat == state.selectedCategory;
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 12.0),
-                          child: ChoiceChip(
-                            label: Text(_formatCategory(cat)),
-                            selected: isSelected,
-                            onSelected: (selected) {
-                              if (selected) {
-                                controller.loadCategory(cat);
-                              }
-                            },
-                            selectedColor: AppTheme.primaryBlue,
-                            backgroundColor: Colors.white,
-                            labelStyle: TextStyle(
-                              color: isSelected ? Colors.white : AppTheme.deepNavy,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                              side: BorderSide(
-                                color: isSelected ? AppTheme.primaryBlue : AppTheme.slate300,
-                              ),
-                            ),
-                            showCheckmark: false,
+      backgroundColor: AppTheme.offWhite,
+      endDrawer: const MainMobileDrawer(),
+      body: Column(
+        children: [
+          const MainNavigationBar(),
+          // Category Tabs
+          Container(
+            color: Colors.white,
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Center(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: ProductCategory.values.map((cat) {
+                    final isSelected = cat == selectedCat;
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 12.0),
+                      child: ChoiceChip(
+                        label: Text(_formatCategory(cat)),
+                        selected: isSelected,
+                        onSelected: (selected) {
+                          if (selected) {
+                            controller.loadCategory(cat);
+                          }
+                        },
+                        selectedColor: AppTheme.primaryBlue,
+                        backgroundColor: Colors.white,
+                        labelStyle: TextStyle(
+                          color: isSelected ? Colors.white : AppTheme.deepNavy,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          side: BorderSide(
+                            color: isSelected ? AppTheme.primaryBlue : AppTheme.slate300,
                           ),
-                        );
-                      }).toList(),
-                    ),
-                  ),
+                        ),
+                        showCheckmark: false,
+                      ),
+                    );
+                  }).toList(),
                 ),
               ),
             ),
+          ),
 
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+          Expanded(
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+                    child: Center(
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(maxWidth: 1200),
                         child: Column(
                           children: [
                             Text(
                               'Compare $categoryTitle Plans',
+                              textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                                color: AppTheme.deepNavy,
-                                fontWeight: FontWeight.w900,
-                              ),
+                                    color: AppTheme.deepNavy,
+                                    fontWeight: FontWeight.w900,
+                                  ),
                             ),
                             const SizedBox(height: 8),
-                            if (!state.isLoading && state.selectedCategory != ProductCategory.creditCards)
-                            Text(
-                              'We found ${state.deals.length} deals to help you save',
-                              style: const TextStyle(
-                                color: AppTheme.slate600,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
+                            if (!state.isLoading && selectedCat != ProductCategory.creditCards)
+                              Text(
+                                'We found ${state.deals.length} deals to help you save',
+                                style: const TextStyle(
+                                  color: AppTheme.slate600,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                            ),
                             const SizedBox(height: 32),
                             ConstrainedBox(
                               constraints: const BoxConstraints(maxWidth: 600),
@@ -282,88 +259,89 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                         ),
                       ),
                     ),
-
-                    // Content Area
-                    ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 1400),
-                      child: state.selectedCategory == ProductCategory.creditCards
-                          ? creditCardsAsync.when(
-                              data: (deals) => CreditCardTable(deals: _filterCreditCards(deals, state.searchQuery)),
-                              loading: () => const Center(child: Padding(
-                                padding: EdgeInsets.all(100.0),
-                                child: CircularProgressIndicator(color: AppTheme.accentOrange),
-                              )),
-                              error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: AppTheme.deepNavy))),
-                            )
-                          : state.isLoading
-                              ? const Center(child: Padding(
-                                  padding: EdgeInsets.all(100.0),
-                                  child: CircularProgressIndicator(color: AppTheme.accentOrange),
-                                ))
-                              : LayoutBuilder(
-                              builder: (context, constraints) {
-                                if (state.deals.isEmpty) {
-                                  return Container(
-                                    height: 300,
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      'No deals found matching criteria.',
-                                      style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.5)),
-                                    ),
-                                  );
-                                }
-                                
-                                // Responsive Breakpoint
-                                if (constraints.maxWidth > 900) {
-                                  // WEB: Grid Layout
-                                  return GridView.builder(
-                                    shrinkWrap: true,
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 4,
-                                      childAspectRatio: 0.85,
-                                      mainAxisSpacing: 32,
-                                      crossAxisSpacing: 32,
-                                    ),
-                                    itemCount: state.deals.length,
-                                    itemBuilder: (context, index) {
-                                      final deal = state.deals[index];
-                                      final isBest = deal == state.bestValueDeal;
-                                      return DealCard(deal: deal, isBestValue: isBest);
-                                    },
-                                  );
-                                } else {
-                                  // MOBILE: List Layout
-                                  return ListView.builder(
-                                    shrinkWrap: true,
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                                    itemCount: state.deals.length,
-                                    itemBuilder: (context, index) {
-                                      final deal = state.deals[index];
-                                      final isBest = deal == state.bestValueDeal;
-                                      return Padding(
-                                        padding: const EdgeInsets.only(bottom: 24.0),
-                                        child: SizedBox(
-                                          height: 420,
-                                          child: DealCard(deal: deal, isBestValue: isBest),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                }
-                              },
-                            ),
-                    ),
-                    const SizedBox(height: 100),
-                    const ModernFooter(),
-                  ],
+                  ),
                 ),
-              ),
+                
+                if (selectedCat == ProductCategory.creditCards)
+                  SliverToBoxAdapter(
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 1200),
+                        child: creditCardsAsync.when(
+                          data: (deals) => CreditCardTable(deals: _filterCreditCards(deals, state.searchQuery)),
+                          loading: () => const Center(child: Padding(
+                            padding: EdgeInsets.all(100.0),
+                            child: CircularProgressIndicator(color: AppTheme.accentOrange),
+                          )),
+                          error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: AppTheme.deepNavy))),
+                        ),
+                      ),
+                    ),
+                  )
+                else if (state.isLoading)
+                  const SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Center(
+                      child: CircularProgressIndicator(color: AppTheme.accentOrange),
+                    ),
+                  )
+                else if (state.deals.isEmpty)
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Center(
+                      child: Text(
+                        'No deals found matching criteria.',
+                        style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.5)),
+                      ),
+                    ),
+                  )
+                else
+                  SliverPadding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                    sliver: SliverToBoxAdapter(
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 1400),
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              final crossAxisCount = constraints.maxWidth > 1200
+                                  ? 4
+                                  : constraints.maxWidth > 800
+                                      ? 3
+                                      : constraints.maxWidth > 600
+                                          ? 2
+                                          : 1;
+                              
+                              return GridView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: crossAxisCount,
+                                  childAspectRatio: 0.85,
+                                  mainAxisSpacing: 32,
+                                  crossAxisSpacing: 32,
+                                ),
+                                itemCount: state.deals.length,
+                                itemBuilder: (context, index) {
+                                  final deal = state.deals[index];
+                                  final isBest = deal == state.bestValueDeal;
+                                  return DealCard(deal: deal, isBestValue: isBest);
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                
+                const SliverToBoxAdapter(child: SizedBox(height: 100)),
+                const SliverToBoxAdapter(child: ModernFooter()),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 

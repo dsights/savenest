@@ -29,217 +29,7 @@ class LandingScreen extends ConsumerStatefulWidget {
 }
 
 class _LandingScreenState extends ConsumerState<LandingScreen> {
-  final PageController _pageController = PageController();
-  int _currentPage = 0;
-  late Timer _timer; // Declare the timer
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController.addListener(() {
-      setState(() {
-        _currentPage = _pageController.page?.round() ?? 0;
-      });
-    });
-
-    // Initialize auto-sliding
-    _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
-      if (_currentPage < 4) { // Assuming 5 slides (0-4 index)
-        _currentPage++;
-      } else {
-        _currentPage = 0;
-      }
-      _pageController.animateToPage(
-        _currentPage,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeIn,
-      );
-    });
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    _timer.cancel(); // Cancel the timer
-    super.dispose();
-  }
-
-
-
   _MainCategory _selectedMainCategory = _MainCategory.utilities;
-
-  Widget _buildHeroCarousel(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 450, // Increased height for better impact
-          child: PageView(
-            controller: _pageController,
-            children: [
-              _buildHeroSlide(
-                context, 
-                quote: "Power Up Your Savings.\nCompare Top Energy Plans Today.", 
-                imagePath: 'assets/images/hero_energy.jpg', 
-                buttonText: 'COMPARE ENERGY', 
-                route: '/deals/electricity'
-              ),
-              _buildHeroSlide(
-                context, 
-                quote: "Connect for Less.\nHigh-Speed Internet Deals.", 
-                imagePath: 'assets/images/hero_internet.jpg', 
-                buttonText: 'COMPARE INTERNET', 
-                route: '/deals/internet'
-              ),
-              _buildHeroSlide(
-                context, 
-                quote: "Talk More, Pay Less.\nBest Mobile Plans.", 
-                imagePath: 'assets/images/hero_mobile.jpg', 
-                buttonText: 'COMPARE MOBILE', 
-                route: '/deals/mobile'
-              ),
-              _buildHeroSlide(
-                context, 
-                quote: "Protect What Matters.\nComprehensive Insurance Options.", 
-                imagePath: 'assets/images/hero_insurance.jpg', 
-                buttonText: 'COMPARE INSURANCE', 
-                route: '/deals/insurance'
-              ),
-              _buildHeroSlide(
-                context, 
-                quote: "Smart Financial Moves.\nBetter Loans & Credit.", 
-                imagePath: 'assets/images/hero_finance.jpg', 
-                buttonText: 'COMPARE FINANCE', 
-                route: '/loans/home'
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(5, (index) {
-            return Container(
-              width: 8.0,
-              height: 8.0,
-              margin: const EdgeInsets.symmetric(horizontal: 4.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _currentPage == index
-                    ? AppTheme.vibrantEmerald
-                    : Colors.white30,
-              ),
-            );
-          }),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildHeroSlide(BuildContext context, {
-    required String quote,
-    required String imagePath,
-    required String buttonText,
-    required String route,
-  }) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: AppTheme.offWhite,
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
-        ),
-      ),
-      child: Stack(
-        children: [
-          // Content
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 800),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      quote,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        shadows: [
-                           Shadow(
-                            offset: Offset(0, 2),
-                            blurRadius: 4.0,
-                            color: Colors.black54,
-                          ),
-                        ],
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 40),
-                    Wrap(
-                      spacing: 16,
-                      runSpacing: 16,
-                      alignment: WrapAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            GoRouter.of(context).go(route);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppTheme.vibrantEmerald,
-                            foregroundColor: AppTheme.deepNavy,
-                            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-                            textStyle: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          child: Text(buttonText),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            GoRouter.of(context).go('/savings');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            foregroundColor: AppTheme.deepNavy,
-                            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-                            textStyle: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          child: const Text('Savings Calculator'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          
-          // Knowledge Flash Animation
-          Positioned(
-            top: 20,
-            right: 20,
-            child: SlideFadeTransition(
-              delay: 1000,
-              offset: const Offset(0, -0.5),
-              child: KnowledgeFlash(
-                text: "Did you know? Switching can save \$300/yr!",
-                backgroundColor: AppTheme.vibrantEmerald.withOpacity(0.9),
-                textColor: AppTheme.deepNavy,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -252,15 +42,11 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
 
       meta.nameContent(name: 'title', content: title);
       meta.nameContent(name: 'description', content: description);
-      
-      // Open Graph / Facebook
       meta.ogTitle(ogTitle: title);
       meta.ogDescription(ogDescription: description);
       meta.propertyContent(property: 'og:url', content: 'https://savenest.au/');
       meta.ogImage(ogImage: imageUrl);
       meta.propertyContent(property: 'og:type', content: 'website');
-
-      // Twitter
       meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
       meta.nameContent(name: 'twitter:title', content: title);
       meta.nameContent(name: 'twitter:description', content: description);
@@ -274,10 +60,10 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
           child: Column(
             children: [
               const MainNavigationBar(),
-              _buildHeroCarousel(context),
+              _buildModernHero(context),
               _buildCategorySection(context),
-              _buildBlogSection(context), // ref is directly available as this.ref
-              _buildHowItWorksSection(context),
+              _buildValueProps(context),
+              _buildBlogSection(context),
               _buildTestimonialsSection(context),
               _buildFooter(context),
             ],
@@ -286,121 +72,377 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     );
   }
 
-  Widget _buildBlogSection(BuildContext context) { // ref is directly available as this.ref
-    final postsAsync = ref.watch(blogPostsProvider);
-
+  Widget _buildModernHero(BuildContext context) {
     return Container(
-      color: AppTheme.offWhite,
-      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
-      child: SlideFadeTransition(
-        delay: 400,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1200),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Latest Insights',
-                  style: TextStyle(
-                    color: AppTheme.deepNavy,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+      width: double.infinity,
+      color: Colors.white,
+      padding: const EdgeInsets.fromLTRB(24, 60, 24, 80),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isDesktop = constraints.maxWidth > 900;
+              
+              return Flex(
+                direction: isDesktop ? Axis.horizontal : Axis.vertical,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Left Content
+                  Expanded(
+                    flex: isDesktop ? 5 : 0,
+                    child: Column(
+                      crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+                      children: [
+                        SlideFadeTransition(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: AppTheme.primaryBlue.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(Icons.verified, color: AppTheme.primaryBlue, size: 16),
+                                const SizedBox(width: 8),
+                                Text(
+                                  "Australia's Trusted Comparison Platform",
+                                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                                    color: AppTheme.primaryBlue,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 24),
+                        SlideFadeTransition(
+                          delay: 200,
+                          child: Text(
+                            "Stop overpaying on\nyour household bills.",
+                            textAlign: isDesktop ? TextAlign.start : TextAlign.center,
+                            style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                              fontSize: isDesktop ? 56 : 40,
+                              height: 1.1,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 24),
+                        SlideFadeTransition(
+                          delay: 400,
+                          child: Text(
+                            "Compare electricity, gas, internet, and insurance in minutes. \nReal savings, zero hassle.",
+                            textAlign: isDesktop ? TextAlign.start : TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              fontSize: 18,
+                              color: const Color(0xFF475467),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 40),
+                        SlideFadeTransition(
+                          delay: 600,
+                          child: Wrap(
+                            spacing: 16,
+                            runSpacing: 16,
+                            alignment: isDesktop ? WrapAlignment.start : WrapAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                onPressed: () => context.go('/deals/electricity'),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: AppTheme.accentOrange,
+                                  foregroundColor: Colors.white,
+                                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                  shadowColor: AppTheme.accentOrange.withOpacity(0.4),
+                                  elevation: 8,
+                                ),
+                                child: const Text("Start Comparing"),
+                              ),
+                              OutlinedButton(
+                                onPressed: () => context.go('/registration'),
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: AppTheme.deepNavy,
+                                  side: const BorderSide(color: Color(0xFFD0D5DD)),
+                                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                ),
+                                child: const Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.upload_file, size: 20),
+                                    SizedBox(width: 8),
+                                    Text("Upload Bill"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 32),
+                        SlideFadeTransition(
+                          delay: 800,
+                          child: Row(
+                            mainAxisAlignment: isDesktop ? MainAxisAlignment.start : MainAxisAlignment.center,
+                            children: [
+                              _buildTrustBadge(Icons.star, "4.9/5 Rating"),
+                              const SizedBox(width: 24),
+                              _buildTrustBadge(Icons.shield_outlined, "100% Secure"),
+                              const SizedBox(width: 24),
+                              _buildTrustBadge(Icons.people_outline, "10k+ Users"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(height: 32),
-                
-                postsAsync.when(
-                  data: (posts) => BlogMultiCarousel(posts: posts), // Use the new auto-scrolling carousel
-                  loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
-                  error: (err, stack) => const Text('Failed to load insights', style: TextStyle(color: Colors.black54)),
-                ),
-              ],
-            ),
+                  if (isDesktop) const SizedBox(width: 60),
+                  // Right Image/Visual
+                  if (isDesktop)
+                    Expanded(
+                      flex: 4,
+                      child: SlideFadeTransition(
+                        delay: 400,
+                        offset: const Offset(0.2, 0),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              height: 500,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(32),
+                                image: const DecorationImage(
+                                  image: AssetImage('assets/images/hero_finance.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.1),
+                                    blurRadius: 40,
+                                    offset: const Offset(0, 20),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            // Floating Card
+                            Positioned(
+                              bottom: 40,
+                              left: -40,
+                              child: Container(
+                                padding: const EdgeInsets.all(20),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 20,
+                                      offset: const Offset(0, 10),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: AppTheme.vibrantEmerald.withOpacity(0.1),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: const Icon(Icons.savings, color: AppTheme.vibrantEmerald),
+                                    ),
+                                    const SizedBox(width: 16),
+                                    const Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Average Savings",
+                                          style: TextStyle(color: Color(0xFF667085), fontSize: 12),
+                                        ),
+                                        Text(
+                                          "$320 / year",
+                                          style: TextStyle(
+                                            color: AppTheme.deepNavy,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildTrustBadge(IconData icon, String text) {
+    return Row(
+      children: [
+        Icon(icon, color: Colors.amber, size: 20),
+        const SizedBox(width: 8),
+        Text(
+          text,
+          style: const TextStyle(
+            fontWeight: FontWeight.w600,
+            color: AppTheme.deepNavy,
+          ),
+        ),
+      ],
     );
   }
 
   Widget _buildCategorySection(BuildContext context) {
     return Container(
       color: AppTheme.offWhite,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 60),
-      child: SlideFadeTransition(
-        delay: 200,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1000),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Text(
-                  'What would you like to compare?',
-                  style: TextStyle(
-                    color: AppTheme.deepNavy,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Explore Categories",
+                style: TextStyle(
+                  color: AppTheme.primaryBlue,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  letterSpacing: 1.2,
                 ),
-                const SizedBox(height: 32),
-                // Main category tabs/buttons
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: _MainCategory.values.map((category) {
-                      final isSelected = _selectedMainCategory == category;
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: ChoiceChip(
-                          label: Text(_getMainCategoryName(category)),
-                          selected: isSelected,
-                          onSelected: (selected) {
-                            if (selected) {
-                              setState(() {
-                                _selectedMainCategory = category;
-                              });
-                            }
-                          },
-                          selectedColor: AppTheme.vibrantEmerald,
-                          backgroundColor: Colors.black12,
-                          labelStyle: TextStyle(
-                            color: isSelected ? AppTheme.deepNavy : AppTheme.deepNavy,
+              ),
+              const SizedBox(height: 12),
+              Text(
+                "Everything you need to save",
+                style: Theme.of(context).textTheme.displayMedium?.copyWith(fontSize: 32),
+              ),
+              const SizedBox(height: 48),
+              
+              // Custom Tab/Pill Selector
+              Container(
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(color: const Color(0xFFEAECF0)),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: _MainCategory.values.map((category) {
+                    final isSelected = _selectedMainCategory == category;
+                    return InkWell(
+                      onTap: () => setState(() => _selectedMainCategory = category),
+                      borderRadius: BorderRadius.circular(100),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: isSelected ? AppTheme.deepNavy : Colors.transparent,
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        child: Text(
+                          _getMainCategoryName(category),
+                          style: TextStyle(
+                            color: isSelected ? Colors.white : const Color(0xFF667085),
                             fontWeight: FontWeight.bold,
                           ),
-                          side: BorderSide.none,
                         ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                const SizedBox(height: 32),
-                LayoutBuilder(
-                  builder: (context, constraints) {
-                    return Wrap(
-                      spacing: 20,
-                      runSpacing: 20,
-                      children: _buildSubCategoryCards(context, _selectedMainCategory),
+                      ),
                     );
-                  },
+                  }).toList(),
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 48),
+              
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  return Wrap(
+                    spacing: 24,
+                    runSpacing: 24,
+                    alignment: WrapAlignment.center,
+                    children: _buildSubCategoryCards(context, _selectedMainCategory),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 
+  Widget _buildValueProps(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            children: [
+              Text(
+                "Why choose SaveNest?",
+                style: Theme.of(context).textTheme.displayMedium?.copyWith(fontSize: 32),
+              ),
+              const SizedBox(height: 60),
+              Wrap(
+                spacing: 40,
+                runSpacing: 40,
+                alignment: WrapAlignment.center,
+                children: [
+                  _valuePropItem(Icons.bolt, "Instant Comparison", "Compare hundreds of plans in seconds with our advanced engine."),
+                  _valuePropItem(Icons.lock_outline, "Data Secure", "Your data is encrypted and never sold to spammers."),
+                  _valuePropItem(Icons.thumb_up_alt_outlined, "100% Free", "Our service is free for you. We get paid by providers."),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _valuePropItem(IconData icon, String title, String desc) {
+    return SizedBox(
+      width: 300,
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: AppTheme.primaryBlue.withOpacity(0.1),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(icon, color: AppTheme.primaryBlue, size: 32),
+          ),
+          const SizedBox(height: 20),
+          Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.deepNavy)),
+          const SizedBox(height: 12),
+          Text(desc, textAlign: TextAlign.center, style: const TextStyle(color: Color(0xFF667085), height: 1.5)),
+        ],
+      ),
+    );
+  }
+
   String _getMainCategoryName(_MainCategory category) {
     switch (category) {
-      case _MainCategory.utilities:
-        return 'Utilities';
-      case _MainCategory.insurance:
-        return 'Insurance';
-      case _MainCategory.financialProducts:
-        return 'Financial Products';
+      case _MainCategory.utilities: return 'Utilities';
+      case _MainCategory.insurance: return 'Insurance';
+      case _MainCategory.financialProducts: return 'Finance';
     }
   }
 
@@ -415,37 +457,45 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         ];
       case _MainCategory.insurance:
         return [
-          _categoryCard(context, 'General Insurance', Icons.shield, Colors.purple, '/deals/insurance'),
-          _categoryCard(context, 'Health Insurance', Icons.medical_services, Colors.pink, '/deals/insurance/health'),
-          _categoryCard(context, 'Car Insurance', Icons.directions_car, Colors.indigo, '/deals/insurance/car'),
-          // Add other insurance types as needed, e.g., Home Insurance, Life Insurance
+          _categoryCard(context, 'General', Icons.shield, Colors.purple, '/deals/insurance'),
+          _categoryCard(context, 'Health', Icons.medical_services, Colors.pink, '/deals/insurance/health'),
+          _categoryCard(context, 'Car', Icons.directions_car, Colors.indigo, '/deals/insurance/car'),
         ];
       case _MainCategory.financialProducts:
         return [
           _categoryCard(context, 'Credit Cards', Icons.credit_card, Colors.orangeAccent, '/deals/credit-cards'),
           _categoryCard(context, 'Home Loans', Icons.home_work, Colors.brown, '/loans/home'),
-          // Add other financial products as needed
         ];
     }
   }
 
   Widget _categoryCard(BuildContext context, String title, IconData icon, Color color, String route) {
     return InkWell(
-      onTap: () {
-        GoRouter.of(context).go(route);
-      },
-      child: GlassContainer(
-        width: 150,
-        height: 170,
-        borderRadius: 16,
-        padding: const EdgeInsets.all(16),
+      onTap: () => GoRouter.of(context).go(route),
+      borderRadius: BorderRadius.circular(24),
+      child: Container(
+        width: 160,
+        height: 180,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(color: const Color(0xFFEAECF0)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.2),
+                color: color.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: color, size: 32),
@@ -457,7 +507,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
               style: const TextStyle(
                 color: AppTheme.deepNavy,
                 fontWeight: FontWeight.bold,
-                fontSize: 14,
+                fontSize: 16,
               ),
             ),
           ],
@@ -466,92 +516,110 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     );
   }
 
-  Widget _buildHowItWorksSection(BuildContext context) {
+  Widget _buildBlogSection(BuildContext context) { // ref is directly available as this.ref
+    final postsAsync = ref.watch(blogPostsProvider);
+
     return Container(
-      color: Colors.white,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
-      child: SlideFadeTransition(
-        delay: 600,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1000),
-            child: Column(
-              children: [
-                const Text(
-                  'How SaveNest Works',
-                  style: TextStyle(
-                    color: AppTheme.deepNavy,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
+      color: AppTheme.offWhite,
+      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Latest Insights',
+                style: TextStyle(
+                  color: AppTheme.deepNavy,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
                 ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Our mission is to empower Australians to make smarter financial decisions by simplifying the complex world of utilities and financial products. We provide clear, independent guidance to help you find the best value and save money.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black54,
-                    fontSize: 18,
-                    height: 1.5,
-                  ),
-                ),
-                const SizedBox(height: 60),
-                Wrap(
-                  spacing: 40,
-                  runSpacing: 40,
-                  alignment: WrapAlignment.center,
-                  children: [
-                    _stepItem(
-                      '1. Tell Us Your Needs',
-                      'Share some basic details about your current plans and what you\'re looking for. It\'s quick and easy!',
-                      Icons.edit_note,
-                    ),
-                    _stepItem(
-                      '2. Compare Options',
-                      'Our smart engine instantly scans market offers to find you personalized, better deals.',
-                      Icons.analytics_outlined,
-                    ),
-                    _stepItem(
-                      '3. Switch & Save',
-                      'Found a better deal? Switch effortlessly. We help you with the paperwork and process.',
-                      Icons.savings_outlined,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 32),
+              
+              postsAsync.when(
+                data: (posts) => BlogMultiCarousel(posts: posts), // Use the new auto-scrolling carousel
+                loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
+                error: (err, stack) => const Text('Failed to load insights', style: TextStyle(color: Colors.black54)),
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 
-  Widget _stepItem(String title, String desc, IconData icon) {
-    return SizedBox(
-      width: 280,
-      child: Column(
-        children: [
-          Icon(icon, color: AppTheme.vibrantEmerald, size: 48),
-          const SizedBox(height: 24),
-          Text(
-            title,
-            style: const TextStyle(
-              color: AppTheme.deepNavy,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+  Widget _buildTestimonialsSection(BuildContext context) {
+    return Container(
+      color: AppTheme.deepNavy, // Dark contrast for testimonials
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 100),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            children: [
+              const Text(
+                "Don't just take our word for it",
+                style: TextStyle(color: AppTheme.vibrantEmerald, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                "Trusted by thousands of Aussies",
+                style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 60),
+              SizedBox(
+                height: 280,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _testimonials.length,
+                  itemBuilder: (context, index) {
+                    final t = _testimonials[index];
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 24.0),
+                      child: Container(
+                        width: 320,
+                        padding: const EdgeInsets.all(32),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF1D2939), // Slightly lighter navy
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: List.generate(5, (i) => const Icon(Icons.star, color: Colors.amber, size: 16)),
+                            ),
+                            const SizedBox(height: 16),
+                            Expanded(
+                              child: Text(
+                                '"${t.quote}"',
+                                style: const TextStyle(color: Colors.white, fontSize: 16, height: 1.5),
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: AppTheme.primaryBlue,
+                                  radius: 16,
+                                  child: Text(t.author[0], style: const TextStyle(color: Colors.white)),
+                                ),
+                                const SizedBox(width: 12),
+                                Text(t.author, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-          const SizedBox(height: 12),
-          Text(
-            desc,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.black54,
-              fontSize: 16,
-              height: 1.5,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -607,86 +675,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         child: Text(
           text,
           style: const TextStyle(color: Colors.black38, fontSize: 12),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTestimonialsSection(BuildContext context) {
-    return Container(
-      color: AppTheme.offWhite, 
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
-      child: SlideFadeTransition(
-        delay: 800,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1000),
-            child: Column(
-              children: [
-                const Text(
-                  'What Our Customers Say',
-                  style: TextStyle(
-                    color: AppTheme.deepNavy, 
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 40),
-                SizedBox(
-                  height: 300, 
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: _testimonials.length,
-                    itemBuilder: (context, index) {
-                      final testimonial = _testimonials[index];
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                        child: SizedBox(
-                          width: 300, 
-                          child: Card(
-                            color: Colors.white,
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.format_quote, color: AppTheme.vibrantEmerald.withOpacity(0.7), size: 36),
-                                  const SizedBox(height: 12),
-                                  Text(
-                                    testimonial.quote,
-                                    style: const TextStyle(
-                                      color: AppTheme.deepNavy,
-                                      fontSize: 16,
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    maxLines: 4,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  const SizedBox(height: 12),
-                                  Text(
-                                    '- ${testimonial.author}',
-                                    style: const TextStyle(
-                                      color: AppTheme.deepNavy,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );

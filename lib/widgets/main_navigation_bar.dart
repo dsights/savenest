@@ -97,11 +97,14 @@ class MainNavigationBar extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () => context.go('/savings'),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppTheme.vibrantEmerald,
-                        foregroundColor: AppTheme.deepNavy,
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-                        elevation: 4,
-                        shadowColor: AppTheme.vibrantEmerald.withOpacity(0.4),
+                        backgroundColor: AppTheme.accentOrange,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                        elevation: 0,
+                        shadowColor: AppTheme.accentOrange.withOpacity(0.4),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
                       ),
                       child: const Row(
                         mainAxisSize: MainAxisSize.min,

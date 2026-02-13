@@ -100,68 +100,98 @@ class ComparisonController extends StateNotifier<ComparisonState> {
 
     final lowerQuery = query.toLowerCase();
     
-    // 1. Detect Intents
+    // 1. Detect Intent Flags
     bool sortPriceAsc = lowerQuery.contains('cheap') || 
                         lowerQuery.contains('lowest') || 
                         lowerQuery.contains('budget') ||
-                        lowerQuery.contains('price');
+                        lowerQuery.contains('price') ||
+                        lowerQuery.contains('saver');
                         
     bool sortRatingDesc = lowerQuery.contains('best') || 
                           lowerQuery.contains('top') || 
                           lowerQuery.contains('rating') || 
-                          lowerQuery.contains('service');
+                          lowerQuery.contains('premium') ||
+                          lowerQuery.contains('quality');
 
     bool filterGreen = lowerQuery.contains('green') || 
                        lowerQuery.contains('solar') || 
                        lowerQuery.contains('eco') ||
                        lowerQuery.contains('renewable');
 
-    // 2. Filter
+    bool intentUnlimited = lowerQuery.contains('unlimited') || lowerQuery.contains('infinite');
+    bool intentFast = lowerQuery.contains('fast') || lowerQuery.contains('speed') || lowerQuery.contains('high speed');
+    
+    // Detect Location (States)
+    final states = ['nsw', 'vic', 'qld', 'sa', 'wa', 'act', 'tas', 'nt'];
+    String? targetState;
+    for (var s in states) {
+      if (lowerQuery.contains(RegExp(r'\b' + s + r'\b'))) {
+        targetState = s;
+        break;
+      }
+    }
+
+    // 2. Filter Logic
     List<Deal> filtered = _allDeals.where((deal) {
-      // Intent Filters
+      // Location Filter (if deal has state info in description or tags - currently checking description)
+      if (targetState != null) {
+        bool matchesState = deal.description.toLowerCase().contains(targetState!) || 
+                           deal.planName.toLowerCase().contains(targetState!) ||
+                           deal.keyFeatures.any((f) => f.toLowerCase().contains(targetState!));
+        if (!matchesState) return false;
+      }
+
+      // Feature Intents
       if (filterGreen && !deal.isGreen) return false;
+      if (intentUnlimited && !deal.description.toLowerCase().contains('unlimited') && !deal.planName.toLowerCase().contains('unlimited')) {
+        if (!deal.keyFeatures.any((f) => f.toLowerCase().contains('unlimited'))) return false;
+      }
       
       // Clean query for text matching
       String tempQuery = lowerQuery;
       
-      // Remove explicit intent keywords
+      // Remove intent keywords to avoid matching them as provider names
       final intents = [
-        'cheapest', 'cheap', 'lowest', 'budget', 'price', 
-        'best', 'top', 'rating', 'service', 
-        'green', 'solar', 'eco', 'renewable'
+        'cheapest', 'cheap', 'lowest', 'budget', 'price', 'saver',
+        'best', 'top', 'rating', 'premium', 'quality',
+        'green', 'solar', 'eco', 'renewable',
+        'unlimited', 'infinite', 'fast', 'speed', 'high speed',
+        ...states
       ];
       for (var intent in intents) {
-        tempQuery = tempQuery.replaceAll(intent, '');
+        tempQuery = tempQuery.replaceAll(RegExp(r'\b' + intent + r'\b'), '');
       }
 
-      // Remove natural language stop words
+      // Remove stop words
       final stopWords = [
         'i', 'want', 'need', 'show', 'me', 'find', 'get', 
-        'the', 'a', 'an', 'for', 'with', 'in', 'of', 
+        'the', 'a', 'an', 'for', 'with', 'in', 'of', 'and',
         'plan', 'plans', 'deal', 'deals', 'offer', 'offers', 
         'card', 'cards', 'provider', 'providers'
       ];
       
       for (var word in stopWords) {
-        // Use word boundary to avoid replacing parts of provider names
         tempQuery = tempQuery.replaceAll(RegExp(r'\b' + RegExp.escape(word) + r'\b'), '');
       }
       
-      // Clean up multiple spaces
       String cleanQuery = tempQuery.replaceAll(RegExp(r'\s+'), ' ').trim();
 
-      if (cleanQuery.isEmpty) return true; // Only intents provided
+      if (cleanQuery.isEmpty) return true; // Matches all intents
 
+      // Direct text matching on remaining specific terms (like provider names)
       return deal.providerName.toLowerCase().contains(cleanQuery) ||
              deal.planName.toLowerCase().contains(cleanQuery) ||
              deal.keyFeatures.any((f) => f.toLowerCase().contains(cleanQuery));
     }).toList();
 
-    // 3. Sort
+    // 3. Smart Sorting
     if (sortPriceAsc) {
       filtered.sort((a, b) => a.price.compareTo(b.price));
     } else if (sortRatingDesc) {
       filtered.sort((a, b) => b.rating.compareTo(a.rating));
+    } else if (intentFast && state.selectedCategory == ProductCategory.internet) {
+      // Sort by assumed speed if internet (this is a heuristic based on price/name for this mockup)
+      filtered.sort((a, b) => b.price.compareTo(a.price)); 
     } else {
       _defaultSort(filtered);
     }

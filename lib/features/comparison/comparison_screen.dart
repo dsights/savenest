@@ -163,17 +163,22 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     }
 
     String searchHint;
+    List<String> suggestions = ['cheap', 'best', 'nsw', 'vic', 'qld'];
+    
     switch (selectedCat) {
       case ProductCategory.electricity:
       case ProductCategory.gas:
-        searchHint = 'Try "cheapest", "green energy", "Origin"...';
+        searchHint = 'Try "nsw cheap", "solar", "Origin"...';
+        suggestions.addAll(['solar', 'green', 'sa', 'wa']);
         break;
       case ProductCategory.internet:
       case ProductCategory.mobile:
-        searchHint = 'Try "unlimited data", "cheapest", "Telstra"...';
+        searchHint = 'Try "fast unlimited", "nbn 100", "Telstra"...';
+        suggestions.addAll(['fast', 'unlimited', '5g', 'nbn 100']);
         break;
       case ProductCategory.creditCards:
-        searchHint = 'Try "no fee", "Qantas", "business cards"...';
+        searchHint = 'Try "no fee", "Qantas", "business"...';
+        suggestions = ['no fee', 'rewards', 'qantas', 'business', 'low rate'];
         break;
       default:
         searchHint = 'Search providers, features...';
@@ -222,6 +227,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                               child: SearchBarWidget(
                                 onChanged: (value) => controller.search(value),
                                 hintText: searchHint,
+                                suggestions: suggestions,
                               ),
                             ),
                           ],

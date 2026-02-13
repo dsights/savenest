@@ -105,155 +105,211 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     return Stack(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(20),
             border: Border.all(
               color: widget.isBestValue ? AppTheme.vibrantEmerald : (_isHovered ? AppTheme.accentOrange.withOpacity(0.5) : const Color(0xFFEAECF0)),
               width: widget.isBestValue || _isHovered ? 2 : 1,
             ),
             boxShadow: [
               BoxShadow(
-                color: _isHovered ? Colors.black.withOpacity(0.1) : Colors.black.withOpacity(0.05),
-                blurRadius: _isHovered ? 16 : 8,
-                offset: _isHovered ? const Offset(0, 8) : const Offset(0, 4),
+                color: _isHovered ? Colors.black.withOpacity(0.12) : Colors.black.withOpacity(0.06),
+                blurRadius: _isHovered ? 20 : 10,
+                offset: _isHovered ? const Offset(0, 10) : const Offset(0, 5),
               ),
             ],
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // Header: Logo & Rating
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildLogo(),
-                  if (widget.deal.rating > 0)
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: Colors.amber.shade50,
-                        borderRadius: BorderRadius.circular(100),
-                        border: Border.all(color: Colors.amber.shade200),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.star, color: Colors.amber, size: 10),
-                          const SizedBox(width: 2),
-                          Text(
-                            widget.deal.rating.toString(),
-                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10, color: AppTheme.deepNavy),
-                          ),
-                        ],
-                      ),
-                    ),
-                ],
-              ),
-              
-              const SizedBox(height: 4),
-
-              // Middle: Info
-              Column(
-                children: [
-                  Text(
-                    widget.deal.providerName.toUpperCase(),
-                    style: const TextStyle(
-                      fontSize: 8, 
-                      color: AppTheme.primaryBlue, 
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1.0,
-                    ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Stack(
+              children: [
+                // Background Watermark Icon
+                Positioned(
+                  right: -10,
+                  bottom: -10,
+                  child: Icon(
+                    _getCategoryIcon(widget.deal.category),
+                    size: 80,
+                    color: AppTheme.deepNavy.withOpacity(0.03),
                   ),
-                  const SizedBox(height: 2),
-                  Text(
-                    widget.deal.planName,
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w800,
-                      color: AppTheme.deepNavy,
-                      height: 1.1,
-                    ),
-                  ),
-                ],
-              ),
-
-              const Spacer(),
-
-              // Bottom: Price
-              Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: AppTheme.offWhite,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        children: [
-                          if (widget.deal.category != ProductCategory.electricity && widget.deal.category != ProductCategory.gas)
-                            const TextSpan(
-                              text: '\$',
-                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
-                            ),
-                          TextSpan(
-                            text: widget.deal.price > 0 
-                                ? (widget.deal.price % 1 == 0 ? widget.deal.price.toStringAsFixed(0) : widget.deal.price.toStringAsFixed(2))
-                                : 'Check',
-                            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: AppTheme.deepNavy, letterSpacing: -0.5),
-                          ),
-                          TextSpan(
-                            text: ' / ${widget.deal.priceUnit}',
-                            style: const TextStyle(fontSize: 9, color: AppTheme.slate600, fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: _isHovered ? AppTheme.accentOrange : AppTheme.primaryBlue.withOpacity(0.08),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Header: Logo & Rating
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'VIEW DETAILS',
-                          style: TextStyle(
-                            fontSize: 9, 
-                            color: _isHovered ? Colors.white : AppTheme.primaryBlue, 
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 0.5,
+                        _buildLogo(),
+                        if (widget.deal.rating > 0)
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.amber.shade50,
+                              borderRadius: BorderRadius.circular(100),
+                              border: Border.all(color: Colors.amber.shade200),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.star, color: Colors.amber, size: 12),
+                                const SizedBox(width: 4),
+                                Text(
+                                  widget.deal.rating.toString(),
+                                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: AppTheme.deepNavy),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
+                    
+                    const SizedBox(height: 12),
+
+                    // Middle: Info
+                    Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                          decoration: BoxDecoration(
+                            color: widget.deal.providerColor.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(
+                            widget.deal.providerName.toUpperCase(),
+                            style: TextStyle(
+                              fontSize: 9, 
+                              color: widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : widget.deal.providerColor, 
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 0.5,
+                            ),
                           ),
                         ),
-                        const SizedBox(width: 4),
-                        Icon(
-                          Icons.arrow_forward_ios, 
-                          size: 8, 
-                          color: _isHovered ? Colors.white : AppTheme.primaryBlue,
+                        const SizedBox(height: 6),
+                        Text(
+                          widget.deal.planName,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w800,
+                            color: AppTheme.deepNavy,
+                            height: 1.2,
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-            ],
+
+                    const Spacer(),
+
+                    // Bottom: Price
+                    Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: AppTheme.offWhite,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(
+                              children: [
+                                if (widget.deal.category != ProductCategory.electricity && widget.deal.category != ProductCategory.gas)
+                                  const TextSpan(
+                                    text: '\$',
+                                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
+                                  ),
+                                TextSpan(
+                                  text: widget.deal.price > 0 
+                                      ? (widget.deal.price % 1 == 0 ? widget.deal.price.toStringAsFixed(0) : widget.deal.price.toStringAsFixed(2))
+                                      : 'Check',
+                                  style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900, color: AppTheme.deepNavy, letterSpacing: -0.5),
+                                ),
+                                TextSpan(
+                                  text: ' / ${widget.deal.priceUnit}',
+                                  style: const TextStyle(fontSize: 10, color: AppTheme.slate600, fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: _isHovered ? AppTheme.accentOrange : AppTheme.primaryBlue.withOpacity(0.08),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                'VIEW DETAILS',
+                                style: TextStyle(
+                                  fontSize: 10, 
+                                  color: _isHovered ? Colors.white : AppTheme.primaryBlue, 
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                              const SizedBox(width: 6),
+                              Icon(
+                                Icons.arrow_forward_ios, 
+                                size: 10, 
+                                color: _isHovered ? Colors.white : AppTheme.primaryBlue,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        // Top Color Accent Bar
+        Positioned(
+          top: 0,
+          left: 20,
+          right: 20,
+          child: Container(
+            height: 4,
+            decoration: BoxDecoration(
+              color: widget.deal.providerColor,
+              borderRadius: const BorderRadius.vertical(bottom: Radius.circular(4)),
+            ),
           ),
         ),
         if (widget.isBestValue) _buildBadge('BEST VALUE', AppTheme.vibrantEmerald, Colors.white),
         if (widget.deal.isSponsored && !widget.isBestValue) _buildBadge('SPONSORED', AppTheme.deepNavy, Colors.white),
       ],
     );
+  }
+
+  IconData _getCategoryIcon(ProductCategory category) {
+    switch (category) {
+      case ProductCategory.electricity:
+        return Icons.bolt;
+      case ProductCategory.gas:
+        return Icons.local_fire_department;
+      case ProductCategory.internet:
+        return Icons.wifi;
+      case ProductCategory.mobile:
+        return Icons.phone_iphone;
+      case ProductCategory.insurance:
+        return Icons.shield;
+      case ProductCategory.creditCards:
+        return Icons.credit_card;
+      default:
+        return Icons.category;
+    }
   }
 
   Widget _buildLogo() {

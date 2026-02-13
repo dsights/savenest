@@ -151,8 +151,24 @@ class _HoverableServiceItem extends StatefulWidget {
   State<_HoverableServiceItem> createState() => _HoverableServiceItemState();
 }
 
-class _HoverableServiceItemState extends State<_HoverableServiceItem> {
+class _HoverableServiceItemState extends State<_HoverableServiceItem> with SingleTickerProviderStateMixin {
   bool _isHovered = false;
+  late AnimationController _pulseController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )..repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +178,7 @@ class _HoverableServiceItemState extends State<_HoverableServiceItem> {
       onTap: () => context.go(widget.route),
       onHover: (hover) => setState(() => _isHovered = hover),
       child: AnimatedScale(
-        scale: _isHovered ? 1.1 : 1.0,
+        scale: _isHovered ? 1.15 : 1.0,
         duration: const Duration(milliseconds: 200),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
@@ -174,18 +190,35 @@ class _HoverableServiceItemState extends State<_HoverableServiceItem> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: activeColor.withOpacity(0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  widget.icon,
-                  size: 22,
-                  color: activeColor,
-                ),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  if (widget.isSelected || _isHovered)
+                    FadeTransition(
+                      opacity: _pulseController,
+                      child: Container(
+                        width: 32,
+                        height: 32,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: activeColor.withOpacity(0.2),
+                        ),
+                      ),
+                    ),
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: activeColor.withOpacity(0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      widget.icon,
+                      size: 22,
+                      color: activeColor,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 6),
               Text(

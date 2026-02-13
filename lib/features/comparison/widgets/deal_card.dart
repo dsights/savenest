@@ -257,6 +257,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
   }
 
   Widget _buildLogo() {
+    final localAsset = _getLocalAssetPath(widget.deal.providerName);
     final logoUrl = widget.deal.providerLogoUrl;
     final isSvg = logoUrl.toLowerCase().endsWith('.svg');
 
@@ -277,19 +278,52 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
         border: Border.all(color: AppTheme.offWhite, width: 1.0),
       ),
       child: ClipOval(
-        child: isSvg
-            ? SvgPicture.network(
-                logoUrl,
-                fit: BoxFit.contain,
-                placeholderBuilder: (context) => _buildFallbackLogo(),
-              )
-            : Image.network(
-                logoUrl,
-                fit: BoxFit.contain,
-                errorBuilder: (context, error, stackTrace) => _buildFallbackLogo(),
-              ),
+        child: localAsset != null
+            ? Image.asset(localAsset, fit: BoxFit.contain, errorBuilder: (context, error, stackTrace) => _buildLogoFromUrl(logoUrl, isSvg))
+            : _buildLogoFromUrl(logoUrl, isSvg),
       ),
     );
+  }
+
+  Widget _buildLogoFromUrl(String logoUrl, bool isSvg) {
+    if (logoUrl.isEmpty) return _buildFallbackLogo();
+    
+    return isSvg
+        ? SvgPicture.network(
+            logoUrl,
+            fit: BoxFit.contain,
+            placeholderBuilder: (context) => _buildFallbackLogo(),
+          )
+        : Image.network(
+            logoUrl,
+            fit: BoxFit.contain,
+            errorBuilder: (context, error, stackTrace) => _buildFallbackLogo(),
+          );
+  }
+
+  String? _getLocalAssetPath(String providerName) {
+    final name = providerName.toLowerCase().replaceAll(' ', '');
+    
+    // Mapping of provider name fragments to asset filenames
+    if (name.contains('origin')) return 'assets/images/logos/origin_energy.png';
+    if (name.contains('energyaustralia')) return 'assets/images/logos/energyaustralia.jpg';
+    if (name.contains('agl')) return 'assets/images/logos/agl.png';
+    if (name.contains('ovo')) return 'assets/images/logos/ovo_energy.png';
+    if (name.contains('globird')) return 'assets/images/logos/globird_energy.png';
+    if (name.contains('amber')) return 'assets/images/logos/amber_electric.jpg';
+    if (name.contains('dodo')) return 'assets/images/logos/dodo.png';
+    if (name.contains('telstra')) return 'assets/images/logos/anz.png'; // Example fallback if missing, but let's check
+    if (name.contains('kogan')) return 'assets/images/logos/kogan.png';
+    if (name.contains('woolworths')) return 'assets/images/logos/woolworths.png';
+    if (name.contains('suncorp')) return 'assets/images/logos/suncorp.png';
+    if (name.contains('westpac')) return 'assets/images/logos/westpac.png';
+    if (name.contains('anz')) return 'assets/images/logos/anz.png';
+    if (name.contains('cba')) return 'assets/images/logos/cba.png';
+    if (name.contains('nab')) return 'assets/images/logos/nab.jpg';
+    if (name.contains('airwallex')) return 'assets/images/logos/airwallex.png';
+    if (name.contains('volopay')) return 'assets/images/logos/volopay.png';
+    
+    return null;
   }
 
   Widget _buildFallbackLogo() {

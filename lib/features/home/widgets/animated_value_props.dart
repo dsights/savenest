@@ -8,7 +8,7 @@ class AnimatedValueProps extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppTheme.offWhite,
-      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 24),
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1200),
@@ -18,20 +18,20 @@ class AnimatedValueProps extends StatelessWidget {
                 "Why choose SaveNest?",
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  fontSize: 32,
+                  fontSize: 28,
                   color: AppTheme.deepNavy,
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               Container(
-                width: 60,
+                width: 50,
                 height: 3,
                 decoration: BoxDecoration(
                   color: AppTheme.accentOrange,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 32),
                               const Wrap(
                                 spacing: 40,
                                 runSpacing: 40,

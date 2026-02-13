@@ -16,8 +16,8 @@ class MiniSavingsCalculator extends ConsumerWidget {
     final controller = ref.read(savingsControllerProvider.notifier);
 
     return GlassContainer(
-      borderRadius: 16,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      borderRadius: 12,
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -26,15 +26,15 @@ class MiniSavingsCalculator extends ConsumerWidget {
             'Savings Estimate',
             style: TextStyle(
               color: AppTheme.deepNavy,
-              fontSize: 14,
+              fontSize: 13,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 6),
           
           _miniSlider(
             context,
-            label: 'Electricity',
+            label: 'Elec',
             icon: Icons.bolt,
             value: utilityCosts.electricity,
             max: 600,
@@ -58,14 +58,14 @@ class MiniSavingsCalculator extends ConsumerWidget {
           ),
           _miniSlider(
             context,
-            label: 'Mobile',
+            label: 'Mob',
             icon: Icons.phone_iphone,
             value: utilityCosts.mobile,
             max: 150,
             onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
           ),
 
-          const Divider(height: 12),
+          const Divider(height: 8),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,7 +74,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 'Savings:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 12,
+                  fontSize: 11,
                   color: AppTheme.deepNavy,
                 ),
               ),
@@ -83,24 +83,24 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 prefix: '\$',
                 style: const TextStyle(
                   color: AppTheme.vibrantEmerald,
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 6),
           SizedBox(
             width: double.infinity,
-            height: 32,
+            height: 28,
             child: ElevatedButton(
               onPressed: () => context.push('/register'),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 backgroundColor: AppTheme.accentOrange,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
               ),
-              child: const Text('START SAVING', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+              child: const Text('START SAVING', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
             ),
           ),
         ],
@@ -116,41 +116,38 @@ class MiniSavingsCalculator extends ConsumerWidget {
     required double max,
     required Function(double) onChanged,
   }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 2.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Icon(icon, size: 10, color: AppTheme.primaryBlue),
-                  const SizedBox(width: 4),
-                  Text(label, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600)),
-                ],
-              ),
-              Text('\$${value.toInt()}', style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
-            ],
-          ),
-          SliderTheme(
-            data: SliderTheme.of(context).copyWith(
-              trackHeight: 1.5,
-              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 4),
-              overlayShape: const RoundSliderOverlayShape(overlayRadius: 8),
-              activeTrackColor: AppTheme.vibrantEmerald,
-              inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
-              thumbColor: AppTheme.accentOrange,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Icon(icon, size: 9, color: AppTheme.primaryBlue),
+                const SizedBox(width: 2),
+                Text(label, style: const TextStyle(fontSize: 9, fontWeight: FontWeight.w600)),
+              ],
             ),
-            child: Slider(
-              value: value,
-              max: max,
-              onChanged: onChanged,
-            ),
+            Text('\$${value.toInt()}', style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
+          ],
+        ),
+        SliderTheme(
+          data: SliderTheme.of(context).copyWith(
+            trackHeight: 1.0,
+            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 3),
+            overlayShape: const RoundSliderOverlayShape(overlayRadius: 6),
+            activeTrackColor: AppTheme.vibrantEmerald,
+            inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
+            thumbColor: AppTheme.accentOrange,
           ),
-        ],
-      ),
+          child: Slider(
+            value: value,
+            max: max,
+            onChanged: onChanged,
+          ),
+        ),
+      ],
     );
   }
 }

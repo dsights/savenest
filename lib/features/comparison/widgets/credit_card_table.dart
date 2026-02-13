@@ -117,87 +117,60 @@ class _CreditCardTableState extends State<CreditCardTable> {
   }
 
   Widget _buildIssuerCell(CreditCardDeal deal, double width) {
-    // Generate potential filename from issuer name
-    // e.g. "Teachers Mutual" -> "teachers_mutual"
-    // Try .png first, then .ico (Flutter handles both via Image.asset but we need to know what we have)
-    // Since we don't know exactly what downloaded successfully without checking file existence (which is async or requires loading), 
-    // and we have a mix of .ico and .png, we can try to guess or use a smarter Image provider that tries one then the other?
-    // Or just use the SafeName logic we used in the script.
-    
-    final safeName = deal.issuer.toLowerCase().replaceAll(' ', '_').replaceAll('&', 'and');
-    // Note: We downloaded some as .png and some as .ico.
-    // Ideally we would standardize. For now, let's try to load .png, if fails (visually), fallback?
-    // Actually, `Image.asset` will throw if not found in manifest? No, it just won't show.
-    // But we added `assets/images/logos/` to pubspec, so all files in there are included.
-    
-    // We can't easily check "if asset exists" synchronously in build without loading Manifest.
-    // So we will try to rely on the fact that we downloaded most of them.
-    // Let's assume .png for the google ones and .ico for the originals.
-    // The script logic was: if url ends in .png -> .png, else .ico.
-    // AND the google favicon script saved as .png.
-    
-    // Most manually downloaded are .ico (first script)
-    // Most missing ones (second script) are .png.
-    
-    // Heuristic:
-    // Teachers Mutual -> .png
-    // St George -> .png
-    // IMB -> .png
-    // BankSA -> .png
-    // DiviPay -> .png
-    // P&N -> .png
-    // Newcastle -> .png
-    // Bank of Melb -> .png
-    // Judo -> .png
-    // HSBC -> .png
-    //
-    // Amex -> .ico
-    // ANZ -> .ico
-    // Bankwest -> .ico
-    // CBA -> .ico
-    // Citibank -> .ico
-    // Coles -> .ico
-    // Great Southern -> .ico
-    // Kogan -> .ico
-    // MyState -> .ico
-    // Police -> .ico
-    // Suncorp -> .ico
-    // Virgin -> .ico
-    // Westpac -> .ico
-    // Woolworths -> .ico
-    // Airwallex -> .ico
-    
-    String assetPath;
-    final pngIssuers = [
-      'teachers_mutual', 'st_george', 'imb_bank', 'banksa', 'divipay', 'p_and_n_bank',
-      'newcastle_permanent', 'bank_of_melbourne', 'judo_bank', 'hsbc'
-    ];
-    
-    if (pngIssuers.contains(safeName)) {
-      assetPath = 'assets/images/logos/$safeName.png';
-    } else {
-      assetPath = 'assets/images/logos/$safeName.ico';
-    }
+    final localAsset = _getLocalAssetPath(deal.issuer);
 
     return Container(
       width: width,
       padding: const EdgeInsets.all(8.0),
       alignment: Alignment.center,
-      child: Image.asset(
-        assetPath,
-        width: 40,
-        height: 40,
-        fit: BoxFit.contain,
-        errorBuilder: (context, error, stackTrace) {
-          // Fallback to text if asset missing
-          return Text(
-            deal.issuer,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: AppTheme.deepNavy),
-            textAlign: TextAlign.center,
-          );
-        },
-      ),
+      child: localAsset != null
+          ? Image.asset(
+              localAsset,
+              width: 40,
+              height: 40,
+              fit: BoxFit.contain,
+              errorBuilder: (context, error, stackTrace) => _buildFallbackText(deal.issuer),
+            )
+          : _buildFallbackText(deal.issuer),
     );
+  }
+
+  Widget _buildFallbackText(String issuer) {
+    return Text(
+      issuer,
+      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: AppTheme.deepNavy),
+      textAlign: TextAlign.center,
+    );
+  }
+
+  String? _getLocalAssetPath(String issuer) {
+    final name = issuer.toLowerCase().replaceAll(' ', '').replaceAll('&', 'and');
+    
+    if (name.contains('origin')) return 'assets/images/logos/origin_energy.png';
+    if (name.contains('energyaustralia')) return 'assets/images/logos/energyaustralia.jpg';
+    if (name.contains('agl')) return 'assets/images/logos/agl.png';
+    if (name.contains('ovo')) return 'assets/images/logos/ovo_energy.png';
+    if (name.contains('globird')) return 'assets/images/logos/globird_energy.png';
+    if (name.contains('amber')) return 'assets/images/logos/amber_electric.jpg';
+    if (name.contains('dodo')) return 'assets/images/logos/dodo.png';
+    if (name.contains('kogan')) return 'assets/images/logos/kogan.png';
+    if (name.contains('woolworths')) return 'assets/images/logos/woolworths.png';
+    if (name.contains('suncorp')) return 'assets/images/logos/suncorp.png';
+    if (name.contains('westpac')) return 'assets/images/logos/westpac.png';
+    if (name.contains('anz')) return 'assets/images/logos/anz.png';
+    if (name.contains('cba')) return 'assets/images/logos/cba.png';
+    if (name.contains('commonwealth')) return 'assets/images/logos/cba.png';
+    if (name.contains('nab')) return 'assets/images/logos/nab.jpg';
+    if (name.contains('airwallex')) return 'assets/images/logos/airwallex.png';
+    if (name.contains('volopay')) return 'assets/images/logos/volopay.png';
+    if (name.contains('stgeorge')) return 'assets/images/logos/st_george.png';
+    if (name.contains('hsbc')) return 'assets/images/logos/hsbc.png';
+    if (name.contains('bankwest')) return 'assets/images/logos/bankwest.ico';
+    if (name.contains('citibank')) return 'assets/images/logos/citibank.ico';
+    if (name.contains('amex')) return 'assets/images/logos/amex.ico';
+    if (name.contains('americanexpress')) return 'assets/images/logos/amex.ico';
+    
+    return null;
   }
 
   Widget _buildActionCell(CreditCardDeal deal, double width) {

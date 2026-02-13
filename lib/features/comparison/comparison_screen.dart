@@ -315,7 +315,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                                 physics: const NeverScrollableScrollPhysics(),
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: crossAxisCount,
-                                  childAspectRatio: 0.85,
+                                  childAspectRatio: 0.75, // Adjusted for better card fit
                                   mainAxisSpacing: 32,
                                   crossAxisSpacing: 32,
                                 ),

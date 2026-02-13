@@ -12,13 +12,26 @@ class JsonProductRepository implements ProductRepository {
   
   // Cache the data so we don't read the file every time
   Map<String, dynamic>? _cachedData;
+  Future<void>? _loadingFuture;
 
   Future<void> _loadData() async {
     if (_cachedData != null) return;
+    if (_loadingFuture != null) return _loadingFuture;
     
-    // In a real app, this would be: await http.get(Uri.parse('https://api.savenest.com/deals'));
-    final jsonString = await rootBundle.loadString('assets/data/products.json');
-    _cachedData = json.decode(jsonString);
+    _loadingFuture = _performLoad();
+    return _loadingFuture;
+  }
+
+  Future<void> _performLoad() async {
+    try {
+      final jsonString = await rootBundle.loadString('assets/data/products.json');
+      _cachedData = json.decode(jsonString);
+    } catch (e) {
+      debugPrint('Error loading product data: $e');
+      _cachedData = {};
+    } finally {
+      _loadingFuture = null;
+    }
   }
 
   @override
@@ -77,7 +90,7 @@ class JsonProductRepository implements ProductRepository {
 
   Color _parseColor(String colorString) {
     try {
-      String hexColor = colorString.replaceAll('#', '').replaceAll('0x', '');
+      String hexColor = colorString.toUpperCase().replaceAll('#', '').replaceAll('0X', '');
       if (hexColor.length == 6) {
         hexColor = 'FF$hexColor';
       }
@@ -91,13 +104,13 @@ class JsonProductRepository implements ProductRepository {
     return Deal(
       id: json['id'],
       category: category,
-      providerName: json['providerName'],
+      providerName: json['providerName'] ?? 'Unknown',
       providerLogoUrl: json['logoUrl'] ?? '',
       providerColor: _parseColor(json['providerColor'] ?? '0xFF000000'),
-      planName: json['planName'],
+      planName: json['planName'] ?? 'Standard Plan',
       description: json['description'] ?? '',
       keyFeatures: List<String>.from(json['keyFeatures'] ?? []),
-      price: (json['price'] as num).toDouble(),
+      price: (json['price'] as num?)?.toDouble() ?? 0.0,
       priceUnit: json['priceUnit'] ?? '/mo',
       affiliateUrl: json['affiliateUrl'] ?? '',
       commission: _parseCommission(json['commission'] ?? '0'),

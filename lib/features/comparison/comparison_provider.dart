@@ -47,12 +47,12 @@ class ComparisonController extends StateNotifier<ComparisonState> {
   List<Deal> _allDeals = [];
 
   ComparisonController(this._repository)
-      : super(ComparisonState(deals: [], isLoading: true)) {
-        // Load default category (Energy) on init
-        loadCategory(ProductCategory.electricity);
-      }
+      : super(ComparisonState(deals: [], isLoading: false));
 
   Future<void> loadCategory(ProductCategory category) async {
+    // If already selected and loaded, skip unless loading specifically requested
+    if (state.selectedCategory == category && state.deals.isNotEmpty && !state.isLoading) return;
+
     state = state.copyWith(isLoading: true, selectedCategory: category);
     
     try {

@@ -11,9 +11,9 @@ import 'package:savenest/features/about/how_it_works_screen.dart' deferred as ho
 import 'package:savenest/features/blog/blog_list_screen.dart' deferred as blog_list;
 import 'package:savenest/features/blog/blog_post_screen.dart' deferred as blog_post;
 import 'package:savenest/features/comparison/comparison_model.dart';
-import 'package:savenest/features/comparison/comparison_screen.dart' deferred as comparison;
-import 'package:savenest/features/comparison/deal_details_screen.dart' deferred as deal_details;
-import 'package:savenest/features/comparison/state_guide_screen.dart' deferred as state_guide hide StringExtension;
+import 'package:savenest/features/comparison/comparison_screen.dart';
+import 'package:savenest/features/comparison/deal_details_screen.dart';
+import 'package:savenest/features/comparison/state_guide_screen.dart' hide StringExtension;
 import 'package:savenest/features/legal/disclaimer_screen.dart' deferred as disclaimer;
 import 'package:savenest/features/legal/privacy_policy_screen.dart' deferred as privacy;
 import 'package:savenest/features/legal/terms_of_service_screen.dart' deferred as terms;
@@ -92,7 +92,7 @@ final goRouter = GoRouter(
         return _fadeTransition(
           context,
           state,
-          _deferredWidget(deal_details.loadLibrary(), () => deal_details.DealDetailsScreen(dealId: dealId!)),
+          DealDetailsScreen(dealId: dealId!),
         );
       },
     ),
@@ -104,7 +104,7 @@ final goRouter = GoRouter(
         return _fadeTransition(
           context,
           state,
-          _deferredWidget(state_guide.loadLibrary(), () => state_guide.StateGuideScreen(stateCode: stateCode, utility: utility)),
+          StateGuideScreen(stateCode: stateCode, utility: utility),
         );
       },
     ),
@@ -113,7 +113,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.electricity)),
+        ComparisonScreen(initialCategory: ProductCategory.electricity),
       ),
     ),
     GoRoute(
@@ -121,7 +121,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.gas)),
+        ComparisonScreen(initialCategory: ProductCategory.gas),
       ),
     ),
     GoRoute(
@@ -129,7 +129,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.internet)),
+        ComparisonScreen(initialCategory: ProductCategory.internet),
       ),
     ),
     GoRoute(
@@ -137,7 +137,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.mobile)),
+        ComparisonScreen(initialCategory: ProductCategory.mobile),
       ),
     ),
     GoRoute(
@@ -145,7 +145,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.insurance)),
+        ComparisonScreen(initialCategory: ProductCategory.insurance),
       ),
     ),
     GoRoute(
@@ -153,7 +153,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.insurance)),
+        ComparisonScreen(initialCategory: ProductCategory.insurance),
       ),
     ),
     GoRoute(
@@ -161,7 +161,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.insurance)),
+        ComparisonScreen(initialCategory: ProductCategory.insurance),
       ),
     ),
     GoRoute(
@@ -169,7 +169,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(comparison.loadLibrary(), () => comparison.ComparisonScreen(initialCategory: ProductCategory.creditCards)),
+        ComparisonScreen(initialCategory: ProductCategory.creditCards),
       ),
     ),
     GoRoute(

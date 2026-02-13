@@ -26,7 +26,9 @@ void main() {
     );
 
     // Allow time for the FutureProvider to resolve (even if immediate) and widgets to settle
-    await tester.pumpAndSettle();
+    // Use pump instead of pumpAndSettle because of infinite animations in the landing page
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
     // Verify that our app title is present.
     // Use findsWidgets because it might appear in multiple places (e.g. hidden drawer)

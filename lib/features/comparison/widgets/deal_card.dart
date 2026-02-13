@@ -324,17 +324,16 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'Key Features',
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16, color: Colors.white, letterSpacing: 1.0),
-              ),
-              const Icon(Icons.info_outline, size: 20, color: AppTheme.accentOrange),
-            ],
-          ),
-          const SizedBox(height: 24),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Key Features',
+                            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16, color: Colors.white, letterSpacing: 1.0),
+                          ),
+                          Icon(Icons.info_outline, size: 20, color: AppTheme.accentOrange),
+                        ],
+                      ),          const SizedBox(height: 24),
           Expanded(
             child: ListView(
               padding: EdgeInsets.zero,

@@ -32,32 +32,31 @@ class AnimatedValueProps extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 80),
-              Wrap(
-                spacing: 40,
-                runSpacing: 40,
-                alignment: WrapAlignment.center,
-                children: [
-                  _ValuePropItem(
-                    icon: Icons.bolt,
-                    title: "Instant Comparison",
-                    desc: "Compare hundreds of plans in seconds with our advanced engine. Fast, easy, and accurate.",
-                    color: Colors.orange,
-                  ),
-                  _ValuePropItem(
-                    icon: Icons.lock_outline,
-                    title: "Data Secure",
-                    desc: "Your data is encrypted and never sold to spammers. We respect your privacy above all.",
-                    color: Colors.blue,
-                  ),
-                  _ValuePropItem(
-                    icon: Icons.thumb_up_alt_outlined,
-                    title: "100% Free",
-                    desc: "Our service is free for you. We get paid by providers, so you don't pay a cent to use us.",
-                    color: AppTheme.vibrantEmerald,
-                  ),
-                ],
-              ),
-            ],
+                              const Wrap(
+                                spacing: 40,
+                                runSpacing: 40,
+                                alignment: WrapAlignment.center,
+                                children: [
+                                  _ValuePropItem(
+                                    icon: Icons.bolt,
+                                    title: "Instant Comparison",
+                                    desc: "Compare hundreds of plans in seconds with our advanced engine. Fast, easy, and accurate.",
+                                    color: Colors.orange,
+                                  ),
+                                  _ValuePropItem(
+                                    icon: Icons.lock_outline,
+                                    title: "Data Secure",
+                                    desc: "Your data is encrypted and never sold to spammers. We respect your privacy above all.",
+                                    color: Colors.blue,
+                                  ),
+                                  _ValuePropItem(
+                                    icon: Icons.thumb_up_alt_outlined,
+                                    title: "100% Free",
+                                    desc: "Our service is free for you. We get paid by providers, so you don't pay a cent to use us.",
+                                    color: AppTheme.vibrantEmerald,
+                                  ),
+                                ],
+                              ),            ],
           ),
         ),
       ),

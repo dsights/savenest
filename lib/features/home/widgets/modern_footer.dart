@@ -105,16 +105,16 @@ class ModernFooter extends StatelessWidget {
               const SizedBox(height: 40),
               
               // Bottom Footer
-              Flex(
-                direction: isMobile ? Axis.vertical : Axis.horizontal,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 24,
+                runSpacing: 20,
                 children: [
                   Text(
                     '© 2026 SaveNest | ABN 89691841059 | Pratham Technologies Pty Ltd',
                     style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 12),
-                    textAlign: TextAlign.center,
                   ),
-                  if (isMobile) const SizedBox(height: 20),
                   Wrap(
                     spacing: 24,
                     children: [

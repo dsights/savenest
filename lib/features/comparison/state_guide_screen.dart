@@ -57,9 +57,9 @@ class StateGuideScreen extends StatelessWidget {
                           color: Colors.white10,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: Text(
+                        child: const Text(
                           '2026 STATE GUIDE',
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: AppTheme.vibrantEmerald,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.2,

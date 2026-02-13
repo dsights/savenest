@@ -2,13 +2,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meta_seo/meta_seo.dart';
 import '../../theme/app_theme.dart';
 import 'comparison_model.dart';
 import 'comparison_provider.dart';
 import 'widgets/deal_card.dart';
 import 'widgets/search_bar_widget.dart';
-import 'package:flutter/foundation.dart'; // Import for kIsWeb
 import 'credit_card_model.dart';
 import 'data/credit_card_repository.dart';
 import 'widgets/credit_card_table.dart';

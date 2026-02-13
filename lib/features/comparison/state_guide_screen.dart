@@ -46,7 +46,14 @@ class StateGuideScreen extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 24),
               decoration: const BoxDecoration(
-                gradient: AppTheme.mainBackgroundGradient,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    AppTheme.deepNavy,
+                    AppTheme.primaryBlue,
+                  ],
+                ),
               ),
               child: Center(
                 child: ConstrainedBox(
@@ -56,7 +63,7 @@ class StateGuideScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
-                          color: Colors.white10,
+                          color: Colors.white.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Text(
@@ -113,19 +120,19 @@ class StateGuideScreen extends StatelessWidget {
                       _buildSection('Market Overview'),
                       Text(
                         _getMarketOverview(stateCode, utility),
-                        style: const TextStyle(color: Colors.white70, fontSize: 18, height: 1.6),
+                        style: const TextStyle(color: AppTheme.slate600, fontSize: 18, height: 1.6),
                       ),
                       const SizedBox(height: 40),
                       _buildSection('Average Costs in $stateName'),
                       Text(
                         'Based on 2026 AER data, the average household in $stateName spends approximately ${_getAverageCost(stateCode, utility)} per year on $utility. However, switching to a market offer below the reference price can save you up to 25%.',
-                        style: const TextStyle(color: Colors.white70, fontSize: 18, height: 1.6),
+                        style: const TextStyle(color: AppTheme.slate600, fontSize: 18, height: 1.6),
                       ),
                       const SizedBox(height: 40),
                       _buildSection('Rebates & Concessions'),
                       Text(
                         _getRebates(stateCode),
-                        style: const TextStyle(color: Colors.white70, fontSize: 18, height: 1.6),
+                        style: const TextStyle(color: AppTheme.slate600, fontSize: 18, height: 1.6),
                       ),
                       const SizedBox(height: 80),
                     ],
@@ -145,7 +152,7 @@ class StateGuideScreen extends StatelessWidget {
       child: Text(
         title,
         style: const TextStyle(
-          color: Colors.white,
+          color: AppTheme.deepNavy,
           fontSize: 28,
           fontWeight: FontWeight.bold,
         ),

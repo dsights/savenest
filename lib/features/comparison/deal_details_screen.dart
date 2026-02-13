@@ -31,10 +31,10 @@ class DealDetailsScreen extends ConsumerWidget {
       endDrawer: const MainMobileDrawer(),
       body: dealAsync.when(
         loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
-        error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: Colors.white))),
+        error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: AppTheme.deepNavy))),
         data: (deal) {
           if (deal == null) {
-            return const Center(child: Text('Deal not found', style: TextStyle(color: Colors.white)));
+            return const Center(child: Text('Deal not found', style: TextStyle(color: AppTheme.deepNavy)));
           }
 
           // SEO Tags
@@ -161,7 +161,7 @@ class DealDetailsScreen extends ConsumerWidget {
                           _buildSectionTitle('Plan Details'),
                           Text(
                             deal.description,
-                            style: const TextStyle(color: Colors.white70, fontSize: 16, height: 1.5),
+                            style: const TextStyle(color: AppTheme.slate600, fontSize: 16, height: 1.5),
                           ),
                           const SizedBox(height: 32),
                           
@@ -176,7 +176,7 @@ class DealDetailsScreen extends ConsumerWidget {
                                 Expanded(
                                   child: Text(
                                     feature,
-                                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                                    style: const TextStyle(color: AppTheme.deepNavy, fontSize: 16),
                                   ),
                                 ),
                               ],
@@ -184,7 +184,7 @@ class DealDetailsScreen extends ConsumerWidget {
                           )),
                           
                           const SizedBox(height: 48),
-                          Divider(color: Colors.white.withOpacity(0.1)),
+                          Divider(color: AppTheme.slate300.withOpacity(0.5)),
                           const SizedBox(height: 48),
 
                           // Reviews Section (Placeholder for now, but important for EEAT)
@@ -199,7 +199,7 @@ class DealDetailsScreen extends ConsumerWidget {
                                     Text(
                                       deal.rating.toString(),
                                       style: const TextStyle(
-                                        color: Colors.white,
+                                        color: AppTheme.deepNavy,
                                         fontSize: 48,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -216,7 +216,7 @@ class DealDetailsScreen extends ConsumerWidget {
                                         ),
                                         const Text(
                                           'Based on market analysis',
-                                          style: TextStyle(color: Colors.white54, fontSize: 12),
+                                          style: TextStyle(color: AppTheme.slate600, fontSize: 12),
                                         ),
                                       ],
                                     ),
@@ -225,7 +225,7 @@ class DealDetailsScreen extends ConsumerWidget {
                                 const SizedBox(height: 24),
                                 const Text(
                                   "Independent verification of this plan highlights its competitive pricing in the current market. Users generally appreciate the transparency and ease of switching.",
-                                  style: TextStyle(color: Colors.white70, fontStyle: FontStyle.italic),
+                                  style: TextStyle(color: AppTheme.slate600, fontStyle: FontStyle.italic),
                                 ),
                               ],
                             ),
@@ -251,7 +251,7 @@ class DealDetailsScreen extends ConsumerWidget {
       child: Text(
         title,
         style: const TextStyle(
-          color: Colors.white,
+          color: AppTheme.deepNavy,
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),

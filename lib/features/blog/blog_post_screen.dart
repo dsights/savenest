@@ -21,11 +21,11 @@ class BlogPostScreen extends ConsumerWidget {
     final postsAsync = ref.watch(blogPostsProvider);
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: postsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
-        error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: Colors.white))),
+        error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: AppTheme.deepNavy))),
         data: (posts) {
           final post = posts.firstWhere(
             (p) => p.slug == slug,
@@ -86,7 +86,7 @@ class BlogPostScreen extends ConsumerWidget {
                           }
                         },
                         icon: const Icon(Icons.arrow_back, color: AppTheme.vibrantEmerald),
-                        label: const Text('Back to Blog', style: TextStyle(color: Colors.white70)),
+                        label: Text('Back to Blog', style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.7))),
                       ),
                     ),
                   ),
@@ -192,9 +192,9 @@ class BlogPostScreen extends ConsumerWidget {
                            Container(
                              padding: const EdgeInsets.all(24),
                              decoration: BoxDecoration(
-                               color: Colors.white.withOpacity(0.05),
+                               color: Colors.black.withOpacity(0.05),
                                borderRadius: BorderRadius.circular(16),
-                               border: Border.all(color: Colors.white10),
+                               border: Border.all(color: Colors.black12),
                              ),
                              child: Column(
                                crossAxisAlignment: CrossAxisAlignment.start,
@@ -203,7 +203,7 @@ class BlogPostScreen extends ConsumerWidget {
                                  const SizedBox(height: 12),
                                  Text(
                                    post.summary,
-                                   style: const TextStyle(color: Colors.white, fontSize: 18, fontStyle: FontStyle.italic, height: 1.6),
+                                   style: const TextStyle(color: AppTheme.deepNavy, fontSize: 18, fontStyle: FontStyle.italic, height: 1.6),
                                  ),
                                ],
                              ),
@@ -214,7 +214,7 @@ class BlogPostScreen extends ConsumerWidget {
                           HtmlWidget(
                             post.content,
                             textStyle: const TextStyle(
-                              color: Colors.white,
+                              color: AppTheme.deepNavy,
                               fontSize: 18,
                               height: 1.8,
                               fontFamily: 'Georgia',
@@ -224,7 +224,7 @@ class BlogPostScreen extends ConsumerWidget {
                                 return {'color': '#00C853', 'margin-top': '2em', 'margin-bottom': '1em', 'font-weight': 'bold'};
                               }
                               if (element.localName == 'strong') {
-                                return {'color': '#FFFFFF', 'font-weight': 'bold'};
+                                return {'color': '#0A0E21', 'font-weight': 'bold'};
                               }
                               if (element.localName == 'li') {
                                 return {'margin-bottom': '0.5em'};
@@ -247,7 +247,7 @@ class BlogPostScreen extends ConsumerWidget {
                               children: [
                                 const Text(
                                   "Calculate your potential savings today.",
-                                  style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+                                  style: TextStyle(color: AppTheme.deepNavy, fontSize: 24, fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(height: 24),
                                 ElevatedButton(
@@ -255,8 +255,8 @@ class BlogPostScreen extends ConsumerWidget {
                                     context.go('/savings');
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.white,
-                                    foregroundColor: AppTheme.deepNavy,
+                                    backgroundColor: AppTheme.deepNavy,
+                                    foregroundColor: Colors.white,
                                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
                                   ),
                                   child: const Text("USE SAVINGS CALCULATOR"),

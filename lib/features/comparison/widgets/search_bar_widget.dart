@@ -18,12 +18,12 @@ class SearchBarWidget extends StatelessWidget {
       borderRadius: 12,
       child: TextField(
         onChanged: onChanged,
-        style: const TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.black87),
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hintText ?? 'Search providers, features, e.g. "solar", "AGL"...',
-          hintStyle: const TextStyle(color: Colors.white54),
-          icon: const Icon(Icons.search, color: Colors.white54),
+          hintStyle: const TextStyle(color: Colors.black38),
+          icon: const Icon(Icons.search, color: Colors.black38),
         ),
       ),
     );

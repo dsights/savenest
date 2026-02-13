@@ -8,7 +8,7 @@ class MainMobileDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
         children: [
@@ -20,7 +20,7 @@ class MainMobileDrawer extends StatelessWidget {
                 'SaveNest',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: AppTheme.deepNavy,
                     ),
               ),
             ],
@@ -28,9 +28,9 @@ class MainMobileDrawer extends StatelessWidget {
           const SizedBox(height: 40),
           
           ExpansionTile(
-            title: const Text('Services', style: TextStyle(color: Colors.white, fontSize: 18)),
+            title: const Text('Services', style: TextStyle(color: AppTheme.deepNavy, fontSize: 18)),
             iconColor: AppTheme.vibrantEmerald,
-            collapsedIconColor: Colors.white70,
+            collapsedIconColor: AppTheme.deepNavy,
             children: [
               _drawerSubItem(context, 'Electricity', Icons.bolt, '/deals/electricity'),
               _drawerSubItem(context, 'Gas', Icons.local_fire_department, '/deals/gas'),
@@ -77,8 +77,8 @@ class MainMobileDrawer extends StatelessWidget {
 
   Widget _drawerSubItem(BuildContext context, String title, IconData icon, String route) {
     return ListTile(
-      leading: Icon(icon, color: Colors.white70, size: 20),
-      title: Text(title, style: const TextStyle(color: Colors.white70, fontSize: 16)),
+      leading: Icon(icon, color: AppTheme.deepNavy.withOpacity(0.7), size: 20),
+      title: Text(title, style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.7), fontSize: 16)),
       contentPadding: const EdgeInsets.only(left: 32, right: 16),
       onTap: () {
         Navigator.pop(context);
@@ -89,7 +89,7 @@ class MainMobileDrawer extends StatelessWidget {
 
   Widget _drawerItem(BuildContext context, String title, String route) {
     return ListTile(
-      title: Text(title, style: const TextStyle(color: Colors.white, fontSize: 18)),
+      title: Text(title, style: const TextStyle(color: AppTheme.deepNavy, fontSize: 18)),
       onTap: () {
         Navigator.pop(context);
         GoRouter.of(context).go(route);

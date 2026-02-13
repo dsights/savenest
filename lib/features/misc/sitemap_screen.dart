@@ -23,7 +23,7 @@ class SitemapScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: SingleChildScrollView(
         child: Column(

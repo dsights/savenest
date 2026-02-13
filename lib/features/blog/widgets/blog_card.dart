@@ -72,7 +72,7 @@ class BlogCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: AppTheme.deepNavy,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -82,7 +82,7 @@ class BlogCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 12,
-                        color: Colors.white70,
+                        color: AppTheme.deepNavy.withOpacity(0.7),
                       ),
                     ),
                   ],
@@ -98,8 +98,8 @@ class BlogCard extends StatelessWidget {
   Widget _buildErrorImage() {
     return Container(
       color: AppTheme.vibrantEmerald.withOpacity(0.1),
-      child: const Center(
-        child: Icon(Icons.article, size: 40, color: Colors.white24),
+      child: Center(
+        child: Icon(Icons.article, size: 40, color: AppTheme.deepNavy.withOpacity(0.2)),
       ),
     );
   }

@@ -35,7 +35,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: SingleChildScrollView(
         child: Column(
@@ -51,7 +51,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   const Text(
                     'Privacy Policy',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppTheme.deepNavy,
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                     ),
@@ -59,7 +59,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   const Text(
                     'Last Updated: February 2026',
-                    style: TextStyle(color: Colors.white54, fontSize: 14),
+                    style: TextStyle(color: AppTheme.deepNavy54, fontSize: 14),
                   ),
                   const SizedBox(height: 32),
 
@@ -133,7 +133,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
     return Text(
       title,
       style: const TextStyle(
-        color: Colors.white,
+        color: AppTheme.deepNavy,
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
@@ -144,7 +144,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        color: Colors.white70,
+        color: AppTheme.deepNavy70,
         fontSize: 16,
         height: 1.5,
       ),
@@ -157,12 +157,12 @@ class PrivacyPolicyScreen extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('• ', style: TextStyle(color: Colors.white, fontSize: 16)),
+          const Text('• ', style: TextStyle(color: AppTheme.deepNavy, fontSize: 16)),
           Expanded(
             child: Text(
               text,
               style: const TextStyle(
-                color: Colors.white70,
+                color: AppTheme.deepNavy70,
                 fontSize: 16,
                 height: 1.5,
               ),
@@ -188,7 +188,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: AppTheme.deepNavy,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -197,7 +197,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 Text(
                   description,
                   style: const TextStyle(
-                    color: Colors.white70,
+                    color: AppTheme.deepNavy70,
                     fontSize: 14,
                     height: 1.4,
                   ),

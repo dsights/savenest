@@ -3,38 +3,41 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   // Brand Colors
-  static const Color deepNavy = Color(0xFF0A0E21);
+  static const Color deepNavy = Color(0xFF0A0E21); // Kept as primary text/contrast color
   static const Color vibrantEmerald = Color(0xFF00E676);
-  static const Color glassWhite = Color(0x1AFFFFFF); // 10% opacity white
-  static const Color glassBorder = Color(0x33FFFFFF); // 20% opacity white
+  static const Color offWhite = Color(0xFFF5F7FA);
+  
+  // Glass Effect Colors (Adjusted for Light Theme)
+  static const Color glassWhite = Color(0xCCFFFFFF); // 80% opacity white
+  static const Color glassBorder = Color(0xFFE0E0E0); // Light grey border
 
-  // Gradient for background
+  // Gradient for background (Light Theme)
   static const LinearGradient mainBackgroundGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [
-      Color(0xFF0A0E21), // Deep Navy
-      Color(0xFF111736), // Slightly lighter navy
+      offWhite,
+      Color(0xFFFFFFFF),
     ],
   );
 
-  static ThemeData get darkTheme {
+  static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
-      brightness: Brightness.dark,
-      scaffoldBackgroundColor: deepNavy,
+      brightness: Brightness.light,
+      scaffoldBackgroundColor: offWhite,
       primaryColor: deepNavy,
-      colorScheme: const ColorScheme.dark(
+      colorScheme: const ColorScheme.light(
         primary: deepNavy,
         secondary: vibrantEmerald,
-        surface: deepNavy, // Using deep navy as base, glass cards will go on top
+        surface: offWhite,
         onPrimary: Colors.white,
-        onSecondary: Colors.black,
-        onSurface: Colors.white,
+        onSecondary: deepNavy,
+        onSurface: deepNavy,
       ),
-      textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme).apply(
-        bodyColor: Colors.white,
-        displayColor: Colors.white,
+      textTheme: GoogleFonts.interTextTheme(ThemeData.light().textTheme).apply(
+        bodyColor: deepNavy,
+        displayColor: deepNavy,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(

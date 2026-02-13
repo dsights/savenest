@@ -66,7 +66,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: SingleChildScrollView(
         child: Column(
@@ -82,16 +82,16 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                   const Text(
                     'Contact Us',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppTheme.deepNavy,
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Text(
+                  Text(
                     'Have a question or feedback? We\'d love to hear from you. Fill out the form below or email us directly at support@savenest.au',
                     style: TextStyle(
-                      color: Colors.white70,
+                      color: AppTheme.deepNavy.withOpacity(0.7),
                       fontSize: 16,
                       height: 1.5,
                     ),
@@ -106,14 +106,14 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                         border: Border.all(color: Colors.green),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Row(
+                      child: Row(
                         children: [
-                          Icon(Icons.check_circle, color: Colors.green),
-                          SizedBox(width: 12),
+                          const Icon(Icons.check_circle, color: Colors.green),
+                          const SizedBox(width: 12),
                           Expanded(
                             child: Text(
                               'Thank you for contacting us! We will get back to you shortly.',
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: AppTheme.deepNavy),
                             ),
                           ),
                         ],
@@ -126,7 +126,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                       children: [
                         TextFormField(
                           controller: _nameController,
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(color: AppTheme.deepNavy),
                           decoration: _inputDecoration('Name'),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -138,7 +138,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                         const SizedBox(height: 16),
                         TextFormField(
                           controller: _emailController,
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(color: AppTheme.deepNavy),
                           decoration: _inputDecoration('Email'),
                           validator: (value) {
                             if (value == null || value.isEmpty || !value.contains('@')) {
@@ -150,7 +150,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                         const SizedBox(height: 16),
                         TextFormField(
                           controller: _messageController,
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(color: AppTheme.deepNavy),
                           decoration: _inputDecoration('Message'),
                           maxLines: 5,
                           validator: (value) {
@@ -167,8 +167,8 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           child: ElevatedButton(
                             onPressed: _isSubmitting ? null : _submitForm,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: AppTheme.vibrantEmerald,
-                              foregroundColor: AppTheme.deepNavy,
+                              backgroundColor: AppTheme.deepNavy,
+                              foregroundColor: Colors.white,
                               textStyle: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
@@ -180,7 +180,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                     height: 20,
                                     child: CircularProgressIndicator(
                                       strokeWidth: 2,
-                                      color: AppTheme.deepNavy,
+                                      color: Colors.white,
                                     ),
                                   )
                                 : const Text('Send Message'),
@@ -202,9 +202,9 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
   InputDecoration _inputDecoration(String label) {
     return InputDecoration(
       labelText: label,
-      labelStyle: const TextStyle(color: Colors.white70),
+      labelStyle: TextStyle(color: AppTheme.deepNavy.withOpacity(0.6)),
       enabledBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.white24),
+        borderSide: const BorderSide(color: Colors.black26),
         borderRadius: BorderRadius.circular(8),
       ),
       focusedBorder: OutlineInputBorder(

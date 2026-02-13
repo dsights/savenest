@@ -35,7 +35,7 @@ class TermsOfServiceScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: SingleChildScrollView(
         child: Column(
@@ -51,7 +51,7 @@ class TermsOfServiceScreen extends StatelessWidget {
                   const Text(
                     'Terms of Service',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppTheme.deepNavy,
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                     ),
@@ -59,7 +59,7 @@ class TermsOfServiceScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   const Text(
                     'Last Updated: February 2026',
-                    style: TextStyle(color: Colors.white54, fontSize: 14),
+                    style: TextStyle(color: AppTheme.deepNavy54, fontSize: 14),
                   ),
                   const SizedBox(height: 32),
 
@@ -128,7 +128,7 @@ class TermsOfServiceScreen extends StatelessWidget {
     return Text(
       title,
       style: const TextStyle(
-        color: Colors.white,
+        color: AppTheme.deepNavy,
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
@@ -139,7 +139,7 @@ class TermsOfServiceScreen extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        color: Colors.white70,
+        color: AppTheme.deepNavy70,
         fontSize: 16,
         height: 1.5,
       ),

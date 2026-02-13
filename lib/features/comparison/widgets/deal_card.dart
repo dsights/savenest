@@ -99,7 +99,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
         GlassContainer(
           borderRadius: 16,
           padding: const EdgeInsets.all(16),
-          borderColor: widget.isBestValue ? AppTheme.vibrantEmerald.withOpacity(0.8) : Colors.white10,
+          borderColor: widget.isBestValue ? AppTheme.vibrantEmerald.withOpacity(0.8) : Colors.black12,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -137,7 +137,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                 children: [
                   Text(
                     widget.deal.providerName,
-                    style: TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.7), fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 12, color: AppTheme.deepNavy.withOpacity(0.7), fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 4),
                   Text(
@@ -148,7 +148,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                     style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: AppTheme.deepNavy,
                       height: 1.2,
                     ),
                   ),
@@ -177,7 +177,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                         ),
                         TextSpan(
                           text: ' ${widget.deal.priceUnit}',
-                          style: const TextStyle(fontSize: 12, color: Colors.white54),
+                          style: const TextStyle(fontSize: 12, color: Colors.black54),
                         ),
                       ],
                     ),
@@ -186,19 +186,19 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.1),
+                      color: Colors.black.withOpacity(0.05),
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.white10),
+                      border: Border.all(color: Colors.black12),
                     ),
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           'Tap for details',
-                          style: TextStyle(fontSize: 10, color: Colors.white70),
+                          style: TextStyle(fontSize: 10, color: Colors.black54),
                         ),
                         SizedBox(width: 4),
-                        Icon(Icons.touch_app, size: 12, color: Colors.white70),
+                        Icon(Icons.touch_app, size: 12, color: Colors.black54),
                       ],
                     ),
                   ),
@@ -208,7 +208,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
           ),
         ),
         if (widget.isBestValue) _buildBadge('BEST VALUE', AppTheme.vibrantEmerald, AppTheme.deepNavy),
-        if (widget.deal.isSponsored && !widget.isBestValue) _buildBadge('SPONSORED', Colors.white24, Colors.white),
+        if (widget.deal.isSponsored && !widget.isBestValue) _buildBadge('SPONSORED', Colors.black12, Colors.black54),
       ],
     );
   }

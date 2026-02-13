@@ -22,7 +22,7 @@ class SaveNestApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'SaveNest',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
+      theme: AppTheme.lightTheme,
       routerConfig: goRouter,
     );
   }

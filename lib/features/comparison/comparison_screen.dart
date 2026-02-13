@@ -190,7 +190,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       }
 
     return Scaffold(
-        backgroundColor: AppTheme.deepNavy,
+        backgroundColor: AppTheme.offWhite,
         endDrawer: const MainMobileDrawer(),
         body: Container(
           decoration: const BoxDecoration(
@@ -217,9 +217,9 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                             }
                           },
                           selectedColor: AppTheme.vibrantEmerald,
-                          backgroundColor: Colors.white10,
+                          backgroundColor: Colors.black12,
                           labelStyle: TextStyle(
-                            color: isSelected ? AppTheme.deepNavy : Colors.white,
+                            color: AppTheme.deepNavy,
                             fontWeight: FontWeight.bold,
                           ),
                           side: BorderSide.none,
@@ -236,8 +236,8 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                       if (!state.isLoading && state.selectedCategory != ProductCategory.creditCards)
                       Text(
                         'We found ${state.deals.length} deals for you',
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: AppTheme.deepNavy.withOpacity(0.7),
                           fontSize: 16,
                         ),
                       ),
@@ -257,17 +257,17 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                       ? creditCardsAsync.when(
                           data: (deals) => CreditCardTable(deals: _filterCreditCards(deals, state.searchQuery)),
                           loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),
-                          error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: Colors.white))),
+                          error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: AppTheme.deepNavy))),
                         )
                       : state.isLoading
                           ? const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald))
                           : LayoutBuilder(
                           builder: (context, constraints) {
                             if (state.deals.isEmpty) {
-                              return const Center(
+                              return Center(
                                 child: Text(
                                   'No deals found matching criteria.',
-                                  style: TextStyle(color: Colors.white54),
+                                  style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.5)),
                                 ),
                               );
                             }

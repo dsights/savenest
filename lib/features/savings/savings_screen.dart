@@ -20,7 +20,7 @@ class SavingsScreen extends ConsumerWidget {
     final controller = ref.read(savingsControllerProvider.notifier);
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: Container(
         decoration: const BoxDecoration(
@@ -51,7 +51,7 @@ class SavingsScreen extends ConsumerWidget {
                                   'Annual Savings', // Shorter text
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    color: Colors.white70,
+                                    color: AppTheme.deepNavy.withOpacity(0.7),
                                     fontSize: 13, // Smaller font
                                   ),
                                 ),
@@ -67,10 +67,10 @@ class SavingsScreen extends ConsumerWidget {
                                 ),
                                 if (totalSavings > 0) ...[
                                   const SizedBox(height: 4),
-                                  const Text(
+                                  Text(
                                     'Great start!',
                                     style: TextStyle(
-                                      color: Colors.white54,
+                                      color: AppTheme.deepNavy.withOpacity(0.5),
                                       fontSize: 12,
                                     ),
                                   ),
@@ -87,13 +87,13 @@ class SavingsScreen extends ConsumerWidget {
                         child: ListView(
                           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                           children: [
-                            const Center(
+                            Center(
                               child: Padding(
-                                padding: EdgeInsets.only(bottom: 16.0),
+                                padding: const EdgeInsets.only(bottom: 16.0),
                                 child: Text(
                                   "What's your monthly spend?",
                                   style: TextStyle(
-                                    color: Colors.white70,
+                                    color: AppTheme.deepNavy.withOpacity(0.7),
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -210,8 +210,8 @@ class SavingsScreen extends ConsumerWidget {
             SliderTheme(
               data: SliderTheme.of(context).copyWith(
                 activeTrackColor: AppTheme.vibrantEmerald,
-                inactiveTrackColor: Colors.white10,
-                thumbColor: Colors.white,
+                inactiveTrackColor: Colors.black12,
+                thumbColor: AppTheme.deepNavy,
                 overlayColor: AppTheme.vibrantEmerald.withOpacity(0.2),
                 trackHeight: 2.0, // Thinner track
                 thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6.0), // Smaller thumb

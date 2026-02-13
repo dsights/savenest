@@ -27,7 +27,7 @@ class DealDetailsScreen extends ConsumerWidget {
     final dealAsync = ref.watch(dealDetailsProvider(dealId));
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: dealAsync.when(
         loading: () => const Center(child: CircularProgressIndicator(color: AppTheme.vibrantEmerald)),

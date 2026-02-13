@@ -138,7 +138,7 @@ class _RegistrationScreenState extends ConsumerState<RegistrationScreen> {
     if (costs.carInsurance > 0) validUtilities.add(UtilityType.carInsurance);
 
     return Scaffold(
-      backgroundColor: AppTheme.deepNavy,
+      backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
       body: Container(
         decoration: const BoxDecoration(
@@ -158,248 +158,250 @@ class _RegistrationScreenState extends ConsumerState<RegistrationScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            'Your Details',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: AppTheme.vibrantEmerald,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                          _buildGlassTextField(
-                            controller: _nameController,
-                            label: 'Full Name',
-                            icon: Icons.person,
-                          ),
-                          const SizedBox(height: 12),
-                          _buildGlassTextField(
-                            controller: _emailController,
-                            label: 'Email Address',
-                            icon: Icons.email,
-                            keyboardType: TextInputType.emailAddress,
-                          ),
-                          const SizedBox(height: 12),
-                          _buildGlassTextField(
-                            controller: _phoneController,
-                            label: 'Phone Number',
-                            icon: Icons.phone,
-                            keyboardType: TextInputType.phone,
-                          ),
-                          
-                          const SizedBox(height: 32),
-                          const Text(
-                            'Selected Services',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: AppTheme.vibrantEmerald,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          const Text(
-                            'Upload a bill photo to expedite the switch.',
-                            style: TextStyle(color: Colors.white70),
-                          ),
-                          const SizedBox(height: 16),
-        
-                          if (validUtilities.isEmpty)
-                            const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 20),
-                              child: Text('No services selected. Go back to calculate savings.'),
-                            )
-                          else
-                            ...validUtilities.map((type) => _buildServiceItem(type)),
-        
-                          const SizedBox(height: 40),
-                          
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: _isSubmitting ? null : _submitForm,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppTheme.vibrantEmerald,
-                                foregroundColor: AppTheme.deepNavy,
-                                padding: const EdgeInsets.symmetric(vertical: 18),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                                                    const Text(
+                                                      'Your Details',
+                                                      style: TextStyle(
+                                                        fontSize: 20,
+                                                        fontWeight: FontWeight.bold,
+                                                        color: AppTheme.deepNavy,
+                                                      ),
+                                                    ),
+                                                    const SizedBox(height: 16),
+                                                    _buildGlassTextField(
+                                                      controller: _nameController,
+                                                      label: 'Full Name',
+                                                      icon: Icons.person,
+                                                    ),
+                                                    const SizedBox(height: 12),
+                                                    _buildGlassTextField(
+                                                      controller: _emailController,
+                                                      label: 'Email Address',
+                                                      icon: Icons.email,
+                                                      keyboardType: TextInputType.emailAddress,
+                                                    ),
+                                                    const SizedBox(height: 12),
+                                                    _buildGlassTextField(
+                                                      controller: _phoneController,
+                                                      label: 'Phone Number',
+                                                      icon: Icons.phone,
+                                                      keyboardType: TextInputType.phone,
+                                                    ),
+                                                    
+                                                    const SizedBox(height: 32),
+                                                    const Text(
+                                                      'Selected Services',
+                                                      style: TextStyle(
+                                                        fontSize: 20,
+                                                        fontWeight: FontWeight.bold,
+                                                        color: AppTheme.deepNavy,
+                                                      ),
+                                                    ),
+                                                    const SizedBox(height: 8),
+                                                    Text(
+                                                      'Upload a bill photo to expedite the switch.',
+                                                      style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.7)),
+                                                    ),
+                                                    const SizedBox(height: 16),
+                                  
+                                                    if (validUtilities.isEmpty)
+                                                      const Padding(
+                                                        padding: EdgeInsets.symmetric(vertical: 20),
+                                                        child: Text('No services selected. Go back to calculate savings.'),
+                                                      )
+                                                    else
+                                                      ...validUtilities.map((type) => _buildServiceItem(type)),
+                                  
+                                                    const SizedBox(height: 40),
+                                                    
+                                                    SizedBox(
+                                                      width: double.infinity,
+                                                      child: ElevatedButton(
+                                                        onPressed: _isSubmitting ? null : _submitForm,
+                                                        style: ElevatedButton.styleFrom(
+                                                          backgroundColor: AppTheme.deepNavy,
+                                                          foregroundColor: Colors.white,
+                                                          padding: const EdgeInsets.symmetric(vertical: 18),
+                                                          shape: RoundedRectangleBorder(
+                                                            borderRadius: BorderRadius.circular(12),
+                                                          ),
+                                                        ),
+                                                        child: _isSubmitting
+                                                            ? const SizedBox(
+                                                                height: 20,
+                                                                width: 20,
+                                                                child: CircularProgressIndicator(color: Colors.white),
+                                                              )
+                                                            : const Text(
+                                                                'CONFIRM SWITCH',
+                                                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                                              ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              child: _isSubmitting
-                                  ? const SizedBox(
-                                      height: 20,
-                                      width: 20,
-                                      child: CircularProgressIndicator(color: AppTheme.deepNavy),
-                                    )
-                                  : const Text(
-                                      'CONFIRM SWITCH',
-                                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                                    ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildGlassTextField({
-    required TextEditingController controller,
-    required String label,
-    required IconData icon,
-    TextInputType? keyboardType,
-  }) {
-    return GlassContainer(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      borderRadius: 12,
-      child: TextFormField(
-        controller: controller,
-        keyboardType: keyboardType,
-        style: const TextStyle(color: Colors.white),
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          labelText: label,
-          labelStyle: const TextStyle(color: Colors.white60),
-          prefixIcon: Icon(icon, color: AppTheme.vibrantEmerald),
-        ),
-        validator: (value) {
-          if (value == null || value.trim().isEmpty) {
-            return 'Please enter your $label';
-          }
-          
-          final trimmedValue = value.trim();
-
-          if (label.contains('Email')) {
-            // Strict email validation: user@domain.tld
-            final emailRegex = RegExp(
-              r'^[a-zA-Z0-9.!#$%&' r"'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
-            );
-            if (!emailRegex.hasMatch(trimmedValue)) {
-              return 'Enter a valid email (e.g. name@example.com)';
-            }
-          }
-          
-          if (label.contains('Phone')) {
-            // Phone validation: only digits, spaces, dashes, plus. Min 9 digits.
-            final cleanPhone = trimmedValue.replaceAll(RegExp(r'[\s\-\+\(\)]'), '');
-            if (cleanPhone.length < 9) {
-              return 'Phone number must be at least 9 digits';
-            }
-            if (!RegExp(r'^[0-9]+$').hasMatch(cleanPhone)) {
-              return 'Phone number can only contain digits';
-            }
-          }
-
-          if (label.contains('Name')) {
-             if (trimmedValue.split(' ').length < 2) {
-               return 'Please enter your full name (First and Last)';
-             }
-          }
-
-          return null;
-        },
-      ),
-    );
-  }
-
-  Widget _buildServiceItem(UtilityType type) {
-    final name = type.name.toUpperCase();
-    final isSelected = _selectedServices[type] ?? false;
-    final imageFile = _billImages[type];
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: GlassContainer(
-        borderRadius: 12,
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Checkbox(
-                  value: isSelected,
-                  activeColor: AppTheme.vibrantEmerald,
-                  checkColor: AppTheme.deepNavy,
-                  side: const BorderSide(color: Colors.white54),
-                  onChanged: (val) {
-                    setState(() {
-                      _selectedServices[type] = val ?? false;
-                    });
-                  },
-                ),
-                Expanded(
-                  child: Text(
-                    name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                if (isSelected)
-                  InkWell(
-                    onTap: () => _pickImage(type),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.white10,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: imageFile != null 
-                              ? AppTheme.vibrantEmerald 
-                              : Colors.white30,
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            imageFile != null ? Icons.check_circle : Icons.camera_alt,
-                            size: 18,
-                            color: imageFile != null 
-                                ? AppTheme.vibrantEmerald 
-                                : Colors.white,
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            imageFile != null ? 'Added' : 'Add Bill',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: imageFile != null 
-                                  ? AppTheme.vibrantEmerald 
-                                  : Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-            if (isSelected && imageFile != null) ...[
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  const SizedBox(width: 48), // Indent to align with text
-                  Expanded(
-                    child: Text(
-                      'Image selected: ${imageFile.name}',
-                      style: const TextStyle(fontSize: 12, color: Colors.white54),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
-              ),
-            ]
-          ],
-        ),
-      ),
-    );
-  }
-}
+                              );
+                            }
+                          
+                            Widget _buildGlassTextField({
+                              required TextEditingController controller,
+                              required String label,
+                              required IconData icon,
+                              TextInputType? keyboardType,
+                            }) {
+                              return GlassContainer(
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                                borderRadius: 12,
+                                child: TextFormField(
+                                  controller: controller,
+                                  keyboardType: keyboardType,
+                                  style: const TextStyle(color: AppTheme.deepNavy),
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    labelText: label,
+                                    labelStyle: TextStyle(color: AppTheme.deepNavy.withOpacity(0.6)),
+                                    prefixIcon: Icon(icon, color: AppTheme.deepNavy.withOpacity(0.7)),
+                                  ),
+                                  validator: (value) {
+                                    if (value == null || value.trim().isEmpty) {
+                                      return 'Please enter your $label';
+                                    }
+                                    
+                                    final trimmedValue = value.trim();
+                          
+                                    if (label.contains('Email')) {
+                                      // Strict email validation: user@domain.tld
+                                      final emailRegex = RegExp(
+                                        r'^[a-zA-Z0-9.!#$%&' r"'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
+                                      );
+                                      if (!emailRegex.hasMatch(trimmedValue)) {
+                                        return 'Enter a valid email (e.g. name@example.com)';
+                                      }
+                                    }
+                                    
+                                    if (label.contains('Phone')) {
+                                      // Phone validation: only digits, spaces, dashes, plus. Min 9 digits.
+                                      final cleanPhone = trimmedValue.replaceAll(RegExp(r'[\s\-\+\(\)]'), '');
+                                      if (cleanPhone.length < 9) {
+                                        return 'Phone number must be at least 9 digits';
+                                      }
+                                      if (!RegExp(r'^[0-9]+).hasMatch(cleanPhone)) {
+                                        return 'Phone number can only contain digits';
+                                      }
+                                    }
+                          
+                                    if (label.contains('Name')) {
+                                       if (trimmedValue.split(' ').length < 2) {
+                                         return 'Please enter your full name (First and Last)';
+                                       }
+                                    }
+                          
+                                    return null;
+                                  },
+                                ),
+                              );
+                            }
+                          
+                            Widget _buildServiceItem(UtilityType type) {
+                              final name = type.name.toUpperCase();
+                              final isSelected = _selectedServices[type] ?? false;
+                              final imageFile = _billImages[type];
+                          
+                              return Padding(
+                                padding: const EdgeInsets.only(bottom: 12.0),
+                                child: GlassContainer(
+                                  borderRadius: 12,
+                                  padding: const EdgeInsets.all(12),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Checkbox(
+                                            value: isSelected,
+                                            activeColor: AppTheme.vibrantEmerald,
+                                            checkColor: Colors.white,
+                                            side: const BorderSide(color: Colors.black54),
+                                            onChanged: (val) {
+                                              setState(() {
+                                                _selectedServices[type] = val ?? false;
+                                              });
+                                            },
+                                          ),
+                                          Expanded(
+                                            child: Text(
+                                              name,
+                                              style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 16,
+                                                color: AppTheme.deepNavy,
+                                              ),
+                                            ),
+                                          ),
+                                          if (isSelected)
+                                            InkWell(
+                                              onTap: () => _pickImage(type),
+                                              child: Container(
+                                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.black12,
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  border: Border.all(
+                                                    color: imageFile != null 
+                                                        ? AppTheme.vibrantEmerald 
+                                                        : Colors.black26,
+                                                  ),
+                                                ),
+                                                child: Row(
+                                                  children: [
+                                                    Icon(
+                                                      imageFile != null ? Icons.check_circle : Icons.camera_alt,
+                                                      size: 18,
+                                                      color: imageFile != null 
+                                                          ? AppTheme.vibrantEmerald 
+                                                          : Colors.black54,
+                                                    ),
+                                                    const SizedBox(width: 8),
+                                                    Text(
+                                                      imageFile != null ? 'Added' : 'Add Bill',
+                                                      style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: imageFile != null 
+                                                            ? AppTheme.vibrantEmerald 
+                                                            : Colors.black54,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                      if (isSelected && imageFile != null) ...[
+                                        const SizedBox(height: 8),
+                                        Row(
+                                          children: [
+                                            const SizedBox(width: 48), // Indent to align with text
+                                            Expanded(
+                                              child: Text(
+                                                'Image selected: ${imageFile.name}',
+                                                style: TextStyle(fontSize: 12, color: AppTheme.deepNavy.withOpacity(0.6)),
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ]
+                                    ],
+                                  ),
+                                ),
+                              );
+                            }
+                          }
+                          

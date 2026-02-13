@@ -9,7 +9,7 @@ class MainNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-      color: AppTheme.deepNavy,
+      color: Colors.white,
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1200),
@@ -26,7 +26,7 @@ class MainNavigationBar extends StatelessWidget {
                       'SaveNest',
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: AppTheme.deepNavy,
                             letterSpacing: 1.0,
                           ),
                     ),
@@ -40,32 +40,32 @@ class MainNavigationBar extends StatelessWidget {
                     Theme(
                       data: Theme.of(context).copyWith(
                         popupMenuTheme: PopupMenuThemeData(
-                          color: AppTheme.deepNavy,
-                          surfaceTintColor: AppTheme.deepNavy,
-                          textStyle: const TextStyle(color: Colors.white),
+                          color: Colors.white,
+                          surfaceTintColor: Colors.white,
+                          textStyle: const TextStyle(color: AppTheme.deepNavy),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
-                            side: const BorderSide(color: Colors.white10),
+                            side: const BorderSide(color: Colors.black12),
                           ),
                         ),
                       ),
                       child: PopupMenuButton<String>(
                         offset: const Offset(0, 40),
                         tooltip: 'Show Services',
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                           child: Row(
                             children: [
-                              Text(
+                              const Text(
                                 'Services',
                                 style: TextStyle(
-                                  color: Colors.white70,
+                                  color: AppTheme.deepNavy,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
                                 ),
                               ),
-                              SizedBox(width: 4),
-                              Icon(Icons.keyboard_arrow_down, color: Colors.white70, size: 16),
+                              const SizedBox(width: 4),
+                              Icon(Icons.keyboard_arrow_down, color: AppTheme.deepNavy.withOpacity(0.7), size: 16),
                             ],
                           ),
                         ),
@@ -121,7 +121,7 @@ class MainNavigationBar extends StatelessWidget {
                 // Mobile Menu Button
                 Builder(
                   builder: (context) => IconButton(
-                    icon: const Icon(Icons.menu, color: Colors.white),
+                    icon: const Icon(Icons.menu, color: AppTheme.deepNavy),
                     onPressed: () => Scaffold.of(context).openEndDrawer(),
                   ),
                 ),
@@ -141,7 +141,7 @@ class MainNavigationBar extends StatelessWidget {
           const SizedBox(width: 12),
           Text(
             title,
-            style: const TextStyle(color: Colors.white, fontSize: 14),
+            style: const TextStyle(color: AppTheme.deepNavy, fontSize: 14),
           ),
         ],
       ),
@@ -155,8 +155,8 @@ class MainNavigationBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Text(
           title,
-          style: const TextStyle(
-            color: Colors.white70,
+          style: TextStyle(
+            color: AppTheme.deepNavy.withOpacity(0.7),
             fontWeight: FontWeight.w500,
             fontSize: 14,
           ),

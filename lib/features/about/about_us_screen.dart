@@ -35,7 +35,7 @@ class AboutUsScreen extends StatelessWidget {
     }
 
     return Scaffold(
-        backgroundColor: AppTheme.deepNavy,
+        backgroundColor: AppTheme.offWhite,
         endDrawer: const MainMobileDrawer(),
         body: SingleChildScrollView(
           child: Column(
@@ -86,7 +86,7 @@ class AboutUsScreen extends StatelessWidget {
     return Text(
       title,
       style: const TextStyle(
-        color: Colors.white,
+        color: AppTheme.deepNavy,
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
@@ -97,7 +97,7 @@ class AboutUsScreen extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        color: Colors.white70,
+        color: AppTheme.deepNavy70,
         fontSize: 16,
         height: 1.5,
       ),
@@ -112,7 +112,7 @@ class AboutUsScreen extends StatelessWidget {
           Text(
             '$title: ',
             style: const TextStyle(
-              color: Colors.white,
+              color: AppTheme.deepNavy,
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),
@@ -120,7 +120,7 @@ class AboutUsScreen extends StatelessWidget {
           Text(
             detail,
             style: const TextStyle(
-              color: Colors.white70,
+              color: AppTheme.deepNavy70,
               fontSize: 16,
             ),
           ),

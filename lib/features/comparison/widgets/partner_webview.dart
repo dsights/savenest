@@ -66,7 +66,7 @@ class _PartnerWebViewState extends State<PartnerWebView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: AppTheme.deepNavy,
+        backgroundColor: AppTheme.offWhite,
         foregroundColor: Colors.white,
         actions: [
           IconButton(

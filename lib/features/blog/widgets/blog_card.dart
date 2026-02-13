@@ -80,7 +80,7 @@ class BlogCard extends StatelessWidget {
                       post.summary,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         color: AppTheme.deepNavy.withOpacity(0.7),
                       ),

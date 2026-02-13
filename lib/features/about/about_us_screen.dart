@@ -97,7 +97,7 @@ class AboutUsScreen extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        color: AppTheme.deepNavy70,
+        color: AppTheme.deepNavy.withOpacity(0.7),
         fontSize: 16,
         height: 1.5,
       ),
@@ -120,7 +120,7 @@ class AboutUsScreen extends StatelessWidget {
           Text(
             detail,
             style: const TextStyle(
-              color: AppTheme.deepNavy70,
+              color: AppTheme.deepNavy.withOpacity(0.7),
               fontSize: 16,
             ),
           ),

@@ -21,29 +21,6 @@ import 'package:savenest/features/misc/sitemap_screen.dart' deferred as sitemap;
 import 'package:savenest/features/partners/advertise_with_us_screen.dart' deferred as advertise;
 import 'package:savenest/features/savings/savings_screen.dart' deferred as savings;
 
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:savenest/theme/app_theme.dart';
-
-import 'features/home/landing_screen.dart';
-
-// Deferred Imports for Route Splitting
-import 'package:savenest/features/about/about_us_screen.dart' deferred as about;
-import 'package:savenest/features/about/contact_us_screen.dart' deferred as contact;
-import 'package:savenest/features/about/how_it_works_screen.dart' deferred as how_it_works;
-import 'package:savenest/features/blog/blog_list_screen.dart' deferred as blog_list;
-import 'package:savenest/features/blog/blog_post_screen.dart' deferred as blog_post;
-import 'package:savenest/features/comparison/comparison_model.dart';
-import 'package:savenest/features/comparison/comparison_screen.dart' deferred as comparison;
-import 'package:savenest/features/comparison/deal_details_screen.dart' deferred as deal_details;
-import 'package:savenest/features/comparison/state_guide_screen.dart' deferred as state_guide hide StringExtension;
-import 'package:savenest/features/legal/disclaimer_screen.dart' deferred as disclaimer;
-import 'package:savenest/features/legal/privacy_policy_screen.dart' deferred as privacy;
-import 'package:savenest/features/legal/terms_of_service_screen.dart' deferred as terms;
-import 'package:savenest/features/misc/sitemap_screen.dart' deferred as sitemap;
-import 'package:savenest/features/partners/advertise_with_us_screen.dart' deferred as advertise;
-import 'package:savenest/features/savings/savings_screen.dart' deferred as savings;
-
 // Helper for deferred loading
 Widget _deferredWidget(Future<void> loadLibrary, Widget Function() builder) {
   return FutureBuilder(

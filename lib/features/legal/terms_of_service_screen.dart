@@ -59,7 +59,7 @@ class TermsOfServiceScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   const Text(
                     'Last Updated: February 2026',
-                    style: TextStyle(color: AppTheme.deepNavy54, fontSize: 14),
+                    style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.54), fontSize: 14),
                   ),
                   const SizedBox(height: 32),
 
@@ -139,7 +139,7 @@ class TermsOfServiceScreen extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        color: AppTheme.deepNavy70,
+        color: AppTheme.deepNavy.withOpacity(0.7),
         fontSize: 16,
         height: 1.5,
       ),

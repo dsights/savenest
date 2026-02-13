@@ -47,7 +47,7 @@ class SavingsScreen extends ConsumerWidget {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Text(
+                                Text(
                                   'Annual Savings', // Shorter text
                                   textAlign: TextAlign.center,
                                   style: TextStyle(

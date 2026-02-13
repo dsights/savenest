@@ -6,6 +6,7 @@ import '../../theme/app_theme.dart';
 import '../../widgets/glass_container.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // Add Riverpod
 import '../blog/blog_provider.dart'; // Import Blog Provider
+import '../../widgets/animations.dart';
 
 import 'widgets/blog_multi_carousel.dart'; // Import New Multi Carousel
 import '../../widgets/main_navigation_bar.dart';
@@ -134,12 +135,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     );
   }
 
-import '../../widgets/animations.dart';
-
-// ... existing imports ...
-
-// Inside _LandingScreenState...
-
   Widget _buildHeroSlide(BuildContext context, {
     required String quote,
     required String imagePath,
@@ -246,7 +241,50 @@ import '../../widgets/animations.dart';
     );
   }
 
-// ... existing code ...
+  @override
+  Widget build(BuildContext context) {
+    // Update meta tags for SEO
+    if (kIsWeb) {
+      MetaSEO meta = MetaSEO();
+      const String title = 'SaveNest | Compare & Save on Australian Utilities';
+      const String description = 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.';
+      const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+
+      meta.nameContent(name: 'title', content: title);
+      meta.nameContent(name: 'description', content: description);
+      
+      // Open Graph / Facebook
+      meta.ogTitle(ogTitle: title);
+      meta.ogDescription(ogDescription: description);
+      meta.propertyContent(property: 'og:url', content: 'https://savenest.au/');
+      meta.ogImage(ogImage: imageUrl);
+      meta.propertyContent(property: 'og:type', content: 'website');
+
+      // Twitter
+      meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
+      meta.nameContent(name: 'twitter:title', content: title);
+      meta.nameContent(name: 'twitter:description', content: description);
+      meta.nameContent(name: 'twitter:image', content: imageUrl);
+    }
+
+    return Scaffold(
+        backgroundColor: AppTheme.offWhite,
+        endDrawer: const MainMobileDrawer(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const MainNavigationBar(),
+              _buildHeroCarousel(context),
+              _buildCategorySection(context),
+              _buildBlogSection(context), // ref is directly available as this.ref
+              _buildHowItWorksSection(context),
+              _buildTestimonialsSection(context),
+              _buildFooter(context),
+            ],
+          ),
+        ),
+    );
+  }
 
   Widget _buildBlogSection(BuildContext context) { // ref is directly available as this.ref
     final postsAsync = ref.watch(blogPostsProvider);
@@ -355,7 +393,78 @@ import '../../widgets/animations.dart';
     );
   }
 
-// ... existing code ...
+  String _getMainCategoryName(_MainCategory category) {
+    switch (category) {
+      case _MainCategory.utilities:
+        return 'Utilities';
+      case _MainCategory.insurance:
+        return 'Insurance';
+      case _MainCategory.financialProducts:
+        return 'Financial Products';
+    }
+  }
+
+  List<Widget> _buildSubCategoryCards(BuildContext context, _MainCategory mainCategory) {
+    switch (mainCategory) {
+      case _MainCategory.utilities:
+        return [
+          _categoryCard(context, 'Electricity', Icons.bolt, Colors.orange, '/deals/electricity'),
+          _categoryCard(context, 'Gas', Icons.local_fire_department, Colors.red, '/deals/gas'),
+          _categoryCard(context, 'Internet', Icons.wifi, Colors.blue, '/deals/internet'),
+          _categoryCard(context, 'Mobile', Icons.phone_iphone, Colors.green, '/deals/mobile'),
+        ];
+      case _MainCategory.insurance:
+        return [
+          _categoryCard(context, 'General Insurance', Icons.shield, Colors.purple, '/deals/insurance'),
+          _categoryCard(context, 'Health Insurance', Icons.medical_services, Colors.pink, '/deals/insurance/health'),
+          _categoryCard(context, 'Car Insurance', Icons.directions_car, Colors.indigo, '/deals/insurance/car'),
+          // Add other insurance types as needed, e.g., Home Insurance, Life Insurance
+        ];
+      case _MainCategory.financialProducts:
+        return [
+          _categoryCard(context, 'Credit Cards', Icons.credit_card, Colors.orangeAccent, '/deals/credit-cards'),
+          _categoryCard(context, 'Home Loans', Icons.home_work, Colors.brown, '/loans/home'),
+          // Add other financial products as needed
+        ];
+    }
+  }
+
+  Widget _categoryCard(BuildContext context, String title, IconData icon, Color color, String route) {
+    return InkWell(
+      onTap: () {
+        GoRouter.of(context).go(route);
+      },
+      child: GlassContainer(
+        width: 150,
+        height: 170,
+        borderRadius: 16,
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: color.withOpacity(0.2),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 32),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: AppTheme.deepNavy,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   Widget _buildHowItWorksSection(BuildContext context) {
     return Container(
@@ -417,7 +526,91 @@ import '../../widgets/animations.dart';
     );
   }
 
-// ... existing code ...
+  Widget _stepItem(String title, String desc, IconData icon) {
+    return SizedBox(
+      width: 280,
+      child: Column(
+        children: [
+          Icon(icon, color: AppTheme.vibrantEmerald, size: 48),
+          const SizedBox(height: 24),
+          Text(
+            title,
+            style: const TextStyle(
+              color: AppTheme.deepNavy,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            desc,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: Colors.black54,
+              fontSize: 16,
+              height: 1.5,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFooter(BuildContext context) {
+    return Container(
+      color: Colors.grey[200],
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            children: [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.shield_moon, color: Colors.black38, size: 24),
+                  SizedBox(width: 8),
+                  Text(
+                    'SaveNest © 2026 | ABN 89691841059 | Pratham Technologies Pty Ltd',
+                    style: TextStyle(color: Colors.black38),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 12,
+                runSpacing: 8,
+                children: [
+                  _footerLink(context, 'About Us', '/about'),
+                  _footerLink(context, 'Contact Us', '/contact'),
+                  _footerLink(context, 'Privacy Policy', '/privacy'),
+                  _footerLink(context, 'Terms of Service', '/terms'),
+                  _footerLink(context, 'How It Works & Business Model', '/how-it-works'),
+                  _footerLink(context, 'Disclaimer', '/legal/disclaimer'),
+                  _footerLink(context, 'Sitemap', '/sitemap'),
+                  _footerLink(context, 'For Partners', '/partners/advertise'),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _footerLink(BuildContext context, String text, String route) {
+    return InkWell(
+      onTap: () => GoRouter.of(context).go(route),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        child: Text(
+          text,
+          style: const TextStyle(color: Colors.black38, fontSize: 12),
+        ),
+      ),
+    );
+  }
 
   Widget _buildTestimonialsSection(BuildContext context) {
     return Container(
@@ -498,7 +691,7 @@ import '../../widgets/animations.dart';
       ),
     );
   }
-} // Closing brace for _LandingScreenState
+}
 
 class _Testimonial {
   final String quote;

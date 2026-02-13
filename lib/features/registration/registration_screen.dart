@@ -292,7 +292,7 @@ class _RegistrationScreenState extends ConsumerState<RegistrationScreen> {
                                       if (cleanPhone.length < 9) {
                                         return 'Phone number must be at least 9 digits';
                                       }
-                                      if (!RegExp(r'^[0-9]+).hasMatch(cleanPhone)) {
+                                      if (!RegExp(r'^[0-9]+$').hasMatch(cleanPhone)) {
                                         return 'Phone number can only contain digits';
                                       }
                                     }

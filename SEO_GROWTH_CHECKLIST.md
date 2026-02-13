@@ -15,6 +15,14 @@
 - [x] **Meta Tags:** Title and Description tags implemented for core pages.
 - [x] **Dynamic Meta Tags:** Ensure Provider Detail and State Guide pages have dynamic, keyword-rich meta tags.
     - *Status:* **Completed.** (Implemented using `MetaSEO`).
+- [x] **Title & Description Optimization:** Optimized for length (<60 chars title, <155 chars desc) and keyword density.
+    - *Status:* **Completed.** (Updated in Landing, Comparison, and State Guide screens).
+- [x] **Heading Structure:** H1-equivalent headings optimized for primary keywords (e.g., "Best Energy Comparison in Australia").
+    - *Status:* **Completed.**
+- [x] **Internal Linking:** Added footer navigation for State Guides and improved cross-linking.
+    - *Status:* **Completed.**
+- [x] **Image SEO:** Added semantic labels (alt text) to all primary images and logos.
+    - *Status:* **Completed.**
 - [x] **Schema.org:** Organization/LocalBusiness schema added to `index.html`.
 - [x] **Product Schema:** Add `Product` structured data to Deal Detail pages.
     - *Status:* **Completed.** (Open Graph Product tags added).

@@ -149,6 +149,17 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final selectedCat = state.selectedCategory ?? widget.initialCategory;
     final categoryTitle = _getCategoryTitle(selectedCat);
 
+    // SEO Optimization
+    if (kIsWeb) {
+      final title = 'Best $categoryTitle Comparison Australia | Save with SaveNest';
+      final description = 'Compare $categoryTitle plans from top Australian providers. Find the cheapest rates and best value deals for your household or business.';
+      MetaSEO().author(author: 'SaveNest Team');
+      MetaSEO().description(description: description);
+      MetaSEO().keywords(keywords: 'compare $categoryTitle Australia, cheapest $categoryTitle plans, best $categoryTitle provider 2026');
+      MetaSEO().ogTitle(ogTitle: title);
+      MetaSEO().ogDescription(ogDescription: description);
+    }
+
     String searchHint;
     switch (selectedCat) {
       case ProductCategory.electricity:
@@ -186,7 +197,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                         child: Column(
                           children: [
                             Text(
-                              'Compare $categoryTitle Plans',
+                              'Best $categoryTitle Comparison in Australia',
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.displaySmall?.copyWith(
                                     color: AppTheme.deepNavy,
@@ -273,9 +284,9 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                                 physics: const NeverScrollableScrollPhysics(),
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: crossAxisCount,
-                                  childAspectRatio: 0.85, 
-                                  mainAxisSpacing: 32,
-                                  crossAxisSpacing: 32,
+                                  childAspectRatio: 1.0, 
+                                  mainAxisSpacing: 24,
+                                  crossAxisSpacing: 24,
                                 ),
                                 itemCount: state.deals.length,
                                 itemBuilder: (context, index) {

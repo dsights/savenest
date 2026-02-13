@@ -19,14 +19,15 @@ class StateGuideScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final stateName = _getStateName(stateCode);
-    final title = 'Compare $stateName ${utility.capitalize()} Plans | 2026 Guide';
-    final description = 'Find the cheapest and best $utility providers in $stateName. Read our 2026 guide to tariffs, rebates, and potential savings.';
+    final utilityName = utility.capitalize();
+    final title = 'Best $utilityName Comparison $stateName | 2026 Guide';
+    final description = 'Compare the cheapest $utilityName plans in $stateName. Read our 2026 guide to tariffs, government rebates, and how to find the best value for your suburb.';
 
     // SEO Tags
     if (kIsWeb) {
       MetaSEO().author(author: 'SaveNest Team');
       MetaSEO().description(description: description);
-      MetaSEO().keywords(keywords: 'compare $utility $stateName, cheapest $utility $stateName, best $utility provider $stateName 2026');
+      MetaSEO().keywords(keywords: 'compare $utility $stateName, cheapest $utility $stateName, best $utility provider $stateName 2026, $utility rebates $stateName');
       MetaSEO().ogTitle(ogTitle: title);
       MetaSEO().ogDescription(ogDescription: description);
     }
@@ -69,7 +70,7 @@ class StateGuideScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 24),
                       Text(
-                        '$stateName ${utility.capitalize()} Guide',
+                        'Best $utilityName Comparison in $stateName',
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           color: Colors.white,

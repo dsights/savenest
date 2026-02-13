@@ -36,6 +36,7 @@ void main() async {
     '/privacy',
     '/terms',
     '/how-it-works',
+    '/energy/moving-house',
   ];
 
   for (var route in staticRoutes) {

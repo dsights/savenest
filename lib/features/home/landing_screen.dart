@@ -26,8 +26,8 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
   Widget build(BuildContext context) {
     if (kIsWeb) {
       MetaSEO meta = MetaSEO();
-      const String title = 'SaveNest | Compare & Save on Australian Utilities';
-      const String description = 'Stop overpaying on your bills. SaveNest helps you compare electricity, gas, internet, and mobile plans from top Australian providers. Find a better deal in seconds.';
+      const String title = 'Energy Comparison Australia | Save on Plans with SaveNest';
+      const String description = 'Compare energy, internet, and insurance in Australia. Find the best deals and save up to \$500 with SaveNest\'s free comparison tool. Instant quotes online.';
       const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
 
       meta.nameContent(name: 'title', content: title);

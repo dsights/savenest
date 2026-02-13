@@ -71,6 +71,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://savenest.au/energy/moving-house</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://savenest.au/deal/mob_telstra_80</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -987,6 +992,91 @@
   </url>
   <url>
     <loc>https://savenest.au/blog/charging-your-ev-for-free-the-solar-sharer-trick</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/24-percent-bill-hikes-dmo-7-reality-check</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/nbn-speed-boost-great-upgrade-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/home-insurance-crisis-uninsurable-zones</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/ev-tariff-revolution-charging-8c-kwh</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/5g-home-internet-nbn-killer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/sydney-water-bills-up-50-percent</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/apartment-solar-breaking-strata-lock</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/end-of-3g-medical-alarm-safe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/virtual-power-plants-selling-battery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/gas-disconnection-trend-spreading</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/ai-customer-service-telco-trends</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/green-loans-cheapest-money-australia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/community-batteries-street-storage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/sun-tax-two-way-pricing-explained</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/demand-response-paid-to-turn-off</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/the-ultimate-guide-to-energy-comparison-in-australia-2026-edition</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/blog/comparing-electricity-plans-in-sydney-a-deep-dive-for-nsw-residents</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

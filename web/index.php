@@ -1,7 +1,7 @@
 <?php
 // Default Metadata
-$metaTitle = "Compare Energy Plans Australia 2026 | SaveNest – Save \$500+";
-$metaDescription = "Compare electricity, gas, internet, and insurance plans in Australia. Find the best deals, understand the 2026 Solar Sharer Offer, and stop paying the loyalty tax with SaveNest.";
+$metaTitle = "Energy Comparison Australia | Save on Plans with SaveNest";
+$metaDescription = "Compare energy, internet, and insurance in Australia. Find the best deals and save up to $500 with SaveNest's free comparison tool. Instant quotes online.";
 $metaImage = "https://savenest.au/assets/assets/images/hero_energy.jpg";
 $metaUrl = "https://savenest.au/";
 $metaType = "website";
@@ -92,6 +92,9 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <meta name="keywords" content="compare electricity Australia, utility comparison, save money energy, solar sharer offer 2026, cheap internet plans, home insurance comparison, savenest, cheapest electricity provider NSW 2026">
   <meta name="author" content="SaveNest Australia">
 
+  <!-- Google Search Console Verification - Replace with your real code from GSC -->
+  <meta name="google-site-verification" content="NABVIt55C39H9pCJOKcTbaa50I5IQLdbuJ7Yj9RxTes" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="<?php echo $metaType; ?>">
   <meta property="og:url" content="<?php echo $metaUrl; ?>">
@@ -114,7 +117,7 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/jpeg" href="favicon.jpg"/>
 
   <link rel="manifest" href="manifest.json">
 

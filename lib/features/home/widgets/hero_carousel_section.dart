@@ -110,6 +110,7 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
                   Image.asset(
                     _slides[index]['image']!,
                     fit: BoxFit.cover,
+                    semanticLabel: _slides[index]['title'],
                   ),
                   Container(
                     decoration: BoxDecoration(

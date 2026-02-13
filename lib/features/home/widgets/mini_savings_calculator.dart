@@ -16,8 +16,8 @@ class MiniSavingsCalculator extends ConsumerWidget {
     final controller = ref.read(savingsControllerProvider.notifier);
 
     return GlassContainer(
-      borderRadius: 12,
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      borderRadius: 16,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -26,18 +26,18 @@ class MiniSavingsCalculator extends ConsumerWidget {
             'Savings Estimate',
             style: TextStyle(
               color: AppTheme.deepNavy,
-              fontSize: 13,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 16),
           
           _miniSlider(
             context,
-            label: 'Elec',
+            label: 'Electricity',
             icon: Icons.bolt,
             value: utilityCosts.electricity,
-            max: 600,
+            max: 1000,
             onChanged: (val) => controller.updateCost(UtilityType.electricity, val),
           ),
           _miniSlider(
@@ -45,36 +45,36 @@ class MiniSavingsCalculator extends ConsumerWidget {
             label: 'Gas',
             icon: Icons.local_fire_department,
             value: utilityCosts.gas,
-            max: 400,
+            max: 600,
             onChanged: (val) => controller.updateCost(UtilityType.gas, val),
           ),
           _miniSlider(
             context,
-            label: 'NBN',
+            label: 'Internet (NBN)',
             icon: Icons.wifi,
             value: utilityCosts.nbn,
-            max: 200,
+            max: 300,
             onChanged: (val) => controller.updateCost(UtilityType.nbn, val),
           ),
           _miniSlider(
             context,
-            label: 'Mob',
+            label: 'Mobile',
             icon: Icons.phone_iphone,
             value: utilityCosts.mobile,
-            max: 150,
+            max: 200,
             onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
           ),
 
-          const Divider(height: 8),
+          const Divider(height: 24),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Savings:',
+                'Estimated Savings:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 11,
+                  fontSize: 14,
                   color: AppTheme.deepNavy,
                 ),
               ),
@@ -83,24 +83,24 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 prefix: '\$',
                 style: const TextStyle(
                   color: AppTheme.vibrantEmerald,
-                  fontSize: 16,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
-            height: 28,
+            height: 44,
             child: ElevatedButton(
               onPressed: () => context.push('/register'),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 backgroundColor: AppTheme.accentOrange,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
               ),
-              child: const Text('START SAVING', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+              child: const Text('START SAVING TODAY', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
             ),
           ),
         ],
@@ -124,19 +124,19 @@ class MiniSavingsCalculator extends ConsumerWidget {
           children: [
             Row(
               children: [
-                Icon(icon, size: 9, color: AppTheme.primaryBlue),
-                const SizedBox(width: 2),
-                Text(label, style: const TextStyle(fontSize: 9, fontWeight: FontWeight.w600)),
+                Icon(icon, size: 14, color: AppTheme.primaryBlue),
+                const SizedBox(width: 6),
+                Text(label, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
               ],
             ),
-            Text('\$${value.toInt()}', style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
+            Text('\$${value.toInt()}', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
           ],
         ),
         SliderTheme(
           data: SliderTheme.of(context).copyWith(
-            trackHeight: 1.0,
-            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 3),
-            overlayShape: const RoundSliderOverlayShape(overlayRadius: 6),
+            trackHeight: 4.0,
+            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6),
+            overlayShape: const RoundSliderOverlayShape(overlayRadius: 12),
             activeTrackColor: AppTheme.vibrantEmerald,
             inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
             thumbColor: AppTheme.accentOrange,
@@ -147,6 +147,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
             onChanged: onChanged,
           ),
         ),
+        const SizedBox(height: 8),
       ],
     );
   }

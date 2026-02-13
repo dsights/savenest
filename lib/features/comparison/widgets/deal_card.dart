@@ -105,7 +105,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     return Stack(
       children: [
         Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
@@ -140,7 +140,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                       ),
                       child: Row(
                         children: [
-                          const Icon(Icons.star, color: Colors.amber, size: 12),
+                          const Icon(Icons.star, color: Colors.amber, size: 10),
                           const SizedBox(width: 2),
                           Text(
                             widget.deal.rating.toString(),
@@ -152,7 +152,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                 ],
               ),
               
-              const SizedBox(height: 8),
+              const SizedBox(height: 4),
 
               // Middle: Info
               Column(
@@ -160,20 +160,20 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                   Text(
                     widget.deal.providerName.toUpperCase(),
                     style: const TextStyle(
-                      fontSize: 9, 
+                      fontSize: 8, 
                       color: AppTheme.primaryBlue, 
                       fontWeight: FontWeight.w900,
                       letterSpacing: 1.0,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 2),
                   Text(
                     widget.deal.planName,
                     textAlign: TextAlign.center,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 14,
+                      fontSize: 13,
                       fontWeight: FontWeight.w800,
                       color: AppTheme.deepNavy,
                       height: 1.1,
@@ -200,26 +200,26 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                           if (widget.deal.category != ProductCategory.electricity && widget.deal.category != ProductCategory.gas)
                             const TextSpan(
                               text: '\$',
-                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
                             ),
                           TextSpan(
                             text: widget.deal.price > 0 
                                 ? (widget.deal.price % 1 == 0 ? widget.deal.price.toStringAsFixed(0) : widget.deal.price.toStringAsFixed(2))
                                 : 'Check',
-                            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AppTheme.deepNavy, letterSpacing: -0.5),
+                            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: AppTheme.deepNavy, letterSpacing: -0.5),
                           ),
                           TextSpan(
                             text: ' / ${widget.deal.priceUnit}',
-                            style: const TextStyle(fontSize: 10, color: AppTheme.slate600, fontWeight: FontWeight.w600),
+                            style: const TextStyle(fontSize: 9, color: AppTheme.slate600, fontWeight: FontWeight.w600),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 6),
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
                       color: _isHovered ? AppTheme.accentOrange : AppTheme.primaryBlue.withOpacity(0.08),
                       borderRadius: BorderRadius.circular(100),
@@ -230,7 +230,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                         Text(
                           'VIEW DETAILS',
                           style: TextStyle(
-                            fontSize: 10, 
+                            fontSize: 9, 
                             color: _isHovered ? Colors.white : AppTheme.primaryBlue, 
                             fontWeight: FontWeight.w900,
                             letterSpacing: 0.5,
@@ -262,9 +262,9 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     final isSvg = logoUrl.toLowerCase().endsWith('.svg');
 
     return Container(
-      width: 36, 
-      height: 36, 
-      padding: const EdgeInsets.all(6),
+      width: 32, 
+      height: 32, 
+      padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
@@ -279,7 +279,12 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
       ),
       child: ClipOval(
         child: localAsset != null
-            ? Image.asset(localAsset, fit: BoxFit.contain, errorBuilder: (context, error, stackTrace) => _buildLogoFromUrl(logoUrl, isSvg))
+            ? Image.asset(
+                localAsset, 
+                fit: BoxFit.contain, 
+                semanticLabel: '${widget.deal.providerName} logo',
+                errorBuilder: (context, error, stackTrace) => _buildLogoFromUrl(logoUrl, isSvg),
+              )
             : _buildLogoFromUrl(logoUrl, isSvg),
       ),
     );
@@ -292,11 +297,13 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
         ? SvgPicture.network(
             logoUrl,
             fit: BoxFit.contain,
+            semanticsLabel: '${widget.deal.providerName} logo',
             placeholderBuilder: (context) => _buildFallbackLogo(),
           )
         : Image.network(
             logoUrl,
             fit: BoxFit.contain,
+            semanticLabel: '${widget.deal.providerName} logo',
             errorBuilder: (context, error, stackTrace) => _buildFallbackLogo(),
           );
   }

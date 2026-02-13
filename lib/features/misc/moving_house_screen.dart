@@ -22,6 +22,7 @@ class MovingHouseScreen extends StatelessWidget {
             _buildHero(context),
             _buildIntroSection(context),
             _buildStepsSection(context),
+            _buildChecklistSection(context),
             _buildStateFeesSection(context),
             _buildFAQSection(context),
             const ModernFooter(),
@@ -145,6 +146,49 @@ class MovingHouseScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildChecklistSection(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 24),
+      decoration: BoxDecoration(
+        color: AppTheme.primaryBlue.withOpacity(0.05),
+      ),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 900),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Moving House Checklist',
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
+              ),
+              const SizedBox(height: 24),
+              _checkItem('Book your move at least 2 weeks in advance.'),
+              _checkItem('Notify your current energy retailer of your move-out date.'),
+              _checkItem('Compare energy plans for your new address on SaveNest.'),
+              _checkItem('Arrange a final meter reading for your old property.'),
+              _checkItem('Ensure the main switch is OFF at your new home on connection day.'),
+              _checkItem('Update your address for other services (internet, insurance, etc.).'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _checkItem(String text) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Row(
+        children: [
+          const Icon(Icons.check_box_outlined, color: AppTheme.primaryBlue, size: 24),
+          const SizedBox(width: 16),
+          Expanded(child: Text(text, style: const TextStyle(fontSize: 16, color: AppTheme.deepNavy))),
+        ],
       ),
     );
   }

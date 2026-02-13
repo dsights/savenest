@@ -31,7 +31,15 @@ class ModernFooter extends StatelessWidget {
                         Row(
                           mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
                           children: [
-                            const Icon(Icons.shield_moon, color: AppTheme.accentOrange, size: 32),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(6),
+                              child: Image.asset(
+                                'assets/images/logo.jpg',
+                                height: 32,
+                                width: 32,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                             const SizedBox(width: 10),
                             Text(
                               'SaveNest',
@@ -87,6 +95,15 @@ class ModernFooter extends StatelessWidget {
                       _footerLink(context, 'Health Insurance', '/deals/insurance/health'),
                       _footerLink(context, 'Car Insurance', '/deals/insurance/car'),
                       _footerLink(context, 'Home Insurance', '/deals/insurance/home'),
+                    ]),
+                  ),
+
+                  Expanded(
+                    child: _footerColumn(context, "State Guides", [
+                      _footerLink(context, 'NSW Energy Guide', '/guides/nsw/electricity'),
+                      _footerLink(context, 'VIC Energy Guide', '/guides/vic/electricity'),
+                      _footerLink(context, 'QLD Energy Guide', '/guides/qld/electricity'),
+                      _footerLink(context, 'SA Energy Guide', '/guides/sa/electricity'),
                     ]),
                   ),
 

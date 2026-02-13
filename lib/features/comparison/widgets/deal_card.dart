@@ -1,9 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart'; // Add SVG support
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../theme/app_theme.dart';
-import '../../../widgets/glass_container.dart';
 import '../comparison_model.dart';
 
 class DealCard extends StatefulWidget {
@@ -226,7 +225,55 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     );
   }
 
-  // ... (Logo helper remains similar but check background)
+  Widget _buildLogo() {
+    final logoUrl = widget.deal.providerLogoUrl;
+    final isSvg = logoUrl.toLowerCase().endsWith('.svg');
+
+    return Container(
+      width: 56, 
+      height: 56, 
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: ClipOval(
+        child: isSvg
+            ? SvgPicture.network(
+                logoUrl,
+                fit: BoxFit.contain,
+                placeholderBuilder: (context) => _buildFallbackLogo(),
+              )
+            : Image.network(
+                logoUrl,
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) => _buildFallbackLogo(),
+              ),
+      ),
+    );
+  }
+
+  Widget _buildFallbackLogo() {
+    return Container(
+      color: widget.deal.providerColor,
+      alignment: Alignment.center,
+      child: Text(
+        widget.deal.providerName.isNotEmpty ? widget.deal.providerName[0] : '?',
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
 
   Widget _buildBack() {
     return Container(

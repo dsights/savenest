@@ -96,7 +96,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget _buildBodyText(String text) {
     return Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         color: AppTheme.deepNavy.withOpacity(0.7),
         fontSize: 16,
         height: 1.5,
@@ -119,7 +119,7 @@ class AboutUsScreen extends StatelessWidget {
           ),
           Text(
             detail,
-            style: const TextStyle(
+            style: TextStyle(
               color: AppTheme.deepNavy.withOpacity(0.7),
               fontSize: 16,
             ),

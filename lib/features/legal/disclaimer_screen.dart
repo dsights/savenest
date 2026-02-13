@@ -43,7 +43,7 @@ class DisclaimerScreen extends StatelessWidget {
                         ),
                   ),
                   const SizedBox(height: 16),
-                  const Text(
+                  Text(
                     'Last Updated: February 2026',
                     style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.54), fontSize: 14),
                   ),
@@ -106,7 +106,7 @@ class DisclaimerScreen extends StatelessWidget {
   Widget _buildBodyText(String text) {
     return Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         color: AppTheme.deepNavy.withOpacity(0.7),
         fontSize: 16,
         height: 1.5,

@@ -17,8 +17,10 @@ import 'package:savenest/features/legal/terms_of_service_screen.dart';
 import 'package:savenest/features/misc/sitemap_screen.dart';
 import 'package:savenest/features/partners/advertise_with_us_screen.dart';
 import 'package:savenest/features/savings/savings_screen.dart';
+import 'package:savenest/features/registration/registration_screen.dart';
 
 // Helper for transitions
+// ... (omitting transition helper for brevity in replace call if possible, but I must match exactly)
 Page<dynamic> _fadeTransition(BuildContext context, GoRouterState state, Widget child) {
   return CustomTransitionPage(
     key: state.pageKey,
@@ -35,6 +37,10 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/',
       pageBuilder: (context, state) => _fadeTransition(context, state, const LandingScreen()),
+    ),
+    GoRoute(
+      path: '/register',
+      pageBuilder: (context, state) => _fadeTransition(context, state, const RegistrationScreen()),
     ),
     GoRoute(
       path: '/savings',

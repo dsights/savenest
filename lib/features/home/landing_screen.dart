@@ -51,17 +51,18 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         child: Column(
           children: [
             const MainNavigationBar(),
-              const HeroCarouselSection(),
-              const PartnerLogoSlider(),
-              const AnimatedValueProps(),
-              _buildBlogSection(context),
-              _buildTestimonialsSection(context),
-                          const ModernFooter(),
-                        ],
-                      ),
-                    ),
-                  );
-                }
+            const HeroCarouselSection(),
+            const PartnerLogoSlider(),
+            const AnimatedValueProps(),
+            _buildBlogSection(context),
+            _buildTestimonialsSection(context),
+            const ModernFooter(),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildBlogSection(BuildContext context) {
     final postsAsync = ref.watch(blogPostsProvider);
 
@@ -237,7 +238,6 @@ final List<_Testimonial> _testimonials = [
   ),
   _Testimonial(
     quote: "Finally, a comparison site that puts the customer first. No hidden fees, just great deals.",
-        author: "Emily C.",
-      ),
-    ];
-    
+    author: "Emily C.",
+  ),
+];

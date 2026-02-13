@@ -54,7 +54,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
   void _showSavingsPopup() {
     showDialog(
       context: context,
-      barrierDismissible: true, // Allow clicking outside to close
+      barrierDismissible: true, 
       builder: (context) => Dialog(
         backgroundColor: Colors.transparent,
         child: Container(
@@ -98,7 +98,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    context.pop(); // Close dialog
+                    context.pop(); 
                     context.go('/savings');
                   },
                   style: ElevatedButton.styleFrom(
@@ -176,129 +176,130 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
             child: CustomScrollView(
               primary: true,
               slivers: [
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 1200),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Compare $categoryTitle Plans',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                                    color: AppTheme.deepNavy,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                            ),
+                            const SizedBox(height: 8),
+                            if (!state.isLoading && selectedCat != ProductCategory.creditCards)
+                              Text(
+                                'We found ${state.deals.length} deals to help you save',
+                                style: const TextStyle(
+                                  color: AppTheme.slate600,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            const SizedBox(height: 32),
+                            ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 600),
+                              child: SearchBarWidget(
+                                onChanged: (value) => controller.search(value),
+                                hintText: searchHint,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                
+                if (selectedCat == ProductCategory.creditCards)
                   SliverToBoxAdapter(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 1200),
+                        child: creditCardsAsync.when(
+                          data: (deals) => CreditCardTable(deals: _filterCreditCards(deals, state.searchQuery)),
+                          loading: () => const Center(child: Padding(
+                            padding: EdgeInsets.all(100.0),
+                            child: CircularProgressIndicator(color: AppTheme.accentOrange),
+                          )),
+                          error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: AppTheme.deepNavy))),
+                        ),
+                      ),
+                    ),
+                  )
+                else if (state.isLoading)
+                  const SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Center(
+                      child: CircularProgressIndicator(color: AppTheme.accentOrange),
+                    ),
+                  )
+                else if (state.deals.isEmpty)
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Center(
+                      child: Text(
+                        'No deals found matching criteria.',
+                        style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.5)),
+                      ),
+                    ),
+                  )
+                else
+                  SliverPadding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                    sliver: SliverToBoxAdapter(
                       child: Center(
                         child: ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 1200),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Compare $categoryTitle Plans',
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                                      color: AppTheme.deepNavy,
-                                      fontWeight: FontWeight.w900,
-                                    ),
-                              ),
-                              const SizedBox(height: 8),
-                              if (!state.isLoading && selectedCat != ProductCategory.creditCards)
-                                Text(
-                                  'We found ${state.deals.length} deals to help you save',
-                                  style: const TextStyle(
-                                    color: AppTheme.slate600,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                          constraints: const BoxConstraints(maxWidth: 1400),
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              final crossAxisCount = constraints.maxWidth > 1200
+                                  ? 4
+                                  : constraints.maxWidth > 800
+                                      ? 3
+                                      : constraints.maxWidth > 600
+                                          ? 2
+                                          : 1;
+                              
+                              return GridView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: crossAxisCount,
+                                  childAspectRatio: 0.75, 
+                                  mainAxisSpacing: 32,
+                                  crossAxisSpacing: 32,
                                 ),
-                              const SizedBox(height: 32),
-                              ConstrainedBox(
-                                constraints: const BoxConstraints(maxWidth: 600),
-                                child: SearchBarWidget(
-                                  onChanged: (value) => controller.search(value),
-                                  hintText: searchHint,
-                                ),
-                              ),
-                            ],
+                                itemCount: state.deals.length,
+                                itemBuilder: (context, index) {
+                                  final deal = state.deals[index];
+                                  final isBest = deal == state.bestValueDeal;
+                                  return DealCard(deal: deal, isBestValue: isBest);
+                                },
+                              );
+                            },
                           ),
                         ),
                       ),
                     ),
                   ),
-                  
-                  if (selectedCat == ProductCategory.creditCards)
-                    SliverToBoxAdapter(
-                      child: Center(
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 1200),
-                          child: creditCardsAsync.when(
-                            data: (deals) => CreditCardTable(deals: _filterCreditCards(deals, state.searchQuery)),
-                            loading: () => const Center(child: Padding(
-                              padding: EdgeInsets.all(100.0),
-                              child: CircularProgressIndicator(color: AppTheme.accentOrange),
-                            )),
-                            error: (err, stack) => Center(child: Text('Error: $err', style: const TextStyle(color: AppTheme.deepNavy))),
-                          ),
-                        ),
-                      ),
-                    )
-                  else if (state.isLoading)
-                    const SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Center(
-                        child: CircularProgressIndicator(color: AppTheme.accentOrange),
-                      ),
-                    )
-                  else if (state.deals.isEmpty)
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Center(
-                        child: Text(
-                          'No deals found matching criteria.',
-                          style: TextStyle(color: AppTheme.deepNavy.withOpacity(0.5)),
-                        ),
-                      ),
-                    )
-                  else
-                    SliverPadding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
-                      sliver: SliverToBoxAdapter(
-                        child: Center(
-                          child: ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 1400),
-                            child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                final crossAxisCount = constraints.maxWidth > 1200
-                                    ? 4
-                                    : constraints.maxWidth > 800
-                                        ? 3
-                                        : constraints.maxWidth > 600
-                                            ? 2
-                                            : 1;
-                                
-                                return GridView.builder(
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: crossAxisCount,
-                                    childAspectRatio: 0.75, // Adjusted for better card fit
-                                    mainAxisSpacing: 32,
-                                    crossAxisSpacing: 32,
-                                  ),
-                                  itemCount: state.deals.length,
-                                  itemBuilder: (context, index) {
-                                    final deal = state.deals[index];
-                                    final isBest = deal == state.bestValueDeal;
-                                    return DealCard(deal: deal, isBestValue: isBest);
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  
-                  const SliverToBoxAdapter(child: SizedBox(height: 100)),
-                                  const SliverToBoxAdapter(child: ModernFooter()),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    }
+                
+                const SliverToBoxAdapter(child: SizedBox(height: 100)),
+                const SliverToBoxAdapter(child: ModernFooter()),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   List<CreditCardDeal> _filterCreditCards(List<CreditCardDeal> deals, String query) {
     if (query.isEmpty) return deals;
 

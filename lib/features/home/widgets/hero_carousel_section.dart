@@ -94,7 +94,7 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
     final heroHeight = screenHeight * 0.5;
 
     return SizedBox(
-      height: heroHeight < 500 ? 500 : heroHeight, // Minimum height to ensure content fits
+      height: heroHeight < 400 ? 400 : heroHeight, 
       width: double.infinity,
       child: Stack(
         children: [

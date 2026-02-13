@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/glass_container.dart';
 import 'savings_provider.dart';
 import 'widgets/animated_counter.dart';
 import 'widgets/pulsing_button.dart';
-import '../registration/registration_screen.dart';
 
 import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
@@ -164,9 +164,7 @@ class SavingsScreen extends ConsumerWidget {
             child: PulsingButton(
               label: 'SWITCH & SAVE',
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const RegistrationScreen()),
-                );
+                context.push('/register');
               },
             ),
           ),

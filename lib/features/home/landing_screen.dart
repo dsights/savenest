@@ -48,6 +48,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
       endDrawer: const MainMobileDrawer(),
       body: SingleChildScrollView(
         primary: true,
+        physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
         child: Column(
           children: [
             const MainNavigationBar(),

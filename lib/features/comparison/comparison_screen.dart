@@ -175,6 +175,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
           Expanded(
             child: CustomScrollView(
               primary: true,
+              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
               slivers: [
                 SliverToBoxAdapter(
                   child: Padding(

@@ -85,6 +85,7 @@ class SavingsScreen extends ConsumerWidget {
                       Expanded(
                         flex: 3, // Increased relative space for the list
                         child: ListView(
+                          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                             children: [
                               Center(

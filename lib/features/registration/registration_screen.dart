@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:go_router/go_router.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/glass_container.dart';
 import '../savings/savings_provider.dart';
 import '../../services/hubspot_service.dart';
-import '../comparison/comparison_screen.dart';
 
 import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
@@ -108,10 +108,8 @@ class _RegistrationScreenState extends ConsumerState<RegistrationScreen> {
               backgroundColor: AppTheme.vibrantEmerald,
             ),
           );
-          // Navigate to Comparison Engine
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const ComparisonScreen()),
-          );
+          // Navigate to Comparison Engine using go_router
+          context.go('/deals/electricity');
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

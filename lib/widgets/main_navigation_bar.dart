@@ -108,33 +108,80 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
     final currentPath = GoRouterState.of(context).uri.path;
     final isSelected = currentPath == route;
 
+    return _HoverableServiceItem(
+      title: title,
+      icon: icon,
+      route: route,
+      isSelected: isSelected,
+    );
+  }
+}
+
+class _HoverableServiceItem extends StatefulWidget {
+  final String title;
+  final IconData icon;
+  final String route;
+  final bool isSelected;
+
+  const _HoverableServiceItem({
+    required this.title,
+    required this.icon,
+    required this.route,
+    required this.isSelected,
+  });
+
+  @override
+  State<_HoverableServiceItem> createState() => _HoverableServiceItemState();
+}
+
+class _HoverableServiceItemState extends State<_HoverableServiceItem> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final activeColor = widget.isSelected ? AppTheme.primaryBlue : (_isHovered ? AppTheme.accentOrange : AppTheme.slate600);
+
     return InkWell(
-      onTap: () => context.go(route),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        margin: const EdgeInsets.symmetric(horizontal: 4),
-        decoration: BoxDecoration(
-          color: isSelected ? AppTheme.primaryBlue.withOpacity(0.1) : Colors.transparent,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              icon,
-              size: 20,
-              color: isSelected ? AppTheme.primaryBlue : AppTheme.slate600,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-                color: isSelected ? AppTheme.primaryBlue : AppTheme.slate600,
+      onTap: () => context.go(widget.route),
+      onHover: (hover) => setState(() => _isHovered = hover),
+      child: AnimatedScale(
+        scale: _isHovered ? 1.1 : 1.0,
+        duration: const Duration(milliseconds: 200),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          margin: const EdgeInsets.symmetric(horizontal: 2),
+          decoration: BoxDecoration(
+            color: widget.isSelected ? AppTheme.primaryBlue.withOpacity(0.05) : Colors.transparent,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: activeColor.withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  widget.icon,
+                  size: 22,
+                  color: activeColor,
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 6),
+              Text(
+                widget.title,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: (widget.isSelected || _isHovered) ? FontWeight.bold : FontWeight.w500,
+                  color: activeColor,
+                  letterSpacing: 0.2,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

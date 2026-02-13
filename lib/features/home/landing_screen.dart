@@ -68,7 +68,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
 
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 24),
+      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 24),
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1200),
@@ -121,7 +121,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
   Widget _buildTestimonialsSection(BuildContext context) {
     return Container(
       color: AppTheme.offWhite,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 100),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 60),
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1200),
@@ -131,15 +131,15 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                 "TESTIMONIALS",
                 style: TextStyle(color: AppTheme.accentOrange, fontWeight: FontWeight.bold, letterSpacing: 2),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               const Text(
                 "Trusted by thousands of Aussies",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: AppTheme.deepNavy, fontSize: 36, fontWeight: FontWeight.bold),
+                style: TextStyle(color: AppTheme.deepNavy, fontSize: 32, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 40),
               SizedBox(
-                height: 320,
+                height: 280,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: _testimonials.length,

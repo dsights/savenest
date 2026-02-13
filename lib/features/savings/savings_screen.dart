@@ -208,18 +208,21 @@ class SavingsScreen extends ConsumerWidget {
             SliderTheme(
               data: SliderTheme.of(context).copyWith(
                 activeTrackColor: AppTheme.vibrantEmerald,
-                inactiveTrackColor: Colors.black12,
-                thumbColor: AppTheme.deepNavy,
-                overlayColor: AppTheme.vibrantEmerald.withOpacity(0.2),
-                trackHeight: 2.0, // Thinner track
-                thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6.0), // Smaller thumb
-                overlayShape: const RoundSliderOverlayShape(overlayRadius: 14.0),
+                inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
+                thumbColor: AppTheme.accentOrange,
+                overlayColor: AppTheme.accentOrange.withOpacity(0.2),
+                trackHeight: 4.0, 
+                thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
+                overlayShape: const RoundSliderOverlayShape(overlayRadius: 20.0),
+                valueIndicatorColor: AppTheme.accentOrange,
+                valueIndicatorTextStyle: const TextStyle(color: Colors.white),
               ),
               child: Slider(
                 value: value,
                 min: 0,
                 max: max,
                 divisions: max.toInt(),
+                label: '\$${value.toInt()}',
                 onChanged: onChanged,
               ),
             ),

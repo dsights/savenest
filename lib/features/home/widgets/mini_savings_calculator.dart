@@ -152,11 +152,12 @@ class MiniSavingsCalculator extends ConsumerWidget {
           ),
           SliderTheme(
             data: SliderTheme.of(context).copyWith(
-              trackHeight: 1.5,
-              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 4),
-              overlayShape: const RoundSliderOverlayShape(overlayRadius: 8),
-              activeTrackColor: AppTheme.primaryBlue,
-              thumbColor: AppTheme.deepNavy,
+              trackHeight: 3,
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
+              overlayShape: const RoundSliderOverlayShape(overlayRadius: 16),
+              activeTrackColor: AppTheme.vibrantEmerald,
+              inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
+              thumbColor: AppTheme.accentOrange,
             ),
             child: Slider(
               value: value,

@@ -169,14 +169,13 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
-      body: Focus(
-        autofocus: true,
-        child: Column(
-          children: [
-            const MainNavigationBar(),
-            Expanded(
-              child: CustomScrollView(
-                slivers: [
+      body: Column(
+        children: [
+          const MainNavigationBar(),
+          Expanded(
+            child: CustomScrollView(
+              primary: true,
+              slivers: [
                   SliverToBoxAdapter(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
@@ -292,16 +291,14 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                     ),
                   
                   const SliverToBoxAdapter(child: SizedBox(height: 100)),
-                  const SliverToBoxAdapter(child: ModernFooter()),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
+                                  const SliverToBoxAdapter(child: ModernFooter()),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
   List<CreditCardDeal> _filterCreditCards(List<CreditCardDeal> deals, String query) {
     if (query.isEmpty) return deals;
 

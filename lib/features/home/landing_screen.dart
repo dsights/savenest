@@ -46,25 +46,22 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
-      body: Focus(
-        autofocus: true,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const MainNavigationBar(),
+      body: SingleChildScrollView(
+        primary: true,
+        child: Column(
+          children: [
+            const MainNavigationBar(),
               const HeroCarouselSection(),
               const PartnerLogoSlider(),
               const AnimatedValueProps(),
               _buildBlogSection(context),
               _buildTestimonialsSection(context),
-              const ModernFooter(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
+                          const ModernFooter(),
+                        ],
+                      ),
+                    ),
+                  );
+                }
   Widget _buildBlogSection(BuildContext context) {
     final postsAsync = ref.watch(blogPostsProvider);
 

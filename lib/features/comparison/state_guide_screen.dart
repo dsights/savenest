@@ -34,12 +34,11 @@ class StateGuideScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
-      body: Focus(
-        autofocus: true,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const MainNavigationBar(),
+      body: SingleChildScrollView(
+        primary: true,
+        child: Column(
+          children: [
+            const MainNavigationBar(),
             
             // Hero
             Container(
@@ -136,9 +135,8 @@ class StateGuideScreen extends StatelessWidget {
           ],
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Widget _buildSection(String title) {
     return Padding(

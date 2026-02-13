@@ -1,63 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:savenest/theme/app_theme.dart';
 
 import 'features/home/landing_screen.dart';
-
-// Deferred Imports for Route Splitting
-import 'package:savenest/features/about/about_us_screen.dart' deferred as about;
-import 'package:savenest/features/about/contact_us_screen.dart' deferred as contact;
-import 'package:savenest/features/about/how_it_works_screen.dart' deferred as how_it_works;
-import 'package:savenest/features/blog/blog_list_screen.dart' deferred as blog_list;
-import 'package:savenest/features/blog/blog_post_screen.dart' deferred as blog_post;
+import 'package:savenest/features/about/about_us_screen.dart';
+import 'package:savenest/features/about/contact_us_screen.dart';
+import 'package:savenest/features/about/how_it_works_screen.dart';
+import 'package:savenest/features/blog/blog_list_screen.dart';
+import 'package:savenest/features/blog/blog_post_screen.dart';
 import 'package:savenest/features/comparison/comparison_model.dart';
 import 'package:savenest/features/comparison/comparison_screen.dart';
 import 'package:savenest/features/comparison/deal_details_screen.dart';
 import 'package:savenest/features/comparison/state_guide_screen.dart' hide StringExtension;
-import 'package:savenest/features/legal/disclaimer_screen.dart' deferred as disclaimer;
-import 'package:savenest/features/legal/privacy_policy_screen.dart' deferred as privacy;
-import 'package:savenest/features/legal/terms_of_service_screen.dart' deferred as terms;
-import 'package:savenest/features/misc/sitemap_screen.dart' deferred as sitemap;
-import 'package:savenest/features/partners/advertise_with_us_screen.dart' deferred as advertise;
-import 'package:savenest/features/savings/savings_screen.dart' deferred as savings;
-
-// Helper for deferred loading
-Widget _deferredWidget(Future<void> loadLibrary, Widget Function() builder) {
-  return FutureBuilder(
-    future: loadLibrary,
-    builder: (context, snapshot) {
-      if (snapshot.connectionState == ConnectionState.done) {
-        if (snapshot.hasError) {
-          return Scaffold(
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.error_outline, color: Colors.red, size: 48),
-                  const SizedBox(height: 16),
-                  const Text('Failed to load page. Please try refreshing.', 
-                    style: TextStyle(color: AppTheme.deepNavy, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: () => context.go('/'),
-                    child: const Text('Back to Home'),
-                  ),
-                ],
-              ),
-            ),
-          );
-        }
-        return builder();
-      }
-      return const Scaffold(
-        backgroundColor: AppTheme.offWhite,
-        body: Center(
-          child: CircularProgressIndicator(color: AppTheme.accentOrange),
-        ),
-      );
-    },
-  );
-}
+import 'package:savenest/features/legal/disclaimer_screen.dart';
+import 'package:savenest/features/legal/privacy_policy_screen.dart';
+import 'package:savenest/features/legal/terms_of_service_screen.dart';
+import 'package:savenest/features/misc/sitemap_screen.dart';
+import 'package:savenest/features/partners/advertise_with_us_screen.dart';
+import 'package:savenest/features/savings/savings_screen.dart';
 
 // Helper for transitions
 Page<dynamic> _fadeTransition(BuildContext context, GoRouterState state, Widget child) {
@@ -82,7 +41,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context, 
         state, 
-        _deferredWidget(savings.loadLibrary(), () => savings.SavingsScreen()),
+        const SavingsScreen(),
       ),
     ),
     GoRoute(
@@ -113,7 +72,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.electricity),
+        const ComparisonScreen(initialCategory: ProductCategory.electricity),
       ),
     ),
     GoRoute(
@@ -121,7 +80,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.gas),
+        const ComparisonScreen(initialCategory: ProductCategory.gas),
       ),
     ),
     GoRoute(
@@ -129,7 +88,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.internet),
+        const ComparisonScreen(initialCategory: ProductCategory.internet),
       ),
     ),
     GoRoute(
@@ -137,7 +96,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.mobile),
+        const ComparisonScreen(initialCategory: ProductCategory.mobile),
       ),
     ),
     GoRoute(
@@ -145,7 +104,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.insurance),
+        const ComparisonScreen(initialCategory: ProductCategory.insurance),
       ),
     ),
     GoRoute(
@@ -153,7 +112,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.insurance),
+        const ComparisonScreen(initialCategory: ProductCategory.insurance),
       ),
     ),
     GoRoute(
@@ -161,7 +120,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.insurance),
+        const ComparisonScreen(initialCategory: ProductCategory.insurance),
       ),
     ),
     GoRoute(
@@ -169,7 +128,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        ComparisonScreen(initialCategory: ProductCategory.creditCards),
+        const ComparisonScreen(initialCategory: ProductCategory.creditCards),
       ),
     ),
     GoRoute(
@@ -177,7 +136,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(savings.loadLibrary(), () => savings.SavingsScreen()),
+        const SavingsScreen(),
       ),
     ),
     GoRoute(
@@ -185,7 +144,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(blog_list.loadLibrary(), () => blog_list.BlogListScreen()),
+        const BlogListScreen(),
       ),
     ),
     GoRoute(
@@ -195,7 +154,7 @@ final goRouter = GoRouter(
         return _fadeTransition(
           context,
           state,
-          _deferredWidget(blog_post.loadLibrary(), () => blog_post.BlogPostScreen(slug: slug!)),
+          BlogPostScreen(slug: slug!),
         );
       },
     ),
@@ -204,7 +163,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(advertise.loadLibrary(), () => advertise.AdvertiseWithUsScreen()),
+        const AdvertiseWithUsScreen(),
       ),
     ),
     GoRoute(
@@ -212,7 +171,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(how_it_works.loadLibrary(), () => how_it_works.HowItWorksScreen()),
+        const HowItWorksScreen(),
       ),
     ),
     GoRoute(
@@ -220,7 +179,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(privacy.loadLibrary(), () => privacy.PrivacyPolicyScreen()),
+        const PrivacyPolicyScreen(),
       ),
     ),
     GoRoute(
@@ -228,7 +187,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(terms.loadLibrary(), () => terms.TermsOfServiceScreen()),
+        const TermsOfServiceScreen(),
       ),
     ),
     GoRoute(
@@ -236,7 +195,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(about.loadLibrary(), () => about.AboutUsScreen()),
+        const AboutUsScreen(),
       ),
     ),
     GoRoute(
@@ -244,7 +203,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(contact.loadLibrary(), () => contact.ContactUsScreen()),
+        const ContactUsScreen(),
       ),
     ),
     GoRoute(
@@ -252,7 +211,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(disclaimer.loadLibrary(), () => disclaimer.DisclaimerScreen()),
+        const DisclaimerScreen(),
       ),
     ),
     GoRoute(
@@ -260,7 +219,7 @@ final goRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransition(
         context,
         state,
-        _deferredWidget(sitemap.loadLibrary(), () => sitemap.SitemapScreen()),
+        const SitemapScreen(),
       ),
     ),
   ],

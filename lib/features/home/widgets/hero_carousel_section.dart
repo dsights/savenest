@@ -90,9 +90,11 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
   @override
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width > 1100;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final heroHeight = screenHeight * 0.5;
 
     return SizedBox(
-      height: isDesktop ? 650 : 1000, 
+      height: heroHeight < 500 ? 500 : heroHeight, // Minimum height to ensure content fits
       width: double.infinity,
       child: Stack(
         children: [

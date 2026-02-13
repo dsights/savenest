@@ -42,12 +42,11 @@ class BlogListScreen extends ConsumerWidget {
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
-      body: Focus(
-        autofocus: true,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const MainNavigationBar(),
+      body: SingleChildScrollView(
+        primary: true,
+        child: Column(
+          children: [
+            const MainNavigationBar(),
             // Modern Page Header
             Container(
               width: double.infinity,
@@ -138,7 +137,6 @@ class BlogListScreen extends ConsumerWidget {
           ],
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }

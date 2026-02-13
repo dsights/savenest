@@ -84,10 +84,8 @@ class SavingsScreen extends ConsumerWidget {
                       // 2. Sliders List
                       Expanded(
                         flex: 3, // Increased relative space for the list
-                        child: Focus(
-                          autofocus: true,
-                          child: ListView(
-                            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                        child: ListView(
+                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                             children: [
                               Center(
                                 child: Padding(
@@ -144,9 +142,8 @@ class SavingsScreen extends ConsumerWidget {
                                 max: 400,
                                 onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
                               ),
-                              const SizedBox(height: 80), // Space for FAB
-                            ],
-                          ),
+                            const SizedBox(height: 80), // Space for FAB
+                          ],
                         ),
                       ),
                     ],

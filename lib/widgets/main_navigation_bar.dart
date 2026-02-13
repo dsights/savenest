@@ -115,6 +115,23 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
       isSelected: isSelected,
     );
   }
+
+  Widget _navLink(BuildContext context, String title, String route) {
+    return InkWell(
+      onTap: () => context.go(route),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Text(
+          title,
+          style: const TextStyle(
+            color: AppTheme.deepNavy,
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _HoverableServiceItem extends StatefulWidget {
@@ -181,23 +198,6 @@ class _HoverableServiceItemState extends State<_HoverableServiceItem> {
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _navLink(BuildContext context, String title, String route) {
-    return InkWell(
-      onTap: () => context.go(route),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: AppTheme.deepNavy,
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
           ),
         ),
       ),

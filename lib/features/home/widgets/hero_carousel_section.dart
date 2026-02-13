@@ -191,7 +191,7 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
 
           // Slim Bottom Comparison Bar
           Positioned(
-            bottom: 60,
+            bottom: 100,
             left: 0,
             right: 0,
             child: Center(
@@ -207,7 +207,7 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
 
           // Indicators
           Positioned(
-            bottom: 30,
+            bottom: 60,
             left: 0,
             right: 0,
             child: Row(

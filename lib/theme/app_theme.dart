@@ -4,10 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTheme {
   // Brand Colors - Premium Fintech Palette
   static const Color deepNavy = Color(0xFF101828); // Rich dark text
-  static const Color primaryBlue = Color(0xFF0052CC); // Trust/Link color
+  static const Color primaryBlue = Color(0xFF2A0F5B); // Trust/Link color (Deep Purple/Navy)
   static const Color vibrantEmerald = Color(0xFF039855); // Success/Savings (Slightly deeper/richer than neon)
-  static const Color accentOrange = Color(0xFFFF4F00); // High-impact CTA
-  static const Color offWhite = Color(0xFFF9FAFB); // Cool grey background
+  static const Color accentOrange = Color(0xFFFF6A00); // High-impact CTA (Vibrant Orange)
+  static const Color offWhite = Color(0xFFF4F6F8); // Cool grey background
   
   // Glass/Card Colors
   static const Color glassWhite = Color(0xFFFFFFFF); // Solid white for cards (Cleaner look)
@@ -39,17 +39,17 @@ class AppTheme {
         onSecondary: Colors.white,
         onSurface: deepNavy,
       ),
-      textTheme: GoogleFonts.interTextTheme(ThemeData.light().textTheme).copyWith(
-        displayLarge: GoogleFonts.inter(
-          color: deepNavy, fontWeight: FontWeight.w700, letterSpacing: -1.0,
+      textTheme: GoogleFonts.latoTextTheme(ThemeData.light().textTheme).copyWith(
+        displayLarge: GoogleFonts.lato(
+          color: deepNavy, fontWeight: FontWeight.w900, letterSpacing: -0.5,
         ),
-        displayMedium: GoogleFonts.inter(
-          color: deepNavy, fontWeight: FontWeight.w700, letterSpacing: -0.5,
+        displayMedium: GoogleFonts.lato(
+          color: deepNavy, fontWeight: FontWeight.w800, letterSpacing: -0.5,
         ),
-        bodyLarge: GoogleFonts.inter(
+        bodyLarge: GoogleFonts.lato(
           color: deepNavy, fontSize: 16, height: 1.5,
         ),
-        bodyMedium: GoogleFonts.inter(
+        bodyMedium: GoogleFonts.lato(
           color: Color(0xFF475467), // Slate 600 for secondary text
           fontSize: 14, 
           height: 1.5,
@@ -60,7 +60,7 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: primaryBlue,
+          backgroundColor: accentOrange, // Primary Action is Orange
           foregroundColor: Colors.white,
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -68,7 +68,7 @@ class AppTheme {
           ),
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
           textStyle: const TextStyle(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
             fontSize: 16,
           ),
         ),
@@ -78,16 +78,16 @@ class AppTheme {
         fillColor: Colors.white,
         contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: Color(0xFFD0D5DD)),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: Color(0xFFD0D5DD)), // Slate 300
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: primaryBlue, width: 2),
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: accentOrange, width: 2),
         ),
         labelStyle: const TextStyle(color: Color(0xFF667085)), // Slate 500
       ),

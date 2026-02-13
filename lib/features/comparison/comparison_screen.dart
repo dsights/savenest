@@ -340,10 +340,11 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
               ],
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
 
   String _formatCategory(ProductCategory cat) {
     switch (cat) {

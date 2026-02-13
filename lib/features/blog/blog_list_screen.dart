@@ -138,6 +138,7 @@ class BlogListScreen extends ConsumerWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }

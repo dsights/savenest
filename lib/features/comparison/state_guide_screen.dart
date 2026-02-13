@@ -136,8 +136,9 @@ class StateGuideScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildSection(String title) {
     return Padding(

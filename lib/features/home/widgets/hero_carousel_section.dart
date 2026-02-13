@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:go_router/go_router.dart';
 import '../../../theme/app_theme.dart';
+import 'mini_savings_calculator.dart';
 
 class HeroCarouselSection extends StatefulWidget {
   const HeroCarouselSection({super.key});
@@ -89,10 +89,10 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
 
   @override
   Widget build(BuildContext context) {
-    final isDesktop = MediaQuery.of(context).size.width > 900;
+    final isDesktop = MediaQuery.of(context).size.width > 1100;
 
     return SizedBox(
-      height: isDesktop ? 650 : 850,
+      height: isDesktop ? 650 : 1000, 
       width: double.infinity,
       child: Stack(
         children: [
@@ -115,9 +115,9 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                         colors: [
-                          AppTheme.deepNavy.withOpacity(0.8),
-                          AppTheme.deepNavy.withOpacity(0.4),
-                          Colors.transparent,
+                          AppTheme.deepNavy.withOpacity(0.9),
+                          AppTheme.deepNavy.withOpacity(0.6),
+                          AppTheme.deepNavy.withOpacity(0.3),
                         ],
                       ),
                     ),
@@ -130,84 +130,43 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
           // Content Overlay
           Center(
             child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 1200),
+              constraints: const BoxConstraints(maxWidth: 1400),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
-                  children: [
-                    // Text Content
-                    FadeTransition(
-                      opacity: _fadeAnimation,
-                      child: SlideTransition(
-                        position: _slideAnimation,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              _slides[_currentPage]['title']!,
-                              textAlign: isDesktop ? TextAlign.start : TextAlign.center,
-                              style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                                    fontSize: isDesktop ? 56 : 32,
-                                    color: Colors.white,
-                                    shadows: [
-                                      Shadow(color: Colors.black.withOpacity(0.5), blurRadius: 10),
-                                    ],
-                                    height: 1.1,
-                                  ),
-                            ),
-                            const SizedBox(height: 20),
-                            Text(
-                              _slides[_currentPage]['subtitle']!,
-                              textAlign: isDesktop ? TextAlign.start : TextAlign.center,
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                    fontSize: 18,
-                                    color: Colors.white.withOpacity(0.9),
-                                    shadows: [
-                                      Shadow(color: Colors.black.withOpacity(0.5), blurRadius: 10),
-                                    ],
-                                  ),
-                            ),
-                            const SizedBox(height: 32),
-                            if (isDesktop)
-                              Row(
-                                children: [
-                                  _buildTrustBadge(Icons.check_circle, "Free Service"),
-                                  const SizedBox(width: 24),
-                                  _buildTrustBadge(Icons.check_circle, "No Markups"),
-                                ],
-                              ),
-                          ],
+                child: isDesktop 
+                  ? Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        // Text Content (Left Side)
+                        Expanded(
+                          flex: 3,
+                          child: _buildTextContent(isDesktop),
                         ),
-                      ),
+                        // Mini Calculator (Right Side)
+                        const Expanded(
+                          flex: 1,
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 40),
+                            child: MiniSavingsCalculator(),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _buildTextContent(isDesktop),
+                        const SizedBox(height: 40),
+                        const MiniSavingsCalculator(),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
-          // Slim Bottom Comparison Bar
-          Positioned(
-            bottom: 100,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1200),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: _buildSlimComparisonBar(context, isDesktop),
-                ),
               ),
             ),
           ),
 
           // Indicators
           Positioned(
-            bottom: 60,
+            bottom: 40,
             left: 0,
             right: 0,
             child: Row(
@@ -219,7 +178,7 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
                   width: _currentPage == index ? 24 : 8,
                   height: 8,
                   decoration: BoxDecoration(
-                    color: _currentPage == index ? AppTheme.accentOrange : Colors.white.withOpacity(0.5),
+                    color: _currentPage == index ? AppTheme.accentOrange : Colors.white.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(4),
                   ),
                 );
@@ -231,102 +190,46 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
     );
   }
 
-  Widget _buildSlimComparisonBar(BuildContext context, bool isDesktop) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(100),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            blurRadius: 30,
-            offset: const Offset(0, 10),
-          ),
-        ],
-        border: Border.all(color: AppTheme.accentOrange.withOpacity(0.5), width: 1.5),
-      ),
-      child: isDesktop
-          ? Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 24),
-                  child: Text(
-                    "Compare:",
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w900,
-                          color: AppTheme.deepNavy,
-                        ),
+  Widget _buildTextContent(bool isDesktop) {
+    return FadeTransition(
+      opacity: _fadeAnimation,
+      child: SlideTransition(
+        position: _slideAnimation,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+          children: [
+            Text(
+              _slides[_currentPage]['title']!,
+              textAlign: isDesktop ? TextAlign.start : TextAlign.center,
+              style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    fontSize: isDesktop ? 64 : 36,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    height: 1.1,
                   ),
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildSlimItem(context, Icons.bolt, "Electricity", '/deals/electricity'),
-                        _buildSlimItem(context, Icons.local_fire_department, "Gas", '/deals/gas'),
-                        _buildSlimItem(context, Icons.wifi, "Internet", '/deals/internet'),
-                        _buildSlimItem(context, Icons.phone_iphone, "Mobile", '/deals/mobile'),
-                        _buildSlimItem(context, Icons.medical_services, "Health", '/deals/insurance/health'),
-                        _buildSlimItem(context, Icons.directions_car, "Car Ins.", '/deals/insurance/car'),
-                        _buildSlimItem(context, Icons.home, "Home Loan", '/loans/home'),
-                        _buildSlimItem(context, Icons.credit_card, "Credit Card", '/deals/credit-cards'),
-                      ],
-                    ),
+            ),
+            const SizedBox(height: 24),
+            Text(
+              _slides[_currentPage]['subtitle']!,
+              textAlign: isDesktop ? TextAlign.start : TextAlign.center,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    fontSize: 20,
+                    color: Colors.white.withOpacity(0.9),
                   ),
-                ),
-                const SizedBox(width: 16),
-                ElevatedButton(
-                  onPressed: () => context.go('/deals/electricity'),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                    backgroundColor: AppTheme.primaryBlue,
-                  ),
-                  child: const Text("Search All"),
-                ),
-              ],
-            )
-          : SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+            ),
+            const SizedBox(height: 48),
+            if (isDesktop)
+              Wrap(
+                spacing: 32,
+                runSpacing: 16,
                 children: [
-                  _buildSlimItem(context, Icons.bolt, "Electricity", '/deals/electricity'),
-                  _buildSlimItem(context, Icons.local_fire_department, "Gas", '/deals/gas'),
-                  _buildSlimItem(context, Icons.wifi, "Internet", '/deals/internet'),
-                  _buildSlimItem(context, Icons.phone_iphone, "Mobile", '/deals/mobile'),
-                  _buildSlimItem(context, Icons.medical_services, "Health", '/deals/insurance/health'),
-                  _buildSlimItem(context, Icons.directions_car, "Car Ins.", '/deals/insurance/car'),
-                  _buildSlimItem(context, Icons.home, "Home Loan", '/loans/home'),
-                  _buildSlimItem(context, Icons.credit_card, "Credit Card", '/deals/credit-cards'),
+                  _buildTrustBadge(Icons.verified_user, "100% Secure"),
+                  _buildTrustBadge(Icons.star, "Top Rated Providers"),
+                  _buildTrustBadge(Icons.timer, "Saves you hours"),
                 ],
               ),
-            ),
-    );
-  }
-
-  Widget _buildSlimItem(BuildContext context, IconData icon, String label, String route) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: () => GoRouter.of(context).go(route),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(icon, color: AppTheme.primaryBlue, size: 20),
-              const SizedBox(width: 8),
-              Text(
-                label,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13,
-                  color: AppTheme.deepNavy,
-                ),
-              ),
-            ],
-          ),
+          ],
         ),
       ),
     );
@@ -334,8 +237,9 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
 
   Widget _buildTrustBadge(IconData icon, String text) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        const Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 20),
+        Icon(icon, color: AppTheme.vibrantEmerald, size: 20),
         const SizedBox(width: 8),
         Text(
           text,

@@ -105,19 +105,19 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     return Stack(
       children: [
         Container(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: widget.isBestValue ? AppTheme.vibrantEmerald : (_isHovered ? AppTheme.accentOrange.withOpacity(0.5) : const Color(0xFFEAECF0)),
               width: widget.isBestValue || _isHovered ? 2 : 1,
             ),
             boxShadow: [
               BoxShadow(
-                color: _isHovered ? Colors.black.withOpacity(0.12) : Colors.black.withOpacity(0.06),
-                blurRadius: _isHovered ? 20 : 12,
-                offset: _isHovered ? const Offset(0, 10) : const Offset(0, 6),
+                color: _isHovered ? Colors.black.withOpacity(0.1) : Colors.black.withOpacity(0.05),
+                blurRadius: _isHovered ? 16 : 8,
+                offset: _isHovered ? const Offset(0, 8) : const Offset(0, 4),
               ),
             ],
           ),
@@ -132,7 +132,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                   _buildLogo(),
                   if (widget.deal.rating > 0)
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                       decoration: BoxDecoration(
                         color: Colors.amber.shade50,
                         borderRadius: BorderRadius.circular(100),
@@ -140,11 +140,11 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                       ),
                       child: Row(
                         children: [
-                          const Icon(Icons.star, color: Colors.amber, size: 14),
-                          const SizedBox(width: 4),
+                          const Icon(Icons.star, color: Colors.amber, size: 12),
+                          const SizedBox(width: 2),
                           Text(
                             widget.deal.rating.toString(),
-                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: AppTheme.deepNavy),
+                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10, color: AppTheme.deepNavy),
                           ),
                         ],
                       ),
@@ -152,7 +152,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                 ],
               ),
               
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
 
               // Middle: Info
               Column(
@@ -160,23 +160,23 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                   Text(
                     widget.deal.providerName.toUpperCase(),
                     style: const TextStyle(
-                      fontSize: 10, 
+                      fontSize: 9, 
                       color: AppTheme.primaryBlue, 
                       fontWeight: FontWeight.w900,
-                      letterSpacing: 1.2,
+                      letterSpacing: 1.0,
                     ),
                   ),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 4),
                   Text(
                     widget.deal.planName,
                     textAlign: TextAlign.center,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w800,
                       color: AppTheme.deepNavy,
-                      height: 1.2,
+                      height: 1.1,
                     ),
                   ),
                 ],
@@ -188,10 +188,10 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
               Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: AppTheme.offWhite,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     child: RichText(
                       textAlign: TextAlign.center,
@@ -200,26 +200,26 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                           if (widget.deal.category != ProductCategory.electricity && widget.deal.category != ProductCategory.gas)
                             const TextSpan(
                               text: '\$',
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: AppTheme.deepNavy),
                             ),
                           TextSpan(
                             text: widget.deal.price > 0 
                                 ? (widget.deal.price % 1 == 0 ? widget.deal.price.toStringAsFixed(0) : widget.deal.price.toStringAsFixed(2))
                                 : 'Check',
-                            style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w900, color: AppTheme.deepNavy, letterSpacing: -1.0),
+                            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AppTheme.deepNavy, letterSpacing: -0.5),
                           ),
                           TextSpan(
                             text: ' / ${widget.deal.priceUnit}',
-                            style: const TextStyle(fontSize: 11, color: AppTheme.slate600, fontWeight: FontWeight.w600),
+                            style: const TextStyle(fontSize: 10, color: AppTheme.slate600, fontWeight: FontWeight.w600),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 8),
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
                       color: _isHovered ? AppTheme.accentOrange : AppTheme.primaryBlue.withOpacity(0.08),
                       borderRadius: BorderRadius.circular(100),
@@ -230,16 +230,16 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                         Text(
                           'VIEW DETAILS',
                           style: TextStyle(
-                            fontSize: 11, 
+                            fontSize: 10, 
                             color: _isHovered ? Colors.white : AppTheme.primaryBlue, 
                             fontWeight: FontWeight.w900,
-                            letterSpacing: 0.8,
+                            letterSpacing: 0.5,
                           ),
                         ),
-                        const SizedBox(width: 6),
+                        const SizedBox(width: 4),
                         Icon(
                           Icons.arrow_forward_ios, 
-                          size: 10, 
+                          size: 8, 
                           color: _isHovered ? Colors.white : AppTheme.primaryBlue,
                         ),
                       ],
@@ -261,20 +261,20 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     final isSvg = logoUrl.toLowerCase().endsWith('.svg');
 
     return Container(
-      width: 48, 
-      height: 48, 
-      padding: const EdgeInsets.all(8),
+      width: 36, 
+      height: 36, 
+      padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 3),
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 6,
+            offset: const Offset(0, 2),
           ),
         ],
-        border: Border.all(color: AppTheme.offWhite, width: 1.5),
+        border: Border.all(color: AppTheme.offWhite, width: 1.0),
       ),
       child: ClipOval(
         child: isSvg
@@ -300,7 +300,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
         widget.deal.providerName.isNotEmpty ? widget.deal.providerName[0] : '?',
         style: const TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 20,
+          fontSize: 16,
           color: Colors.white,
         ),
       ),
@@ -309,15 +309,15 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
 
   Widget _buildBack() {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppTheme.deepNavy,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.25),
-            blurRadius: 24,
-            offset: const Offset(0, 12),
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
           ),
         ],
       ),
@@ -329,30 +329,30 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                         children: [
                           Text(
                             'Key Features',
-                            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14, color: Colors.white, letterSpacing: 0.8),
+                            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12, color: Colors.white, letterSpacing: 0.5),
                           ),
-                          Icon(Icons.info_outline, size: 18, color: AppTheme.accentOrange),
+                          Icon(Icons.info_outline, size: 14, color: AppTheme.accentOrange),
                         ],
-                      ),          const SizedBox(height: 16),
+                      ),          const SizedBox(height: 12),
           Expanded(
             child: ListView(
               padding: EdgeInsets.zero,
               physics: const BouncingScrollPhysics(),
               children: [
                 ...widget.deal.keyFeatures.map((feature) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12.0),
+                  padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Padding(
                         padding: EdgeInsets.only(top: 2.0),
-                        child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 16),
+                        child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 14),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           feature,
-                          style: TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.9), height: 1.4, fontWeight: FontWeight.w500),
+                          style: TextStyle(fontSize: 11, color: Colors.white.withOpacity(0.9), height: 1.3, fontWeight: FontWeight.w500),
                         ),
                       ),
                     ],
@@ -361,10 +361,10 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
               ],
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
-            height: 48,
+            height: 40,
             child: ElevatedButton(
               onPressed: _launchURL,
               style: ElevatedButton.styleFrom(
@@ -372,15 +372,15 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                 foregroundColor: Colors.white,
                 elevation: 0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('GO TO SITE', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 13, letterSpacing: 0.8)),
-                  SizedBox(width: 6),
-                  Icon(Icons.open_in_new, size: 14),
+                  Text('GO TO SITE', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 11, letterSpacing: 0.5)),
+                  SizedBox(width: 4),
+                  Icon(Icons.open_in_new, size: 12),
                 ],
               ),
             ),

@@ -16,21 +16,21 @@ class MiniSavingsCalculator extends ConsumerWidget {
     final controller = ref.read(savingsControllerProvider.notifier);
 
     return GlassContainer(
-      borderRadius: 20,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      borderRadius: 16,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           const Text(
-            'Quick Savings Estimate',
+            'Savings Estimate',
             style: TextStyle(
               color: AppTheme.deepNavy,
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 8),
           
           _miniSlider(
             context,
@@ -64,24 +64,8 @@ class MiniSavingsCalculator extends ConsumerWidget {
             max: 150,
             onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
           ),
-          _miniSlider(
-            context,
-            label: 'Home Ins.',
-            icon: Icons.home,
-            value: utilityCosts.homeInsurance,
-            max: 500,
-            onChanged: (val) => controller.updateCost(UtilityType.homeInsurance, val),
-          ),
-          _miniSlider(
-            context,
-            label: 'Car Ins.',
-            icon: Icons.directions_car,
-            value: utilityCosts.carInsurance,
-            max: 400,
-            onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
-          ),
 
-          const Divider(height: 20),
+          const Divider(height: 12),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,7 +74,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 'Savings:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 13,
+                  fontSize: 12,
                   color: AppTheme.deepNavy,
                 ),
               ),
@@ -99,24 +83,24 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 prefix: '\$',
                 style: const TextStyle(
                   color: AppTheme.vibrantEmerald,
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 8),
           SizedBox(
             width: double.infinity,
-            height: 40,
+            height: 32,
             child: ElevatedButton(
               onPressed: () => context.push('/register'),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 backgroundColor: AppTheme.accentOrange,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
               ),
-              child: const Text('START SAVING', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+              child: const Text('START SAVING', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
             ),
           ),
         ],
@@ -133,7 +117,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
     required Function(double) onChanged,
   }) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 4.0),
+      padding: const EdgeInsets.only(bottom: 2.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -142,19 +126,19 @@ class MiniSavingsCalculator extends ConsumerWidget {
             children: [
               Row(
                 children: [
-                  Icon(icon, size: 12, color: AppTheme.primaryBlue),
+                  Icon(icon, size: 10, color: AppTheme.primaryBlue),
                   const SizedBox(width: 4),
-                  Text(label, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600)),
+                  Text(label, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600)),
                 ],
               ),
-              Text('\$${value.toInt()}', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
+              Text('\$${value.toInt()}', style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
             ],
           ),
           SliderTheme(
             data: SliderTheme.of(context).copyWith(
-              trackHeight: 3,
-              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
-              overlayShape: const RoundSliderOverlayShape(overlayRadius: 16),
+              trackHeight: 1.5,
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 4),
+              overlayShape: const RoundSliderOverlayShape(overlayRadius: 8),
               activeTrackColor: AppTheme.vibrantEmerald,
               inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
               thumbColor: AppTheme.accentOrange,

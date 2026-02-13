@@ -91,10 +91,10 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width > 1100;
     final screenHeight = MediaQuery.of(context).size.height;
-    final heroHeight = screenHeight * 0.5;
+    final heroHeight = screenHeight * 0.45; // 45% to leave room for Nav and bottom visibility
 
     return SizedBox(
-      height: heroHeight < 400 ? 400 : heroHeight, 
+      height: heroHeight < 380 ? 380 : heroHeight, 
       width: double.infinity,
       child: Stack(
         children: [
@@ -205,22 +205,22 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
               _slides[_currentPage]['title']!,
               textAlign: isDesktop ? TextAlign.start : TextAlign.center,
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                    fontSize: isDesktop ? 64 : 36,
+                    fontSize: isDesktop ? 48 : 28,
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
                     height: 1.1,
                   ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 16),
             Text(
               _slides[_currentPage]['subtitle']!,
               textAlign: isDesktop ? TextAlign.start : TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: 20,
+                    fontSize: 16,
                     color: Colors.white.withOpacity(0.9),
                   ),
             ),
-            const SizedBox(height: 48),
+            const SizedBox(height: 32),
             if (isDesktop)
               Wrap(
                 spacing: 32,

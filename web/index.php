@@ -2,25 +2,24 @@
 // Default Metadata
 $metaTitle = "Energy Comparison Australia | Save on Plans with SaveNest";
 $metaDescription = "Compare energy, internet, and insurance in Australia. Find the best deals and save up to $500 with SaveNest's free comparison tool. Instant quotes online.";
-$metaImage = "https://savenest.au/assets/assets/images/hero_energy.jpg";
+$metaImage = "https://savenest.au/assets/images/hero_energy.jpg";
 $metaUrl = "https://savenest.au/";
 $metaType = "website";
 
 // Get current path
 $requestUri = $_SERVER['REQUEST_URI'];
 $path = parse_url($requestUri, PHP_URL_PATH);
-$path = trim($path, '/'); // Remove leading/trailing slashes
+$path = trim($path, '/');
 
-// Data Files
-$blogFile = __DIR__ . '/../assets/data/blog_posts.json';
-$productFile = __DIR__ . '/../assets/data/products.json';
-
-// Fallback if not in root (e.g. after build)
+// Data Files - Look in web root first, then one level up
+$blogFile = __DIR__ . '/assets/data/blog_posts.json';
 if (!file_exists($blogFile)) {
-    $blogFile = __DIR__ . '/assets/data/blog_posts.json';
+    $blogFile = __DIR__ . '/../assets/data/blog_posts.json';
 }
+
+$productFile = __DIR__ . '/assets/data/products.json';
 if (!file_exists($productFile)) {
-    $productFile = __DIR__ . '/assets/data/products.json';
+    $productFile = __DIR__ . '/../assets/data/products.json';
 }
 
 // Helper to resolve image URL
@@ -28,22 +27,19 @@ function resolveImageUrl($img) {
     if (empty($img)) return "https://savenest.au/assets/images/hero_energy.jpg";
     if (strpos($img, 'http') === 0) return $img;
     
-    // Remove leading 'assets/' if present to avoid doubling up
     $cleanPath = ltrim($img, '/');
+    // Prevent double assets/ prefix
     if (strpos($cleanPath, 'assets/') === 0) {
         $cleanPath = substr($cleanPath, 7);
     }
-    
     return "https://savenest.au/assets/" . $cleanPath;
 }
 
-// 1. Try to find in Blog Posts
-if (strpos($path, 'blog/') === 0) {
-    $slug = substr($path, 5); // Remove 'blog/'
-    
+// 1. Blog Post Detection
+if (preg_match('/^blog\/([^\/]+)$/', $path, $matches)) {
+    $slug = $matches[1];
     if (file_exists($blogFile)) {
-        $json = file_get_contents($blogFile);
-        $blogs = json_decode($json, true);
+        $blogs = json_decode(file_get_contents($blogFile), true);
         if ($blogs) {
             foreach ($blogs as $post) {
                 if ($post['slug'] === $slug) {
@@ -59,36 +55,30 @@ if (strpos($path, 'blog/') === 0) {
     }
 }
 
-// 2. Try to find in State Guides
-elseif (strpos($path, 'guides/') === 0) {
-    $parts = explode('/', $path); // guides/nsw/electricity
-    if (count($parts) >= 3) {
-        $state = strtoupper($parts[1]);
-        $utility = ucfirst($parts[2]);
-        $metaTitle = "Best $utility Plans in $state | 2026 Guide | SaveNest";
-        $metaDescription = "Find the cheapest $utility providers in $state. Compare rates, rebates, and save hundreds today.";
-        $metaUrl = "https://savenest.au/" . $path;
-        
-        // Use utility specific hero image
-        if (strtolower($utility) == 'electricity') $metaImage = "https://savenest.au/assets/images/hero_energy.jpg";
-        elseif (strtolower($utility) == 'gas') $metaImage = "https://savenest.au/assets/images/energy.png";
-        elseif (strtolower($utility) == 'internet') $metaImage = "https://savenest.au/assets/images/hero_internet.jpg";
-    }
+// 2. State Guide Detection
+elseif (preg_match('/^guides\/([^\/]+)\/([^\/]+)$/', $path, $matches)) {
+    $state = strtoupper($matches[1]);
+    $utility = ucfirst($matches[2]);
+    $metaTitle = "Best $utility Plans in $state | 2026 Guide | SaveNest";
+    $metaDescription = "Compare the cheapest $utility providers in $state. Read our expert guide to tariffs and rebates.";
+    $metaUrl = "https://savenest.au/" . $path;
+    
+    if (strtolower($utility) == 'electricity') $metaImage = "https://savenest.au/assets/images/hero_energy.jpg";
+    elseif (strtolower($utility) == 'gas') $metaImage = "https://savenest.au/assets/images/energy.png";
+    elseif (strtolower($utility) == 'internet') $metaImage = "https://savenest.au/assets/images/hero_internet.jpg";
 }
 
-// 3. Try to find in Deals
-elseif (strpos($path, 'deal/') === 0) {
-    $dealId = substr($path, 5); // Remove 'deal/'
-
+// 3. Deal Detail Detection
+elseif (preg_match('/^deal\/([^\/]+)$/', $path, $matches)) {
+    $dealId = $matches[1];
     if (file_exists($productFile)) {
-        $json = file_get_contents($productFile);
-        $products = json_decode($json, true);
+        $products = json_decode(file_get_contents($productFile), true);
         if ($products) {
             foreach ($products as $category => $deals) {
                 if (is_array($deals)) {
                     foreach ($deals as $deal) {
                         if (isset($deal['id']) && $deal['id'] === $dealId) {
-                            $metaTitle = $deal['providerName'] . " - " . $deal['planName'] . " Review | SaveNest";
+                            $metaTitle = $deal['providerName'] . " - " . $deal['planName'] . " | SaveNest";
                             $metaDescription = $deal['description'];
                             $metaImage = resolveImageUrl($deal['logoUrl']);
                             $metaUrl = "https://savenest.au/deal/" . $dealId;
@@ -121,11 +111,7 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <!-- Primary Meta Tags -->
   <title><?php echo $metaTitle; ?></title>
   <meta name="description" content="<?php echo $metaDescription; ?>">
-  <meta name="keywords" content="compare electricity Australia, utility comparison, save money energy, solar sharer offer 2026, cheap internet plans, home insurance comparison, savenest, cheapest electricity provider NSW 2026">
-  <meta name="author" content="SaveNest Australia">
-
-  <!-- Google Search Console Verification - Replace with your real code from GSC -->
-  <meta name="google-site-verification" content="NABVIt55C39H9pCJOKcTbaa50I5IQLdbuJ7Yj9RxTes" />
+  <link rel="canonical" href="<?php echo $metaUrl; ?>">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="<?php echo $metaType; ?>">
@@ -134,6 +120,8 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <meta property="og:description" content="<?php echo $metaDescription; ?>">
   <meta property="og:image" content="<?php echo $metaImage; ?>">
   <meta property="og:image:secure_url" content="<?php echo $metaImage; ?>">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">

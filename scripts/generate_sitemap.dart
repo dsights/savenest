@@ -47,6 +47,29 @@ void main() async {
     buffer.writeln('  </url>');
   }
 
+  // Provider Pages
+  final providers = [
+    '1st-energy', 'adt-security', 'agl', 'aldi-mobile', 'actewagl', 'activ8me',
+    'alinta-energy', 'amber-electric', 'arctel', 'aurora-energy', 'aussie-broadband',
+    'belong', 'boost-mobile', 'buddy-telco', 'budget-direct', 'coles-mobile',
+    'covau-energy', 'diamond-energy', 'dodo', 'engie', 'energy-locals',
+    'energy-matters', 'energyaustralia', 'everyday-mobile', 'exetel', 'felix-mobile',
+    'flip', 'globird-energy', 'kleenheat', 'kogan', 'launtel', 'lebara',
+    'lumo-energy', 'mate', 'momentum-energy', 'moose-mobile', 'more', 'nectr',
+    'ovo-energy', 'optus', 'origin-energy', 'powershop', 'red-energy', 'ring',
+    'solar-choice', 'southern-phone', 'spintel', 'sumo', 'superloop', 'swoop',
+    'synergy', 'tpg', 'tangerine-telecom', 'tango-energy', 'telsim', 'telstra',
+    'vodafone', 'wuuk-labs', 'amaysim', 'iinet'
+  ];
+
+  for (var p in providers) {
+    buffer.writeln('  <url>');
+    buffer.writeln('    <loc>https://savenest.au/provider/$p</loc>');
+    buffer.writeln('    <changefreq>weekly</changefreq>');
+    buffer.writeln('    <priority>0.7</priority>');
+    buffer.writeln('  </url>');
+  }
+
   // Product Pages
   // Assuming productsJson is Map<String, List>
   productsJson.forEach((category, list) {

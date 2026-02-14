@@ -171,37 +171,43 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                     // Middle: Info
                     Column(
                       children: [
-                        AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: _isHovered ? 12 : 10, 
-                            vertical: _isHovered ? 5 : 4
-                          ),
-                          decoration: BoxDecoration(
-                            color: _isHovered 
-                                ? widget.deal.providerColor 
-                                : widget.deal.providerColor.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(8),
-                            boxShadow: _isHovered ? [
-                              BoxShadow(
-                                color: widget.deal.providerColor.withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 4),
-                              )
-                            ] : [],
-                          ),
-                          child: AnimatedDefaultTextStyle(
+                        InkWell(
+                          onTap: () {
+                            final slug = widget.deal.providerName.toLowerCase().replaceAll(' ', '-').replaceAll('(', '').replaceAll(')', '');
+                            context.push('/provider/$slug');
+                          },
+                          child: AnimatedContainer(
                             duration: const Duration(milliseconds: 300),
-                            style: TextStyle(
-                              fontSize: _isHovered ? 13 : 12, 
-                              color: _isHovered 
-                                  ? (widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : Colors.white)
-                                  : (widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : widget.deal.providerColor), 
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 1.0,
-                              fontFamily: 'Montserrat',
+                            padding: EdgeInsets.symmetric(
+                              horizontal: _isHovered ? 12 : 10, 
+                              vertical: _isHovered ? 5 : 4
                             ),
-                            child: Text(widget.deal.providerName.toUpperCase()),
+                            decoration: BoxDecoration(
+                              color: _isHovered 
+                                  ? widget.deal.providerColor 
+                                  : widget.deal.providerColor.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: _isHovered ? [
+                                BoxShadow(
+                                  color: widget.deal.providerColor.withOpacity(0.3),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 4),
+                                )
+                              ] : [],
+                            ),
+                            child: AnimatedDefaultTextStyle(
+                              duration: const Duration(milliseconds: 300),
+                              style: TextStyle(
+                                fontSize: _isHovered ? 13 : 12, 
+                                color: _isHovered 
+                                    ? (widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : Colors.white)
+                                    : (widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : widget.deal.providerColor), 
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.0,
+                                fontFamily: 'Montserrat',
+                              ),
+                              child: Text(widget.deal.providerName.toUpperCase()),
+                            ),
                           ),
                         ),
                         const SizedBox(height: 8),

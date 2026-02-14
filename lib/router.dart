@@ -10,6 +10,7 @@ import 'package:savenest/features/blog/blog_post_screen.dart';
 import 'package:savenest/features/comparison/comparison_model.dart';
 import 'package:savenest/features/comparison/comparison_screen.dart';
 import 'package:savenest/features/comparison/deal_details_screen.dart';
+import 'package:savenest/features/comparison/provider_details_screen.dart';
 import 'package:savenest/features/comparison/state_guide_screen.dart' hide StringExtension;
 import 'package:savenest/features/legal/disclaimer_screen.dart';
 import 'package:savenest/features/legal/privacy_policy_screen.dart';
@@ -59,6 +60,17 @@ final goRouter = GoRouter(
           context,
           state,
           DealDetailsScreen(dealId: dealId!),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/provider/:providerSlug',
+      pageBuilder: (context, state) {
+        final providerSlug = state.pathParameters['providerSlug'];
+        return _fadeTransition(
+          context,
+          state,
+          ProviderDetailsScreen(providerSlug: providerSlug!),
         );
       },
     ),

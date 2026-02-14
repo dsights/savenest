@@ -55,7 +55,7 @@ if (preg_match('/^blog\/([^\/]+)$/', $path, $matches)) {
     }
 }
 
-// 2. State Guide Detection
+// 2. Try to find in State Guides
 elseif (preg_match('/^guides\/([^\/]+)\/([^\/]+)$/', $path, $matches)) {
     $state = strtoupper($matches[1]);
     $utility = ucfirst($matches[2]);
@@ -68,7 +68,23 @@ elseif (preg_match('/^guides\/([^\/]+)\/([^\/]+)$/', $path, $matches)) {
     elseif (strtolower($utility) == 'internet') $metaImage = "https://savenest.au/assets/assets/images/hero_internet.jpg";
 }
 
-// 3. Deal Detail Detection
+// 3. Try to find in Provider Directory
+elseif (preg_match('/^provider\/([^\/]+)$/', $path, $matches)) {
+    $slug = $matches[1];
+    $name = str_replace('-', ' ', $slug);
+    $name = ucwords($name);
+    
+    // Manual mapping for acronyms
+    $overrides = ['Agl' => 'AGL', 'Tpg' => 'TPG', 'Nbn' => 'NBN', 'Adt' => 'ADT'];
+    if (isset($overrides[$name])) $name = $overrides[$name];
+
+    $metaTitle = "$name Plans, Reviews & Comparison Australia | SaveNest";
+    $metaDescription = "Compare all $name plans for electricity, gas, and internet. Find the best $name deals and save on your monthly bills with SaveNest.";
+    $metaUrl = "https://savenest.au/provider/" . $slug;
+    $metaImage = "https://savenest.au/assets/assets/images/hero_finance.jpg";
+}
+
+// 4. Try to find in Deals
 elseif (preg_match('/^deal\/([^\/]+)$/', $path, $matches)) {
     $dealId = $matches[1];
     if (file_exists($productFile)) {

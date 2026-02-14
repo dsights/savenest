@@ -1,9 +1,11 @@
 # SaveNest SEO Growth & Content Checklist
 
-## 1. Content Expansion (Goal: 100+ Pages)
+## 1. Content Expansion (Goal: 500+ Pages)
 - [x] **Core Comparison Tool:** Functional comparison for Energy, NBN, Mobile, Insurance.
 - [x] **Provider Detail Pages:** Create dedicated pages for each plan/provider (e.g., `/deal/origin-energy-daily-saver`).
     - *Status:* **Completed.** (164+ deal pages active at `/deal/:id`).
+- [x] **Provider Directory:** Dedicated landing pages for every supplier (e.g., `/provider/telstra`).
+    - *Status:* **Completed.** (50+ dedicated provider pages active).
 - [x] **State-Based Guides:** Create landing pages for state specific queries (e.g., `/electricity/nsw`, `/gas/vic`).
     - *Status:* **Completed.** (21 guide pages active at `/guides/:state/:utility`).
 - [x] **Blog Content:** 20+ High-quality articles implemented.

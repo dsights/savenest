@@ -2,7 +2,7 @@
 // Default Metadata
 $metaTitle = "Energy Comparison Australia | Save on Plans with SaveNest";
 $metaDescription = "Compare energy, internet, and insurance in Australia. Find the best deals and save up to $500 with SaveNest's free comparison tool. Instant quotes online.";
-$metaImage = "https://savenest.au/assets/images/hero_energy.jpg";
+$metaImage = "https://savenest.au/assets/assets/images/hero_energy.jpg";
 $metaUrl = "https://savenest.au/";
 $metaType = "website";
 
@@ -11,28 +11,28 @@ $requestUri = $_SERVER['REQUEST_URI'];
 $path = parse_url($requestUri, PHP_URL_PATH);
 $path = trim($path, '/');
 
-// Data Files - Look in web root first, then one level up
-$blogFile = __DIR__ . '/assets/data/blog_posts.json';
+// Data Files - Flutter Web puts assets in assets/assets/
+$blogFile = __DIR__ . '/assets/assets/data/blog_posts.json';
 if (!file_exists($blogFile)) {
-    $blogFile = __DIR__ . '/../assets/data/blog_posts.json';
+    $blogFile = __DIR__ . '/../assets/assets/data/blog_posts.json';
 }
 
-$productFile = __DIR__ . '/assets/data/products.json';
+$productFile = __DIR__ . '/assets/assets/data/products.json';
 if (!file_exists($productFile)) {
-    $productFile = __DIR__ . '/../assets/data/products.json';
+    $productFile = __DIR__ . '/../assets/assets/data/products.json';
 }
 
 // Helper to resolve image URL
 function resolveImageUrl($img) {
-    if (empty($img)) return "https://savenest.au/assets/images/hero_energy.jpg";
+    if (empty($img)) return "https://savenest.au/assets/assets/images/hero_energy.jpg";
     if (strpos($img, 'http') === 0) return $img;
     
     $cleanPath = ltrim($img, '/');
-    // Prevent double assets/ prefix
+    // Remove 'assets/' if it's already there to prevent triple assets/
     if (strpos($cleanPath, 'assets/') === 0) {
         $cleanPath = substr($cleanPath, 7);
     }
-    return "https://savenest.au/assets/" . $cleanPath;
+    return "https://savenest.au/assets/assets/" . $cleanPath;
 }
 
 // 1. Blog Post Detection
@@ -63,9 +63,9 @@ elseif (preg_match('/^guides\/([^\/]+)\/([^\/]+)$/', $path, $matches)) {
     $metaDescription = "Compare the cheapest $utility providers in $state. Read our expert guide to tariffs and rebates.";
     $metaUrl = "https://savenest.au/" . $path;
     
-    if (strtolower($utility) == 'electricity') $metaImage = "https://savenest.au/assets/images/hero_energy.jpg";
-    elseif (strtolower($utility) == 'gas') $metaImage = "https://savenest.au/assets/images/energy.png";
-    elseif (strtolower($utility) == 'internet') $metaImage = "https://savenest.au/assets/images/hero_internet.jpg";
+    if (strtolower($utility) == 'electricity') $metaImage = "https://savenest.au/assets/assets/images/hero_energy.jpg";
+    elseif (strtolower($utility) == 'gas') $metaImage = "https://savenest.au/assets/assets/images/energy.png";
+    elseif (strtolower($utility) == 'internet') $metaImage = "https://savenest.au/assets/assets/images/hero_internet.jpg";
 }
 
 // 3. Deal Detail Detection
@@ -114,6 +114,8 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <link rel="canonical" href="<?php echo $metaUrl; ?>">
 
   <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="SaveNest Australia">
+  <meta property="og:locale" content="en_AU">
   <meta property="og:type" content="<?php echo $metaType; ?>">
   <meta property="og:url" content="<?php echo $metaUrl; ?>">
   <meta property="og:title" content="<?php echo $metaTitle; ?>">
@@ -132,6 +134,10 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
 
   <!-- Google Search Console Verification - Replace with your real code from GSC -->
   <meta name="google-site-verification" content="NABVIt55C39H9pCJOKcTbaa50I5IQLdbuJ7Yj9RxTes" />
+
+  <!-- Pre-render Debug: Served via index.php -->
+  <!-- Route: <?php echo $path; ?> -->
+  <!-- Image: <?php echo $metaImage; ?> -->
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">

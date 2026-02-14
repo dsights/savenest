@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../theme/app_theme.dart';
+import 'savenest_logo.dart';
 
 class MainMobileDrawer extends StatelessWidget {
   const MainMobileDrawer({super.key});
@@ -12,20 +13,9 @@ class MainMobileDrawer extends StatelessWidget {
       child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 24),
-            child: Row(
-              children: [
-                Text(
-                  'SaveNest',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.w900,
-                        color: AppTheme.deepNavy,
-                        letterSpacing: -0.5,
-                      ),
-                ),
-              ],
-            ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 24),
+            child: SaveNestLogo(fontSize: 24),
           ),
           
           _drawerItem(context, 'Electricity Deals', '/deals/electricity', Icons.bolt),

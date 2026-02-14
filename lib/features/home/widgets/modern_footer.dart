@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../widgets/savenest_logo.dart';
 import '../../../theme/app_theme.dart';
 
 class ModernFooter extends StatelessWidget {
@@ -28,19 +29,7 @@ class ModernFooter extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              'SaveNest',
-                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: -0.5,
-                                  ),
-                            ),
-                          ],
-                        ),
+                        const SaveNestLogo(fontSize: 28, isLight: true),
                         const SizedBox(height: 24),
                         Text(
                           "Empowering Australians to make smarter financial choices by comparing utilities, insurance, and more.",

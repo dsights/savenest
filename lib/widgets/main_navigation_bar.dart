@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../theme/app_theme.dart';
+import 'savenest_logo.dart';
 
 class MainNavigationBar extends StatefulWidget {
   const MainNavigationBar({super.key});
@@ -36,18 +37,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               // Logo
               InkWell(
                 onTap: () => context.go('/'),
-                child: Row(
-                  children: [
-                    Text(
-                      'SaveNest',
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.w900,
-                            color: AppTheme.deepNavy,
-                            letterSpacing: -0.5,
-                          ),
-                    ),
-                  ],
-                ),
+                child: const SaveNestLogo(fontSize: 26),
               ),
 
               // Desktop Navigation with Icons

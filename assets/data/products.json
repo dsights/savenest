@@ -25,7 +25,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_5gplus",
@@ -46,7 +47,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_homewireless",
@@ -67,7 +69,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_5g",
@@ -87,7 +90,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_5gplus",
@@ -108,7 +112,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_5gpremium",
@@ -129,7 +134,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_homewireless",
@@ -150,7 +156,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_arctel_cruisylite",
@@ -173,7 +180,8 @@
       "rating": 2.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_arctel_cruisy",
@@ -196,7 +204,8 @@
       "rating": 2.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_arctel_superfast",
@@ -219,7 +228,8 @@
       "rating": 2.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_arctel_hypersonic",
@@ -242,7 +252,8 @@
       "rating": 2.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_exetel_one",
@@ -262,7 +273,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_optus_basic",
@@ -285,7 +297,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_optus_everyday",
@@ -308,7 +321,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_optus_fast_fttn",
@@ -327,7 +341,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_optus_promo_fttn",
@@ -346,7 +361,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_optus_fast_fttp",
@@ -365,7 +381,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_optus_promo_fttp",
@@ -384,7 +401,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_optus_ultrafast",
@@ -403,7 +421,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_homestarter",
@@ -425,7 +444,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_fixedwireless",
@@ -447,7 +467,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_homevalue",
@@ -469,7 +490,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_homeplus",
@@ -491,7 +513,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_wirelessplus",
@@ -513,7 +536,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_hometurbo",
@@ -535,7 +559,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_wirelesshomefast",
@@ -557,7 +582,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_wirelesssuperfast",
@@ -579,7 +605,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_hometurbofast",
@@ -601,7 +628,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_fibreupgrade",
@@ -623,7 +651,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_spintel_homeultrafast",
@@ -645,7 +674,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_superloop_everyday",
@@ -665,7 +695,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_superloop_extravalue",
@@ -685,7 +716,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_superloop_familymax",
@@ -705,7 +737,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_superloop_megaspeed",
@@ -726,7 +759,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_superloop_lightspeed",
@@ -747,7 +781,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_swoop_25",
@@ -770,7 +805,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_swoop_50",
@@ -793,7 +829,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_swoop_500",
@@ -816,7 +853,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_swoop_1000",
@@ -839,7 +877,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_nbn50",
@@ -859,7 +898,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_nbn100",
@@ -879,7 +919,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_nbn500",
@@ -899,7 +940,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_nbn12",
@@ -919,7 +961,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_nbn25",
@@ -939,7 +982,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_superfast",
@@ -959,7 +1003,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tpg_ultrafast",
@@ -979,7 +1024,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_value",
@@ -1000,7 +1046,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_valueplus",
@@ -1021,7 +1068,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_speedymax",
@@ -1042,7 +1090,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_ultraspeedy",
@@ -1063,7 +1112,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_basic",
@@ -1084,7 +1134,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_basic_alt",
@@ -1104,7 +1155,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_basic_only",
@@ -1125,7 +1177,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_basic_only_alt",
@@ -1146,7 +1199,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_essential",
@@ -1167,7 +1221,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_essential_alt",
@@ -1187,7 +1242,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_essential_only",
@@ -1208,7 +1264,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_essential_only_alt",
@@ -1229,7 +1286,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_premium",
@@ -1250,7 +1308,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_premium500",
@@ -1272,7 +1331,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_premium_only",
@@ -1293,7 +1353,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_premium_only500",
@@ -1315,7 +1376,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_ultimate_only",
@@ -1337,7 +1399,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_ultimate",
@@ -1359,7 +1422,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_ultrafast_only",
@@ -1381,7 +1445,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_telstra_ultrafast",
@@ -1403,7 +1468,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_vodafone_500",
@@ -1425,7 +1491,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_vodafone_740",
@@ -1447,7 +1514,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_vodafone_850",
@@ -1466,7 +1534,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_vodafone_50",
@@ -1485,7 +1554,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_vodafone_25",
@@ -1504,7 +1574,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_nbn500",
@@ -1525,7 +1596,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_nbn12",
@@ -1545,7 +1617,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_nbn25",
@@ -1565,7 +1638,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_nbn50",
@@ -1585,7 +1659,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_superfast",
@@ -1606,7 +1681,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_iinet_ultrafast",
@@ -1627,7 +1703,8 @@
       "rating": 1.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_southern_basic",
@@ -1651,7 +1728,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_southern_standard",
@@ -1675,7 +1753,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_southern_fast",
@@ -1699,7 +1778,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_southern_fastx",
@@ -1723,7 +1803,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_southern_ultrafast",
@@ -1748,7 +1829,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     }
   ],
   "electricity": [
@@ -1776,7 +1858,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_agl_netflix",
@@ -1802,7 +1887,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_agl_solarsavers",
@@ -1827,7 +1915,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_flexi",
@@ -1851,7 +1942,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_solarmax",
@@ -1874,7 +1968,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_ratefix",
@@ -1898,7 +1995,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_standing",
@@ -1920,7 +2020,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_tango_everyday",
@@ -1939,7 +2042,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_tango_bonus",
@@ -1958,7 +2064,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_tango_back",
@@ -1977,7 +2086,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_origin_solarboost",
@@ -2000,7 +2112,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_origin_gosolar",
@@ -2023,7 +2138,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_redenergy_qantas",
@@ -2047,7 +2165,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_redenergy_livingenergy",
@@ -2070,7 +2191,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_sumo_assured",
@@ -2093,7 +2217,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_sumo_saver",
@@ -2116,7 +2243,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_powershop_standard",
@@ -2139,7 +2269,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_powershop_solar",
@@ -2162,7 +2295,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_lumo_value",
@@ -2186,7 +2322,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_lumo_solar",
@@ -2209,7 +2348,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_dodo_market",
@@ -2232,7 +2374,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_dodo_solar",
@@ -2255,7 +2400,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_covau_freedom",
@@ -2278,7 +2426,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_covau_solar",
@@ -2301,7 +2452,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_diamond_thrive",
@@ -2325,7 +2479,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_diamond_solar",
@@ -2348,7 +2505,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_globird_boost",
@@ -2371,7 +2531,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_globird_solar",
@@ -2394,7 +2557,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_amber_wholesale",
@@ -2417,7 +2583,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_amber_solar",
@@ -2440,7 +2609,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_alinta_home",
@@ -2463,7 +2635,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_alinta_solar",
@@ -2486,7 +2661,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_engin_saver",
@@ -2509,7 +2687,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_engin_solar",
@@ -2532,7 +2713,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energy_locals_online",
@@ -2555,7 +2739,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energy_locals_solar",
@@ -2578,7 +2765,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_momentum_smile",
@@ -2601,7 +2791,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_momentum_solar",
@@ -2624,7 +2817,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_ovo_drive",
@@ -2647,7 +2843,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_ovo_solar",
@@ -2670,7 +2869,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_nectr_clean",
@@ -2694,7 +2896,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_nectr_solar",
@@ -2717,7 +2922,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_actewagl_smart",
@@ -2741,7 +2949,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_commander_value",
@@ -2764,7 +2975,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "vic_agl_smartsaver",
@@ -2787,7 +3001,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_agl_seniorssaver",
@@ -2809,7 +3026,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_energyaus_home365",
@@ -2831,7 +3051,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_tango_everyday",
@@ -2854,7 +3077,10 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_tango_bonus",
@@ -2873,7 +3099,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_tango_back",
@@ -2892,7 +3121,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_origin_solarboost",
@@ -2915,7 +3147,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_origin_gosolar",
@@ -2938,7 +3173,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_redenergy_qantas",
@@ -2962,7 +3200,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_redenergy_livingenergy",
@@ -2985,7 +3226,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_sumo_assured",
@@ -3008,7 +3252,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_sumo_saver",
@@ -3031,7 +3278,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_powershop_standard",
@@ -3054,7 +3304,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_powershop_solar",
@@ -3077,7 +3330,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_lumo_value",
@@ -3101,7 +3357,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_lumo_solar",
@@ -3124,7 +3383,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_dodo_market",
@@ -3147,7 +3409,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_dodo_solar",
@@ -3170,7 +3435,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_covau_freedom",
@@ -3193,7 +3461,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_covau_solar",
@@ -3216,7 +3487,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_diamond_thrive",
@@ -3240,7 +3514,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_diamond_solar",
@@ -3263,7 +3540,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_globird_boost",
@@ -3286,7 +3566,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_globird_solar",
@@ -3309,7 +3592,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_amber_wholesale",
@@ -3332,7 +3618,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_amber_solar",
@@ -3355,7 +3644,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_alinta_home",
@@ -3378,7 +3670,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_alinta_solar",
@@ -3401,7 +3696,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_engin_saver",
@@ -3424,7 +3722,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_engin_solar",
@@ -3447,7 +3748,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_energy_locals_online",
@@ -3470,7 +3774,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_energy_locals_solar",
@@ -3493,7 +3800,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_momentum_smile",
@@ -3516,7 +3826,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_momentum_solar",
@@ -3539,7 +3852,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_ovo_drive",
@@ -3562,7 +3878,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_ovo_solar",
@@ -3585,7 +3904,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_nectr_clean",
@@ -3609,7 +3931,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_nectr_solar",
@@ -3632,7 +3957,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "qld_agl_smartsaver",
@@ -3655,7 +3983,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_agl_seniorssaver",
@@ -3677,7 +4008,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_agl_netflix",
@@ -3700,7 +4034,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_agl_solarsavers",
@@ -3723,7 +4060,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_energyaus_flexi",
@@ -3746,7 +4086,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_origin_solarboost",
@@ -3769,7 +4112,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_origin_gosolar",
@@ -3792,7 +4138,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_redenergy_qantas",
@@ -3816,7 +4165,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_redenergy_livingenergy",
@@ -3839,7 +4191,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_sumo_assured",
@@ -3862,7 +4217,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_sumo_saver",
@@ -3885,7 +4243,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_powershop_standard",
@@ -3908,7 +4269,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_powershop_solar",
@@ -3931,7 +4295,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_lumo_value",
@@ -3955,7 +4322,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_lumo_solar",
@@ -3978,7 +4348,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_dodo_market",
@@ -4001,7 +4374,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_dodo_solar",
@@ -4024,7 +4400,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_covau_freedom",
@@ -4047,7 +4426,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_covau_solar",
@@ -4070,7 +4452,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_diamond_thrive",
@@ -4094,7 +4479,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_diamond_solar",
@@ -4117,7 +4505,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_globird_boost",
@@ -4140,7 +4531,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_globird_solar",
@@ -4163,7 +4557,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_amber_wholesale",
@@ -4186,7 +4583,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_amber_solar",
@@ -4209,7 +4609,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_alinta_home",
@@ -4232,7 +4635,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_alinta_solar",
@@ -4255,7 +4661,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_engin_saver",
@@ -4278,7 +4687,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_engin_solar",
@@ -4301,7 +4713,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_energy_locals_online",
@@ -4324,7 +4739,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_energy_locals_solar",
@@ -4347,7 +4765,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_momentum_smile",
@@ -4370,7 +4791,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_momentum_solar",
@@ -4393,7 +4817,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_ovo_drive",
@@ -4416,7 +4843,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_ovo_solar",
@@ -4439,7 +4869,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_nectr_clean",
@@ -4463,7 +4896,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_nectr_solar",
@@ -4486,7 +4922,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_ergon_retail",
@@ -4509,7 +4948,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "sa_agl_smartsaver",
@@ -4532,7 +4974,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_agl_seniorssaver",
@@ -4554,7 +4999,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_agl_netflix",
@@ -4577,7 +5025,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_agl_solarsavers",
@@ -4600,7 +5051,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_energyaus_flexi",
@@ -4623,7 +5077,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_origin_solarboost",
@@ -4646,7 +5103,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_origin_gosolar",
@@ -4669,7 +5129,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_redenergy_qantas",
@@ -4693,7 +5156,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_redenergy_livingenergy",
@@ -4716,7 +5182,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_sumo_assured",
@@ -4739,7 +5208,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_sumo_saver",
@@ -4762,7 +5234,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_powershop_standard",
@@ -4785,7 +5260,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_powershop_solar",
@@ -4808,7 +5286,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_lumo_value",
@@ -4832,7 +5313,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_lumo_solar",
@@ -4855,7 +5339,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_dodo_market",
@@ -4878,7 +5365,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_dodo_solar",
@@ -4901,7 +5391,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_covau_freedom",
@@ -4924,7 +5417,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_covau_solar",
@@ -4947,7 +5443,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_diamond_thrive",
@@ -4971,7 +5470,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_diamond_solar",
@@ -4994,7 +5496,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_globird_boost",
@@ -5017,7 +5522,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_globird_solar",
@@ -5040,7 +5548,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_amber_wholesale",
@@ -5063,7 +5574,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_amber_solar",
@@ -5086,7 +5600,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_alinta_home",
@@ -5109,7 +5626,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_alinta_solar",
@@ -5132,7 +5652,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_engin_saver",
@@ -5155,7 +5678,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_engin_solar",
@@ -5178,7 +5704,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_energy_locals_online",
@@ -5201,7 +5730,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_energy_locals_solar",
@@ -5224,7 +5756,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_momentum_smile",
@@ -5247,7 +5782,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_momentum_solar",
@@ -5270,7 +5808,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_ovo_drive",
@@ -5293,7 +5834,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_ovo_solar",
@@ -5316,7 +5860,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_nectr_clean",
@@ -5340,7 +5887,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_nectr_solar",
@@ -5363,7 +5913,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "act_energyaus_flexi",
@@ -5386,7 +5939,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_actewagl_smart",
@@ -5409,7 +5965,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_origin_solarboost",
@@ -5432,7 +5991,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_redenergy_qantas",
@@ -5456,7 +6018,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_sumo_assured",
@@ -5479,7 +6044,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_powershop_standard",
@@ -5502,7 +6070,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_lumo_value",
@@ -5526,7 +6097,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_dodo_market",
@@ -5549,7 +6123,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_covau_freedom",
@@ -5572,7 +6149,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_diamond_thrive",
@@ -5596,7 +6176,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_globird_boost",
@@ -5619,7 +6202,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_amber_wholesale",
@@ -5642,7 +6228,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_alinta_home",
@@ -5665,7 +6254,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_engin_saver",
@@ -5688,7 +6280,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_energy_locals_online",
@@ -5711,7 +6306,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_momentum_smile",
@@ -5734,7 +6332,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_ovo_drive",
@@ -5757,7 +6358,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "act_nectr_clean",
@@ -5781,7 +6385,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "ACT"
+      ]
     },
     {
       "id": "wa_synergy_home",
@@ -5804,7 +6411,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "WA"
+      ]
     },
     {
       "id": "wa_horizon_home",
@@ -5827,7 +6437,10 @@
       "rating": 3.1,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "WA"
+      ]
     },
     {
       "id": "wa_alinta_home",
@@ -5850,7 +6463,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "WA"
+      ]
     },
     {
       "id": "tas_aurora_home",
@@ -5873,7 +6489,10 @@
       "rating": 3.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "TAS"
+      ]
     },
     {
       "id": "tas_1stenergy_home",
@@ -5896,7 +6515,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "TAS"
+      ]
     },
     {
       "id": "nt_jacana_home",
@@ -5919,7 +6541,10 @@
       "rating": 3.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NT"
+      ]
     }
   ],
   "gas": [
@@ -5945,7 +6570,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_agl_netflix",
@@ -5969,7 +6597,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_agl_solarsavers",
@@ -5993,7 +6624,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_flexi",
@@ -6016,7 +6650,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_solarmax",
@@ -6038,7 +6675,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_ratefix",
@@ -6061,7 +6701,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energyaus_standing",
@@ -6082,7 +6725,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_tango_everyday",
@@ -6101,7 +6747,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_tango_bonus",
@@ -6120,7 +6769,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_tango_back",
@@ -6139,7 +6791,10 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_origin_go",
@@ -6161,7 +6816,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_origin_basic",
@@ -6183,7 +6841,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_redenergy_qantas",
@@ -6206,7 +6867,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_redenergy_livingenergy",
@@ -6228,7 +6892,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_sumo_assured",
@@ -6250,7 +6917,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_sumo_saver",
@@ -6272,7 +6942,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_powershop_standard",
@@ -6294,7 +6967,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_lumo_value",
@@ -6317,7 +6993,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_dodo_market",
@@ -6339,7 +7018,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_covau_freedom",
@@ -6361,7 +7043,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_diamond_thrive",
@@ -6384,7 +7069,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_globird_boost",
@@ -6406,7 +7094,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_alinta_home",
@@ -6428,7 +7119,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_engin_saver",
@@ -6450,7 +7144,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_energy_locals_online",
@@ -6472,7 +7169,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_momentum_smile",
@@ -6494,7 +7194,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_ovo_drive",
@@ -6516,7 +7219,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "nsw_nectr_clean",
@@ -6539,7 +7245,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "NSW"
+      ]
     },
     {
       "id": "vic_agl_smartsaver",
@@ -6561,7 +7270,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_energyaus_flexi",
@@ -6583,7 +7295,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_tango_standing_central",
@@ -6606,7 +7321,10 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_origin_go",
@@ -6629,7 +7347,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_origin_basic",
@@ -6652,7 +7373,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_redenergy_qantas",
@@ -6676,7 +7400,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_redenergy_livingenergy",
@@ -6699,7 +7426,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_sumo_assured",
@@ -6722,7 +7452,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_sumo_saver",
@@ -6745,7 +7478,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_powershop_standard",
@@ -6768,7 +7504,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_lumo_value",
@@ -6792,7 +7531,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_dodo_market",
@@ -6815,7 +7557,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_covau_freedom",
@@ -6838,7 +7583,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_diamond_thrive",
@@ -6862,7 +7610,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_globird_boost",
@@ -6885,7 +7636,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_alinta_home",
@@ -6908,7 +7662,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_engin_saver",
@@ -6931,7 +7688,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_energy_locals_online",
@@ -6954,7 +7714,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_momentum_smile",
@@ -6977,7 +7740,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_ovo_drive",
@@ -7000,7 +7766,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "vic_nectr_clean",
@@ -7024,7 +7793,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "VIC"
+      ]
     },
     {
       "id": "qld_agl_smartsaver",
@@ -7045,7 +7817,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_origin_go",
@@ -7067,7 +7842,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_origin_basic",
@@ -7089,7 +7867,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_redenergy_qantas",
@@ -7112,7 +7893,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_redenergy_livingenergy",
@@ -7134,7 +7918,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_sumo_assured",
@@ -7156,7 +7943,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_sumo_saver",
@@ -7178,7 +7968,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_powershop_standard",
@@ -7200,7 +7993,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_lumo_value",
@@ -7223,7 +8019,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_dodo_market",
@@ -7245,7 +8044,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_covau_freedom",
@@ -7267,7 +8069,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_diamond_thrive",
@@ -7290,7 +8095,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_globird_boost",
@@ -7312,7 +8120,10 @@
       "rating": 3.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_alinta_home",
@@ -7334,7 +8145,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_engin_saver",
@@ -7356,7 +8170,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_energy_locals_online",
@@ -7378,7 +8195,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_momentum_smile",
@@ -7400,7 +8220,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_ovo_drive",
@@ -7422,7 +8245,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "qld_nectr_clean",
@@ -7445,7 +8271,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "QLD"
+      ]
     },
     {
       "id": "sa_agl_smartsaver",
@@ -7468,7 +8297,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_energyaus_flexi",
@@ -7492,7 +8324,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_energyaus_ratefix",
@@ -7516,7 +8351,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_energyaus_standing",
@@ -7539,7 +8377,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_origin_go",
@@ -7563,7 +8404,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_origin_basic",
@@ -7587,7 +8431,10 @@
       "rating": 4.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_redenergy_qantas",
@@ -7612,7 +8459,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_redenergy_livingenergy",
@@ -7636,7 +8486,10 @@
       "rating": 3.8,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_sumo_assured",
@@ -7660,7 +8513,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_sumo_saver",
@@ -7684,7 +8540,10 @@
       "rating": 3.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_powershop_standard",
@@ -7708,7 +8567,10 @@
       "rating": 3.7,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_lumo_value",
@@ -7733,7 +8595,10 @@
       "rating": 3.6,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_dodo_market",
@@ -7757,7 +8622,10 @@
       "rating": 3.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_covau_freedom",
@@ -7781,7 +8649,10 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "sa_diamond_thrive",
@@ -7806,7 +8677,10 @@
       "rating": 3.9,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "SA"
+      ]
     },
     {
       "id": "act_energyaus_flexi",
@@ -7828,7 +8702,10 @@
       "rating": 4.3,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": [
+        "ACT"
+      ]
     }
   ],
   "mobile": [
@@ -7853,7 +8730,8 @@
       "rating": 4.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_boost_75gb",
@@ -7877,7 +8755,8 @@
       "rating": 4.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_boost_105gb",
@@ -7901,7 +8780,8 @@
       "rating": 4.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_boost_105gb_esim",
@@ -7925,7 +8805,8 @@
       "rating": 4.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_boost_135gb",
@@ -7949,7 +8830,8 @@
       "rating": 4.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_boost_160gb",
@@ -7973,7 +8855,8 @@
       "rating": 4.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_22gb",
@@ -7995,7 +8878,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_30gb",
@@ -8017,7 +8901,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_50gb",
@@ -8039,7 +8924,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_75gb_long",
@@ -8059,7 +8945,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_215gb_long",
@@ -8079,7 +8966,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_300gb_long",
@@ -8099,7 +8987,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_70gb_sim",
@@ -8121,7 +9010,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_110gb_sim",
@@ -8143,7 +9033,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_everyday_165gb_sim",
@@ -8165,7 +9056,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_14gb",
@@ -8186,7 +9078,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_30gb",
@@ -8208,7 +9101,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_50gb",
@@ -8230,7 +9124,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_75gb",
@@ -8252,7 +9147,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_100gb",
@@ -8274,7 +9170,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_tangerine_160gb",
@@ -8296,7 +9193,8 @@
       "rating": 1.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_coles_25",
@@ -8315,7 +9213,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_coles_30",
@@ -8334,7 +9233,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_coles_35",
@@ -8353,7 +9253,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_coles_45",
@@ -8372,7 +9273,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_coles_220",
@@ -8391,7 +9293,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_coles_240",
@@ -8410,7 +9313,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_coles_280",
@@ -8429,7 +9333,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_moose_30gb",
@@ -8452,7 +9357,8 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_moose_40gb",
@@ -8475,7 +9381,8 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_moose_100gb",
@@ -8498,7 +9405,8 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_moose_220gb",
@@ -8522,7 +9430,8 @@
       "rating": 3.2,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     }
   ],
   "security": [
@@ -8549,7 +9458,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_indoor2nd",
@@ -8572,7 +9482,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_pantilt",
@@ -8597,7 +9508,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoorpro",
@@ -8620,7 +9532,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoorplus_battery",
@@ -8643,7 +9556,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoorplus_solar",
@@ -8667,7 +9581,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoorplus_plugin",
@@ -8691,7 +9606,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoorplus_poe",
@@ -8715,7 +9631,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoor_battery",
@@ -8738,7 +9655,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoor_solar",
@@ -8762,7 +9680,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_outdoor_plugin",
@@ -8786,7 +9705,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_stickupelite",
@@ -8807,7 +9727,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightpro_plugin",
@@ -8831,7 +9752,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightpro_wired",
@@ -8856,7 +9778,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightpro_poe",
@@ -8881,7 +9804,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightplus_battery",
@@ -8906,7 +9830,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightplus_plugin",
@@ -8931,7 +9856,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightplus_wired",
@@ -8956,7 +9882,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightplus_solar",
@@ -8981,7 +9908,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightpro_plugin1",
@@ -9005,7 +9933,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightpro_wired1",
@@ -9030,7 +9959,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightpro_battery",
@@ -9055,7 +9985,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_spotlightpro_solar",
@@ -9080,7 +10011,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_floodlightpro_wired",
@@ -9104,7 +10036,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_floodlightplus",
@@ -9129,7 +10062,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_ring_floodlightpro_wired1",
@@ -9154,7 +10088,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_wirelesspro_addon",
@@ -9176,7 +10111,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_4mp_indoor",
@@ -9196,7 +10132,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_4mp_face",
@@ -9221,7 +10158,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_lampsocket",
@@ -9241,7 +10179,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_solarpanel",
@@ -9260,7 +10199,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_pantilt",
@@ -9279,7 +10219,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_smartdoorbell",
@@ -9301,7 +10242,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_smartdoorbellpro",
@@ -9321,7 +10263,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_smartdoorbellpro_addon",
@@ -9341,7 +10284,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_storage",
@@ -9360,7 +10304,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_videobaby",
@@ -9380,7 +10325,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_wiredsmart",
@@ -9400,7 +10346,8 @@
       "rating": 2.5,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     },
     {
       "id": "aus_wuuk_wireless2cam",
@@ -9420,7 +10367,8 @@
       "rating": 0.0,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     }
   ],
   "insurance": [
@@ -9443,7 +10391,8 @@
       "rating": 4.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_budget_home",
@@ -9464,7 +10413,8 @@
       "rating": 4.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_budget_motorcycle",
@@ -9485,7 +10435,8 @@
       "rating": 4.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_budget_pet",
@@ -9506,7 +10457,8 @@
       "rating": 4.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_budget_life",
@@ -9527,7 +10479,8 @@
       "rating": 4.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_budget_travel",
@@ -9548,7 +10501,8 @@
       "rating": 4.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_budget_roadside",
@@ -9570,7 +10524,8 @@
       "rating": 4.4,
       "isSponsored": false,
       "isGreen": false,
-      "isEnabled": true
+      "isEnabled": true,
+      "applicableStates": []
     }
   ],
   "solar": [
@@ -9592,7 +10547,8 @@
       "rating": 4.0,
       "isSponsored": false,
       "isGreen": true,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_energymatters_offgrid",
@@ -9611,7 +10567,8 @@
       "rating": 0.0,
       "isSponsored": true,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_energymatters_commercial",
@@ -9630,7 +10587,8 @@
       "rating": 0.0,
       "isSponsored": true,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_energymatters_hotwater",
@@ -9649,7 +10607,8 @@
       "rating": 0.0,
       "isSponsored": true,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_energymatters_hydronics",
@@ -9668,7 +10627,8 @@
       "rating": 0.0,
       "isSponsored": true,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_energymatters_waterpumping",
@@ -9687,7 +10647,8 @@
       "rating": 0.0,
       "isSponsored": true,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     },
     {
       "id": "aus_solarchoice_compare",
@@ -9706,7 +10667,8 @@
       "rating": 0.0,
       "isSponsored": true,
       "isGreen": false,
-      "isEnabled": false
+      "isEnabled": false,
+      "applicableStates": []
     }
   ]
 }

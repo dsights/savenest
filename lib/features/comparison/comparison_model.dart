@@ -34,6 +34,7 @@ class Deal {
   final bool isSponsored; // To pin to top
   final bool isGreen; // specific for Energy
   final bool isEnabled; // New: To hide deals with missing data (e.g. price)
+  final List<String> applicableStates; // New: To filter by region (NSW, VIC, etc.)
 
   const Deal({
     required this.id,
@@ -52,5 +53,6 @@ class Deal {
     this.isSponsored = false,
     this.isGreen = false,
     this.isEnabled = true,
+    this.applicableStates = const [],
   });
 }

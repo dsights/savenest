@@ -84,6 +84,23 @@ def sync():
             else:
                 features = [f.strip() for f in raw_features.split(',') if f.strip()]
 
+            # Parse States
+            raw_states = (row.get('applicableStates') or "").strip().upper()
+            if raw_states:
+                states = [s.strip() for s in raw_states.split('|') if s.strip()]
+            else:
+                # Fallback: Detect from ID prefix (e.g. nsw_agl_...)
+                id_val = row.get('id', '').lower()
+                if id_val.startswith('nsw_'): states = ['NSW']
+                elif id_val.startswith('vic_'): states = ['VIC']
+                elif id_val.startswith('qld_'): states = ['QLD']
+                elif id_val.startswith('sa_'): states = ['SA']
+                elif id_val.startswith('wa_'): states = ['WA']
+                elif id_val.startswith('act_'): states = ['ACT']
+                elif id_val.startswith('tas_'): states = ['TAS']
+                elif id_val.startswith('nt_'): states = ['NT']
+                else: states = [] # National
+
             # Build Deal Object
             color = (row.get('providerColor') or "").strip()
             if color and not color.startswith('0x'):
@@ -115,7 +132,8 @@ def sync():
                 "rating": safe_float(row.get('rating')),
                 "isSponsored": safe_bool(row.get('isSponsored')),
                 "isGreen": safe_bool(row.get('isGreen')),
-                "isEnabled": price > 0.0
+                "isEnabled": price > 0.0,
+                "applicableStates": states
             }
             
             products[category].append(deal)

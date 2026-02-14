@@ -120,6 +120,7 @@ class JsonProductRepository implements ProductRepository {
       isSponsored: json['isSponsored'] ?? false,
       isGreen: json['isGreen'] ?? false,
       isEnabled: json['isEnabled'] ?? true,
+      applicableStates: List<String>.from(json['applicableStates'] ?? []),
     );
   }
 }

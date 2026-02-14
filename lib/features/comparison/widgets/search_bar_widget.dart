@@ -4,12 +4,16 @@ import '../../../theme/app_theme.dart';
 
 class SearchBarWidget extends StatefulWidget {
   final Function(String) onChanged;
+  final Function(String?)? onStateChanged;
+  final String? selectedState;
   final String? hintText;
   final List<String>? suggestions;
 
   const SearchBarWidget({
     super.key,
     required this.onChanged,
+    this.onStateChanged,
+    this.selectedState,
     this.hintText,
     this.suggestions,
   });
@@ -42,30 +46,68 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        GlassContainer(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          borderRadius: 12,
-          child: TextField(
-            controller: _controller,
-            onChanged: widget.onChanged,
-            style: const TextStyle(color: Colors.black87),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: widget.hintText ?? 'Search providers, features, e.g. "solar", "AGL"...',
-              hintStyle: const TextStyle(color: Colors.black38),
-              icon: const Icon(Icons.search, color: Colors.black38),
-              suffixIcon: _controller.text.isNotEmpty 
-                ? IconButton(
-                    icon: const Icon(Icons.clear, size: 18),
-                    onPressed: () {
-                      _controller.clear();
-                      widget.onChanged('');
-                      setState(() {});
-                    },
-                  )
-                : null,
+        Row(
+          children: [
+            // State Selector
+            if (widget.onStateChanged != null)
+              Container(
+                margin: const EdgeInsets.only(right: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: AppTheme.slate300.withOpacity(0.5)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.05),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    value: widget.selectedState,
+                    hint: const Text('State', style: TextStyle(fontSize: 14, color: Colors.black38)),
+                    style: const TextStyle(color: AppTheme.deepNavy, fontWeight: FontWeight.bold, fontSize: 14),
+                    icon: const Icon(Icons.location_on_outlined, size: 18, color: AppTheme.primaryBlue),
+                    items: ['NSW', 'VIC', 'QLD', 'SA', 'WA', 'ACT', 'TAS', 'NT']
+                        .map((s) => DropdownMenuItem(value: s, child: Text(s)))
+                        .toList(),
+                    onChanged: widget.onStateChanged,
+                  ),
+                ),
+              ),
+            
+            // Search Input
+            Expanded(
+              child: GlassContainer(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                borderRadius: 12,
+                child: TextField(
+                  controller: _controller,
+                  onChanged: widget.onChanged,
+                  style: const TextStyle(color: Colors.black87),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: widget.hintText ?? 'Search providers, features...',
+                    hintStyle: const TextStyle(color: Colors.black38),
+                    icon: const Icon(Icons.search, color: Colors.black38),
+                    suffixIcon: _controller.text.isNotEmpty 
+                      ? IconButton(
+                          icon: const Icon(Icons.clear, size: 18),
+                          onPressed: () {
+                            _controller.clear();
+                            widget.onChanged('');
+                            setState(() {});
+                          },
+                        )
+                      : null,
+                  ),
+                ),
+              ),
             ),
-          ),
+          ],
         ),
         if (widget.suggestions != null && widget.suggestions!.isNotEmpty) ...[
           const SizedBox(height: 12),

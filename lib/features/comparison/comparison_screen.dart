@@ -226,6 +226,8 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                               constraints: const BoxConstraints(maxWidth: 600),
                               child: SearchBarWidget(
                                 onChanged: (value) => controller.search(value),
+                                onStateChanged: (stateCode) => controller.updateStateFilter(stateCode),
+                                selectedState: state.selectedState,
                                 hintText: searchHint,
                                 suggestions: suggestions,
                               ),

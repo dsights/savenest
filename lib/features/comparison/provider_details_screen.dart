@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meta_seo/meta_seo.dart';
 import 'package:flutter/foundation.dart';
-import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../theme/app_theme.dart';
 import 'comparison_provider.dart';
 import 'comparison_model.dart';
@@ -81,7 +81,7 @@ class ProviderDetailsScreen extends ConsumerWidget {
                             ElevatedButton.icon(
                               onPressed: () => _launchURL(officialUrl),
                               icon: const Icon(Icons.open_in_new, size: 18),
-                              label: Text('VISIT OFFICIAL SITE'),
+                              label: const Text('VISIT OFFICIAL SITE'),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
                                 foregroundColor: AppTheme.deepNavy,
@@ -174,8 +174,13 @@ class ProviderDetailsScreen extends ConsumerWidget {
     }).join(' ');
   }
 
-  void _launchURL(String url) async {
-    // Import url_launcher if needed, but assuming helper exists elsewhere or using dart:js
+  Future<void> _launchURL(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      debugPrint('Could not launch $url');
+    }
   }
 }
 

@@ -130,6 +130,9 @@ $metaUrl = htmlspecialchars($metaUrl, ENT_QUOTES, 'UTF-8');
   <meta property="twitter:description" content="<?php echo $metaDescription; ?>">
   <meta property="twitter:image" content="<?php echo $metaImage; ?>">
 
+  <!-- Google Search Console Verification - Replace with your real code from GSC -->
+  <meta name="google-site-verification" content="NABVIt55C39H9pCJOKcTbaa50I5IQLdbuJ7Yj9RxTes" />
+
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">

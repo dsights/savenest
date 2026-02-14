@@ -6,7 +6,9 @@ enum ProductCategory {
   internet,
   mobile,
   insurance,
-  creditCards
+  creditCards,
+  solar,
+  security
 }
 
 class Deal {

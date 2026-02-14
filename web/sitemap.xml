@@ -376,822 +376,937 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_telstra_80</loc>
+    <loc>https://savenest.au/deal/aus_tpg_5gpremium</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_boostmobile_30</loc>
+    <loc>https://savenest.au/deal/aus_tpg_5gplus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_aldimobile_15</loc>
+    <loc>https://savenest.au/deal/aus_tpg_homewireless</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_belong_35</loc>
+    <loc>https://savenest.au/deal/aus_telstra_5g</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_everydaymobile(woolworths)_25</loc>
+    <loc>https://savenest.au/deal/aus_iinet_5gplus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_exetel_20</loc>
+    <loc>https://savenest.au/deal/aus_iinet_5gpremium</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_more_20</loc>
+    <loc>https://savenest.au/deal/aus_iinet_homewireless</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_superloop_25</loc>
+    <loc>https://savenest.au/deal/aus_arctel_cruisylite</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_tangerinetelecom_15</loc>
+    <loc>https://savenest.au/deal/aus_arctel_cruisy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_optus_65</loc>
+    <loc>https://savenest.au/deal/aus_arctel_superfast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_amaysim_12</loc>
+    <loc>https://savenest.au/deal/aus_arctel_hypersonic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_colesmobile_20</loc>
+    <loc>https://savenest.au/deal/aus_exetel_one</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_dodo_15</loc>
+    <loc>https://savenest.au/deal/aus_optus_basic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_moosemobile_12</loc>
+    <loc>https://savenest.au/deal/aus_optus_everyday</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_southernphone_24</loc>
+    <loc>https://savenest.au/deal/aus_optus_fast_fttn</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_spintel_14</loc>
+    <loc>https://savenest.au/deal/aus_optus_promo_fttn</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_vodafone_39</loc>
+    <loc>https://savenest.au/deal/aus_optus_fast_fttp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_felixmobile_20</loc>
+    <loc>https://savenest.au/deal/aus_optus_promo_fttp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_koganmobile_20</loc>
+    <loc>https://savenest.au/deal/aus_optus_ultrafast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_lebara_15</loc>
+    <loc>https://savenest.au/deal/aus_spintel_homestarter</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_tpg_17</loc>
+    <loc>https://savenest.au/deal/aus_spintel_fixedwireless</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/mob_iinet_25</loc>
+    <loc>https://savenest.au/deal/aus_spintel_homevalue</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telstra_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_spintel_homeplus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telsim_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_spintel_wirelessplus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telsim_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_spintel_hometurbo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_flip_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_spintel_wirelesshomefast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_flip_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_spintel_wirelesssuperfast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_arctel_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_spintel_hometurbofast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_arctel_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_spintel_fibreupgrade</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tangerinetelecom_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_spintel_homeultrafast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tangerinetelecom_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_superloop_everyday</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tangerinetelecom_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_superloop_extravalue</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tangerinetelecom_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_superloop_familymax</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tangerinetelecom_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_superloop_megaspeed</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_dodo_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_superloop_lightspeed</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_dodo_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_swoop_25</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_dodo_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_swoop_50</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_dodo_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_swoop_500</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_dodo_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_swoop_1000</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_mate_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_tpg_nbn50</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_mate_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_tpg_nbn100</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_mate_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_tpg_nbn500</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_mate_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_tpg_nbn12</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_mate_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_tpg_nbn25</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_moretelecom_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_tpg_superfast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_moretelecom_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_tpg_ultrafast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_moretelecom_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_value</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_moretelecom_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_valueplus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_moretelecom_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_speedymax</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tpg_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_ultraspeedy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tpg_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_telstra_basic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tpg_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_telstra_basic_alt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tpg_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_telstra_basic_only</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_tpg_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_telstra_basic_only_alt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_optus_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_telstra_essential</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_optus_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_telstra_essential_alt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_optus_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_telstra_essential_only</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_optus_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_telstra_essential_only_alt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_optus_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_telstra_premium</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_iinet_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_telstra_premium500</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_iinet_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_telstra_premium_only</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_iinet_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_telstra_premium_only500</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_iinet_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_telstra_ultimate_only</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_iinet_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_telstra_ultimate</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_koganinternet_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_telstra_ultrafast_only</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_koganinternet_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_telstra_ultrafast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_koganinternet_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_vodafone_500</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_koganinternet_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_vodafone_740</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_koganinternet_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_vodafone_850</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_originenergy_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_vodafone_50</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_originenergy_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_vodafone_25</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_originenergy_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_iinet_nbn500</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_originenergy_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_iinet_nbn12</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_spintel_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_iinet_nbn25</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_spintel_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_iinet_nbn50</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_spintel_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_iinet_superfast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_spintel_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_iinet_ultrafast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_spintel_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_southern_basic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_exetel_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_southern_standard</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_exetel_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_southern_fast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_exetel_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_southern_fastx</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_exetel_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_southern_ultrafast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_southernphone_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_boost_21gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_southernphone_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_boost_75gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_southernphone_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_boost_105gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_buddytelco_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_boost_105gb_esim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_buddytelco_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_boost_135gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_swoop_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_boost_160gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_swoop_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_everyday_22gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_swoop_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_everyday_30gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_aussiebroadband_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_everyday_50gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_aussiebroadband_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_everyday_75gb_long</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_aussiebroadband_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_everyday_215gb_long</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_aussiebroadband_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_everyday_300gb_long</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_aussiebroadband_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_everyday_70gb_sim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_belong_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_everyday_110gb_sim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_belong_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_everyday_165gb_sim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_belong_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_14gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_superloop_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_30gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_superloop_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_50gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_superloop_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_75gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_superloop_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_100gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_superloop_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_tangerine_160gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telstra_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_coles_25</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telstra_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_coles_30</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telstra_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_coles_35</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telstra_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_coles_45</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_telstra_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_coles_220</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_activ8me_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_coles_240</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_activ8me_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_coles_280</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_activ8me_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_moose_30gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_launtel_nbn25</loc>
+    <loc>https://savenest.au/deal/aus_moose_40gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_launtel_nbn50</loc>
+    <loc>https://savenest.au/deal/aus_moose_100gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_launtel_nbn100</loc>
+    <loc>https://savenest.au/deal/aus_moose_220gb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_launtel_nbn500</loc>
+    <loc>https://savenest.au/deal/aus_energymatters_grid</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/nbn_launtel_nbn1000</loc>
+    <loc>https://savenest.au/deal/aus_energymatters_offgrid</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_agl</loc>
+    <loc>https://savenest.au/deal/aus_energymatters_commercial</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_originenergy</loc>
+    <loc>https://savenest.au/deal/aus_energymatters_hotwater</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_energyaustralia</loc>
+    <loc>https://savenest.au/deal/aus_energymatters_hydronics</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_alintaenergy</loc>
+    <loc>https://savenest.au/deal/aus_energymatters_waterpumping</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_lumoenergy</loc>
+    <loc>https://savenest.au/deal/aus_solarchoice_compare</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_sumo</loc>
+    <loc>https://savenest.au/deal/aus_budget_car</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_redenergy</loc>
+    <loc>https://savenest.au/deal/aus_budget_home</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_dodo</loc>
+    <loc>https://savenest.au/deal/aus_budget_motorcycle</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_engie(ex-simply)</loc>
+    <loc>https://savenest.au/deal/aus_budget_pet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_powershop</loc>
+    <loc>https://savenest.au/deal/aus_budget_life</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_momentumenergy</loc>
+    <loc>https://savenest.au/deal/aus_budget_travel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_actewagl</loc>
+    <loc>https://savenest.au/deal/aus_budget_roadside</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_kleenheat</loc>
+    <loc>https://savenest.au/deal/nsw_agl_smartsaver</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_1stenergy</loc>
+    <loc>https://savenest.au/deal/nsw_agl_netflix</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_covauenergy</loc>
+    <loc>https://savenest.au/deal/nsw_agl_solarsavers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_tangoenergy</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_flexi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_globirdenergy</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_solarmax</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_energylocals</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_ratefix</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_ovoenergy</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_standing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/gas_auroraenergy</loc>
+    <loc>https://savenest.au/deal/nsw_tango_everyday</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_originenergy</loc>
+    <loc>https://savenest.au/deal/nsw_tango_bonus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_aglenergy</loc>
+    <loc>https://savenest.au/deal/nsw_tango_back</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_ovoenergy</loc>
+    <loc>https://savenest.au/deal/nsw_agl_smartsaver</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_globird</loc>
+    <loc>https://savenest.au/deal/nsw_agl_netflix</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_amberelectric</loc>
+    <loc>https://savenest.au/deal/nsw_agl_solarsavers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_redenergy</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_flexi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_alintaenergy</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_solarmax</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_energyaust.</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_ratefix</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_dodopower</loc>
+    <loc>https://savenest.au/deal/nsw_energyaus_standing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_diamondenergy</loc>
+    <loc>https://savenest.au/deal/nsw_tango_everyday</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_powershop</loc>
+    <loc>https://savenest.au/deal/nsw_tango_bonus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_nectr</loc>
+    <loc>https://savenest.au/deal/nsw_tango_back</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_tangoenergy</loc>
+    <loc>https://savenest.au/deal/aus_ring_indoorplus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/elec_synergy</loc>
+    <loc>https://savenest.au/deal/aus_ring_indoor2nd</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/ins_iselect_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_pantilt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/ins_iselect_02</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoorpro</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/ins_ctm_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoorplus_battery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/ins_ctm_02</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoorplus_solar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/ins_ctm_03</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoorplus_plugin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/ins_budget_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoorplus_poe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/ins_budget_02</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoor_battery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/sol_solarchoice_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoor_solar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/sol_energymatters_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_outdoor_plugin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/sec_ring_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_stickupelite</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/sec_wuuk_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_spotlightpro_plugin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/sec_adt_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_spotlightpro_wired</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/fin_compareclub_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_spotlightpro_poe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savenest.au/deal/fin_finder_01</loc>
+    <loc>https://savenest.au/deal/aus_ring_spotlightplus_battery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_spotlightplus_plugin</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_spotlightplus_wired</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_spotlightplus_solar</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_spotlightpro_plugin1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_spotlightpro_wired1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_spotlightpro_battery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_spotlightpro_solar</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_floodlightpro_wired</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_floodlightplus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_ring_floodlightpro_wired1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_wirelesspro_addon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_4mp_indoor</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_4mp_face</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_lampsocket</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_solarpanel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_pantilt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_smartdoorbell</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_smartdoorbellpro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_smartdoorbellpro_addon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_storage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_videobaby</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_wiredsmart</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savenest.au/deal/aus_wuuk_wireless2cam</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -72,6 +72,8 @@ class JsonProductRepository implements ProductRepository {
       case ProductCategory.internet: return 'internet';
       case ProductCategory.insurance: return 'insurance';
       case ProductCategory.creditCards: return 'financial';
+      case ProductCategory.solar: return 'solar';
+      case ProductCategory.security: return 'security';
       default: return 'other';
     }
   }

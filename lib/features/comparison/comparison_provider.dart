@@ -56,7 +56,9 @@ class ComparisonController extends StateNotifier<ComparisonState> {
     state = state.copyWith(isLoading: true, selectedCategory: category);
     
     try {
-      final deals = await _repository.getDeals(category);
+      final allDeals = await _repository.getDeals(category);
+      // Filter out disabled deals (e.g. price is 0)
+      final deals = allDeals.where((d) => d.isEnabled).toList();
       
       // Sort deals: sponsored first, then by price
       deals.sort((a, b) {

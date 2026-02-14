@@ -193,7 +193,7 @@ final providerDealsProvider = FutureProvider.family<List<Deal>, String>((ref, pr
   for (var cat in allCats) {
     if (cat == ProductCategory.creditCards) continue; // Skip for now as it uses different model
     final deals = await repo.getDeals(cat);
-    results.addAll(deals.where((d) => d.providerName.toLowerCase().contains(providerName.toLowerCase())));
+    results.addAll(deals.where((d) => d.isEnabled && d.providerName.toLowerCase().contains(providerName.toLowerCase())));
   }
   return results;
 });

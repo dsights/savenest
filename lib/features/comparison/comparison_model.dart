@@ -33,6 +33,7 @@ class Deal {
   final double rating; // 0.0 to 5.0
   final bool isSponsored; // To pin to top
   final bool isGreen; // specific for Energy
+  final bool isEnabled; // New: To hide deals with missing data (e.g. price)
 
   const Deal({
     required this.id,
@@ -50,5 +51,6 @@ class Deal {
     this.rating = 0.0,
     this.isSponsored = false,
     this.isGreen = false,
+    this.isEnabled = true,
   });
 }

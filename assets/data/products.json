@@ -24,7 +24,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_5gplus",
@@ -44,7 +45,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_homewireless",
@@ -64,7 +66,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_5g",
@@ -83,7 +86,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_5gplus",
@@ -103,7 +107,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_5gpremium",
@@ -123,7 +128,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_homewireless",
@@ -143,7 +149,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_arctel_cruisylite",
@@ -165,7 +172,8 @@
       "directUrl": "https://arctel.com.au/",
       "rating": 2.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_arctel_cruisy",
@@ -187,7 +195,8 @@
       "directUrl": "https://arctel.com.au/",
       "rating": 2.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_arctel_superfast",
@@ -209,7 +218,8 @@
       "directUrl": "https://arctel.com.au/",
       "rating": 2.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_arctel_hypersonic",
@@ -231,7 +241,8 @@
       "directUrl": "https://arctel.com.au/",
       "rating": 2.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_exetel_one",
@@ -250,7 +261,8 @@
       "directUrl": "https://www.exetel.com.au/broadband/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_optus_basic",
@@ -272,7 +284,8 @@
       "directUrl": "https://www.optus.com.au/broadband-nbn/home-broadband/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_optus_everyday",
@@ -294,7 +307,8 @@
       "directUrl": "https://www.optus.com.au/broadband-nbn/home-broadband/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_optus_fast_fttn",
@@ -312,7 +326,8 @@
       "directUrl": "https://www.optus.com.au/logo.png",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_optus_promo_fttn",
@@ -330,7 +345,8 @@
       "directUrl": "https://www.optus.com.au/logo.png",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_optus_fast_fttp",
@@ -348,7 +364,8 @@
       "directUrl": "#E72024",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_optus_promo_fttp",
@@ -366,7 +383,8 @@
       "directUrl": "#E72024",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_optus_ultrafast",
@@ -384,7 +402,8 @@
       "directUrl": "#E72024",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_spintel_homestarter",
@@ -405,7 +424,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_fixedwireless",
@@ -426,7 +446,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_homevalue",
@@ -447,7 +468,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_homeplus",
@@ -468,7 +490,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_wirelessplus",
@@ -489,7 +512,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_hometurbo",
@@ -510,7 +534,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_wirelesshomefast",
@@ -531,7 +556,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_wirelesssuperfast",
@@ -552,7 +578,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_hometurbofast",
@@ -573,7 +600,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_fibreupgrade",
@@ -594,7 +622,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_spintel_homeultrafast",
@@ -615,7 +644,8 @@
       "directUrl": "https://www.spintel.net.au/home-internet/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_superloop_everyday",
@@ -634,7 +664,8 @@
       "directUrl": "https://superloop.com/consumer/home-broadband/nbn.html",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_superloop_extravalue",
@@ -653,7 +684,8 @@
       "directUrl": "https://superloop.com/consumer/home-broadband/nbn.html",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_superloop_familymax",
@@ -672,7 +704,8 @@
       "directUrl": "https://superloop.com/consumer/home-broadband/nbn.html",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_superloop_megaspeed",
@@ -692,7 +725,8 @@
       "directUrl": "https://superloop.com/consumer/home-broadband/nbn.html",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_superloop_lightspeed",
@@ -712,7 +746,8 @@
       "directUrl": "https://superloop.com/consumer/home-broadband/nbn.html",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_swoop_25",
@@ -734,7 +769,8 @@
       "directUrl": "https://swoopbroadband.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_swoop_50",
@@ -756,7 +792,8 @@
       "directUrl": "https://swoopbroadband.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_swoop_500",
@@ -778,7 +815,8 @@
       "directUrl": "https://swoopbroadband.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_swoop_1000",
@@ -800,7 +838,8 @@
       "directUrl": "https://swoopbroadband.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_nbn50",
@@ -819,7 +858,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_nbn100",
@@ -838,7 +878,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_nbn500",
@@ -857,7 +898,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_nbn12",
@@ -876,7 +918,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_nbn25",
@@ -895,7 +938,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_superfast",
@@ -914,7 +958,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tpg_ultrafast",
@@ -933,7 +978,8 @@
       "directUrl": "https://www.tpg.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_value",
@@ -953,7 +999,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_valueplus",
@@ -973,7 +1020,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_speedymax",
@@ -993,7 +1041,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_ultraspeedy",
@@ -1013,7 +1062,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_basic",
@@ -1033,7 +1083,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_basic_alt",
@@ -1052,7 +1103,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_basic_only",
@@ -1072,7 +1124,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_basic_only_alt",
@@ -1092,7 +1145,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_essential",
@@ -1112,7 +1166,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_essential_alt",
@@ -1131,7 +1186,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_essential_only",
@@ -1151,7 +1207,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_essential_only_alt",
@@ -1171,7 +1228,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_premium",
@@ -1191,7 +1249,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_premium500",
@@ -1212,7 +1271,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_premium_only",
@@ -1232,7 +1292,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_premium_only500",
@@ -1253,7 +1314,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_ultimate_only",
@@ -1274,7 +1336,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_ultimate",
@@ -1295,7 +1358,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_ultrafast_only",
@@ -1316,7 +1380,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_telstra_ultrafast",
@@ -1337,7 +1402,8 @@
       "directUrl": "https://www.telstra.com.au/internet/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_vodafone_500",
@@ -1358,7 +1424,8 @@
       "directUrl": "https://www.vodafone.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_vodafone_740",
@@ -1379,7 +1446,8 @@
       "directUrl": "https://www.vodafone.com.au/nbn",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_vodafone_850",
@@ -1397,7 +1465,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_vodafone_50",
@@ -1415,7 +1484,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_vodafone_25",
@@ -1433,7 +1503,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_nbn500",
@@ -1453,7 +1524,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_nbn12",
@@ -1472,7 +1544,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_nbn25",
@@ -1491,7 +1564,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_nbn50",
@@ -1510,7 +1584,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_superfast",
@@ -1530,7 +1605,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_iinet_ultrafast",
@@ -1550,7 +1626,8 @@
       "directUrl": "https://www.iinet.net.au/nbn",
       "rating": 1.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_southern_basic",
@@ -1573,7 +1650,8 @@
       "directUrl": "https://www.southernphone.com.au/personal/broadband/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_southern_standard",
@@ -1596,7 +1674,8 @@
       "directUrl": "https://www.southernphone.com.au/personal/broadband/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_southern_fast",
@@ -1619,7 +1698,8 @@
       "directUrl": "https://www.southernphone.com.au/personal/broadband/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_southern_fastx",
@@ -1642,7 +1722,8 @@
       "directUrl": "https://www.southernphone.com.au/personal/broadband/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_southern_ultrafast",
@@ -1666,7 +1747,8 @@
       "directUrl": "https://www.southernphone.com.au/personal/broadband/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     }
   ],
   "electricity": [
@@ -1693,7 +1775,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_agl_netflix",
@@ -1718,7 +1801,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_agl_solarsavers",
@@ -1742,7 +1826,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_flexi",
@@ -1765,7 +1850,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_solarmax",
@@ -1787,7 +1873,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_ratefix",
@@ -1810,7 +1897,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_standing",
@@ -1831,7 +1919,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_tango_everyday",
@@ -1849,7 +1938,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_tango_bonus",
@@ -1867,7 +1957,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_tango_back",
@@ -1885,7 +1976,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_origin_solarboost",
@@ -1907,7 +1999,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_origin_gosolar",
@@ -1929,7 +2022,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_redenergy_qantas",
@@ -1952,7 +2046,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_redenergy_livingenergy",
@@ -1974,7 +2069,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_sumo_assured",
@@ -1996,7 +2092,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_sumo_saver",
@@ -2018,7 +2115,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_powershop_standard",
@@ -2040,7 +2138,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_powershop_solar",
@@ -2062,7 +2161,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_lumo_value",
@@ -2085,7 +2185,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_lumo_solar",
@@ -2107,7 +2208,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_dodo_market",
@@ -2129,7 +2231,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_dodo_solar",
@@ -2151,7 +2254,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_covau_freedom",
@@ -2173,7 +2277,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_covau_solar",
@@ -2195,7 +2300,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_diamond_thrive",
@@ -2218,7 +2324,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_diamond_solar",
@@ -2240,7 +2347,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_globird_boost",
@@ -2262,7 +2370,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_globird_solar",
@@ -2284,7 +2393,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_amber_wholesale",
@@ -2306,7 +2416,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "nsw_amber_solar",
@@ -2328,7 +2439,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "nsw_alinta_home",
@@ -2350,7 +2462,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_alinta_solar",
@@ -2372,7 +2485,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_engin_saver",
@@ -2394,7 +2508,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_engin_solar",
@@ -2416,7 +2531,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_energy_locals_online",
@@ -2438,7 +2554,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "nsw_energy_locals_solar",
@@ -2460,7 +2577,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "nsw_momentum_smile",
@@ -2482,7 +2600,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_momentum_solar",
@@ -2504,7 +2623,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_ovo_drive",
@@ -2526,7 +2646,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "nsw_ovo_solar",
@@ -2548,7 +2669,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "nsw_nectr_clean",
@@ -2571,7 +2693,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_nectr_solar",
@@ -2593,7 +2716,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_actewagl_smart",
@@ -2616,7 +2740,8 @@
       "directUrl": "https://www.actewagl.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_commander_value",
@@ -2638,7 +2763,8 @@
       "directUrl": "https://www.commander.com/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_agl_smartsaver",
@@ -2660,7 +2786,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_agl_seniorssaver",
@@ -2681,7 +2808,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_energyaus_home365",
@@ -2702,7 +2830,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_tango_everyday",
@@ -2724,7 +2853,8 @@
       "directUrl": "https://tangoenergy.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_tango_bonus",
@@ -2742,7 +2872,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_tango_back",
@@ -2760,7 +2891,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_origin_solarboost",
@@ -2782,7 +2914,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_origin_gosolar",
@@ -2804,7 +2937,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_redenergy_qantas",
@@ -2827,7 +2961,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_redenergy_livingenergy",
@@ -2849,7 +2984,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_sumo_assured",
@@ -2871,7 +3007,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_sumo_saver",
@@ -2893,7 +3030,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_powershop_standard",
@@ -2915,7 +3053,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_powershop_solar",
@@ -2937,7 +3076,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_lumo_value",
@@ -2960,7 +3100,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_lumo_solar",
@@ -2982,7 +3123,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_dodo_market",
@@ -3004,7 +3146,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_dodo_solar",
@@ -3026,7 +3169,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_covau_freedom",
@@ -3048,7 +3192,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_covau_solar",
@@ -3070,7 +3215,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_diamond_thrive",
@@ -3093,7 +3239,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_diamond_solar",
@@ -3115,7 +3262,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_globird_boost",
@@ -3137,7 +3285,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_globird_solar",
@@ -3159,7 +3308,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_amber_wholesale",
@@ -3181,7 +3331,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "vic_amber_solar",
@@ -3203,7 +3354,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "vic_alinta_home",
@@ -3225,7 +3377,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_alinta_solar",
@@ -3247,7 +3400,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_engin_saver",
@@ -3269,7 +3423,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_engin_solar",
@@ -3291,7 +3446,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_energy_locals_online",
@@ -3313,7 +3469,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "vic_energy_locals_solar",
@@ -3335,7 +3492,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "vic_momentum_smile",
@@ -3357,7 +3515,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_momentum_solar",
@@ -3379,7 +3538,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_ovo_drive",
@@ -3401,7 +3561,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "vic_ovo_solar",
@@ -3423,7 +3584,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "vic_nectr_clean",
@@ -3446,7 +3608,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_nectr_solar",
@@ -3468,7 +3631,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_agl_smartsaver",
@@ -3490,7 +3654,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_agl_seniorssaver",
@@ -3511,7 +3676,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_agl_netflix",
@@ -3533,7 +3699,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_agl_solarsavers",
@@ -3555,7 +3722,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_energyaus_flexi",
@@ -3577,7 +3745,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_origin_solarboost",
@@ -3599,7 +3768,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_origin_gosolar",
@@ -3621,7 +3791,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_redenergy_qantas",
@@ -3644,7 +3815,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_redenergy_livingenergy",
@@ -3666,7 +3838,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_sumo_assured",
@@ -3688,7 +3861,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_sumo_saver",
@@ -3710,7 +3884,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_powershop_standard",
@@ -3732,7 +3907,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_powershop_solar",
@@ -3754,7 +3930,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_lumo_value",
@@ -3777,7 +3954,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_lumo_solar",
@@ -3799,7 +3977,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_dodo_market",
@@ -3821,7 +4000,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_dodo_solar",
@@ -3843,7 +4023,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_covau_freedom",
@@ -3865,7 +4046,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_covau_solar",
@@ -3887,7 +4069,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_diamond_thrive",
@@ -3910,7 +4093,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_diamond_solar",
@@ -3932,7 +4116,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_globird_boost",
@@ -3954,7 +4139,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_globird_solar",
@@ -3976,7 +4162,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_amber_wholesale",
@@ -3998,7 +4185,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "qld_amber_solar",
@@ -4020,7 +4208,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "qld_alinta_home",
@@ -4042,7 +4231,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_alinta_solar",
@@ -4064,7 +4254,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_engin_saver",
@@ -4086,7 +4277,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_engin_solar",
@@ -4108,7 +4300,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_energy_locals_online",
@@ -4130,7 +4323,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "qld_energy_locals_solar",
@@ -4152,7 +4346,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "qld_momentum_smile",
@@ -4174,7 +4369,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_momentum_solar",
@@ -4196,7 +4392,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_ovo_drive",
@@ -4218,7 +4415,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "qld_ovo_solar",
@@ -4240,7 +4438,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "qld_nectr_clean",
@@ -4263,7 +4462,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_nectr_solar",
@@ -4285,7 +4485,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_ergon_retail",
@@ -4307,7 +4508,8 @@
       "directUrl": "https://www.ergon.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "sa_agl_smartsaver",
@@ -4329,7 +4531,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_agl_seniorssaver",
@@ -4350,7 +4553,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_agl_netflix",
@@ -4372,7 +4576,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_agl_solarsavers",
@@ -4394,7 +4599,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_energyaus_flexi",
@@ -4416,7 +4622,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_origin_solarboost",
@@ -4438,7 +4645,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_origin_gosolar",
@@ -4460,7 +4668,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_redenergy_qantas",
@@ -4483,7 +4692,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_redenergy_livingenergy",
@@ -4505,7 +4715,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_sumo_assured",
@@ -4527,7 +4738,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_sumo_saver",
@@ -4549,7 +4761,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_powershop_standard",
@@ -4571,7 +4784,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_powershop_solar",
@@ -4593,7 +4807,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_lumo_value",
@@ -4616,7 +4831,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_lumo_solar",
@@ -4638,7 +4854,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_dodo_market",
@@ -4660,7 +4877,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_dodo_solar",
@@ -4682,7 +4900,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_covau_freedom",
@@ -4704,7 +4923,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_covau_solar",
@@ -4726,7 +4946,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_diamond_thrive",
@@ -4749,7 +4970,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_diamond_solar",
@@ -4771,7 +4993,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_globird_boost",
@@ -4793,7 +5016,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_globird_solar",
@@ -4815,7 +5039,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_amber_wholesale",
@@ -4837,7 +5062,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "sa_amber_solar",
@@ -4859,7 +5085,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "sa_alinta_home",
@@ -4881,7 +5108,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_alinta_solar",
@@ -4903,7 +5131,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_engin_saver",
@@ -4925,7 +5154,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_engin_solar",
@@ -4947,7 +5177,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_energy_locals_online",
@@ -4969,7 +5200,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "sa_energy_locals_solar",
@@ -4991,7 +5223,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "sa_momentum_smile",
@@ -5013,7 +5246,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_momentum_solar",
@@ -5035,7 +5269,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_ovo_drive",
@@ -5057,7 +5292,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "sa_ovo_solar",
@@ -5079,7 +5315,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "sa_nectr_clean",
@@ -5102,7 +5339,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_nectr_solar",
@@ -5124,7 +5362,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "act_energyaus_flexi",
@@ -5146,7 +5385,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_actewagl_smart",
@@ -5168,7 +5408,8 @@
       "directUrl": "https://www.actewagl.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_origin_solarboost",
@@ -5190,7 +5431,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "act_redenergy_qantas",
@@ -5213,7 +5455,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_sumo_assured",
@@ -5235,7 +5478,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_powershop_standard",
@@ -5257,7 +5501,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_lumo_value",
@@ -5280,7 +5525,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "act_dodo_market",
@@ -5302,7 +5548,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_covau_freedom",
@@ -5324,7 +5571,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_diamond_thrive",
@@ -5347,7 +5595,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "act_globird_boost",
@@ -5369,7 +5618,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_amber_wholesale",
@@ -5391,7 +5641,8 @@
       "directUrl": "https://amber.com.au/pricing",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_alinta_home",
@@ -5413,7 +5664,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_engin_saver",
@@ -5435,7 +5687,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_energy_locals_online",
@@ -5457,7 +5710,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_momentum_smile",
@@ -5479,7 +5733,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_ovo_drive",
@@ -5501,7 +5756,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "act_nectr_clean",
@@ -5524,7 +5780,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "wa_synergy_home",
@@ -5546,7 +5803,8 @@
       "directUrl": "https://www.synergy.net.au/Residential/Plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "wa_horizon_home",
@@ -5568,7 +5826,8 @@
       "directUrl": "https://www.horizonpower.com.au/residential/plans",
       "rating": 3.1,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "wa_alinta_home",
@@ -5590,7 +5849,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "tas_aurora_home",
@@ -5612,7 +5872,8 @@
       "directUrl": "https://www.auroraenergy.com.au/plans",
       "rating": 3.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "tas_1stenergy_home",
@@ -5634,7 +5895,8 @@
       "directUrl": "https://1stenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "nt_jacana_home",
@@ -5656,7 +5918,8 @@
       "directUrl": "https://www.jacanaenergy.com.au/plans",
       "rating": 3.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     }
   ],
   "gas": [
@@ -5681,7 +5944,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_agl_netflix",
@@ -5704,7 +5968,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_agl_solarsavers",
@@ -5727,7 +5992,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_flexi",
@@ -5749,7 +6015,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_solarmax",
@@ -5770,7 +6037,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_ratefix",
@@ -5792,7 +6060,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_energyaus_standing",
@@ -5812,7 +6081,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_tango_everyday",
@@ -5830,7 +6100,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_tango_bonus",
@@ -5848,7 +6119,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_tango_back",
@@ -5866,7 +6138,8 @@
       "directUrl": "#00C08B",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_origin_go",
@@ -5887,7 +6160,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_origin_basic",
@@ -5908,7 +6182,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_redenergy_qantas",
@@ -5930,7 +6205,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_redenergy_livingenergy",
@@ -5951,7 +6227,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_sumo_assured",
@@ -5972,7 +6249,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_sumo_saver",
@@ -5993,7 +6271,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_powershop_standard",
@@ -6014,7 +6293,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_lumo_value",
@@ -6036,7 +6316,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_dodo_market",
@@ -6057,7 +6338,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_covau_freedom",
@@ -6078,7 +6360,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_diamond_thrive",
@@ -6100,7 +6383,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "nsw_globird_boost",
@@ -6121,7 +6405,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_alinta_home",
@@ -6142,7 +6427,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_engin_saver",
@@ -6163,7 +6449,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_energy_locals_online",
@@ -6184,7 +6471,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "nsw_momentum_smile",
@@ -6205,7 +6493,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "nsw_ovo_drive",
@@ -6226,7 +6515,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "nsw_nectr_clean",
@@ -6248,7 +6538,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_agl_smartsaver",
@@ -6269,7 +6560,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_energyaus_flexi",
@@ -6290,7 +6582,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_tango_standing_central",
@@ -6312,7 +6605,8 @@
       "directUrl": "https://tangoenergy.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_origin_go",
@@ -6334,7 +6628,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_origin_basic",
@@ -6356,7 +6651,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_redenergy_qantas",
@@ -6379,7 +6675,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_redenergy_livingenergy",
@@ -6401,7 +6698,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_sumo_assured",
@@ -6423,7 +6721,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_sumo_saver",
@@ -6445,7 +6744,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_powershop_standard",
@@ -6467,7 +6767,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_lumo_value",
@@ -6490,7 +6791,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_dodo_market",
@@ -6512,7 +6814,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_covau_freedom",
@@ -6534,7 +6837,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_diamond_thrive",
@@ -6557,7 +6861,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "vic_globird_boost",
@@ -6579,7 +6884,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_alinta_home",
@@ -6601,7 +6907,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_engin_saver",
@@ -6623,7 +6930,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_energy_locals_online",
@@ -6645,7 +6953,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "vic_momentum_smile",
@@ -6667,7 +6976,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "vic_ovo_drive",
@@ -6689,7 +6999,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "vic_nectr_clean",
@@ -6712,7 +7023,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_agl_smartsaver",
@@ -6732,7 +7044,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_origin_go",
@@ -6753,7 +7066,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_origin_basic",
@@ -6774,7 +7088,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_redenergy_qantas",
@@ -6796,7 +7111,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_redenergy_livingenergy",
@@ -6817,7 +7133,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_sumo_assured",
@@ -6838,7 +7155,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_sumo_saver",
@@ -6859,7 +7177,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_powershop_standard",
@@ -6880,7 +7199,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_lumo_value",
@@ -6902,7 +7222,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_dodo_market",
@@ -6923,7 +7244,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_covau_freedom",
@@ -6944,7 +7266,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_diamond_thrive",
@@ -6966,7 +7289,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "qld_globird_boost",
@@ -6987,7 +7311,8 @@
       "directUrl": "https://globirdenergy.com.au/plans",
       "rating": 3.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_alinta_home",
@@ -7008,7 +7333,8 @@
       "directUrl": "https://alintaenergy.com.au/residential/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_engin_saver",
@@ -7029,7 +7355,8 @@
       "directUrl": "https://www.engie.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_energy_locals_online",
@@ -7050,7 +7377,8 @@
       "directUrl": "https://energylocals.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "qld_momentum_smile",
@@ -7071,7 +7399,8 @@
       "directUrl": "https://www.momentumenergy.com.au/plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "qld_ovo_drive",
@@ -7092,7 +7421,8 @@
       "directUrl": "https://ovoenergy.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "qld_nectr_clean",
@@ -7114,7 +7444,8 @@
       "directUrl": "https://nectr.com.au/plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_agl_smartsaver",
@@ -7136,7 +7467,8 @@
       "directUrl": "https://www.agl.com.au/residential/energy-plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_energyaus_flexi",
@@ -7159,7 +7491,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_energyaus_ratefix",
@@ -7182,7 +7515,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_energyaus_standing",
@@ -7204,7 +7538,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_origin_go",
@@ -7227,7 +7562,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_origin_basic",
@@ -7250,7 +7586,8 @@
       "directUrl": "https://www.originenergy.com.au/energy-plans",
       "rating": 4.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_redenergy_qantas",
@@ -7274,7 +7611,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_redenergy_livingenergy",
@@ -7297,7 +7635,8 @@
       "directUrl": "https://www.redenergy.com.au/plans",
       "rating": 3.8,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_sumo_assured",
@@ -7320,7 +7659,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_sumo_saver",
@@ -7343,7 +7683,8 @@
       "directUrl": "https://www.sumoelectrical.com.au/plans",
       "rating": 3.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_powershop_standard",
@@ -7366,7 +7707,8 @@
       "directUrl": "https://powershop.com.au/plans",
       "rating": 3.7,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_lumo_value",
@@ -7390,7 +7732,8 @@
       "directUrl": "https://www.lumoenergy.com.au/energy-plans",
       "rating": 3.6,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "sa_dodo_market",
@@ -7413,7 +7756,8 @@
       "directUrl": "https://www.dodo.com/energy-plans",
       "rating": 3.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_covau_freedom",
@@ -7436,7 +7780,8 @@
       "directUrl": "https://www.covau.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "sa_diamond_thrive",
@@ -7460,7 +7805,8 @@
       "directUrl": "https://diamondenergy.com.au/plans",
       "rating": 3.9,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": true
     },
     {
       "id": "act_energyaus_flexi",
@@ -7481,7 +7827,8 @@
       "directUrl": "https://www.energyaustralia.com.au/plans",
       "rating": 4.3,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     }
   ],
   "mobile": [
@@ -7505,7 +7852,8 @@
       "directUrl": "https://www.boost.com.au/plans",
       "rating": 4.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_boost_75gb",
@@ -7528,7 +7876,8 @@
       "directUrl": "https://www.boost.com.au/plans",
       "rating": 4.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_boost_105gb",
@@ -7551,7 +7900,8 @@
       "directUrl": "https://www.boost.com.au/plans",
       "rating": 4.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_boost_105gb_esim",
@@ -7574,7 +7924,8 @@
       "directUrl": "https://www.boost.com.au/plans",
       "rating": 4.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_boost_135gb",
@@ -7597,7 +7948,8 @@
       "directUrl": "https://www.boost.com.au/plans",
       "rating": 4.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_boost_160gb",
@@ -7620,7 +7972,8 @@
       "directUrl": "https://www.boost.com.au/plans",
       "rating": 4.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_22gb",
@@ -7641,7 +7994,8 @@
       "directUrl": "https://www.woolworthsmobile.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_30gb",
@@ -7662,7 +8016,8 @@
       "directUrl": "#008739",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_50gb",
@@ -7683,7 +8038,8 @@
       "directUrl": "#008739",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_75gb_long",
@@ -7702,7 +8058,8 @@
       "directUrl": "https://www.woolworthsmobile.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_215gb_long",
@@ -7721,7 +8078,8 @@
       "directUrl": "https://www.woolworthsmobile.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_300gb_long",
@@ -7740,7 +8098,8 @@
       "directUrl": "https://www.woolworthsmobile.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_70gb_sim",
@@ -7761,7 +8120,8 @@
       "directUrl": "#008739",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_110gb_sim",
@@ -7782,7 +8142,8 @@
       "directUrl": "#008739",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_everyday_165gb_sim",
@@ -7803,7 +8164,8 @@
       "directUrl": "#008739",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_14gb",
@@ -7823,7 +8185,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_30gb",
@@ -7844,7 +8207,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_50gb",
@@ -7865,7 +8229,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_75gb",
@@ -7886,7 +8251,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_100gb",
@@ -7907,7 +8273,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_tangerine_160gb",
@@ -7928,7 +8295,8 @@
       "directUrl": "https://www.tangerine.com.au/nbn/nbn-broadband",
       "rating": 1.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_coles_25",
@@ -7946,7 +8314,8 @@
       "directUrl": "https://www.colesmobile.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_coles_30",
@@ -7964,7 +8333,8 @@
       "directUrl": "https://www.colesmobile.com.au/plans",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_coles_35",
@@ -7982,7 +8352,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_coles_45",
@@ -8000,7 +8371,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_coles_220",
@@ -8018,7 +8390,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_coles_240",
@@ -8036,7 +8409,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_coles_280",
@@ -8054,7 +8428,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_moose_30gb",
@@ -8076,7 +8451,8 @@
       "directUrl": "https://moosemobile.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_moose_40gb",
@@ -8098,7 +8474,8 @@
       "directUrl": "https://moosemobile.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_moose_100gb",
@@ -8120,7 +8497,8 @@
       "directUrl": "https://moosemobile.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_moose_220gb",
@@ -8143,7 +8521,8 @@
       "directUrl": "https://moosemobile.com.au/plans",
       "rating": 3.2,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     }
   ],
   "security": [
@@ -8169,7 +8548,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_indoor2nd",
@@ -8191,7 +8571,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_pantilt",
@@ -8215,7 +8596,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoorpro",
@@ -8237,7 +8619,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoorplus_battery",
@@ -8259,7 +8642,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoorplus_solar",
@@ -8282,7 +8666,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoorplus_plugin",
@@ -8305,7 +8690,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoorplus_poe",
@@ -8328,7 +8714,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoor_battery",
@@ -8350,7 +8737,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoor_solar",
@@ -8373,7 +8761,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_outdoor_plugin",
@@ -8396,7 +8785,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_stickupelite",
@@ -8416,7 +8806,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightpro_plugin",
@@ -8439,7 +8830,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightpro_wired",
@@ -8463,7 +8855,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightpro_poe",
@@ -8487,7 +8880,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightplus_battery",
@@ -8511,7 +8905,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightplus_plugin",
@@ -8535,7 +8930,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightplus_wired",
@@ -8559,7 +8955,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightplus_solar",
@@ -8583,7 +8980,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightpro_plugin1",
@@ -8606,7 +9004,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightpro_wired1",
@@ -8630,7 +9029,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightpro_battery",
@@ -8654,7 +9054,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_spotlightpro_solar",
@@ -8678,7 +9079,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_floodlightpro_wired",
@@ -8701,7 +9103,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_floodlightplus",
@@ -8725,7 +9128,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_ring_floodlightpro_wired1",
@@ -8749,7 +9153,8 @@
       "directUrl": "https://ring.com/au/en/home-security-cameras",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_wirelesspro_addon",
@@ -8770,7 +9175,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_4mp_indoor",
@@ -8789,7 +9195,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_4mp_face",
@@ -8813,7 +9220,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_lampsocket",
@@ -8832,7 +9240,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_solarpanel",
@@ -8850,7 +9259,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_pantilt",
@@ -8868,7 +9278,8 @@
       "directUrl": "https://wuuklabs.com/logo.png",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_smartdoorbell",
@@ -8889,7 +9300,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_smartdoorbellpro",
@@ -8908,7 +9320,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_smartdoorbellpro_addon",
@@ -8927,7 +9340,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_storage",
@@ -8945,7 +9359,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_wuuk_videobaby",
@@ -8964,7 +9379,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_wiredsmart",
@@ -8983,7 +9399,8 @@
       "directUrl": "https://wuuklabs.com/collections/all",
       "rating": 2.5,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     },
     {
       "id": "aus_wuuk_wireless2cam",
@@ -9002,7 +9419,8 @@
       "directUrl": "https://wuuklabs.com/logo.png",
       "rating": 0.0,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     }
   ],
   "insurance": [
@@ -9024,7 +9442,8 @@
       "directUrl": "https://www.budgetdirect.com.au/",
       "rating": 4.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_budget_home",
@@ -9044,7 +9463,8 @@
       "directUrl": "https://www.budgetdirect.com.au/",
       "rating": 4.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_budget_motorcycle",
@@ -9064,7 +9484,8 @@
       "directUrl": "https://www.budgetdirect.com.au/",
       "rating": 4.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_budget_pet",
@@ -9084,7 +9505,8 @@
       "directUrl": "https://www.budgetdirect.com.au/",
       "rating": 4.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_budget_life",
@@ -9104,7 +9526,8 @@
       "directUrl": "https://www.budgetdirect.com.au/",
       "rating": 4.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_budget_travel",
@@ -9124,7 +9547,8 @@
       "directUrl": "https://www.budgetdirect.com.au/",
       "rating": 4.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_budget_roadside",
@@ -9145,7 +9569,8 @@
       "directUrl": "https://www.budgetdirect.com.au/",
       "rating": 4.4,
       "isSponsored": false,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": true
     }
   ],
   "solar": [
@@ -9166,7 +9591,8 @@
       "directUrl": "https://www.energymatters.com.au/solar-power",
       "rating": 4.0,
       "isSponsored": false,
-      "isGreen": true
+      "isGreen": true,
+      "isEnabled": false
     },
     {
       "id": "aus_energymatters_offgrid",
@@ -9184,7 +9610,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": true,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_energymatters_commercial",
@@ -9202,7 +9629,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": true,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_energymatters_hotwater",
@@ -9220,7 +9648,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": true,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_energymatters_hydronics",
@@ -9238,7 +9667,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": true,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_energymatters_waterpumping",
@@ -9256,7 +9686,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": true,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     },
     {
       "id": "aus_solarchoice_compare",
@@ -9274,7 +9705,8 @@
       "directUrl": "4.0",
       "rating": 0.0,
       "isSponsored": true,
-      "isGreen": false
+      "isGreen": false,
+      "isEnabled": false
     }
   ]
 }

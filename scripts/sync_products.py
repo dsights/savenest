@@ -97,6 +97,8 @@ def sync():
                 v = str(val).strip().upper()
                 return v == 'TRUE' or v == '1' or v == 'YES'
 
+            price = safe_float(row.get('price'))
+            
             deal = {
                 "id": (row.get('id') or "").strip(),
                 "providerName": (row.get('providerName') or "").strip(),
@@ -105,13 +107,15 @@ def sync():
                 "planName": (row.get('planName') or "").strip(),
                 "description": (row.get('description') or "").strip(),
                 "keyFeatures": features,
-                "price": safe_float(row.get('price')),
+                "price": price,
                 "priceUnit": (row.get('priceUnit') or "").strip(),
+                # Auto-generate internal affiliate URL
                 "affiliateUrl": f"https://savenest.au/provider/{get_provider_slug((row.get('providerName') or '').strip())}",
                 "directUrl": (row.get('directUrl') or "").strip(),
                 "rating": safe_float(row.get('rating')),
                 "isSponsored": safe_bool(row.get('isSponsored')),
-                "isGreen": safe_bool(row.get('isGreen'))
+                "isGreen": safe_bool(row.get('isGreen')),
+                "isEnabled": price > 0.0
             }
             
             products[category].append(deal)

@@ -119,6 +119,7 @@ class JsonProductRepository implements ProductRepository {
       rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
       isSponsored: json['isSponsored'] ?? false,
       isGreen: json['isGreen'] ?? false,
+      isEnabled: json['isEnabled'] ?? true,
     );
   }
 }

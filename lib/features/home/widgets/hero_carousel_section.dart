@@ -91,85 +91,96 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width > 1100;
     final screenHeight = MediaQuery.of(context).size.height;
-    final heroHeight = screenHeight * 0.4; 
+    
+    // On desktop, use 40% of screen height. On mobile, allow content to define height with a larger minimum.
+    final double? fixedHeight = isDesktop ? (screenHeight * 0.4 < 400 ? 400.0 : screenHeight * 0.4) : null;
+    final double minHeight = isDesktop ? 400 : 550; 
 
-    return SizedBox(
-      height: heroHeight < 360 ? 360 : heroHeight, 
+    return Container(
+      constraints: BoxConstraints(
+        minHeight: minHeight,
+        maxHeight: fixedHeight ?? double.infinity,
+      ),
       width: double.infinity,
       child: Stack(
         children: [
           // Carousel Background
-          PageView.builder(
-            controller: _pageController,
-            onPageChanged: (index) => setState(() => _currentPage = index),
-            itemCount: _slides.length,
-            itemBuilder: (context, index) {
-              return Stack(
-                fit: StackFit.expand,
-                children: [
-                  Image.asset(
-                    _slides[index]['image']!,
-                    fit: BoxFit.cover,
-                    semanticLabel: _slides[index]['title'],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [
-                          AppTheme.deepNavy.withOpacity(0.9),
-                          AppTheme.deepNavy.withOpacity(0.6),
-                          AppTheme.deepNavy.withOpacity(0.3),
-                        ],
+          Positioned.fill(
+            child: PageView.builder(
+              controller: _pageController,
+              onPageChanged: (index) => setState(() => _currentPage = index),
+              itemCount: _slides.length,
+              itemBuilder: (context, index) {
+                return Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(
+                      _slides[index]['image']!,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: isDesktop ? Alignment.centerLeft : Alignment.topCenter,
+                          end: isDesktop ? Alignment.centerRight : Alignment.bottomCenter,
+                          colors: [
+                            AppTheme.deepNavy.withOpacity(0.9),
+                            AppTheme.deepNavy.withOpacity(0.7),
+                            AppTheme.deepNavy.withOpacity(0.4),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              );
-            },
+                  ],
+                );
+              },
+            ),
           ),
 
           // Content Overlay
-          Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 1400),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: isDesktop 
-                  ? Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        // Text Content (Left Side)
-                        Expanded(
-                          flex: 3,
-                          child: _buildTextContent(isDesktop),
-                        ),
-                        // Mini Calculator (Right Side)
-                        const Expanded(
-                          flex: 1,
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 40),
-                            child: MiniSavingsCalculator(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: isDesktop ? 0 : 60),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1400),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: isDesktop 
+                    ? Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          // Text Content (Left Side)
+                          Expanded(
+                            flex: 3,
+                            child: _buildTextContent(isDesktop),
                           ),
-                        ),
-                      ],
-                    )
-                  : Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _buildTextContent(isDesktop),
-                        const SizedBox(height: 40),
-                        const MiniSavingsCalculator(),
-                      ],
-                    ),
+                          // Mini Calculator (Right Side)
+                          const Expanded(
+                            flex: 1,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 40),
+                              child: MiniSavingsCalculator(),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _buildTextContent(isDesktop),
+                          const SizedBox(height: 32),
+                          const MiniSavingsCalculator(),
+                        ],
+                      ),
+                ),
               ),
             ),
           ),
 
           // Indicators
           Positioned(
-            bottom: 40,
+            bottom: 20,
             left: 0,
             right: 0,
             child: Row(

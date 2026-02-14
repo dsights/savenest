@@ -12,14 +12,29 @@ $path = parse_url($requestUri, PHP_URL_PATH);
 $path = trim($path, '/'); // Remove leading/trailing slashes
 
 // Data Files
-$blogFile = __DIR__ . '/assets/data/blog_posts.json';
-$productFile = __DIR__ . '/assets/data/products.json';
+$blogFile = __DIR__ . '/../assets/data/blog_posts.json';
+$productFile = __DIR__ . '/../assets/data/products.json';
+
+// Fallback if not in root (e.g. after build)
+if (!file_exists($blogFile)) {
+    $blogFile = __DIR__ . '/assets/data/blog_posts.json';
+}
+if (!file_exists($productFile)) {
+    $productFile = __DIR__ . '/assets/data/products.json';
+}
 
 // Helper to resolve image URL
 function resolveImageUrl($img) {
-    if (empty($img)) return "https://savenest.au/assets/assets/images/hero_energy.jpg";
+    if (empty($img)) return "https://savenest.au/assets/images/hero_energy.jpg";
     if (strpos($img, 'http') === 0) return $img;
-    return "https://savenest.au/assets/" . ltrim($img, '/');
+    
+    // Remove leading 'assets/' if present to avoid doubling up
+    $cleanPath = ltrim($img, '/');
+    if (strpos($cleanPath, 'assets/') === 0) {
+        $cleanPath = substr($cleanPath, 7);
+    }
+    
+    return "https://savenest.au/assets/" . $cleanPath;
 }
 
 // 1. Try to find in Blog Posts
@@ -44,7 +59,24 @@ if (strpos($path, 'blog/') === 0) {
     }
 }
 
-// 2. Try to find in Deals
+// 2. Try to find in State Guides
+elseif (strpos($path, 'guides/') === 0) {
+    $parts = explode('/', $path); // guides/nsw/electricity
+    if (count($parts) >= 3) {
+        $state = strtoupper($parts[1]);
+        $utility = ucfirst($parts[2]);
+        $metaTitle = "Best $utility Plans in $state | 2026 Guide | SaveNest";
+        $metaDescription = "Find the cheapest $utility providers in $state. Compare rates, rebates, and save hundreds today.";
+        $metaUrl = "https://savenest.au/" . $path;
+        
+        // Use utility specific hero image
+        if (strtolower($utility) == 'electricity') $metaImage = "https://savenest.au/assets/images/hero_energy.jpg";
+        elseif (strtolower($utility) == 'gas') $metaImage = "https://savenest.au/assets/images/energy.png";
+        elseif (strtolower($utility) == 'internet') $metaImage = "https://savenest.au/assets/images/hero_internet.jpg";
+    }
+}
+
+// 3. Try to find in Deals
 elseif (strpos($path, 'deal/') === 0) {
     $dealId = substr($path, 5); // Remove 'deal/'
 

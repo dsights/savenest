@@ -13,12 +13,12 @@ enum UtilityType {
 
 // 2. Market Average Constants (Monthly)
 class MarketAverages {
-  static const double nbn = 90.0;
-  static const double electricity = 150.0;
-  static const double gas = 120.0;
-  static const double mobile = 40.0;
-  static const double homeInsurance = 150.0;
-  static const double carInsurance = 120.0;
+  static const double nbn = 40.0;
+  static const double electricity = 90.0;
+  static const double gas = 60.0;
+  static const double mobile = 15.0;
+  static const double homeInsurance = 500.0;
+  static const double carInsurance = 100.0;
   static const double healthInsurance = 250.0;
 }
 

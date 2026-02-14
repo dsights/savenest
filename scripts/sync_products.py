@@ -41,18 +41,28 @@ def sync():
     }
     updated_count = 0
 
+    def safe_float(val):
+        if val is None: return 0.0
+        try:
+            # Remove currency symbols and commas before converting
+            clean_val = str(val).replace('$', '').replace(',', '').strip()
+            return float(clean_val)
+        except:
+            return 0.0
+
     with open(CSV_PATH, mode='r', encoding='utf-8') as f:
-        # Read lines and strip leading/trailing quotes if they wrap the entire line
-        lines = []
-        for line in f:
-            clean_line = line.strip()
-            if clean_line.startswith('"') and clean_line.endswith('"'):
-                # Check if it's a single quoted field that should be split
-                # Or just strip outer quotes
-                clean_line = clean_line[1:-1].replace('""', '"')
-            lines.append(clean_line)
+        # Read lines and handle the strange wrapping quotes
+        content = f.read().splitlines()
+        clean_lines = []
+        for line in content:
+            line = line.strip()
+            if line.startswith('"') and line.endswith('"'):
+                line = line[1:-1].replace('""', '"')
+            clean_lines.append(line)
         
-        reader = csv.DictReader(lines)
+        import io
+        reader = csv.DictReader(io.StringIO('\n'.join(clean_lines)))
+        
         for row in reader:
             if not row.get('category'): continue
             raw_category = row['category'].strip().lower()
@@ -67,10 +77,12 @@ def sync():
             if category not in products:
                 products[category] = []
 
-            # Parse features
-            features = [f.strip() for f in row['keyFeatures'].split(',') if f.strip()]
-            if '|' in row['keyFeatures']:
-                features = [f.strip() for f in row['keyFeatures'].split('|') if f.strip()]
+            # Parse features (handle both pipe and comma if not piped)
+            raw_features = row.get('keyFeatures') or ""
+            if '|' in raw_features:
+                features = [f.strip() for f in raw_features.split('|') if f.strip()]
+            else:
+                features = [f.strip() for f in raw_features.split(',') if f.strip()]
 
             # Build Deal Object
             color = (row.get('providerColor') or "").strip()
@@ -82,7 +94,8 @@ def sync():
 
             def safe_bool(val):
                 if val is None: return False
-                return val.strip().upper() == 'TRUE'
+                v = str(val).strip().upper()
+                return v == 'TRUE' or v == '1' or v == 'YES'
 
             deal = {
                 "id": (row.get('id') or "").strip(),
@@ -92,12 +105,11 @@ def sync():
                 "planName": (row.get('planName') or "").strip(),
                 "description": (row.get('description') or "").strip(),
                 "keyFeatures": features,
-                "price": float(row['price']) if row.get('price') else 0.0,
+                "price": safe_float(row.get('price')),
                 "priceUnit": (row.get('priceUnit') or "").strip(),
-                # Auto-generate internal affiliate URL
                 "affiliateUrl": f"https://savenest.au/provider/{get_provider_slug((row.get('providerName') or '').strip())}",
                 "directUrl": (row.get('directUrl') or "").strip(),
-                "rating": float(row['rating']) if row.get('rating') else 0.0,
+                "rating": safe_float(row.get('rating')),
                 "isSponsored": safe_bool(row.get('isSponsored')),
                 "isGreen": safe_bool(row.get('isGreen'))
             }

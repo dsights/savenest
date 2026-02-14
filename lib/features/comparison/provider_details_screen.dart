@@ -4,6 +4,7 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../theme/app_theme.dart';
+import 'package:savenest/features/comparison/provider_data.dart';
 import 'comparison_provider.dart';
 import 'comparison_model.dart';
 import 'widgets/deal_card.dart';
@@ -20,7 +21,7 @@ class ProviderDetailsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 1. Resolve Provider Name from Slug (e.g. 'telstra' -> 'Telstra')
     final providerName = _deSlugify(providerSlug);
-    final officialUrl = _providerUrls[providerSlug] ?? 'https://savenest.au';
+    final officialUrl = providerUrls[providerSlug] ?? 'https://savenest.au';
 
     // 2. Fetch All Deals for this Provider
     // We can reuse the repository but filter by providerName
@@ -196,67 +197,3 @@ final providerDealsProvider = FutureProvider.family<List<Deal>, String>((ref, pr
   }
   return results;
 });
-
-// Mapping from Slugs to Official URLs
-const Map<String, String> _providerUrls = {
-  '1st-energy': 'https://1stenergy.com.au',
-  'adt-security': 'https://www.adt.com.au/products',
-  'agl': 'https://www.agl.com.au/residential/energy-plans',
-  'aldi-mobile': 'https://www.aldimobile.com.au/plans',
-  'actewagl': 'https://www.actewagl.com.au/plans',
-  'activ8me': 'https://www.activ8me.net.au/nbn-plans',
-  'alinta-energy': 'https://alintaenergy.com.au/residential/plans',
-  'amber-electric': 'https://amber.com.au/pricing',
-  'arctel': 'https://arctel.com.au',
-  'aurora-energy': 'https://www.auroraenergy.com.au/plans',
-  'aussie-broadband': 'https://www.aussiebroadband.com.au/internet/nbn-plans/',
-  'belong': 'https://www.belong.com.au/go/internet',
-  'boost-mobile': 'https://www.boost.com.au/plans',
-  'buddy-telco': 'https://www.buddytelco.com.au/',
-  'budget-direct': 'https://www.budgetdirect.com.au',
-  'coles-mobile': 'https://www.colesmobile.com.au/plans',
-  'covau-energy': 'https://www.covau.com.au/plans',
-  'diamond-energy': 'https://diamondenergy.com.au/plans',
-  'dodo': 'https://www.dodo.com/energy-plans',
-  'engie': 'https://www.engie.com.au/plans',
-  'energy-locals': 'https://energylocals.com.au/plans',
-  'energy-matters': 'https://www.energymatters.com.au/solar-power',
-  'energyaustralia': 'https://www.energyaustralia.com.au/plans',
-  'everyday-mobile': 'https://www.woolworthsmobile.com.au/plans',
-  'exetel': 'https://www.exetel.com.au/broadband/nbn',
-  'felix-mobile': 'https://www.felixmobile.com.au/plans',
-  'flip': 'https://www.flip.com.au/',
-  'globird-energy': 'https://globirdenergy.com.au/plans',
-  'kleenheat': 'https://www.kleenheat.com.au/plans',
-  'kogan': 'https://www.koganinternet.com.au/plans',
-  'launtel': 'https://launtel.net.au/nbn-plans',
-  'lebara': 'https://www.lebara.com.au/plans',
-  'lumo-energy': 'https://www.lumoenergy.com.au/energy-plans',
-  'mate': 'https://www.letsbemates.com.au/plans',
-  'momentum-energy': 'https://www.momentumenergy.com.au/plans',
-  'moose-mobile': 'https://moosemobile.com.au/plans',
-  'more': 'https://www.more.com.au/nbn-plans',
-  'nectr': 'https://nectr.com.au/plans',
-  'ovo-energy': 'https://ovoenergy.com.au/plans',
-  'optus': 'https://www.optus.com.au/broadband-nbn/home-broadband/plans',
-  'origin-energy': 'https://www.originenergy.com.au/energy-plans',
-  'powershop': 'https://powershop.com.au/plans',
-  'red-energy': 'https://www.redenergy.com.au/plans',
-  'ring': 'https://ring.com/au/en/home-security-cameras',
-  'solar-choice': 'https://www.solarchoice.com.au/solar-panels',
-  'southern-phone': 'https://www.southernphone.com.au/personal/broadband/nbn-broadband',
-  'spintel': 'https://www.spintel.net.au/home-internet/nbn',
-  'sumo': 'https://www.sumoelectrical.com.au/plans',
-  'superloop': 'https://superloop.com/consumer/home-broadband/nbn.html',
-  'swoop': 'https://swoopbroadband.com.au/nbn',
-  'synergy': 'https://www.synergy.net.au/Residential/Plans',
-  'tpg': 'https://www.tpg.com.au/nbn',
-  'tangerine-telecom': 'https://www.tangerine.com.au/nbn/nbn-broadband',
-  'tango-energy': 'https://tangoenergy.com.au/plans',
-  'telsim': 'https://www.telsim.com.au/plans',
-  'telstra': 'https://www.telstra.com.au/internet/nbn',
-  'vodafone': 'https://www.vodafone.com.au/nbn',
-  'wuuk-labs': 'https://wuuklabs.com/collections/all',
-  'amaysim': 'https://www.amaysim.com.au/plans',
-  'iinet': 'https://www.iinet.net.au/nbn',
-};

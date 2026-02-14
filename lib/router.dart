@@ -11,6 +11,7 @@ import 'package:savenest/features/comparison/comparison_model.dart';
 import 'package:savenest/features/comparison/comparison_screen.dart';
 import 'package:savenest/features/comparison/deal_details_screen.dart';
 import 'package:savenest/features/comparison/provider_details_screen.dart';
+import 'package:savenest/features/comparison/provider_directory_screen.dart';
 import 'package:savenest/features/comparison/state_guide_screen.dart' hide StringExtension;
 import 'package:savenest/features/legal/disclaimer_screen.dart';
 import 'package:savenest/features/legal/privacy_policy_screen.dart';
@@ -73,6 +74,14 @@ final goRouter = GoRouter(
           ProviderDetailsScreen(providerSlug: providerSlug!),
         );
       },
+    ),
+    GoRoute(
+      path: '/providers',
+      pageBuilder: (context, state) => _fadeTransition(
+        context,
+        state,
+        const ProviderDirectoryScreen(),
+      ),
     ),
     GoRoute(
       path: '/guides/:state/:utility',

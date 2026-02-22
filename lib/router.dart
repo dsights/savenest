@@ -22,6 +22,7 @@ import 'package:savenest/features/partners/advertise_with_us_screen.dart';
 import 'package:savenest/features/savings/savings_screen.dart';
 import 'package:savenest/features/savings/referral_screen.dart';
 import 'package:savenest/features/registration/registration_screen.dart';
+import 'package:savenest/features/landing/audit_landing_screen.dart';
 
 // Helper for transitions
 // ... (omitting transition helper for brevity in replace call if possible, but I must match exactly)
@@ -45,6 +46,10 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/register',
       pageBuilder: (context, state) => _fadeTransition(context, state, const RegistrationScreen()),
+    ),
+    GoRoute(
+      path: '/audit',
+      pageBuilder: (context, state) => _fadeTransition(context, state, const AuditLandingScreen()),
     ),
     GoRoute(
       path: '/referral',

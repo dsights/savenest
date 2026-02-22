@@ -78,6 +78,23 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
                         ],
                       ),
                     ),
+                    const SizedBox(width: 16),
+                    ElevatedButton(
+                      onPressed: () => context.go('/audit'),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        backgroundColor: AppTheme.vibrantEmerald,
+                        foregroundColor: AppTheme.deepNavy,
+                      ),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.assignment_turned_in, size: 18),
+                          SizedBox(width: 8),
+                          Text('Book Audit', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                    ),
                   ],
                 )
               else

@@ -56,6 +56,13 @@ class _AuditLandingScreenState extends State<AuditLandingScreen> {
     );
   }
 
+  Future<void> _launchCalendly() async {
+    final Uri url = Uri.parse('https://calendly.com/savenest-au/30min');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // SEO
@@ -372,26 +379,7 @@ class _AuditLandingScreenState extends State<AuditLandingScreen> {
                             ),
                             const SizedBox(height: 40),
                             ElevatedButton(
-                              onPressed: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (c) => AlertDialog(
-                                    title: const Text("Book Your Free Audit"),
-                                    content: const Text("Ready to save? Our team will contact you shortly to schedule your free 15-minute consultation."),
-                                    actions: [
-                                      TextButton(onPressed: () => context.pop(), child: const Text("Cancel")),
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          context.pop();
-                                          context.go('/contact');
-                                        },
-                                        style: ElevatedButton.styleFrom(backgroundColor: AppTheme.vibrantEmerald, foregroundColor: AppTheme.deepNavy),
-                                        child: const Text("Confirm Booking"),
-                                      )
-                                    ],
-                                  ),
-                                );
-                              },
+                              onPressed: _launchCalendly,
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: AppTheme.deepNavy,
                                 foregroundColor: Colors.white,

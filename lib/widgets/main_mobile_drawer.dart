@@ -41,6 +41,30 @@ class MainMobileDrawer extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
+                context.go('/audit');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppTheme.vibrantEmerald,
+                foregroundColor: AppTheme.deepNavy,
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.assignment_turned_in, size: 20),
+                  SizedBox(width: 12),
+                  Text('BOOK FREE AUDIT', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
                 context.go('/savings');
               },
               style: ElevatedButton.styleFrom(

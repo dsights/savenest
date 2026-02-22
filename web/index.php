@@ -55,7 +55,15 @@ if (preg_match('/^blog\/([^\/]+)$/', $path, $matches)) {
     }
 }
 
-// 2. Try to find in State Guides
+// 2. Audit Landing Page Detection
+elseif ($path === 'audit') {
+    $metaTitle = "Stop Paying the 'Lazy Tax' | Free Utility Audit | SaveNest";
+    $metaDescription = "The average Australian household wastes $2,400 a year on overpriced bills. Book your FREE SaveNest audit today and stop burning money.";
+    $metaImage = "https://savenest.au/assets/assets/images/landing/money_waste.jpg";
+    $metaUrl = "https://savenest.au/audit";
+}
+
+// 3. Try to find in State Guides
 elseif (preg_match('/^guides\/([^\/]+)\/([^\/]+)$/', $path, $matches)) {
     $state = strtoupper($matches[1]);
     $utility = ucfirst($matches[2]);

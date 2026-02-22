@@ -91,7 +91,7 @@ class AboutUsScreen extends StatelessWidget {
                             const SizedBox(height: 32),
                             _buildBusinessDetail('Registered Business Name', 'Pratham Technologies Pty Ltd'),
                             _buildBusinessDetail('ABN', '89 691 841 059'),
-                            _buildBusinessDetail('Location', 'Melbourne, Australia'),
+                            _buildBusinessDetail('Location', 'Girraween, Sydney, Australia'),
                           ],
                         ),
                       ),

@@ -10,6 +10,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
+import 'package:savenest/services/seo_service.dart';
 
 class BlogPostScreen extends ConsumerWidget {
   final String slug;
@@ -51,7 +52,7 @@ class BlogPostScreen extends ConsumerWidget {
             
             MetaSEO().author(author: post.author);
             MetaSEO().description(description: post.summary);
-            MetaSEO().keywords(keywords: '${post.category}, comparison, Australia, savings, ${post.title}');
+            MetaSEO().keywords(keywords: '${post.category}, comparison, Australia, savings, ${post.title.replaceAll(',', '')}, expert advice, utility bills');
             
             // Open Graph / Facebook
             MetaSEO().ogTitle(ogTitle: post.title);
@@ -65,6 +66,29 @@ class BlogPostScreen extends ConsumerWidget {
             MetaSEO().nameContent(name: 'twitter:title', content: post.title);
             MetaSEO().nameContent(name: 'twitter:description', content: post.summary);
             MetaSEO().nameContent(name: 'twitter:image', content: absoluteImageUrl);
+
+            // Schema.org
+            SeoService.setCanonicalUrl('https://savenest.au/blog/${post.slug}');
+            SeoService.injectJsonLd({
+              '@context': 'https://schema.org/',
+              '@type': 'BlogPosting',
+              'headline': post.title,
+              'image': absoluteImageUrl,
+              'author': {
+                '@type': 'Person',
+                'name': post.author
+              },
+              'publisher': {
+                '@type': 'Organization',
+                'name': 'SaveNest',
+                'logo': {
+                  '@type': 'ImageObject',
+                  'url': 'https://savenest.au/assets/assets/images/logo.png'
+                }
+              },
+              'datePublished': post.date,
+              'description': post.summary
+            });
           }
 
           return SingleChildScrollView(

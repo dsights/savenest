@@ -20,6 +20,7 @@ import 'package:savenest/features/misc/sitemap_screen.dart';
 import 'package:savenest/features/misc/moving_house_screen.dart';
 import 'package:savenest/features/partners/advertise_with_us_screen.dart';
 import 'package:savenest/features/savings/savings_screen.dart';
+import 'package:savenest/features/savings/referral_screen.dart';
 import 'package:savenest/features/registration/registration_screen.dart';
 
 // Helper for transitions
@@ -44,6 +45,14 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/register',
       pageBuilder: (context, state) => _fadeTransition(context, state, const RegistrationScreen()),
+    ),
+    GoRoute(
+      path: '/referral',
+      pageBuilder: (context, state) => _fadeTransition(
+        context,
+        state,
+        const ReferralScreen(),
+      ),
     ),
     GoRoute(
       path: '/savings',

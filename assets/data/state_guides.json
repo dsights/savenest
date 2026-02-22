@@ -1,0 +1,121 @@
+{
+  "nsw": {
+    "electricity": {
+      "marketOverview": "NSW energy prices are regulated by the Default Market Offer (DMO), which sets a price cap on standing offers. However, market offers can be significantly cheaper. The state is seeing a surge in renewable energy zones, which is impacting peak and off-peak pricing structures. Residents with solar panels should look out for 'Solar Sharer' offers or Virtual Power Plant (VPP) deals to maximize their feed-in tariffs.",
+      "averageCost": "$1,600",
+      "rebates": "NSW residents may be eligible for the Family Energy Rebate, Low Income Household Rebate, and Seniors Energy Rebate. Check your eligibility on the Service NSW website."
+    },
+    "gas": {
+      "marketOverview": "Gas usage in NSW varies significantly by region. While many Sydney homes rely on gas for heating and cooking, electrification trends are growing. Comparing gas usage charges (daily supply charge vs MJ usage rate) is crucial for low-usage households.",
+      "averageCost": "$800",
+      "rebates": "Gas Rebate is available for eligible concession card holders in NSW."
+    },
+    "internet": {
+      "marketOverview": "NSW has extensive NBN coverage with a mix of FTTP, FTTN, and HFC connections. Competition is fierce, with providers offering significant discounts for the first 6 months.",
+      "averageCost": "$900",
+      "rebates": "Check for federal government initiatives if you are a student or low-income earner."
+    }
+  },
+  "vic": {
+    "electricity": {
+      "marketOverview": "Victoria has a unique market with the Victorian Default Offer (VDO), which acts as a reference price. Smart meters are mandatory across the state, allowing for advanced time-of-use tariffs. Competition is high between major players like Origin, AGL, and newcomers like Amber which offer wholesale pricing.",
+      "averageCost": "$1,400",
+      "rebates": "Victorians can access the Annual Electricity Concession (17.5% off usage) and the Utility Relief Grant Scheme (URGS) if they are having trouble paying bills."
+    },
+    "gas": {
+      "marketOverview": "Victoria is the largest consumer of residential gas in Australia. Winter heating drives up bills significantly. It is critical to compare 'off-peak' gas rates if available, though most residential plans are flat rate or block tariffs.",
+      "averageCost": "$1,100",
+      "rebates": "Winter Gas Concession provides a discount during the colder months for eligible cardholders."
+    },
+     "internet": {
+      "marketOverview": "Victoria has high NBN adoption. Look for providers offering 'typical evening speeds' close to the maximum tier speed (e.g. 50Mbps or 100Mbps).",
+      "averageCost": "$900",
+      "rebates": "None specific to state, federal only."
+    }
+  },
+  "qld": {
+    "electricity": {
+      "marketOverview": "South East Queensland (Energex network) is deregulated with full retail competition. Regional Queensland is largely regulated with Ergon Energy. Solar adoption in QLD is the highest in the world, so feed-in tariffs are a key comparison factor.",
+      "averageCost": "$1,550",
+      "rebates": "The Queensland Government often issues Cost of Living Rebates applied directly to bills. Pensioners can claim the Electricity Rebate."
+    },
+     "gas": {
+      "marketOverview": "Gas is less common for heating in QLD compared to southern states, but popular for cooking and hot water. Bottled gas (LPG) is also common in regional areas.",
+      "averageCost": "$650",
+      "rebates": "Reticulated Natural Gas Rebate is available for eligible pensioners."
+    },
+     "internet": {
+      "marketOverview": "NBN availability is widespread in SEQ. Regional areas often rely on Fixed Wireless or Satellite (Sky Muster), though Starlink is becoming a popular alternative.",
+      "averageCost": "$900",
+      "rebates": "None specific to state."
+    }
+  },
+  "sa": {
+    "electricity": {
+      "marketOverview": "South Australia has some of the highest electricity prices in the world but also the highest share of wind and solar. This volatility makes 'Time of Use' tariffs very attractive if you can shift usage to the middle of the day. Virtual Power Plants (VPPs) are very popular here.",
+      "averageCost": "$1,800",
+      "rebates": "Energy Bill Concessions are available for eligible concession card holders."
+    },
+     "gas": {
+      "marketOverview": "Gas is widely used in Adelaide. Comparison is essential as standing offer contracts can be significantly more expensive than market offers.",
+      "averageCost": "$900",
+      "rebates": "Cost of Living Concession helps offset utility costs."
+    },
+     "internet": {
+      "marketOverview": "Adelaide has a strong fibre network including non-NBN options like the GigCity network in some precincts.",
+      "averageCost": "$900",
+      "rebates": "None specific to state."
+    }
+  },
+  "wa": {
+    "electricity": {
+      "marketOverview": "Western Australia's electricity market is regulated for residential customers in the SWIS (South West Interconnected System). Synergy is the main retailer. You cannot switch providers for electricity if you consume less than 50MWh, but you can choose different tariff plans like the 'Midday Saver'.",
+      "averageCost": "$1,600",
+      "rebates": "WA Government Household Electricity Credit is occasionally issued. Energy Assistance Payment is available for concession holders."
+    },
+     "gas": {
+      "marketOverview": "The gas market in WA IS competitive (unlike electricity). You can switch between Alinta, Kleenheat, AGL, and Origin. Competition often leads to discounts of 30%+ off usage charges.",
+      "averageCost": "$700",
+      "rebates": "None specific to state usually, check retailer offers."
+    },
+     "internet": {
+      "marketOverview": "Perth has good NBN coverage. Regional WA relies heavily on Fixed Wireless and Satellite.",
+      "averageCost": "$900",
+      "rebates": "None specific to state."
+    }
+  },
+  "act": {
+    "electricity": {
+      "marketOverview": "The ACT has regulated prices determined by the ICRC. ActewAGL is the incumbent, but competition exists from Origin, EnergyAustralia and others. ACT has a target of 100% renewable electricity.",
+      "averageCost": "$1,500",
+      "rebates": "Utilities Concession covers electricity, gas, water and sewerage."
+    },
+    "gas": {
+      "marketOverview": "ACT is moving away from gas, with new suburbs often being electric-only. Existing gas users can still compare plans.",
+      "averageCost": "$1,000",
+      "rebates": "Utilities Concession applies."
+    },
+    "internet": {
+      "marketOverview": "High FTTP penetration due to TransACT/VDSL history and NBN upgrades.",
+      "averageCost": "$900",
+      "rebates": "None."
+    }
+  },
+  "tas": {
+    "electricity": {
+      "marketOverview": "Tasmania's market has full retail competition, but Aurora Energy remains the dominant player. 1st Energy and others offer alternatives. Hydro Tasmania generates most power.",
+      "averageCost": "$1,700",
+      "rebates": "Annual Electricity Concession is available."
+    },
+    "gas": {
+      "marketOverview": "Reticulated gas is available in limited areas (Hobart, Launceston). Many rely on bottled gas.",
+      "averageCost": "$900",
+      "rebates": "None."
+    },
+    "internet": {
+      "marketOverview": "Tasmania was the first state to be fully connected to the NBN, with high FTTP availability.",
+      "averageCost": "$900",
+      "rebates": "None."
+    }
+  }
+}

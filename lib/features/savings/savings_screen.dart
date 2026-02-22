@@ -68,10 +68,12 @@ class SavingsScreen extends ConsumerWidget {
                                 if (totalSavings > 0) ...[
                                   const SizedBox(height: 4),
                                   Text(
-                                    'Great start!',
+                                    _getSavingsEquivalent(totalSavings),
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: AppTheme.deepNavy.withOpacity(0.5),
+                                      color: AppTheme.deepNavy.withOpacity(0.6),
                                       fontSize: 12,
+                                      fontStyle: FontStyle.italic,
                                     ),
                                   ),
                                 ],
@@ -142,6 +144,40 @@ class SavingsScreen extends ConsumerWidget {
                                 value: utilityCosts.carInsurance,
                                 max: 400,
                                 onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
+                              ),
+                              const SizedBox(height: 24),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                child: Text(
+                                  "Boost Your Savings",
+                                  style: TextStyle(
+                                    color: AppTheme.deepNavy.withOpacity(0.7),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 12),
+                              _buildBoostCard(
+                                context,
+                                title: "Refer & Earn",
+                                subtitle: "Get \$50 for every friend who switches.",
+                                icon: Icons.people_alt_rounded,
+                                onTap: () {
+                                  context.push('/referral');
+                                },
+                              ),
+                              _buildBoostCard(
+                                context,
+                                title: "Rate Watch",
+                                subtitle: "Get notified when prices drop.",
+                                icon: Icons.notifications_active_rounded,
+                                onTap: () {
+                                  // TODO: Activate Rate Watch
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(content: Text('Rate Watch activated!')),
+                                  );
+                                },
                               ),
                             const SizedBox(height: 80), // Space for FAB
                           ],
@@ -226,6 +262,85 @@ class SavingsScreen extends ConsumerWidget {
                 label: '\$${value.toInt()}',
                 onChanged: onChanged,
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _getSavingsEquivalent(double savings) {
+    if (savings <= 0) return 'Start sliding to see savings!';
+    if (savings < 300) return 'That\'s a nice dinner out!';
+    if (savings < 600) return 'That\'s a years worth of coffee!';
+    if (savings < 1000) return 'That\'s a weekend getaway!';
+    if (savings < 2000) return 'That\'s a new smartphone!';
+    return 'That\'s a dream holiday!';
+  }
+
+  Widget _buildBoostCard(
+    BuildContext context, {
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.8),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: AppTheme.glassBorder),
+          boxShadow: [
+            BoxShadow(
+              color: AppTheme.deepNavy.withOpacity(0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: AppTheme.vibrantEmerald.withOpacity(0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: AppTheme.vibrantEmerald),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: AppTheme.deepNavy,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppTheme.deepNavy.withOpacity(0.6),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 16,
+              color: AppTheme.deepNavy.withOpacity(0.3),
             ),
           ],
         ),

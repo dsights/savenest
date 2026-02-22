@@ -1,9 +1,12 @@
+from fastapi.concurrency import run_in_threadpool
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import requests
 import os
 import json
 from dotenv import load_dotenv
+from ocr_service import extract_bill_data
 
 # Load environment variables from .env file if it exists
 load_dotenv()
@@ -29,14 +32,27 @@ HUBSPOT_UPLOAD_URL = "https://api.hubapi.com/files/v3/files"
 def health_check():
     return {"status": "ok", "service": "savenest-backend"}
 
+@app.post("/ocr")
+async def process_bill(file: UploadFile = File(...)):
+    try:
+        content = await file.read()
+        data = extract_bill_data(content)
+        return {"success": True, "data": data}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"OCR Failed: {str(e)}")
+
 @app.post("/upload")
 async def proxy_upload(file: UploadFile = File(...)):
     if not HUBSPOT_ACCESS_TOKEN:
         raise HTTPException(status_code=500, detail="Server misconfigured: Missing HubSpot Token")
 
     try:
+        # Read file content once to use for both services
         file_content = await file.read()
         
+        # 1. HubSpot Upload (Critical Path)
+        # We do this synchronously (blocking) because we need the result immediately,
+        # but in a production async app, you might use an async HTTP client.
         hubspot_response = requests.post(
             HUBSPOT_UPLOAD_URL,
             headers={'Authorization': f'Bearer {HUBSPOT_ACCESS_TOKEN}'},
@@ -46,11 +62,30 @@ async def proxy_upload(file: UploadFile = File(...)):
                 'options': json.dumps({"access": "PUBLIC_INDEXABLE"})
             }
         )
+        
+        hubspot_data = hubspot_response.json()
 
-        # Propagate the exact status code and response from HubSpot
+        # 2. Google Cloud OCR (Enhancement Path)
+        # Only attempt if upload succeeded to avoid wasting API calls on bad requests
+        if 200 <= hubspot_response.status_code < 300:
+            try:
+                # Run OCR in a thread pool so it doesn't block the server loop
+                ocr_data = await run_in_threadpool(extract_bill_data, file_content)
+                
+                # Merge OCR data into response. 
+                # HubSpot returns a dict, so we can safely add a key.
+                if isinstance(hubspot_data, dict):
+                    hubspot_data['ocr_analysis'] = ocr_data
+            except Exception as e:
+                # Log error but DO NOT fail the request. The user still needs the file uploaded.
+                print(f"OCR Enhancement Failed: {e}")
+                if isinstance(hubspot_data, dict):
+                     hubspot_data['ocr_error'] = str(e)
+
+        # Propagate the exact status code and (enhanced) response
         return JSONResponse(
             status_code=hubspot_response.status_code,
-            content=hubspot_response.json()
+            content=hubspot_data
         )
 
     except Exception as e:

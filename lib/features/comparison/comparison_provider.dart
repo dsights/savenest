@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'comparison_model.dart';
 import 'data/product_repository.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
 // Dependency Injection
 final productRepositoryProvider = Provider<ProductRepository>((ref) {
@@ -207,6 +209,29 @@ final comparisonProvider = StateNotifierProvider<ComparisonController, Compariso
 });
 
 final dealDetailsProvider = FutureProvider.family<Deal?, String>((ref, id) async {
+
   final repo = ref.watch(productRepositoryProvider);
+
   return repo.getDealById(id);
+
+});
+
+
+
+final stateGuideProvider = FutureProvider.family<Map<String, dynamic>?, String>((ref, stateCode) async {
+
+  try {
+
+    final jsonString = await rootBundle.loadString('assets/data/state_guides.json');
+
+    final Map<String, dynamic> data = jsonDecode(jsonString);
+
+    return data[stateCode] as Map<String, dynamic>?;
+
+  } catch (e) {
+
+    return null; // Return null if file not found or parsing fails
+
+  }
+
 });

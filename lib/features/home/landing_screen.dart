@@ -29,14 +29,20 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
       const String title = 'Energy Comparison Australia | Save on Plans with SaveNest';
       const String description = 'Compare energy, internet, and insurance in Australia. Find the best deals and save up to \$500 with SaveNest\'s free comparison tool. Instant quotes online.';
       const String imageUrl = 'https://savenest.au/assets/assets/images/hero_energy.jpg';
+      const String keywords = 'energy comparison, compare electricity, cheap gas, nbn plans, car insurance quotes, health insurance comparison, australia, savenest';
 
       meta.nameContent(name: 'title', content: title);
       meta.nameContent(name: 'description', content: description);
+      meta.nameContent(name: 'keywords', content: keywords);
+      
+      // Open Graph
       meta.ogTitle(ogTitle: title);
       meta.ogDescription(ogDescription: description);
       meta.propertyContent(property: 'og:url', content: 'https://savenest.au/');
       meta.ogImage(ogImage: imageUrl);
       meta.propertyContent(property: 'og:type', content: 'website');
+      
+      // Twitter
       meta.nameContent(name: 'twitter:card', content: 'summary_large_image');
       meta.nameContent(name: 'twitter:title', content: title);
       meta.nameContent(name: 'twitter:description', content: description);
@@ -52,12 +58,48 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         child: Column(
           children: [
             const MainNavigationBar(),
+            _buildReferralBanner(context),
             const HeroCarouselSection(),
             const PartnerLogoSlider(),
             const AnimatedValueProps(),
             _buildBlogSection(context),
             _buildTestimonialsSection(context),
             const ModernFooter(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildReferralBanner(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      color: AppTheme.vibrantEmerald,
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+      child: Center(
+        child: Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          alignment: WrapAlignment.center,
+          spacing: 16,
+          children: [
+            const Text(
+              "💸 Earn \$50 for every friend you refer!",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () => context.push('/referral'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: AppTheme.vibrantEmerald,
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                textStyle: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              child: const Text("Start Earning"),
+            ),
           ],
         ),
       ),

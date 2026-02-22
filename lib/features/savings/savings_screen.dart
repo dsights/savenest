@@ -37,22 +37,23 @@ class SavingsScreen extends ConsumerWidget {
                     children: [
                       // 1. Floating Savings Bubble
                       Expanded(
-                        flex: 1, // Reduced flex to take less vertical space
+                        flex: 2,
                         child: Center(
                           child: GlassContainer(
-                            width: 260, // Wider for big numbers
-                            height: 150, // Oval shape
-                            borderRadius: 100, // Pill shape
+                            width: 280,
+                            height: 160,
+                            borderRadius: 100,
                             padding: const EdgeInsets.all(16),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Annual Savings', // Shorter text
+                                  'Annual Savings',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: AppTheme.deepNavy.withOpacity(0.7),
-                                    fontSize: 13, // Smaller font
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 const SizedBox(height: 4),
@@ -61,7 +62,7 @@ class SavingsScreen extends ConsumerWidget {
                                   prefix: '\$',
                                   style: const TextStyle(
                                     color: AppTheme.vibrantEmerald,
-                                    fontSize: 32, // Smaller font
+                                    fontSize: 42,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -85,101 +86,66 @@ class SavingsScreen extends ConsumerWidget {
 
                       // 2. Sliders List
                       Expanded(
-                        flex: 3, // Increased relative space for the list
+                        flex: 4,
                         child: ListView(
-                          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-                            children: [
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 16.0),
-                                  child: Text(
-                                    "What's your monthly spend?",
-                                    style: TextStyle(
-                                      color: AppTheme.deepNavy.withOpacity(0.7),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              _buildUtilitySlider(
-                                context,
-                                label: 'NBN (Internet)',
-                                value: utilityCosts.nbn,
-                                max: 200,
-                                onChanged: (val) => controller.updateCost(UtilityType.nbn, val),
-                              ),
-                              _buildUtilitySlider(
-                                context,
-                                label: 'Electricity',
-                                value: utilityCosts.electricity,
-                                max: 600,
-                                onChanged: (val) => controller.updateCost(UtilityType.electricity, val),
-                              ),
-                              _buildUtilitySlider(
-                                context,
-                                label: 'Gas',
-                                value: utilityCosts.gas,
-                                max: 400,
-                                onChanged: (val) => controller.updateCost(UtilityType.gas, val),
-                              ),
-                              _buildUtilitySlider(
-                                context,
-                                label: 'Mobile SIM',
-                                value: utilityCosts.mobile,
-                                max: 150,
-                                onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
-                              ),
-                              _buildUtilitySlider(
-                                context,
-                                label: 'Home Insurance',
-                                value: utilityCosts.homeInsurance,
-                                max: 500,
-                                onChanged: (val) => controller.updateCost(UtilityType.homeInsurance, val),
-                              ),
-                              _buildUtilitySlider(
-                                context,
-                                label: 'Car Insurance',
-                                value: utilityCosts.carInsurance,
-                                max: 400,
-                                onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
-                              ),
-                              const SizedBox(height: 24),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                          physics: const BouncingScrollPhysics(),
+                          padding: const EdgeInsets.fromLTRB(24, 0, 24, 100),
+                          children: [
+                            Center(
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 24.0),
                                 child: Text(
-                                  "Boost Your Savings",
+                                  "Adjust your monthly spend:",
                                   style: TextStyle(
                                     color: AppTheme.deepNavy.withOpacity(0.7),
                                     fontSize: 16,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 12),
-                              _buildBoostCard(
-                                context,
-                                title: "Refer & Earn",
-                                subtitle: "Get \$50 for every friend who switches.",
-                                icon: Icons.people_alt_rounded,
-                                onTap: () {
-                                  context.push('/referral');
-                                },
-                              ),
-                              _buildBoostCard(
-                                context,
-                                title: "Rate Watch",
-                                subtitle: "Get notified when prices drop.",
-                                icon: Icons.notifications_active_rounded,
-                                onTap: () {
-                                  // TODO: Activate Rate Watch
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(content: Text('Rate Watch activated!')),
-                                  );
-                                },
-                              ),
-                            const SizedBox(height: 80), // Space for FAB
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'NBN (Internet)',
+                              value: utilityCosts.nbn,
+                              max: 200,
+                              onChanged: (val) => controller.updateCost(UtilityType.nbn, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Electricity',
+                              value: utilityCosts.electricity,
+                              max: 600,
+                              onChanged: (val) => controller.updateCost(UtilityType.electricity, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Gas',
+                              value: utilityCosts.gas,
+                              max: 400,
+                              onChanged: (val) => controller.updateCost(UtilityType.gas, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Mobile SIM',
+                              value: utilityCosts.mobile,
+                              max: 150,
+                              onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Home Insurance',
+                              value: utilityCosts.homeInsurance,
+                              max: 500,
+                              onChanged: (val) => controller.updateCost(UtilityType.homeInsurance, val),
+                            ),
+                            _buildUtilitySlider(
+                              context,
+                              label: 'Car Insurance',
+                              value: utilityCosts.carInsurance,
+                              max: 400,
+                              onChanged: (val) => controller.updateCost(UtilityType.carInsurance, val),
+                            ),
                           ],
                         ),
                       ),
@@ -192,17 +158,16 @@ class SavingsScreen extends ConsumerWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 400),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 400),
           child: SizedBox(
             width: double.infinity,
+            height: 56,
             child: PulsingButton(
               label: 'SWITCH & SAVE',
-              onPressed: () {
-                context.push('/register');
-              },
+              onPressed: () => context.go('/register'),
             ),
           ),
         ),
@@ -218,53 +183,54 @@ class SavingsScreen extends ConsumerWidget {
     required Function(double) onChanged,
   }) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0), // Reduced from 16
-      child: GlassContainer(
-        borderRadius: 12,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4), // Reduced vertical from 12 to 4
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   label,
-                  style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14), // Smaller font
+                  style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15, color: AppTheme.deepNavy),
                 ),
-                Text(
-                  '\$${value.toInt()}',
-                  style: const TextStyle(
-                    color: AppTheme.vibrantEmerald,
-                    fontWeight: FontWeight.bold,
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: AppTheme.vibrantEmerald.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    '\$${value.toInt()}',
+                    style: const TextStyle(
+                      color: AppTheme.vibrantEmerald,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
                   ),
                 ),
               ],
             ),
-            SliderTheme(
-              data: SliderTheme.of(context).copyWith(
-                activeTrackColor: AppTheme.vibrantEmerald,
-                inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
-                thumbColor: AppTheme.accentOrange,
-                overlayColor: AppTheme.accentOrange.withOpacity(0.2),
-                trackHeight: 4.0, 
-                thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
-                overlayShape: const RoundSliderOverlayShape(overlayRadius: 20.0),
-                valueIndicatorColor: AppTheme.accentOrange,
-                valueIndicatorTextStyle: const TextStyle(color: Colors.white),
-              ),
-              child: Slider(
-                value: value,
-                min: 0,
-                max: max,
-                divisions: max.toInt(),
-                label: '\$${value.toInt()}',
-                onChanged: onChanged,
-              ),
+          ),
+          SliderTheme(
+            data: SliderTheme.of(context).copyWith(
+              activeTrackColor: AppTheme.vibrantEmerald,
+              inactiveTrackColor: Colors.grey.withOpacity(0.2),
+              thumbColor: Colors.white,
+              overlayColor: AppTheme.vibrantEmerald.withOpacity(0.1),
+              trackHeight: 6.0,
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12.0, elevation: 4),
+              overlayShape: const RoundSliderOverlayShape(overlayRadius: 24.0),
             ),
-          ],
-        ),
+            child: Slider(
+              value: value,
+              min: 0,
+              max: max,
+              onChanged: onChanged,
+            ),
+          ),
+        ],
       ),
     );
   }

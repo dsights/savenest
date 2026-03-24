@@ -51,17 +51,26 @@ async def proxy_upload(file: UploadFile = File(...)):
         file_content = await file.read()
         
         # 1. HubSpot Upload (Critical Path)
-        # We do this synchronously (blocking) because we need the result immediately,
-        # but in a production async app, you might use an async HTTP client.
+        # Re-structure the request to match HubSpot SDK's approach
+        file_options = {
+            "access": "PUBLIC_INDEXABLE"
+        }
+        
+        request_files = {
+            'file': (file.filename, file_content, file.content_type),
+            'options': (None, json.dumps(file_options)),
+            'folderPath': (None, 'savenest_bills'),
+        }
+
         hubspot_response = requests.post(
             HUBSPOT_UPLOAD_URL,
             headers={'Authorization': f'Bearer {HUBSPOT_ACCESS_TOKEN}'},
-            files={'file': (file.filename, file_content)},
-            data={
-                'folderPath': 'savenest_bills',
-                'options': json.dumps({"access": "PUBLIC_INDEXABLE"})
-            }
+            files=request_files
         )
+        
+        # Add logging to see the response from HubSpot
+        if hubspot_response.status_code < 200 or hubspot_response.status_code >= 300:
+            print(f"HubSpot Upload Error: Status={hubspot_response.status_code}, Body={hubspot_response.text}")
         
         hubspot_data = hubspot_response.json()
 

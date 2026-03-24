@@ -50,6 +50,12 @@ async def proxy_upload(file: UploadFile = File(...)):
         # Read file content once to use for both services
         file_content = await file.read()
         
+        # Add logging to inspect the incoming file
+        print(f"--- HubSpot Upload ---")
+        print(f"Received file: {file.filename}")
+        print(f"Content-Type: {file.content_type}")
+        print(f"----------------------")
+        
         # 1. HubSpot Upload (Critical Path)
         # Re-structure the request to match HubSpot SDK's approach
         file_options = {

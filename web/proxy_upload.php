@@ -22,25 +22,28 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 1. Get the HubSpot Access Token
-// We try to get it from environment, or use a placeholder that deployment script replaces.
 $HUB_TOKEN = getenv('HUBSPOT_ACCESS_TOKEN');
 
-// Fallback logic for shared hosting where getenv might not be populated from .env
-if (!$HUB_TOKEN || $HUB_TOKEN === '') {
-    // This string is a placeholder. The GitHub Action `deploy.yml` should replace it 
-    // with the actual secret using `sed`.
-    $HUB_TOKEN = 'REPLACE_WITH_HUBSPOT_ACCESS_TOKEN';
+// If the environment variable is not found, check for the placeholder which is meant
+// to be replaced by a deployment script. This is a fallback for environments
+// that don't easily support environment variables.
+if (!$HUB_TOKEN) {
+    // This string should be replaced by a `sed` command in `deploy.yml`.
+    $token_placeholder = 'REPLACE_WITH_HUBSPOT_ACCESS_TOKEN';
+    if ($token_placeholder !== 'REPLACE_WITH_HUBSPOT_ACCESS_TOKEN') {
+        $HUB_TOKEN = $token_placeholder;
+    }
 }
 
-// If it's still the placeholder (local dev or misconfigured), try the header from the client?
-// Note: Client likely sends an empty token if not configured there.
-// But if the client sent a valid token in Authorization header, we could use it.
-$authHeader = isset($_SERVER['HTTP_AUTHORIZATION']) ? $_SERVER['HTTP_AUTHORIZATION'] : '';
-if (strpos($HUB_TOKEN, 'REPLACE_') === 0 && !empty($authHeader)) {
-    // Extract token from "Bearer <token>"
-    if (preg_match('/Bearer\s(\S+)/', $authHeader, $matches)) {
-        $HUB_TOKEN = $matches[1];
-    }
+// Final check for the token
+if (!$HUB_TOKEN || $HUB_TOKEN === 'REPLACE_WITH_HUBSPOT_ACCESS_TOKEN') {
+    http_response_code(500);
+    // Provide a clear error message in JSON format.
+    echo json_encode([
+        "error" => "HubSpot Access Token is not configured on the server.",
+        "message" => "The HubSpot access token is missing. Please ensure the HUBSPOT_ACCESS_TOKEN environment variable is set or the placeholder is replaced during deployment."
+    ]);
+    exit();
 }
 
 $uploadUrl = "https://api.hubapi.com/files/v3/files";
@@ -88,17 +91,10 @@ if (curl_errno($ch)) {
     http_response_code(500);
     echo json_encode(["error" => "Curl error: " . $error_msg]);
 } else {
-    // Check if HubSpot returned an error (e.g. 401)
-    if ($httpCode >= 400) {
-        http_response_code($httpCode); // Propagate the error code
-        // Ensure we send JSON
-        header('Content-Type: application/json');
-        echo $response; // HubSpot returns JSON error
-    } else {
-        http_response_code($httpCode);
-        header('Content-Type: application/json');
-        echo $response;
-    }
+    // Pass through HubSpot's response, whether it's an error or success.
+    http_response_code($httpCode);
+    header('Content-Type: application/json');
+    echo $response;
 }
 
 curl_close($ch);

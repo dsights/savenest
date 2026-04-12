@@ -994,7 +994,7 @@
         "Data: 25 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 30.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.belong.com.au/go/mobile",
       "directUrl": "https://www.belong.com.au/go/mobile",
@@ -1020,7 +1020,7 @@
         "Data: 40 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 35.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.belong.com.au/go/mobile",
       "directUrl": "https://www.belong.com.au/go/mobile",
@@ -1046,7 +1046,7 @@
         "Data: 25 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 30.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.telstra.com.au",
       "directUrl": "https://www.telstra.com.au",
@@ -1072,7 +1072,7 @@
         "Data: 25 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 25.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://colesmobile.com.au",
       "directUrl": "https://colesmobile.com.au",
@@ -1098,7 +1098,7 @@
         "Data: 40 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 35.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://colesmobile.com.au",
       "directUrl": "https://colesmobile.com.au",
@@ -1124,7 +1124,7 @@
         "Data: 30 GB",
         "Network: Telstra"
       ],
-      "price": 25.0,
+      "price": 30.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://moretelecom.com.au",
       "directUrl": "https://moretelecom.com.au",
@@ -1150,7 +1150,7 @@
         "Data: 30 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 30.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://tangerinetelecom.com.au",
       "directUrl": "https://tangerinetelecom.com.au",
@@ -1176,7 +1176,7 @@
         "Data: 12 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 23.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.aldimobile.com.au/collections/mobile-plans",
       "directUrl": "https://www.aldimobile.com.au/collections/mobile-plans",
@@ -1202,7 +1202,7 @@
         "Data: 100 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 220.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://colesmobile.com.au",
       "directUrl": "https://colesmobile.com.au",
@@ -1228,7 +1228,7 @@
         "Data: 300 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 289.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.aldimobile.com.au/products/289-5g-365-day-mobile-plan",
       "directUrl": "https://www.aldimobile.com.au/products/289-5g-365-day-mobile-plan",
@@ -1254,7 +1254,7 @@
         "Data: 100 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 45.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.belong.com.au/go/mobile",
       "directUrl": "https://www.belong.com.au/go/mobile",
@@ -1280,7 +1280,7 @@
         "Data: 160 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 55.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.belong.com.au/go/mobile",
       "directUrl": "https://www.belong.com.au/go/mobile",
@@ -1306,7 +1306,7 @@
         "Data: 50 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 29.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.spintel.net.au",
       "directUrl": "https://www.spintel.net.au",
@@ -1332,7 +1332,7 @@
         "Data: 100 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 35.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.spintel.net.au",
       "directUrl": "https://www.spintel.net.au",
@@ -1358,7 +1358,7 @@
         "Data: 200 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 50.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.spintel.net.au",
       "directUrl": "https://www.spintel.net.au",
@@ -1384,7 +1384,7 @@
         "Data: 70 GB",
         "Network: Optus"
       ],
-      "price": 36.0,
+      "price": 40.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://mobile.everyday.com.au/plans",
       "directUrl": "https://mobile.everyday.com.au/plans",
@@ -1410,7 +1410,7 @@
         "Data: 110 GB",
         "Network: Optus"
       ],
-      "price": 45.0,
+      "price": 50.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://mobile.everyday.com.au/plans",
       "directUrl": "https://mobile.everyday.com.au/plans",
@@ -1436,7 +1436,7 @@
         "Data: 165 GB",
         "Network: Optus"
       ],
-      "price": 54.0,
+      "price": 60.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://mobile.everyday.com.au/plans",
       "directUrl": "https://mobile.everyday.com.au/plans",
@@ -1462,7 +1462,7 @@
         "Data: 240 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 300.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.boost.com.au",
       "directUrl": "https://www.boost.com.au",
@@ -1514,7 +1514,7 @@
         "Data: 25 GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 39.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.boost.com.au",
       "directUrl": "https://www.boost.com.au",
@@ -1540,7 +1540,7 @@
         "Data: 15 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 25.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.amaysim.com.au/sim-plans",
       "directUrl": "https://www.amaysim.com.au/sim-plans",
@@ -1566,7 +1566,7 @@
         "Data: 42 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 35.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.amaysim.com.au/sim-plans",
       "directUrl": "https://www.amaysim.com.au/sim-plans",
@@ -1592,7 +1592,7 @@
         "Data: Unlimited GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 40.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.felixmobile.com.au",
       "directUrl": "https://www.felixmobile.com.au",
@@ -1618,7 +1618,7 @@
         "Data: 25 GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 25.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.felixmobile.com.au",
       "directUrl": "https://www.felixmobile.com.au",
@@ -1644,7 +1644,7 @@
         "Data: 50 GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 30.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.felixmobile.com.au",
       "directUrl": "https://www.felixmobile.com.au",
@@ -1670,7 +1670,7 @@
         "Data: 90 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 180.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.optus.com.au",
       "directUrl": "https://www.optus.com.au",
@@ -1696,7 +1696,7 @@
         "Data: 220 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 350.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.optus.com.au",
       "directUrl": "https://www.optus.com.au",
@@ -1722,7 +1722,7 @@
         "Data: 50 GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 35.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.iinet.net.au",
       "directUrl": "https://www.iinet.net.au",
@@ -1748,7 +1748,7 @@
         "Data: 100 GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 45.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.iinet.net.au",
       "directUrl": "https://www.iinet.net.au",
@@ -1774,7 +1774,7 @@
         "Data: 25 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 22.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.spintel.net.au",
       "directUrl": "https://www.spintel.net.au",
@@ -1800,7 +1800,7 @@
         "Data: 25 GB",
         "Network: Vodafone"
       ],
-      "price": 20.0,
+      "price": 25.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.tpg.com.au/mobile",
       "directUrl": "https://www.tpg.com.au/mobile",
@@ -1826,7 +1826,7 @@
         "Data: 50 GB",
         "Network: Vodafone"
       ],
-      "price": 30.0,
+      "price": 35.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.tpg.com.au/mobile",
       "directUrl": "https://www.tpg.com.au/mobile",
@@ -1852,7 +1852,7 @@
         "Data: 100 GB",
         "Network: Vodafone"
       ],
-      "price": 40.0,
+      "price": 45.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.tpg.com.au/mobile",
       "directUrl": "https://www.tpg.com.au/mobile",
@@ -1878,7 +1878,7 @@
         "Data: 25 GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 25.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.vodafone.com.au",
       "directUrl": "https://www.vodafone.com.au",
@@ -1904,7 +1904,7 @@
         "Data: 50 GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 35.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.vodafone.com.au",
       "directUrl": "https://www.vodafone.com.au",
@@ -1930,7 +1930,7 @@
         "Data: 100 GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 45.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.vodafone.com.au",
       "directUrl": "https://www.vodafone.com.au",
@@ -1956,7 +1956,7 @@
         "Data: 30 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 24.8,
       "priceUnit": "/mo",
       "affiliateUrl": "https://moosemobile.com.au",
       "directUrl": "https://moosemobile.com.au",
@@ -1982,7 +1982,7 @@
         "Data: 40 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 33.8,
       "priceUnit": "/mo",
       "affiliateUrl": "https://moosemobile.com.au",
       "directUrl": "https://moosemobile.com.au",
@@ -2008,7 +2008,7 @@
         "Data: 100 GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 41.8,
       "priceUnit": "/mo",
       "affiliateUrl": "https://moosemobile.com.au",
       "directUrl": "https://moosemobile.com.au",
@@ -2034,7 +2034,7 @@
         "Data: 320GB shared GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 165.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.optus.com.au/mobile/plans/family",
       "directUrl": "https://www.optus.com.au/mobile/plans/family",
@@ -2060,7 +2060,7 @@
         "Data: 320GB shared GB",
         "Network: Optus"
       ],
-      "price": 0.0,
+      "price": 194.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.optus.com.au/mobile/plans/family",
       "directUrl": "https://www.optus.com.au/mobile/plans/family",
@@ -2086,7 +2086,7 @@
         "Data: 100GB shared GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 95.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.aldimobile.com.au/collections/family-plans",
       "directUrl": "https://www.aldimobile.com.au/collections/family-plans",
@@ -2112,7 +2112,7 @@
         "Data: 150GB shared GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 125.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.aldimobile.com.au/collections/family-plans",
       "directUrl": "https://www.aldimobile.com.au/collections/family-plans",
@@ -2138,7 +2138,7 @@
         "Data: 50GB shared GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 55.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.aldimobile.com.au/collections/family-plans",
       "directUrl": "https://www.aldimobile.com.au/collections/family-plans",
@@ -2164,7 +2164,7 @@
         "Data: ~255GB shared (180GB + 3\u00d725GB) GB",
         "Network: Telstra"
       ],
-      "price": 0.0,
+      "price": 260.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.telstra.com.au/connected/family/mobile-bundle-plans",
       "directUrl": "https://www.telstra.com.au/connected/family/mobile-bundle-plans",
@@ -2190,7 +2190,7 @@
         "Data: Varies (e.g. 4\u00d7 ~100-200GB pooled) GB",
         "Network: Vodafone"
       ],
-      "price": 0.0,
+      "price": 177.0,
       "priceUnit": "/mo",
       "affiliateUrl": "https://www.vodafone.com.au/mobile/bundle-and-save",
       "directUrl": "https://www.vodafone.com.au/mobile/bundle-and-save",

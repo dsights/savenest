@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# ----------------- CONFIGURATION -----------------
+SENDER_NAME="SaveNest"
+SENDER_EMAIL="contact@savenest.au"
+# ---------------------------------------------------
+
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 \"<Subject>\" <path_to_template> <path_to_email_list>"
+    exit 1
+fi
+
+SUBJECT=$1
+TEMPLATE_PATH=$2
+EMAIL_LIST_PATH=$3
+MSMTPRC_PATH="$(dirname \"$0\")/msmtprc"
+
+if [ ! -f "$TEMPLATE_PATH" ]; then
+    echo "Error: Template file not found at '$TEMPLATE_PATH'"
+    exit 1
+fi
+
+if [ ! -f "$EMAIL_LIST_PATH" ]; then
+    echo "Error: Email list file not found at '$EMAIL_LIST_PATH'"
+    exit 1
+fi
+
+while IFS= read -r RECIPIENT_EMAIL || [[ -n "$RECIPIENT_EMAIL" ]]; do
+    if [ -z "$RECIPIENT_EMAIL" ]; then
+        continue
+    fi
+
+    (
+        echo "From: \"$SENDER_NAME\" <$SENDER_EMAIL>"
+        echo "To: $RECIPIENT_EMAIL"
+        echo "Subject: $SUBJECT"
+        echo "Content-Type: text/html; charset=UTF-8"
+        echo ""
+        cat "$TEMPLATE_PATH"
+    ) | msmtp --file="$MSMTPRC_PATH" "$RECIPIENT_EMAIL"
+
+    echo "Email sent to $RECIPIENT_EMAIL"
+    sleep 10
+done < "$EMAIL_LIST_PATH"
+
+echo "Bulk email sending complete."

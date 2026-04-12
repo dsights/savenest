@@ -1,0 +1,55 @@
+I need to set up a project-specific email sending tool inside my current project directory. Please follow these steps precisely.
+
+### **1. User-Provided Information:**
+- My email address for sending is: `contact@savenest.au`
+- The Sender Name to display in emails is: `SaveNest`
+- The hosting provider is FastComet.
+
+### **2. Core Requirements:**
+- The entire setup must be contained within a new subdirectory named `email`.
+- The setup must use `msmtp` for sending emails via FastComet's SMTP server.
+- The final output must include step-by-step guidance on how to configure cPanel (SPF, DKIM, DMARC) to prevent emails from landing in spam.
+
+### **3. Directory Structure:**
+Create the following directory structure inside the `email` folder:
+```
+email/
+├── msmtprc
+├── email_lists/
+│   └── example_list.txt
+├── templates/
+│   └── default_template.html
+├── send_bulk_email.sh
+└── send_single_email.sh
+```
+
+### **4. Configuration File (`msmtprc`):**
+1. Create the `msmtprc` file inside the `email` directory.
+2. Configure it for FastComet's server: `mail.savenest.au` on port `587`.
+3. The `from` and `user` fields should be `contact@savenest.au`.
+4. The `password` field should contain the placeholder text: `<YOUR_FASTCOMET_EMAIL_PASSWORD_HERE>`.
+5. Set the logfile path to `./msmtp.log` within the `email` directory.
+6. The file's permissions **must be set to `600`**.
+
+### **5. Sending Scripts (`send_bulk_email.sh` and `send_single_email.sh`):**
+Create two separate, executable scripts (`chmod +x`) in the `email` directory. Both scripts must be able to send a multipart email (with both plain-text and HTML versions) to improve deliverability.
+
+**5.1. Bulk Sending Script (`send_bulk_email.sh`):**
+- Must accept three arguments: `"<Subject>"`, `<path_to_template>`, and `<path_to_email_list>`.
+- Must construct a multipart MIME message.
+- Must loop through the email list, sending one email to each recipient with a `sleep 10` delay inside the loop.
+- Must explicitly use the local `email/msmtprc` file.
+
+**5.2. Single Sending Script (`send_single_email.sh`):**
+- Must accept three arguments: `"<Subject>"`, `<path_to_template>`, and `<recipient_email_address>`.
+- Must construct a multipart MIME message.
+- Must explicitly use the local `email/msmtprc` file.
+
+### **6. Template File (`default_template.html`):**
+- Create a basic HTML template that includes a placeholder for an unsubscribe link, like `<a href="#UNSUBSCRIBE_LINK#">here</a>`.
+
+### **7. Final Output:**
+After completing all file creation and permission setting, provide a final, clear set of instructions explaining:
+1.  A reminder that the FastComet email password (not an App Password) should be added to the `msmtprc` file.
+2.  The exact command-line syntax for both sending scripts.
+3.  The complete, step-by-step guide for configuring **SPF, DKIM, and DMARC** in a standard cPanel environment to ensure emails are not marked as spam.

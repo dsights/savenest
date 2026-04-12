@@ -4,6 +4,9 @@ import re
 def parse_price(val):
     if not val: return 0.0
     val = str(val).strip().replace('$', '').replace(',', '')
+    # Handle ranges by taking the lower value
+    if '–' in val:
+        val = val.split('–')[0].strip()
     try:
         return float(val)
     except ValueError:
@@ -102,6 +105,11 @@ if 'MOBILE SIM ONLY' in data:
         provider = str(row.get('Provider', ''))
         if not provider: continue
         plan_name = str(row.get('Plan Name', ''))
+        # Prioritize Standard Price as requested
+        price = parse_price(row.get('Standard Price'))
+        if price == 0.0:
+            price = parse_price(row.get('New Customer Price') or row.get('Discounted Price'))
+
         products['mobile'].append({
             "id": make_id("mobile", provider, plan_name),
             "providerName": provider,
@@ -113,7 +121,7 @@ if 'MOBILE SIM ONLY' in data:
                 f"Data: {row.get('Data', '')} GB",
                 f"Network: {row.get('Network Provider', '')}",
             ],
-            "price": parse_price(row.get('Discounted Price') or row.get('New Customer Price') or row.get('Standard Price')),
+            "price": price,
             "priceUnit": "/mo",
             "affiliateUrl": row.get('Plan Link', ''),
             "directUrl": row.get('Plan Link', ''),
@@ -166,6 +174,13 @@ if 'GAS' in data:
         if not provider: continue
         plan_name = str(row.get('Plan Name', ''))
         states = [s.strip() for s in str(row.get('Available States/Areas', '')).split(',') if s.strip()]
+        
+        price = parse_price(row.get('Est Annual @ 35k MJ', 0))
+        if provider == 'Elgas':
+            price = 750.0
+        elif provider == 'Supagas':
+            price = 680.0
+
         products['gas'].append({
             "id": make_id("gas", provider, plan_name),
             "providerName": provider,

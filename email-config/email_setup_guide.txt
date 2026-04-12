@@ -1,0 +1,80 @@
+This guide provides a complete walkthrough for setting up and using the project-specific email tool, configured for FastComet hosting.
+
+### **Section 1: File Overview**
+
+- `msmtprc`: The configuration file containing your SMTP credentials.
+- `send_single_email.sh`: Script to send a single email.
+- `send_bulk_email.sh`: Script to send emails to a list of recipients.
+- `templates/default_template.html`: A simple HTML email template.
+- `email_lists/example_list.txt`: An example list of recipient emails.
+
+---
+
+### **Section 2: Password Configuration (for FastComet)**
+
+1.  **Use Your Email Password:** For FastComet, you do not need a special "App Password." You will use the standard password associated with your `contact@savenest.au` email account.
+
+2.  **Update the Configuration File:** Open the `email/msmtprc` file. Replace the placeholder text `<YOUR_16_CHARACTER_APP_PASSWORD_HERE>` with your actual FastComet email password. The rest of the settings are already configured for FastComet's mail server.
+
+---
+
+### **Section 3: How to Use the Sending Scripts**
+
+**1. To Send a Single Email:**
+   - Use this command from the project root directory:
+   ```bash
+   ./email/send_single_email.sh "<Subject>" "email/templates/default_template.html" "<recipient_email_address>"
+   ```
+   - **Example:**
+   ```bash
+   ./email/send_single_email.sh "Test Email" "email/templates/default_template.html" "user@example.com"
+   ```
+
+**2. To Send Bulk Emails:**
+   - Use this command from the project root directory:
+   ```bash
+   ./email/send_bulk_email.sh "<Subject>" "email/templates/default_template.html" "email/email_lists/example_list.txt"
+   ```
+
+---
+
+### **Section 4: CRITICAL - How to Avoid the Spam Folder**
+
+To ensure your emails are trusted by services like Gmail and Outlook, you MUST configure three specific DNS records for your `savenest.au` domain. This is a one-time setup.
+
+**Part 4.1: Find the Email Deliverability Tool in cPanel**
+
+1.  Log in to your FastComet account and launch your **cPanel**.
+2.  Scroll down to the **"EMAIL"** section.
+3.  Click on the **"Email Deliverability"** icon.
+
+**Part 4.2: Install DKIM and SPF Records**
+
+1.  Inside the Email Deliverability tool, click the **"Manage"** button next to your domain name (`savenest.au`).
+2.  cPanel will automatically check your records. You will see sections for **DKIM** and **SPF**.
+3.  For each one, if it's not installed, cPanel will provide a "Suggested Record". Click the **"Install the Suggested Record"** button for both DKIM and SPF.
+4.  cPanel will automatically create and install these records for you.
+
+**Part 4.3: Create the DMARC Record**
+
+1.  Go back to the main cPanel dashboard and find the **"DOMAINS"** section.
+2.  Click on the **"Zone Editor"** icon.
+3.  Find `savenest.au` in the list and click **"Manage"**.
+4.  Click the **"+ Add Record"** button and fill in the fields for a new **TXT** record:
+    - **Name:** `_dmarc`
+    - **TTL:** Leave as default (e.g., `14400`).
+    - **Type:** `TXT`
+    - **Record:** Copy and paste the following value:
+      ```
+      v=DMARC1; p=none; rua=mailto:dmarc-reports@savenest.au
+      ```
+5.  Click **"Save Record"**.
+
+**Note:** You should create the email address `dmarc-reports@savenest.au` in your cPanel to receive important deliverability reports.
+
+**Part 4.4: Final Verification**
+
+1.  Go back to the **"Email Deliverability"** tool in cPanel.
+2.  Refresh the page. It might take a few minutes, but you should see a "Valid" status next to SPF, DKIM, and DMARC.
+
+Once these steps are complete, your domain's sender reputation will be vastly improved, and your emails will be trusted by receiving servers.

@@ -1,0 +1,6 @@
+id,category,sub_category,provider_name,plan_name,price,price_unit,description,key_features
+"elec_agl_smartsaver","electricity","","AGL","AGL Smart Saver","129.00","/mo","Great for families with no lock-in","16% less than Reference Price|Up to $200 credits|No lock-in"
+"ins_budget_car_comp","insurance","Car","Budget Direct","Comprehensive Car Insurance","850.00","/yr","Award-winning comprehensive cover","15% off first year|Protects car and property|Guaranteed repairs"
+"ins_budget_home_bld","insurance","Home","Budget Direct","Home & Contents","1200.00","/yr","Protects home building and contents","30% off first year|Legal liability|Option for flood cover"
+"bb_tpg_5gpremium","5g broadband","","TPG","5G Premium","44.99","/mo","$20/mo off for 6 months","Unlimited data|100/17 Mbps evening|5G Alternative to NBN"
+"gas_origin_everyday","gas","","Origin Energy","Everyday Gas","85.00","/mo","Simple everyday gas plan","Variable rates|No lock-in contracts|eBilling"

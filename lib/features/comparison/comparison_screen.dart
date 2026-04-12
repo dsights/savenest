@@ -111,6 +111,10 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                   child: const Text("Open Savings Calculator"),
                 ),
               ),
+              TextButton(
+                onPressed: () => context.pop(),
+                child: const Text("No, thanks", style: TextStyle(color: Colors.white54)),
+              ),
               const SizedBox(height: 12),
               TextButton(
                 onPressed: () {
@@ -133,13 +137,51 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       case ProductCategory.gas:
         return 'Gas';
       case ProductCategory.internet:
-        return 'Internet';
+        return 'Internet & NBN';
       case ProductCategory.mobile:
         return 'Mobile';
       case ProductCategory.insurance:
         return 'Insurance';
+      case ProductCategory.solar:
+        return 'Solar';
       default:
         return 'Deals';
+    }
+  }
+
+  Map<String, List<String>> _getFiltersForCategory(ProductCategory category) {
+    switch (category) {
+      case ProductCategory.internet:
+        return {
+          'Speed Tiers': ['NBN 25', 'NBN 50', 'NBN 100', 'NBN 250', 'NBN 1000'],
+          'Best For': ['Budget', 'Family', 'Gaming', 'Streaming'],
+          'Deal Type': ['Cheap', 'Balanced', 'Premium'],
+        };
+      case ProductCategory.mobile:
+        return {
+          'Network Provider': ['Telstra', 'Optus', 'Vodafone'],
+          'Best For': ['Budget', 'Value', 'Heavy Use'],
+          'Deal Type': ['Cheap', 'Balanced', 'Premium'],
+        };
+      case ProductCategory.electricity:
+      case ProductCategory.gas:
+        return {
+          'Best For': ['Budget', 'Everyday', 'Solar', 'Green'],
+          'Deal Type': ['Cheap', 'Value', 'Premium'],
+        };
+      case ProductCategory.solar:
+        return {
+          'Solar Size (kW)': ['6.6', '10', '13'],
+          'Battery Size (kWh)': ['5', '10', '13.5'],
+          'Deal Type': ['Cheap', 'Value', 'Premium'],
+        };
+      case ProductCategory.insurance:
+        return {
+          'Insurance Type': ['Car', 'Home', 'Pet', 'Health'],
+          'Provider': ['AAMI', 'Bupa', 'Allianz', 'NRMA', 'Youi'],
+        };
+      default:
+        return {};
     }
   }
 
@@ -150,39 +192,30 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final controller = ref.read(comparisonProvider.notifier);
     final selectedCat = state.selectedCategory ?? widget.initialCategory;
     final categoryTitle = _getCategoryTitle(selectedCat);
+    final categoryFilters = _getFiltersForCategory(selectedCat);
 
     // SEO Optimization
     if (kIsWeb) {
       final title = 'Best $categoryTitle Comparison Australia | Save with SaveNest';
-      final description = 'Compare $categoryTitle plans from top Australian providers. Find the cheapest rates and best value deals for your household or business.';
+      final description =
+          'Compare $categoryTitle plans from top Australian providers. Find the cheapest rates and best value deals for your household or business.';
       MetaSEO().author(author: 'SaveNest Team');
       MetaSEO().description(description: description);
-      MetaSEO().keywords(keywords: 'compare $categoryTitle Australia, cheapest $categoryTitle plans, best $categoryTitle provider 2026');
+      MetaSEO().keywords(
+          keywords:
+              'compare $categoryTitle Australia, cheapest $categoryTitle plans, best $categoryTitle provider 2026');
       MetaSEO().ogTitle(ogTitle: title);
       MetaSEO().ogDescription(ogDescription: description);
     }
 
-    String searchHint;
-    List<String> suggestions = ['cheap', 'best', 'nsw', 'vic', 'qld'];
-    
-    switch (selectedCat) {
-      case ProductCategory.electricity:
-      case ProductCategory.gas:
-        searchHint = 'Try "nsw cheap", "solar", "Origin"...';
-        suggestions.addAll(['solar', 'green', 'sa', 'wa']);
-        break;
-      case ProductCategory.internet:
-      case ProductCategory.mobile:
-        searchHint = 'Try "fast unlimited", "nbn 100", "Telstra"...';
-        suggestions.addAll(['fast', 'unlimited', '5g', 'nbn 100']);
-        break;
-      case ProductCategory.creditCards:
-        searchHint = 'Try "no fee", "Qantas", "business"...';
-        suggestions = ['no fee', 'rewards', 'qantas', 'business', 'low rate'];
-        break;
-      default:
-        searchHint = 'Search providers, features...';
+    String searchHint = 'Search providers, features...';
+    if (selectedCat == ProductCategory.internet) {
+      searchHint = 'Try "fast unlimited", "nbn 100", "Telstra"...';
+    } else if (selectedCat == ProductCategory.creditCards) {
+      searchHint = 'Try "no fee", "Qantas", "business"...';
     }
+    
+    final bool showStateSelector = selectedCat == ProductCategory.electricity || selectedCat == ProductCategory.gas;
 
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
@@ -223,13 +256,15 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                               ),
                             const SizedBox(height: 32),
                             ConstrainedBox(
-                              constraints: const BoxConstraints(maxWidth: 600),
+                              constraints: const BoxConstraints(maxWidth: 800),
                               child: SearchBarWidget(
                                 onChanged: (value) => controller.search(value),
-                                onStateChanged: (stateCode) => controller.updateStateFilter(stateCode),
+                                onStateChanged: showStateSelector
+                                    ? (stateCode) => controller.updateStateFilter(stateCode)
+                                    : null,
                                 selectedState: state.selectedState,
                                 hintText: searchHint,
-                                suggestions: suggestions,
+                                filters: categoryFilters,
                               ),
                             ),
                           ],

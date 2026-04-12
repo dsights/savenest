@@ -31,15 +31,15 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
 
     // Verify that our app title is present.
-    // Use findsWidgets because it might appear in multiple places (e.g. hidden drawer)
-    expect(find.text('SaveNest'), findsWidgets); 
+    // The logo is composed of two separate Text widgets.
+    expect(find.text('Save'), findsWidgets);
+    expect(find.text('Nest'), findsWidgets);
     
     // Verify hero text button is present
     expect(find.text('Calculator'), findsWidgets);
 
     // Verify we don't have the counter 0 (ensure we cleaned up the old test logic)
-    // Note: totalSavings might be 0, so we check for specifically the old logic text if any
-    // actually let's just check the title is there.
-    expect(find.text('SaveNest'), findsWidgets);
+    // and check for the logo again to be safe.
+    expect(find.text('Save'), findsWidgets);
   });
 }

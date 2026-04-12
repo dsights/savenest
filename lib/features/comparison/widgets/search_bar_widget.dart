@@ -7,7 +7,7 @@ class SearchBarWidget extends StatefulWidget {
   final Function(String?)? onStateChanged;
   final String? selectedState;
   final String? hintText;
-  final List<String>? suggestions;
+  final Map<String, List<String>>? filters;
 
   const SearchBarWidget({
     super.key,
@@ -15,7 +15,7 @@ class SearchBarWidget extends StatefulWidget {
     this.onStateChanged,
     this.selectedState,
     this.hintText,
-    this.suggestions,
+    this.filters,
   });
 
   @override
@@ -25,13 +25,12 @@ class SearchBarWidget extends StatefulWidget {
 class _SearchBarWidgetState extends State<SearchBarWidget> {
   final TextEditingController _controller = TextEditingController();
 
-  void _onSuggestionTap(String keyword) {
+  void _onFilterTap(String keyword) {
     setState(() {
-      if (_controller.text.isEmpty) {
-        _controller.text = keyword;
-      } else if (!_controller.text.contains(keyword)) {
-        _controller.text = '${_controller.text} $keyword';
-      }
+      final currentText = _controller.text.trim();
+      final newText = currentText.isEmpty ? keyword : '$currentText $keyword';
+      _controller.text = newText;
+      _controller.selection = TextSelection.fromPosition(TextPosition(offset: _controller.text.length));
     });
     widget.onChanged(_controller.text);
   }
@@ -109,32 +108,51 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
             ),
           ],
         ),
-        if (widget.suggestions != null && widget.suggestions!.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            alignment: WrapAlignment.center,
-            children: widget.suggestions!.map((s) => InkWell(
-              onTap: () => _onSuggestionTap(s),
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                decoration: BoxDecoration(
-                  color: AppTheme.primaryBlue.withOpacity(0.05),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.1)),
-                ),
-                child: Text(
-                  s,
-                  style: const TextStyle(
-                    color: AppTheme.primaryBlue,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
+        if (widget.filters != null && widget.filters!.isNotEmpty) ...[
+          const SizedBox(height: 24),
+          ...widget.filters!.entries.map((entry) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 4.0, bottom: 8.0),
+                  child: Text(
+                    entry.key.toUpperCase(),
+                    style: const TextStyle(
+                      color: AppTheme.slate600,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 0.8,
+                    ),
                   ),
                 ),
-              ),
-            )).toList(),
-          ),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: entry.value.map((filter) => InkWell(
+                    onTap: () => _onFilterTap(filter),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: AppTheme.primaryBlue.withOpacity(0.05),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.1)),
+                      ),
+                      child: Text(
+                        filter,
+                        style: const TextStyle(
+                          color: AppTheme.primaryBlue,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  )).toList(),
+                ),
+                const SizedBox(height: 16),
+              ],
+            );
+          }),
         ],
       ],
     );

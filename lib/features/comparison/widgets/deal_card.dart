@@ -516,25 +516,14 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
               padding: EdgeInsets.zero,
               physics: const BouncingScrollPhysics(),
               children: [
-                ...widget.deal.keyFeatures.map((feature) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(top: 2.0),
-                        child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 16),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Text(
-                          feature,
-                          style: TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.95), height: 1.4, fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                    ],
+                ...widget.deal.keyFeatures.map((feature) => _buildFeatureRow(feature)),
+                if (widget.deal.details.isNotEmpty) ...[
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Divider(color: Colors.white24),
                   ),
-                )),
+                  ...widget.deal.details.entries.map((entry) => _buildFeatureRow('${entry.key}: ${entry.value}')),
+                ]
               ],
             ),
           ),
@@ -575,6 +564,28 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                   Icon(Icons.open_in_new, size: 14),
                 ],
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFeatureRow(String feature) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 2.0),
+            child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 16),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              feature,
+              style: TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.95), height: 1.4, fontWeight: FontWeight.w600),
             ),
           ),
         ],

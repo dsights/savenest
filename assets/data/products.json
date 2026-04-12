@@ -16,8 +16,7 @@
       "keyFeatures": [
         "Max DL: 25 Mbps",
         "Evening DL: 25 Mbps",
-        "Upload: 10 Mbps",
-        "Type: Cheap"
+        "Upload: 10 Mbps"
       ],
       "price": 39.0,
       "priceUnit": "/mo",
@@ -27,7 +26,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.56"
+      }
     },
     {
       "id": "internet_flip_fast",
@@ -39,8 +41,7 @@
       "keyFeatures": [
         "Max DL: 25 Mbps",
         "Evening DL: 25 Mbps",
-        "Upload: 10 Mbps",
-        "Type: Cheap"
+        "Upload: 10 Mbps"
       ],
       "price": 44.0,
       "priceUnit": "/mo",
@@ -50,7 +51,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.76"
+      }
     },
     {
       "id": "internet_arctel_cruisylite",
@@ -62,8 +66,7 @@
       "keyFeatures": [
         "Max DL: 25 Mbps",
         "Evening DL: 25 Mbps",
-        "Upload: 10 Mbps",
-        "Type: Cheap"
+        "Upload: 10 Mbps"
       ],
       "price": 49.99,
       "priceUnit": "/mo",
@@ -73,7 +76,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "2.0"
+      }
     },
     {
       "id": "internet_iinet_limitlessbasic",
@@ -85,8 +91,7 @@
       "keyFeatures": [
         "Max DL: 25 Mbps",
         "Evening DL: 25 Mbps",
-        "Upload: 2026-05-10 00:00:00 Mbps",
-        "Type: Cheap"
+        "Upload: 2026-05-10 00:00:00 Mbps"
       ],
       "price": 49.99,
       "priceUnit": "/mo",
@@ -96,7 +101,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "2.0"
+      }
     },
     {
       "id": "internet_spintel_value",
@@ -108,8 +116,7 @@
       "keyFeatures": [
         "Max DL: 50 Mbps",
         "Evening DL: 50 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 54.0,
       "priceUnit": "/mo",
@@ -119,7 +126,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.5"
+      }
     },
     {
       "id": "internet_superloop_basic",
@@ -131,8 +141,7 @@
       "keyFeatures": [
         "Max DL: 25 Mbps",
         "Evening DL: 25 Mbps",
-        "Upload: 10 Mbps",
-        "Type: Cheap"
+        "Upload: 10 Mbps"
       ],
       "price": 55.0,
       "priceUnit": "/mo",
@@ -142,7 +151,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "2.2"
+      }
     },
     {
       "id": "internet_optus_everydaybasic",
@@ -154,8 +166,7 @@
       "keyFeatures": [
         "Max DL: 25 Mbps",
         "Evening DL: 25 Mbps",
-        "Upload: 2026-05-10 00:00:00 Mbps",
-        "Type: Cheap"
+        "Upload: 2026-05-10 00:00:00 Mbps"
       ],
       "price": 59.0,
       "priceUnit": "/mo",
@@ -165,7 +176,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "2.36"
+      }
     },
     {
       "id": "internet_iinet_limitlessfast",
@@ -177,8 +191,7 @@
       "keyFeatures": [
         "Max DL: 50 Mbps",
         "Evening DL: 50 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 59.99,
       "priceUnit": "/mo",
@@ -188,7 +201,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.6"
+      }
     },
     {
       "id": "internet_arctel_cruisy",
@@ -200,8 +216,7 @@
       "keyFeatures": [
         "Max DL: 50 Mbps",
         "Evening DL: 50 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 60.0,
       "priceUnit": "/mo",
@@ -211,7 +226,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.62"
+      }
     },
     {
       "id": "internet_tangerinetelecom_speedymax",
@@ -223,8 +241,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 450 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Balanced"
+        "Upload: 50 Mbps"
       ],
       "price": 63.9,
       "priceUnit": "/mo",
@@ -234,7 +251,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.14"
+      }
     },
     {
       "id": "internet_spintel_fast",
@@ -246,8 +266,7 @@
       "keyFeatures": [
         "Max DL: 100 Mbps",
         "Evening DL: 100 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 64.0,
       "priceUnit": "/mo",
@@ -257,7 +276,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.85"
+      }
     },
     {
       "id": "internet_iinet_limitlesssuperfast",
@@ -269,8 +291,7 @@
       "keyFeatures": [
         "Max DL: 100 Mbps",
         "Evening DL: 95 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 64.99,
       "priceUnit": "/mo",
@@ -280,7 +301,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.95"
+      }
     },
     {
       "id": "internet_tpg_homefast",
@@ -292,8 +316,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 450 Mbps",
-        "Upload: 42 Mbps",
-        "Type: Balanced"
+        "Upload: 42 Mbps"
       ],
       "price": 64.99,
       "priceUnit": "/mo",
@@ -303,7 +326,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.14"
+      }
     },
     {
       "id": "internet_southernphone_basic",
@@ -315,8 +341,7 @@
       "keyFeatures": [
         "Max DL: 25 Mbps",
         "Evening DL: 25 Mbps",
-        "Upload: 10 Mbps",
-        "Type: Cheap"
+        "Upload: 10 Mbps"
       ],
       "price": 65.0,
       "priceUnit": "/mo",
@@ -326,7 +351,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "2.6"
+      }
     },
     {
       "id": "internet_superloop_family",
@@ -338,8 +366,7 @@
       "keyFeatures": [
         "Max DL: 50 Mbps",
         "Evening DL: 50 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 65.0,
       "priceUnit": "/mo",
@@ -349,7 +376,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.5"
+      }
     },
     {
       "id": "internet_belong_fast",
@@ -361,8 +391,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 450 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Balanced"
+        "Upload: 50 Mbps"
       ],
       "price": 65.0,
       "priceUnit": "/mo",
@@ -372,7 +401,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.14"
+      }
     },
     {
       "id": "internet_arctel_power",
@@ -384,8 +416,7 @@
       "keyFeatures": [
         "Max DL: 100 Mbps",
         "Evening DL: 95 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 69.0,
       "priceUnit": "/mo",
@@ -395,7 +426,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.92"
+      }
     },
     {
       "id": "internet_optus_everydayfast",
@@ -407,8 +441,7 @@
       "keyFeatures": [
         "Max DL: 50 Mbps",
         "Evening DL: 50 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 69.0,
       "priceUnit": "/mo",
@@ -418,7 +451,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.78"
+      }
     },
     {
       "id": "internet_mate_crikeyfast",
@@ -430,8 +466,7 @@
       "keyFeatures": [
         "Max DL: 100 Mbps",
         "Evening DL: 100 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 69.0,
       "priceUnit": "/mo",
@@ -441,7 +476,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.69"
+      }
     },
     {
       "id": "internet_arctel_superfast",
@@ -453,8 +491,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 450 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Balanced"
+        "Upload: 50 Mbps"
       ],
       "price": 70.0,
       "priceUnit": "/mo",
@@ -464,7 +501,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.2"
+      }
     },
     {
       "id": "internet_vodafone_homefast",
@@ -476,8 +516,7 @@
       "keyFeatures": [
         "Max DL: 100 Mbps",
         "Evening DL: 100 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 70.0,
       "priceUnit": "/mo",
@@ -487,7 +526,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.7"
+      }
     },
     {
       "id": "internet_koganinternet_superfast",
@@ -499,8 +541,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 450 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Balanced"
+        "Upload: 50 Mbps"
       ],
       "price": 71.9,
       "priceUnit": "/mo",
@@ -510,7 +551,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.19"
+      }
     },
     {
       "id": "internet_swoop_nbn500",
@@ -522,8 +566,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 450 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Balanced"
+        "Upload: 50 Mbps"
       ],
       "price": 72.0,
       "priceUnit": "/mo",
@@ -533,7 +576,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.21"
+      }
     },
     {
       "id": "internet_dodo_superfast",
@@ -545,8 +591,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 450 Mbps",
-        "Upload: 48 Mbps",
-        "Type: Balanced"
+        "Upload: 48 Mbps"
       ],
       "price": 72.99,
       "priceUnit": "/mo",
@@ -556,7 +601,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.16"
+      }
     },
     {
       "id": "internet_spintel_superfast",
@@ -568,8 +616,7 @@
       "keyFeatures": [
         "Max DL: 250 Mbps",
         "Evening DL: 240 Mbps",
-        "Upload: 25 Mbps",
-        "Type: Balanced"
+        "Upload: 25 Mbps"
       ],
       "price": 75.0,
       "priceUnit": "/mo",
@@ -579,7 +626,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.35"
+      }
     },
     {
       "id": "internet_optus_everydaysuperfast",
@@ -591,8 +641,7 @@
       "keyFeatures": [
         "Max DL: 100 Mbps",
         "Evening DL: 100 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 79.0,
       "priceUnit": "/mo",
@@ -602,7 +651,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.95"
+      }
     },
     {
       "id": "internet_superloop_superfast",
@@ -614,8 +666,7 @@
       "keyFeatures": [
         "Max DL: 250 Mbps",
         "Evening DL: 240 Mbps",
-        "Upload: 25 Mbps",
-        "Type: Balanced"
+        "Upload: 25 Mbps"
       ],
       "price": 79.0,
       "priceUnit": "/mo",
@@ -625,7 +676,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.37"
+      }
     },
     {
       "id": "internet_superloop_lightspeed",
@@ -637,8 +691,7 @@
       "keyFeatures": [
         "Max DL: 1000 Mbps",
         "Evening DL: 860 Mbps",
-        "Upload: 100 Mbps",
-        "Type: Premium"
+        "Upload: 100 Mbps"
       ],
       "price": 79.0,
       "priceUnit": "/mo",
@@ -648,7 +701,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.09"
+      }
     },
     {
       "id": "internet_iinet_limitlessultrafast",
@@ -660,8 +716,7 @@
       "keyFeatures": [
         "Max DL: 1000 Mbps",
         "Evening DL: 800 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Premium"
+        "Upload: 50 Mbps"
       ],
       "price": 79.99,
       "priceUnit": "/mo",
@@ -671,7 +726,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.1"
+      }
     },
     {
       "id": "internet_arctel_hypersonic",
@@ -683,8 +741,7 @@
       "keyFeatures": [
         "Max DL: 1000 Mbps",
         "Evening DL: 860 Mbps",
-        "Upload: 100 Mbps",
-        "Type: Premium"
+        "Upload: 100 Mbps"
       ],
       "price": 80.0,
       "priceUnit": "/mo",
@@ -694,7 +751,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.1"
+      }
     },
     {
       "id": "internet_exetel_oneplan",
@@ -706,8 +766,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 500 Mbps",
-        "Upload: 40-50 Mbps",
-        "Type: Balanced"
+        "Upload: 40-50 Mbps"
       ],
       "price": 80.0,
       "priceUnit": "/mo",
@@ -717,7 +776,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.16"
+      }
     },
     {
       "id": "internet_exetel_warpaddon",
@@ -729,8 +791,7 @@
       "keyFeatures": [
         "Max DL: 1000 Mbps",
         "Evening DL: 850 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Premium"
+        "Upload: 50 Mbps"
       ],
       "price": 80.0,
       "priceUnit": "/mo",
@@ -740,7 +801,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.11"
+      }
     },
     {
       "id": "internet_southernphone_superfast",
@@ -752,8 +816,7 @@
       "keyFeatures": [
         "Max DL: 250 Mbps",
         "Evening DL: 240 Mbps",
-        "Upload: 25 Mbps",
-        "Type: Balanced"
+        "Upload: 25 Mbps"
       ],
       "price": 85.0,
       "priceUnit": "/mo",
@@ -763,7 +826,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.35"
+      }
     },
     {
       "id": "internet_spintel_ultrafast",
@@ -775,8 +841,7 @@
       "keyFeatures": [
         "Max DL: 1000 Mbps",
         "Evening DL: 900 Mbps",
-        "Upload: 50-100 Mbps",
-        "Type: Premium"
+        "Upload: 50-100 Mbps"
       ],
       "price": 89.0,
       "priceUnit": "/mo",
@@ -786,7 +851,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.1"
+      }
     },
     {
       "id": "internet_aussiebroadband_fast",
@@ -798,8 +866,7 @@
       "keyFeatures": [
         "Max DL: 500 Mbps",
         "Evening DL: 475 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Balanced"
+        "Upload: 50 Mbps"
       ],
       "price": 95.0,
       "priceUnit": "/mo",
@@ -809,7 +876,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.2"
+      }
     },
     {
       "id": "internet_optus_ultrafast",
@@ -821,8 +891,7 @@
       "keyFeatures": [
         "Max DL: 1000 Mbps",
         "Evening DL: 800 Mbps",
-        "Upload: 50 Mbps",
-        "Type: Premium"
+        "Upload: 50 Mbps"
       ],
       "price": 99.0,
       "priceUnit": "/mo",
@@ -832,7 +901,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.12"
+      }
     },
     {
       "id": "internet_telstra_premium",
@@ -844,8 +916,7 @@
       "keyFeatures": [
         "Max DL: 100 Mbps",
         "Evening DL: 100 Mbps",
-        "Upload: 20 Mbps",
-        "Type: Balanced"
+        "Upload: 20 Mbps"
       ],
       "price": 110.0,
       "priceUnit": "/mo",
@@ -855,7 +926,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "1.1"
+      }
     },
     {
       "id": "internet_southernphone_hyperfast",
@@ -867,8 +941,7 @@
       "keyFeatures": [
         "Max DL: 2000 Mbps",
         "Evening DL: 1700 Mbps",
-        "Upload: 100 Mbps",
-        "Type: Premium"
+        "Upload: 100 Mbps"
       ],
       "price": 145.0,
       "priceUnit": "/mo",
@@ -878,7 +951,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.09"
+      }
     },
     {
       "id": "internet_superloop_hyperfast",
@@ -890,8 +966,7 @@
       "keyFeatures": [
         "Max DL: 2000 Mbps",
         "Evening DL: 1700 Mbps",
-        "Upload: 100 Mbps",
-        "Type: Premium"
+        "Upload: 100 Mbps"
       ],
       "price": 145.0,
       "priceUnit": "/mo",
@@ -901,7 +976,10 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Cost Per Mbps": "0.09"
+      }
     }
   ],
   "mobile": [
@@ -913,9 +991,8 @@
       "planName": "25GB SIM Only",
       "description": "Standard Price: $30",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 25 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -925,7 +1002,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.2"
+      }
     },
     {
       "id": "mobile_belong_40gbsimonly",
@@ -935,9 +1017,8 @@
       "planName": "40GB SIM Only",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 40",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 40 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -947,7 +1028,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.88"
+      }
     },
     {
       "id": "mobile_telstra_smallsimonlyviamvnodata",
@@ -957,9 +1043,8 @@
       "planName": "Small SIM Only (via MVNO data)",
       "description": "Standard Price: $30",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 25 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -969,7 +1054,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.2"
+      }
     },
     {
       "id": "mobile_colesmobile_25monthtomonthplan",
@@ -979,9 +1069,8 @@
       "planName": "$25 Month-to-Month Plan",
       "description": "Standard Price: $25",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 25 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -991,7 +1080,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1"
+      }
     },
     {
       "id": "mobile_colesmobile_354g5gplan",
@@ -1001,9 +1095,8 @@
       "planName": "$35 4G/5G Plan",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 40",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 40 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1013,7 +1106,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.88"
+      }
     },
     {
       "id": "mobile_moretelecom_30gb5gsimdiscovered",
@@ -1023,9 +1121,8 @@
       "planName": "30GB 5G SIM (discovered)",
       "description": "Standard Price: $30",
       "keyFeatures": [
-        "Data: 30",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 30 GB",
+        "Network: Telstra"
       ],
       "price": 25.0,
       "priceUnit": "/mo",
@@ -1035,7 +1132,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "Ongoing (bank/NBN)",
+        "Cost Per Gb": "1"
+      }
     },
     {
       "id": "mobile_tangerinetelecom_30gb5gsim",
@@ -1045,9 +1147,8 @@
       "planName": "30GB 5G SIM",
       "description": "Standard Price: $30",
       "keyFeatures": [
-        "Data: 30",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 30 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1057,7 +1158,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1"
+      }
     },
     {
       "id": "mobile_aldimobile_2330dayplan",
@@ -1067,9 +1173,8 @@
       "planName": "$23 30-day Plan",
       "description": "Standard Price: $23",
       "keyFeatures": [
-        "Data: 12",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 12 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1079,7 +1184,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.92"
+      }
     },
     {
       "id": "mobile_colesmobile_220365dayplan",
@@ -1089,9 +1199,8 @@
       "planName": "$220 365-day Plan",
       "description": "Standard Price: $220",
       "keyFeatures": [
-        "Data: 100",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 100 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1101,7 +1210,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.83"
+      }
     },
     {
       "id": "mobile_aldimobile_289365dayplan",
@@ -1111,9 +1225,8 @@
       "planName": "$289 365-day Plan",
       "description": "Standard Price: $289",
       "keyFeatures": [
-        "Data: 300",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 300 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1123,7 +1236,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.8"
+      }
     },
     {
       "id": "mobile_belong_100gbsimonly",
@@ -1133,9 +1251,8 @@
       "planName": "100GB SIM Only",
       "description": "Standard Price: $45",
       "keyFeatures": [
-        "Data: 100",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 100 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1145,7 +1262,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.45"
+      }
     },
     {
       "id": "mobile_belong_160gbsimonly",
@@ -1155,9 +1277,8 @@
       "planName": "160GB SIM Only",
       "description": "Standard Price: $55",
       "keyFeatures": [
-        "Data: 160",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 160 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1167,7 +1288,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.34"
+      }
     },
     {
       "id": "mobile_spintel_50gbmobileplan",
@@ -1177,9 +1303,8 @@
       "planName": "50GB Mobile Plan",
       "description": "Standard Price: $29",
       "keyFeatures": [
-        "Data: 50",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 50 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1189,7 +1314,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.58"
+      }
     },
     {
       "id": "mobile_spintel_100gbmobileplan",
@@ -1199,9 +1329,8 @@
       "planName": "100GB Mobile Plan",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 100",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 100 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1211,7 +1340,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.35"
+      }
     },
     {
       "id": "mobile_spintel_200gbmobileplan",
@@ -1221,9 +1355,8 @@
       "planName": "200GB Mobile Plan",
       "description": "Standard Price: $50",
       "keyFeatures": [
-        "Data: 200",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 200 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1233,7 +1366,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.25"
+      }
     },
     {
       "id": "mobile_everydaymobile_70gbsimonly",
@@ -1243,9 +1381,8 @@
       "planName": "70GB SIM Only",
       "description": "Standard Price: $40",
       "keyFeatures": [
-        "Data: 70",
-        "Network: Optus",
-        "Intl Calls: Unlimited to 30 countries"
+        "Data: 70 GB",
+        "Network: Optus"
       ],
       "price": 36.0,
       "priceUnit": "/mo",
@@ -1255,7 +1392,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "Ongoing (Rewards)",
+        "Cost Per Gb": "0.57"
+      }
     },
     {
       "id": "mobile_everydaymobile_110gbsimonly",
@@ -1265,9 +1407,8 @@
       "planName": "110GB SIM Only",
       "description": "Standard Price: $50",
       "keyFeatures": [
-        "Data: 110",
-        "Network: Optus",
-        "Intl Calls: Unlimited to 30 countries"
+        "Data: 110 GB",
+        "Network: Optus"
       ],
       "price": 45.0,
       "priceUnit": "/mo",
@@ -1277,7 +1418,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "Ongoing (Rewards)",
+        "Cost Per Gb": "0.45"
+      }
     },
     {
       "id": "mobile_everydaymobile_165gbsimonly",
@@ -1287,9 +1433,8 @@
       "planName": "165GB SIM Only",
       "description": "Standard Price: $60",
       "keyFeatures": [
-        "Data: 165",
-        "Network: Optus",
-        "Intl Calls: Unlimited to 30 countries"
+        "Data: 165 GB",
+        "Network: Optus"
       ],
       "price": 54.0,
       "priceUnit": "/mo",
@@ -1299,7 +1444,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "Ongoing (Rewards)",
+        "Cost Per Gb": "0.36"
+      }
     },
     {
       "id": "mobile_boostmobile_300365daysim",
@@ -1309,9 +1459,8 @@
       "planName": "$300 365-day SIM",
       "description": "Standard Price: $300",
       "keyFeatures": [
-        "Data: 240",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 240 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1321,7 +1470,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "1 recharge",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.04"
+      }
     },
     {
       "id": "mobile_optus_flexplus28day",
@@ -1331,9 +1485,8 @@
       "planName": "Flex Plus 28-day",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 20",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 20 GB",
+        "Network: Optus"
       ],
       "price": 35.0,
       "priceUnit": "/mo",
@@ -1343,7 +1496,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "1 recharge",
+        "Discount Duration": "Ongoing (bundle)",
+        "Cost Per Gb": "1.75"
+      }
     },
     {
       "id": "mobile_boostmobile_3928daysim",
@@ -1353,9 +1511,8 @@
       "planName": "$39 28-day SIM",
       "description": "Standard Price: $39",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Telstra",
-        "Intl Calls: \u2014"
+        "Data: 25 GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1365,7 +1522,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "1 recharge",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.56"
+      }
     },
     {
       "id": "mobile_amaysim_2528dayplan",
@@ -1375,9 +1537,8 @@
       "planName": "$25 28-day Plan",
       "description": "Standard Price: $25",
       "keyFeatures": [
-        "Data: 15",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 15 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1387,7 +1548,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "1 renewal",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.67"
+      }
     },
     {
       "id": "mobile_amaysim_3528dayunlimitedplan",
@@ -1397,9 +1563,8 @@
       "planName": "$35 28-day Unlimited Plan",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 42",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 42 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1409,7 +1574,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "1 renewal",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.83"
+      }
     },
     {
       "id": "mobile_felix_unlimitedmobileplan",
@@ -1419,9 +1589,8 @@
       "planName": "Unlimited Mobile Plan",
       "description": "Standard Price: $40",
       "keyFeatures": [
-        "Data: Unlimited",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: Unlimited GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1431,7 +1600,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "3 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.4"
+      }
     },
     {
       "id": "mobile_felix_25gbmobileplan",
@@ -1441,9 +1615,8 @@
       "planName": "25GB Mobile Plan",
       "description": "Standard Price: $25",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: 25 GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1453,7 +1626,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "3 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1"
+      }
     },
     {
       "id": "mobile_felix_50gbmobileplan",
@@ -1463,9 +1641,8 @@
       "planName": "50GB Mobile Plan",
       "description": "Standard Price: $30",
       "keyFeatures": [
-        "Data: 50",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: 50 GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1475,7 +1652,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "3 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.6"
+      }
     },
     {
       "id": "mobile_optus_flexplus186day",
@@ -1485,9 +1667,8 @@
       "planName": "Flex Plus 186-day",
       "description": "Standard Price: $180",
       "keyFeatures": [
-        "Data: 90",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 90 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1497,7 +1678,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "3 recharges",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "2"
+      }
     },
     {
       "id": "mobile_optus_flexplus365day",
@@ -1507,9 +1693,8 @@
       "planName": "Flex Plus 365-day",
       "description": "Standard Price: $350",
       "keyFeatures": [
-        "Data: 220",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 220 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1519,7 +1704,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "3 recharges",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.59"
+      }
     },
     {
       "id": "mobile_iinet_mediumplan",
@@ -1529,9 +1719,8 @@
       "planName": "Medium Plan",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 50",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: 50 GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1541,7 +1730,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.7"
+      }
     },
     {
       "id": "mobile_iinet_largeplan",
@@ -1551,9 +1745,8 @@
       "planName": "Large Plan",
       "description": "Standard Price: $45",
       "keyFeatures": [
-        "Data: 100",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: 100 GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1563,7 +1756,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.45"
+      }
     },
     {
       "id": "mobile_spintel_25gbmobileplan",
@@ -1573,9 +1771,8 @@
       "planName": "25GB Mobile Plan",
       "description": "Standard Price: $22",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 25 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1585,7 +1782,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.88"
+      }
     },
     {
       "id": "mobile_tpg_smallplan",
@@ -1595,9 +1797,8 @@
       "planName": "Small Plan",
       "description": "Standard Price: $25",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Vodafone",
-        "Intl Calls: 100 mins to select"
+        "Data: 25 GB",
+        "Network: Vodafone"
       ],
       "price": 20.0,
       "priceUnit": "/mo",
@@ -1607,7 +1808,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "Ongoing (NBN bundle)",
+        "Cost Per Gb": "1"
+      }
     },
     {
       "id": "mobile_tpg_mediumplan",
@@ -1617,9 +1823,8 @@
       "planName": "Medium Plan",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 50",
-        "Network: Vodafone",
-        "Intl Calls: 100 mins to select"
+        "Data: 50 GB",
+        "Network: Vodafone"
       ],
       "price": 30.0,
       "priceUnit": "/mo",
@@ -1629,7 +1834,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "Ongoing (NBN bundle)",
+        "Cost Per Gb": "0.7"
+      }
     },
     {
       "id": "mobile_tpg_largeplan",
@@ -1639,9 +1849,8 @@
       "planName": "Large Plan",
       "description": "Standard Price: $45",
       "keyFeatures": [
-        "Data: 100",
-        "Network: Vodafone",
-        "Intl Calls: 100 mins to select"
+        "Data: 100 GB",
+        "Network: Vodafone"
       ],
       "price": 40.0,
       "priceUnit": "/mo",
@@ -1651,7 +1860,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "Ongoing (NBN bundle)",
+        "Cost Per Gb": "0.45"
+      }
     },
     {
       "id": "mobile_vodafone_25gbsmallplan",
@@ -1661,9 +1875,8 @@
       "planName": "25GB Small Plan",
       "description": "Standard Price: $25",
       "keyFeatures": [
-        "Data: 25",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: 25 GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1673,7 +1886,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1"
+      }
     },
     {
       "id": "mobile_vodafone_50gbmediumplan",
@@ -1683,9 +1901,8 @@
       "planName": "50GB Medium Plan",
       "description": "Standard Price: $35",
       "keyFeatures": [
-        "Data: 50",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: 50 GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1695,7 +1912,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.7"
+      }
     },
     {
       "id": "mobile_vodafone_100gblargeplan",
@@ -1705,9 +1927,8 @@
       "planName": "100GB Large Plan",
       "description": "Standard Price: $45",
       "keyFeatures": [
-        "Data: 100",
-        "Network: Vodafone",
-        "Intl Calls: \u2014"
+        "Data: 100 GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1717,7 +1938,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.45"
+      }
     },
     {
       "id": "mobile_moosemobile_30gbsimonly",
@@ -1727,9 +1953,8 @@
       "planName": "30GB SIM Only",
       "description": "Standard Price: $24.8",
       "keyFeatures": [
-        "Data: 30",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 30 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1739,7 +1964,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.83"
+      }
     },
     {
       "id": "mobile_moosemobile_40gbsimonly",
@@ -1749,9 +1979,8 @@
       "planName": "40GB SIM Only",
       "description": "Standard Price: $33.8",
       "keyFeatures": [
-        "Data: 40",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 40 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1761,7 +1990,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.85"
+      }
     },
     {
       "id": "mobile_moosemobile_100gbsimonly",
@@ -1771,9 +2005,8 @@
       "planName": "100GB SIM Only",
       "description": "Standard Price: $41.8",
       "keyFeatures": [
-        "Data: 100",
-        "Network: Optus",
-        "Intl Calls: \u2014"
+        "Data: 100 GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1783,7 +2016,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6 months",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.42"
+      }
     },
     {
       "id": "mobile_optus_familymobileplan4sims",
@@ -1793,9 +2031,8 @@
       "planName": "Family Mobile Plan (4 SIMs)",
       "description": "Standard Price: $165",
       "keyFeatures": [
-        "Data: 320GB shared",
-        "Network: Optus",
-        "Intl Calls: Unlimited AU"
+        "Data: 320GB shared GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1805,7 +2042,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.52"
+      }
     },
     {
       "id": "mobile_optus_family1extrasim5sims",
@@ -1815,9 +2057,8 @@
       "planName": "Family + 1 Extra SIM (5 SIMs)",
       "description": "Standard Price: $194",
       "keyFeatures": [
-        "Data: 320GB shared",
-        "Network: Optus",
-        "Intl Calls: Unlimited AU"
+        "Data: 320GB shared GB",
+        "Network: Optus"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1827,7 +2068,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.61"
+      }
     },
     {
       "id": "mobile_aldimobile_955gfamilyplanupto4sims",
@@ -1837,9 +2083,8 @@
       "planName": "$95 5G Family Plan (up to 4 SIMs)",
       "description": "Standard Price: $$95 (30 days)",
       "keyFeatures": [
-        "Data: 100GB shared",
-        "Network: Telstra",
-        "Intl Calls: Unlimited to 20 countries (shared)"
+        "Data: 100GB shared GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1849,7 +2094,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.95"
+      }
     },
     {
       "id": "mobile_aldimobile_1255gfamilyplanupto6sims",
@@ -1859,9 +2109,8 @@
       "planName": "$125 5G Family Plan (up to 6 SIMs)",
       "description": "Standard Price: $$125 (30 days)",
       "keyFeatures": [
-        "Data: 150GB shared",
-        "Network: Telstra",
-        "Intl Calls: Unlimited to 30 countries (shared)"
+        "Data: 150GB shared GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1871,7 +2120,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "0.83"
+      }
     },
     {
       "id": "mobile_aldimobile_555gfamilyplanupto2sims",
@@ -1881,9 +2135,8 @@
       "planName": "$55 5G Family Plan (up to 2 SIMs)",
       "description": "Standard Price: $$55 (30 days)",
       "keyFeatures": [
-        "Data: 50GB shared",
-        "Network: Telstra",
-        "Intl Calls: Unlimited to 20 countries (shared)"
+        "Data: 50GB shared GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1893,7 +2146,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "\u2014",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.1"
+      }
     },
     {
       "id": "mobile_telstra_upfrontessential3mobilebundleplans4simstotal",
@@ -1903,9 +2161,8 @@
       "planName": "Upfront Essential + 3 Mobile Bundle Plans (4 SIMs total)",
       "description": "Standard Price: $~$260 (Essential $84 + 3\u00d7$57)",
       "keyFeatures": [
-        "Data: ~255GB shared (180GB + 3\u00d725GB)",
-        "Network: Telstra",
-        "Intl Calls: Unlimited AU"
+        "Data: ~255GB shared (180GB + 3\u00d725GB) GB",
+        "Network: Telstra"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1915,7 +2172,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "1 month",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "1.02"
+      }
     },
     {
       "id": "mobile_vodafone_bundleshare4mediumlargesimplans",
@@ -1925,9 +2187,8 @@
       "planName": "Bundle & Share (4\u00d7 Medium/Large SIM plans)",
       "description": "Standard Price: $~$177\u2013$250 (after $5+$15\u00d72 discounts)",
       "keyFeatures": [
-        "Data: Varies (e.g. 4\u00d7 ~100-200GB pooled)",
-        "Network: Vodafone",
-        "Intl Calls: Varies"
+        "Data: Varies (e.g. 4\u00d7 ~100-200GB pooled) GB",
+        "Network: Vodafone"
       ],
       "price": 0.0,
       "priceUnit": "/mo",
@@ -1937,7 +2198,12 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Duration": "6\u201312 months common",
+        "Discount Duration": "\u2014",
+        "Cost Per Gb": "$0.60\u2013$0.90"
+      }
     }
   ],
   "electricity": [
@@ -1968,7 +2234,16 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,250",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,450",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,650",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,850",
+        "New Customer Price": "1550",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.41"
+      }
     },
     {
       "id": "elec_dodo_realdealvalue",
@@ -1996,7 +2271,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,180",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,370",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,550",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,740",
+        "New Customer Price": "Varies",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.39"
+      }
     },
     {
       "id": "elec_shellenergy_standardplan",
@@ -2024,7 +2308,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,190",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,380",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,570",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,760",
+        "New Customer Price": "Varies",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.39"
+      }
     },
     {
       "id": "elec_energyaustralia_flexiplansolarmax",
@@ -2053,7 +2346,16 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,220",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,420",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,620",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,820",
+        "New Customer Price": "$1,520 (intro)",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.41"
+      }
     },
     {
       "id": "elec_agl_solarsaveressentials",
@@ -2081,7 +2383,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,300",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,510",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,720",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,930",
+        "New Customer Price": "$1,620 ($100 credit)",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.43"
+      }
     },
     {
       "id": "elec_alintaenergy_homedealreadysolarbalance",
@@ -2109,7 +2420,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,150",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,320",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,472",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,650",
+        "New Customer Price": "1372",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.37"
+      }
     },
     {
       "id": "elec_globirdenergy_boostresidential",
@@ -2137,7 +2457,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,100",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,280",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,439",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,620",
+        "New Customer Price": "1339",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.36"
+      }
     },
     {
       "id": "elec_koganenergy_koganfreefirst",
@@ -2165,7 +2494,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,050",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,250",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,448",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,650",
+        "New Customer Price": "$1,348 (credit)",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.36"
+      }
     },
     {
       "id": "elec_covau_freedomresidential",
@@ -2193,7 +2531,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,140",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,320",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,500",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,680",
+        "New Customer Price": "Varies",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.38"
+      }
     },
     {
       "id": "elec_powershop_powerhouse",
@@ -2219,7 +2566,16 @@
       "applicableStates": [
         "NSW",
         "VIC"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,070",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,270",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,492",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,690",
+        "New Customer Price": "$1,392 (Switch Saver)",
+        "New Customer Duration": "12 months",
+        "Cost Per Kwh Effective": "0.37"
+      }
     },
     {
       "id": "elec_1stenergy_1struby1stblue",
@@ -2247,7 +2603,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,120",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,320",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,521",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,720",
+        "New Customer Price": "$1,421 (credit)",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.38"
+      }
     },
     {
       "id": "elec_amberelectric_wholesaleflexsolaroptimised",
@@ -2276,7 +2641,16 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,050",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,150",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,180",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,250",
+        "New Customer Price": "Varies (bill guarantee)",
+        "New Customer Duration": "Quarterly",
+        "Cost Per Kwh Effective": "0.28"
+      }
     },
     {
       "id": "elec_redenergy_livingenergysmartfit",
@@ -2305,7 +2679,16 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,200",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,390",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,580",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,770",
+        "New Customer Price": "1480",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.4"
+      }
     },
     {
       "id": "elec_energylocals_homeclassic",
@@ -2334,7 +2717,16 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,140",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,330",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,510",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,690",
+        "New Customer Price": "$100 credit",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.38"
+      }
     },
     {
       "id": "elec_engie_engiesolarnrmaperks",
@@ -2362,7 +2754,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,160",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,350",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,534",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,720",
+        "New Customer Price": "$1,434 (Perks)",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.38"
+      }
     },
     {
       "id": "elec_sumo_sumosunriselocal",
@@ -2390,7 +2791,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,130",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,300",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,463",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,630",
+        "New Customer Price": "1363",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.37"
+      }
     },
     {
       "id": "elec_diamondenergy_everydayrenewablesaver",
@@ -2418,7 +2828,16 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,160",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,340",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,520",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,700",
+        "New Customer Price": "Varies",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.38"
+      }
     },
     {
       "id": "elec_ovoenergy_oneplanfree3plan",
@@ -2444,7 +2863,16 @@
       "applicableStates": [
         "NSW",
         "VIC"
-      ]
+      ],
+      "details": {
+        "Est. Annual Cost @ 2,000 Kwh": "~$1,130",
+        "Est. Annual Cost @ 3,000 Kwh": "~$1,310",
+        "Est. Annual Cost @ 4,000 Kwh": "~$1,495",
+        "Est. Annual Cost @ 5,000 Kwh": "~$1,680",
+        "New Customer Price": "1395",
+        "New Customer Duration": "1 month",
+        "Cost Per Kwh Effective": "0.37"
+      }
     }
   ],
   "gas": [
@@ -2473,7 +2901,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "810",
+        "Est Annual @ 25K Mj": "990",
+        "Est Annual @ 35K Mj": "1170.0",
+        "Est Annual @ 45K Mj": "1350.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.035"
+      }
     },
     {
       "id": "gas_covau_freedomresidential",
@@ -2500,7 +2936,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "810",
+        "Est Annual @ 25K Mj": "990",
+        "Est Annual @ 35K Mj": "1170.0",
+        "Est Annual @ 45K Mj": "1350.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.036"
+      }
     },
     {
       "id": "gas_alintaenergy_homedealready",
@@ -2527,7 +2971,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "830",
+        "Est Annual @ 25K Mj": "1020",
+        "Est Annual @ 35K Mj": "1210.0",
+        "Est Annual @ 45K Mj": "1400.0",
+        "New Customer Offer": "Credit",
+        "Cost Per Mj Effective": "0.037"
+      }
     },
     {
       "id": "gas_koganenergy_koganfreefirst",
@@ -2554,7 +3006,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "820",
+        "Est Annual @ 25K Mj": "1000",
+        "Est Annual @ 35K Mj": "1180.0",
+        "Est Annual @ 45K Mj": "1360.0",
+        "New Customer Offer": "Credit",
+        "Cost Per Mj Effective": "0.036"
+      }
     },
     {
       "id": "gas_sumo_sumosunrise",
@@ -2581,7 +3041,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "840",
+        "Est Annual @ 25K Mj": "1030",
+        "Est Annual @ 35K Mj": "1220.0",
+        "Est Annual @ 45K Mj": "1410.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.036"
+      }
     },
     {
       "id": "gas_energylocals_homeclassic",
@@ -2609,7 +3077,15 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "870",
+        "Est Annual @ 25K Mj": "1060",
+        "Est Annual @ 35K Mj": "1250.0",
+        "Est Annual @ 45K Mj": "1440.0",
+        "New Customer Offer": "100 credit",
+        "Cost Per Mj Effective": "0.037"
+      }
     },
     {
       "id": "gas_ovoenergy_oneplan",
@@ -2634,7 +3110,15 @@
       "applicableStates": [
         "NSW",
         "VIC"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "840",
+        "Est Annual @ 25K Mj": "1030",
+        "Est Annual @ 35K Mj": "1220.0",
+        "Est Annual @ 45K Mj": "1410.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.037"
+      }
     },
     {
       "id": "gas_energyaustralia_flexiplan",
@@ -2662,7 +3146,15 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "850",
+        "Est Annual @ 25K Mj": "1050",
+        "Est Annual @ 35K Mj": "1250.0",
+        "Est Annual @ 45K Mj": "1450.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.036"
+      }
     },
     {
       "id": "gas_engie_perksnrma",
@@ -2689,7 +3181,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "900",
+        "Est Annual @ 25K Mj": "1100",
+        "Est Annual @ 35K Mj": "1300.0",
+        "Est Annual @ 45K Mj": "1500.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.038"
+      }
     },
     {
       "id": "gas_powershop_powerhouse",
@@ -2714,7 +3214,15 @@
       "applicableStates": [
         "NSW",
         "VIC"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "890",
+        "Est Annual @ 25K Mj": "1090",
+        "Est Annual @ 35K Mj": "1290.0",
+        "Est Annual @ 45K Mj": "1490.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.038"
+      }
     },
     {
       "id": "gas_diamondenergy_everydayrenewable",
@@ -2741,7 +3249,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "880",
+        "Est Annual @ 25K Mj": "1070",
+        "Est Annual @ 35K Mj": "1260.0",
+        "Est Annual @ 45K Mj": "1450.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.038"
+      }
     },
     {
       "id": "gas_originenergy_govariable",
@@ -2769,7 +3285,15 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "920",
+        "Est Annual @ 25K Mj": "1120",
+        "Est Annual @ 35K Mj": "1320.0",
+        "Est Annual @ 45K Mj": "1520.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.039"
+      }
     },
     {
       "id": "gas_dodo_realdeal",
@@ -2796,7 +3320,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "910",
+        "Est Annual @ 25K Mj": "1110",
+        "Est Annual @ 35K Mj": "1310.0",
+        "Est Annual @ 45K Mj": "1510.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.039"
+      }
     },
     {
       "id": "gas_redenergy_livingenergy",
@@ -2824,7 +3356,15 @@
         "SA",
         "QLD",
         "ACT"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "950",
+        "Est Annual @ 25K Mj": "1160",
+        "Est Annual @ 35K Mj": "1370.0",
+        "Est Annual @ 45K Mj": "1580.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.04"
+      }
     },
     {
       "id": "gas_momentumenergy_warmwelcome",
@@ -2849,7 +3389,15 @@
       "applicableStates": [
         "VIC",
         "NSW"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "930",
+        "Est Annual @ 25K Mj": "1140",
+        "Est Annual @ 35K Mj": "1350.0",
+        "Est Annual @ 45K Mj": "1560.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.04"
+      }
     },
     {
       "id": "gas_agl_essentials",
@@ -2877,7 +3425,15 @@
         "SA",
         "QLD",
         "WA"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "980",
+        "Est Annual @ 25K Mj": "1200",
+        "Est Annual @ 35K Mj": "1420.0",
+        "Est Annual @ 45K Mj": "1640.0",
+        "New Customer Offer": "100 credit",
+        "Cost Per Mj Effective": "0.041"
+      }
     },
     {
       "id": "gas_lumoenergy_standard",
@@ -2904,7 +3460,15 @@
         "VIC",
         "SA",
         "QLD"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "1000",
+        "Est Annual @ 25K Mj": "1220",
+        "Est Annual @ 35K Mj": "1440.0",
+        "Est Annual @ 45K Mj": "1660.0",
+        "New Customer Offer": "Varies",
+        "Cost Per Mj Effective": "0.042"
+      }
     },
     {
       "id": "gas_kleenheat_monthlysmartsaver",
@@ -2928,7 +3492,15 @@
       "isEnabled": true,
       "applicableStates": [
         "WA only"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "1450",
+        "Est Annual @ 25K Mj": "1850",
+        "Est Annual @ 35K Mj": "2250.0",
+        "Est Annual @ 45K Mj": "2650.0",
+        "New Customer Offer": "31% off usage",
+        "Cost Per Mj Effective": "0.065"
+      }
     },
     {
       "id": "gas_elgas_homelpgbottlestanks",
@@ -2939,6 +3511,7 @@
       "description": "Best for: No mains gas",
       "keyFeatures": [
         "Type: Bottled (LPG)",
+        "Daily Supply: c",
         "Usage: 135 (per 45kg)c/MJ"
       ],
       "price": 0.0,
@@ -2951,7 +3524,12 @@
       "isEnabled": true,
       "applicableStates": [
         "Australia-wide"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "600",
+        "Est Annual @ 25K Mj": "800",
+        "New Customer Offer": "Credit / promo"
+      }
     },
     {
       "id": "gas_supagas_homelpgbottlesdelivery",
@@ -2962,6 +3540,7 @@
       "description": "Best for: Promotions",
       "keyFeatures": [
         "Type: Bottled (LPG)",
+        "Daily Supply: c",
         "Usage: 125 (per 45kg)c/MJ"
       ],
       "price": 0.0,
@@ -2974,7 +3553,12 @@
       "isEnabled": true,
       "applicableStates": [
         "Australia-wide"
-      ]
+      ],
+      "details": {
+        "Est Annual @ 15K Mj": "550",
+        "Est Annual @ 25K Mj": "750",
+        "New Customer Offer": "50% off first order"
+      }
     }
   ],
   "solar": [
@@ -2987,9 +3571,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 10\u201313 kWh",
-        "Warranty: 25 yrs / 10 yrs / 10 yrs",
-        "Timeline: 4\u20136 weeks",
-        "Type: Cheap"
+        "Warranty: 25 yrs / 10 yrs / 10 yrs"
       ],
       "price": 11500.0,
       "priceUnit": " total",
@@ -2999,7 +3581,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$800\u2013$950",
+        "Price/Kwh Battery (After)": "$900\u2013$1,100",
+        "Warranty (Panels / Inverter / Battery)": "25 yrs / 10 yrs / 10 yrs",
+        "Current Offers / Discounts / Risks": "Lowest price; CHBP rebate drops after 1 May 2026 (risk of +$500\u2013$1,200)",
+        "Payment Terms": "Full payment before install",
+        "Delivery Timeline": "4\u20136 weeks"
+      }
     },
     {
       "id": "solar_arisesolar_1014kwsystem",
@@ -3010,9 +3601,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 10\u201313 kWh",
-        "Warranty: 25 / 10 / 10 yrs",
-        "Timeline: 4\u20136 weeks",
-        "Type: Cheap"
+        "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 13000.0,
       "priceUnit": " total",
@@ -3022,7 +3611,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$900\u2013$1,050",
+        "Price/Kwh Battery (After)": "$900\u2013$1,100",
+        "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
+        "Current Offers / Discounts / Risks": "Price-beat guarantee + free panel upgrades",
+        "Payment Terms": "Deposit + balance",
+        "Delivery Timeline": "4\u20136 weeks"
+      }
     },
     {
       "id": "solar_energymatters_1014kwsystem",
@@ -3033,9 +3631,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 10\u201313 kWh",
-        "Warranty: 25 / 10 / 10 yrs",
-        "Timeline: 4\u20138 weeks",
-        "Type: Value"
+        "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 13500.0,
       "priceUnit": " total",
@@ -3045,7 +3641,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$950\u2013$1,100",
+        "Price/Kwh Battery (After)": "$950\u2013$1,150",
+        "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
+        "Current Offers / Discounts / Risks": "Free 5\u20137 quotes + VPP credits ($200\u2013$500/yr)",
+        "Payment Terms": "Flexible",
+        "Delivery Timeline": "4\u20138 weeks"
+      }
     },
     {
       "id": "solar_solarchoice_1014kwsystem",
@@ -3056,9 +3661,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 10\u201313 kWh",
-        "Warranty: Varies by installer",
-        "Timeline: 4\u20138 weeks",
-        "Type: Value"
+        "Warranty: Varies by installer"
       ],
       "price": 13000.0,
       "priceUnit": " total",
@@ -3068,7 +3671,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$900\u2013$1,050",
+        "Price/Kwh Battery (After)": "$900\u2013$1,100",
+        "Warranty (Panels / Inverter / Battery)": "Varies by installer",
+        "Current Offers / Discounts / Risks": "Independent quotes from 7+ installers (no sales pressure)",
+        "Payment Terms": "Flexible",
+        "Delivery Timeline": "4\u20138 weeks"
+      }
     },
     {
       "id": "solar_solargain_1014kwsystem",
@@ -3079,9 +3691,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 10\u201313 kWh",
-        "Warranty: 25 / 10 / 10 yrs",
-        "Timeline: 4\u20136 weeks",
-        "Type: Value"
+        "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 14000.0,
       "priceUnit": " total",
@@ -3091,7 +3701,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$980\u2013$1,100",
+        "Price/Kwh Battery (After)": "$1,000\u2013$1,200",
+        "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
+        "Current Offers / Discounts / Risks": "Finance options + NSW/QLD focus",
+        "Payment Terms": "Deposit + balance",
+        "Delivery Timeline": "4\u20136 weeks"
+      }
     },
     {
       "id": "solar_solahart_1014kwsystem",
@@ -3102,9 +3721,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 10\u201313 kWh",
-        "Warranty: 25 / 10 / 10 yrs",
-        "Timeline: 6\u20138 weeks",
-        "Type: Premium"
+        "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 14500.0,
       "priceUnit": " total",
@@ -3114,7 +3731,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$1,000\u2013$1,150",
+        "Price/Kwh Battery (After)": "$1,100\u2013$1,300",
+        "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
+        "Current Offers / Discounts / Risks": "Strong service + Australian brand",
+        "Payment Terms": "Deposit + balance",
+        "Delivery Timeline": "6\u20138 weeks"
+      }
     },
     {
       "id": "solar_originenergy_1014kwsystem",
@@ -3125,9 +3751,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 10\u201313 kWh",
-        "Warranty: 25 / 10 / 10 yrs",
-        "Timeline: 6\u20138 weeks",
-        "Type: Balanced"
+        "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 14500.0,
       "priceUnit": " total",
@@ -3137,7 +3761,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$1,020\u2013$1,150",
+        "Price/Kwh Battery (After)": "$1,100\u2013$1,300",
+        "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
+        "Current Offers / Discounts / Risks": "High FiT when bundled with Origin electricity plan",
+        "Payment Terms": "Flexible (with bill)",
+        "Delivery Timeline": "6\u20138 weeks"
+      }
     },
     {
       "id": "solar_teslapowerwall3_1014kwsystem",
@@ -3148,9 +3781,7 @@
       "description": "Additional costs: Varies ($0\u2013$500)",
       "keyFeatures": [
         "Battery: 13.5 kWh",
-        "Warranty: 25 / 10 / 10 yrs",
-        "Timeline: 6\u201310 weeks",
-        "Type: Premium"
+        "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 14500.0,
       "priceUnit": " total",
@@ -3160,7 +3791,16 @@
       "isSponsored": false,
       "isGreen": true,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "Additional Costs": "Varies ($0\u2013$500)",
+        "Price/Kw Solar (After)": "$1,050\u2013$1,200",
+        "Price/Kwh Battery (After)": "$1,150\u2013$1,350",
+        "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
+        "Current Offers / Discounts / Risks": "VPP credits + seamless app integration",
+        "Payment Terms": "Deposit + balance",
+        "Delivery Timeline": "6\u201310 weeks"
+      }
     }
   ],
   "insurance": [
@@ -3184,7 +3824,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "15% off first year (online)",
+        "Plan Link.1": "https://www.budgetdirect.com.au/car-insurance"
+      }
     },
     {
       "id": "ins_bingle_comprehensive",
@@ -3206,7 +3850,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Lowest base premiums",
+        "Plan Link.1": "https://www.budgetdirect.com.au/home-contents-insurance"
+      }
     },
     {
       "id": "ins_colesinsurance_comprehensive",
@@ -3228,7 +3876,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "15% off first year + Flybuys",
+        "Plan Link.1": "https://www.budgetdirect.com.au/pet-insurance.html"
+      }
     },
     {
       "id": "ins_everydayinsurance_comprehensive",
@@ -3250,7 +3902,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Grocery vouchers / perks",
+        "Plan Link.1": "https://www.bingle.com.au/car-insurance.html"
+      }
     },
     {
       "id": "ins_youi_comprehensive",
@@ -3272,7 +3928,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Personalised pricing",
+        "Plan Link.1": "https://www.coles.com.au/insurance/car-insurance"
+      }
     },
     {
       "id": "ins_nrma_comprehensive",
@@ -3294,7 +3954,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Up to 10% first year (online)",
+        "Plan Link.1": "https://www.coles.com.au/insurance/home-insurance"
+      }
     },
     {
       "id": "ins_aami_comprehensive",
@@ -3316,7 +3980,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "$50\u2013$100 off first year",
+        "Plan Link.1": "https://insurance.everyday.com.au/car-insurance"
+      }
     },
     {
       "id": "ins_budgetdirect_combinedhomecontents",
@@ -3338,7 +4006,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Up to 30% off combined",
+        "Plan Link.1": "https://insurance.everyday.com.au/home-insurance"
+      }
     },
     {
       "id": "ins_youi_homecontents",
@@ -3360,7 +4032,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Personalised pricing",
+        "Plan Link.1": "https://www.aami.com.au/car-insurance.html"
+      }
     },
     {
       "id": "ins_nrma_homecontents",
@@ -3382,7 +4058,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Multi-product discount",
+        "Plan Link.1": "https://www.aami.com.au/home-insurance"
+      }
     },
     {
       "id": "ins_allianz_homecontents",
@@ -3404,7 +4084,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Up to 10% bundle",
+        "Plan Link.1": "https://www.aami.com.au/health-insurance"
+      }
     },
     {
       "id": "ins_budgetdirect_plushighestlimit",
@@ -3426,7 +4110,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "15% off first year",
+        "Plan Link.1": "https://www.aami.com.au/pet-insurance"
+      }
     },
     {
       "id": "ins_budgetdirect_comprehensive",
@@ -3448,7 +4136,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "15% off first year",
+        "Plan Link.1": "https://www.gio.com.au/car-insurance.html"
+      }
     },
     {
       "id": "ins_budgetdirect_essentialaccidentonly",
@@ -3470,7 +4162,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "15% off first year",
+        "Plan Link.1": "https://www.gio.com.au/home-insurance"
+      }
     },
     {
       "id": "ins_aami_comprehensive",
@@ -3492,7 +4188,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "2 months free (code-dependent)",
+        "Plan Link.1": "https://www.youi.com.au/car-insurance"
+      }
     },
     {
       "id": "ins_medibank_petmaxhighestcover",
@@ -3514,7 +4214,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "2 months free (promo until Jul 2026)",
+        "Plan Link.1": "https://www.youi.com.au/home-insurance"
+      }
     },
     {
       "id": "ins_medibank_petplus",
@@ -3536,7 +4240,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "2 months free",
+        "Plan Link.1": "https://www.nrma.com.au/car-insurance"
+      }
     },
     {
       "id": "ins_aami_hospitalextrasnibunderwrittenmidtier",
@@ -3558,7 +4266,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "8 weeks free (combined, until ~28 May 2026)",
+        "Plan Link.1": "https://www.nrma.com.au/home-insurance"
+      }
     },
     {
       "id": "ins_bupa_goldhospitalmidtopextrascombined",
@@ -3580,7 +4292,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Up to 12 weeks free + waived waiting periods",
+        "Plan Link.1": "https://www.allianz.com.au/car-insurance.html"
+      }
     },
     {
       "id": "ins_bupa_silverhospitalextras",
@@ -3602,7 +4318,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Up to 12 weeks free",
+        "Plan Link.1": "https://www.allianz.com.au/home-insurance"
+      }
     },
     {
       "id": "ins_medibank_goldhospitalextrascombined",
@@ -3624,7 +4344,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Up to 12 weeks free + up to $300 gift cards",
+        "Plan Link.1": "https://www.allianz.com.au (search OSHC)"
+      }
     },
     {
       "id": "ins_medibank_silverhospitalextras",
@@ -3646,7 +4370,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Up to 12 weeks free",
+        "Plan Link.1": "https://www.bupa.com.au/health-insurance"
+      }
     },
     {
       "id": "ins_hcf_hospitaloptimalgoldmidextras",
@@ -3668,7 +4396,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Varies (strong value awards)",
+        "Plan Link.1": "https://www.bupa.com.au/general-insurance"
+      }
     },
     {
       "id": "ins_hcf_hospitalbasicplusmidextras",
@@ -3690,7 +4422,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Varies",
+        "Plan Link.1": "https://www.medibank.com.au/health-insurance"
+      }
     },
     {
       "id": "ins_nib_goldhospitalextrascombined",
@@ -3712,7 +4448,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "6 weeks free + waived 2/6-month extras waits",
+        "Plan Link.1": "https://www.medibank.com.au/pet-insurance"
+      }
     },
     {
       "id": "ins_cbhsrestricted_completegoldhospitalextras",
@@ -3734,7 +4474,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "6 weeks free + $200 gift card (eligible members)",
+        "Plan Link.1": "https://www.hcf.com.au"
+      }
     },
     {
       "id": "ins_cbhsrestricted_everydaysilverplus",
@@ -3756,7 +4500,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "6 weeks free + $200 gift card",
+        "Plan Link.1": "https://www.nib.com.au/health-insurance"
+      }
     },
     {
       "id": "ins_cbhsrestricted_kickstartbasicplus",
@@ -3778,7 +4526,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "6 weeks free + $200 gift card",
+        "Plan Link.1": "https://www.cbhs.com.au"
+      }
     },
     {
       "id": "ins_gmhbafrank_midtophospitalextras",
@@ -3800,7 +4552,11 @@
       "isSponsored": false,
       "isGreen": false,
       "isEnabled": true,
-      "applicableStates": []
+      "applicableStates": [],
+      "details": {
+        "New Customer Offer (April 2026)": "Strong national value offers",
+        "Plan Link.1": "https://www.gmhba.com.au or frankhealth.com.au"
+      }
     }
   ]
 }

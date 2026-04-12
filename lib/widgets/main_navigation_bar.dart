@@ -43,18 +43,21 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               // Desktop Navigation with Icons
               if (isDesktop)
                 Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _serviceNavItem(context, "Electricity", Icons.bolt, '/deals/electricity'),
-                      _serviceNavItem(context, "Gas", Icons.local_fire_department, '/deals/gas'),
-                      _serviceNavItem(context, "Solar", Icons.solar_power, '/deals/solar'),
-                      _serviceNavItem(context, "Internet", Icons.wifi, '/deals/internet'),
-                      _serviceNavItem(context, "Mobile", Icons.phone_iphone, '/deals/mobile'),
-                      _serviceNavItem(context, "Health", Icons.medical_services, '/deals/insurance/health'),
-                      _serviceNavItem(context, "Car", Icons.directions_car, '/deals/insurance/car'),
-                      _serviceNavItem(context, "Finance", Icons.credit_card, '/deals/credit-cards'),
-                    ],
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _serviceNavItem(context, "Electricity", Icons.bolt, '/deals/electricity'),
+                        _serviceNavItem(context, "Gas", Icons.local_fire_department, '/deals/gas'),
+                        _serviceNavItem(context, "Solar", Icons.solar_power, '/deals/solar'),
+                        _serviceNavItem(context, "Internet", Icons.wifi, '/deals/internet'),
+                        _serviceNavItem(context, "Mobile", Icons.phone_iphone, '/deals/mobile'),
+                        _serviceNavItem(context, "Health", Icons.medical_services, '/deals/insurance/health'),
+                        _serviceNavItem(context, "Car", Icons.directions_car, '/deals/insurance/car'),
+                        _serviceNavItem(context, "Finance", Icons.credit_card, '/deals/credit-cards'),
+                      ],
+                    ),
                   ),
                 ),
 

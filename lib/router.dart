@@ -150,6 +150,14 @@ final goRouter = GoRouter(
       ),
     ),
     GoRoute(
+      path: '/deals/solar',
+      pageBuilder: (context, state) => _fadeTransition(
+        context,
+        state,
+        const ComparisonScreen(initialCategory: ProductCategory.solar),
+      ),
+    ),
+    GoRoute(
       path: '/deals/insurance/health',
       pageBuilder: (context, state) => _fadeTransition(
         context,

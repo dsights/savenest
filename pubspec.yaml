@@ -30,6 +30,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^3.0.0
 
+  http_parser: any
 dependency_overrides:
   chewie: 1.8.1
 

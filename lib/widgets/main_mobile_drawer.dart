@@ -18,10 +18,10 @@ class MainMobileDrawer extends StatelessWidget {
             child: SaveNestLogo(fontSize: 24),
           ),
           
-          _drawerItem(context, 'Electricity Deals', '/deals/electricity', Icons.bolt),
-          _drawerItem(context, 'Gas Plans', '/deals/gas', Icons.local_fire_department),
-          _drawerItem(context, 'Internet (NBN)', '/deals/internet', Icons.wifi),
-          _drawerItem(context, 'Mobile Plans', '/deals/mobile', Icons.phone_iphone),
+                            _drawerItem(context, 'Electricity Deals', '/deals/electricity', Icons.bolt),
+                            _drawerItem(context, 'Gas Plans', '/deals/gas', Icons.local_fire_department),
+                            _drawerItem(context, 'Solar Plans', '/deals/solar', Icons.solar_power),
+                            _drawerItem(context, 'Internet (NBN)', '/deals/internet', Icons.wifi),          _drawerItem(context, 'Mobile Plans', '/deals/mobile', Icons.phone_iphone),
           
           const Divider(height: 32),
           

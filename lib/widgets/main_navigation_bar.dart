@@ -48,6 +48,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
                     children: [
                       _serviceNavItem(context, "Electricity", Icons.bolt, '/deals/electricity'),
                       _serviceNavItem(context, "Gas", Icons.local_fire_department, '/deals/gas'),
+                      _serviceNavItem(context, "Solar", Icons.solar_power, '/deals/solar'),
                       _serviceNavItem(context, "Internet", Icons.wifi, '/deals/internet'),
                       _serviceNavItem(context, "Mobile", Icons.phone_iphone, '/deals/mobile'),
                       _serviceNavItem(context, "Health", Icons.medical_services, '/deals/insurance/health'),

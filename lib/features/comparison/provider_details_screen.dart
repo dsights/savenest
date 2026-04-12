@@ -187,7 +187,7 @@ class ProviderDetailsScreen extends ConsumerWidget {
 
 final providerDealsProvider = FutureProvider.family<List<Deal>, String>((ref, providerName) async {
   final repo = ref.watch(productRepositoryProvider);
-  final allCats = ProductCategory.values;
+  const allCats = ProductCategory.values;
   List<Deal> results = [];
   
   for (var cat in allCats) {

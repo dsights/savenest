@@ -51,13 +51,13 @@ class ProviderDirectoryScreen extends StatelessWidget {
                               'OUR PARTNERS',
                               style: TextStyle(color: AppTheme.vibrantEmerald, fontWeight: FontWeight.bold, letterSpacing: 1.5),
                             ),
-                            const SizedBox(height: 24),
+                            SizedBox(height: 24),
                             Text(
                               'Provider Directory',
                               textAlign: TextAlign.center,
                               style: TextStyle(color: Colors.white, fontSize: 48, fontWeight: FontWeight.w900),
                             ),
-                            const SizedBox(height: 16),
+                            SizedBox(height: 16),
                             Text(
                               'We compare 50+ Australian brands to find you the best value. Browse our full list of providers below.',
                               textAlign: TextAlign.center,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:meta_seo/meta_seo.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:async';
@@ -8,7 +7,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
-import '../../widgets/glass_container.dart';
 
 class AuditLandingScreen extends StatefulWidget {
   const AuditLandingScreen({super.key});
@@ -171,10 +169,10 @@ class _AuditLandingScreenState extends State<AuditLandingScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(
+                          const Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "Every day you wait costs you \$6.57",
                                   style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
@@ -287,24 +285,24 @@ class _AuditLandingScreenState extends State<AuditLandingScreen> {
                             ),
                           ),
                           const SizedBox(width: 60),
-                          Expanded(
+                          const Expanded(
                             flex: 5,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Icon(Icons.format_quote, size: 60, color: AppTheme.vibrantEmerald),
-                                const Text(
+                                Icon(Icons.format_quote, size: 60, color: AppTheme.vibrantEmerald),
+                                Text(
                                   "I was paying \$120 a month for internet I barely used and my energy bill was out of control. SaveNest's audit saved me \$1,400 in the first year alone. The service paid for itself in the first month.",
                                   style: TextStyle(color: AppTheme.deepNavy, fontSize: 24, fontStyle: FontStyle.italic, height: 1.4),
                                 ),
-                                const SizedBox(height: 24),
-                                const Text(
+                                SizedBox(height: 24),
+                                Text(
                                   "- Sarah Jenkins, Melbourne",
                                   style: TextStyle(color: AppTheme.slate600, fontSize: 18, fontWeight: FontWeight.bold),
                                 ),
-                                const SizedBox(height: 8),
+                                SizedBox(height: 8),
                                 Row(
-                                  children: const [
+                                  children: [
                                     Icon(Icons.star, color: Colors.amber, size: 20),
                                     Icon(Icons.star, color: Colors.amber, size: 20),
                                     Icon(Icons.star, color: Colors.amber, size: 20),
@@ -350,11 +348,11 @@ class _AuditLandingScreenState extends State<AuditLandingScreen> {
                               style: TextStyle(color: AppTheme.slate600, fontSize: 18),
                             ),
                             const SizedBox(height: 40),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.baseline,
                               textBaseline: TextBaseline.alphabetic,
-                              children: const [
+                              children: [
                                 Text(
                                   "FREE",
                                   style: TextStyle(color: AppTheme.deepNavy, fontSize: 80, fontWeight: FontWeight.w900),
@@ -389,9 +387,9 @@ class _AuditLandingScreenState extends State<AuditLandingScreen> {
                               child: const Text("BOOK FREE AUDIT"),
                             ),
                             const SizedBox(height: 24),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Icon(Icons.check_circle, size: 16, color: AppTheme.slate600),
                                 SizedBox(width: 8),
                                 Text("No Credit Card Required • No Obligation • 100% Free Chat", style: TextStyle(color: AppTheme.slate600)),

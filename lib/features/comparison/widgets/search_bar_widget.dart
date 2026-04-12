@@ -109,50 +109,38 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           ],
         ),
         if (widget.filters != null && widget.filters!.isNotEmpty) ...[
-          const SizedBox(height: 24),
-          ...widget.filters!.entries.map((entry) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 4.0, bottom: 8.0),
-                  child: Text(
-                    entry.key.toUpperCase(),
-                    style: const TextStyle(
-                      color: AppTheme.slate600,
-                      fontSize: 11,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.8,
+          const SizedBox(height: 16),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: widget.filters!.entries.map((entry) {
+                return Container(
+                  margin: const EdgeInsets.only(right: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.7),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: AppTheme.slate300.withOpacity(0.5)),
+                  ),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      hint: Text(entry.key, style: const TextStyle(fontSize: 13, color: AppTheme.slate600, fontWeight: FontWeight.w600)),
+                      style: const TextStyle(color: AppTheme.deepNavy, fontWeight: FontWeight.bold, fontSize: 13),
+                      icon: const Icon(Icons.arrow_drop_down, size: 20, color: AppTheme.primaryBlue),
+                      items: entry.value
+                          .map((s) => DropdownMenuItem(value: s, child: Text(s)))
+                          .toList(),
+                      onChanged: (value) {
+                        if (value != null) {
+                          _onFilterTap(value);
+                        }
+                      },
                     ),
                   ),
-                ),
-                Wrap(
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: entry.value.map((filter) => InkWell(
-                    onTap: () => _onFilterTap(filter),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: AppTheme.primaryBlue.withOpacity(0.05),
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.1)),
-                      ),
-                      child: Text(
-                        filter,
-                        style: const TextStyle(
-                          color: AppTheme.primaryBlue,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  )).toList(),
-                ),
-                const SizedBox(height: 16),
-              ],
-            );
-          }),
+                );
+              }).toList(),
+            ),
+          ),
         ],
       ],
     );

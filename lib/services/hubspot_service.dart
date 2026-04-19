@@ -188,4 +188,63 @@ class HubSpotService {
       default: return '';
     }
   }
+
+  /// 3. Submit Concierge Agreement with PDF
+  Future<Map<String, dynamic>> submitConciergeAgreement({
+    required String name,
+    required String email,
+    required String phone,
+    required String dealProvider,
+    required String dealPlan,
+    required Uint8List pdfBytes,
+  }) async {
+    final submitUrl = Uri.parse('$_submitUrl/$_portalId/$_formGuid');
+    
+    // Upload the PDF contract
+    final pdfFile = XFile.fromData(pdfBytes, name: 'ServiceAgreement.pdf', mimeType: 'application/pdf');
+    final uploadResult = await _uploadFile(pdfFile, 'savenest_agreements');
+    
+    final String agreementUrl = uploadResult.url ?? 'Upload failed: ${uploadResult.error}';
+
+    // Prepare fields. We'll use existing form fields where possible.
+    final List<Map<String, dynamic>> fields = [
+      {'name': 'firstname', 'value': name},
+      {'name': 'email', 'value': email},
+      {'name': 'phone', 'value': phone},
+      {'name': 'services_to_switch', 'value': 'Switched to $dealProvider - $dealPlan. Agreement URL: $agreementUrl'},
+    ];
+
+    try {
+      final response = await http.post(
+        submitUrl,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'fields': fields,
+          'context': {
+            'pageUri': 'www.savenest.app/concierge',
+            'pageName': 'Concierge Screen',
+          },
+        }),
+      );
+
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        return {
+          'success': true,
+          'message': 'Agreement successfully recorded in HubSpot.',
+        };
+      } else {
+        return {
+          'success': false,
+          'message': 'HubSpot Form Error: ${response.statusCode} - ${response.body}',
+        };
+      }
+    } catch (e) {
+      return {
+        'success': false,
+        'message': 'Network Error: $e',
+      };
+    }
+  }
 }

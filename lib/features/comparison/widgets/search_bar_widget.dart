@@ -28,12 +28,27 @@ class SearchBarWidget extends StatefulWidget {
 class _SearchBarWidgetState extends State<SearchBarWidget> {
   final TextEditingController _controller = TextEditingController();
   bool _isUploading = false;
+  final Map<String, String> _selectedFilterValues = {};
 
-  void _onFilterTap(String keyword) {
+  void _onFilterTap(String category, String keyword) {
     setState(() {
-      final currentText = _controller.text.trim();
-      final newText = currentText.isEmpty ? keyword : '$currentText $keyword';
-      _controller.text = newText;
+      String currentText = _controller.text;
+      
+      if (_selectedFilterValues.containsKey(category)) {
+        String oldKeyword = _selectedFilterValues[category]!;
+        if (currentText.contains(oldKeyword)) {
+          currentText = currentText.replaceFirst(oldKeyword, keyword);
+        } else {
+          currentText = currentText.trim();
+          currentText = currentText.isEmpty ? keyword : '$currentText $keyword';
+        }
+      } else {
+        currentText = currentText.trim();
+        currentText = currentText.isEmpty ? keyword : '$currentText $keyword';
+      }
+      
+      _selectedFilterValues[category] = keyword;
+      _controller.text = currentText;
       _controller.selection = TextSelection.fromPosition(TextPosition(offset: _controller.text.length));
     });
     widget.onChanged(_controller.text);
@@ -195,6 +210,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                           icon: const Icon(Icons.clear, size: 18),
                           onPressed: () {
                             _controller.clear();
+                            _selectedFilterValues.clear();
                             widget.onChanged('');
                             setState(() {});
                           },
@@ -255,7 +271,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                           .toList(),
                       onChanged: (value) {
                         if (value != null) {
-                          _onFilterTap(value);
+                          _onFilterTap(entry.key, value);
                         }
                       },
                     ),

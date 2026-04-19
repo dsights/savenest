@@ -109,11 +109,14 @@ final goRouter = GoRouter(
     ),
     GoRoute(
       path: '/concierge',
-      pageBuilder: (context, state) => _fadeTransition(
-        context,
-        state,
-        const ConciergeScreen(),
-      ),
+      pageBuilder: (context, state) {
+        final deal = state.extra as Deal?;
+        return _fadeTransition(
+          context,
+          state,
+          ConciergeScreen(deal: deal),
+        );
+      },
     ),
     GoRoute(
       path: '/guides/:state/:utility',

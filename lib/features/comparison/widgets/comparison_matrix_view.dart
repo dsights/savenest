@@ -81,7 +81,7 @@ class ComparisonMatrixView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: ElevatedButton(
-                      onPressed: () => context.push('/concierge'),
+                      onPressed: () => context.push('/concierge', extra: d),
                       style: ElevatedButton.styleFrom(backgroundColor: AppTheme.accentOrange, foregroundColor: Colors.white),
                       child: const Text('1-Click Switch', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
                     ),

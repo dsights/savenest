@@ -77,7 +77,15 @@ class UtilityCosts {
 
 // 4. Controller (StateNotifier)
 class SavingsController extends StateNotifier<UtilityCosts> {
-  SavingsController() : super(const UtilityCosts());
+  SavingsController() : super(const UtilityCosts(
+    nbn: 110.0,
+    electricity: 180.0,
+    gas: 140.0,
+    mobile: 60.0,
+    homeInsurance: 100.0,
+    carInsurance: 120.0,
+    healthInsurance: 300.0,
+  ));
 
   void updateCost(UtilityType type, double amount) {
     switch (type) {

@@ -168,7 +168,9 @@ class ComparisonController extends StateNotifier<ComparisonState> {
 
       return deal.providerName.toLowerCase().contains(cleanQuery) ||
              deal.planName.toLowerCase().contains(cleanQuery) ||
-             deal.keyFeatures.any((f) => f.toLowerCase().contains(cleanQuery));
+             deal.description.toLowerCase().contains(cleanQuery) ||
+             deal.keyFeatures.any((f) => f.toLowerCase().contains(cleanQuery)) ||
+             deal.details.values.any((v) => v.toLowerCase().contains(cleanQuery));
     }).toList();
 
     // Smart Sorting

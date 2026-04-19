@@ -20,9 +20,10 @@ class DealCard extends StatefulWidget {
   State<DealCard> createState() => _DealCardState();
 }
 
-class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin {
+class _DealCardState extends State<DealCard> with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
+  late AnimationController _pulseController;
   bool _isFront = true;
   bool _isHovered = false;
 
@@ -36,11 +37,16 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     _animation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOutBack),
     );
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    )..repeat(reverse: true);
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _pulseController.dispose();
     super.dispose();
   }
 
@@ -195,7 +201,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                                     const Icon(Icons.auto_awesome, color: Colors.white, size: 14),
                                     const SizedBox(width: 6),
                                     Text(
-                                      'SCORE: ${(widget.deal.rating * 20).toInt()}',
+                                      '${(widget.deal.rating * 20).toInt()}% MATCH',
                                       style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 11, color: Colors.white, letterSpacing: 0.5),
                                     ),
                                   ],
@@ -326,7 +332,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'VIEW DETAILS',
+                                _isHovered ? 'UNLOCK REWARD' : 'VIEW DETAILS',
                                 style: TextStyle(
                                   fontSize: 11, 
                                   color: _isHovered ? Colors.white : AppTheme.primaryBlue, 
@@ -336,7 +342,7 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
                               ),
                               const SizedBox(width: 6),
                               Icon(
-                                Icons.arrow_forward_rounded, 
+                                _isHovered ? Icons.redeem : Icons.arrow_forward_rounded, 
                                 size: 14, 
                                 color: _isHovered ? Colors.white : AppTheme.primaryBlue,
                               ),
@@ -597,28 +603,48 @@ class _DealCardState extends State<DealCard> with SingleTickerProviderStateMixin
     return Positioned(
       top: 0,
       right: 24,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        decoration: BoxDecoration(
-          color: bg,
-          borderRadius: const BorderRadius.vertical(bottom: Radius.circular(12)),
-          boxShadow: [
-            BoxShadow(
-              color: bg.withOpacity(0.4),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+      child: AnimatedBuilder(
+        animation: _pulseController,
+        builder: (context, child) {
+          final isBest = widget.isBestValue;
+          final scale = isBest ? 1.0 + (_pulseController.value * 0.05) : 1.0;
+          return Transform.scale(
+            scale: scale,
+            alignment: Alignment.topCenter,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: bg,
+                borderRadius: const BorderRadius.vertical(bottom: Radius.circular(12)),
+                boxShadow: [
+                  BoxShadow(
+                    color: bg.withOpacity(isBest ? 0.4 + (_pulseController.value * 0.3) : 0.4),
+                    blurRadius: isBest ? 10 + (_pulseController.value * 8) : 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (isBest) ...[
+                    const Icon(Icons.local_fire_department, color: Colors.white, size: 14),
+                    const SizedBox(width: 4),
+                  ],
+                  Text(
+                    text,
+                    style: TextStyle(
+                      color: fg,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 11,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: fg,
-            fontWeight: FontWeight.w900,
-            fontSize: 11,
-            letterSpacing: 1.2,
-          ),
-        ),
+          );
+        }
       ),
     );
   }

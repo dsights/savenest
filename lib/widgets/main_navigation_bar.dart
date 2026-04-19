@@ -65,6 +65,8 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               if (MediaQuery.of(context).size.width > 800)
                 Row(
                   children: [
+                    _navLink(context, 'Dashboard', '/dashboard'),
+                    const SizedBox(width: 16),
                     _navLink(context, 'Blog', '/blog'),
                     const SizedBox(width: 16),
                     ElevatedButton(

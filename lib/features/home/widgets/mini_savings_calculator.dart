@@ -30,6 +30,45 @@ class MiniSavingsCalculator extends ConsumerWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          const SizedBox(height: 8),
+          
+          // Scenarios
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                _scenarioChip(
+                  label: 'Light',
+                  onTap: () {
+                    controller.updateCost(UtilityType.electricity, 80);
+                    controller.updateCost(UtilityType.gas, 50);
+                    controller.updateCost(UtilityType.nbn, 60);
+                    controller.updateCost(UtilityType.mobile, 20);
+                  },
+                ),
+                const SizedBox(width: 6),
+                _scenarioChip(
+                  label: 'Average',
+                  onTap: () {
+                    controller.updateCost(UtilityType.electricity, 150);
+                    controller.updateCost(UtilityType.gas, 120);
+                    controller.updateCost(UtilityType.nbn, 90);
+                    controller.updateCost(UtilityType.mobile, 40);
+                  },
+                ),
+                const SizedBox(width: 6),
+                _scenarioChip(
+                  label: 'Heavy',
+                  onTap: () {
+                    controller.updateCost(UtilityType.electricity, 300);
+                    controller.updateCost(UtilityType.gas, 200);
+                    controller.updateCost(UtilityType.nbn, 120);
+                    controller.updateCost(UtilityType.mobile, 80);
+                  },
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: 10),
           
           _miniSlider(
@@ -149,6 +188,29 @@ class MiniSavingsCalculator extends ConsumerWidget {
         ),
         const SizedBox(height: 4),
       ],
+    );
+  }
+
+  Widget _scenarioChip({required String label, required VoidCallback onTap}) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        decoration: BoxDecoration(
+          color: AppTheme.primaryBlue.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.3)),
+        ),
+        child: Text(
+          label,
+          style: const TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.w600,
+            color: AppTheme.primaryBlue,
+          ),
+        ),
+      ),
     );
   }
 }

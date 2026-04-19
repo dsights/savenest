@@ -9,6 +9,7 @@ import 'comparison_model.dart';
 import 'comparison_provider.dart';
 import 'widgets/deal_card.dart';
 import 'widgets/search_bar_widget.dart';
+import 'widgets/comparison_matrix_view.dart';
 import 'credit_card_model.dart';
 import 'data/credit_card_repository.dart';
 import 'widgets/credit_card_table.dart';
@@ -30,6 +31,7 @@ class ComparisonScreen extends ConsumerStatefulWidget {
 
 class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
   Timer? _popupTimer;
+  bool _isMatrixView = false;
 
   @override
   void initState() {
@@ -133,13 +135,58 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       case ProductCategory.gas:
         return 'Gas';
       case ProductCategory.internet:
-        return 'Internet';
+        return 'Internet & NBN';
       case ProductCategory.mobile:
         return 'Mobile';
       case ProductCategory.insurance:
         return 'Insurance';
+      case ProductCategory.solar:
+        return 'Solar';
       default:
         return 'Deals';
+    }
+  }
+
+  Map<String, List<String>> _getFiltersForCategory(ProductCategory category) {
+    switch (category) {
+      case ProductCategory.internet:
+        return {
+          'Speed Tiers': ['NBN 25', 'NBN 50', 'NBN 100', 'NBN 250', 'NBN 1000'],
+          'Contract Length': ['No Lock-in', '12 Months', '24 Months'],
+          'Discounts': ['New Customer', 'Bundle Discount'],
+          'Best For': ['Budget', 'Family', 'Gaming', 'Streaming'],
+          'Deal Type': ['Cheap', 'Balanced', 'Premium'],
+        };
+      case ProductCategory.mobile:
+        return {
+          'Network Provider': ['Telstra', 'Optus', 'Vodafone'],
+          'Contract Length': ['Prepaid', 'Postpaid', '12 Months'],
+          'Best For': ['Budget', 'Value', 'Heavy Use'],
+          'Deal Type': ['Cheap', 'Balanced', 'Premium'],
+        };
+      case ProductCategory.electricity:
+      case ProductCategory.gas:
+        return {
+          'Green Energy %': ['0%', '10%', '20%', '100%'],
+          'Exit Fees': ['No Exit Fees', 'Standard'],
+          'Payment Methods': ['Direct Debit', 'Credit Card', 'BPay'],
+          'Discounts': ['Pay On Time', 'Guaranteed'],
+          'Best For': ['Budget', 'Everyday', 'Solar', 'Green'],
+          'Deal Type': ['Cheap', 'Value', 'Premium'],
+        };
+      case ProductCategory.solar:
+        return {
+          'Solar Size (kW)': ['6.6', '10', '13'],
+          'Battery Size (kWh)': ['5', '10', '13.5'],
+          'Deal Type': ['Cheap', 'Value', 'Premium'],
+        };
+      case ProductCategory.insurance:
+        return {
+          'Insurance Type': ['Car', 'Home', 'Pet', 'Health'],
+          'Provider': ['AAMI', 'Bupa', 'Allianz', 'NRMA', 'Youi'],
+        };
+      default:
+        return {};
     }
   }
 
@@ -150,6 +197,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     final controller = ref.read(comparisonProvider.notifier);
     final selectedCat = state.selectedCategory ?? widget.initialCategory;
     final categoryTitle = _getCategoryTitle(selectedCat);
+    final categoryFilters = _getFiltersForCategory(selectedCat);
 
     // SEO Optimization
     if (kIsWeb) {
@@ -162,27 +210,14 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
       MetaSEO().ogDescription(ogDescription: description);
     }
 
-    String searchHint;
-    List<String> suggestions = ['cheap', 'best', 'nsw', 'vic', 'qld'];
-    
-    switch (selectedCat) {
-      case ProductCategory.electricity:
-      case ProductCategory.gas:
-        searchHint = 'Try "nsw cheap", "solar", "Origin"...';
-        suggestions.addAll(['solar', 'green', 'sa', 'wa']);
-        break;
-      case ProductCategory.internet:
-      case ProductCategory.mobile:
-        searchHint = 'Try "fast unlimited", "nbn 100", "Telstra"...';
-        suggestions.addAll(['fast', 'unlimited', '5g', 'nbn 100']);
-        break;
-      case ProductCategory.creditCards:
-        searchHint = 'Try "no fee", "Qantas", "business"...';
-        suggestions = ['no fee', 'rewards', 'qantas', 'business', 'low rate'];
-        break;
-      default:
-        searchHint = 'Search providers, features...';
+    String searchHint = 'Search providers, features...';
+    if (selectedCat == ProductCategory.internet) {
+      searchHint = 'Try "fast unlimited", "nbn 100", "Telstra"...';
+    } else if (selectedCat == ProductCategory.creditCards) {
+      searchHint = 'Try "no fee", "Qantas", "business"...';
     }
+    
+    final bool showStateSelector = selectedCat == ProductCategory.electricity || selectedCat == ProductCategory.gas;
 
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
@@ -223,14 +258,49 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                               ),
                             const SizedBox(height: 32),
                             ConstrainedBox(
-                              constraints: const BoxConstraints(maxWidth: 600),
+                              constraints: const BoxConstraints(maxWidth: 800),
                               child: SearchBarWidget(
                                 onChanged: (value) => controller.search(value),
-                                onStateChanged: (stateCode) => controller.updateStateFilter(stateCode),
+                                onStateChanged: showStateSelector
+                                    ? (stateCode) => controller.updateStateFilter(stateCode)
+                                    : null,
                                 selectedState: state.selectedState,
                                 hintText: searchHint,
-                                suggestions: suggestions,
+                                filters: categoryFilters,
                               ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                SliverToBoxAdapter(
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 800),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: AppTheme.vibrantEmerald.withOpacity(0.05),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: AppTheme.vibrantEmerald.withOpacity(0.2)),
+                        ),
+                        child: const Column(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.verified_user, color: AppTheme.vibrantEmerald, size: 20),
+                                SizedBox(width: 8),
+                                Text('How we calculate your savings', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.deepNavy)),
+                              ],
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Our rankings are based on a weighted average of price (60%), features (20%), and customer satisfaction scores (20%). We update our database every 2 hours to ensure you get the most accurate rates.',
+                              style: TextStyle(fontSize: 13, color: AppTheme.slate600),
                             ),
                           ],
                         ),
@@ -279,33 +349,53 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                       child: Center(
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 1400),
-                          child: LayoutBuilder(
-                            builder: (context, constraints) {
-                              final crossAxisCount = constraints.maxWidth > 1200
-                                  ? 4
-                                  : constraints.maxWidth > 800
-                                      ? 3
-                                      : constraints.maxWidth > 600
-                                          ? 2
-                                          : 1;
-                              
-                              return GridView.builder(
-                                shrinkWrap: true,
-                                physics: const NeverScrollableScrollPhysics(),
-                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: crossAxisCount,
-                                  childAspectRatio: 1.0, 
-                                  mainAxisSpacing: 24,
-                                  crossAxisSpacing: 24,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  const Text('Matrix View', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.deepNavy)),
+                                  Switch(
+                                    value: _isMatrixView,
+                                    onChanged: (val) => setState(() => _isMatrixView = val),
+                                    activeColor: AppTheme.vibrantEmerald,
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+                              if (_isMatrixView)
+                                ComparisonMatrixView(deals: state.deals)
+                              else
+                                LayoutBuilder(
+                                  builder: (context, constraints) {
+                                    final crossAxisCount = constraints.maxWidth > 1200
+                                        ? 4
+                                        : constraints.maxWidth > 800
+                                            ? 3
+                                            : constraints.maxWidth > 600
+                                                ? 2
+                                                : 1;
+                                    
+                                    return GridView.builder(
+                                      shrinkWrap: true,
+                                      physics: const NeverScrollableScrollPhysics(),
+                                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: crossAxisCount,
+                                        childAspectRatio: 1.0, 
+                                        mainAxisSpacing: 24,
+                                        crossAxisSpacing: 24,
+                                      ),
+                                      itemCount: state.deals.length,
+                                      itemBuilder: (context, index) {
+                                        final deal = state.deals[index];
+                                        final isBest = deal == state.bestValueDeal;
+                                        return DealCard(deal: deal, isBestValue: isBest);
+                                      },
+                                    );
+                                  },
                                 ),
-                                itemCount: state.deals.length,
-                                itemBuilder: (context, index) {
-                                  final deal = state.deals[index];
-                                  final isBest = deal == state.bestValueDeal;
-                                  return DealCard(deal: deal, isBestValue: isBest);
-                                },
-                              );
-                            },
+                            ],
                           ),
                         ),
                       ),

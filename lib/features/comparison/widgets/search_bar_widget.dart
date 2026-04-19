@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
 import '../../../widgets/glass_container.dart';
 import '../../../theme/app_theme.dart';
 
@@ -24,6 +27,7 @@ class SearchBarWidget extends StatefulWidget {
 
 class _SearchBarWidgetState extends State<SearchBarWidget> {
   final TextEditingController _controller = TextEditingController();
+  bool _isUploading = false;
 
   void _onFilterTap(String keyword) {
     setState(() {
@@ -33,6 +37,100 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       _controller.selection = TextSelection.fromPosition(TextPosition(offset: _controller.text.length));
     });
     widget.onChanged(_controller.text);
+  }
+
+  Future<void> _pickAndUploadBill() async {
+    final picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    
+    if (image == null) return;
+
+    setState(() { _isUploading = true; });
+
+    try {
+      // Basic fallback to proxy API path or localhost depending on environment, assuming proxy API path is safest for web.
+      // But for prototype running locally, we can try relative path /ocr or localhost.
+      final uri = Uri.parse('/ocr'); 
+      final request = http.MultipartRequest('POST', uri);
+      
+      // For web, readAsBytes is preferred over path. image_picker provides readAsBytes.
+      final bytes = await image.readAsBytes();
+      request.files.add(http.MultipartFile.fromBytes('file', bytes, filename: image.name));
+
+      final response = await request.send();
+      final responseBody = await response.stream.bytesToString();
+      
+      if (response.statusCode == 200) {
+        final data = jsonDecode(responseBody);
+        if (data['success'] == true) {
+           _showOcrResult(data['data']);
+        } else {
+           _showError('OCR returned failure');
+        }
+      } else {
+        _showError('Failed to process bill. Status: ${response.statusCode}');
+      }
+    } catch (e) {
+      // Fallback if relative URL fails (e.g. not on the same server)
+      try {
+        final uri = Uri.parse('http://127.0.0.1:8000/ocr');
+        final request = http.MultipartRequest('POST', uri);
+        final bytes = await image.readAsBytes();
+        request.files.add(http.MultipartFile.fromBytes('file', bytes, filename: image.name));
+
+        final response = await request.send();
+        final responseBody = await response.stream.bytesToString();
+        
+        if (response.statusCode == 200) {
+          final data = jsonDecode(responseBody);
+          if (data['success'] == true) {
+             _showOcrResult(data['data']);
+          } else {
+             _showError('OCR returned failure');
+          }
+        } else {
+          _showError('Failed to process bill. Status: ${response.statusCode}');
+        }
+      } catch (innerE) {
+        _showError('Error uploading bill: $innerE');
+      }
+    } finally {
+      if (mounted) setState(() { _isUploading = false; });
+    }
+  }
+
+  void _showError(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message), backgroundColor: Colors.red));
+  }
+
+  void _showOcrResult(dynamic data) {
+    if (!mounted) return;
+    
+    // Attempt to format or stringify data beautifully
+    String displayText = '';
+    if (data is Map) {
+      data.forEach((key, value) {
+        displayText += '$key: $value\n';
+      });
+    } else {
+      displayText = data.toString();
+    }
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Smart Scan Result', style: TextStyle(color: AppTheme.vibrantEmerald, fontWeight: FontWeight.bold)),
+        content: Text('Extracted Data:\n\n$displayText\n\nWe will use this data to find your best plan soon!', style: const TextStyle(fontSize: 14)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.deepNavy)),
+          )
+        ]
+      )
+    );
   }
 
   @override
@@ -106,10 +204,35 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                 ),
               ),
             ),
+            const SizedBox(width: 12),
+            Container(
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [AppTheme.vibrantEmerald, Color(0xFF00C853)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppTheme.vibrantEmerald.withOpacity(0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: IconButton(
+                icon: _isUploading 
+                  ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+                  : const Icon(Icons.document_scanner, color: Colors.white),
+                tooltip: 'Upload Bill for AI Match',
+                onPressed: _isUploading ? null : _pickAndUploadBill,
+              ),
+            ),
           ],
         ),
-        if (widget.filters != null && widget.filters!.isNotEmpty) ...[
-          const SizedBox(height: 16),
+        const SizedBox(height: 12),
+        if (widget.filters != null && widget.filters!.isNotEmpty)
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -141,7 +264,6 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
               }).toList(),
             ),
           ),
-        ],
       ],
     );
   }

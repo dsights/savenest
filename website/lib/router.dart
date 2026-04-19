@@ -13,6 +13,7 @@ import 'package:savenest/features/comparison/deal_details_screen.dart';
 import 'package:savenest/features/comparison/provider_details_screen.dart';
 import 'package:savenest/features/comparison/provider_directory_screen.dart';
 import 'package:savenest/features/comparison/state_guide_screen.dart' hide StringExtension;
+import 'package:savenest/features/comparison/concierge_screen.dart';
 import 'package:savenest/features/legal/disclaimer_screen.dart';
 import 'package:savenest/features/legal/privacy_policy_screen.dart';
 import 'package:savenest/features/legal/terms_of_service_screen.dart';
@@ -21,6 +22,7 @@ import 'package:savenest/features/misc/moving_house_screen.dart';
 import 'package:savenest/features/partners/advertise_with_us_screen.dart';
 import 'package:savenest/features/savings/savings_screen.dart';
 import 'package:savenest/features/savings/referral_screen.dart';
+import 'package:savenest/features/dashboard/savings_dashboard_screen.dart';
 import 'package:savenest/features/registration/registration_screen.dart';
 import 'package:savenest/features/landing/audit_landing_screen.dart';
 
@@ -68,6 +70,14 @@ final goRouter = GoRouter(
       ),
     ),
     GoRoute(
+      path: '/dashboard',
+      pageBuilder: (context, state) => _fadeTransition(
+        context, 
+        state, 
+        const SavingsDashboardScreen(),
+      ),
+    ),
+    GoRoute(
       path: '/deal/:dealId',
       pageBuilder: (context, state) {
         final dealId = state.pathParameters['dealId'];
@@ -95,6 +105,14 @@ final goRouter = GoRouter(
         context,
         state,
         const ProviderDirectoryScreen(),
+      ),
+    ),
+    GoRoute(
+      path: '/concierge',
+      pageBuilder: (context, state) => _fadeTransition(
+        context,
+        state,
+        const ConciergeScreen(),
       ),
     ),
     GoRoute(

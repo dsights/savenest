@@ -62,6 +62,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
             const HeroCarouselSection(),
             const PartnerLogoSlider(),
             const AnimatedValueProps(),
+            _buildHighIntentBanner(context),
             _buildBlogSection(context),
             _buildTestimonialsSection(context),
             const ModernFooter(),
@@ -155,6 +156,77 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                 error: (err, stack) => const Text('Failed to load insights', style: TextStyle(color: Colors.black54)),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHighIntentBanner(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.orange.shade600, Colors.orange.shade800],
+        ),
+      ),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 32,
+              runSpacing: 16,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Text(
+                      'Moving House?',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Set up all your utilities in one place — electricity, gas, internet, and more.',
+                      style: TextStyle(color: Colors.white70, fontSize: 15),
+                    ),
+                  ],
+                ),
+                Wrap(
+                  spacing: 12,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: () => context.push('/energy/moving-house'),
+                      icon: const Icon(Icons.home_outlined, size: 18),
+                      label: const Text('Set Up My New Home'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.orange.shade800,
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    OutlinedButton(
+                      onPressed: () => context.push('/deals/electricity'),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        side: const BorderSide(color: Colors.white54),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      ),
+                      child: const Text('Compare Energy Plans'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

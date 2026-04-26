@@ -176,6 +176,9 @@ class StateGuideScreen extends ConsumerWidget {
                             rebates,
                             style: const TextStyle(color: AppTheme.slate600, fontSize: 18, height: 1.6),
                           ),
+                          const SizedBox(height: 40),
+                          _buildSection('Compare by Suburb in $stateName'),
+                          _buildSuburbLinks(context, stateCode, utility),
                           const SizedBox(height: 80),
                         ],
                       ),
@@ -201,6 +204,101 @@ class StateGuideScreen extends ConsumerWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
+    );
+  }
+
+  static const _stateSuburbs = <String, List<Map<String, String>>>{
+    'nsw': [
+      {'slug': 'parramatta', 'name': 'Parramatta'},
+      {'slug': 'bondi', 'name': 'Bondi'},
+      {'slug': 'chatswood', 'name': 'Chatswood'},
+      {'slug': 'newcastle', 'name': 'Newcastle'},
+      {'slug': 'wollongong', 'name': 'Wollongong'},
+      {'slug': 'penrith', 'name': 'Penrith'},
+      {'slug': 'blacktown', 'name': 'Blacktown'},
+      {'slug': 'liverpool', 'name': 'Liverpool'},
+    ],
+    'vic': [
+      {'slug': 'brunswick', 'name': 'Brunswick'},
+      {'slug': 'richmond', 'name': 'Richmond'},
+      {'slug': 'fitzroy', 'name': 'Fitzroy'},
+      {'slug': 'frankston', 'name': 'Frankston'},
+      {'slug': 'geelong', 'name': 'Geelong'},
+      {'slug': 'ballarat', 'name': 'Ballarat'},
+      {'slug': 'dandenong', 'name': 'Dandenong'},
+      {'slug': 'doncaster', 'name': 'Doncaster'},
+    ],
+    'qld': [
+      {'slug': 'newstead', 'name': 'Newstead'},
+      {'slug': 'fortitude-valley', 'name': 'Fortitude Valley'},
+      {'slug': 'south-brisbane', 'name': 'South Brisbane'},
+      {'slug': 'ipswich', 'name': 'Ipswich'},
+      {'slug': 'gold-coast', 'name': 'Gold Coast'},
+      {'slug': 'sunshine-coast', 'name': 'Sunshine Coast'},
+      {'slug': 'toowoomba', 'name': 'Toowoomba'},
+      {'slug': 'cairns', 'name': 'Cairns'},
+    ],
+    'sa': [
+      {'slug': 'norwood', 'name': 'Norwood'},
+      {'slug': 'glenelg', 'name': 'Glenelg'},
+      {'slug': 'mount-gambier', 'name': 'Mount Gambier'},
+      {'slug': 'port-adelaide', 'name': 'Port Adelaide'},
+    ],
+    'wa': [
+      {'slug': 'subiaco', 'name': 'Subiaco'},
+      {'slug': 'fremantle', 'name': 'Fremantle'},
+      {'slug': 'joondalup', 'name': 'Joondalup'},
+      {'slug': 'mandurah', 'name': 'Mandurah'},
+    ],
+    'act': [
+      {'slug': 'kingston', 'name': 'Kingston'},
+      {'slug': 'belconnen', 'name': 'Belconnen'},
+      {'slug': 'tuggeranong', 'name': 'Tuggeranong'},
+      {'slug': 'gungahlin', 'name': 'Gungahlin'},
+    ],
+  };
+
+  Widget _buildSuburbLinks(BuildContext context, String stateCode, String utility) {
+    final suburbs = _stateSuburbs[stateCode.toLowerCase()] ?? [];
+    if (suburbs.isEmpty) {
+      return const Text(
+        'Suburb-level guides coming soon.',
+        style: TextStyle(color: AppTheme.slate600, fontSize: 16),
+      );
+    }
+    return Wrap(
+      spacing: 10,
+      runSpacing: 10,
+      children: suburbs.map((s) {
+        return InkWell(
+          onTap: () => context.go('/suburb/${stateCode.toLowerCase()}/${s['slug']}/$utility'),
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.3)),
+              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 6)],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.location_on_outlined, size: 14, color: AppTheme.primaryBlue),
+                const SizedBox(width: 6),
+                Text(
+                  '${s['name']} $utility',
+                  style: const TextStyle(
+                    color: AppTheme.primaryBlue,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
 

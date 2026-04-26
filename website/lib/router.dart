@@ -23,6 +23,7 @@ import 'package:savenest/features/partners/advertise_with_us_screen.dart';
 import 'package:savenest/features/savings/savings_screen.dart';
 import 'package:savenest/features/savings/referral_screen.dart';
 import 'package:savenest/features/dashboard/savings_dashboard_screen.dart';
+import 'package:savenest/features/comparison/suburb_guide_screen.dart';
 import 'package:savenest/features/registration/registration_screen.dart';
 import 'package:savenest/features/landing/audit_landing_screen.dart';
 
@@ -289,6 +290,52 @@ final goRouter = GoRouter(
         state,
         const MovingHouseScreen(),
       ),
+    ),
+    GoRoute(
+      path: '/suburb/:suburb/:utility',
+      pageBuilder: (context, state) {
+        final suburb = state.pathParameters['suburb']!;
+        final utility = state.pathParameters['utility']!;
+        return _fadeTransition(
+          context,
+          state,
+          SuburbGuideScreen(suburb: suburb, utility: utility),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/suburb/:suburb',
+      pageBuilder: (context, state) {
+        final suburb = state.pathParameters['suburb']!;
+        return _fadeTransition(
+          context,
+          state,
+          SuburbGuideScreen(suburb: suburb, utility: 'electricity'),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/suburb/:stateCode/:suburb/:utility',
+      pageBuilder: (context, state) {
+        final suburb = state.pathParameters['suburb']!;
+        final utility = state.pathParameters['utility']!;
+        return _fadeTransition(
+          context,
+          state,
+          SuburbGuideScreen(suburb: suburb, utility: utility),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/suburb/:stateCode/:suburb',
+      pageBuilder: (context, state) {
+        final suburb = state.pathParameters['suburb']!;
+        return _fadeTransition(
+          context,
+          state,
+          SuburbGuideScreen(suburb: suburb, utility: 'electricity'),
+        );
+      },
     ),
   ],
 );

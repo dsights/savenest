@@ -1,0 +1,219 @@
+{
+  "mission": {
+    "target_revenue": 1000000,
+    "start_date": "2026-04-27",
+    "end_date": "2026-07-26",
+    "total_days": 90,
+    "currency": "AUD"
+  },
+  "current_metrics": {
+    "revenue": 0,
+    "monthly_run_rate": 0,
+    "organic_sessions_monthly": 0,
+    "affiliate_clicks_monthly": 0,
+    "conversion_rate": 0.025,
+    "avg_commission_per_switch": 85,
+    "blog_posts": 20,
+    "indexed_pages": 939,
+    "suburb_pages": 11,
+    "provider_pages": 50,
+    "deal_pages": 164,
+    "state_guide_pages": 21,
+    "backlinks": 0,
+    "domain_authority": 0,
+    "email_subscribers": 0,
+    "social_followers": 0,
+    "google_search_console_clicks_weekly": 0,
+    "google_search_console_impressions_weekly": 0,
+    "top_converting_page": "none",
+    "top_traffic_page": "none"
+  },
+  "competitors": [
+    {
+      "name": "Finder Energy",
+      "url": "finder.com.au/energy",
+      "domain_authority": 78,
+      "estimated_monthly_traffic": 450000,
+      "content_pages": 2800,
+      "strengths": ["Brand authority", "Cross-category trust", "Large email list", "National PR coverage"],
+      "weaknesses": ["Generic UX not energy-specific", "No suburb-level pages", "No switching concierge", "Slow page load"],
+      "keyword_gaps": ["cheapest electricity [suburb]", "switch electricity concierge", "electricity bill audit"],
+      "threat_level": "HIGH"
+    },
+    {
+      "name": "GoSwitch",
+      "url": "goswitch.com.au",
+      "domain_authority": 42,
+      "estimated_monthly_traffic": 28000,
+      "content_pages": 180,
+      "strengths": ["Energy-specific", "Clean UX", "Good mobile experience"],
+      "weaknesses": ["Thin content", "No blog", "Limited suburb coverage", "No educational content"],
+      "keyword_gaps": ["how to switch electricity australia", "energy comparison guide", "time of use explained"],
+      "threat_level": "MEDIUM"
+    },
+    {
+      "name": "WATTever",
+      "url": "wattever.com.au",
+      "domain_authority": 38,
+      "estimated_monthly_traffic": 22000,
+      "content_pages": 340,
+      "strengths": ["Deep solar focus", "Data visualisation", "Tech-savvy audience"],
+      "weaknesses": ["Niche solar focus only", "No gas/internet comparison", "Complex UI", "Low brand awareness"],
+      "keyword_gaps": ["general energy comparison", "electricity provider review", "moving house electricity"],
+      "threat_level": "LOW"
+    },
+    {
+      "name": "Energy Made Easy (Government)",
+      "url": "energymadeeasy.gov.au",
+      "domain_authority": 65,
+      "estimated_monthly_traffic": 85000,
+      "content_pages": 60,
+      "strengths": ["Government trust", "Neutral comparison", "High domain authority"],
+      "weaknesses": ["No affiliate monetisation (not a competitor for revenue)", "Outdated UX", "No content/blog", "No suburb pages", "No concierge service"],
+      "keyword_gaps": ["energy comparison recommendation", "best energy provider", "concierge switching service"],
+      "threat_level": "LOW"
+    },
+    {
+      "name": "Canstar Blue Energy",
+      "url": "canstarblue.com.au/energy",
+      "domain_authority": 70,
+      "estimated_monthly_traffic": 180000,
+      "content_pages": 950,
+      "strengths": ["Star rating system builds trust", "Strong editorial content", "High DA"],
+      "weaknesses": ["Rating methodology opaque", "No real-time plan comparison", "No switching service", "Cluttered UI"],
+      "keyword_gaps": ["live electricity price comparison", "real-time energy deals", "instant switch service"],
+      "threat_level": "HIGH"
+    }
+  ],
+  "market_signals": [
+    {
+      "signal": "NSW DMO price review due July 2026",
+      "impact": "HIGH",
+      "action": "Publish NSW DMO preview content now to rank before the event — capture search spike",
+      "window_days": 60
+    },
+    {
+      "signal": "VIC Winter Energy Credit distribution July 2026",
+      "impact": "HIGH",
+      "action": "Create 'VIC Winter Energy Credit 2026 — Are You Eligible?' content to capture search spike",
+      "window_days": 60
+    },
+    {
+      "signal": "NBN Fibre Upgrade free rollout July 2026",
+      "impact": "MEDIUM",
+      "action": "Internet comparison upsell opportunity — bundle NBN content with electricity content for session depth",
+      "window_days": 90
+    },
+    {
+      "signal": "End of Financial Year (EOFY) June 30",
+      "impact": "HIGH",
+      "action": "EOFY energy review content — 'check your plan before financial year ends' angle, high urgency triggers",
+      "window_days": 63
+    },
+    {
+      "signal": "Australian federal election campaign energy policy",
+      "impact": "MEDIUM",
+      "action": "News-jacking opportunity — publish energy policy comparison content, captures newsworthy search traffic",
+      "window_days": 45
+    }
+  ],
+  "growth_levers": [
+    {
+      "id": "seo_content",
+      "name": "SEO Content Velocity",
+      "status": "ACTIVE",
+      "current_output": "5 posts/day",
+      "target_output": "5 posts/day",
+      "revenue_impact": "DIRECT",
+      "time_to_revenue": "14-30 days",
+      "description": "Daily SEO blog posts and comparison pages targeting high-intent keywords",
+      "unlocked": true
+    },
+    {
+      "id": "suburb_pages",
+      "name": "Suburb Programmatic SEO",
+      "status": "LAUNCHED",
+      "current_output": "11 pages live",
+      "target_output": "500 pages",
+      "revenue_impact": "HIGH",
+      "time_to_revenue": "21-45 days",
+      "description": "Suburb-level electricity comparison pages — scales to every AU suburb (15,000+ target)",
+      "unlocked": true
+    },
+    {
+      "id": "email_capture",
+      "name": "Email List Building",
+      "status": "INACTIVE",
+      "current_output": "0 subscribers",
+      "target_output": "10,000 subscribers",
+      "revenue_impact": "MEDIUM",
+      "time_to_revenue": "30-60 days",
+      "description": "Lead magnet + email nurture sequence converts traffic into recurring affiliate revenue",
+      "unlocked": false
+    },
+    {
+      "id": "backlink_building",
+      "name": "Authority Link Building",
+      "status": "INACTIVE",
+      "current_output": "0 backlinks",
+      "target_output": "200+ quality backlinks",
+      "revenue_impact": "HIGH",
+      "time_to_revenue": "30-60 days (ranking boost)",
+      "description": "Guest posts, data journalism, PR outreach to energy/consumer finance publications",
+      "unlocked": false
+    },
+    {
+      "id": "conversion_rate",
+      "name": "CRO / Funnel Optimization",
+      "status": "ACTIVE",
+      "current_output": "Moving House banner added",
+      "target_output": "2.5% conversion rate",
+      "revenue_impact": "DIRECT",
+      "time_to_revenue": "0-7 days",
+      "description": "A/B tests, trust signals, CTA improvements — directly multiplies revenue per visit",
+      "unlocked": true
+    },
+    {
+      "id": "affiliate_expansion",
+      "name": "Affiliate Partner Expansion",
+      "status": "PARTIAL",
+      "current_output": "3-5 active partners",
+      "target_output": "20+ partners",
+      "revenue_impact": "HIGH",
+      "time_to_revenue": "7-14 days once live",
+      "description": "Add Amber Electric, Powershop, Simply Energy, Alinta affiliate programs",
+      "unlocked": true
+    },
+    {
+      "id": "concierge_conversion",
+      "name": "Concierge/Phone Lead Capture",
+      "status": "BUILT_NOT_PROMOTED",
+      "current_output": "0 leads",
+      "target_output": "50 leads/day",
+      "revenue_impact": "VERY_HIGH",
+      "time_to_revenue": "0-3 days",
+      "description": "Concierge screen exists but gets no traffic — high-value leads worth $200-500 per conversion",
+      "unlocked": true
+    },
+    {
+      "id": "data_journalism",
+      "name": "Data Journalism / PR",
+      "status": "INACTIVE",
+      "current_output": "0 mentions",
+      "target_output": "10 media mentions",
+      "revenue_impact": "HIGH",
+      "time_to_revenue": "21-45 days",
+      "description": "Original research (energy price data, state comparison reports) earns backlinks and brand mentions",
+      "unlocked": false
+    }
+  ],
+  "revenue_model": {
+    "electricity_switch_commission": 85,
+    "gas_switch_commission": 45,
+    "internet_switch_commission": 55,
+    "mobile_switch_commission": 35,
+    "insurance_commission": 120,
+    "concierge_premium_commission": 250,
+    "required_switches_for_target": 11765
+  }
+}

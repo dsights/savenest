@@ -24,6 +24,7 @@ import 'package:savenest/features/savings/savings_screen.dart';
 import 'package:savenest/features/savings/referral_screen.dart';
 import 'package:savenest/features/dashboard/savings_dashboard_screen.dart';
 import 'package:savenest/features/comparison/suburb_guide_screen.dart';
+import 'package:savenest/features/ceo/ceo_agent_screen.dart';
 import 'package:savenest/features/registration/registration_screen.dart';
 import 'package:savenest/features/landing/audit_landing_screen.dart';
 
@@ -336,6 +337,14 @@ final goRouter = GoRouter(
           SuburbGuideScreen(suburb: suburb, utility: 'electricity'),
         );
       },
+    ),
+    GoRoute(
+      path: '/ceo',
+      pageBuilder: (context, state) => _fadeTransition(
+        context,
+        state,
+        const CeoAgentScreen(),
+      ),
     ),
   ],
 );

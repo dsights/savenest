@@ -65,6 +65,8 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
                     const SizedBox(width: 16),
                     _navLink(context, 'Blog', '/blog'),
                     const SizedBox(width: 16),
+                    _ceoNavLink(context),
+                    const SizedBox(width: 16),
                     ElevatedButton(
                       onPressed: () => context.go('/savings'),
                       style: ElevatedButton.styleFrom(
@@ -135,6 +137,36 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
             fontWeight: FontWeight.bold,
             fontSize: 15,
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _ceoNavLink(BuildContext context) {
+    return InkWell(
+      onTap: () => context.go('/ceo'),
+      borderRadius: BorderRadius.circular(8),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+        decoration: BoxDecoration(
+          color: const Color(0xFF050F1C),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.psychology, color: AppTheme.vibrantEmerald, size: 15),
+            SizedBox(width: 6),
+            Text(
+              'CEO',
+              style: TextStyle(
+                color: AppTheme.vibrantEmerald,
+                fontWeight: FontWeight.bold,
+                fontSize: 13,
+                letterSpacing: 0.5,
+              ),
+            ),
+          ],
         ),
       ),
     );

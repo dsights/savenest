@@ -250,6 +250,35 @@ elseif (preg_match('/^provider\/([^\/]+)$/', $path, $m)) {
     $pageSchema = json_encode(['@context'=>'https://schema.org','@type'=>'Organization','name'=>$name,'url'=>"https://savenest.au/provider/$slug",'description'=>"Compare $name energy plans in Australia."]);
 }
 
+// PROVIDER DIRECTORY
+elseif ($path === 'providers') {
+    $metaTitle = "All Energy Providers Australia 2026 | Compare Plans | SaveNest";
+    $metaDescription = "Browse all electricity, gas, and internet providers available in Australia. Compare plans from AGL, Origin, EnergyAustralia, Red Energy, Alinta, and 50+ more.";
+    $metaUrl = "https://savenest.au/providers";
+    $crawlerHtml = "<h1>All Energy Providers in Australia</h1>
+<p>Compare electricity, gas, NBN, and mobile plans from Australia's leading utility providers. SaveNest gives you independent, unbiased comparisons across 50+ providers.</p>
+<h2>Major Electricity & Gas Providers</h2>
+<ul>
+<li><a href='/provider/agl'>AGL Energy</a> — Australia's largest integrated energy company (~4 million customers)</li>
+<li><a href='/provider/origin-energy'>Origin Energy</a> — Flexible plans, strong GreenPower options</li>
+<li><a href='/provider/energy-australia'>EnergyAustralia</a> — No-exit-fee plans, bill smoothing available</li>
+<li><a href='/provider/red-energy'>Red Energy</a> — 100% Australian owned, Velocity Frequent Flyer rewards</li>
+<li><a href='/provider/alinta-energy'>Alinta Energy</a> — Consistently competitive rates, Price Beat Guarantee</li>
+<li><a href='/provider/simply-energy'>Simply Energy</a> — Budget-friendly ENGIE-backed plans</li>
+<li><a href='/provider/amber-electric'>Amber Electric</a> — Wholesale electricity pricing for flexible households</li>
+<li><a href='/provider/powershop'>Powershop</a> — 100% renewable energy specialist</li>
+</ul>
+<h2>Compare Providers Side by Side</h2>
+<ul>
+<li><a href='/compare/agl-vs-origin-energy'>AGL vs Origin Energy</a></li>
+<li><a href='/compare/agl-vs-energy-australia'>AGL vs EnergyAustralia</a></li>
+<li><a href='/compare/origin-energy-vs-energy-australia'>Origin Energy vs EnergyAustralia</a></li>
+<li><a href='/compare/red-energy-vs-alinta-energy'>Red Energy vs Alinta Energy</a></li>
+</ul>
+<p><a href='/deals/electricity'>Compare All Electricity Plans Now →</a></p>";
+    $pageSchema = json_encode(['@context'=>'https://schema.org','@type'=>'CollectionPage','name'=>'All Energy Providers Australia','description'=>$metaDescription,'url'=>$metaUrl]);
+}
+
 // DEAL PAGE
 elseif (preg_match('/^deal\/([^\/]+)$/', $path, $m)) {
     $dealId = $m[1];
@@ -301,10 +330,10 @@ elseif (preg_match('/^deals\/(.+)$/', $path, $m)) {
 }
 
 // MOVING HOUSE
-elseif ($path === 'moving-house') {
+elseif ($path === 'energy/moving-house') {
     $metaTitle = "Moving House? Compare & Set Up All Your Utilities | SaveNest";
     $metaDescription = "Moving house in Australia? Compare and connect electricity, gas, internet, and insurance at your new address. SaveNest makes moving day easier and cheaper.";
-    $metaUrl = "https://savenest.au/moving-house";
+    $metaUrl = "https://savenest.au/energy/moving-house";
     $crawlerHtml = "<h1>Moving House? Sort Your Utilities in One Place</h1>
 <p>Moving house is stressful — but sorting your utilities doesn't have to be. SaveNest lets you compare and connect electricity, gas, and internet at your new address in minutes.</p>
 <h2>Utilities to Compare When Moving House</h2>
@@ -538,7 +567,7 @@ $baseSchema = json_encode([
       <a href="/guides/wa/electricity">WA Energy</a> |
       <a href="/providers">All Providers</a> |
       <a href="/compare/agl-vs-origin-energy">AGL vs Origin</a> |
-      <a href="/moving-house">Moving House</a> |
+      <a href="/energy/moving-house">Moving House</a> |
       <a href="/about">About</a> |
       <a href="/contact">Contact</a>
     </nav>

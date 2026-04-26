@@ -25,6 +25,8 @@ import 'package:savenest/features/savings/referral_screen.dart';
 import 'package:savenest/features/dashboard/savings_dashboard_screen.dart';
 import 'package:savenest/features/registration/registration_screen.dart';
 import 'package:savenest/features/landing/audit_landing_screen.dart';
+import 'package:savenest/features/comparison/suburb_guide_screen.dart';
+import 'package:savenest/features/comparison/provider_comparison_screen.dart';
 
 // Helper for transitions
 // ... (omitting transition helper for brevity in replace call if possible, but I must match exactly)
@@ -127,6 +129,45 @@ final goRouter = GoRouter(
           context,
           state,
           StateGuideScreen(stateCode: stateCode, utility: utility),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/suburb/:state/:suburb/:utility',
+      pageBuilder: (context, state) {
+        final stateCode = state.pathParameters['state']!;
+        final suburb = state.pathParameters['suburb']!;
+        final utility = state.pathParameters['utility']!;
+        return _fadeTransition(
+          context,
+          state,
+          SuburbGuideScreen(stateCode: stateCode, suburbSlug: suburb, utility: utility),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/suburb/:state/:suburb',
+      pageBuilder: (context, state) {
+        final stateCode = state.pathParameters['state']!;
+        final suburb = state.pathParameters['suburb']!;
+        return _fadeTransition(
+          context,
+          state,
+          SuburbGuideScreen(stateCode: stateCode, suburbSlug: suburb, utility: 'electricity'),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/compare/:comparison',
+      pageBuilder: (context, state) {
+        final comparison = state.pathParameters['comparison']!;
+        final parts = comparison.split('-vs-');
+        final slugA = parts.isNotEmpty ? parts[0] : 'agl';
+        final slugB = parts.length > 1 ? parts[1] : 'origin-energy';
+        return _fadeTransition(
+          context,
+          state,
+          ProviderComparisonScreen(slugA: slugA, slugB: slugB),
         );
       },
     ),

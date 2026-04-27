@@ -92,6 +92,7 @@ class ModernFooter extends StatelessWidget {
                       _footerLink(context, 'About Us', '/about'),
                       _footerLink(context, 'Contact Us', '/contact'),
                       _footerLink(context, 'Blog', '/blog'),
+                      _footerLink(context, 'Knowledge Base', '/knowledge-base'),
                       _footerLink(context, 'For Partners', '/partners/advertise'),
                     ]),
                   ),

@@ -27,6 +27,7 @@ import 'package:savenest/features/registration/registration_screen.dart';
 import 'package:savenest/features/landing/audit_landing_screen.dart';
 import 'package:savenest/features/comparison/suburb_guide_screen.dart';
 import 'package:savenest/features/comparison/provider_comparison_screen.dart';
+import 'package:savenest/features/knowledge_base/knowledge_base_screen.dart';
 
 // Helper for transitions
 // ... (omitting transition helper for brevity in replace call if possible, but I must match exactly)
@@ -340,6 +341,14 @@ final goRouter = GoRouter(
         context,
         state,
         const MovingHouseScreen(),
+      ),
+    ),
+    GoRoute(
+      path: '/knowledge-base',
+      pageBuilder: (context, state) => _fadeTransition(
+        context,
+        state,
+        const KnowledgeBaseScreen(),
       ),
     ),
   ],

@@ -17,15 +17,18 @@ class SavingsDashboardScreen extends StatelessWidget {
           const MainNavigationBar(),
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 1000),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Your Savings Dashboard',
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 1000),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Your Savings Dashboard',
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w900,
@@ -240,14 +243,17 @@ class SavingsDashboardScreen extends StatelessWidget {
                         ),
                       ),
                       
-                      const SizedBox(height: 60),
-                    ],
+                            const SizedBox(height: 60),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  const ModernFooter(),
+                ],
               ),
             ),
           ),
-          const ModernFooter(),
         ],
       ),
     );

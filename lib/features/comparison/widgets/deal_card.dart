@@ -212,7 +212,7 @@ class _DealCardState extends State<DealCard> with TickerProviderStateMixin {
                       ],
                     ),
                     
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 8),
 
                     // Middle: Info
                     Column(
@@ -225,45 +225,51 @@ class _DealCardState extends State<DealCard> with TickerProviderStateMixin {
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 300),
                             padding: EdgeInsets.symmetric(
-                              horizontal: _isHovered ? 12 : 10, 
-                              vertical: _isHovered ? 5 : 4
+                              horizontal: _isHovered ? 10 : 8,
+                              vertical: _isHovered ? 5 : 4,
                             ),
                             decoration: BoxDecoration(
-                              color: _isHovered 
-                                  ? widget.deal.providerColor 
+                              color: _isHovered
+                                  ? widget.deal.providerColor
                                   : widget.deal.providerColor.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(8),
-                              boxShadow: _isHovered ? [
-                                BoxShadow(
-                                  color: widget.deal.providerColor.withOpacity(0.3),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 4),
-                                )
-                              ] : [],
+                              boxShadow: _isHovered
+                                  ? [
+                                      BoxShadow(
+                                        color: widget.deal.providerColor.withOpacity(0.3),
+                                        blurRadius: 10,
+                                        offset: const Offset(0, 4),
+                                      )
+                                    ]
+                                  : [],
                             ),
                             child: AnimatedDefaultTextStyle(
                               duration: const Duration(milliseconds: 300),
                               style: TextStyle(
-                                fontSize: _isHovered ? 13 : 12, 
-                                color: _isHovered 
+                                fontSize: 11,
+                                color: _isHovered
                                     ? (widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : Colors.white)
-                                    : (widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : widget.deal.providerColor), 
+                                    : (widget.deal.providerColor.computeLuminance() > 0.5 ? AppTheme.deepNavy : widget.deal.providerColor),
                                 fontWeight: FontWeight.w900,
-                                letterSpacing: 1.0,
+                                letterSpacing: 0.8,
                                 fontFamily: 'Montserrat',
                               ),
-                              child: Text(widget.deal.providerName.toUpperCase()),
+                              child: Text(
+                                widget.deal.providerName.toUpperCase(),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: 6),
                         Text(
                           widget.deal.planName,
                           textAlign: TextAlign.center,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 13,
                             fontWeight: FontWeight.w800,
                             color: AppTheme.deepNavy,
                             height: 1.2,
@@ -403,28 +409,30 @@ class _DealCardState extends State<DealCard> with TickerProviderStateMixin {
     final isSvg = logoUrl.toLowerCase().endsWith('.svg');
 
     return Container(
-      width: 32, 
-      height: 32, 
-      padding: const EdgeInsets.all(4),
+      width: 72,
+      height: 44,
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       decoration: BoxDecoration(
         color: Colors.white,
-        shape: BoxShape.circle,
+        borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 6,
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 8,
             offset: const Offset(0, 2),
           ),
         ],
-        border: Border.all(color: AppTheme.offWhite, width: 1.0),
+        border: Border.all(color: const Color(0xFFEAECF0), width: 1.0),
       ),
-      child: ClipOval(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(6),
         child: localAsset != null
             ? Image.asset(
-                localAsset, 
-                fit: BoxFit.contain, 
+                localAsset,
+                fit: BoxFit.contain,
                 semanticLabel: '${widget.deal.providerName} logo',
-                errorBuilder: (context, error, stackTrace) => _buildLogoFromUrl(logoUrl, isSvg),
+                errorBuilder: (context, error, stackTrace) =>
+                    _buildLogoFromUrl(logoUrl, isSvg),
               )
             : _buildLogoFromUrl(logoUrl, isSvg),
       ),
@@ -450,27 +458,102 @@ class _DealCardState extends State<DealCard> with TickerProviderStateMixin {
   }
 
   String? _getLocalAssetPath(String providerName) {
-    final name = providerName.toLowerCase().replaceAll(' ', '');
-    
-    // Mapping of provider name fragments to asset filenames
+    final name = providerName.toLowerCase().replaceAll(' ', '').replaceAll('-', '').replaceAll('_', '');
+
+    // Energy providers
     if (name.contains('origin')) return 'assets/images/logos/origin_energy.png';
     if (name.contains('energyaustralia')) return 'assets/images/logos/energyaustralia.jpg';
     if (name.contains('agl')) return 'assets/images/logos/agl.png';
     if (name.contains('ovo')) return 'assets/images/logos/ovo_energy.png';
     if (name.contains('globird')) return 'assets/images/logos/globird_energy.png';
     if (name.contains('amber')) return 'assets/images/logos/amber_electric.jpg';
+    if (name.contains('alinta')) return 'assets/images/logos/alinta_energy.png';
+    if (name.contains('covau')) return 'assets/images/logos/covau.png';
+    if (name.contains('diamond')) return 'assets/images/logos/diamond_energy.png';
+    if (name.contains('engie')) return 'assets/images/logos/engie.png';
+    if (name.contains('energylocals') || name.contains('energylocal')) return 'assets/images/logos/energy_locals.png';
+    if (name.contains('1stenergy') || name.contains('firstenergy')) return 'assets/images/logos/1st_energy.png';
+    if (name.contains('lumo')) return 'assets/images/logos/lumo_energy.png';
+    if (name.contains('momentum')) return 'assets/images/logos/momentum_energy.png';
+    if (name.contains('powershop')) return 'assets/images/logos/powershop.png';
+    if (name.contains('redenergy') || (name.contains('red') && name.contains('energy'))) return 'assets/images/logos/red_energy.png';
+    if (name.contains('shellenergy') || (name.contains('shell') && name.contains('energy'))) return 'assets/images/logos/shell_energy.png';
+    if (name.contains('sumo')) return 'assets/images/logos/sumo.png';
+
+    // Gas providers
+    if (name.contains('kleenheat')) return 'assets/images/logos/kleenheat.png';
+    if (name.contains('elgas')) return 'assets/images/logos/elgas.png';
+    if (name.contains('supagas')) return 'assets/images/logos/supagas.png';
+
+    // Internet providers
+    if (name.contains('spintel')) return 'assets/images/logos/spintel.png';
+    if (name.contains('aussiebroadband') || name.contains('aussiebb')) return 'assets/images/logos/aussie_broadband.png';
+    if (name.contains('exetel')) return 'assets/images/logos/exetel.png';
+    if (name.contains('tangerine')) return 'assets/images/logos/tangerine.png';
+    if (name.contains('tpg')) return 'assets/images/logos/tpg.png';
+    if (name.contains('iinet')) return 'assets/images/logos/iinet.png';
+    if (name.contains('superloop')) return 'assets/images/logos/superloop.png';
+    if (name.contains('flip')) return 'assets/images/logos/flip.png';
+    if (name.contains('swoop')) return 'assets/images/logos/swoop.png';
+    if (name.contains('southernphone')) return 'assets/images/logos/southern_phone.png';
+    if (name.contains('arctel')) return 'assets/images/logos/arctel.png';
+    if (name.contains('mate')) return 'assets/images/logos/mate.png';
+    if (name.contains('moretelecom') || name.contains('moretele')) return 'assets/images/logos/more_telecom.png';
+
+    // Telco/Mobile
+    if (name.contains('telstra')) return 'assets/images/logos/telstra.png';
+    if (name.contains('optus')) return 'assets/images/logos/optus.png';
+    if (name.contains('vodafone')) return 'assets/images/logos/vodafone.png';
+    if (name.contains('belong')) return 'assets/images/logos/belong.png';
+    if (name.contains('amaysim')) return 'assets/images/logos/amaysim.png';
+    if (name.contains('aldimobile') || name.contains('aldi')) return 'assets/images/logos/aldi_mobile.png';
+    if (name.contains('boostmobile') || name.contains('boost')) return 'assets/images/logos/boost_mobile.png';
+    if (name.contains('colesmobile') || (name.contains('coles') && name.contains('mobile'))) return 'assets/images/logos/coles.png';
+    if (name.contains('felix')) return 'assets/images/logos/felix.png';
+    if (name.contains('moosemobile') || name.contains('moose')) return 'assets/images/logos/moose_mobile.png';
+    if (name.contains('everydaymobile') || (name.contains('everyday') && name.contains('mobile'))) return 'assets/images/logos/coles.png';
+
+    // Insurance providers
+    if (name.contains('aami')) return 'assets/images/logos/aami.png';
+    if (name.contains('allianz')) return 'assets/images/logos/allianz.png';
+    if (name.contains('bupa')) return 'assets/images/logos/bupa.png';
+    if (name.contains('nrma')) return 'assets/images/logos/nrma.png';
+    if (name.contains('youi')) return 'assets/images/logos/youi.png';
+    if (name.contains('budgetdirect') || name.contains('budget')) return 'assets/images/logos/budget_direct.png';
+    if (name.contains('bingle')) return 'assets/images/logos/bingle.png';
+    if (name.contains('colesinsurance') || (name.contains('coles') && name.contains('insur'))) return 'assets/images/logos/coles.png';
+    if (name.contains('medibank')) return 'assets/images/logos/medibank.png';
+    if (name.contains('hcf')) return 'assets/images/logos/hcf.png';
+    if (name.contains('cbhs')) return 'assets/images/logos/cbhs.png';
+    if (name.contains('gmhba') || name.contains('frank')) return 'assets/images/logos/gmhba.png';
+    if (name.contains('nib')) return 'assets/images/logos/nib.png';
+    if (name.contains('everydayinsurance')) return 'assets/images/logos/coles.png';
+
+    // Solar providers
+    if (name.contains('arisesolar') || name.contains('arise')) return 'assets/images/logos/arise_solar.png';
+    if (name.contains('energymatters')) return 'assets/images/logos/energy_matters.png';
+    if (name.contains('fortunesolar') || name.contains('fortune')) return 'assets/images/logos/fortune_solar.png';
+    if (name.contains('solahart')) return 'assets/images/logos/solahart.png';
+    if (name.contains('solarchoice')) return 'assets/images/logos/solar_choice.png';
+    if (name.contains('solargain')) return 'assets/images/logos/solargain.png';
+    if (name.contains('tesla')) return 'assets/images/logos/tesla.png';
+
+    // Dodo (multi-category)
     if (name.contains('dodo')) return 'assets/images/logos/dodo.png';
-    if (name.contains('telstra')) return 'assets/images/logos/anz.png'; // Example fallback if missing, but let's check
+
+    // Kogan (multi-category)
     if (name.contains('kogan')) return 'assets/images/logos/kogan.png';
+
+    // Banks & credit cards
     if (name.contains('woolworths')) return 'assets/images/logos/woolworths.png';
     if (name.contains('suncorp')) return 'assets/images/logos/suncorp.png';
     if (name.contains('westpac')) return 'assets/images/logos/westpac.png';
     if (name.contains('anz')) return 'assets/images/logos/anz.png';
-    if (name.contains('cba')) return 'assets/images/logos/cba.png';
+    if (name.contains('cba') || name.contains('commonwealth')) return 'assets/images/logos/cba.png';
     if (name.contains('nab')) return 'assets/images/logos/nab.jpg';
     if (name.contains('airwallex')) return 'assets/images/logos/airwallex.png';
     if (name.contains('volopay')) return 'assets/images/logos/volopay.png';
-    
+
     return null;
   }
 

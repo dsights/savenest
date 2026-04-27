@@ -6,6 +6,7 @@ import '../comparison_model.dart';
 abstract class ProductRepository {
   Future<List<Deal>> getDeals(ProductCategory category);
   Future<Deal?> getDealById(String id);
+  Future<Map<String, dynamic>?> getMetadata();
 }
 
 class JsonProductRepository implements ProductRepository {
@@ -78,18 +79,6 @@ class JsonProductRepository implements ProductRepository {
     }
   }
 
-  double _parseCommission(String commission) {
-    if (commission.toLowerCase().contains('pending')) return 0.0;
-    if (commission.toLowerCase().contains('varies')) return 0.0;
-    
-    try {
-      final numericPart = commission.replaceAll(RegExp(r'[^0-9.]'), '');
-      return double.parse(numericPart);
-    } catch (e) {
-      return 0.0;
-    }
-  }
-
   Color _parseColor(String colorString) {
     try {
       String hexColor = colorString.toUpperCase().replaceAll('#', '').replaceAll('0X', '');
@@ -103,6 +92,7 @@ class JsonProductRepository implements ProductRepository {
   }
 
   Deal _fromJson(Map<String, dynamic> json, ProductCategory category) {
+    final rawDetails = json['details'] as Map<String, dynamic>?;
     return Deal(
       id: json['id'],
       category: category,
@@ -115,12 +105,20 @@ class JsonProductRepository implements ProductRepository {
       price: (json['price'] as num?)?.toDouble() ?? 0.0,
       priceUnit: json['priceUnit'] ?? '/mo',
       affiliateUrl: json['affiliateUrl'] ?? '',
-      commission: _parseCommission(json['commission'] ?? '0'),
       rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
       isSponsored: json['isSponsored'] ?? false,
       isGreen: json['isGreen'] ?? false,
       isEnabled: json['isEnabled'] ?? true,
       applicableStates: List<String>.from(json['applicableStates'] ?? []),
+      details: rawDetails != null
+          ? Map<String, String>.from(rawDetails.map((k, v) => MapEntry(k, v.toString())))
+          : const {},
     );
+  }
+
+  @override
+  Future<Map<String, dynamic>?> getMetadata() async {
+    await _loadData();
+    return _cachedData?['metadata'] as Map<String, dynamic>?;
   }
 }

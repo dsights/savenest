@@ -1,0 +1,80 @@
+name: Update Plan Prices
+
+on:
+  schedule:
+    # Runs every Monday and Thursday at 02:00 UTC (noon AEST)
+    - cron: "0 2 * * 1,4"
+  workflow_dispatch:        # Allow manual trigger from GitHub UI
+    inputs:
+      dry_run:
+        description: "Dry run only (no commit)"
+        type: boolean
+        default: false
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # needed to push the updated products.json
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run price updater (dry-run mode)
+        if: ${{ inputs.dry_run == true }}
+        run: python scripts/update_prices.py --dry-run
+        env:
+          EME_API_KEY: ${{ secrets.EME_API_KEY }}
+
+      - name: Run price updater
+        if: ${{ inputs.dry_run != true }}
+        run: python scripts/update_prices.py
+        env:
+          EME_API_KEY: ${{ secrets.EME_API_KEY }}
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet assets/data/products.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit updated prices
+        if: steps.diff.outputs.changed == 'true' && inputs.dry_run != true
+        run: |
+          git config user.name  "SaveNest Price Bot"
+          git config user.email "bot@savenest.au"
+          git add assets/data/products.json logs/
+          git commit -m "chore(data): automated price update $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Upload price log as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-update-log-${{ github.run_id }}
+          path: logs/price_update_*.log
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Summary
+        run: |
+          if [ "${{ steps.diff.outputs.changed }}" = "true" ]; then
+            echo "### ✅ Price update committed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ℹ️ No price changes detected — products.json unchanged" >> $GITHUB_STEP_SUMMARY
+          fi

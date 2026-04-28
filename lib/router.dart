@@ -27,6 +27,7 @@ import 'package:savenest/features/registration/registration_screen.dart';
 import 'package:savenest/features/landing/audit_landing_screen.dart';
 import 'package:savenest/features/comparison/suburb_guide_screen.dart';
 import 'package:savenest/features/comparison/provider_comparison_screen.dart';
+import 'package:savenest/features/comparison/product_comparison_screen.dart';
 import 'package:savenest/features/knowledge_base/knowledge_base_screen.dart';
 
 // Helper for transitions
@@ -155,6 +156,23 @@ final goRouter = GoRouter(
           context,
           state,
           SuburbGuideScreen(stateCode: stateCode, suburbSlug: suburb, utility: 'electricity'),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/compare-deals',
+      pageBuilder: (context, state) {
+        final idsParam = state.uri.queryParameters['ids'] ?? '';
+        final ids = idsParam
+            .split(',')
+            .where((id) => id.isNotEmpty)
+            .toList();
+        final catParam =
+            state.uri.queryParameters['cat'] ?? 'electricity';
+        return _fadeTransition(
+          context,
+          state,
+          ProductComparisonScreen(dealIds: ids, categorySlug: catParam),
         );
       },
     ),

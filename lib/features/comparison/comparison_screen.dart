@@ -10,6 +10,7 @@ import 'comparison_provider.dart';
 import 'widgets/deal_card.dart';
 import 'widgets/search_bar_widget.dart';
 import 'widgets/comparison_matrix_view.dart';
+import 'widgets/comparison_tray.dart';
 import 'credit_card_model.dart';
 import 'data/credit_card_repository.dart';
 import 'widgets/credit_card_table.dart';
@@ -257,12 +258,12 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     // Compute responsive grid column count once in build (avoids shrinkWrap)
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount = screenWidth > 1200
-        ? 4
-        : screenWidth > 800
-            ? 3
+        ? 6
+        : screenWidth > 900
+            ? 4
             : screenWidth > 600
-                ? 2
-                : 1;
+                ? 3
+                : 2;
 
     // Data freshness label (shows the actual last-updated date from the JSON metadata)
     final freshnessLabel = state.dataLastUpdated.isNotEmpty
@@ -272,7 +273,9 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
-      body: Column(
+      body: Stack(
+        children: [
+          Column(
         children: [
           const MainNavigationBar(),
           Expanded(
@@ -518,9 +521,9 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                         gridDelegate:
                             SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: crossAxisCount,
-                          childAspectRatio: 0.78,
-                          mainAxisSpacing: 24,
-                          crossAxisSpacing: 24,
+                          childAspectRatio: 1.05,
+                          mainAxisSpacing: 16,
+                          crossAxisSpacing: 16,
                         ),
                         itemCount: state.deals.length,
                         itemBuilder: (context, index) {
@@ -528,6 +531,10 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                           return DealCard(
                             deal: deal,
                             isBestValue: deal == state.bestValueDeal,
+                            isSelectedForComparison:
+                                state.selectedForComparison.contains(deal.id),
+                            onToggleCompare: () =>
+                                controller.toggleComparison(deal.id),
                           );
                         },
                       ),
@@ -538,6 +545,15 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                 const SliverToBoxAdapter(child: ModernFooter()),
               ],
             ),
+          ),
+        ],
+      ),
+          // Comparison tray — floats above content at the bottom
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: ComparisonTray(category: selectedCat),
           ),
         ],
       ),

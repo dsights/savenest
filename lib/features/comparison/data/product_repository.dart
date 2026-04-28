@@ -93,6 +93,8 @@ class JsonProductRepository implements ProductRepository {
 
   Deal _fromJson(Map<String, dynamic> json, ProductCategory category) {
     final rawDetails = json['details'] as Map<String, dynamic>?;
+    final rawSpecs = json['specs'] as Map<String, dynamic>?;
+    final rawBoolFeatures = json['boolFeatures'] as Map<String, dynamic>?;
     return Deal(
       id: json['id'],
       category: category,
@@ -105,6 +107,7 @@ class JsonProductRepository implements ProductRepository {
       price: (json['price'] as num?)?.toDouble() ?? 0.0,
       priceUnit: json['priceUnit'] ?? '/mo',
       affiliateUrl: json['affiliateUrl'] ?? '',
+      directUrl: json['directUrl'] ?? '',
       rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
       isSponsored: json['isSponsored'] ?? false,
       isGreen: json['isGreen'] ?? false,
@@ -112,6 +115,14 @@ class JsonProductRepository implements ProductRepository {
       applicableStates: List<String>.from(json['applicableStates'] ?? []),
       details: rawDetails != null
           ? Map<String, String>.from(rawDetails.map((k, v) => MapEntry(k, v.toString())))
+          : const {},
+      tagline: json['tagline'] ?? '',
+      tier: json['tier'] ?? '',
+      specs: rawSpecs != null
+          ? Map<String, String>.from(rawSpecs.map((k, v) => MapEntry(k, v.toString())))
+          : const {},
+      boolFeatures: rawBoolFeatures != null
+          ? Map<String, bool?>.from(rawBoolFeatures.map((k, v) => MapEntry(k, v as bool?)))
           : const {},
     );
   }

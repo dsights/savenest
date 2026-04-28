@@ -38,6 +38,13 @@ class Deal {
   final List<String> applicableStates; // New: To filter by region (NSW, VIC, etc.)
   final Map<String, String> details; // New: For all other meaningful data
 
+  // Structured data for comparison matrix
+  final String directUrl;
+  final String tagline;
+  final String tier;
+  final Map<String, String> specs;
+  final Map<String, bool?> boolFeatures;
+
   const Deal({
     required this.id,
     required this.category,
@@ -50,12 +57,17 @@ class Deal {
     required this.price,
     this.priceUnit = '/mo',
     required this.affiliateUrl,
+    this.directUrl = '',
     this.rating = 0.0,
     this.isSponsored = false,
     this.isGreen = false,
     this.isEnabled = true,
     this.applicableStates = const [],
     this.details = const {},
+    this.tagline = '',
+    this.tier = '',
+    this.specs = const {},
+    this.boolFeatures = const {},
   });
 
   // Weighted value score: 60% price efficiency, 20% rating, 20% feature richness.

@@ -22,6 +22,7 @@ class ComparisonState {
   final String dataLastUpdated;
   final double categoryMaxPrice;
   final Set<String> allProviderNames;
+  final Set<String> selectedForComparison;
 
   const ComparisonState({
     required this.deals,
@@ -36,6 +37,7 @@ class ComparisonState {
     this.dataLastUpdated = '',
     this.categoryMaxPrice = 0,
     this.allProviderNames = const {},
+    this.selectedForComparison = const {},
   });
 
   ComparisonState copyWith({
@@ -54,6 +56,7 @@ class ComparisonState {
     String? dataLastUpdated,
     double? categoryMaxPrice,
     Set<String>? allProviderNames,
+    Set<String>? selectedForComparison,
   }) {
     return ComparisonState(
       deals: deals ?? this.deals,
@@ -68,8 +71,11 @@ class ComparisonState {
       dataLastUpdated: dataLastUpdated ?? this.dataLastUpdated,
       categoryMaxPrice: categoryMaxPrice ?? this.categoryMaxPrice,
       allProviderNames: allProviderNames ?? this.allProviderNames,
+      selectedForComparison: selectedForComparison ?? this.selectedForComparison,
     );
   }
+
+  List<Deal> get selectedDeals => deals.where((d) => selectedForComparison.contains(d.id)).toList();
 }
 
 class ComparisonController extends StateNotifier<ComparisonState> {
@@ -146,6 +152,24 @@ class ComparisonController extends StateNotifier<ComparisonState> {
     state = state.copyWith(activeFilters: newFilters);
     _invalidateMemo();
     search(state.searchQuery);
+  }
+
+  void toggleComparison(String dealId) {
+    final current = Set<String>.from(state.selectedForComparison);
+    if (current.contains(dealId)) {
+      current.remove(dealId);
+    } else if (current.length < 3) {
+      current.add(dealId);
+    } else {
+      // Max 3 — evict the oldest and add the new one
+      current.remove(current.first);
+      current.add(dealId);
+    }
+    state = state.copyWith(selectedForComparison: current);
+  }
+
+  void clearComparison() {
+    state = state.copyWith(selectedForComparison: {});
   }
 
   void clearAllFilters() {
@@ -394,6 +418,13 @@ final comparisonProvider =
 final dealDetailsProvider = FutureProvider.family<Deal?, String>((ref, id) async {
   final repo = ref.watch(productRepositoryProvider);
   return repo.getDealById(id);
+});
+
+final selectedDealsProvider = FutureProvider.family<List<Deal>, List<String>>((ref, ids) async {
+  final repo = ref.watch(productRepositoryProvider);
+  final futures = ids.map((id) => repo.getDealById(id));
+  final results = await Future.wait(futures);
+  return results.whereType<Deal>().toList();
 });
 
 final stateGuideProvider =

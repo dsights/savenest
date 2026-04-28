@@ -1,0 +1,264 @@
+{
+  "electricity": {
+    "sections": [
+      {
+        "label": "Pricing",
+        "rows": [
+          {"key": "price",             "label": "Est. Annual Cost",          "type": "price"},
+          {"key": "annual_cost_3000",  "label": "Annual Cost (3,000 kWh)",   "type": "spec"},
+          {"key": "supply_charge",     "label": "Daily Supply Charge",       "type": "spec"},
+          {"key": "usage_rate",        "label": "Usage Rate",                "type": "spec"},
+          {"key": "solar_fit",         "label": "Solar Feed-in Tariff",      "type": "spec"}
+        ]
+      },
+      {
+        "label": "Plan Details",
+        "rows": [
+          {"key": "plan_type",             "label": "Plan Type",              "type": "spec"},
+          {"key": "no_lock_in",            "label": "No Lock-in Contract",   "type": "bool"},
+          {"key": "pay_on_time_discount",  "label": "Pay-on-Time Discount",  "type": "bool"},
+          {"key": "bill_smoothing",        "label": "Bill Smoothing",        "type": "bool"}
+        ]
+      },
+      {
+        "label": "Green & Eco",
+        "rows": [
+          {"key": "green_power",       "label": "GreenPower Option",         "type": "bool"},
+          {"key": "solar_compatible",  "label": "Solar Compatible",          "type": "bool"},
+          {"key": "carbon_neutral",    "label": "Carbon Neutral Certified",  "type": "bool"},
+          {"key": "hardship_program",  "label": "Hardship Program",          "type": "bool"},
+          {"key": "app_available",     "label": "App Available",             "type": "bool"}
+        ]
+      },
+      {
+        "label": "Rating",
+        "rows": [
+          {"key": "rating", "label": "User Rating", "type": "rating"}
+        ]
+      }
+    ]
+  },
+  "gas": {
+    "sections": [
+      {
+        "label": "Pricing",
+        "rows": [
+          {"key": "price",             "label": "Est. Annual Cost",          "type": "price"},
+          {"key": "annual_cost_25k",   "label": "Annual Cost (25,000 MJ)",   "type": "spec"},
+          {"key": "annual_cost_35k",   "label": "Annual Cost (35,000 MJ)",   "type": "spec"},
+          {"key": "supply_charge",     "label": "Daily Supply Charge",       "type": "spec"},
+          {"key": "usage_rate",        "label": "Usage Rate",                "type": "spec"}
+        ]
+      },
+      {
+        "label": "Plan Details",
+        "rows": [
+          {"key": "gas_type",              "label": "Gas Type",              "type": "spec"},
+          {"key": "no_lock_in",            "label": "No Lock-in Contract",   "type": "bool"},
+          {"key": "pay_on_time_discount",  "label": "Pay-on-Time Discount",  "type": "bool"},
+          {"key": "green_gas",             "label": "Green Gas Option",      "type": "bool"},
+          {"key": "app_available",         "label": "App Available",         "type": "bool"},
+          {"key": "hardship_program",      "label": "Hardship Program",      "type": "bool"}
+        ]
+      },
+      {
+        "label": "Rating",
+        "rows": [
+          {"key": "rating", "label": "User Rating", "type": "rating"}
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "sections": [
+      {
+        "label": "Pricing",
+        "rows": [
+          {"key": "price",       "label": "Monthly Cost",   "type": "price"},
+          {"key": "cost_per_gb", "label": "Cost per GB",    "type": "spec"}
+        ]
+      },
+      {
+        "label": "Data & Network",
+        "rows": [
+          {"key": "data_gb",          "label": "Included Data",      "type": "spec"},
+          {"key": "network",          "label": "Network",             "type": "spec"},
+          {"key": "unlimited_data",   "label": "Unlimited Data",      "type": "bool"},
+          {"key": "five_g",           "label": "5G Access",           "type": "bool"},
+          {"key": "data_rollover",    "label": "Data Rollover",       "type": "bool"}
+        ]
+      },
+      {
+        "label": "Calls & Extras",
+        "rows": [
+          {"key": "unlimited_calls",       "label": "Unlimited Local Calls",    "type": "bool"},
+          {"key": "international_roaming", "label": "International Roaming",    "type": "bool"},
+          {"key": "hotspot",               "label": "Mobile Hotspot",           "type": "bool"},
+          {"key": "esim",                  "label": "eSIM Supported",           "type": "bool"}
+        ]
+      },
+      {
+        "label": "Contract",
+        "rows": [
+          {"key": "no_lock_in", "label": "No Lock-in", "type": "bool"}
+        ]
+      },
+      {
+        "label": "Rating",
+        "rows": [
+          {"key": "rating", "label": "User Rating", "type": "rating"}
+        ]
+      }
+    ]
+  },
+  "internet": {
+    "sections": [
+      {
+        "label": "Pricing",
+        "rows": [
+          {"key": "price",         "label": "Monthly Cost",   "type": "price"},
+          {"key": "setup_fee",     "label": "Setup Fee",      "type": "spec"},
+          {"key": "cost_per_mbps", "label": "Cost per Mbps",  "type": "spec"}
+        ]
+      },
+      {
+        "label": "Speed & Data",
+        "rows": [
+          {"key": "download_speed",  "label": "Max Download Speed",  "type": "spec"},
+          {"key": "evening_speed",   "label": "Evening Speed",       "type": "spec"},
+          {"key": "upload_speed",    "label": "Upload Speed",        "type": "spec"},
+          {"key": "unlimited_data",  "label": "Unlimited Data",      "type": "bool"}
+        ]
+      },
+      {
+        "label": "Extras",
+        "rows": [
+          {"key": "static_ip",         "label": "Static IP Available",    "type": "bool"},
+          {"key": "voip_included",     "label": "VoIP Included",          "type": "bool"},
+          {"key": "australian_support","label": "Australian-Based Support","type": "bool"},
+          {"key": "modem_included",    "label": "Modem Included",         "type": "bool"}
+        ]
+      },
+      {
+        "label": "Contract",
+        "rows": [
+          {"key": "no_lock_in", "label": "No Lock-in", "type": "bool"}
+        ]
+      },
+      {
+        "label": "Rating",
+        "rows": [
+          {"key": "rating", "label": "User Rating", "type": "rating"}
+        ]
+      }
+    ]
+  },
+  "insurance": {
+    "sections": [
+      {
+        "label": "Pricing",
+        "rows": [
+          {"key": "price",              "label": "Est. Annual Premium",    "type": "price"},
+          {"key": "new_customer_offer", "label": "New Customer Offer",     "type": "spec"}
+        ]
+      },
+      {
+        "label": "Coverage",
+        "rows": [
+          {"key": "insurance_type",  "label": "Cover Type",              "type": "spec"},
+          {"key": "comprehensive",   "label": "Comprehensive Cover",      "type": "bool"},
+          {"key": "roadside_assist", "label": "Roadside Assistance",      "type": "bool"},
+          {"key": "hire_car",        "label": "Hire Car Included",        "type": "bool"},
+          {"key": "windscreen",      "label": "Windscreen Cover",         "type": "bool"},
+          {"key": "new_for_old",     "label": "New-for-Old Replacement",  "type": "bool"}
+        ]
+      },
+      {
+        "label": "Claims & Support",
+        "rows": [
+          {"key": "online_claims",        "label": "Online Claims",          "type": "bool"},
+          {"key": "claims_24_7",          "label": "24/7 Claims Line",       "type": "bool"},
+          {"key": "multi_policy_discount","label": "Multi-Policy Discount",  "type": "bool"}
+        ]
+      },
+      {
+        "label": "Rating",
+        "rows": [
+          {"key": "rating", "label": "Customer Rating", "type": "rating"}
+        ]
+      }
+    ]
+  },
+  "solar": {
+    "sections": [
+      {
+        "label": "Pricing",
+        "rows": [
+          {"key": "price",             "label": "Total Installed Price",        "type": "price"},
+          {"key": "price_per_kw",      "label": "Price per kW (After STCs)",    "type": "spec"},
+          {"key": "price_per_kwh",     "label": "Price per kWh Battery",        "type": "spec"},
+          {"key": "additional_costs",  "label": "Additional Costs",             "type": "spec"}
+        ]
+      },
+      {
+        "label": "System",
+        "rows": [
+          {"key": "battery_size",      "label": "Battery Size",                 "type": "spec"},
+          {"key": "warranty",          "label": "Warranty (Panels/Inv/Bat)",    "type": "spec"},
+          {"key": "battery_available", "label": "Battery Option Available",     "type": "bool"},
+          {"key": "cec_accredited",    "label": "CEC Accredited Installer",     "type": "bool"}
+        ]
+      },
+      {
+        "label": "Service",
+        "rows": [
+          {"key": "stcs_included",    "label": "STCs Included in Price",   "type": "bool"},
+          {"key": "monitoring_app",   "label": "Monitoring App",           "type": "bool"},
+          {"key": "finance_available","label": "Finance Available",        "type": "bool"}
+        ]
+      },
+      {
+        "label": "Rating",
+        "rows": [
+          {"key": "rating", "label": "Customer Rating", "type": "rating"}
+        ]
+      }
+    ]
+  },
+  "creditCards": {
+    "sections": [
+      {
+        "label": "Costs",
+        "rows": [
+          {"key": "price",              "label": "Annual Fee",              "type": "price"},
+          {"key": "purchase_apr",       "label": "Purchase Rate (% p.a.)",  "type": "spec"},
+          {"key": "interest_free_days", "label": "Interest-Free Days",      "type": "spec"},
+          {"key": "foreign_tx_fee",     "label": "Foreign Transaction Fee", "type": "spec"}
+        ]
+      },
+      {
+        "label": "Rewards",
+        "rows": [
+          {"key": "rewards_program",  "label": "Rewards Program",     "type": "spec"},
+          {"key": "earn_rate",        "label": "Earn Rate (pts/$1)",  "type": "spec"},
+          {"key": "sign_up_bonus",    "label": "Sign-up Bonus",       "type": "spec"}
+        ]
+      },
+      {
+        "label": "Perks",
+        "rows": [
+          {"key": "travel_insurance", "label": "Complimentary Travel Insurance", "type": "bool"},
+          {"key": "lounge_access",    "label": "Airport Lounge Access",          "type": "bool"},
+          {"key": "concierge",        "label": "Concierge Service",              "type": "bool"},
+          {"key": "digital_wallet",   "label": "Digital Wallet Support",         "type": "bool"}
+        ]
+      },
+      {
+        "label": "Rating",
+        "rows": [
+          {"key": "rating", "label": "Customer Rating", "type": "rating"}
+        ]
+      }
+    ]
+  }
+}

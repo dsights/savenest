@@ -29,7 +29,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.56"
-      }
+      },
+      "specs": {
+        "download_speed": "25 Mbps",
+        "evening_speed": "25 Mbps",
+        "upload_speed": "10 Mbps",
+        "cost_per_mbps": "$1.56/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Basic (25 Mbps)",
+      "tagline": "Basic (25 Mbps) NBN — $39/mo"
     },
     {
       "id": "internet_flip_fast",
@@ -54,7 +71,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.76"
-      }
+      },
+      "specs": {
+        "download_speed": "25 Mbps",
+        "evening_speed": "25 Mbps",
+        "upload_speed": "10 Mbps",
+        "cost_per_mbps": "$1.76/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Basic (25 Mbps)",
+      "tagline": "Basic (25 Mbps) NBN — $44/mo"
     },
     {
       "id": "internet_arctel_cruisylite",
@@ -79,7 +113,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "2.0"
-      }
+      },
+      "specs": {
+        "download_speed": "25 Mbps",
+        "evening_speed": "25 Mbps",
+        "upload_speed": "10 Mbps",
+        "cost_per_mbps": "$2.0/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Basic (25 Mbps)",
+      "tagline": "Basic (25 Mbps) NBN — $50/mo"
     },
     {
       "id": "internet_iinet_limitlessbasic",
@@ -104,7 +155,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "2.0"
-      }
+      },
+      "specs": {
+        "download_speed": "25 Mbps",
+        "evening_speed": "25 Mbps",
+        "upload_speed": "2026-05-10 00:00:00 Mbps",
+        "cost_per_mbps": "$2.0/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Basic (25 Mbps)",
+      "tagline": "Basic (25 Mbps) NBN — $50/mo"
     },
     {
       "id": "internet_spintel_value",
@@ -129,7 +197,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.5"
-      }
+      },
+      "specs": {
+        "download_speed": "50 Mbps",
+        "evening_speed": "50 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$1.5/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Standard (50 Mbps)",
+      "tagline": "Standard (50 Mbps) NBN — $54/mo"
     },
     {
       "id": "internet_superloop_basic",
@@ -154,7 +239,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "2.2"
-      }
+      },
+      "specs": {
+        "download_speed": "25 Mbps",
+        "evening_speed": "25 Mbps",
+        "upload_speed": "10 Mbps",
+        "cost_per_mbps": "$2.2/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Basic (25 Mbps)",
+      "tagline": "Basic (25 Mbps) NBN — $55/mo"
     },
     {
       "id": "internet_optus_everydaybasic",
@@ -179,7 +281,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "2.36"
-      }
+      },
+      "specs": {
+        "download_speed": "25 Mbps",
+        "evening_speed": "25 Mbps",
+        "upload_speed": "2026-05-10 00:00:00 Mbps",
+        "cost_per_mbps": "$2.36/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Basic (25 Mbps)",
+      "tagline": "Basic (25 Mbps) NBN — $59/mo"
     },
     {
       "id": "internet_iinet_limitlessfast",
@@ -204,7 +323,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.6"
-      }
+      },
+      "specs": {
+        "download_speed": "50 Mbps",
+        "evening_speed": "50 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$1.6/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Standard (50 Mbps)",
+      "tagline": "Standard (50 Mbps) NBN — $60/mo"
     },
     {
       "id": "internet_arctel_cruisy",
@@ -229,7 +365,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.62"
-      }
+      },
+      "specs": {
+        "download_speed": "50 Mbps",
+        "evening_speed": "50 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$1.62/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Standard (50 Mbps)",
+      "tagline": "Standard (50 Mbps) NBN — $60/mo"
     },
     {
       "id": "internet_tangerinetelecom_speedymax",
@@ -254,7 +407,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.14"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "450 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.14/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $64/mo"
     },
     {
       "id": "internet_spintel_fast",
@@ -279,7 +449,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.85"
-      }
+      },
+      "specs": {
+        "download_speed": "100 Mbps",
+        "evening_speed": "100 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$0.85/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $64/mo"
     },
     {
       "id": "internet_iinet_limitlesssuperfast",
@@ -304,7 +491,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.95"
-      }
+      },
+      "specs": {
+        "download_speed": "100 Mbps",
+        "evening_speed": "95 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$0.95/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $65/mo"
     },
     {
       "id": "internet_tpg_homefast",
@@ -329,7 +533,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.14"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "450 Mbps",
+        "upload_speed": "42 Mbps",
+        "cost_per_mbps": "$0.14/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $65/mo"
     },
     {
       "id": "internet_southernphone_basic",
@@ -354,7 +575,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "2.6"
-      }
+      },
+      "specs": {
+        "download_speed": "25 Mbps",
+        "evening_speed": "25 Mbps",
+        "upload_speed": "10 Mbps",
+        "cost_per_mbps": "$2.6/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Basic (25 Mbps)",
+      "tagline": "Basic (25 Mbps) NBN — $65/mo"
     },
     {
       "id": "internet_superloop_family",
@@ -379,7 +617,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.5"
-      }
+      },
+      "specs": {
+        "download_speed": "50 Mbps",
+        "evening_speed": "50 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$1.5/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Standard (50 Mbps)",
+      "tagline": "Standard (50 Mbps) NBN — $65/mo"
     },
     {
       "id": "internet_belong_fast",
@@ -404,7 +659,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.14"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "450 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.14/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $65/mo"
     },
     {
       "id": "internet_arctel_power",
@@ -429,7 +701,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.92"
-      }
+      },
+      "specs": {
+        "download_speed": "100 Mbps",
+        "evening_speed": "95 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$0.92/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $69/mo"
     },
     {
       "id": "internet_optus_everydayfast",
@@ -454,7 +743,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.78"
-      }
+      },
+      "specs": {
+        "download_speed": "50 Mbps",
+        "evening_speed": "50 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$1.78/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Standard (50 Mbps)",
+      "tagline": "Standard (50 Mbps) NBN — $69/mo"
     },
     {
       "id": "internet_mate_crikeyfast",
@@ -479,7 +785,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.69"
-      }
+      },
+      "specs": {
+        "download_speed": "100 Mbps",
+        "evening_speed": "100 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$0.69/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $69/mo"
     },
     {
       "id": "internet_arctel_superfast",
@@ -504,7 +827,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.2"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "450 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.2/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $70/mo"
     },
     {
       "id": "internet_vodafone_homefast",
@@ -529,7 +869,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.7"
-      }
+      },
+      "specs": {
+        "download_speed": "100 Mbps",
+        "evening_speed": "100 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$0.7/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $70/mo"
     },
     {
       "id": "internet_koganinternet_superfast",
@@ -554,7 +911,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.19"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "450 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.19/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $72/mo"
     },
     {
       "id": "internet_swoop_nbn500",
@@ -579,7 +953,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.21"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "450 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.21/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $72/mo"
     },
     {
       "id": "internet_dodo_superfast",
@@ -604,7 +995,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.16"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "450 Mbps",
+        "upload_speed": "48 Mbps",
+        "cost_per_mbps": "$0.16/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $73/mo"
     },
     {
       "id": "internet_spintel_superfast",
@@ -629,7 +1037,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.35"
-      }
+      },
+      "specs": {
+        "download_speed": "250 Mbps",
+        "evening_speed": "240 Mbps",
+        "upload_speed": "25 Mbps",
+        "cost_per_mbps": "$0.35/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $75/mo"
     },
     {
       "id": "internet_optus_everydaysuperfast",
@@ -654,7 +1079,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.95"
-      }
+      },
+      "specs": {
+        "download_speed": "100 Mbps",
+        "evening_speed": "100 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$0.95/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $79/mo"
     },
     {
       "id": "internet_superloop_superfast",
@@ -679,7 +1121,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.37"
-      }
+      },
+      "specs": {
+        "download_speed": "250 Mbps",
+        "evening_speed": "240 Mbps",
+        "upload_speed": "25 Mbps",
+        "cost_per_mbps": "$0.37/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $79/mo"
     },
     {
       "id": "internet_superloop_lightspeed",
@@ -704,7 +1163,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.09"
-      }
+      },
+      "specs": {
+        "download_speed": "1000 Mbps",
+        "evening_speed": "860 Mbps",
+        "upload_speed": "100 Mbps",
+        "cost_per_mbps": "$0.09/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $79/mo"
     },
     {
       "id": "internet_iinet_limitlessultrafast",
@@ -729,7 +1205,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.1"
-      }
+      },
+      "specs": {
+        "download_speed": "1000 Mbps",
+        "evening_speed": "800 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.1/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $80/mo"
     },
     {
       "id": "internet_arctel_hypersonic",
@@ -754,7 +1247,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.1"
-      }
+      },
+      "specs": {
+        "download_speed": "1000 Mbps",
+        "evening_speed": "860 Mbps",
+        "upload_speed": "100 Mbps",
+        "cost_per_mbps": "$0.1/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $80/mo"
     },
     {
       "id": "internet_exetel_oneplan",
@@ -779,7 +1289,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.16"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "500 Mbps",
+        "upload_speed": "40-50 Mbps",
+        "cost_per_mbps": "$0.16/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $80/mo"
     },
     {
       "id": "internet_exetel_warpaddon",
@@ -804,7 +1331,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.11"
-      }
+      },
+      "specs": {
+        "download_speed": "1000 Mbps",
+        "evening_speed": "850 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.11/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $80/mo"
     },
     {
       "id": "internet_southernphone_superfast",
@@ -829,7 +1373,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.35"
-      }
+      },
+      "specs": {
+        "download_speed": "250 Mbps",
+        "evening_speed": "240 Mbps",
+        "upload_speed": "25 Mbps",
+        "cost_per_mbps": "$0.35/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $85/mo"
     },
     {
       "id": "internet_spintel_ultrafast",
@@ -854,7 +1415,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.1"
-      }
+      },
+      "specs": {
+        "download_speed": "1000 Mbps",
+        "evening_speed": "900 Mbps",
+        "upload_speed": "50-100 Mbps",
+        "cost_per_mbps": "$0.1/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $89/mo"
     },
     {
       "id": "internet_aussiebroadband_fast",
@@ -879,7 +1457,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.2"
-      }
+      },
+      "specs": {
+        "download_speed": "500 Mbps",
+        "evening_speed": "475 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.2/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Superfast (500 Mbps)",
+      "tagline": "Superfast (500 Mbps) NBN — $95/mo"
     },
     {
       "id": "internet_optus_ultrafast",
@@ -904,7 +1499,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.12"
-      }
+      },
+      "specs": {
+        "download_speed": "1000 Mbps",
+        "evening_speed": "800 Mbps",
+        "upload_speed": "50 Mbps",
+        "cost_per_mbps": "$0.12/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $99/mo"
     },
     {
       "id": "internet_telstra_premium",
@@ -929,7 +1541,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "1.1"
-      }
+      },
+      "specs": {
+        "download_speed": "100 Mbps",
+        "evening_speed": "100 Mbps",
+        "upload_speed": "20 Mbps",
+        "cost_per_mbps": "$1.1/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": false,
+        "modem_included": false
+      },
+      "tier": "Fast (100 Mbps)",
+      "tagline": "Fast (100 Mbps) NBN — $110/mo"
     },
     {
       "id": "internet_southernphone_hyperfast",
@@ -954,7 +1583,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.09"
-      }
+      },
+      "specs": {
+        "download_speed": "2000 Mbps",
+        "evening_speed": "1700 Mbps",
+        "upload_speed": "100 Mbps",
+        "cost_per_mbps": "$0.09/Mbps",
+        "setup_fee": "Ask provider"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": false,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $145/mo"
     },
     {
       "id": "internet_superloop_hyperfast",
@@ -979,7 +1625,24 @@
       "applicableStates": [],
       "details": {
         "Cost Per Mbps": "0.09"
-      }
+      },
+      "specs": {
+        "download_speed": "2000 Mbps",
+        "evening_speed": "1700 Mbps",
+        "upload_speed": "100 Mbps",
+        "cost_per_mbps": "$0.09/Mbps",
+        "setup_fee": "$0"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "no_lock_in": true,
+        "static_ip": true,
+        "voip_included": false,
+        "australian_support": true,
+        "modem_included": false
+      },
+      "tier": "Ultra-Fast (1 Gbps)",
+      "tagline": "Ultra-Fast (1 Gbps) NBN — $145/mo"
     }
   ],
   "mobile": [
@@ -1004,10 +1667,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.2"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.20/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Telstra — $30/mo"
     },
     {
       "id": "mobile_belong_40gbsimonly",
@@ -1030,10 +1710,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.88"
-      }
+      },
+      "specs": {
+        "data_gb": "40 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$0.88/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "40 GB on Telstra — $35/mo"
     },
     {
       "id": "mobile_telstra_smallsimonlyviamvnodata",
@@ -1056,10 +1753,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.2"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.20/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Telstra — $30/mo"
     },
     {
       "id": "mobile_colesmobile_25monthtomonthplan",
@@ -1082,10 +1796,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "1"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.00/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Telstra — $25/mo"
     },
     {
       "id": "mobile_colesmobile_354g5gplan",
@@ -1108,10 +1839,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.88"
-      }
+      },
+      "specs": {
+        "data_gb": "40 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$0.88/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "40 GB on Telstra — $35/mo"
     },
     {
       "id": "mobile_moretelecom_30gb5gsimdiscovered",
@@ -1134,10 +1882,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
+        "New Customer Duration": "—",
         "Discount Duration": "Ongoing (bank/NBN)",
         "Cost Per Gb": "1"
-      }
+      },
+      "specs": {
+        "data_gb": "30 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.00/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "30 GB on Telstra — $30/mo"
     },
     {
       "id": "mobile_tangerinetelecom_30gb5gsim",
@@ -1160,10 +1925,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "1"
-      }
+      },
+      "specs": {
+        "data_gb": "30 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.00/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "30 GB on Telstra — $30/mo"
     },
     {
       "id": "mobile_aldimobile_2330dayplan",
@@ -1186,10 +1968,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.92"
-      }
+      },
+      "specs": {
+        "data_gb": "12 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.92/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "12 GB on Telstra — $23/mo"
     },
     {
       "id": "mobile_colesmobile_220365dayplan",
@@ -1212,10 +2011,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.83"
-      }
+      },
+      "specs": {
+        "data_gb": "100 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.83/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "100 GB on Telstra — $220/mo"
     },
     {
       "id": "mobile_aldimobile_289365dayplan",
@@ -1238,10 +2054,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.8"
-      }
+      },
+      "specs": {
+        "data_gb": "300 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$0.80/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Unlimited",
+      "tagline": "300 GB on Telstra — $289/mo"
     },
     {
       "id": "mobile_belong_100gbsimonly",
@@ -1264,10 +2097,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.45"
-      }
+      },
+      "specs": {
+        "data_gb": "100 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$0.45/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "100 GB on Telstra — $45/mo"
     },
     {
       "id": "mobile_belong_160gbsimonly",
@@ -1290,10 +2140,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.34"
-      }
+      },
+      "specs": {
+        "data_gb": "160 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$0.34/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "160 GB on Telstra — $55/mo"
     },
     {
       "id": "mobile_spintel_50gbmobileplan",
@@ -1316,10 +2183,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.58"
-      }
+      },
+      "specs": {
+        "data_gb": "50 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.58/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "50 GB on Optus — $29/mo"
     },
     {
       "id": "mobile_spintel_100gbmobileplan",
@@ -1342,10 +2226,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.35"
-      }
+      },
+      "specs": {
+        "data_gb": "100 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.35/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "100 GB on Optus — $35/mo"
     },
     {
       "id": "mobile_spintel_200gbmobileplan",
@@ -1368,10 +2269,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.25"
-      }
+      },
+      "specs": {
+        "data_gb": "200 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.25/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Unlimited",
+      "tagline": "200 GB on Optus — $50/mo"
     },
     {
       "id": "mobile_everydaymobile_70gbsimonly",
@@ -1394,10 +2312,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
+        "New Customer Duration": "—",
         "Discount Duration": "Ongoing (Rewards)",
         "Cost Per Gb": "0.57"
-      }
+      },
+      "specs": {
+        "data_gb": "70 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.57/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "70 GB on Optus — $40/mo"
     },
     {
       "id": "mobile_everydaymobile_110gbsimonly",
@@ -1420,10 +2355,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
+        "New Customer Duration": "—",
         "Discount Duration": "Ongoing (Rewards)",
         "Cost Per Gb": "0.45"
-      }
+      },
+      "specs": {
+        "data_gb": "110 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.45/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "110 GB on Optus — $50/mo"
     },
     {
       "id": "mobile_everydaymobile_165gbsimonly",
@@ -1446,10 +2398,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
+        "New Customer Duration": "—",
         "Discount Duration": "Ongoing (Rewards)",
         "Cost Per Gb": "0.36"
-      }
+      },
+      "specs": {
+        "data_gb": "165 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.36/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "165 GB on Optus — $60/mo"
     },
     {
       "id": "mobile_boostmobile_300365daysim",
@@ -1473,9 +2442,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "1 recharge",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.04"
-      }
+      },
+      "specs": {
+        "data_gb": "240 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.04/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Unlimited",
+      "tagline": "240 GB on Telstra — $300/mo"
     },
     {
       "id": "mobile_optus_flexplus28day",
@@ -1501,7 +2487,24 @@
         "New Customer Duration": "1 recharge",
         "Discount Duration": "Ongoing (bundle)",
         "Cost Per Gb": "1.75"
-      }
+      },
+      "specs": {
+        "data_gb": "20 GB",
+        "network": "Optus",
+        "cost_per_gb": "$1.75/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Basic",
+      "tagline": "20 GB on Optus — $35/mo"
     },
     {
       "id": "mobile_boostmobile_3928daysim",
@@ -1525,9 +2528,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "1 recharge",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.56"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.56/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Telstra — $39/mo"
     },
     {
       "id": "mobile_amaysim_2528dayplan",
@@ -1551,9 +2571,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "1 renewal",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.67"
-      }
+      },
+      "specs": {
+        "data_gb": "15 GB",
+        "network": "Optus",
+        "cost_per_gb": "$1.67/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Basic",
+      "tagline": "15 GB on Optus — $25/mo"
     },
     {
       "id": "mobile_amaysim_3528dayunlimitedplan",
@@ -1577,9 +2614,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "1 renewal",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.83"
-      }
+      },
+      "specs": {
+        "data_gb": "42 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.83/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Standard",
+      "tagline": "42 GB on Optus — $35/mo"
     },
     {
       "id": "mobile_felix_unlimitedmobileplan",
@@ -1603,9 +2657,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "3 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.4"
-      }
+      },
+      "specs": {
+        "data_gb": "Unlimited GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.40/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": true,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Unlimited",
+      "tagline": "Unlimited GB on Vodafone — $40/mo"
     },
     {
       "id": "mobile_felix_25gbmobileplan",
@@ -1629,9 +2700,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "3 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "1"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$1.00/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Vodafone — $25/mo"
     },
     {
       "id": "mobile_felix_50gbmobileplan",
@@ -1655,9 +2743,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "3 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.6"
-      }
+      },
+      "specs": {
+        "data_gb": "50 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.60/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "50 GB on Vodafone — $30/mo"
     },
     {
       "id": "mobile_optus_flexplus186day",
@@ -1681,9 +2786,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "3 recharges",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "2"
-      }
+      },
+      "specs": {
+        "data_gb": "90 GB",
+        "network": "Optus",
+        "cost_per_gb": "$2.00/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Premium",
+      "tagline": "90 GB on Optus — $180/mo"
     },
     {
       "id": "mobile_optus_flexplus365day",
@@ -1707,9 +2829,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "3 recharges",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.59"
-      }
+      },
+      "specs": {
+        "data_gb": "220 GB",
+        "network": "Optus",
+        "cost_per_gb": "$1.59/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Unlimited",
+      "tagline": "220 GB on Optus — $350/mo"
     },
     {
       "id": "mobile_iinet_mediumplan",
@@ -1733,9 +2872,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.7"
-      }
+      },
+      "specs": {
+        "data_gb": "50 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.70/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "50 GB on Vodafone — $35/mo"
     },
     {
       "id": "mobile_iinet_largeplan",
@@ -1759,9 +2915,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.45"
-      }
+      },
+      "specs": {
+        "data_gb": "100 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.45/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "100 GB on Vodafone — $45/mo"
     },
     {
       "id": "mobile_spintel_25gbmobileplan",
@@ -1785,9 +2958,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.88"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.88/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Optus — $22/mo"
     },
     {
       "id": "mobile_tpg_smallplan",
@@ -1813,7 +3003,24 @@
         "New Customer Duration": "6 months",
         "Discount Duration": "Ongoing (NBN bundle)",
         "Cost Per Gb": "1"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$1.00/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Vodafone — $25/mo"
     },
     {
       "id": "mobile_tpg_mediumplan",
@@ -1839,7 +3046,24 @@
         "New Customer Duration": "6 months",
         "Discount Duration": "Ongoing (NBN bundle)",
         "Cost Per Gb": "0.7"
-      }
+      },
+      "specs": {
+        "data_gb": "50 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.70/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "50 GB on Vodafone — $35/mo"
     },
     {
       "id": "mobile_tpg_largeplan",
@@ -1865,7 +3089,24 @@
         "New Customer Duration": "6 months",
         "Discount Duration": "Ongoing (NBN bundle)",
         "Cost Per Gb": "0.45"
-      }
+      },
+      "specs": {
+        "data_gb": "100 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.45/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "100 GB on Vodafone — $45/mo"
     },
     {
       "id": "mobile_vodafone_25gbsmallplan",
@@ -1889,9 +3130,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "1"
-      }
+      },
+      "specs": {
+        "data_gb": "25 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$1.00/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Basic",
+      "tagline": "25 GB on Vodafone — $25/mo"
     },
     {
       "id": "mobile_vodafone_50gbmediumplan",
@@ -1915,9 +3173,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.7"
-      }
+      },
+      "specs": {
+        "data_gb": "50 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.70/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Standard",
+      "tagline": "50 GB on Vodafone — $35/mo"
     },
     {
       "id": "mobile_vodafone_100gblargeplan",
@@ -1941,9 +3216,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.45"
-      }
+      },
+      "specs": {
+        "data_gb": "100 GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$0.45/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Premium",
+      "tagline": "100 GB on Vodafone — $45/mo"
     },
     {
       "id": "mobile_moosemobile_30gbsimonly",
@@ -1967,9 +3259,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.83"
-      }
+      },
+      "specs": {
+        "data_gb": "30 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.83/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Basic",
+      "tagline": "30 GB on Optus — $25/mo"
     },
     {
       "id": "mobile_moosemobile_40gbsimonly",
@@ -1993,9 +3302,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.85"
-      }
+      },
+      "specs": {
+        "data_gb": "40 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.85/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "40 GB on Optus — $34/mo"
     },
     {
       "id": "mobile_moosemobile_100gbsimonly",
@@ -2019,9 +3345,26 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "6 months",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.42"
-      }
+      },
+      "specs": {
+        "data_gb": "100 GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.42/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "100 GB on Optus — $42/mo"
     },
     {
       "id": "mobile_optus_familymobileplan4sims",
@@ -2044,10 +3387,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.52"
-      }
+      },
+      "specs": {
+        "data_gb": "320GB shared GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.52/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Unlimited",
+      "tagline": "320GB shared GB on Optus — $165/mo"
     },
     {
       "id": "mobile_optus_family1extrasim5sims",
@@ -2070,10 +3430,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.61"
-      }
+      },
+      "specs": {
+        "data_gb": "320GB shared GB",
+        "network": "Optus",
+        "cost_per_gb": "$0.61/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Unlimited",
+      "tagline": "320GB shared GB on Optus — $194/mo"
     },
     {
       "id": "mobile_aldimobile_955gfamilyplanupto4sims",
@@ -2096,10 +3473,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.95"
-      }
+      },
+      "specs": {
+        "data_gb": "100GB shared GB",
+        "network": "Telstra",
+        "cost_per_gb": "$0.95/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "100GB shared GB on Telstra — $95/mo"
     },
     {
       "id": "mobile_aldimobile_1255gfamilyplanupto6sims",
@@ -2122,10 +3516,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "0.83"
-      }
+      },
+      "specs": {
+        "data_gb": "150GB shared GB",
+        "network": "Telstra",
+        "cost_per_gb": "$0.83/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Premium",
+      "tagline": "150GB shared GB on Telstra — $125/mo"
     },
     {
       "id": "mobile_aldimobile_555gfamilyplanupto2sims",
@@ -2148,10 +3559,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "\u2014",
-        "Discount Duration": "\u2014",
+        "New Customer Duration": "—",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.1"
-      }
+      },
+      "specs": {
+        "data_gb": "50GB shared GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.10/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": false
+      },
+      "tier": "Standard",
+      "tagline": "50GB shared GB on Telstra — $55/mo"
     },
     {
       "id": "mobile_telstra_upfrontessential3mobilebundleplans4simstotal",
@@ -2159,9 +3587,9 @@
       "logoUrl": "",
       "providerColor": "0xFF007BC2",
       "planName": "Upfront Essential + 3 Mobile Bundle Plans (4 SIMs total)",
-      "description": "Standard Price: $~$260 (Essential $84 + 3\u00d7$57)",
+      "description": "Standard Price: $~$260 (Essential $84 + 3×$57)",
       "keyFeatures": [
-        "Data: ~255GB shared (180GB + 3\u00d725GB) GB",
+        "Data: ~255GB shared (180GB + 3×25GB) GB",
         "Network: Telstra"
       ],
       "price": 260.0,
@@ -2175,19 +3603,36 @@
       "applicableStates": [],
       "details": {
         "New Customer Duration": "1 month",
-        "Discount Duration": "\u2014",
+        "Discount Duration": "—",
         "Cost Per Gb": "1.02"
-      }
+      },
+      "specs": {
+        "data_gb": "~255GB shared (180GB + 3×25GB) GB",
+        "network": "Telstra",
+        "cost_per_gb": "$1.02/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": true,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": false,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Unlimited",
+      "tagline": "~255GB shared (180GB + 3×25GB) GB on Telstra — $260/mo"
     },
     {
       "id": "mobile_vodafone_bundleshare4mediumlargesimplans",
       "providerName": "Vodafone",
       "logoUrl": "",
       "providerColor": "0xFFE60000",
-      "planName": "Bundle & Share (4\u00d7 Medium/Large SIM plans)",
-      "description": "Standard Price: $~$177\u2013$250 (after $5+$15\u00d72 discounts)",
+      "planName": "Bundle & Share (4× Medium/Large SIM plans)",
+      "description": "Standard Price: $~$177–$250 (after $5+$15×2 discounts)",
       "keyFeatures": [
-        "Data: Varies (e.g. 4\u00d7 ~100-200GB pooled) GB",
+        "Data: Varies (e.g. 4× ~100-200GB pooled) GB",
         "Network: Vodafone"
       ],
       "price": 177.0,
@@ -2200,10 +3645,27 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Duration": "6\u201312 months common",
-        "Discount Duration": "\u2014",
-        "Cost Per Gb": "$0.60\u2013$0.90"
-      }
+        "New Customer Duration": "6–12 months common",
+        "Discount Duration": "—",
+        "Cost Per Gb": "$0.60–$0.90"
+      },
+      "specs": {
+        "data_gb": "Varies (e.g. 4× ~100-200GB pooled) GB",
+        "network": "Vodafone",
+        "cost_per_gb": "$$0.60–$0.90/GB"
+      },
+      "boolFeatures": {
+        "unlimited_data": false,
+        "five_g": false,
+        "unlimited_calls": true,
+        "no_lock_in": true,
+        "hotspot": true,
+        "data_rollover": true,
+        "international_roaming": false,
+        "esim": true
+      },
+      "tier": "Basic",
+      "tagline": "Varies (e.g. 4× ~100-200GB pooled) GB on Vodafone — $177/mo"
     }
   ],
   "electricity": [
@@ -2243,7 +3705,26 @@
         "New Customer Price": "1550",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.41"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.2c",
+        "usage_rate": "37c/kWh",
+        "solar_fit": "12c (capped first 8 kWh/day) or 8cc/kWh",
+        "annual_cost_3000": "~$1,450"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": true,
+        "carbon_neutral": false,
+        "pay_on_time_discount": true,
+        "bill_smoothing": true,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Origin Energy"
     },
     {
       "id": "elec_dodo_realdealvalue",
@@ -2255,7 +3736,7 @@
       "keyFeatures": [
         "Type: Single Rate",
         "Daily Supply: ~$1.10c",
-        "Usage: ~34\u201336cc/kWh",
+        "Usage: ~34–36cc/kWh",
         "Solar FIT: 1.0c flatc/kWh"
       ],
       "price": 1550.0,
@@ -2280,7 +3761,26 @@
         "New Customer Price": "Varies",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.39"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "~$1.10c",
+        "usage_rate": "~34–36cc/kWh",
+        "solar_fit": "1.0c flatc/kWh",
+        "annual_cost_3000": "~$1,370"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Dodo"
     },
     {
       "id": "elec_shellenergy_standardplan",
@@ -2293,7 +3793,7 @@
         "Type: Single Rate",
         "Daily Supply: ~$1.15c",
         "Usage: ~35cc/kWh",
-        "Solar FIT: 4\u20136cc/kWh"
+        "Solar FIT: 4–6cc/kWh"
       ],
       "price": 1570.0,
       "priceUnit": "/yr",
@@ -2317,7 +3817,26 @@
         "New Customer Price": "Varies",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.39"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "~$1.15c",
+        "usage_rate": "~35cc/kWh",
+        "solar_fit": "4–6cc/kWh",
+        "annual_cost_3000": "~$1,380"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Shell Energy"
     },
     {
       "id": "elec_energyaustralia_flexiplansolarmax",
@@ -2355,7 +3874,26 @@
         "New Customer Price": "$1,520 (intro)",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.41"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.25c",
+        "usage_rate": "36c/kWh",
+        "solar_fit": "8c (first 10 kWh/day) then 4cc/kWh",
+        "annual_cost_3000": "~$1,420"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": true,
+        "carbon_neutral": false,
+        "pay_on_time_discount": true,
+        "bill_smoothing": true,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from EnergyAustralia"
     },
     {
       "id": "elec_agl_solarsaveressentials",
@@ -2392,7 +3930,26 @@
         "New Customer Price": "$1,620 ($100 credit)",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.43"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.25c",
+        "usage_rate": "37.5c/kWh",
+        "solar_fit": "8c (first 10 kWh/day) then 4cc/kWh",
+        "annual_cost_3000": "~$1,510"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": true,
+        "carbon_neutral": false,
+        "pay_on_time_discount": true,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from AGL"
     },
     {
       "id": "elec_alintaenergy_homedealreadysolarbalance",
@@ -2429,7 +3986,26 @@
         "New Customer Price": "1372",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.37"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "0.99c",
+        "usage_rate": "34.66c/kWh",
+        "solar_fit": "10c (first 10 kWh/day) then 5cc/kWh",
+        "annual_cost_3000": "~$1,320"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": true,
+        "carbon_neutral": false,
+        "pay_on_time_discount": true,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Alinta Energy"
     },
     {
       "id": "elec_globirdenergy_boostresidential",
@@ -2441,7 +4017,7 @@
       "keyFeatures": [
         "Type: Single Rate",
         "Daily Supply: 1.14c",
-        "Usage: 28.6\u201331.79c/kWh",
+        "Usage: 28.6–31.79c/kWh",
         "Solar FIT: 10c (first 8 kWh/day) then 3cc/kWh"
       ],
       "price": 1439.0,
@@ -2466,7 +4042,26 @@
         "New Customer Price": "1339",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.36"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.14c",
+        "usage_rate": "28.6–31.79c/kWh",
+        "solar_fit": "10c (first 8 kWh/day) then 3cc/kWh",
+        "annual_cost_3000": "~$1,280"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from GloBird Energy"
     },
     {
       "id": "elec_koganenergy_koganfreefirst",
@@ -2503,7 +4098,26 @@
         "New Customer Price": "$1,348 (credit)",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.36"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "0.91c",
+        "usage_rate": "29.71c/kWh",
+        "solar_fit": "0.5c flatc/kWh",
+        "annual_cost_3000": "~$1,250"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Kogan Energy"
     },
     {
       "id": "elec_covau_freedomresidential",
@@ -2540,7 +4154,26 @@
         "New Customer Price": "Varies",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.38"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "~$1.00c",
+        "usage_rate": "~34cc/kWh",
+        "solar_fit": "5.5c flatc/kWh",
+        "annual_cost_3000": "~$1,320"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from CovaU"
     },
     {
       "id": "elec_powershop_powerhouse",
@@ -2575,7 +4208,26 @@
         "New Customer Price": "$1,392 (Switch Saver)",
         "New Customer Duration": "12 months",
         "Cost Per Kwh Effective": "0.37"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.01c",
+        "usage_rate": "29.71c/kWh",
+        "solar_fit": "0.5c flatc/kWh",
+        "annual_cost_3000": "~$1,270"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": true,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Powershop"
     },
     {
       "id": "elec_1stenergy_1struby1stblue",
@@ -2587,7 +4239,7 @@
       "keyFeatures": [
         "Type: Single Rate",
         "Daily Supply: 1.06c",
-        "Usage: 29.48\u201334.21c/kWh",
+        "Usage: 29.48–34.21c/kWh",
         "Solar FIT: 1.0c flatc/kWh"
       ],
       "price": 1521.0,
@@ -2612,7 +4264,26 @@
         "New Customer Price": "$1,421 (credit)",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.38"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.06c",
+        "usage_rate": "29.48–34.21c/kWh",
+        "solar_fit": "1.0c flatc/kWh",
+        "annual_cost_3000": "~$1,320"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from 1st Energy"
     },
     {
       "id": "elec_amberelectric_wholesaleflexsolaroptimised",
@@ -2624,7 +4295,7 @@
       "keyFeatures": [
         "Type: Dynamic (wholesale)",
         "Daily Supply: ~$1.40 (equiv)c",
-        "Usage: Variable (~24\u201338c avg)c/kWh",
+        "Usage: Variable (~24–38c avg)c/kWh",
         "Solar FIT: Variable wholesale (up to 25c+ with battery)c/kWh"
       ],
       "price": 1180.0,
@@ -2650,7 +4321,26 @@
         "New Customer Price": "Varies (bill guarantee)",
         "New Customer Duration": "Quarterly",
         "Cost Per Kwh Effective": "0.28"
-      }
+      },
+      "specs": {
+        "plan_type": "Dynamic (wholesale)",
+        "supply_charge": "~$1.40 (equiv)c",
+        "usage_rate": "Variable (~24–38c avg)c/kWh",
+        "solar_fit": "Variable wholesale (up to 25c+ with battery)c/kWh",
+        "annual_cost_3000": "~$1,150"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": true,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Amber Electric"
     },
     {
       "id": "elec_redenergy_livingenergysmartfit",
@@ -2688,7 +4378,26 @@
         "New Customer Price": "1480",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.4"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate / ToU",
+        "supply_charge": "1.18c",
+        "usage_rate": "36.51c/kWh",
+        "solar_fit": "4c + up to 16.7c evening peakc/kWh",
+        "annual_cost_3000": "~$1,390"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": true,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Red Energy"
     },
     {
       "id": "elec_energylocals_homeclassic",
@@ -2701,7 +4410,7 @@
         "Type: Single Rate",
         "Daily Supply: ~$1.05c",
         "Usage: ~34.5c/kWh",
-        "Solar FIT: 5c + 15c peak (4\u20139pm)c/kWh"
+        "Solar FIT: 5c + 15c peak (4–9pm)c/kWh"
       ],
       "price": 1510.0,
       "priceUnit": "/yr",
@@ -2726,7 +4435,26 @@
         "New Customer Price": "$100 credit",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.38"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "~$1.05c",
+        "usage_rate": "~34.5c/kWh",
+        "solar_fit": "5c + 15c peak (4–9pm)c/kWh",
+        "annual_cost_3000": "~$1,330"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Energy Locals"
     },
     {
       "id": "elec_engie_engiesolarnrmaperks",
@@ -2763,7 +4491,26 @@
         "New Customer Price": "$1,434 (Perks)",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.38"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.15c",
+        "usage_rate": "34.8c/kWh",
+        "solar_fit": "10c (first 8 kWh/day) then 5.5cc/kWh",
+        "annual_cost_3000": "~$1,350"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": true,
+        "carbon_neutral": false,
+        "pay_on_time_discount": true,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from ENGIE"
     },
     {
       "id": "elec_sumo_sumosunriselocal",
@@ -2776,7 +4523,7 @@
         "Type: Single Rate",
         "Daily Supply: 1.09c",
         "Usage: 29.99c/kWh",
-        "Solar FIT: 8.8c (capped first 8\u201310 kWh/day)c/kWh"
+        "Solar FIT: 8.8c (capped first 8–10 kWh/day)c/kWh"
       ],
       "price": 1463.0,
       "priceUnit": "/yr",
@@ -2800,7 +4547,26 @@
         "New Customer Price": "1363",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.37"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.09c",
+        "usage_rate": "29.99c/kWh",
+        "solar_fit": "8.8c (capped first 8–10 kWh/day)c/kWh",
+        "annual_cost_3000": "~$1,300"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": true,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Sumo"
     },
     {
       "id": "elec_diamondenergy_everydayrenewablesaver",
@@ -2812,8 +4578,8 @@
       "keyFeatures": [
         "Type: Single Rate",
         "Daily Supply: ~$1.05c",
-        "Usage: ~33\u201335cc/kWh",
-        "Solar FIT: 5\u20138cc/kWh"
+        "Usage: ~33–35cc/kWh",
+        "Solar FIT: 5–8cc/kWh"
       ],
       "price": 1520.0,
       "priceUnit": "/yr",
@@ -2837,7 +4603,26 @@
         "New Customer Price": "Varies",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.38"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "~$1.05c",
+        "usage_rate": "~33–35cc/kWh",
+        "solar_fit": "5–8cc/kWh",
+        "annual_cost_3000": "~$1,340"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": true,
+        "pay_on_time_discount": false,
+        "bill_smoothing": false,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from Diamond Energy"
     },
     {
       "id": "elec_ovoenergy_oneplanfree3plan",
@@ -2872,7 +4657,26 @@
         "New Customer Price": "1395",
         "New Customer Duration": "1 month",
         "Cost Per Kwh Effective": "0.37"
-      }
+      },
+      "specs": {
+        "plan_type": "Single Rate",
+        "supply_charge": "1.05c",
+        "usage_rate": "34.5c/kWh",
+        "solar_fit": "2.8c flatc/kWh",
+        "annual_cost_3000": "~$1,310"
+      },
+      "boolFeatures": {
+        "solar_compatible": true,
+        "no_lock_in": true,
+        "green_power": false,
+        "carbon_neutral": false,
+        "pay_on_time_discount": false,
+        "bill_smoothing": true,
+        "hardship_program": true,
+        "app_available": true
+      },
+      "tier": "Solar",
+      "tagline": "Solar feed-in plan from OVO Energy"
     }
   ],
   "gas": [
@@ -2909,7 +4713,23 @@
         "Est Annual @ 45K Mj": "1350.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.035"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.0c",
+        "usage_rate": "3.15c/MJ",
+        "annual_cost_25k": "$990",
+        "annual_cost_35k": "$1170.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from GloBird Energy"
     },
     {
       "id": "gas_covau_freedomresidential",
@@ -2944,7 +4764,23 @@
         "Est Annual @ 45K Mj": "1350.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.036"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "0.85c",
+        "usage_rate": "3.28c/MJ",
+        "annual_cost_25k": "$990",
+        "annual_cost_35k": "$1170.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from CovaU"
     },
     {
       "id": "gas_alintaenergy_homedealready",
@@ -2979,7 +4815,23 @@
         "Est Annual @ 45K Mj": "1400.0",
         "New Customer Offer": "Credit",
         "Cost Per Mj Effective": "0.037"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "0.9c",
+        "usage_rate": "3.3c/MJ",
+        "annual_cost_25k": "$1020",
+        "annual_cost_35k": "$1210.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Alinta Energy"
     },
     {
       "id": "gas_koganenergy_koganfreefirst",
@@ -3014,7 +4866,23 @@
         "Est Annual @ 45K Mj": "1360.0",
         "New Customer Offer": "Credit",
         "Cost Per Mj Effective": "0.036"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "0.9c",
+        "usage_rate": "3.25c/MJ",
+        "annual_cost_25k": "$1000",
+        "annual_cost_35k": "$1180.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Kogan Energy"
     },
     {
       "id": "gas_sumo_sumosunrise",
@@ -3049,7 +4917,23 @@
         "Est Annual @ 45K Mj": "1410.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.036"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "0.95c",
+        "usage_rate": "3.25c/MJ",
+        "annual_cost_25k": "$1030",
+        "annual_cost_35k": "$1220.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Sumo"
     },
     {
       "id": "gas_energylocals_homeclassic",
@@ -3085,7 +4969,23 @@
         "Est Annual @ 45K Mj": "1440.0",
         "New Customer Offer": "100 credit",
         "Cost Per Mj Effective": "0.037"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.0c",
+        "usage_rate": "3.35c/MJ",
+        "annual_cost_25k": "$1060",
+        "annual_cost_35k": "$1250.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Energy Locals"
     },
     {
       "id": "gas_ovoenergy_oneplan",
@@ -3118,7 +5018,23 @@
         "Est Annual @ 45K Mj": "1410.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.037"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "0.95c",
+        "usage_rate": "3.3c/MJ",
+        "annual_cost_25k": "$1030",
+        "annual_cost_35k": "$1220.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from OVO Energy"
     },
     {
       "id": "gas_energyaustralia_flexiplan",
@@ -3154,7 +5070,23 @@
         "Est Annual @ 45K Mj": "1450.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.036"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "0.95c",
+        "usage_rate": "3.2c/MJ",
+        "annual_cost_25k": "$1050",
+        "annual_cost_35k": "$1250.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": true,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from EnergyAustralia"
     },
     {
       "id": "gas_engie_perksnrma",
@@ -3189,7 +5121,23 @@
         "Est Annual @ 45K Mj": "1500.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.038"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.05c",
+        "usage_rate": "3.4c/MJ",
+        "annual_cost_25k": "$1100",
+        "annual_cost_35k": "$1300.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": true,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from ENGIE"
     },
     {
       "id": "gas_powershop_powerhouse",
@@ -3222,7 +5170,23 @@
         "Est Annual @ 45K Mj": "1490.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.038"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.0c",
+        "usage_rate": "3.45c/MJ",
+        "annual_cost_25k": "$1090",
+        "annual_cost_35k": "$1290.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Powershop"
     },
     {
       "id": "gas_diamondenergy_everydayrenewable",
@@ -3257,7 +5221,23 @@
         "Est Annual @ 45K Mj": "1450.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.038"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.0c",
+        "usage_rate": "3.4c/MJ",
+        "annual_cost_25k": "$1070",
+        "annual_cost_35k": "$1260.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Diamond Energy"
     },
     {
       "id": "gas_originenergy_govariable",
@@ -3293,7 +5273,23 @@
         "Est Annual @ 45K Mj": "1520.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.039"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.05c",
+        "usage_rate": "3.45c/MJ",
+        "annual_cost_25k": "$1120",
+        "annual_cost_35k": "$1320.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": true,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Origin Energy"
     },
     {
       "id": "gas_dodo_realdeal",
@@ -3328,7 +5324,23 @@
         "Est Annual @ 45K Mj": "1510.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.039"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.05c",
+        "usage_rate": "3.5c/MJ",
+        "annual_cost_25k": "$1110",
+        "annual_cost_35k": "$1310.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Dodo"
     },
     {
       "id": "gas_redenergy_livingenergy",
@@ -3364,7 +5376,23 @@
         "Est Annual @ 45K Mj": "1580.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.04"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.1c",
+        "usage_rate": "3.6c/MJ",
+        "annual_cost_25k": "$1160",
+        "annual_cost_35k": "$1370.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": true,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Red Energy"
     },
     {
       "id": "gas_momentumenergy_warmwelcome",
@@ -3397,7 +5425,23 @@
         "Est Annual @ 45K Mj": "1560.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.04"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.1c",
+        "usage_rate": "3.55c/MJ",
+        "annual_cost_25k": "$1140",
+        "annual_cost_35k": "$1350.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Momentum Energy"
     },
     {
       "id": "gas_agl_essentials",
@@ -3433,7 +5477,23 @@
         "Est Annual @ 45K Mj": "1640.0",
         "New Customer Offer": "100 credit",
         "Cost Per Mj Effective": "0.041"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.15c",
+        "usage_rate": "3.7c/MJ",
+        "annual_cost_25k": "$1200",
+        "annual_cost_35k": "$1420.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": true,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from AGL"
     },
     {
       "id": "gas_lumoenergy_standard",
@@ -3468,7 +5528,23 @@
         "Est Annual @ 45K Mj": "1660.0",
         "New Customer Offer": "Varies",
         "Cost Per Mj Effective": "0.042"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "1.2c",
+        "usage_rate": "3.8c/MJ",
+        "annual_cost_25k": "$1220",
+        "annual_cost_35k": "$1440.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Lumo Energy"
     },
     {
       "id": "gas_kleenheat_monthlysmartsaver",
@@ -3500,7 +5576,23 @@
         "Est Annual @ 45K Mj": "2650.0",
         "New Customer Offer": "31% off usage",
         "Cost Per Mj Effective": "0.065"
-      }
+      },
+      "specs": {
+        "gas_type": "Pipe (Mains)",
+        "supply_charge": "0.265c",
+        "usage_rate": "17.41c/MJ",
+        "annual_cost_25k": "$1850",
+        "annual_cost_35k": "$2250.0"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Kleenheat"
     },
     {
       "id": "gas_elgas_homelpgbottlestanks",
@@ -3529,7 +5621,22 @@
         "Est Annual @ 15K Mj": "600",
         "Est Annual @ 25K Mj": "800",
         "New Customer Offer": "Credit / promo"
-      }
+      },
+      "specs": {
+        "gas_type": "Bottled (LPG)",
+        "supply_charge": "c",
+        "usage_rate": "135 (per 45kg)c/MJ",
+        "annual_cost_25k": "$800"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Elgas"
     },
     {
       "id": "gas_supagas_homelpgbottlesdelivery",
@@ -3558,7 +5665,22 @@
         "Est Annual @ 15K Mj": "550",
         "Est Annual @ 25K Mj": "750",
         "New Customer Offer": "50% off first order"
-      }
+      },
+      "specs": {
+        "gas_type": "Bottled (LPG)",
+        "supply_charge": "c",
+        "usage_rate": "125 (per 45kg)c/MJ",
+        "annual_cost_25k": "$750"
+      },
+      "boolFeatures": {
+        "no_lock_in": true,
+        "green_gas": false,
+        "pay_on_time_discount": false,
+        "app_available": true,
+        "hardship_program": true
+      },
+      "tier": "Standard",
+      "tagline": "Competitive gas plan from Supagas"
     }
   ],
   "solar": [
@@ -3567,10 +5689,10 @@
       "providerName": "Fortune Solar",
       "logoUrl": "",
       "providerColor": "0xFF4200B3",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
-        "Battery: 10\u201313 kWh",
+        "Battery: 10–13 kWh",
         "Warranty: 25 yrs / 10 yrs / 10 yrs"
       ],
       "price": 11500.0,
@@ -3583,24 +5705,40 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$800\u2013$950",
-        "Price/Kwh Battery (After)": "$900\u2013$1,100",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$800–$950",
+        "Price/Kwh Battery (After)": "$900–$1,100",
         "Warranty (Panels / Inverter / Battery)": "25 yrs / 10 yrs / 10 yrs",
-        "Current Offers / Discounts / Risks": "Lowest price; CHBP rebate drops after 1 May 2026 (risk of +$500\u2013$1,200)",
+        "Current Offers / Discounts / Risks": "Lowest price; CHBP rebate drops after 1 May 2026 (risk of +$500–$1,200)",
         "Payment Terms": "Full payment before install",
-        "Delivery Timeline": "4\u20136 weeks"
-      }
+        "Delivery Timeline": "4–6 weeks"
+      },
+      "specs": {
+        "battery_size": "10–13 kWh",
+        "warranty": "25 yrs / 10 yrs / 10 yrs",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$800–$950",
+        "price_per_kwh": "$900–$1,100"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": false
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Fortune Solar"
     },
     {
       "id": "solar_arisesolar_1014kwsystem",
       "providerName": "Arise Solar",
       "logoUrl": "",
       "providerColor": "0xFF4200B3",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
-        "Battery: 10\u201313 kWh",
+        "Battery: 10–13 kWh",
         "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 13000.0,
@@ -3613,24 +5751,40 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$900\u2013$1,050",
-        "Price/Kwh Battery (After)": "$900\u2013$1,100",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$900–$1,050",
+        "Price/Kwh Battery (After)": "$900–$1,100",
         "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
         "Current Offers / Discounts / Risks": "Price-beat guarantee + free panel upgrades",
         "Payment Terms": "Deposit + balance",
-        "Delivery Timeline": "4\u20136 weeks"
-      }
+        "Delivery Timeline": "4–6 weeks"
+      },
+      "specs": {
+        "battery_size": "10–13 kWh",
+        "warranty": "25 / 10 / 10 yrs",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$900–$1,050",
+        "price_per_kwh": "$900–$1,100"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": false
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Arise Solar"
     },
     {
       "id": "solar_energymatters_1014kwsystem",
       "providerName": "Energy Matters",
       "logoUrl": "",
       "providerColor": "0xFF4200B3",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
-        "Battery: 10\u201313 kWh",
+        "Battery: 10–13 kWh",
         "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 13500.0,
@@ -3643,24 +5797,40 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$950\u2013$1,100",
-        "Price/Kwh Battery (After)": "$950\u2013$1,150",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$950–$1,100",
+        "Price/Kwh Battery (After)": "$950–$1,150",
         "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
-        "Current Offers / Discounts / Risks": "Free 5\u20137 quotes + VPP credits ($200\u2013$500/yr)",
+        "Current Offers / Discounts / Risks": "Free 5–7 quotes + VPP credits ($200–$500/yr)",
         "Payment Terms": "Flexible",
-        "Delivery Timeline": "4\u20138 weeks"
-      }
+        "Delivery Timeline": "4–8 weeks"
+      },
+      "specs": {
+        "battery_size": "10–13 kWh",
+        "warranty": "25 / 10 / 10 yrs",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$950–$1,100",
+        "price_per_kwh": "$950–$1,150"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": true
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Energy Matters"
     },
     {
       "id": "solar_solarchoice_1014kwsystem",
       "providerName": "Solar Choice",
       "logoUrl": "",
       "providerColor": "0xFF4200B3",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
-        "Battery: 10\u201313 kWh",
+        "Battery: 10–13 kWh",
         "Warranty: Varies by installer"
       ],
       "price": 13000.0,
@@ -3673,24 +5843,40 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$900\u2013$1,050",
-        "Price/Kwh Battery (After)": "$900\u2013$1,100",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$900–$1,050",
+        "Price/Kwh Battery (After)": "$900–$1,100",
         "Warranty (Panels / Inverter / Battery)": "Varies by installer",
         "Current Offers / Discounts / Risks": "Independent quotes from 7+ installers (no sales pressure)",
         "Payment Terms": "Flexible",
-        "Delivery Timeline": "4\u20138 weeks"
-      }
+        "Delivery Timeline": "4–8 weeks"
+      },
+      "specs": {
+        "battery_size": "10–13 kWh",
+        "warranty": "Varies by installer",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$900–$1,050",
+        "price_per_kwh": "$900–$1,100"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": true
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Solar Choice"
     },
     {
       "id": "solar_solargain_1014kwsystem",
       "providerName": "Solargain",
       "logoUrl": "",
       "providerColor": "0xFF4200B3",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
-        "Battery: 10\u201313 kWh",
+        "Battery: 10–13 kWh",
         "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 14000.0,
@@ -3703,24 +5889,40 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$980\u2013$1,100",
-        "Price/Kwh Battery (After)": "$1,000\u2013$1,200",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$980–$1,100",
+        "Price/Kwh Battery (After)": "$1,000–$1,200",
         "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
         "Current Offers / Discounts / Risks": "Finance options + NSW/QLD focus",
         "Payment Terms": "Deposit + balance",
-        "Delivery Timeline": "4\u20136 weeks"
-      }
+        "Delivery Timeline": "4–6 weeks"
+      },
+      "specs": {
+        "battery_size": "10–13 kWh",
+        "warranty": "25 / 10 / 10 yrs",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$980–$1,100",
+        "price_per_kwh": "$1,000–$1,200"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": false
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Solargain"
     },
     {
       "id": "solar_solahart_1014kwsystem",
       "providerName": "Solahart",
       "logoUrl": "",
       "providerColor": "0xFF4200B3",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
-        "Battery: 10\u201313 kWh",
+        "Battery: 10–13 kWh",
         "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 14500.0,
@@ -3733,24 +5935,40 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$1,000\u2013$1,150",
-        "Price/Kwh Battery (After)": "$1,100\u2013$1,300",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$1,000–$1,150",
+        "Price/Kwh Battery (After)": "$1,100–$1,300",
         "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
         "Current Offers / Discounts / Risks": "Strong service + Australian brand",
         "Payment Terms": "Deposit + balance",
-        "Delivery Timeline": "6\u20138 weeks"
-      }
+        "Delivery Timeline": "6–8 weeks"
+      },
+      "specs": {
+        "battery_size": "10–13 kWh",
+        "warranty": "25 / 10 / 10 yrs",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$1,000–$1,150",
+        "price_per_kwh": "$1,100–$1,300"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": true
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Solahart"
     },
     {
       "id": "solar_originenergy_1014kwsystem",
       "providerName": "Origin Energy",
       "logoUrl": "",
       "providerColor": "0xFFF36A22",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
-        "Battery: 10\u201313 kWh",
+        "Battery: 10–13 kWh",
         "Warranty: 25 / 10 / 10 yrs"
       ],
       "price": 14500.0,
@@ -3763,22 +5981,38 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$1,020\u2013$1,150",
-        "Price/Kwh Battery (After)": "$1,100\u2013$1,300",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$1,020–$1,150",
+        "Price/Kwh Battery (After)": "$1,100–$1,300",
         "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
         "Current Offers / Discounts / Risks": "High FiT when bundled with Origin electricity plan",
         "Payment Terms": "Flexible (with bill)",
-        "Delivery Timeline": "6\u20138 weeks"
-      }
+        "Delivery Timeline": "6–8 weeks"
+      },
+      "specs": {
+        "battery_size": "10–13 kWh",
+        "warranty": "25 / 10 / 10 yrs",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$1,020–$1,150",
+        "price_per_kwh": "$1,100–$1,300"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": false
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Origin Energy"
     },
     {
       "id": "solar_teslapowerwall3_1014kwsystem",
       "providerName": "Tesla (Powerwall 3)",
       "logoUrl": "",
       "providerColor": "0xFF4200B3",
-      "planName": "10\u201314kW System",
-      "description": "Additional costs: Varies ($0\u2013$500)",
+      "planName": "10–14kW System",
+      "description": "Additional costs: Varies ($0–$500)",
       "keyFeatures": [
         "Battery: 13.5 kWh",
         "Warranty: 25 / 10 / 10 yrs"
@@ -3793,14 +6027,30 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "Additional Costs": "Varies ($0\u2013$500)",
-        "Price/Kw Solar (After)": "$1,050\u2013$1,200",
-        "Price/Kwh Battery (After)": "$1,150\u2013$1,350",
+        "Additional Costs": "Varies ($0–$500)",
+        "Price/Kw Solar (After)": "$1,050–$1,200",
+        "Price/Kwh Battery (After)": "$1,150–$1,350",
         "Warranty (Panels / Inverter / Battery)": "25 / 10 / 10 yrs",
         "Current Offers / Discounts / Risks": "VPP credits + seamless app integration",
         "Payment Terms": "Deposit + balance",
-        "Delivery Timeline": "6\u201310 weeks"
-      }
+        "Delivery Timeline": "6–10 weeks"
+      },
+      "specs": {
+        "battery_size": "13.5 kWh",
+        "warranty": "25 / 10 / 10 yrs",
+        "additional_costs": "Varies ($0–$500)",
+        "price_per_kw": "$1,050–$1,200",
+        "price_per_kwh": "$1,150–$1,350"
+      },
+      "boolFeatures": {
+        "battery_available": true,
+        "cec_accredited": true,
+        "stcs_included": true,
+        "monitoring_app": true,
+        "finance_available": false
+      },
+      "tier": "Large (10–14kW)",
+      "tagline": "10–14kW System solar system from Tesla (Powerwall 3)"
     }
   ],
   "insurance": [
@@ -3828,7 +6078,24 @@
       "details": {
         "New Customer Offer (April 2026)": "15% off first year (online)",
         "Plan Link.1": "https://www.budgetdirect.com.au/car-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Car",
+        "best_for": "Budget Cheap Car",
+        "new_customer_offer": "15% off first year (online)"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": true,
+        "hire_car": true,
+        "windscreen": true,
+        "new_for_old": true,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Car cover from Budget Direct"
     },
     {
       "id": "ins_bingle_comprehensive",
@@ -3854,7 +6121,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Lowest base premiums",
         "Plan Link.1": "https://www.budgetdirect.com.au/home-contents-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Car",
+        "best_for": "Ultra-Budget Car",
+        "new_customer_offer": "Lowest base premiums"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": true,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": false
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Car cover from Bingle"
     },
     {
       "id": "ins_colesinsurance_comprehensive",
@@ -3880,7 +6164,24 @@
       "details": {
         "New Customer Offer (April 2026)": "15% off first year + Flybuys",
         "Plan Link.1": "https://www.budgetdirect.com.au/pet-insurance.html"
-      }
+      },
+      "specs": {
+        "insurance_type": "Car",
+        "best_for": "Supermarket Value Car",
+        "new_customer_offer": "15% off first year + Flybuys"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": true,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": false
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Car cover from Coles Insurance"
     },
     {
       "id": "ins_everydayinsurance_comprehensive",
@@ -3906,7 +6207,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Grocery vouchers / perks",
         "Plan Link.1": "https://www.bingle.com.au/car-insurance.html"
-      }
+      },
+      "specs": {
+        "insurance_type": "Car",
+        "best_for": "Everyday Value Car",
+        "new_customer_offer": "Grocery vouchers / perks"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": true,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Car cover from Everyday Insurance"
     },
     {
       "id": "ins_youi_comprehensive",
@@ -3932,7 +6250,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Personalised pricing",
         "Plan Link.1": "https://www.coles.com.au/insurance/car-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Car",
+        "best_for": "Features & Satisfaction",
+        "new_customer_offer": "Personalised pricing"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": true,
+        "hire_car": true,
+        "windscreen": true,
+        "new_for_old": true,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Car cover from Youi"
     },
     {
       "id": "ins_nrma_comprehensive",
@@ -3958,7 +6293,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Up to 10% first year (online)",
         "Plan Link.1": "https://www.coles.com.au/insurance/home-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Car",
+        "best_for": "NSW Service & Trust",
+        "new_customer_offer": "Up to 10% first year (online)"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": true,
+        "hire_car": true,
+        "windscreen": true,
+        "new_for_old": true,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Car cover from NRMA"
     },
     {
       "id": "ins_aami_comprehensive",
@@ -3970,7 +6322,7 @@
       "keyFeatures": [
         "Type: Car",
         "Best For: Bundles",
-        "Offer: $50\u2013$100 off first year"
+        "Offer: $50–$100 off first year"
       ],
       "price": 1200.0,
       "priceUnit": "/yr",
@@ -3982,9 +6334,26 @@
       "isEnabled": true,
       "applicableStates": [],
       "details": {
-        "New Customer Offer (April 2026)": "$50\u2013$100 off first year",
+        "New Customer Offer (April 2026)": "$50–$100 off first year",
         "Plan Link.1": "https://insurance.everyday.com.au/car-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Car",
+        "best_for": "Bundles",
+        "new_customer_offer": "$50–$100 off first year"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": true,
+        "hire_car": true,
+        "windscreen": true,
+        "new_for_old": true,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Car cover from AAMI"
     },
     {
       "id": "ins_budgetdirect_combinedhomecontents",
@@ -4010,7 +6379,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Up to 30% off combined",
         "Plan Link.1": "https://insurance.everyday.com.au/home-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Home & Contents",
+        "best_for": "Best Value Home",
+        "new_customer_offer": "Up to 30% off combined"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Home & Contents cover from Budget Direct"
     },
     {
       "id": "ins_youi_homecontents",
@@ -4036,7 +6422,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Personalised pricing",
         "Plan Link.1": "https://www.aami.com.au/car-insurance.html"
-      }
+      },
+      "specs": {
+        "insurance_type": "Home & Contents",
+        "best_for": "Tailored Cover",
+        "new_customer_offer": "Personalised pricing"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Home & Contents cover from Youi"
     },
     {
       "id": "ins_nrma_homecontents",
@@ -4062,7 +6465,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Multi-product discount",
         "Plan Link.1": "https://www.aami.com.au/home-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Home & Contents",
+        "best_for": "NSW Claims Experience",
+        "new_customer_offer": "Multi-product discount"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Home & Contents cover from NRMA"
     },
     {
       "id": "ins_allianz_homecontents",
@@ -4088,7 +6508,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Up to 10% bundle",
         "Plan Link.1": "https://www.aami.com.au/health-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Home & Contents",
+        "best_for": "Premium Features",
+        "new_customer_offer": "Up to 10% bundle"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Home & Contents cover from Allianz"
     },
     {
       "id": "ins_budgetdirect_plushighestlimit",
@@ -4114,7 +6551,24 @@
       "details": {
         "New Customer Offer (April 2026)": "15% off first year",
         "Plan Link.1": "https://www.aami.com.au/pet-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Pet",
+        "best_for": "High-Limit Pet",
+        "new_customer_offer": "15% off first year"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Pet cover from Budget Direct"
     },
     {
       "id": "ins_budgetdirect_comprehensive",
@@ -4140,7 +6594,24 @@
       "details": {
         "New Customer Offer (April 2026)": "15% off first year",
         "Plan Link.1": "https://www.gio.com.au/car-insurance.html"
-      }
+      },
+      "specs": {
+        "insurance_type": "Pet",
+        "best_for": "Balanced Pet",
+        "new_customer_offer": "15% off first year"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": true,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Pet cover from Budget Direct"
     },
     {
       "id": "ins_budgetdirect_essentialaccidentonly",
@@ -4166,7 +6637,24 @@
       "details": {
         "New Customer Offer (April 2026)": "15% off first year",
         "Plan Link.1": "https://www.gio.com.au/home-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Pet",
+        "best_for": "Budget Accident Cover",
+        "new_customer_offer": "15% off first year"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Pet cover from Budget Direct"
     },
     {
       "id": "ins_aami_comprehensive",
@@ -4192,7 +6680,24 @@
       "details": {
         "New Customer Offer (April 2026)": "2 months free (code-dependent)",
         "Plan Link.1": "https://www.youi.com.au/car-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Pet",
+        "best_for": "Pet + General Bundle",
+        "new_customer_offer": "2 months free (code-dependent)"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": true,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Pet cover from AAMI"
     },
     {
       "id": "ins_medibank_petmaxhighestcover",
@@ -4218,7 +6723,24 @@
       "details": {
         "New Customer Offer (April 2026)": "2 months free (promo until Jul 2026)",
         "Plan Link.1": "https://www.youi.com.au/home-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Pet",
+        "best_for": "Premium Pet",
+        "new_customer_offer": "2 months free (promo until Jul 2026)"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Pet cover from Medibank"
     },
     {
       "id": "ins_medibank_petplus",
@@ -4244,7 +6766,24 @@
       "details": {
         "New Customer Offer (April 2026)": "2 months free",
         "Plan Link.1": "https://www.nrma.com.au/car-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Pet",
+        "best_for": "Mid-Tier Pet",
+        "new_customer_offer": "2 months free"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Pet cover from Medibank"
     },
     {
       "id": "ins_aami_hospitalextrasnibunderwrittenmidtier",
@@ -4270,7 +6809,24 @@
       "details": {
         "New Customer Offer (April 2026)": "8 weeks free (combined, until ~28 May 2026)",
         "Plan Link.1": "https://www.nrma.com.au/home-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Health + General Bundle",
+        "new_customer_offer": "8 weeks free (combined, until ~28 May 2026)"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Health cover from AAMI"
     },
     {
       "id": "ins_bupa_goldhospitalmidtopextrascombined",
@@ -4296,7 +6852,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Up to 12 weeks free + waived waiting periods",
         "Plan Link.1": "https://www.allianz.com.au/car-insurance.html"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Comprehensive Health",
+        "new_customer_offer": "Up to 12 weeks free + waived waiting periods"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Health cover from Bupa"
     },
     {
       "id": "ins_bupa_silverhospitalextras",
@@ -4322,7 +6895,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Up to 12 weeks free",
         "Plan Link.1": "https://www.allianz.com.au/home-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Balanced Hospital",
+        "new_customer_offer": "Up to 12 weeks free"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": true,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Health cover from Bupa"
     },
     {
       "id": "ins_medibank_goldhospitalextrascombined",
@@ -4348,7 +6938,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Up to 12 weeks free + up to $300 gift cards",
         "Plan Link.1": "https://www.allianz.com.au (search OSHC)"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Popular Combined Cover",
+        "new_customer_offer": "Up to 12 weeks free + up to $300 gift cards"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Health cover from Medibank"
     },
     {
       "id": "ins_medibank_silverhospitalextras",
@@ -4374,7 +6981,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Up to 12 weeks free",
         "Plan Link.1": "https://www.bupa.com.au/health-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Mid-Level Hospital",
+        "new_customer_offer": "Up to 12 weeks free"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Health cover from Medibank"
     },
     {
       "id": "ins_hcf_hospitaloptimalgoldmidextras",
@@ -4400,7 +7024,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Varies (strong value awards)",
         "Plan Link.1": "https://www.bupa.com.au/general-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Outstanding Value Health",
+        "new_customer_offer": "Varies (strong value awards)"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Health cover from HCF"
     },
     {
       "id": "ins_hcf_hospitalbasicplusmidextras",
@@ -4426,7 +7067,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Varies",
         "Plan Link.1": "https://www.medibank.com.au/health-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Budget Hospital",
+        "new_customer_offer": "Varies"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Health cover from HCF"
     },
     {
       "id": "ins_nib_goldhospitalextrascombined",
@@ -4452,7 +7110,24 @@
       "details": {
         "New Customer Offer (April 2026)": "6 weeks free + waived 2/6-month extras waits",
         "Plan Link.1": "https://www.medibank.com.au/pet-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Flexible Offers",
+        "new_customer_offer": "6 weeks free + waived 2/6-month extras waits"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Health cover from nib"
     },
     {
       "id": "ins_cbhsrestricted_completegoldhospitalextras",
@@ -4478,7 +7153,24 @@
       "details": {
         "New Customer Offer (April 2026)": "6 weeks free + $200 gift card (eligible members)",
         "Plan Link.1": "https://www.hcf.com.au"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "CBA Group Members",
+        "new_customer_offer": "6 weeks free + $200 gift card (eligible members)"
+      },
+      "boolFeatures": {
+        "comprehensive": true,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Comprehensive",
+      "tagline": "Comprehensive Health cover from CBHS (restricted)"
     },
     {
       "id": "ins_cbhsrestricted_everydaysilverplus",
@@ -4504,7 +7196,24 @@
       "details": {
         "New Customer Offer (April 2026)": "6 weeks free + $200 gift card",
         "Plan Link.1": "https://www.nib.com.au/health-insurance"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Mid-Level for Eligible",
+        "new_customer_offer": "6 weeks free + $200 gift card"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Health cover from CBHS (restricted)"
     },
     {
       "id": "ins_cbhsrestricted_kickstartbasicplus",
@@ -4530,7 +7239,24 @@
       "details": {
         "New Customer Offer (April 2026)": "6 weeks free + $200 gift card",
         "Plan Link.1": "https://www.cbhs.com.au"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Budget for Eligible",
+        "new_customer_offer": "6 weeks free + $200 gift card"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Health cover from CBHS (restricted)"
     },
     {
       "id": "ins_gmhbafrank_midtophospitalextras",
@@ -4556,7 +7282,24 @@
       "details": {
         "New Customer Offer (April 2026)": "Strong national value offers",
         "Plan Link.1": "https://www.gmhba.com.au or frankhealth.com.au"
-      }
+      },
+      "specs": {
+        "insurance_type": "Health",
+        "best_for": "Best Value Health",
+        "new_customer_offer": "Strong national value offers"
+      },
+      "boolFeatures": {
+        "comprehensive": false,
+        "roadside_assist": false,
+        "hire_car": false,
+        "windscreen": false,
+        "new_for_old": false,
+        "online_claims": true,
+        "claims_24_7": false,
+        "multi_policy_discount": true
+      },
+      "tier": "Standard",
+      "tagline": "Standard Health cover from GMHBA / Frank"
     }
   ]
 }

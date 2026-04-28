@@ -166,7 +166,7 @@ source "$VENV_DIR/bin/activate" || . "$VENV_DIR/bin/activate"
 
 # Manually install pip since we skipped it
 echo "--- 📥 Installing Pip manually... ---"
-curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py || wget -q https://bootstrap.pypa.io/get-pip.py -O get-pip.py
+curl -sS https://bootstrap.pypa.io/pip/3.9/get-pip.py -o get-pip.py || wget -q https://bootstrap.pypa.io/pip/3.9/get-pip.py -O get-pip.py
 "$VENV_DIR/bin/python" get-pip.py
 rm get-pip.py
 

@@ -17,6 +17,9 @@ import 'widgets/credit_card_table.dart';
 import '../../widgets/main_navigation_bar.dart';
 import '../../widgets/main_mobile_drawer.dart';
 import '../home/widgets/modern_footer.dart';
+import '../gamification/gamification_provider.dart';
+import '../gamification/widgets/quest_banner.dart';
+import '../gamification/widgets/live_ticker.dart';
 
 class ComparisonScreen extends ConsumerStatefulWidget {
   final ProductCategory initialCategory;
@@ -41,6 +44,9 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(comparisonProvider.notifier).loadCategory(widget.initialCategory);
+      ref.read(gamificationProvider.notifier).recordCategory(
+        widget.initialCategory.name,
+      );
     });
     _scrollController.addListener(_onScroll);
   }
@@ -278,6 +284,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
           Column(
         children: [
           const MainNavigationBar(),
+          const QuestBanner(),
           Expanded(
             child: CustomScrollView(
               controller: _scrollController,
@@ -390,6 +397,9 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                     ),
                   ),
                 ),
+
+                // ── Live activity ticker ──────────────────────────
+                const SliverToBoxAdapter(child: LiveActivityTicker()),
 
                 // ── Credit cards table ─────────────────────────────
                 if (selectedCat == ProductCategory.creditCards)

@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../theme/app_theme.dart';
+import '../features/gamification/gamification_provider.dart';
 import 'savenest_logo.dart';
 
-class MainNavigationBar extends StatefulWidget {
+class MainNavigationBar extends ConsumerStatefulWidget {
   const MainNavigationBar({super.key});
 
   @override
-  State<MainNavigationBar> createState() => _MainNavigationBarState();
+  ConsumerState<MainNavigationBar> createState() => _MainNavigationBarState();
 }
 
-class _MainNavigationBarState extends State<MainNavigationBar> {
+class _MainNavigationBarState extends ConsumerState<MainNavigationBar> {
   @override
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.of(context).size.width > 1100;
+    final gamState = ref.watch(gamificationProvider);
 
     return Container(
       height: 90,
@@ -65,6 +68,9 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
               if (MediaQuery.of(context).size.width > 800)
                 Row(
                   children: [
+                    // XP Level Badge
+                    _LevelBadge(state: gamState),
+                    const SizedBox(width: 16),
                     _navLink(context, 'Dashboard', '/dashboard'),
                     const SizedBox(width: 16),
                     _navLink(context, 'Blog', '/blog'),
@@ -139,6 +145,87 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
             fontWeight: FontWeight.bold,
             fontSize: 15,
           ),
+        ),
+      ),
+    );
+  }
+}
+
+// Compact XP level badge shown in nav bar
+class _LevelBadge extends StatelessWidget {
+  final GamificationState state;
+
+  const _LevelBadge({required this.state});
+
+  Color get _levelColor {
+    switch (state.level) {
+      case 1: return const Color(0xFF78909C);
+      case 2: return const Color(0xFF42A5F5);
+      case 3: return const Color(0xFF66BB6A);
+      case 4: return const Color(0xFFFFB300);
+      case 5: return const Color(0xFFFF7043);
+      default: return const Color(0xFF78909C);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Tooltip(
+      message: '${state.xp} XP · ${state.levelName}',
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: _levelColor.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(100),
+          border: Border.all(color: _levelColor.withOpacity(0.4)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              decoration: BoxDecoration(
+                color: _levelColor,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: Text(
+                'Lv.${state.level}',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+            ),
+            const SizedBox(width: 7),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  state.levelName,
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    color: _levelColor,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                SizedBox(
+                  width: 56,
+                  height: 3,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(2),
+                    child: LinearProgressIndicator(
+                      value: state.levelProgress,
+                      backgroundColor: Colors.grey.shade200,
+                      valueColor: AlwaysStoppedAnimation(_levelColor),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

@@ -67,14 +67,18 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
   }
 
   void _scrollToForm() {
+    // Better way to scroll: use the key of the form if possible, 
+    // but for now let's just adjust based on mobile/desktop
+    final isMobile = MediaQuery.of(context).size.width < 900;
     _scrollController.animateTo(
-      600, // Approximate location of the lead form
+      isMobile ? 800 : 600, 
       duration: const Duration(milliseconds: 800),
       curve: Curves.easeInOut,
     );
   }
 
   Future<void> _submitLead() async {
+    // ... (rest of the function remains same)
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       setState(() {
@@ -127,6 +131,10 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 900;
+    final isSmallMobile = screenWidth < 450;
+
     if (kIsWeb) {
       MetaSEO().author(author: 'SaveNest Solar Team');
       MetaSEO().description(
@@ -153,7 +161,9 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
                 // 1. HERO SECTION WITH ANIMATION AND URGENCY
                 Container(
                   width: double.infinity,
-                  height: 700,
+                  constraints: BoxConstraints(
+                    minHeight: isMobile ? 800 : 700,
+                  ),
                   decoration: const BoxDecoration(
                     color: AppTheme.deepNavy,
                     image: DecorationImage(
@@ -169,14 +179,22 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 1200),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
-                        child: Row(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: isMobile ? 16 : 24,
+                            vertical: isMobile ? 40 : 0),
+                        child: Flex(
+                          direction: isMobile ? Axis.vertical : Axis.horizontal,
+                          crossAxisAlignment: isMobile
+                              ? CrossAxisAlignment.center
+                              : CrossAxisAlignment.center,
                           children: [
-                            Expanded(
-                              flex: 5,
+                            Flexible(
+                              flex: isMobile ? 0 : 5,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: isMobile
+                                    ? CrossAxisAlignment.center
+                                    : CrossAxisAlignment.start,
                                 children: [
                                   ScaleTransition(
                                     scale: _scaleAnimation,
@@ -191,70 +209,84 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
                                             color: AppTheme.vibrantEmerald,
                                             width: 2),
                                       ),
-                                      child: const Text(
-                                        "🔥 LIMITED TIME: 2026 REBATES EXPIRING SOON",
+                                      child: Text(
+                                        "🔥 LIMITED TIME: 2026 REBATES",
                                         style: TextStyle(
                                             color: AppTheme.vibrantEmerald,
+                                            fontSize: isSmallMobile ? 12 : 14,
                                             fontWeight: FontWeight.w900),
                                       ),
                                     ),
                                   ),
                                   const SizedBox(height: 16),
                                   Row(
+                                    mainAxisAlignment: isMobile
+                                        ? MainAxisAlignment.center
+                                        : MainAxisAlignment.start,
                                     children: [
                                       const Icon(Icons.timer,
                                           color: Colors.white, size: 20),
                                       const SizedBox(width: 8),
                                       Text(
                                         "Offer ends in: ${_timeLeft.inHours.toString().padLeft(2, '0')}:${(_timeLeft.inMinutes % 60).toString().padLeft(2, '0')}:${(_timeLeft.inSeconds % 60).toString().padLeft(2, '0')}",
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             color: Colors.amber,
-                                            fontSize: 18,
+                                            fontSize: isMobile ? 16 : 18,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
                                   const SizedBox(height: 24),
-                                  const Text(
+                                  Text(
                                     "Crush Your Power Bill With Solar.",
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 64,
+                                      fontSize: isMobile ? 40 : 64,
                                       fontWeight: FontWeight.w900,
                                       height: 1.1,
                                     ),
+                                    textAlign: isMobile
+                                        ? TextAlign.center
+                                        : TextAlign.start,
                                   ),
                                   const SizedBox(height: 24),
-                                  const Text(
-                                    "Find out if your roof qualifies for government incentives and get 3 free quotes from trusted, CEC-accredited installers in your area.",
+                                  Text(
+                                    "Find out if your roof qualifies for government incentives and get 3 free quotes from trusted installers.",
                                     style: TextStyle(
                                       color: Colors.white70,
-                                      fontSize: 22,
+                                      fontSize: isMobile ? 18 : 22,
                                       height: 1.5,
                                     ),
+                                    textAlign: isMobile
+                                        ? TextAlign.center
+                                        : TextAlign.start,
                                   ),
-                                  const SizedBox(height: 48),
-                                  ElevatedButton(
-                                    onPressed: _scrollToForm,
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: AppTheme.vibrantEmerald,
-                                      foregroundColor: AppTheme.deepNavy,
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 48, vertical: 24),
-                                      textStyle: const TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                      elevation: 8,
+                                  if (isMobile) const SizedBox(height: 40),
+                                  if (!isMobile) ...[
+                                    const SizedBox(height: 48),
+                                    ElevatedButton(
+                                      onPressed: _scrollToForm,
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            AppTheme.vibrantEmerald,
+                                        foregroundColor: AppTheme.deepNavy,
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 48, vertical: 24),
+                                        textStyle: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                        elevation: 8,
+                                      ),
+                                      child: const Text("CHECK MY ELIGIBILITY"),
                                     ),
-                                    child: const Text("CHECK MY ELIGIBILITY"),
-                                  ),
+                                  ],
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 40),
-                            Expanded(
-                              flex: 4,
-                              child: _buildLeadForm(),
+                            if (!isMobile) const SizedBox(width: 40),
+                            Flexible(
+                              flex: isMobile ? 0 : 4,
+                              child: _buildLeadForm(isMobile),
                             ),
                           ],
                         ),
@@ -266,50 +298,62 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
                 // 2. VALUE PROPOSITION
                 Container(
                   color: AppTheme.offWhite,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
+                  padding: EdgeInsets.symmetric(
+                      vertical: isMobile ? 60 : 80, horizontal: 24),
                   child: Center(
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 1200),
-                      child: Row(
+                      child: Flex(
+                        direction: isMobile ? Axis.vertical : Axis.horizontal,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(
-                            flex: 1,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                'assets/images/landing/happy_customer.jpg',
-                                fit: BoxFit.cover,
-                                height: 600,
+                          if (!isMobile)
+                            Expanded(
+                              flex: 1,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  'assets/images/landing/happy_customer.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 600,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 60),
+                          if (!isMobile) const SizedBox(width: 60),
                           Expanded(
-                            flex: 1,
+                            flex: isMobile ? 0 : 1,
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: isMobile
+                                  ? CrossAxisAlignment.center
+                                  : CrossAxisAlignment.start,
                               children: [
-                                const Text(
+                                Text(
                                   "Why Choose SaveNest Solar?",
                                   style: TextStyle(
                                       color: AppTheme.deepNavy,
-                                      fontSize: 42,
+                                      fontSize: isMobile ? 32 : 42,
                                       fontWeight: FontWeight.bold),
+                                  textAlign: isMobile
+                                      ? TextAlign.center
+                                      : TextAlign.start,
                                 ),
                                 const SizedBox(height: 16),
-                                const Text(
+                                Text(
                                   "We do the heavy lifting to ensure you get the best system at the best price.",
                                   style: TextStyle(
-                                      color: AppTheme.slate600, fontSize: 20),
+                                      color: AppTheme.slate600,
+                                      fontSize: isMobile ? 18 : 20),
+                                  textAlign: isMobile
+                                      ? TextAlign.center
+                                      : TextAlign.start,
                                 ),
                                 const SizedBox(height: 40),
                                 _buildFeatureRow(
                                   icon: Icons.verified_user,
                                   title: "Vetted Installers",
                                   desc:
-                                      "We only partner with Clean Energy Council (CEC) accredited installers. No cowboys.",
+                                      "We only partner with Clean Energy Council (CEC) accredited installers.",
+                                  isMobile: isMobile,
                                 ),
                                 const SizedBox(height: 24),
                                 _buildFeatureRow(
@@ -317,13 +361,15 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
                                   title: "Maximize Rebates",
                                   desc:
                                       "We calculate exactly what government rebates you are eligible for right now.",
+                                  isMobile: isMobile,
                                 ),
                                 const SizedBox(height: 24),
                                 _buildFeatureRow(
                                   icon: Icons.speed,
                                   title: "Fast Process",
                                   desc:
-                                      "Get quotes within 24 hours. From approval to installation in as little as 14 days.",
+                                      "Get quotes within 24 hours. From approval to installation in 14 days.",
+                                  isMobile: isMobile,
                                 ),
                               ],
                             ),
@@ -337,30 +383,31 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
                 // 3. OUR SERVICES
                 Container(
                   color: Colors.white,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
+                  padding: EdgeInsets.symmetric(
+                      vertical: isMobile ? 60 : 80, horizontal: 24),
                   child: Center(
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 1200),
-                      child: const Column(
+                      child: Column(
                         children: [
                           Text(
-                            "Comprehensive Energy Solutions",
+                            "Energy Solutions",
                             style: TextStyle(
                                 color: AppTheme.deepNavy,
-                                fontSize: 42,
+                                fontSize: isMobile ? 32 : 42,
                                 fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           Text(
-                            "Explore our complete range of solar, energy, and efficiency services.",
+                            "Explore our complete range of solar and energy services.",
                             style: TextStyle(
-                                color: AppTheme.slate600, fontSize: 20),
+                                color: AppTheme.slate600,
+                                fontSize: isMobile ? 18 : 20),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 60),
-                          Wrap(
+                          const SizedBox(height: 40),
+                          const Wrap(
                             spacing: 24,
                             runSpacing: 24,
                             alignment: WrapAlignment.center,
@@ -453,9 +500,9 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
     );
   }
 
-  Widget _buildLeadForm() {
+  Widget _buildLeadForm(bool isMobile) {
     return Container(
-      padding: const EdgeInsets.all(40),
+      padding: EdgeInsets.all(isMobile ? 24 : 40),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
@@ -472,11 +519,11 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Calculate Savings",
               style: TextStyle(
                   color: AppTheme.deepNavy,
-                  fontSize: 28,
+                  fontSize: isMobile ? 24 : 28,
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
@@ -492,15 +539,17 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.amber.shade300),
               ),
-              child: const Row(
+              child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.stars, color: Colors.amber, size: 20),
-                  SizedBox(width: 8),
+                  const Icon(Icons.stars, color: Colors.amber, size: 20),
+                  const SizedBox(width: 8),
                   Text(
-                    "Earn +500 XP & Level Up today!",
+                    "Earn +500 XP",
                     style: TextStyle(
-                        color: Colors.orange, fontWeight: FontWeight.bold),
+                        color: Colors.orange,
+                        fontWeight: FontWeight.bold,
+                        fontSize: isMobile ? 12 : 14),
                   ),
                 ],
               ),
@@ -558,7 +607,7 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
             const SizedBox(height: 16),
             TextFormField(
               decoration: InputDecoration(
-                labelText: "Average Quarterly Bill (\$)",
+                labelText: "Avg Quarterly Bill (\$)",
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 prefixIcon: const Icon(Icons.attach_money),
@@ -617,9 +666,12 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
   }
 
   Widget _buildFeatureRow(
-      {required IconData icon, required String title, required String desc}) {
+      {required IconData icon,
+      required String title,
+      required String desc,
+      required bool isMobile}) {
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -634,30 +686,33 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: AppTheme.vibrantEmerald.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(icon, color: AppTheme.vibrantEmerald, size: 32),
+            child: Icon(icon,
+                color: AppTheme.vibrantEmerald, size: isMobile ? 24 : 32),
           ),
-          const SizedBox(width: 24),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: AppTheme.deepNavy,
-                      fontSize: 22,
+                      fontSize: isMobile ? 18 : 22,
                       fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 4),
                 Text(
                   desc,
-                  style: const TextStyle(
-                      color: AppTheme.slate600, fontSize: 16, height: 1.5),
+                  style: TextStyle(
+                      color: AppTheme.slate600,
+                      fontSize: isMobile ? 14 : 16,
+                      height: 1.5),
                 ),
               ],
             ),

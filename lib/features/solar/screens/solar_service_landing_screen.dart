@@ -188,6 +188,8 @@ class SolarServiceLandingScreen extends StatelessWidget {
     final title = _getServiceTitle();
     final description = _getServiceDescription();
     final icon = _getServiceIcon();
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 700;
 
     if (kIsWeb) {
       MetaSEO().author(author: 'SaveNest Solar Team');
@@ -208,7 +210,8 @@ class SolarServiceLandingScreen extends StatelessWidget {
             // Hero Section
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
+              padding: EdgeInsets.symmetric(
+                  vertical: isMobile ? 60 : 80, horizontal: 24),
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [AppTheme.deepNavy, Color(0xFF003A72)],
@@ -221,13 +224,15 @@ class SolarServiceLandingScreen extends StatelessWidget {
                   constraints: const BoxConstraints(maxWidth: 800),
                   child: Column(
                     children: [
-                      Icon(icon, size: 80, color: AppTheme.vibrantEmerald),
+                      Icon(icon,
+                          size: isMobile ? 60 : 80,
+                          color: AppTheme.vibrantEmerald),
                       const SizedBox(height: 24),
                       Text(
                         title,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 48,
+                          fontSize: isMobile ? 32 : 48,
                           fontWeight: FontWeight.w900,
                         ),
                         textAlign: TextAlign.center,
@@ -235,9 +240,9 @@ class SolarServiceLandingScreen extends StatelessWidget {
                       const SizedBox(height: 24),
                       Text(
                         description,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white70,
-                          fontSize: 20,
+                          fontSize: isMobile ? 18 : 20,
                           height: 1.5,
                         ),
                         textAlign: TextAlign.center,
@@ -263,29 +268,34 @@ class SolarServiceLandingScreen extends StatelessWidget {
 
             // Content Section
             Container(
-              padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
+              padding: EdgeInsets.symmetric(
+                  vertical: isMobile ? 60 : 80, horizontal: 24),
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: isMobile
+                        ? CrossAxisAlignment.center
+                        : CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Why Choose SaveNest for $title?',
-                        style: const TextStyle(
-                          fontSize: 32,
+                        style: TextStyle(
+                          fontSize: isMobile ? 28 : 32,
                           fontWeight: FontWeight.bold,
                           color: AppTheme.deepNavy,
                         ),
+                        textAlign: isMobile ? TextAlign.center : TextAlign.start,
                       ),
                       const SizedBox(height: 24),
                       Text(
-                        'We provide industry-leading $title tailored exactly to your needs. Our approach focuses on long-term sustainability, immediate cost reductions, and transparent pricing. Every solution we deliver is backed by extensive market analysis and a network of verified providers.',
-                        style: const TextStyle(
-                          fontSize: 18,
+                        'We provide industry-leading $title tailored exactly to your needs. Our approach focuses on long-term sustainability, immediate cost reductions, and transparent pricing.',
+                        style: TextStyle(
+                          fontSize: isMobile ? 16 : 18,
                           color: AppTheme.slate600,
                           height: 1.6,
                         ),
+                        textAlign: isMobile ? TextAlign.center : TextAlign.start,
                       ),
                       const SizedBox(height: 40),
                       Wrap(
@@ -294,12 +304,14 @@ class SolarServiceLandingScreen extends StatelessWidget {
                         alignment: WrapAlignment.center,
                         children: _getServiceFeatures().map((feature) {
                           return SizedBox(
-                            width:
-                                380, // Gives a good 2-column layout on max 800 width
+                            width: isMobile
+                                ? screenWidth - 48
+                                : 380, // Full width on mobile, 2-column on desktop
                             child: _buildInfoCard(
                               icon: feature['icon'] as IconData,
                               title: feature['title'] as String,
                               desc: feature['desc'] as String,
+                              isMobile: isMobile,
                             ),
                           );
                         }).toList(),
@@ -318,7 +330,10 @@ class SolarServiceLandingScreen extends StatelessWidget {
   }
 
   Widget _buildInfoCard(
-      {required IconData icon, required String title, required String desc}) {
+      {required IconData icon,
+      required String title,
+      required String desc,
+      required bool isMobile}) {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
@@ -333,7 +348,9 @@ class SolarServiceLandingScreen extends StatelessWidget {
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: isMobile
+            ? CrossAxisAlignment.center
+            : CrossAxisAlignment.start,
         children: [
           Icon(icon, size: 40, color: AppTheme.primaryBlue),
           const SizedBox(height: 16),
@@ -344,6 +361,7 @@ class SolarServiceLandingScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: AppTheme.deepNavy,
             ),
+            textAlign: isMobile ? TextAlign.center : TextAlign.start,
           ),
           const SizedBox(height: 8),
           Text(
@@ -352,6 +370,7 @@ class SolarServiceLandingScreen extends StatelessWidget {
               fontSize: 16,
               color: AppTheme.slate600,
             ),
+            textAlign: isMobile ? TextAlign.center : TextAlign.start,
           ),
         ],
       ),

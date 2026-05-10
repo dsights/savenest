@@ -3,6 +3,7 @@ import 'package:meta_seo/meta_seo.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:async';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -10,15 +11,16 @@ import 'package:http/http.dart' as http;
 import '../../../theme/app_theme.dart';
 import '../../../widgets/main_navigation_bar.dart';
 import '../../../widgets/main_mobile_drawer.dart';
+import '../../gamification/gamification_provider.dart';
 
-class SolarLandingScreen extends StatefulWidget {
+class SolarLandingScreen extends ConsumerStatefulWidget {
   const SolarLandingScreen({super.key});
 
   @override
-  State<SolarLandingScreen> createState() => _SolarLandingScreenState();
+  ConsumerState<SolarLandingScreen> createState() => _SolarLandingScreenState();
 }
 
-class _SolarLandingScreenState extends State<SolarLandingScreen> {
+class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   final _formKey = GlobalKey<FormState>();
   String _name = '';
@@ -28,8 +30,36 @@ class _SolarLandingScreenState extends State<SolarLandingScreen> {
   String _phone = '';
   bool _isSubmitting = false;
 
+  late AnimationController _pulseController;
+  late Animation<double> _scaleAnimation;
+  Timer? _countdownTimer;
+  Duration _timeLeft = const Duration(hours: 48, minutes: 12, seconds: 35); // Urgency countdown
+
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    )..repeat(reverse: true);
+    
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.05).animate(
+      CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+    );
+
+    _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (mounted && _timeLeft.inSeconds > 0) {
+        setState(() {
+          _timeLeft -= const Duration(seconds: 1);
+        });
+      }
+    });
+  }
+
   @override
   void dispose() {
+    _pulseController.dispose();
+    _countdownTimer?.cancel();
     _scrollController.dispose();
     super.dispose();
   }
@@ -51,8 +81,7 @@ class _SolarLandingScreenState extends State<SolarLandingScreen> {
 
       try {
         final response = await http.post(
-          Uri.parse(
-              'http://127.0.0.1:8000/api/solar-lead'), // Update to prod URL later
+          Uri.parse('http://127.0.0.1:8000/api/solar-lead'), // Update to prod URL later
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({
             'name': _name,
@@ -66,19 +95,20 @@ class _SolarLandingScreenState extends State<SolarLandingScreen> {
         if (!mounted) return;
 
         if (response.statusCode == 200) {
+          // Gamification: Give user XP!
+          ref.read(gamificationProvider.notifier).addXp(500);
+          
           _formKey.currentState!.reset();
           context.go('/solar-thank-you');
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-                content: Text('Failed to submit form. Please try again.')),
+            const SnackBar(content: Text('Failed to submit form. Please try again.')),
           );
         }
       } catch (e) {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Network error. Please check your connection.')),
+          const SnackBar(content: Text('Network error. Please check your connection.')),
         );
       } finally {
         if (mounted) {
@@ -102,7 +132,6 @@ class _SolarLandingScreenState extends State<SolarLandingScreen> {
               'solar panels australia, solar quotes, solar rebates 2026, save on electricity, SaveNest Solar');
       MetaSEO()
           .ogTitle(ogTitle: 'SaveNest Solar: Find Out How Much You Can Save');
-      // MetaSEO().ogImage(ogImage: '...');
     }
 
     return Scaffold(
@@ -116,7 +145,7 @@ class _SolarLandingScreenState extends State<SolarLandingScreen> {
               children: [
                 const MainNavigationBar(),
 
-                // 1. HERO SECTION
+                // 1. HERO SECTION WITH ANIMATION AND URGENCY
                 Container(
                   width: double.infinity,
                   height: 700,
@@ -144,22 +173,36 @@ class _SolarLandingScreenState extends State<SolarLandingScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 8),
-                                    decoration: BoxDecoration(
-                                      color: AppTheme.vibrantEmerald
-                                          .withOpacity(0.2),
-                                      borderRadius: BorderRadius.circular(20),
-                                      border: Border.all(
-                                          color: AppTheme.vibrantEmerald),
+                                  ScaleTransition(
+                                    scale: _scaleAnimation,
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 16, vertical: 8),
+                                      decoration: BoxDecoration(
+                                        color: AppTheme.vibrantEmerald
+                                            .withOpacity(0.2),
+                                        borderRadius: BorderRadius.circular(20),
+                                        border: Border.all(
+                                            color: AppTheme.vibrantEmerald, width: 2),
+                                      ),
+                                      child: const Text(
+                                        "🔥 LIMITED TIME: 2026 REBATES EXPIRING SOON",
+                                        style: TextStyle(
+                                            color: AppTheme.vibrantEmerald,
+                                            fontWeight: FontWeight.w900),
+                                      ),
                                     ),
-                                    child: const Text(
-                                      "2026 STATE REBATES ACTIVE",
-                                      style: TextStyle(
-                                          color: AppTheme.vibrantEmerald,
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Row(
+                                    children: [
+                                      const Icon(Icons.timer, color: Colors.white, size: 20),
+                                      const SizedBox(width: 8),
+                                      Text(
+                                        "Offer ends in: ${_timeLeft.inHours.toString().padLeft(2, '0')}:${(_timeLeft.inMinutes % 60).toString().padLeft(2, '0')}:${(_timeLeft.inSeconds % 60).toString().padLeft(2, '0')}",
+                                        style: const TextStyle(color: Colors.amber, fontSize: 18, fontWeight: FontWeight.bold),
+                                      )
+                                    ],
                                   ),
                                   const SizedBox(height: 24),
                                   const Text(
@@ -396,6 +439,26 @@ class _SolarLandingScreenState extends State<SolarLandingScreen> {
             const Text(
               "Takes 30 seconds.",
               style: TextStyle(color: AppTheme.slate600, fontSize: 16),
+            ),
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.amber.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.amber.shade300),
+              ),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.stars, color: Colors.amber, size: 20),
+                  SizedBox(width: 8),
+                  Text(
+                    "Earn +500 XP & Level Up today!",
+                    style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 24),
             TextFormField(

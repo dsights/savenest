@@ -101,6 +101,10 @@ class GamificationNotifier extends StateNotifier<GamificationState> {
     if (cats.length >= 5) badges.add('power_user');
     state = state.copyWith(exploredCategories: cats, earnedBadges: badges);
   }
+
+  void addXp(int amount) {
+    state = state.copyWith(xp: state.xp + amount);
+  }
 }
 
 final gamificationProvider =

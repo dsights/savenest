@@ -27,6 +27,7 @@ import 'package:savenest/features/registration/registration_screen.dart';
 import 'package:savenest/features/landing/audit_landing_screen.dart';
 import 'package:savenest/features/solar/screens/solar_landing_screen.dart';
 import 'package:savenest/features/solar/screens/solar_thank_you_screen.dart';
+import 'package:savenest/features/solar/screens/solar_service_landing_screen.dart';
 import 'package:savenest/features/comparison/suburb_guide_screen.dart';
 import 'package:savenest/features/comparison/provider_comparison_screen.dart';
 import 'package:savenest/features/comparison/product_comparison_screen.dart';
@@ -66,6 +67,17 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/solar-thank-you',
       pageBuilder: (context, state) => _fadeTransition(context, state, const SolarThankYouScreen()),
+    ),
+    GoRoute(
+      path: '/solar-services/:serviceSlug',
+      pageBuilder: (context, state) {
+        final serviceSlug = state.pathParameters['serviceSlug']!;
+        return _fadeTransition(
+          context,
+          state,
+          SolarServiceLandingScreen(serviceSlug: serviceSlug),
+        );
+      },
     ),
     GoRoute(
       path: '/referral',

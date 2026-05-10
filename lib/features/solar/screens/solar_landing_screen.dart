@@ -20,7 +20,8 @@ class SolarLandingScreen extends ConsumerStatefulWidget {
   ConsumerState<SolarLandingScreen> createState() => _SolarLandingScreenState();
 }
 
-class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with TickerProviderStateMixin {
+class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
+    with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
   final _formKey = GlobalKey<FormState>();
   String _name = '';
@@ -33,7 +34,8 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
   late AnimationController _pulseController;
   late Animation<double> _scaleAnimation;
   Timer? _countdownTimer;
-  Duration _timeLeft = const Duration(hours: 48, minutes: 12, seconds: 35); // Urgency countdown
+  Duration _timeLeft =
+      const Duration(hours: 48, minutes: 12, seconds: 35); // Urgency countdown
 
   @override
   void initState() {
@@ -42,7 +44,7 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
       vsync: this,
       duration: const Duration(milliseconds: 1500),
     )..repeat(reverse: true);
-    
+
     _scaleAnimation = Tween<double>(begin: 1.0, end: 1.05).animate(
       CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
     );
@@ -81,7 +83,8 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
 
       try {
         final response = await http.post(
-          Uri.parse('http://127.0.0.1:8000/api/solar-lead'), // Update to prod URL later
+          Uri.parse(
+              'http://127.0.0.1:8000/api/solar-lead'), // Update to prod URL later
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({
             'name': _name,
@@ -97,18 +100,20 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
         if (response.statusCode == 200) {
           // Gamification: Give user XP!
           ref.read(gamificationProvider.notifier).addXp(500);
-          
+
           _formKey.currentState!.reset();
           context.go('/solar-thank-you');
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Failed to submit form. Please try again.')),
+            const SnackBar(
+                content: Text('Failed to submit form. Please try again.')),
           );
         }
       } catch (e) {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Network error. Please check your connection.')),
+          const SnackBar(
+              content: Text('Network error. Please check your connection.')),
         );
       } finally {
         if (mounted) {
@@ -183,7 +188,8 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
                                             .withOpacity(0.2),
                                         borderRadius: BorderRadius.circular(20),
                                         border: Border.all(
-                                            color: AppTheme.vibrantEmerald, width: 2),
+                                            color: AppTheme.vibrantEmerald,
+                                            width: 2),
                                       ),
                                       child: const Text(
                                         "🔥 LIMITED TIME: 2026 REBATES EXPIRING SOON",
@@ -196,11 +202,15 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
                                   const SizedBox(height: 16),
                                   Row(
                                     children: [
-                                      const Icon(Icons.timer, color: Colors.white, size: 20),
+                                      const Icon(Icons.timer,
+                                          color: Colors.white, size: 20),
                                       const SizedBox(width: 8),
                                       Text(
                                         "Offer ends in: ${_timeLeft.inHours.toString().padLeft(2, '0')}:${(_timeLeft.inMinutes % 60).toString().padLeft(2, '0')}:${(_timeLeft.inSeconds % 60).toString().padLeft(2, '0')}",
-                                        style: const TextStyle(color: Colors.amber, fontSize: 18, fontWeight: FontWeight.bold),
+                                        style: const TextStyle(
+                                            color: Colors.amber,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
@@ -332,9 +342,9 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
                   child: Center(
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 1200),
-                      child: Column(
+                      child: const Column(
                         children: [
-                          const Text(
+                          Text(
                             "Comprehensive Energy Solutions",
                             style: TextStyle(
                                 color: AppTheme.deepNavy,
@@ -342,46 +352,80 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
                                 fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 16),
-                          const Text(
+                          SizedBox(height: 16),
+                          Text(
                             "Explore our complete range of solar, energy, and efficiency services.",
                             style: TextStyle(
                                 color: AppTheme.slate600, fontSize: 20),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 60),
+                          SizedBox(height: 60),
                           Wrap(
                             spacing: 24,
                             runSpacing: 24,
                             alignment: WrapAlignment.center,
                             children: [
-                              _buildServicePill(Icons.home, "Solar for Home"),
-                              _buildServicePill(
-                                  Icons.business, "Solar for Business"),
-                              _buildServicePill(
-                                  Icons.water_drop, "Hot Water Systems"),
-                              _buildServicePill(
-                                  Icons.price_check, "Rebates & Incentives"),
-                              _buildServicePill(Icons.battery_charging_full,
-                                  "Battery Storage"),
-                              _buildServicePill(Icons.energy_savings_leaf,
-                                  "Energy Efficiency Upgrades"),
-                              _buildServicePill(
-                                  Icons.electric_car, "Electric Vehicles"),
-                              _buildServicePill(
-                                  Icons.star, "Recommended Products"),
-                              _buildServicePill(Icons.calculate,
-                                  "Solar + Battery Calculator"),
-                              _buildServicePill(
-                                  Icons.store, "SaveNest Marketplace"),
-                              _buildServicePill(
-                                  Icons.podcasts, "Road to ZERO Podcast"),
-                              _buildServicePill(Icons.tv, "SaveNest TV Show"),
-                              _buildServicePill(Icons.event, "Industry Events"),
-                              _buildServicePill(
-                                  Icons.card_giftcard, "SaveNest Rewards"),
-                              _buildServicePill(
-                                  Icons.compare_arrows, "Energy Bill Compare"),
+                              _AnimatedServicePill(
+                                  icon: Icons.home,
+                                  title: "Solar for Home",
+                                  route: "/solar-services/home-solar"),
+                              _AnimatedServicePill(
+                                  icon: Icons.business,
+                                  title: "Solar for Business",
+                                  route: "/solar-services/business-solar"),
+                              _AnimatedServicePill(
+                                  icon: Icons.water_drop,
+                                  title: "Hot Water Systems",
+                                  route: "/solar-services/hot-water"),
+                              _AnimatedServicePill(
+                                  icon: Icons.price_check,
+                                  title: "Rebates & Incentives",
+                                  route: "/solar-services/rebates"),
+                              _AnimatedServicePill(
+                                  icon: Icons.battery_charging_full,
+                                  title: "Battery Storage",
+                                  route: "/solar-services/battery"),
+                              _AnimatedServicePill(
+                                  icon: Icons.energy_savings_leaf,
+                                  title: "Energy Efficiency Upgrades",
+                                  route: "/solar-services/efficiency"),
+                              _AnimatedServicePill(
+                                  icon: Icons.electric_car,
+                                  title: "Electric Vehicles",
+                                  route: "/solar-services/electric-vehicles"),
+                              _AnimatedServicePill(
+                                  icon: Icons.star,
+                                  title: "Recommended Products",
+                                  route:
+                                      "/solar-services/recommended-products"),
+                              _AnimatedServicePill(
+                                  icon: Icons.calculate,
+                                  title: "Solar + Battery Calculator",
+                                  route: "/solar-services/calculator"),
+                              _AnimatedServicePill(
+                                  icon: Icons.store,
+                                  title: "SaveNest Marketplace",
+                                  route: "/solar-services/marketplace"),
+                              _AnimatedServicePill(
+                                  icon: Icons.podcasts,
+                                  title: "Road to ZERO Podcast",
+                                  route: "/solar-services/podcast"),
+                              _AnimatedServicePill(
+                                  icon: Icons.tv,
+                                  title: "SaveNest TV Show",
+                                  route: "/solar-services/tv-show"),
+                              _AnimatedServicePill(
+                                  icon: Icons.event,
+                                  title: "Industry Events",
+                                  route: "/solar-services/events"),
+                              _AnimatedServicePill(
+                                  icon: Icons.card_giftcard,
+                                  title: "SaveNest Rewards",
+                                  route: "/solar-services/rewards"),
+                              _AnimatedServicePill(
+                                  icon: Icons.compare_arrows,
+                                  title: "Energy Bill Compare",
+                                  route: "/solar-services/compare"),
                             ],
                           ),
                         ],
@@ -455,7 +499,8 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
                   SizedBox(width: 8),
                   Text(
                     "Earn +500 XP & Level Up today!",
-                    style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.orange, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -621,36 +666,106 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen> with Ti
       ),
     );
   }
+}
 
-  Widget _buildServicePill(IconData icon, String title) {
-    return Container(
-      width: 280,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      decoration: BoxDecoration(
-        color: AppTheme.offWhite,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppTheme.slate300),
-        boxShadow: [
-          BoxShadow(
-              color: Colors.black.withOpacity(0.02),
-              blurRadius: 4,
-              offset: const Offset(0, 2)),
-        ],
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: AppTheme.vibrantEmerald, size: 28),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(
-                  color: AppTheme.deepNavy,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600),
+class _AnimatedServicePill extends StatefulWidget {
+  final IconData icon;
+  final String title;
+  final String route;
+
+  const _AnimatedServicePill({
+    required this.icon,
+    required this.title,
+    required this.route,
+  });
+
+  @override
+  State<_AnimatedServicePill> createState() => _AnimatedServicePillState();
+}
+
+class _AnimatedServicePillState extends State<_AnimatedServicePill> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: GestureDetector(
+        onTap: () => context.push(widget.route),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutBack,
+          width: 300,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+          transform: Matrix4.identity()
+            ..translate(0.0, _isHovered ? -8.0 : 0.0)
+            ..scale(_isHovered ? 1.03 : 1.0),
+          decoration: BoxDecoration(
+            color: _isHovered ? Colors.white : AppTheme.offWhite,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: _isHovered
+                  ? AppTheme.vibrantEmerald
+                  : AppTheme.slate300.withOpacity(0.5),
+              width: _isHovered ? 2 : 1,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: _isHovered
+                    ? AppTheme.vibrantEmerald.withOpacity(0.25)
+                    : Colors.black.withOpacity(0.03),
+                blurRadius: _isHovered ? 20 : 8,
+                offset: Offset(0, _isHovered ? 10 : 4),
+              ),
+            ],
           ),
-        ],
+          child: Row(
+            children: [
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: _isHovered
+                      ? AppTheme.vibrantEmerald.withOpacity(0.1)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: AnimatedScale(
+                  scale: _isHovered ? 1.15 : 1.0,
+                  duration: const Duration(milliseconds: 300),
+                  child: Icon(widget.icon,
+                      color: AppTheme.vibrantEmerald, size: 32),
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: AnimatedDefaultTextStyle(
+                  duration: const Duration(milliseconds: 300),
+                  style: TextStyle(
+                    color: _isHovered
+                        ? AppTheme.deepNavy
+                        : AppTheme.deepNavy.withOpacity(0.85),
+                    fontSize: 17,
+                    fontWeight: _isHovered ? FontWeight.bold : FontWeight.w600,
+                  ),
+                  child: Text(widget.title),
+                ),
+              ),
+              AnimatedOpacity(
+                opacity: _isHovered ? 1.0 : 0.0,
+                duration: const Duration(milliseconds: 300),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
+                  transform: Matrix4.identity()
+                    ..translate(_isHovered ? 0.0 : -10.0, 0.0),
+                  child: const Icon(Icons.arrow_forward_rounded,
+                      color: AppTheme.vibrantEmerald, size: 24),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

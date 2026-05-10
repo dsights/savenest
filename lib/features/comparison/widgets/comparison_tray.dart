@@ -5,10 +5,46 @@ import '../../../theme/app_theme.dart';
 import '../comparison_model.dart';
 import '../comparison_provider.dart';
 
-class ComparisonTray extends ConsumerWidget {
+class ComparisonTray extends ConsumerStatefulWidget {
   final ProductCategory category;
 
   const ComparisonTray({super.key, required this.category});
+
+  @override
+  ConsumerState<ComparisonTray> createState() => _ComparisonTrayState();
+}
+
+class _ComparisonTrayState extends ConsumerState<ComparisonTray>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animController;
+  late Animation<double> _arrowSlide;
+  late Animation<double> _glowPulse;
+  late Animation<double> _scalePulse;
+
+  @override
+  void initState() {
+    super.initState();
+    _animController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 750),
+    )..repeat(reverse: true);
+
+    _arrowSlide = Tween<double>(begin: 0, end: 6).animate(
+      CurvedAnimation(parent: _animController, curve: Curves.easeInOut),
+    );
+    _glowPulse = Tween<double>(begin: 0.25, end: 0.65).animate(
+      CurvedAnimation(parent: _animController, curve: Curves.easeInOut),
+    );
+    _scalePulse = Tween<double>(begin: 1.0, end: 1.05).animate(
+      CurvedAnimation(parent: _animController, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _animController.dispose();
+    super.dispose();
+  }
 
   String _categorySlug(ProductCategory cat) {
     switch (cat) {
@@ -24,11 +60,12 @@ class ComparisonTray extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final state = ref.watch(comparisonProvider);
     final controller = ref.read(comparisonProvider.notifier);
     final selected = state.selectedDeals;
     final count = selected.length;
+    final isReady = count >= 2;
 
     return AnimatedSlide(
       offset: count == 0 ? const Offset(0, 1) : Offset.zero,
@@ -86,6 +123,19 @@ class ComparisonTray extends ConsumerWidget {
 
                   const SizedBox(width: 12),
 
+                  // Hint label when 1 item selected
+                  if (count == 1)
+                    const Text(
+                      'Add 1 more to compare',
+                      style: TextStyle(
+                        color: Colors.white38,
+                        fontSize: 11,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+
+                  const SizedBox(width: 8),
+
                   // Clear
                   TextButton(
                     onPressed: controller.clearComparison,
@@ -98,35 +148,79 @@ class ComparisonTray extends ConsumerWidget {
 
                   const SizedBox(width: 8),
 
-                  // Compare Now CTA
-                  AnimatedOpacity(
-                    opacity: count >= 2 ? 1.0 : 0.4,
-                    duration: const Duration(milliseconds: 200),
-                    child: ElevatedButton.icon(
-                      onPressed: count >= 2
-                          ? () {
-                              final ids = selected.map((d) => d.id).join(',');
-                              final cat = _categorySlug(category);
-                              context.push('/compare-deals?ids=$ids&cat=$cat');
-                            }
-                          : null,
-                      icon: const Icon(Icons.compare_arrows, size: 16),
-                      label: Text(
-                        count >= 2 ? 'Compare Now' : 'Select 2+',
-                        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppTheme.accentOrange,
-                        foregroundColor: Colors.white,
-                        disabledBackgroundColor: AppTheme.accentOrange.withOpacity(0.5),
-                        disabledForegroundColor: Colors.white70,
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
+                  // Animated Compare Now CTA
+                  AnimatedBuilder(
+                    animation: _animController,
+                    builder: (context, child) {
+                      return Transform.scale(
+                        scale: isReady ? _scalePulse.value : 1.0,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            boxShadow: isReady
+                                ? [
+                                    BoxShadow(
+                                      color: AppTheme.accentOrange
+                                          .withOpacity(_glowPulse.value),
+                                      blurRadius: 16 + _animController.value * 12,
+                                      spreadRadius: _animController.value * 4,
+                                    ),
+                                  ]
+                                : [],
+                          ),
+                          child: AnimatedOpacity(
+                            opacity: isReady ? 1.0 : 0.4,
+                            duration: const Duration(milliseconds: 200),
+                            child: ElevatedButton(
+                              onPressed: isReady
+                                  ? () {
+                                      final ids = selected.map((d) => d.id).join(',');
+                                      final cat = _categorySlug(widget.category);
+                                      context.push('/compare-deals?ids=$ids&cat=$cat');
+                                    }
+                                  : null,
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppTheme.accentOrange,
+                                foregroundColor: Colors.white,
+                                disabledBackgroundColor: AppTheme.accentOrange.withOpacity(0.5),
+                                disabledForegroundColor: Colors.white70,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 12),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                elevation: 0,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Icon(Icons.compare_arrows, size: 16),
+                                  const SizedBox(width: 6),
+                                  Text(
+                                    isReady ? 'Compare Now' : 'Select 2+',
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                  if (isReady) ...[
+                                    const SizedBox(width: 6),
+                                    Transform.translate(
+                                      offset: Offset(_arrowSlide.value, 0),
+                                      child: const Icon(
+                                        Icons.arrow_forward_rounded,
+                                        size: 15,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                        elevation: 0,
-                      ),
-                    ),
+                      );
+                    },
                   ),
                 ],
               ),

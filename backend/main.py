@@ -5,13 +5,95 @@ from fastapi.middleware.cors import CORSMiddleware
 import requests
 import os
 import json
+import csv
+from pydantic import BaseModel
+from datetime import datetime
 from dotenv import load_dotenv
-from ocr_service import extract_bill_data
 
 # Load environment variables from .env file if it exists
 load_dotenv()
 
 app = FastAPI()
+
+class SolarLead(BaseModel):
+    name: str
+    email: str
+    postcode: str
+    billAmount: str
+    phone: str
+
+@app.post("/api/solar-lead")
+async def create_solar_lead(lead: SolarLead):
+    try:
+        # 1. Save to local CSV as fallback
+        file_exists = os.path.isfile('solar_leads.csv')
+        with open('solar_leads.csv', mode='a', newline='') as f:
+            writer = csv.writer(f)
+            if not file_exists:
+                writer.writerow(['timestamp', 'name', 'email', 'postcode', 'bill_amount', 'phone'])
+            writer.writerow([datetime.now().isoformat(), lead.name, lead.email, lead.postcode, lead.billAmount, lead.phone])
+
+        # 2. Submit to HubSpot CRM (Contacts API)
+        if HUBSPOT_ACCESS_TOKEN:
+            hubspot_url = "https://api.hubapi.com/crm/v3/objects/contacts"
+            headers = {
+                'Authorization': f'Bearer {HUBSPOT_ACCESS_TOKEN}',
+                'Content-Type': 'application/json'
+            }
+            
+            # Split name into first and last for HubSpot
+            name_parts = lead.name.split(' ', 1)
+            first_name = name_parts[0]
+            last_name = name_parts[1] if len(name_parts) > 1 else "Solar Lead"
+
+            payload = {
+                "properties": {
+                    "firstname": first_name,
+                    "lastname": last_name,
+                    "email": lead.email,
+                    "phone": lead.phone,
+                    "zip": lead.postcode,
+                    "industry": "Solar",
+                    "description": f"Solar Quote Request. Quarterly Bill: ${lead.billAmount}. Postcode: {lead.postcode}"
+                }
+            }
+            hs_resp = requests.post(hubspot_url, headers=headers, json=payload)
+            if hs_resp.status_code >= 400:
+                print(f"HubSpot Lead Sync Error: {hs_resp.text}")
+
+        # 3. Optional: Send to Zapier Webhook
+        zapier_webhook = os.environ.get("ZAPIER_SOLAR_WEBHOOK")
+        if zapier_webhook:
+            requests.post(zapier_webhook, json=lead.dict())
+
+        # 4. Automated Auto-Responder
+        try:
+            template_path = os.path.join(os.path.dirname(__file__), '..', 'email-config', 'templates', 'solar_auto_responder.html')
+            if os.path.exists(template_path):
+                with open(template_path, 'r') as tf:
+                    html_content = tf.read()
+                
+                # Simple replacement
+                html_content = html_content.replace('[Name]', lead.name)
+                html_content = html_content.replace('[Postcode]', lead.postcode)
+                html_content = html_content.replace('[BillAmount]', lead.billAmount)
+                
+                temp_email_file = f"temp_solar_resp_{lead.phone}.html"
+                with open(temp_email_file, 'w') as ef:
+                    ef.write(html_content)
+                
+                email_script = os.path.join(os.path.dirname(__file__), '..', 'email-config', 'send_single_email.sh')
+                subject = "Your Solar Savings Quote - Quick Question"
+                
+                # Execute bash script
+                subprocess.run([email_script, subject, temp_email_file, lead.email], check=True)
+                os.remove(temp_email_file)
+        except Exception as e:
+            print(f"Auto-responder failed: {e}")
+
+        return {"success": True, "message": "Lead received and synced to HubSpot"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to process lead: {str(e)}")
 
 # 1. Security: Get Secrets from Environment Variables
 HUBSPOT_ACCESS_TOKEN = os.environ.get("HUBSPOT_ACCESS_TOKEN")

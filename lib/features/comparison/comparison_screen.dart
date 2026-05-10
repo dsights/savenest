@@ -264,12 +264,12 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     // Compute responsive grid column count once in build (avoids shrinkWrap)
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount = screenWidth > 1200
-        ? 6
+        ? 4
         : screenWidth > 900
-            ? 4
+            ? 3
             : screenWidth > 600
-                ? 3
-                : 2;
+                ? 2
+                : 1;
 
     // Data freshness label (shows the actual last-updated date from the JSON metadata)
     final freshnessLabel = state.dataLastUpdated.isNotEmpty
@@ -531,7 +531,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                         gridDelegate:
                             SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: crossAxisCount,
-                          childAspectRatio: 1.05,
+                          childAspectRatio: 0.85,
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
                         ),

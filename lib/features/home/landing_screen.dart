@@ -52,13 +52,22 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     return Scaffold(
       backgroundColor: AppTheme.offWhite,
       endDrawer: const MainMobileDrawer(),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => context.push('/referral'),
+        backgroundColor: AppTheme.vibrantEmerald,
+        icon: const Icon(Icons.monetization_on, color: AppTheme.deepNavy),
+        label: const Text(
+          "Earn \$50",
+          style: TextStyle(color: AppTheme.deepNavy, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: SingleChildScrollView(
         primary: true,
         physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
         child: Column(
           children: [
             const MainNavigationBar(),
-            _buildReferralBanner(context),
+            _buildSolarBanner(context),
             const HeroCarouselSection(),
             const PartnerLogoSlider(),
             const AnimatedValueProps(),
@@ -71,10 +80,10 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     );
   }
 
-  Widget _buildReferralBanner(BuildContext context) {
+  Widget _buildSolarBanner(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: AppTheme.vibrantEmerald,
+      color: const Color(0xFFF9A825),
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
       child: Center(
         child: Wrap(
@@ -83,22 +92,22 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
           spacing: 16,
           children: [
             const Text(
-              "💸 Earn \$50 for every friend you refer!",
+              "☀️ Slash your power bill to \$0! Check if your home qualifies for the 2026 Solar Rebate.",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black87,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
             ),
             ElevatedButton(
-              onPressed: () => context.push('/referral'),
+              onPressed: () => context.push('/solar-quotes'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: AppTheme.vibrantEmerald,
+                backgroundColor: Colors.black87,
+                foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 textStyle: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              child: const Text("Start Earning"),
+              child: const Text("Get Free Solar Quote"),
             ),
           ],
         ),

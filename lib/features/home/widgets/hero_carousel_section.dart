@@ -187,7 +187,7 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with TickerPr
               "Stop Paying the Lazy Tax.",
               textAlign: isDesktop ? TextAlign.start : TextAlign.center,
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                    fontSize: isDesktop ? 64 : 40,
+                    fontSize: isDesktop ? 64 : 36,
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
                     height: 1.1,
@@ -199,7 +199,7 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with TickerPr
               "Instantly compare energy, internet, and insurance. Find better value plans and slash your bills in minutes with Australia's smartest comparison engine.",
               textAlign: isDesktop ? TextAlign.start : TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: isDesktop ? 20 : 16,
+                    fontSize: isDesktop ? 20 : 15,
                     color: Colors.white.withOpacity(0.85),
                     height: 1.5,
                   ),

@@ -171,9 +171,12 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
   }
 
   Widget _buildTestimonialsSection(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final bool isMobile = screenWidth < 600;
+    
     return Container(
       color: AppTheme.offWhite,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
+      padding: EdgeInsets.symmetric(horizontal: isMobile ? 16 : 24, vertical: isMobile ? 60 : 80),
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1200),
@@ -190,11 +193,12 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
                   color: AppTheme.deepNavy,
                   fontWeight: FontWeight.w900,
+                  fontSize: isMobile ? 28 : null,
                 ),
               ),
               const SizedBox(height: 48),
               SizedBox(
-                height: 300,
+                height: isMobile ? 320 : 300,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   physics: const BouncingScrollPhysics(),
@@ -202,10 +206,10 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                   itemBuilder: (context, index) {
                     final t = _testimonials[index];
                     return Padding(
-                      padding: const EdgeInsets.only(right: 32.0, bottom: 20, left: 8, top: 8),
+                      padding: EdgeInsets.only(right: isMobile ? 16.0 : 32.0, bottom: 20, left: index == 0 ? 8 : 0, top: 8),
                       child: Container(
-                        width: 400,
-                        padding: const EdgeInsets.all(40),
+                        width: isMobile ? screenWidth * 0.85 : 400,
+                        padding: EdgeInsets.all(isMobile ? 24 : 40),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(32),
@@ -225,7 +229,7 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                               right: -10,
                               child: Icon(
                                 Icons.format_quote_rounded,
-                                size: 100,
+                                size: isMobile ? 80 : 100,
                                 color: AppTheme.primaryBlue.withOpacity(0.05),
                               ),
                             ),
@@ -233,33 +237,34 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
-                                  children: List.generate(5, (i) => const Icon(Icons.star_rounded, color: Colors.amber, size: 24)),
+                                  children: List.generate(5, (i) => Icon(Icons.star_rounded, color: Colors.amber, size: isMobile ? 20 : 24)),
                                 ),
-                                const SizedBox(height: 24),
+                                SizedBox(height: isMobile ? 16 : 24),
                                 Expanded(
                                   child: Text(
                                     '"${t.quote}"',
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: AppTheme.deepNavy,
-                                      fontSize: 16,
+                                      fontSize: isMobile ? 14 : 16,
                                       height: 1.6,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: 24),
+                                SizedBox(height: isMobile ? 16 : 24),
                                 Row(
                                   children: [
                                     CircleAvatar(
                                       backgroundColor: AppTheme.vibrantEmerald.withOpacity(0.2),
-                                      radius: 24,
-                                      child: Text(t.author[0], style: const TextStyle(color: AppTheme.vibrantEmerald, fontWeight: FontWeight.w900, fontSize: 18)),
+                                      radius: isMobile ? 20 : 24,
+                                      child: Text(t.author[0], style: TextStyle(color: AppTheme.vibrantEmerald, fontWeight: FontWeight.w900, fontSize: isMobile ? 16 : 18)),
                                     ),
                                     const SizedBox(width: 16),
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        Text(t.author, style: const TextStyle(color: AppTheme.deepNavy, fontWeight: FontWeight.w800, fontSize: 16)),
+                                        Text(t.author, style: TextStyle(color: AppTheme.deepNavy, fontWeight: FontWeight.w800, fontSize: isMobile ? 14 : 16)),
                                         const Text("Verified Customer", style: TextStyle(color: AppTheme.slate600, fontSize: 12)),
                                       ],
                                     ),

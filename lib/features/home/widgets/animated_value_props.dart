@@ -36,84 +36,86 @@ class AnimatedValueProps extends StatelessWidget {
               ),
               const SizedBox(height: 48),
               if (isDesktop)
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    const Expanded(
-                      flex: 4,
-                      child: _BentoCard(
-                        icon: Icons.bolt,
-                        title: "Instant Comparison Engine",
-                        desc: "Our proprietary algorithm scans hundreds of plans across electricity, gas, internet, and insurance in a fraction of a second. We match your profile with the market to find hidden savings others miss.",
-                        color: Colors.orange,
-                        isLarge: true,
-                        imageAsset: 'assets/images/hero_energy.jpg',
+                IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Expanded(
+                        flex: 4,
+                        child: _BentoCard(
+                          icon: Icons.bolt,
+                          title: "Instant Comparison Engine",
+                          desc: "Our proprietary algorithm scans hundreds of plans across electricity, gas, internet, and insurance in a fraction of a second. We match your profile with the market to find hidden savings others miss.",
+                          color: Colors.orange,
+                          isLarge: true,
+                          imageAsset: 'assets/images/hero_energy.jpg',
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 24),
-                    Expanded(
-                      flex: 5,
-                      child: Column(
-                        children: [
-                          const Expanded(
-                            child: _BentoCard(
-                              icon: Icons.shield_outlined,
-                              title: "Bank-Grade Security",
-                              desc: "Your personal data is encrypted using AES-256. We never sell your data to third-party spammers.",
-                              color: Colors.blue,
-                              isLarge: false,
+                      const SizedBox(width: 24),
+                      Expanded(
+                        flex: 5,
+                        child: Column(
+                          children: [
+                            const Expanded(
+                              child: _BentoCard(
+                                icon: Icons.shield_outlined,
+                                title: "Bank-Grade Security",
+                                desc: "Your personal data is encrypted using AES-256. We never sell your data to third-party spammers.",
+                                color: Colors.blue,
+                                isLarge: false,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 24),
-                          Expanded(
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                const Expanded(
-                                  flex: 1,
-                                  child: _BentoCard(
-                                    icon: Icons.money_off,
-                                    title: "100% Free",
-                                    desc: "No hidden fees or markups.",
-                                    color: AppTheme.vibrantEmerald,
-                                    isLarge: false,
-                                  ),
-                                ),
-                                const SizedBox(width: 24),
-                                Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: AppTheme.deepNavy,
-                                      borderRadius: BorderRadius.circular(24),
-                                    ),
-                                    padding: const EdgeInsets.all(32),
-                                    child: const Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Icon(Icons.auto_awesome, color: AppTheme.vibrantEmerald, size: 32),
-                                        SizedBox(height: 16),
-                                        Text(
-                                          "Smart Alerts",
-                                          style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-                                        ),
-                                        SizedBox(height: 8),
-                                        Text(
-                                          "We monitor the market and alert you when a better deal appears.",
-                                          style: TextStyle(color: Colors.white70, fontSize: 14),
-                                        ),
-                                      ],
+                            const SizedBox(height: 24),
+                            Expanded(
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  const Expanded(
+                                    flex: 1,
+                                    child: _BentoCard(
+                                      icon: Icons.money_off,
+                                      title: "100% Free",
+                                      desc: "No hidden fees or markups.",
+                                      color: AppTheme.vibrantEmerald,
+                                      isLarge: false,
                                     ),
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(width: 24),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: AppTheme.deepNavy,
+                                        borderRadius: BorderRadius.circular(24),
+                                      ),
+                                      padding: const EdgeInsets.all(32),
+                                      child: const Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Icon(Icons.auto_awesome, color: AppTheme.vibrantEmerald, size: 32),
+                                          SizedBox(height: 16),
+                                          Text(
+                                            "Smart Alerts",
+                                            style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                                          ),
+                                          SizedBox(height: 8),
+                                          Text(
+                                            "We monitor the market and alert you when a better deal appears.",
+                                            style: TextStyle(color: Colors.white70, fontSize: 14),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               else
                 const Column(

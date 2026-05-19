@@ -320,12 +320,12 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                       ],
                     ),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 4),
 
                     // Logo — centered and prominent
                     Center(child: _buildLogo()),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 4),
 
                     // Provider name badge
                     InkWell(
@@ -403,7 +403,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                     // Price
                     AnimatedContainer(
                       duration: const Duration(milliseconds: 300),
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                       decoration: BoxDecoration(
                         color: _isHovered
                             ? AppTheme.offWhite.withOpacity(0.8)
@@ -437,7 +437,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                                       : widget.deal.price.toStringAsFixed(2))
                                   : 'Check',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w900,
                                 color: _isHovered
                                     ? widget.deal.providerColor
@@ -458,7 +458,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                       ),
                     ),
 
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 6),
 
                     // Bottom CTA row: Compare (left) | View Details (right)
                     Row(
@@ -475,7 +475,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                               },
                               child: AnimatedContainer(
                                 duration: const Duration(milliseconds: 250),
-                                padding: const EdgeInsets.symmetric(vertical: 7),
+                                padding: const EdgeInsets.symmetric(vertical: 5),
                                 decoration: BoxDecoration(
                                   color: widget.isSelectedForComparison
                                       ? AppTheme.vibrantEmerald
@@ -501,24 +501,18 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(
-                                      widget.isSelectedForComparison
-                                          ? Icons.check_circle
-                                          : Icons.compare_arrows,
-                                      size: 11,
-                                      color: widget.isSelectedForComparison
-                                          ? Colors.white
-                                          : AppTheme.primaryBlue,
+                                      widget.isSelectedForComparison ? Icons.check : Icons.compare_arrows,
+                                      size: 12,
+                                      color: widget.isSelectedForComparison ? Colors.white : AppTheme.primaryBlue,
                                     ),
-                                    const SizedBox(width: 3),
+                                    const SizedBox(width: 4),
                                     Text(
-                                      widget.isSelectedForComparison ? 'Added' : 'Compare',
+                                      widget.isSelectedForComparison ? 'ADDED' : 'COMPARE',
                                       style: TextStyle(
                                         fontSize: 9,
-                                        fontWeight: FontWeight.w800,
-                                        color: widget.isSelectedForComparison
-                                            ? Colors.white
-                                            : AppTheme.primaryBlue,
-                                        letterSpacing: 0.3,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: 0.5,
+                                        color: widget.isSelectedForComparison ? Colors.white : AppTheme.primaryBlue,
                                       ),
                                     ),
                                   ],
@@ -526,57 +520,42 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                               ),
                             ),
                           ),
-                        if (widget.onToggleCompare != null) const SizedBox(width: 6),
-                        // View Details button — always visible, right side
+                        if (widget.onToggleCompare != null) const SizedBox(width: 4),
+
+                        // View details / go to site
                         Expanded(
+                          flex: 2,
                           child: GestureDetector(
-                            behavior: HitTestBehavior.opaque,
-                            onTap: () {
-                              _flipCard();
-                              // _flipCard toggles _isFront; !_isFront now means we just revealed the back (details view)
-                              if (!_isFront) {
-                                ref.read(gamificationProvider.notifier).recordView();
-                                _showXPFloat(context, '+5 XP', AppTheme.accentOrange);
-                              }
-                            },
+                            onTap: _flipCard,
                             child: AnimatedContainer(
                               duration: const Duration(milliseconds: 250),
-                              padding: const EdgeInsets.symmetric(vertical: 7),
+                              padding: const EdgeInsets.symmetric(vertical: 5),
                               decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  colors: [AppTheme.accentOrange, Color(0xFFFF9500)],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                ),
+                                color: widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy,
                                 borderRadius: BorderRadius.circular(8),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: AppTheme.accentOrange.withOpacity(
-                                      _isHovered ? 0.45 : 0.25,
-                                    ),
-                                    blurRadius: _isHovered ? 10 : 6,
-                                    offset: const Offset(0, 3),
-                                  ),
+                                    color: (widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy)
+                                        .withOpacity(0.3),
+                                    blurRadius: _isHovered ? 8 : 4,
+                                    offset: _isHovered ? const Offset(0, 4) : const Offset(0, 2),
+                                  )
                                 ],
                               ),
                               child: const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'View Details',
+                                    'DETAILS',
                                     style: TextStyle(
-                                      fontSize: 9,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w900,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w800,
-                                      letterSpacing: 0.3,
+                                      letterSpacing: 0.5,
                                     ),
                                   ),
-                                  SizedBox(width: 3),
-                                  Icon(
-                                    Icons.arrow_forward_rounded,
-                                    size: 11,
-                                    color: Colors.white,
-                                  ),
+                                  SizedBox(width: 4),
+                                  Icon(Icons.arrow_forward_ios, size: 10, color: Colors.white),
                                 ],
                               ),
                             ),

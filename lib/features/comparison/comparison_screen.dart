@@ -668,7 +668,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                         gridDelegate:
                             SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: crossAxisCount,
-                          childAspectRatio: crossAxisCount >= 4 ? 0.95 : (crossAxisCount == 3 ? 1.05 : 1.15),
+                          childAspectRatio: crossAxisCount >= 4 ? 1.05 : (crossAxisCount == 3 ? 1.15 : 1.25),
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
                         ),

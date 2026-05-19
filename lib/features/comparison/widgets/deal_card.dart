@@ -209,7 +209,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
       children: [
         AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+          padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
@@ -382,7 +382,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                       ),
                     ),
 
-                    const SizedBox(height: 3),
+                    const SizedBox(height: 1),
 
                     // Plan name
                     Text(
@@ -398,7 +398,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                       ),
                     ),
 
-                    const Spacer(),
+                    const SizedBox(height: 6),
 
                     // Price
                     AnimatedContainer(

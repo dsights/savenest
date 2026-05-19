@@ -23,6 +23,7 @@ class SearchBarWidget extends StatefulWidget {
   final double? filterPriceMax;
   final Function(double?)? onPriceMaxChanged;
   final List<String> suggestions;
+  final bool isVertical;
 
   const SearchBarWidget({
     super.key,
@@ -40,6 +41,7 @@ class SearchBarWidget extends StatefulWidget {
     this.filterPriceMax,
     this.onPriceMaxChanged,
     this.suggestions = const [],
+    this.isVertical = false,
   });
 
   @override
@@ -415,85 +417,104 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
         // ── Row 2: Filter dropdowns + sort ────────────────────────
         if (widget.filters != null && widget.filters!.isNotEmpty) ...[
           const SizedBox(height: 10),
-          Row(
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: widget.filters!.entries.map((entry) {
-                      final selected = _activeFiltersByCategory[entry.key];
-                      return Container(
-                        margin: const EdgeInsets.only(right: 8),
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 10),
-                        decoration: BoxDecoration(
-                          color: selected != null
-                              ? AppTheme.vibrantEmerald.withOpacity(0.08)
-                              : Colors.white.withOpacity(0.7),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: selected != null
-                                ? AppTheme.vibrantEmerald.withOpacity(0.5)
-                                : AppTheme.slate300.withOpacity(0.5),
-                          ),
+          widget.isVertical
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _SortButton(
+                      sortMode: widget.sortMode,
+                      onSortChanged: widget.onSortChanged,
+                    ),
+                    const SizedBox(height: 12),
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: widget.filters!.entries.map((entry) {
+                        final selected = _activeFiltersByCategory[entry.key];
+                        return _buildFilterDropdown(entry, selected);
+                      }).toList(),
+                    ),
+                  ],
+                )
+              : Row(
+                  children: [
+                    Expanded(
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: widget.filters!.entries.map((entry) {
+                            final selected = _activeFiltersByCategory[entry.key];
+                            return _buildFilterDropdown(entry, selected);
+                          }).toList(),
                         ),
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton<String>(
-                            hint: Text(
-                              selected ?? entry.key,
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: selected != null
-                                    ? AppTheme.vibrantEmerald
-                                    : AppTheme.slate600,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            style: const TextStyle(
-                                color: AppTheme.deepNavy,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13),
-                            icon: Icon(Icons.arrow_drop_down,
-                                size: 20,
-                                color: selected != null
-                                    ? AppTheme.vibrantEmerald
-                                    : AppTheme.primaryBlue),
-                            items: entry.value
-                                .map((s) => DropdownMenuItem(
-                                      value: s,
-                                      child: Row(children: [
-                                        if (s == selected)
-                                          const Padding(
-                                            padding:
-                                                EdgeInsets.only(right: 6),
-                                            child: Icon(Icons.check,
-                                                size: 14,
-                                                color: AppTheme
-                                                    .vibrantEmerald),
-                                          ),
-                                        Text(s),
-                                      ]),
-                                    ))
-                                .toList(),
-                            onChanged: (v) {
-                              if (v != null) _onFilterSelect(entry.key, v);
-                            },
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  ),
+                      ),
+                    ),
+                    _SortButton(
+                      sortMode: widget.sortMode,
+                      onSortChanged: widget.onSortChanged,
+                    ),
+                  ],
                 ),
-              ),
-              _SortButton(
-                sortMode: widget.sortMode,
-                onSortChanged: widget.onSortChanged,
-              ),
-            ],
-          ),
         ],
       ],
+    );
+  }
+
+  Widget _buildFilterDropdown(MapEntry<String, List<String>> entry, String? selected) {
+    return Container(
+      margin: widget.isVertical ? EdgeInsets.zero : const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+        color: selected != null
+            ? AppTheme.vibrantEmerald.withOpacity(0.08)
+            : Colors.white.withOpacity(0.7),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: selected != null
+              ? AppTheme.vibrantEmerald.withOpacity(0.5)
+              : AppTheme.slate300.withOpacity(0.5),
+        ),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          hint: Text(
+            selected ?? entry.key,
+            style: TextStyle(
+              fontSize: 13,
+              color: selected != null
+                  ? AppTheme.vibrantEmerald
+                  : AppTheme.slate600,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          style: const TextStyle(
+              color: AppTheme.deepNavy,
+              fontWeight: FontWeight.bold,
+              fontSize: 13),
+          icon: Icon(Icons.arrow_drop_down,
+              size: 20,
+              color: selected != null
+                  ? AppTheme.vibrantEmerald
+                  : AppTheme.primaryBlue),
+          items: entry.value
+              .map((s) => DropdownMenuItem(
+                    value: s,
+                    child: Row(children: [
+                      if (s == selected)
+                        const Padding(
+                          padding: EdgeInsets.only(right: 6),
+                          child: Icon(Icons.check,
+                              size: 14, color: AppTheme.vibrantEmerald),
+                        ),
+                      Text(s),
+                    ]),
+                  ))
+              .toList(),
+          onChanged: (v) {
+            if (v != null) _onFilterSelect(entry.key, v);
+          },
+        ),
+      ),
     );
   }
 }

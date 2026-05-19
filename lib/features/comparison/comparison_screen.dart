@@ -212,6 +212,90 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     }
   }
 
+  Widget _buildSidebarContent(
+      ComparisonController controller,
+      ComparisonState state,
+      bool showStateSelector,
+      String searchHint,
+      Map<String, List<String>> categoryFilters,
+      List<String> suggestions,
+      String categoryTitle,
+      String freshnessLabel,
+      ProductCategory selectedCat) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Best $categoryTitle Comparison',
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: AppTheme.deepNavy,
+                  fontWeight: FontWeight.w900,
+                ),
+          ),
+          const SizedBox(height: 8),
+          if (!state.isLoading && selectedCat != ProductCategory.creditCards)
+            Text(
+              'We found ${state.deals.length} deals to help you save',
+              style: const TextStyle(
+                color: AppTheme.slate600,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          const SizedBox(height: 32),
+          SearchBarWidget(
+            onChanged: (value) => controller.search(value),
+            onStateChanged: showStateSelector
+                ? (stateCode) => controller.updateStateFilter(stateCode)
+                : null,
+            selectedState: state.selectedState,
+            hintText: searchHint,
+            filters: categoryFilters,
+            activeFilters: state.activeFilters,
+            onFilterToggle: (value) => controller.toggleFilter(value),
+            onClearAllFilters: controller.clearAllFilters,
+            sortMode: state.sortMode,
+            onSortChanged: (mode) => controller.setSortMode(mode),
+            categoryMaxPrice: state.categoryMaxPrice,
+            filterPriceMax: state.filterPriceMax,
+            onPriceMaxChanged: (val) => controller.setPriceMax(val),
+            suggestions: suggestions,
+            isVertical: true,
+          ),
+          const SizedBox(height: 32),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: AppTheme.vibrantEmerald.withOpacity(0.05),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: AppTheme.vibrantEmerald.withOpacity(0.2)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Row(
+                  children: [
+                    Icon(Icons.verified_user, color: AppTheme.vibrantEmerald, size: 20),
+                    SizedBox(width: 8),
+                    Text('How we rank plans',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.deepNavy)),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Rankings use a weighted score: price (60%), features (20%), customer satisfaction (20%). $freshnessLabel',
+                  style: const TextStyle(fontSize: 13, color: AppTheme.slate600),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(comparisonProvider);
@@ -263,13 +347,12 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
 
     // Compute responsive grid column count once in build (avoids shrinkWrap)
     final screenWidth = MediaQuery.of(context).size.width;
-    final crossAxisCount = screenWidth > 1200
-        ? 4
-        : screenWidth > 900
-            ? 3
-            : screenWidth > 600
-                ? 2
-                : 1;
+    final bool isDesktop = screenWidth > 900;
+    
+    // Reduce cross axis count when desktop sidebar is visible
+    final crossAxisCount = isDesktop
+        ? (screenWidth > 1200 ? 3 : 2)
+        : (screenWidth > 600 ? 2 : 1);
 
     // Data freshness label (shows the actual last-updated date from the JSON metadata)
     final freshnessLabel = state.dataLastUpdated.isNotEmpty
@@ -286,119 +369,153 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
           const MainNavigationBar(),
           const QuestBanner(),
           Expanded(
-            child: CustomScrollView(
-              controller: _scrollController,
-              primary: false,
-              physics:
-                  const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-              slivers: [
-                // ── Header + search bar ────────────────────────────
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24.0, vertical: 40.0),
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 1200),
-                        child: Column(
-                          children: [
-                            Text(
-                              'Best $categoryTitle Comparison in Australia',
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .displaySmall
-                                  ?.copyWith(
-                                    color: AppTheme.deepNavy,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                            ),
-                            const SizedBox(height: 8),
-                            if (!state.isLoading &&
-                                selectedCat != ProductCategory.creditCards)
-                              Text(
-                                'We found ${state.deals.length} deals to help you save',
-                                style: const TextStyle(
-                                  color: AppTheme.slate600,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            const SizedBox(height: 32),
-                            ConstrainedBox(
-                              constraints: const BoxConstraints(maxWidth: 800),
-                              child: SearchBarWidget(
-                                onChanged: (value) => controller.search(value),
-                                onStateChanged: showStateSelector
-                                    ? (stateCode) =>
-                                        controller.updateStateFilter(stateCode)
-                                    : null,
-                                selectedState: state.selectedState,
-                                hintText: searchHint,
-                                filters: categoryFilters,
-                                activeFilters: state.activeFilters,
-                                onFilterToggle: (value) =>
-                                    controller.toggleFilter(value),
-                                onClearAllFilters: controller.clearAllFilters,
-                                sortMode: state.sortMode,
-                                onSortChanged: (mode) =>
-                                    controller.setSortMode(mode),
-                                categoryMaxPrice: state.categoryMaxPrice,
-                                filterPriceMax: state.filterPriceMax,
-                                onPriceMaxChanged: (val) =>
-                                    controller.setPriceMax(val),
-                                suggestions: suggestions,
-                              ),
-                            ),
-                          ],
+            child: isDesktop
+                ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: screenWidth * 0.25,
+                        child: _buildSidebarContent(
+                          controller, state, showStateSelector, searchHint,
+                          categoryFilters, suggestions, categoryTitle,
+                          freshnessLabel, selectedCat,
                         ),
                       ),
-                    ),
-                  ),
-                ),
+                      const VerticalDivider(width: 1, thickness: 1, color: AppTheme.slate300),
+                      Expanded(
+                        child: _buildCustomScrollView(isDesktop, state, controller, creditCardsAsync, selectedCat, crossAxisCount, categoryTitle, searchHint, showStateSelector, categoryFilters, suggestions, freshnessLabel),
+                      ),
+                    ],
+                  )
+                : _buildCustomScrollView(isDesktop, state, controller, creditCardsAsync, selectedCat, crossAxisCount, categoryTitle, searchHint, showStateSelector, categoryFilters, suggestions, freshnessLabel),
+          ),
+        ],
+      ),
+          // Comparison tray — floats above content at the bottom
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: ComparisonTray(category: selectedCat),
+          ),
+        ],
+      ),
+    );
+  }
 
-                // ── Ranking methodology + data freshness notice ────
-                SliverToBoxAdapter(
-                  child: Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 800),
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 24, vertical: 12),
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: AppTheme.vibrantEmerald.withOpacity(0.05),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                              color: AppTheme.vibrantEmerald.withOpacity(0.2)),
+  Widget _buildCustomScrollView(
+    bool isDesktop,
+    ComparisonState state,
+    ComparisonController controller,
+    AsyncValue<List<CreditCardDeal>> creditCardsAsync,
+    ProductCategory selectedCat,
+    int crossAxisCount,
+    String categoryTitle,
+    String searchHint,
+    bool showStateSelector,
+    Map<String, List<String>> categoryFilters,
+    List<String> suggestions,
+    String freshnessLabel,
+  ) {
+    return CustomScrollView(
+      controller: _scrollController,
+      primary: false,
+      physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      slivers: [
+        if (!isDesktop) ...[
+          // ── Header + search bar ────────────────────────────
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1200),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Best $categoryTitle Comparison in Australia',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                              color: AppTheme.deepNavy,
+                              fontWeight: FontWeight.w900,
+                            ),
+                      ),
+                      const SizedBox(height: 8),
+                      if (!state.isLoading && selectedCat != ProductCategory.creditCards)
+                        Text(
+                          'We found ${state.deals.length} deals to help you save',
+                          style: const TextStyle(
+                            color: AppTheme.slate600,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                        child: Column(
-                          children: [
-                            const Row(
-                              children: [
-                                Icon(Icons.verified_user,
-                                    color: AppTheme.vibrantEmerald, size: 20),
-                                SizedBox(width: 8),
-                                Text('How we rank plans',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: AppTheme.deepNavy)),
-                              ],
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              'Rankings use a weighted score: price (60%), features (20%), customer satisfaction (20%). $freshnessLabel',
-                              style: const TextStyle(
-                                  fontSize: 13, color: AppTheme.slate600),
-                            ),
-                          ],
+                      const SizedBox(height: 32),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 800),
+                        child: SearchBarWidget(
+                          onChanged: (value) => controller.search(value),
+                          onStateChanged: showStateSelector
+                              ? (stateCode) => controller.updateStateFilter(stateCode)
+                              : null,
+                          selectedState: state.selectedState,
+                          hintText: searchHint,
+                          filters: categoryFilters,
+                          activeFilters: state.activeFilters,
+                          onFilterToggle: (value) => controller.toggleFilter(value),
+                          onClearAllFilters: controller.clearAllFilters,
+                          sortMode: state.sortMode,
+                          onSortChanged: (mode) => controller.setSortMode(mode),
+                          categoryMaxPrice: state.categoryMaxPrice,
+                          filterPriceMax: state.filterPriceMax,
+                          onPriceMaxChanged: (val) => controller.setPriceMax(val),
+                          suggestions: suggestions,
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
+              ),
+            ),
+          ),
 
-                // ── Live activity ticker ──────────────────────────
+          // ── Ranking methodology + data freshness notice ────
+          SliverToBoxAdapter(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 800),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: AppTheme.vibrantEmerald.withOpacity(0.05),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: AppTheme.vibrantEmerald.withOpacity(0.2)),
+                  ),
+                  child: Column(
+                    children: [
+                      const Row(
+                        children: [
+                          Icon(Icons.verified_user, color: AppTheme.vibrantEmerald, size: 20),
+                          SizedBox(width: 8),
+                          Text('How we rank plans',
+                              style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.deepNavy)),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Rankings use a weighted score: price (60%), features (20%), customer satisfaction (20%). $freshnessLabel',
+                        style: const TextStyle(fontSize: 13, color: AppTheme.slate600),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+
+        // ── Live activity ticker ──────────────────────────
                 const SliverToBoxAdapter(child: LiveActivityTicker()),
 
                 // ── Credit cards table ─────────────────────────────
@@ -553,20 +670,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 100)),
                 const SliverToBoxAdapter(child: ModernFooter()),
-              ],
-            ),
-          ),
-        ],
-      ),
-          // Comparison tray — floats above content at the bottom
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: ComparisonTray(category: selectedCat),
-          ),
-        ],
-      ),
+      ],
     );
   }
 

@@ -88,7 +88,7 @@ class _SolarLandingScreenState extends ConsumerState<SolarLandingScreen>
       try {
         final response = await http.post(
           Uri.parse(
-              'http://127.0.0.1:8000/api/solar-lead'), // Update to prod URL later
+              'https://savenest.au/api/solar-lead'), // Production URL
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({
             'name': _name,

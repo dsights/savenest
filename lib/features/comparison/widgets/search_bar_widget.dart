@@ -426,12 +426,14 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                       onSortChanged: widget.onSortChanged,
                     ),
                     const SizedBox(height: 12),
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: widget.filters!.entries.map((entry) {
                         final selected = _activeFiltersByCategory[entry.key];
-                        return _buildFilterDropdown(entry, selected);
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: _buildFilterDropdown(entry, selected),
+                        );
                       }).toList(),
                     ),
                   ],
@@ -477,6 +479,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
+          isExpanded: widget.isVertical,
           hint: Text(
             selected ?? entry.key,
             style: TextStyle(

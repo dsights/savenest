@@ -351,7 +351,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
     
     // Reduce cross axis count when desktop sidebar is visible
     final crossAxisCount = isDesktop
-        ? (screenWidth > 1200 ? 3 : 2)
+        ? (screenWidth > 1200 ? 4 : (screenWidth > 900 ? 3 : 2))
         : (screenWidth > 600 ? 2 : 1);
 
     // Data freshness label (shows the actual last-updated date from the JSON metadata)
@@ -648,7 +648,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
                         gridDelegate:
                             SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: crossAxisCount,
-                          childAspectRatio: 0.85,
+                          childAspectRatio: crossAxisCount >= 4 ? 0.72 : (crossAxisCount == 3 ? 0.8 : 0.85),
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
                         ),

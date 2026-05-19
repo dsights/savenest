@@ -179,48 +179,15 @@ class _LevelBadge extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(
+            Icon(Icons.workspace_premium, size: 16, color: _levelColor),
+            const SizedBox(width: 4),
+            Text(
+              'Lv.${state.level}',
+              style: TextStyle(
                 color: _levelColor,
-                borderRadius: BorderRadius.circular(100),
+                fontSize: 12,
+                fontWeight: FontWeight.w900,
               ),
-              child: Text(
-                'Lv.${state.level}',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-            ),
-            const SizedBox(width: 7),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  state.levelName,
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w700,
-                    color: _levelColor,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                SizedBox(
-                  width: 56,
-                  height: 3,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(2),
-                    child: LinearProgressIndicator(
-                      value: state.levelProgress,
-                      backgroundColor: Colors.grey.shade200,
-                      valueColor: AlwaysStoppedAnimation(_levelColor),
-                    ),
-                  ),
-                ),
-              ],
             ),
           ],
         ),

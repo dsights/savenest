@@ -179,13 +179,7 @@ class _ProductComparisonScreenState
               constraints: const BoxConstraints(maxWidth: 1100),
               child: Padding(
                 padding: const EdgeInsets.all(24),
-                child: isWide
-                    ? _buildTable(deals, sections)
-                    : SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: _buildTable(deals, sections,
-                            minWidth: deals.length * 220.0 + 200),
-                      ),
+                child: _buildTable(deals, sections, isWide),
               ),
             ),
           ),
@@ -197,12 +191,11 @@ class _ProductComparisonScreenState
     );
   }
 
-  Widget _buildTable(List<Deal> deals, List<dynamic> sections,
-      {double? minWidth}) {
+  Widget _buildTable(List<Deal> deals, List<dynamic> sections, bool isWide) {
     final bestDeal = _bestValueDeal(deals);
 
     return Container(
-      width: minWidth,
+      width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -219,42 +212,43 @@ class _ProductComparisonScreenState
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // ── Sticky product header ─────────────────────────────────
-          _buildProductHeader(deals, bestDeal),
+          _buildProductHeader(deals, bestDeal, isWide),
 
           // ── Feature sections ──────────────────────────────────────
           for (final section in sections)
-            _buildSection(deals, section as Map<String, dynamic>),
+            _buildSection(deals, section as Map<String, dynamic>, isWide),
 
           // ── Action row ────────────────────────────────────────────
-          _buildActionRow(deals, bestDeal),
+          _buildActionRow(deals, bestDeal, isWide),
         ],
       ),
     );
   }
 
-  Widget _buildProductHeader(List<Deal> deals, Deal? bestDeal) {
+  Widget _buildProductHeader(List<Deal> deals, Deal? bestDeal, bool isWide) {
     return Container(
       decoration: const BoxDecoration(
         color: AppTheme.deepNavy,
       ),
       child: Row(
         children: [
-          // Feature label column
-          SizedBox(
-            width: 200,
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Text(
-                'Feature',
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.5),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.8,
+          // Feature label column (Desktop only)
+          if (isWide)
+            SizedBox(
+              width: 200,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  'Feature',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.5),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.8,
+                  ),
                 ),
               ),
             ),
-          ),
           // Product columns
           ...deals.map((deal) {
             final isBest = deal == bestDeal;
@@ -360,7 +354,7 @@ class _ProductComparisonScreenState
     );
   }
 
-  Widget _buildSection(List<Deal> deals, Map<String, dynamic> section) {
+  Widget _buildSection(List<Deal> deals, Map<String, dynamic> section, bool isWide) {
     final label = section['label'] as String;
     final rows = section['rows'] as List<dynamic>;
 
@@ -380,19 +374,33 @@ class _ProductComparisonScreenState
           color: const Color(0xFFF4F6FA),
           child: Row(
             children: [
-              SizedBox(
-                width: 200,
-                child: Text(
-                  label.toUpperCase(),
-                  style: const TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w800,
-                    color: AppTheme.deepNavy,
-                    letterSpacing: 1.0,
+              if (isWide)
+                SizedBox(
+                  width: 200,
+                  child: Text(
+                    label.toUpperCase(),
+                    style: const TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w800,
+                      color: AppTheme.deepNavy,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                )
+              else
+                Expanded(
+                  child: Text(
+                    label.toUpperCase(),
+                    style: const TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w800,
+                      color: AppTheme.deepNavy,
+                      letterSpacing: 1.0,
+                    ),
                   ),
                 ),
-              ),
-              ...deals.map((_) => const Expanded(child: SizedBox())),
+              if (isWide)
+                ...deals.map((_) => const Expanded(child: SizedBox())),
             ],
           ),
         ),
@@ -400,18 +408,59 @@ class _ProductComparisonScreenState
         ...visibleRows.asMap().entries.map((entry) {
           final isEven = entry.key.isEven;
           return _buildFeatureRow(
-              deals, entry.value as Map<String, dynamic>, isEven);
+              deals, entry.value as Map<String, dynamic>, isEven, isWide);
         }),
       ],
     );
   }
 
   Widget _buildFeatureRow(
-      List<Deal> deals, Map<String, dynamic> rowDef, bool isEven) {
+      List<Deal> deals, Map<String, dynamic> rowDef, bool isEven, bool isWide) {
     final key = rowDef['key'] as String;
     final label = rowDef['label'] as String;
     final type = rowDef['type'] as String;
 
+    if (!isWide) {
+      // Mobile Layout: Label on top, values side-by-side underneath
+      return Container(
+        color: isEven ? Colors.white : const Color(0xFFFAFBFC),
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: AppTheme.slate600,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: deals.map((deal) {
+                return Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    decoration: BoxDecoration(
+                      border: deal != deals.first
+                          ? const Border(left: BorderSide(color: Color(0xFFEEEFF2), width: 1))
+                          : null,
+                    ),
+                    child: _buildCell(deal, key, type),
+                  ),
+                );
+              }).toList(),
+            ),
+          ],
+        ),
+      );
+    }
+
+    // Desktop Layout: Side-by-side table row
     return Container(
       color: isEven ? Colors.white : const Color(0xFFFAFBFC),
       child: Row(
@@ -551,7 +600,7 @@ class _ProductComparisonScreenState
     }
   }
 
-  Widget _buildActionRow(List<Deal> deals, Deal? bestDeal) {
+  Widget _buildActionRow(List<Deal> deals, Deal? bestDeal, bool isWide) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
@@ -561,18 +610,19 @@ class _ProductComparisonScreenState
       ),
       child: Row(
         children: [
-          const SizedBox(
-            width: 200,
-            child: Text(
-              'READY TO SWITCH?',
-              style: TextStyle(
-                color: Colors.white60,
-                fontSize: 11,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.8,
+          if (isWide)
+            const SizedBox(
+              width: 200,
+              child: Text(
+                'READY TO SWITCH?',
+                style: TextStyle(
+                  color: Colors.white60,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.8,
+                ),
               ),
             ),
-          ),
           ...deals.map((deal) {
             final isBest = deal == bestDeal;
             final url = deal.affiliateUrl.isNotEmpty

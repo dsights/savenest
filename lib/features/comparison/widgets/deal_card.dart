@@ -909,16 +909,16 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 1.0),
-            child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 12),
+            child: Icon(Icons.check_circle, color: AppTheme.vibrantEmerald, size: 10),
           ),
-          const SizedBox(width: 6),
+          const SizedBox(width: 4),
           Expanded(
             child: Text(
               feature,
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 9,
                 color: Colors.white.withOpacity(0.95),
-                height: 1.3,
+                height: 1.2,
                 fontWeight: FontWeight.w600,
               ),
             ),

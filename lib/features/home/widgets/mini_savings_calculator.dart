@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../theme/app_theme.dart';
-import '../../../widgets/glass_container.dart';
 import '../../savings/savings_provider.dart';
 import '../../savings/widgets/animated_counter.dart';
 
@@ -15,22 +14,22 @@ class MiniSavingsCalculator extends ConsumerWidget {
     final utilityCosts = ref.watch(savingsControllerProvider);
     final controller = ref.read(savingsControllerProvider.notifier);
 
-    return GlassContainer(
-      borderRadius: 12,
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           const Text(
-            'Savings Estimate',
+            'Calculate Your Savings',
             style: TextStyle(
-              color: AppTheme.deepNavy,
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 0.5,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
           
           // Scenarios
           SingleChildScrollView(
@@ -46,7 +45,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
                     controller.updateCost(UtilityType.mobile, 20);
                   },
                 ),
-                const SizedBox(width: 6),
+                const SizedBox(width: 8),
                 _scenarioChip(
                   label: 'Average',
                   onTap: () {
@@ -56,7 +55,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
                     controller.updateCost(UtilityType.mobile, 40);
                   },
                 ),
-                const SizedBox(width: 6),
+                const SizedBox(width: 8),
                 _scenarioChip(
                   label: 'Heavy',
                   onTap: () {
@@ -69,7 +68,7 @@ class MiniSavingsCalculator extends ConsumerWidget {
               ],
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 16),
           
           _miniSlider(
             context,
@@ -104,7 +103,10 @@ class MiniSavingsCalculator extends ConsumerWidget {
             onChanged: (val) => controller.updateCost(UtilityType.mobile, val),
           ),
 
-          const Divider(height: 16),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8),
+            child: Divider(height: 1, color: Colors.white24),
+          ),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,8 +115,8 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 'Est. Savings:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 12,
-                  color: AppTheme.deepNavy,
+                  fontSize: 14,
+                  color: Colors.white70,
                 ),
               ),
               AnimatedCounter(
@@ -122,24 +124,25 @@ class MiniSavingsCalculator extends ConsumerWidget {
                 prefix: '\$',
                 style: const TextStyle(
                   color: AppTheme.vibrantEmerald,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
-            height: 36,
+            height: 48,
             child: ElevatedButton(
               onPressed: () => context.push('/register'),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero,
-                backgroundColor: AppTheme.accentOrange,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                backgroundColor: AppTheme.vibrantEmerald,
+                foregroundColor: AppTheme.deepNavy,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),
-              child: const Text('START SAVING', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+              child: const Text('START SAVING NOW', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w900, letterSpacing: 0.5)),
             ),
           ),
         ],
@@ -163,22 +166,22 @@ class MiniSavingsCalculator extends ConsumerWidget {
           children: [
             Row(
               children: [
-                Icon(icon, size: 11, color: AppTheme.primaryBlue),
-                const SizedBox(width: 4),
-                Text(label, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600)),
+                Icon(icon, size: 14, color: Colors.white70),
+                const SizedBox(width: 6),
+                Text(label, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white)),
               ],
             ),
-            Text('\$${value.toInt()}', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
+            Text('\$${value.toInt()}', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppTheme.vibrantEmerald)),
           ],
         ),
         SliderTheme(
           data: SliderTheme.of(context).copyWith(
-            trackHeight: 2.0,
-            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 4),
-            overlayShape: const RoundSliderOverlayShape(overlayRadius: 8),
+            trackHeight: 3.0,
+            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6),
+            overlayShape: const RoundSliderOverlayShape(overlayRadius: 12),
             activeTrackColor: AppTheme.vibrantEmerald,
-            inactiveTrackColor: AppTheme.deepNavy.withOpacity(0.1),
-            thumbColor: AppTheme.accentOrange,
+            inactiveTrackColor: Colors.white24,
+            thumbColor: Colors.white,
           ),
           child: Slider(
             value: value,
@@ -194,20 +197,20 @@ class MiniSavingsCalculator extends ConsumerWidget {
   Widget _scenarioChip({required String label, required VoidCallback onTap}) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(20),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
         decoration: BoxDecoration(
-          color: AppTheme.primaryBlue.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.3)),
+          color: Colors.white10,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.white30),
         ),
         child: Text(
           label,
           style: const TextStyle(
-            fontSize: 10,
+            fontSize: 12,
             fontWeight: FontWeight.w600,
-            color: AppTheme.primaryBlue,
+            color: Colors.white,
           ),
         ),
       ),

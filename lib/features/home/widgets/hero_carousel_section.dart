@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+import 'dart:math' as math;
 import '../../../theme/app_theme.dart';
 import 'mini_savings_calculator.dart';
+import '../../../widgets/glass_container.dart';
 
 class HeroCarouselSection extends StatefulWidget {
   const HeroCarouselSection({super.key});
@@ -10,80 +11,37 @@ class HeroCarouselSection extends StatefulWidget {
   State<HeroCarouselSection> createState() => _HeroCarouselSectionState();
 }
 
-class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTickerProviderStateMixin {
-  final PageController _pageController = PageController();
-  int _currentPage = 0;
-  Timer? _timer;
-
-  late AnimationController _animationController;
+class _HeroCarouselSectionState extends State<HeroCarouselSection> with TickerProviderStateMixin {
+  late AnimationController _bgAnimationController;
+  late AnimationController _contentAnimationController;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
-
-  final List<Map<String, String>> _slides = [
-    {
-      'image': 'assets/images/hero_energy.jpg',
-      'title': 'Compare, Switch & Save on Energy',
-      'subtitle': 'Find better electricity and gas plans in minutes.'
-    },
-    {
-      'image': 'assets/images/hero_internet.jpg',
-      'title': 'High-Speed Internet for Less',
-      'subtitle': 'Compare NBN and 5G home internet plans.'
-    },
-    {
-      'image': 'assets/images/hero_insurance.jpg',
-      'title': 'Peace of Mind, Better Value',
-      'subtitle': 'Compare health, car, and home insurance.'
-    },
-    {
-      'image': 'assets/images/hero_finance.jpg',
-      'title': 'Smart Finance Decisions',
-      'subtitle': 'Compare home loans and credit cards.'
-    },
-    {
-      'image': 'assets/images/hero_mobile.jpg',
-      'title': 'Stay Connected for Less',
-      'subtitle': 'Compare the best mobile plans in Australia.'
-    },
-  ];
 
   @override
   void initState() {
     super.initState();
-    _startTimer();
-    _animationController = AnimationController(
+    _bgAnimationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
-    );
-    _fadeAnimation = CurvedAnimation(parent: _animationController, curve: Curves.easeIn);
-    _slideAnimation = Tween<Offset>(begin: const Offset(0, 0.1), end: Offset.zero).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeOutCubic),
-    );
-    _animationController.forward();
-  }
+      duration: const Duration(seconds: 10),
+    )..repeat(reverse: true);
 
-  void _startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
-      if (_currentPage < _slides.length - 1) {
-        _currentPage++;
-      } else {
-        _currentPage = 0;
-      }
-      if (_pageController.hasClients) {
-        _pageController.animateToPage(
-          _currentPage,
-          duration: const Duration(milliseconds: 800),
-          curve: Curves.easeInOut,
-        );
-      }
-    });
+    _contentAnimationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
+
+    _fadeAnimation = CurvedAnimation(parent: _contentAnimationController, curve: Curves.easeIn);
+    _slideAnimation = Tween<Offset>(begin: const Offset(0, 0.15), end: Offset.zero).animate(
+      CurvedAnimation(parent: _contentAnimationController, curve: Curves.easeOutQuart),
+    );
+
+    _contentAnimationController.forward();
   }
 
   @override
   void dispose() {
-    _timer?.cancel();
-    _pageController.dispose();
-    _animationController.dispose();
+    _bgAnimationController.dispose();
+    _contentAnimationController.dispose();
     super.dispose();
   }
 
@@ -92,9 +50,8 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
     final isDesktop = MediaQuery.of(context).size.width > 1100;
     final screenHeight = MediaQuery.of(context).size.height;
     
-    // On desktop, use 40% of screen height. On mobile, allow content to define height with a larger minimum.
-    final double? fixedHeight = isDesktop ? (screenHeight * 0.4 < 400 ? 400.0 : screenHeight * 0.4) : null;
-    final double minHeight = isDesktop ? 400 : 550; 
+    final double? fixedHeight = isDesktop ? (screenHeight * 0.5 < 500 ? 500.0 : screenHeight * 0.5) : null;
+    final double minHeight = isDesktop ? 500 : 750; 
 
     return Container(
       constraints: BoxConstraints(
@@ -104,36 +61,39 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
       width: double.infinity,
       child: Stack(
         children: [
-          // Carousel Background
+          // Animated Mesh Gradient Background
           Positioned.fill(
-            child: PageView.builder(
-              controller: _pageController,
-              onPageChanged: (index) => setState(() => _currentPage = index),
-              itemCount: _slides.length,
-              itemBuilder: (context, index) {
-                return Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Image.asset(
-                      _slides[index]['image']!,
-                      fit: BoxFit.cover,
+            child: AnimatedBuilder(
+              animation: _bgAnimationController,
+              builder: (context, child) {
+                return Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.lerp(const Color(0xFF0F2027), const Color(0xFF203A43), _bgAnimationController.value)!,
+                        Color.lerp(const Color(0xFF203A43), const Color(0xFF2C5364), _bgAnimationController.value)!,
+                        Color.lerp(const Color(0xFF00B4DB), const Color(0xFF0083B0), 1 - _bgAnimationController.value)!,
+                      ],
+                      stops: const [0.0, 0.5, 1.0],
+                      transform: GradientRotation(_bgAnimationController.value * math.pi),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: isDesktop ? Alignment.centerLeft : Alignment.topCenter,
-                          end: isDesktop ? Alignment.centerRight : Alignment.bottomCenter,
-                          colors: [
-                            AppTheme.deepNavy.withOpacity(0.9),
-                            AppTheme.deepNavy.withOpacity(0.7),
-                            AppTheme.deepNavy.withOpacity(0.4),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 );
               },
+            ),
+          ),
+          
+          // Subtle particle overlay
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.05,
+              child: Image.asset(
+                'assets/images/hero_energy.jpg', // Using existing asset for texture
+                fit: BoxFit.cover,
+                colorBlendMode: BlendMode.overlay,
+              ),
             ),
           ),
 
@@ -151,14 +111,17 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
                         children: [
                           // Text Content (Left Side)
                           Expanded(
-                            flex: 3,
+                            flex: 11,
                             child: _buildTextContent(isDesktop),
                           ),
+                          const Spacer(flex: 1),
                           // Mini Calculator (Right Side)
                           const Expanded(
-                            flex: 1,
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 40),
+                            flex: 8,
+                            child: GlassContainer(
+                              blur: 15,
+                              color: Colors.white10,
+                              borderColor: Colors.white24,
                               child: MiniSavingsCalculator(),
                             ),
                           ),
@@ -169,34 +132,17 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           _buildTextContent(isDesktop),
-                          const SizedBox(height: 32),
-                          const MiniSavingsCalculator(),
+                          const SizedBox(height: 48),
+                          const GlassContainer(
+                            blur: 15,
+                            color: Colors.white10,
+                            borderColor: Colors.white24,
+                            child: MiniSavingsCalculator(),
+                          ),
                         ],
                       ),
                 ),
               ),
-            ),
-          ),
-
-          // Indicators
-          Positioned(
-            bottom: 20,
-            left: 0,
-            right: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(_slides.length, (index) {
-                return AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  margin: const EdgeInsets.symmetric(horizontal: 4),
-                  width: _currentPage == index ? 24 : 8,
-                  height: 8,
-                  decoration: BoxDecoration(
-                    color: _currentPage == index ? AppTheme.accentOrange : Colors.white.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                );
-              }),
             ),
           ),
         ],
@@ -213,34 +159,60 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
           children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: AppTheme.vibrantEmerald.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(color: AppTheme.vibrantEmerald.withOpacity(0.5)),
+              ),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.bolt, color: AppTheme.vibrantEmerald, size: 18),
+                  SizedBox(width: 8),
+                  Text(
+                    "Switch & Save Up to \$500 Today",
+                    style: TextStyle(
+                      color: AppTheme.vibrantEmerald,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 24),
             Text(
-              _slides[_currentPage]['title']!,
+              "Stop Paying the Lazy Tax.",
               textAlign: isDesktop ? TextAlign.start : TextAlign.center,
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                    fontSize: isDesktop ? 48 : 28,
+                    fontSize: isDesktop ? 64 : 40,
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
                     height: 1.1,
+                    letterSpacing: -1.0,
                   ),
             ),
             const SizedBox(height: 16),
             Text(
-              _slides[_currentPage]['subtitle']!,
+              "Instantly compare energy, internet, and insurance. Find better value plans and slash your bills in minutes with Australia's smartest comparison engine.",
               textAlign: isDesktop ? TextAlign.start : TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: 16,
-                    color: Colors.white.withOpacity(0.9),
+                    fontSize: isDesktop ? 20 : 16,
+                    color: Colors.white.withOpacity(0.85),
+                    height: 1.5,
                   ),
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 40),
             if (isDesktop)
               Wrap(
-                spacing: 32,
+                spacing: 24,
                 runSpacing: 16,
                 children: [
-                  _buildTrustBadge(Icons.verified_user, "100% Secure"),
-                  _buildTrustBadge(Icons.star, "Top Rated Providers"),
-                  _buildTrustBadge(Icons.timer, "Saves you hours"),
+                  _buildTrustBadge(Icons.shield_outlined, "100% Secure & Free"),
+                  _buildTrustBadge(Icons.star_border, "5-Star Top Providers"),
+                  _buildTrustBadge(Icons.timer_outlined, "Takes Only 2 Minutes"),
                 ],
               ),
           ],
@@ -250,20 +222,27 @@ class _HeroCarouselSectionState extends State<HeroCarouselSection> with SingleTi
   }
 
   Widget _buildTrustBadge(IconData icon, String text) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, color: AppTheme.vibrantEmerald, size: 20),
-        const SizedBox(width: 8),
-        Text(
-          text,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 14,
+    return GlassContainer(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      borderRadius: 12,
+      blur: 8,
+      color: Colors.white.withOpacity(0.05),
+      borderColor: Colors.white.withOpacity(0.1),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: Colors.white, size: 20),
+          const SizedBox(width: 10),
+          Text(
+            text,
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+              fontSize: 14,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

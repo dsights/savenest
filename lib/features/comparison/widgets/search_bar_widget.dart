@@ -24,6 +24,8 @@ class SearchBarWidget extends StatefulWidget {
   final Function(double?)? onPriceMaxChanged;
   final List<String> suggestions;
   final bool isVertical;
+  final bool showSearch;
+  final bool showFilters;
 
   const SearchBarWidget({
     super.key,
@@ -42,6 +44,8 @@ class SearchBarWidget extends StatefulWidget {
     this.onPriceMaxChanged,
     this.suggestions = const [],
     this.isVertical = false,
+    this.showSearch = true,
+    this.showFilters = true,
   });
 
   @override
@@ -313,60 +317,61 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // ── Row 1: State + typeahead search field + OCR ───────────
-        CompositedTransformTarget(
-          link: _layerLink,
-          child: Row(
-            key: _searchRowKey,
-            children: [
-              if (widget.onStateChanged != null)
-                _StateDropdown(
-                  selectedState: widget.selectedState,
-                  onStateChanged: widget.onStateChanged,
-                ),
+        if (widget.showSearch)
+          CompositedTransformTarget(
+            link: _layerLink,
+            child: Row(
+              key: _searchRowKey,
+              children: [
+                if (widget.onStateChanged != null)
+                  _StateDropdown(
+                    selectedState: widget.selectedState,
+                    onStateChanged: widget.onStateChanged,
+                  ),
 
-              Expanded(
-                child: GlassContainer(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  borderRadius: 12,
-                  child: TextField(
-                    controller: _controller,
-                    focusNode: _focusNode,
-                    onChanged: _onTextChanged,
-                    style: const TextStyle(color: Colors.black87),
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: widget.hintText ??
-                          'Search providers, plans, features…',
-                      hintStyle: const TextStyle(color: Colors.black38),
-                      icon: const Icon(Icons.search, color: Colors.black38),
-                      suffixIcon: _controller.text.isNotEmpty
-                          ? IconButton(
-                              icon: const Icon(Icons.clear, size: 18),
-                              onPressed: () {
-                                _controller.clear();
-                                _suggestionNotifier.value = [];
-                                _hideOverlay();
-                                widget.onChanged('');
-                                setState(() {});
-                              },
-                            )
-                          : null,
+                Expanded(
+                  child: GlassContainer(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    borderRadius: 12,
+                    child: TextField(
+                      controller: _controller,
+                      focusNode: _focusNode,
+                      onChanged: _onTextChanged,
+                      style: const TextStyle(color: Colors.black87),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: widget.hintText ??
+                            'Search providers, plans, features…',
+                        hintStyle: const TextStyle(color: Colors.black38),
+                        icon: const Icon(Icons.search, color: Colors.black38),
+                        suffixIcon: _controller.text.isNotEmpty
+                            ? IconButton(
+                                icon: const Icon(Icons.clear, size: 18),
+                                onPressed: () {
+                                  _controller.clear();
+                                  _suggestionNotifier.value = [];
+                                  _hideOverlay();
+                                  widget.onChanged('');
+                                  setState(() {});
+                                },
+                              )
+                            : null,
+                      ),
                     ),
                   ),
                 ),
-              ),
 
-              const SizedBox(width: 12),
-              _OcrButton(
-                isUploading: _isUploading,
-                onTap: _isUploading ? null : _pickAndUploadBill,
-              ),
-            ],
+                const SizedBox(width: 12),
+                _OcrButton(
+                  isUploading: _isUploading,
+                  onTap: _isUploading ? null : _pickAndUploadBill,
+                ),
+              ],
+            ),
           ),
-        ),
 
         // ── Price range slider ────────────────────────────────────
-        if (widget.categoryMaxPrice > 0) ...[
+        if (widget.showFilters && widget.categoryMaxPrice > 0) ...[
           const SizedBox(height: 10),
           _PriceSlider(
             categoryMaxPrice: widget.categoryMaxPrice,
@@ -376,7 +381,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
         ],
 
         // ── Active filter chips ───────────────────────────────────
-        if (hasActiveFilters) ...[
+        if (widget.showFilters && hasActiveFilters) ...[
           const SizedBox(height: 10),
           Wrap(
             spacing: 6,
@@ -415,7 +420,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
         ],
 
         // ── Row 2: Filter dropdowns + sort ────────────────────────
-        if (widget.filters != null && widget.filters!.isNotEmpty) ...[
+        if (widget.showFilters && widget.filters != null && widget.filters!.isNotEmpty) ...[
           const SizedBox(height: 10),
           widget.isVertical
               ? Column(

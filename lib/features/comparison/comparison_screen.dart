@@ -263,6 +263,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
             onPriceMaxChanged: (val) => controller.setPriceMax(val),
             suggestions: suggestions,
             isVertical: true,
+            showSearch: false,
           ),
           const SizedBox(height: 32),
           Container(
@@ -368,6 +369,25 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
         children: [
           const MainNavigationBar(),
           const QuestBanner(),
+          if (isDesktop)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1200),
+                  child: SearchBarWidget(
+                    onChanged: (value) => controller.search(value),
+                    onStateChanged: showStateSelector
+                        ? (stateCode) => controller.updateStateFilter(stateCode)
+                        : null,
+                    selectedState: state.selectedState,
+                    hintText: searchHint,
+                    suggestions: suggestions,
+                    showFilters: false,
+                  ),
+                ),
+              ),
+            ),
           Expanded(
             child: isDesktop
                 ? Row(

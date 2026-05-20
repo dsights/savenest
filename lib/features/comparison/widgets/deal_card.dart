@@ -401,81 +401,142 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                     const SizedBox(height: 6),
 
                     // Price
-                    AnimatedContainer(
+                    AnimatedScale(
+                      scale: _isHovered ? 1.05 : 1.0,
                       duration: const Duration(milliseconds: 300),
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                      decoration: BoxDecoration(
-                        color: _isHovered
-                            ? AppTheme.offWhite.withOpacity(0.8)
-                            : AppTheme.offWhite,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                        decoration: BoxDecoration(
                           color: _isHovered
-                              ? widget.deal.providerColor.withOpacity(0.2)
-                              : Colors.transparent,
+                              ? widget.deal.providerColor.withOpacity(0.05)
+                              : AppTheme.offWhite,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: _isHovered
+                                ? widget.deal.providerColor.withOpacity(0.3)
+                                : Colors.transparent,
+                          ),
+                          boxShadow: _isHovered ? [
+                            BoxShadow(
+                              color: widget.deal.providerColor.withOpacity(0.2),
+                              blurRadius: 15,
+                              spreadRadius: 2,
+                            )
+                          ] : [],
                         ),
-                      ),
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          children: [
-                            if (widget.deal.category != ProductCategory.electricity &&
-                                widget.deal.category != ProductCategory.gas &&
-                                widget.deal.category != ProductCategory.solar)
-                              const TextSpan(
-                                text: '\$',
+                        child: RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            children: [
+                              if (widget.deal.category != ProductCategory.electricity &&
+                                  widget.deal.category != ProductCategory.gas &&
+                                  widget.deal.category != ProductCategory.solar)
+                                TextSpan(
+                                  text: '\$',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: _isHovered ? widget.deal.providerColor : AppTheme.deepNavy,
+                                  ),
+                                ),
+                              TextSpan(
+                                text: widget.deal.price > 0
+                                    ? (widget.deal.price % 1 == 0
+                                        ? widget.deal.price.toStringAsFixed(0)
+                                        : widget.deal.price.toStringAsFixed(2))
+                                    : 'Check',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppTheme.deepNavy,
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.w900,
+                                  color: _isHovered
+                                      ? widget.deal.providerColor
+                                      : AppTheme.deepNavy,
+                                  letterSpacing: -1.5,
                                 ),
                               ),
-                            TextSpan(
-                              text: widget.deal.price > 0
-                                  ? (widget.deal.price % 1 == 0
-                                      ? widget.deal.price.toStringAsFixed(0)
-                                      : widget.deal.price.toStringAsFixed(2))
-                                  : 'Check',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                                color: _isHovered
-                                    ? widget.deal.providerColor
-                                    : AppTheme.deepNavy,
-                                letterSpacing: -0.5,
+                              TextSpan(
+                                text: widget.deal.priceUnit,
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: _isHovered ? widget.deal.providerColor.withOpacity(0.7) : AppTheme.slate600,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: widget.deal.priceUnit,
-                              style: const TextStyle(
-                                fontSize: 9,
-                                color: AppTheme.slate600,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
 
                     const SizedBox(height: 6),
 
-                    // Bottom CTA row: Compare (left) | View Details (right)
-                    Row(
+                    // Bottom CTA rows: Compare (top) over View Details (bottom)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        // Compare button — always visible, left side
+                        // View details / go to site
+                        GestureDetector(
+                          onTap: _flipCard,
+                          child: AnimatedScale(
+                            scale: _isHovered ? 1.02 : 1.0,
+                            duration: const Duration(milliseconds: 200),
+                            child: AnimatedContainer(
+                              duration: const Duration(milliseconds: 250),
+                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              decoration: BoxDecoration(
+                                color: widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy,
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: (widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy)
+                                        .withOpacity(0.3),
+                                    blurRadius: _isHovered ? 8 : 4,
+                                    offset: _isHovered ? const Offset(0, 4) : const Offset(0, 2),
+                                  )
+                                ],
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'DETAILS',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 4),
+                                  AnimatedSlide(
+                                    offset: _isHovered ? const Offset(0.2, 0) : Offset.zero,
+                                    duration: const Duration(milliseconds: 200),
+                                    child: const Icon(Icons.arrow_forward_ios, size: 10, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        
+                        const SizedBox(height: 6),
+                        
+                        // Compare button
                         if (widget.onToggleCompare != null)
-                          Expanded(
-                            child: GestureDetector(
-                              behavior: HitTestBehavior.opaque,
-                              onTap: () {
-                                widget.onToggleCompare?.call();
-                                ref.read(gamificationProvider.notifier).recordCompare();
-                                _showXPFloat(context, '+10 XP', AppTheme.primaryBlue);
-                              },
+                          GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: () {
+                              widget.onToggleCompare?.call();
+                              ref.read(gamificationProvider.notifier).recordCompare();
+                              _showXPFloat(context, '+10 XP', AppTheme.primaryBlue);
+                            },
+                            child: AnimatedScale(
+                              scale: _isHovered ? 1.02 : 1.0,
+                              duration: const Duration(milliseconds: 200),
                               child: AnimatedContainer(
                                 duration: const Duration(milliseconds: 250),
-                                padding: const EdgeInsets.symmetric(vertical: 5),
+                                padding: const EdgeInsets.symmetric(vertical: 6),
                                 decoration: BoxDecoration(
                                   color: widget.isSelectedForComparison
                                       ? AppTheme.vibrantEmerald
@@ -500,16 +561,23 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(
-                                      widget.isSelectedForComparison ? Icons.check : Icons.compare_arrows,
-                                      size: 12,
-                                      color: widget.isSelectedForComparison ? Colors.white : AppTheme.primaryBlue,
+                                    AnimatedSwitcher(
+                                      duration: const Duration(milliseconds: 200),
+                                      transitionBuilder: (Widget child, Animation<double> animation) {
+                                        return ScaleTransition(scale: animation, child: child);
+                                      },
+                                      child: Icon(
+                                        widget.isSelectedForComparison ? Icons.check : Icons.compare_arrows,
+                                        key: ValueKey<bool>(widget.isSelectedForComparison),
+                                        size: 14,
+                                        color: widget.isSelectedForComparison ? Colors.white : AppTheme.primaryBlue,
+                                      ),
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
-                                      widget.isSelectedForComparison ? 'ADDED' : 'COMPARE',
+                                      widget.isSelectedForComparison ? 'ADDED TO COMPARE' : 'ADD TO COMPARE',
                                       style: TextStyle(
-                                        fontSize: 9,
+                                        fontSize: 10,
                                         fontWeight: FontWeight.w900,
                                         letterSpacing: 0.5,
                                         color: widget.isSelectedForComparison ? Colors.white : AppTheme.primaryBlue,
@@ -520,47 +588,6 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                               ),
                             ),
                           ),
-                        if (widget.onToggleCompare != null) const SizedBox(width: 4),
-
-                        // View details / go to site
-                        Expanded(
-                          flex: 2,
-                          child: GestureDetector(
-                            onTap: _flipCard,
-                            child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 250),
-                              padding: const EdgeInsets.symmetric(vertical: 5),
-                              decoration: BoxDecoration(
-                                color: widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy,
-                                borderRadius: BorderRadius.circular(8),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: (widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy)
-                                        .withOpacity(0.3),
-                                    blurRadius: _isHovered ? 8 : 4,
-                                    offset: _isHovered ? const Offset(0, 4) : const Offset(0, 2),
-                                  )
-                                ],
-                              ),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'DETAILS',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.white,
-                                      letterSpacing: 0.5,
-                                    ),
-                                  ),
-                                  SizedBox(width: 4),
-                                  Icon(Icons.arrow_forward_ios, size: 10, color: Colors.white),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ],

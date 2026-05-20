@@ -469,9 +469,9 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                       ),
                     ),
 
-                    const SizedBox(height: 6),
+                    const Spacer(),
 
-                    // Bottom CTA rows: Compare (top) over View Details (bottom)
+                    // Bottom CTA rows: Details (top) over Compare (bottom)
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -483,7 +483,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                             duration: const Duration(milliseconds: 200),
                             child: AnimatedContainer(
                               duration: const Duration(milliseconds: 250),
-                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              padding: const EdgeInsets.symmetric(vertical: 10),
                               decoration: BoxDecoration(
                                 color: widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy,
                                 borderRadius: BorderRadius.circular(8),
@@ -520,7 +520,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                           ),
                         ),
                         
-                        const SizedBox(height: 6),
+                        const SizedBox(height: 10),
                         
                         // Compare button
                         if (widget.onToggleCompare != null)
@@ -536,7 +536,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                               duration: const Duration(milliseconds: 200),
                               child: AnimatedContainer(
                                 duration: const Duration(milliseconds: 250),
-                                padding: const EdgeInsets.symmetric(vertical: 6),
+                                padding: const EdgeInsets.symmetric(vertical: 8),
                                 decoration: BoxDecoration(
                                   color: widget.isSelectedForComparison
                                       ? AppTheme.vibrantEmerald

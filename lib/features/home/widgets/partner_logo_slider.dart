@@ -75,20 +75,20 @@ class _PartnerLogoSliderState extends State<PartnerLogoSlider> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 60),
+      padding: const EdgeInsets.symmetric(vertical: 24),
       child: Column(
         children: [
           Text(
             "We compare brands you know and trust",
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: AppTheme.slate600,
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              color: AppTheme.slate600.withOpacity(0.8),
               fontWeight: FontWeight.bold,
-              letterSpacing: 1.2,
+              letterSpacing: 0.8,
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
           SizedBox(
-            height: 60,
+            height: 36,
             child: ListView.builder(
               controller: _scrollController,
               scrollDirection: Axis.horizontal,
@@ -96,20 +96,20 @@ class _PartnerLogoSliderState extends State<PartnerLogoSlider> {
               itemBuilder: (context, index) {
                 final logoPath = _logos[index % _logos.length];
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Image.asset(
                     logoPath,
-                    height: 50,
-                    width: 100,
+                    height: 28,
+                    width: 70,
                     fit: BoxFit.contain,
                     // Use a color filter to make them look uniform if needed, 
                     // but usually color logos are better for trust.
                     errorBuilder: (context, error, stackTrace) => Container(
-                      width: 100,
+                      width: 70,
                       alignment: Alignment.center,
                       child: Text(
                         logoPath.split('/').last.split('.').first.toUpperCase(),
-                        style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.bold, fontSize: 12),
+                        style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.bold, fontSize: 10),
                       ),
                     ),
                   ),

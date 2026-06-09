@@ -1,0 +1,54 @@
+{
+  "business_name": "savenest.au - Organic Solar Lead Gen",
+  "current_revenue": 0,
+  "target_revenue_mrr": 10000,
+  "metrics": {
+    "leads_generated": 0,
+    "sales_closed": 0,
+    "organic_posts": 20,
+    "jv_partners_signed": 22,
+    "target_sales": 10,
+    "target_jv_partners": 15,
+    "energy_switches": 0,
+    "internet_switches": 0,
+    "finance_referrals": 0
+  },
+  "milestones": [
+    {
+      "week": 1,
+      "focus": "Vendors, Groups, and the B2B Network",
+      "actions": [
+        "Secure 2-3 Solar Installers (Lead Buyers) on a Pay-Per-Close model (Zero risk for you).",
+        "Join 50+ local community Facebook and Nextdoor groups.",
+        "Pitch 30 Real Estate Agents on a Joint Venture (JV) revenue share."
+      ]
+    },
+    {
+      "week": 2,
+      "focus": "Guerilla Social Marketing & Direct Outreach",
+      "actions": [
+        "Execute 'Value First' educational posts in 10 FB groups daily.",
+        "Direct Message (DM) users complaining about utility bills.",
+        "Pitch Roofers and Mortgage Brokers for JV partnerships."
+      ]
+    },
+    {
+      "week": 3,
+      "focus": "Commercial Outbound & Pipeline Management",
+      "actions": [
+        "Cold call 50 local businesses for commercial solar (High ticket).",
+        "Follow up with all JV partners for their client lists.",
+        "Hand off first 15-20 organically generated leads to vendors."
+      ]
+    },
+    {
+      "week": 4,
+      "focus": "Closing & Referral Loops",
+      "actions": [
+        "Chase vendors daily for status on handed-off leads.",
+        "Launch 'Refer a Neighbor' campaign to your new pipeline.",
+        "Invoice for closed deals to hit $10,000 pure profit."
+      ]
+    }
+  ]
+}

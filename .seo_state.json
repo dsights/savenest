@@ -1,0 +1,275 @@
+{
+  "current_day": 5,
+  "schedule": [
+    {
+      "day": 1,
+      "title": "Vendor Acquisition (Zero Risk Offer)",
+      "agent_task": "Provide the exact pitch script for installers.",
+      "human_task": "Call 20 Vendors",
+      "human_sop": "1. Search 'Solar Installers near me' on Google.\n2. Call 20 of them.\n3. Read the exact script provided below.\n4. Secure at least 2 verbal agreements.",
+      "copy_paste_template": "Hi [Name], I run a local lead gen agency. I generate organic, high-intent local solar leads. I'm passing them to you for free upfront. We split the profit when you close. Can you handle 5-10 extra installs a month?",
+      "status": "completed (100%)"
+    },
+    {
+      "day": 2,
+      "title": "The Community Infiltration",
+      "agent_task": "Provide search keywords for finding the best local Facebook groups.",
+      "human_task": "Join 50 FB Groups",
+      "human_sop": "1. Open Facebook Groups.\n2. Search the terms below.\n3. Request to join 50 groups. Answer entry questions honestly as a local business owner.\n4. DO NOT POST YET.",
+      "copy_paste_template": "Search these terms in Facebook:\n- '[Your Suburb] Community Board'\n- '[Your Suburb] Buy/Sell/Trade'\n- '[Your Suburb] Locals'\n- '[Your City] Homeowners'\n- '[Your Region] Noticeboard'",
+      "status": "completed (100%)"
+    },
+    {
+      "day": 3,
+      "title": "B2B Joint Ventures (Real Estate)",
+      "agent_task": "Provide the pitch script for Real Estate Agents.",
+      "human_task": "Pitch 30 Real Estate Agents",
+      "human_sop": "1. Find 30 local real estate agents who recently sold homes.\n2. Call them or send them the script below via SMS/Email.\n3. Log any partners who agree.",
+      "copy_paste_template": "Hi [Name], quick question. I run SaveNest. We are offering a free energy audit to new home buyers. It's a great value-add for your clients, and we pay you $500 for every home that goes solar. Open to a 5-min chat about how we can set this up for your next closings?",
+      "status": "completed (100%)"
+    },
+    {
+      "day": 4,
+      "title": "First Organic Strike (Educational)",
+      "agent_task": "Provide the exact text for the first Facebook group post.",
+      "human_task": "Post in 10 Groups",
+      "human_sop": "1. Copy the text below.\n2. Post it in 10 approved FB groups.\n3. Do NOT drop a link. Tell them to comment 'INFO'.\n4. DM anyone who comments.",
+      "copy_paste_template": "PSA: The new electricity rate hikes just hit [State]. Did anyone else's power bill just jump? \ud83d\udcc8\nI have a link to the Gov site to check rebates, and I can show you how to read your bill to see if you're overpaying. \nComment 'INFO' below and I'll send it over.",
+      "status": "completed (100%)"
+    },
+    {
+      "day": 5,
+      "title": "B2B Joint Ventures (Trades)",
+      "agent_task": "Provide the pitch script for Roofers and HVAC technicians.",
+      "human_task": "Pitch 20 Trades businesses",
+      "human_sop": "1. Call 20 local roofing and HVAC companies.\n2. Pitch them using the script below.\n3. Log any agreed partners.",
+      "copy_paste_template": "Hey [Name], you're already on roofs all day. If the customer needs solar, pass them to me. I'll pay you $1,000 per install. We do all the selling and paperwork. You just drop a name. Sound like easy money?",
+      "status": "pending"
+    },
+    {
+      "day": 6,
+      "title": "Organic Strike 2: The Bill Shock",
+      "agent_task": "Provide the exact text for the 'Bill Shock' Facebook post.",
+      "human_task": "Post & Engage",
+      "human_sop": "1. Post the text below in 10 different FB/Nextdoor groups.\n2. Reply to EVERY comment. Move conversations to DMs.\n3. In DMs, get their phone number and average bill amount.",
+      "copy_paste_template": "Did anyone else's power bill just double? \ud83e\udd2f \nWe just helped a family in [Your Suburb] drop theirs to $0 and they got a $1,500 government rebate. \nIf your bill is over $400, comment 'ME' below and I'll tell you exactly how they did it.",
+      "status": "pending"
+    },
+    {
+      "day": 7,
+      "title": "Week 1 Review & Handoffs",
+      "agent_task": "Provide the exact email/SMS template for handing leads to vendors.",
+      "human_task": "Pass Leads to Vendors",
+      "human_sop": "1. Gather all leads generated from FB/DMs/JVs this week.\n2. Send them to your vendor using the template below.\n3. Follow up with a call to confirm receipt.",
+      "copy_paste_template": "Hi [Vendor Name],\nNew lead for you:\nName: [Lead Name]\nPhone: [Lead Phone]\nBill: [Avg Bill]\nAddress: [Address]\nThey are expecting your call today. Keep me posted!",
+      "status": "pending"
+    },
+    {
+      "day": 8,
+      "title": "B2B Joint Ventures (Mortgage Brokers)",
+      "agent_task": "Provide the pitch script for Mortgage Brokers.",
+      "human_task": "Pitch 20 Mortgage Brokers",
+      "human_sop": "1. Find 20 local independent mortgage brokers.\n2. Call or email them the script below.\n3. Log any who agree.",
+      "copy_paste_template": "Hi [Name], rising interest rates are crushing homeowners. I help offset that by destroying their power bills with solar. If you refer clients to me who want to save money, I pay you $500 per install. Let's add this to your client offering.",
+      "status": "pending"
+    },
+    {
+      "day": 9,
+      "title": "Organic Strike 3: Case Study",
+      "agent_task": "Provide the exact text for a Facebook Case Study post.",
+      "human_task": "Storytelling Post",
+      "human_sop": "1. Post the text below in 10 FB groups.\n2. Add a photo of a generic solar install (use Unsplash/Pexels if needed).\n3. DM everyone who comments.",
+      "copy_paste_template": "CASE STUDY: How John in [Your Suburb] got a 6.6kW system with $0 out of pocket. \u2600\ufe0f\nHis bill was $600/qtr. We got him the state rebate, and his new loan repayment for the panels is LESS than his old power bill. He's cash flow positive from Day 1. \nComment 'CASE STUDY' if you want me to run the same numbers for your house.",
+      "status": "pending"
+    },
+    {
+      "day": 10,
+      "title": "Commercial Prospecting",
+      "agent_task": "Provide the cold call script for local warehouses/factories.",
+      "human_task": "Call 30 Local Businesses",
+      "human_sop": "1. Use Google Maps to find local warehouses.\n2. Call them and ask for the owner/facilities manager.\n3. Read the script below.",
+      "copy_paste_template": "Hi, I'm calling from SaveNest. I'm looking for the owner or facilities manager. ... Hi [Name], we help local warehouses offset their tax and power bills with commercial solar. It's cash flow positive from day 1. Can I send you a 1-page ROI breakdown for your roof?",
+      "status": "pending"
+    },
+    {
+      "day": 11,
+      "title": "JV Partner Activation",
+      "agent_task": "Provide the 'Done-For-You' email template that JV partners can send to their clients.",
+      "human_task": "Follow Up with JVs",
+      "human_sop": "1. Email the JV partners you've signed.\n2. Give them the template below so they can easily refer clients to you.",
+      "copy_paste_template": "Subject: Lowering your home running costs\n\nHi [Client Name],\nI hope you're settling into the new home well! \nI've partnered with SaveNest to offer my clients a free, no-obligation energy audit. They check if you're eligible for the latest solar rebates. It takes 5 mins and could save you thousands. \nCan I introduce you to their local expert?",
+      "status": "pending"
+    },
+    {
+      "day": 12,
+      "title": "Organic Strike 4: The Poll",
+      "agent_task": "Provide the exact text for a Facebook Group Poll.",
+      "human_task": "Launch Polls",
+      "human_sop": "1. Create a Poll post in 5 highly active groups using the text below.\n2. ANYONE who votes B, C, or D gets a direct message offering a free solar savings report.",
+      "copy_paste_template": "What is your average quarterly power bill right now? \ud83e\udd14\nA) Under $300\nB) $300 - $500\nC) $500 - $800\nD) $800+\nVote below so we can see the suburb average!",
+      "status": "pending"
+    },
+    {
+      "day": 13,
+      "title": "Vendor Accountability Check",
+      "agent_task": "Provide the exact SMS/Email to check on lead status with vendors.",
+      "human_task": "Chase Vendors",
+      "human_sop": "1. Send the message below to your installers.\n2. If they aren't calling the leads, find a new vendor today.",
+      "copy_paste_template": "Hey [Vendor Name], checking in on the leads from last week. Have we got any sit-downs or closes yet? Need to know if I should keep sending volume your way or pause.",
+      "status": "pending"
+    },
+    {
+      "day": 14,
+      "title": "Mid-Month Sprint & Review",
+      "agent_task": "Provide a pitch script to message FB Group Admins for a pinned post.",
+      "human_task": "Message Group Admins",
+      "human_sop": "1. Find the admins of your top 3 FB groups.\n2. Send them the message below.",
+      "copy_paste_template": "Hi Admin, I'm a local solar expert. Would it be okay if I posted a free, no-obligation solar savings calculator for the group members? I'm happy to offer a $50 gift card giveaway for the group if we can pin the post for 24 hours.",
+      "status": "pending"
+    },
+    {
+      "day": 15,
+      "title": "Monday Outbound Blitz",
+      "agent_task": "Provide the cold pitch for Property Managers.",
+      "human_task": "Call 50 Property Managers",
+      "human_sop": "1. Call 50 property management agencies today.\n2. Read the script below.",
+      "copy_paste_template": "Hi [Name], adding solar allows you to increase rent yield and attract better tenants for your landlords. I handle the whole process for your property owners. Can we chat for 5 mins this week?",
+      "status": "pending"
+    },
+    {
+      "day": 16,
+      "title": "Organic Strike 5: Local Government Angle",
+      "agent_task": "Provide the exact text for the 'Rebate Alert' Facebook post.",
+      "human_task": "Post the Government Rebate Angle",
+      "human_sop": "1. Post the text below in 10 FB/Nextdoor groups.\n2. This is the highest converting angle. Reply to every comment rapidly.",
+      "copy_paste_template": "ALERT \ud83d\udea8: A lot of people in [Your Suburb] don't realize the [Your State] government is currently handing out solar rebates. It literally pays for a huge chunk of the system. \nComment 'REBATE' below and I'll send you the link to check your address eligibility.",
+      "status": "pending"
+    },
+    {
+      "day": 17,
+      "title": "The Network Effect (Referrals)",
+      "agent_task": "Provide the exact SMS for asking old leads for referrals.",
+      "human_task": "Text Your Pipeline",
+      "human_sop": "1. Send the text below to every single person in your CRM, even if they didn't buy.",
+      "copy_paste_template": "Hey [Name], just reaching out! Even if you didn't decide to go with solar, I wanted to let you know I'm paying $300 cash for any referrals. If you know a neighbor or friend who might want a quote, just send me their number!",
+      "status": "pending"
+    },
+    {
+      "day": 18,
+      "title": "Invoicing & Cash Collection",
+      "agent_task": "Provide the exact email template for sending an invoice to vendors.",
+      "human_task": "Collect Your Commission",
+      "human_sop": "1. Confirm any installs that occurred this week.\n2. Send the email below with your PDF invoice attached.\n3. Log revenue in the CLI.",
+      "copy_paste_template": "Hi [Vendor Name],\nPlease find attached the invoice for the lead generation commission for the installs completed this week. Please let me know when this is processed.\nThanks, SaveNest Team.",
+      "status": "pending"
+    },
+    {
+      "day": 19,
+      "title": "Expand Vendor Base (More Capacity)",
+      "agent_task": "Provide the pitch for large, tier-1 installers.",
+      "human_task": "Call Larger Installers",
+      "human_sop": "1. Call 5 massive solar companies in your state.\n2. Read the script below.",
+      "copy_paste_template": "Hi [Name], I'm an independent broker generating high-intent organic solar leads in [State]. I'm looking for a tier-1 installation partner who can handle consistent volume and buys closed deals. Who is the best person to speak with?",
+      "status": "pending"
+    },
+    {
+      "day": 20,
+      "title": "Organic Strike 6: The 'Bad Quote' Review",
+      "agent_task": "Provide the exact text for offering free quote audits on Facebook.",
+      "human_task": "Offer Free Quote Audits",
+      "human_sop": "1. Post the text below in 10 groups.\n2. When they send a quote, beat the price using your vendor network.",
+      "copy_paste_template": "A lot of door knockers are overcharging for solar in our area right now. \ud83d\uded1 \nIf you have received a quote recently, DM me a picture of it. I will audit it for free and tell you if you are getting ripped off or if it's a good deal.",
+      "status": "pending"
+    },
+    {
+      "day": 21,
+      "title": "Week 3 Pipeline Squeeze",
+      "agent_task": "Provide the 'Break Up' text to send to ghosting leads.",
+      "human_task": "Clean the Pipeline",
+      "human_sop": "1. Text all unresponsive leads the script below.\n2. This psychological trick often forces a reply.",
+      "copy_paste_template": "Hey [Name], assuming you decided against solar for now. I'm going to close your file. Let me know if I'm wrong and you still want that quote!",
+      "status": "pending"
+    },
+    {
+      "day": 22,
+      "title": "JV Partner Blitz",
+      "agent_task": "Provide the follow-up text for JV partners.",
+      "human_task": "Re-engage Partners",
+      "human_sop": "1. Send the text below to all your JV partners.",
+      "copy_paste_template": "Hey [Name]! Just checking in to see if you've run into any clients complaining about power bills this week? Remember, I'm paying $500 for anyone you send over that goes ahead with an install!",
+      "status": "pending"
+    },
+    {
+      "day": 23,
+      "title": "Commercial Follow-Up",
+      "agent_task": "Provide the follow-up email for commercial leads.",
+      "human_task": "Close a Business Deal",
+      "human_sop": "1. Send the email below to the 30 businesses you contacted on Day 10.",
+      "copy_paste_template": "Hi [Name],\nFollowing up on our brief chat. Attached is the 1-page ROI breakdown for commercial solar in our area. Notice the instant tax write-off and the fact that loan repayments are typically lower than your current bill. \nLet's schedule a 10-min call to discuss.",
+      "status": "pending"
+    },
+    {
+      "day": 24,
+      "title": "Organic Strike 7: Video Content",
+      "agent_task": "Provide the exact script to read for a selfie video.",
+      "human_task": "Record & Post Video",
+      "human_sop": "1. Record a selfie video reading the script below.\n2. Post the video in your FB groups.",
+      "copy_paste_template": "Hey guys, quick tip. If you're looking at your power bill, there are 3 hidden costs you're paying. 1. Supply charge. 2. Usage charges. 3. Environmental levies. Solar completely wipes out #2 and #3. DM me if you want me to show you how.",
+      "status": "pending"
+    },
+    {
+      "day": 25,
+      "title": "Vendor Collection Call",
+      "agent_task": "Provide the exact text to demand payment from vendors.",
+      "human_task": "Chase the Money",
+      "human_sop": "1. Send the message below to vendors who owe you money.",
+      "copy_paste_template": "Hey [Vendor Name], checking on the status of invoice #[Number]. We need this squared away today so we can continue sending you volume next week. Thanks!",
+      "status": "pending"
+    },
+    {
+      "day": 26,
+      "title": "Pure Cold Calling Grind",
+      "agent_task": "Provide a simple, 10-second cold call script.",
+      "human_task": "Dial 100 Numbers",
+      "human_sop": "1. Open local whitepages.\n2. Dial 100 numbers.\n3. Read the script below.",
+      "copy_paste_template": "Hi, we are doing free solar eligibility checks in [Suburb] today to see who qualifies for the new state rebate. Just a quick question, are you the homeowner there?",
+      "status": "pending"
+    },
+    {
+      "day": 27,
+      "title": "The End of Month Promo",
+      "agent_task": "Provide the end-of-month discount urgency script.",
+      "human_task": "Blast the CRM",
+      "human_sop": "1. Send the message below to every lead in your system.",
+      "copy_paste_template": "Hey [Name]! My installers need to hit their monthly quota by Friday. They've given me 2 systems at a heavy discount to offer. If you're still thinking about solar, this is the cheapest it will be all year. Reply YES if you want the numbers.",
+      "status": "pending"
+    },
+    {
+      "day": 28,
+      "title": "JV Partner Final Push",
+      "agent_task": "Provide a bonus offer script for JV partners.",
+      "human_task": "Text JV Partners",
+      "human_sop": "1. Text the message below to all JV partners.",
+      "copy_paste_template": "Hey [Name]! I'm offering a $100 BONUS on top of the usual $500 commission for any leads sent over before Friday that end up converting. Dig through your client list and shoot me some names!",
+      "status": "pending"
+    },
+    {
+      "day": 29,
+      "title": "Close Everything (Objection Handling)",
+      "agent_task": "Provide an exact script to handle the 'I need to think about it' objection.",
+      "human_task": "Call All Warm Leads",
+      "human_sop": "1. Call everyone who is 'on the fence'.\n2. Use the script below to force a decision.",
+      "copy_paste_template": "I completely understand needing to think about it. Just so I'm clear, is it the upfront cost holding you back, or are you unsure if it will actually save you money?",
+      "status": "pending"
+    },
+    {
+      "day": 30,
+      "title": "Reconcile & Gather Reviews",
+      "agent_task": "Provide a script to ask for 5-star reviews from closed clients.",
+      "human_task": "Get Reviews",
+      "human_sop": "1. Text the message below to any clients who had solar installed this month.",
+      "copy_paste_template": "Hi [Name]! I hope you are loving the new solar system. It would mean the world to my small business if you could leave a quick 5-star review here: [Link]. It helps me help more locals like you!",
+      "status": "pending"
+    }
+  ]
+}

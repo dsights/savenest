@@ -7,6 +7,7 @@ def send_email(to_email, subject, body):
     msg = MIMEMultipart()
     msg['From'] = '"SaveNest" <contact@savenest.au>'
     msg['To'] = to_email
+    msg['Bcc'] = "savenest.au@gmail.com"
     msg['Subject'] = subject
     msg.attach(MIMEText(body, 'plain'))
 

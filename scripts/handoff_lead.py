@@ -7,6 +7,7 @@ def send_handoff_email(vendor_email, lead_data):
     msg = MIMEMultipart()
     msg['From'] = '"SaveNest" <contact@savenest.au>'
     msg['To'] = vendor_email
+    msg['Bcc'] = "savenest.au@gmail.com"
     msg['Subject'] = f"New High-Intent Solar Lead: {lead_data['name']}"
     
     body = f"""Hi Team,

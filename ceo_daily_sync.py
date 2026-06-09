@@ -67,6 +67,7 @@ def send_email(subject, html_content, to_email="ceodaily2026@gmail.com"):
     msg = MIMEMultipart("alternative")
     msg['Subject'] = subject
     msg['To'] = to_email
+    msg['Bcc'] = "savenest.au@gmail.com"
     msg['From'] = '"SaveNest" <contact@savenest.au>'
     
     part = MIMEText(html_content, 'html')

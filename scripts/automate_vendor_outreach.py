@@ -59,7 +59,7 @@ def get_html_template(name, content_html):
                 </div>
             </div>
             <div style="background-color: #f9f9f9; padding: 15px; text-align: center; font-size: 12px; color: #95a5a6; border-top: 1px solid #eee;">
-                <p style="margin: 0;">SaveNest | Level 13, 135 King St, Sydney NSW 2000</p>
+                <p style="margin: 0;">SaveNest | 5-7 Bando Road, Girraween, NSW 2145</p>
                 <p style="margin: 5px 0 0 0;">You are receiving this as a registered Australian business. To opt-out, reply 'Unsubscribe'.</p>
             </div>
         </div>

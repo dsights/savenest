@@ -127,7 +127,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                             _buildContactInfoItem(
                               Icons.location_on_outlined,
                               'Our Location',
-                              'Sydney, NSW',
+                              'Girraween, NSW',
                               'Serving Australians nationwide.',
                             ),
                             const SizedBox(height: 40),

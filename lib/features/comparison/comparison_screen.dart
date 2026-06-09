@@ -337,8 +337,7 @@ class _ComparisonScreenState extends ConsumerState<ComparisonScreen> {
         break;
     }
 
-    final bool showStateSelector = selectedCat == ProductCategory.electricity ||
-        selectedCat == ProductCategory.gas;
+    final bool showStateSelector = selectedCat != ProductCategory.creditCards;
 
     // Autocomplete: provider names from the full unfiltered set + category intent phrases
     final suggestions = [

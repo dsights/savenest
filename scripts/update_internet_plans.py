@@ -88,10 +88,13 @@ def update_internet_plans():
     # A real implementation would need to scrape multiple providers.
     tpg_plans = scrape_tpg_nbn_plans()
     
-    # We will replace all existing internet plans with the new scraped plans.
-    # A more sophisticated approach would be to merge the new plans with the
-    # existing ones, but for this example, we'll keep it simple.
-    products_data['internet'] = tpg_plans
+    # SAFETY CHECK: Only update if we have at least 10 plans.
+    # This prevents clearing the data if the scraper fails or TPG changes their site.
+    if len(tpg_plans) >= 10:
+        print(f"Found {len(tpg_plans)} plans. Updating internet category.")
+        products_data['internet'] = tpg_plans
+    else:
+        print(f"Warning: Only found {len(tpg_plans)} plans. Keeping existing internet plans to avoid blank/low-data page.")
     
     # Write the updated data back to the file
     try:

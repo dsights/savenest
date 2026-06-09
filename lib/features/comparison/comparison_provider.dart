@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:http/http.dart' as http;
 import 'comparison_model.dart';
 import 'data/product_repository.dart';
 
@@ -128,8 +130,43 @@ class ComparisonController extends StateNotifier<ComparisonState> {
         categoryMaxPrice: maxPrice,
         allProviderNames: deals.map((d) => d.providerName).toSet(),
       );
+
+      if (state.selectedState == null) {
+        await detectLocation();
+      }
     } catch (e) {
       state = state.copyWith(isLoading: false, deals: []);
+    }
+  }
+
+  Future<void> detectLocation() async {
+    try {
+      // Use a free IP-based geolocation API
+      final response = await http.get(Uri.parse('http://ip-api.com/json')).timeout(const Duration(seconds: 2));
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final String? country = data['countryCode'];
+        if (country != 'AU') return; // Only auto-select for Australian IPs
+
+        final region = data['region']?.toString().toUpperCase();
+        
+        // Map common region codes/names to AU states
+        String? stateCode;
+        if (['NSW', 'NEW SOUTH WALES'].contains(region)) stateCode = 'NSW';
+        else if (['VIC', 'VICTORIA'].contains(region)) stateCode = 'VIC';
+        else if (['QLD', 'QUEENSLAND'].contains(region)) stateCode = 'QLD';
+        else if (['SA', 'SOUTH AUSTRALIA'].contains(region)) stateCode = 'SA';
+        else if (['WA', 'WESTERN AUSTRALIA'].contains(region)) stateCode = 'WA';
+        else if (['TAS', 'TASMANIA'].contains(region)) stateCode = 'TAS';
+        else if (['ACT', 'AUSTRALIAN CAPITAL TERRITORY'].contains(region)) stateCode = 'ACT';
+        else if (['NT', 'NORTHERN TERRITORY'].contains(region)) stateCode = 'NT';
+        
+        if (stateCode != null) {
+          updateStateFilter(stateCode);
+        }
+      }
+    } catch (e) {
+      debugPrint('Geolocation auto-detection failed: $e');
     }
   }
 

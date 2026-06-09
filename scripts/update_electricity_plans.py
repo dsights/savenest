@@ -108,18 +108,19 @@ def update_electricity_plans():
             print(f"Successfully fetched and transformed {len(transformed_plans)} plans for {retailer_name}.")
 
     # Update the electricity section of the products data
-    if all_new_plans:
+    # SAFETY CHECK: Only update if we have at least 10 plans.
+    if len(all_new_plans) >= 10:
         products_data['electricity'] = all_new_plans
         
         # Write the updated data back to the file
         try:
             with open(PRODUCTS_JSON_PATH, 'w') as f:
                 json.dump(products_data, f, indent=2)
-            print("Successfully updated electricity plans in products.json.")
+            print(f"Successfully updated electricity plans with {len(all_new_plans)} new plans.")
         except IOError as e:
             print(f"Error writing to {PRODUCTS_JSON_PATH}: {e}")
     else:
-        print("No new plans were fetched. The products.json file was not updated.")
+        print(f"Warning: Only fetched {len(all_new_plans)} plans. Keeping existing electricity plans to avoid low-data state (threshold: 10).")
 
 
 if __name__ == '__main__':

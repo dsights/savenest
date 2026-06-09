@@ -55,6 +55,9 @@ Best regards,
 
 SaveNest Partnerships Team
 savenest.au
+---
+To opt-out of future partnerships, reply with 'Unsubscribe'.
+SaveNest Operations | Sydney, NSW, Australia
 """
 
 if __name__ == "__main__":

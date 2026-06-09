@@ -1,0 +1,24 @@
+{
+  "target_groups": [
+    "https://www.facebook.com/groups/sydneyhomeowners",
+    "https://www.facebook.com/groups/melbournelocals",
+    "https://www.facebook.com/groups/brisbanecommunity",
+    "https://www.facebook.com/groups/perthlife",
+    "https://www.facebook.com/groups/adelaidecommunity"
+  ],
+  "content_rotation": [
+    {
+      "id": "bill_shock",
+      "text": "PSA: The new electricity rate hikes just hit NSW. Did anyone else's power bill just jump? 📈\n\nI have a link to the Gov site to check rebates, and I can show you how to read your bill to see if you're overpaying. \n\nComment 'INFO' below and I'll send it over."
+    },
+    {
+      "id": "rebate_alert",
+      "text": "ALERT 🚨: A lot of people in this group don't realize the government is currently handing out solar rebates. It literally pays for a huge chunk of the system. \n\nComment 'REBATE' below and I'll send you the link to check your address eligibility."
+    },
+    {
+      "id": "lazy_tax",
+      "text": "Stop paying the 'Lazy Tax' on your electricity! 🛑\n\nI just found out my neighbor was paying 30% more than me just because they hadn't switched plans in 2 years. \n\nIf you want to know which companies have the lowest rates this month, comment 'PLAN' and I'll send you the list."
+    }
+  ],
+  "last_posted_index": 0
+}

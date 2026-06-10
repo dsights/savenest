@@ -7,7 +7,9 @@ This document tracks all active automated systems and scripts that power the Sav
 *   **`marketing/social_strike_config.json`**: Central brain for social targets and viral content rotation.
 
 ## 2. Partnership & Vendor Acquisition
-*   **`scripts/automate_vendor_outreach.py`**: Cold outreach strike to Tier-1 Solar installers with Pay-Per-Close proposals.
+*   **`scripts/automate_vendor_outreach.py`**: Initial outreach strike to Tier-1 Solar installers.
+*   **`scripts/mass_solar_negotiation.py`**: (NEW) Advanced high-stakes negotiation engine for all Solar & Electrical vendors (Mandates 20% commission).
+*   **`logs/outreach_sent_log.json`**: (NEW) Centralized tracking for all partnership communications to prevent duplicates and maintain professional standards.
 *   **`scripts/automate_jv_outreach.py`**: Pitching Real Estate agencies for referral partnerships.
 *   **`scripts/automate_trades_jv_outreach.py`**: Pitching Trades/Roofers for "Spotter Fee" partnerships.
 

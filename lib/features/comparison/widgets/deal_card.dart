@@ -469,11 +469,11 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                       ),
                     ),
 
-                    const Spacer(),
-
                     // Bottom CTA rows: Details (top) over Compare (bottom)
+                    const SizedBox(height: 8),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         // View details / go to site
                         GestureDetector(
@@ -483,7 +483,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                             duration: const Duration(milliseconds: 200),
                             child: AnimatedContainer(
                               duration: const Duration(milliseconds: 250),
-                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              padding: const EdgeInsets.symmetric(vertical: 8),
                               decoration: BoxDecoration(
                                 color: widget.isBestValue ? AppTheme.accentOrange : AppTheme.deepNavy,
                                 borderRadius: BorderRadius.circular(8),
@@ -502,7 +502,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                                   const Text(
                                     'DETAILS',
                                     style: TextStyle(
-                                      fontSize: 11,
+                                      fontSize: 10,
                                       fontWeight: FontWeight.w900,
                                       color: Colors.white,
                                       letterSpacing: 0.5,
@@ -520,7 +520,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                           ),
                         ),
                         
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 6),
                         
                         // Compare button
                         if (widget.onToggleCompare != null)
@@ -536,7 +536,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                               duration: const Duration(milliseconds: 200),
                               child: AnimatedContainer(
                                 duration: const Duration(milliseconds: 250),
-                                padding: const EdgeInsets.symmetric(vertical: 8),
+                                padding: const EdgeInsets.symmetric(vertical: 6),
                                 decoration: BoxDecoration(
                                   color: widget.isSelectedForComparison
                                       ? AppTheme.vibrantEmerald
@@ -575,7 +575,7 @@ class _DealCardState extends ConsumerState<DealCard> with TickerProviderStateMix
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
-                                      widget.isSelectedForComparison ? 'ADDED TO COMPARE' : 'ADD TO COMPARE',
+                                      widget.isSelectedForComparison ? 'ADDED' : 'COMPARE',
                                       style: TextStyle(
                                         fontSize: 10,
                                         fontWeight: FontWeight.w900,

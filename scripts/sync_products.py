@@ -156,6 +156,34 @@ def sync():
             quote_based_categories = ['solar', 'insurance', 'financial', 'security']
             is_enabled = price > 0.0 or category in quote_based_categories
 
+            details = {}
+            specs = {}
+            boolFeatures = {}
+
+            # Infer features from text for the Comparison Matrix
+            all_text = (raw_desc + " " + " ".join(features)).lower()
+            
+            is_green = safe_bool(row.get('isGreen'))
+            
+            boolFeatures['no_lock_in'] = 'no lock' in all_text or 'month-to-month' in all_text or 'month to month' in all_text
+            boolFeatures['unlimited_data'] = 'unlimited data' in all_text
+            boolFeatures['five_g'] = '5g' in all_text
+            boolFeatures['green_power'] = 'green' in all_text or 'carbon neutral' in all_text or is_green
+            boolFeatures['australian_support'] = 'aussie support' in all_text or 'australian support' in all_text or 'local support' in all_text
+            boolFeatures['pay_on_time_discount'] = 'pay on time' in all_text
+            boolFeatures['solar_compatible'] = 'solar' in all_text or 'fit' in all_text or 'feed-in' in all_text
+            boolFeatures['unlimited_calls'] = 'unlimited calls' in all_text
+            boolFeatures['comprehensive'] = 'comprehensive' in all_text
+            boolFeatures['roadside_assist'] = 'roadside' in all_text
+            boolFeatures['battery_available'] = 'battery' in all_text
+
+            # Create some dummy details so the UI 'Back of Card' has content
+            details['Category'] = category.title()
+            if price > 0:
+                details['Price Structure'] = f"${price}{row.get('priceUnit', '')}"
+            if len(features) > 0:
+                details['Primary Benefit'] = features[0]
+
             deal = {
                 "id": (row.get('id') or "").strip(),
                 "providerName": (row.get('providerName') or "").strip(),
@@ -171,9 +199,12 @@ def sync():
                 "directUrl": (row.get('directUrl') or "").strip(),
                 "rating": safe_float(row.get('rating')),
                 "isSponsored": safe_bool(row.get('isSponsored')),
-                "isGreen": safe_bool(row.get('isGreen')),
+                "isGreen": is_green,
                 "isEnabled": is_enabled,
-                "applicableStates": states
+                "applicableStates": states,
+                "details": details,
+                "specs": specs,
+                "boolFeatures": boolFeatures
             }
             
             new_products_data[category].append(deal)

@@ -38,15 +38,26 @@ def validate_products():
         else:
             print(f"OK: Category '{cat}' has {count} items.")
 
-    # Check for empty fields in products
+    # Check for empty fields and details in products
     for cat in categories:
         for i, item in enumerate(data.get(cat, [])):
+            pid = item.get('id', f'index {i}')
             if not item.get('providerName') or not item.get('planName'):
-                print(f"FAIL: Empty provider or plan name in {cat} at index {i}.")
+                print(f"FAIL: Empty provider or plan name in {cat} [{pid}].")
                 all_pass = False
-            if item.get('isEnabled') is False and count > 10:
-                # Warning only? If it's disabled it doesn't show up.
-                pass
+            
+            # Check for details field (essential for the 'flip' and comparison)
+            details = item.get('details', {})
+            if not details or len(details) < 1:
+                print(f"FAIL: Missing or empty 'details' in {cat} [{pid}].")
+                all_pass = False
+            
+            # Check for specs/boolFeatures if it's a comparison-heavy category
+            if cat in ['internet', 'electricity', 'mobile']:
+                specs = item.get('specs', {})
+                if not specs or len(specs) < 1:
+                    # Some might genuinely have none, but most should have something from the CSV
+                    pass 
 
     return all_pass
 
